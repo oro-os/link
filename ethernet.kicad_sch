@@ -1050,6 +1050,76 @@
         )
       )
     )
+    (symbol "SamacSys_Parts:RC2010JK-0710KL" (pin_names (offset 0.762)) (in_bom yes) (on_board yes)
+      (property "Reference" "R" (at 13.97 6.35 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Value" "RC2010JK-0710KL" (at 13.97 3.81 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Footprint" "RESC5025X65N" (at 13.97 1.27 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Datasheet" "https://www.arrow.com/en/products/rc2010jk-0710kl/yageo" (at 13.97 -1.27 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Description" "Res Thick Film 2010 10K Ohm 5% 0.75W(3/4W) +/-100ppm/C Pad SMD T/R" (at 13.97 -3.81 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Height" "0.65" (at 13.97 -6.35 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Manufacturer_Name" "KEMET" (at 13.97 -8.89 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Manufacturer_Part_Number" "RC2010JK-0710KL" (at 13.97 -11.43 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Mouser Part Number" "603-RC2010JK-0710KL" (at 13.97 -13.97 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/YAGEO/RC2010JK-0710KL?qs=sNpmnPgvziOLj5uuquGIow%3D%3D" (at 13.97 -16.51 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Arrow Part Number" "RC2010JK-0710KL" (at 13.97 -19.05 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Arrow Price/Stock" "https://www.arrow.com/en/products/rc2010jk-0710kl/yageo" (at 13.97 -21.59 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Mouser Testing Part Number" "" (at 13.97 -24.13 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Mouser Testing Price/Stock" "" (at 13.97 -26.67 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "ki_description" "Res Thick Film 2010 10K Ohm 5% 0.75W(3/4W) +/-100ppm/C Pad SMD T/R" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "RC2010JK-0710KL_0_0"
+        (pin passive line (at 0 0 0) (length 5.08)
+          (name "~" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 17.78 0 180) (length 5.08)
+          (name "~" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+      (symbol "RC2010JK-0710KL_0_1"
+        (polyline
+          (pts
+            (xy 5.08 1.27)
+            (xy 12.7 1.27)
+            (xy 12.7 -1.27)
+            (xy 5.08 -1.27)
+            (xy 5.08 1.27)
+          )
+          (stroke (width 0.1524) (type solid))
+          (fill (type none))
+        )
+      )
+    )
     (symbol "SamacSys_Parts:RK73H1ETTP75R0F" (pin_names (offset 0.762)) (in_bom yes) (on_board yes)
       (property "Reference" "R" (at 13.97 6.35 0)
         (effects (font (size 1.27 1.27)) (justify left))
@@ -1651,6 +1721,10 @@
     (stroke (width 0) (type default))
     (uuid 293a1de3-ddcb-47f3-9ef9-593933fcc2ec)
   )
+  (wire (pts (xy 50.8 62.23) (xy 50.8 76.2))
+    (stroke (width 0) (type default))
+    (uuid 29dc76fe-8d13-495c-8b30-46098f5f4a74)
+  )
   (wire (pts (xy 127 29.21) (xy 127 30.48))
     (stroke (width 0) (type default))
     (uuid 2e7604af-8ab8-4e32-a85e-79d72e321bdd)
@@ -1807,10 +1881,6 @@
     (stroke (width 0) (type default))
     (uuid 706dd438-519c-4fa6-a688-1b7766d04cca)
   )
-  (wire (pts (xy 33.02 62.23) (xy 73.66 62.23))
-    (stroke (width 0) (type default))
-    (uuid 734ebece-ad02-499d-8dac-d3b795eec059)
-  )
   (wire (pts (xy 87.63 119.38) (xy 87.63 129.54))
     (stroke (width 0) (type default))
     (uuid 753f1a8b-ad0c-47e6-8e4b-1e7c1e382b32)
@@ -1854,6 +1924,10 @@
   (wire (pts (xy 177.8 109.22) (xy 172.72 109.22))
     (stroke (width 0) (type default))
     (uuid 860a5d9a-fc14-47b1-808c-c443279b794a)
+  )
+  (wire (pts (xy 73.66 62.23) (xy 50.8 62.23))
+    (stroke (width 0) (type default))
+    (uuid 865c7009-88e9-4a74-95db-eced42d9a79f)
   )
   (wire (pts (xy 170.18 114.3) (xy 170.18 121.92))
     (stroke (width 0) (type default))
@@ -2443,10 +2517,6 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 5503c5b7-c0f7-46ee-b596-4b17d5b05744)
   )
-  (hierarchical_label "~{CS}" (shape input) (at 33.02 62.23 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 5d2cd429-0613-4c80-b7a1-8b8552c8219e)
-  )
   (hierarchical_label "~{RST}" (shape input) (at 33.02 64.77 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid b2aa5f6f-8ed5-414d-8e71-2a4dc1e8ea6c)
@@ -2473,17 +2543,14 @@
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
           (reference "#PWR062") (unit 1)
         )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/cb9cb53b-814d-4bdc-b9ad-369142f8d2c5"
-          (reference "#PWR075") (unit 1)
-        )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
           (reference "#PWR079") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0117") (unit 1)
+          (reference "#PWR071") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR0101") (unit 1)
+          (reference "#PWR088") (unit 1)
         )
       )
     )
@@ -2546,17 +2613,14 @@
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
           (reference "D3") (unit 1)
         )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/cb9cb53b-814d-4bdc-b9ad-369142f8d2c5"
-          (reference "D8") (unit 1)
-        )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
           (reference "D9") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "D13") (unit 1)
+          (reference "D7") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "D11") (unit 1)
+          (reference "D9") (unit 1)
         )
       )
     )
@@ -2565,7 +2629,7 @@
   (symbol (lib_id "power:GNDA") (at 83.82 182.88 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 073e8743-8358-465b-94c4-b9bc88ad8475)
-    (property "Reference" "#PWR0106" (at 83.82 189.23 0)
+    (property "Reference" "#PWR060" (at 83.82 189.23 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDA" (at 83.82 187.0155 0)
@@ -2581,10 +2645,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0106") (unit 1)
+          (reference "#PWR060") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR090") (unit 1)
+          (reference "#PWR077") (unit 1)
         )
       )
     )
@@ -2657,22 +2721,22 @@
       )
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "J9") (unit 1)
+          (reference "J4") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "J8") (unit 1)
+          (reference "J5") (unit 1)
         )
       )
     )
   )
 
   (symbol (lib_id "SamacSys_Parts:ERJ-P06F2321V") (at 55.88 76.2 270) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom yes) (on_board yes) (dnp no)
     (uuid 167d65c6-3060-46d9-8bed-694f27a04d3e)
-    (property "Reference" "R34" (at 57.8612 84.4463 90)
+    (property "Reference" "R15" (at 58.42 83.82 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "2.32k, <=1%" (at 57.8612 86.3673 90)
+    (property "Value" "2.32k, <=1%" (at 58.42 85.741 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "SamacSys_Parts:ERJP06__0805_" (at 57.15 90.17 0)
@@ -2710,10 +2774,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "R34") (unit 1)
+          (reference "R15") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "R23") (unit 1)
+          (reference "R27") (unit 1)
         )
       )
     )
@@ -2722,7 +2786,7 @@
   (symbol (lib_id "SamacSys_Parts:RC1210FR-0749R9L") (at 50.8 130.81 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 175789c2-3399-407f-8573-7e2c1fe9870e)
-    (property "Reference" "R31" (at 59.69 128.5019 0)
+    (property "Reference" "R12" (at 59.69 128.5019 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "RC1210FR-0749R9L" (at 59.69 128.5019 0)
@@ -2763,10 +2827,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "R31") (unit 1)
+          (reference "R12") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "R20") (unit 1)
+          (reference "R24") (unit 1)
         )
       )
     )
@@ -2824,10 +2888,10 @@
           (reference "C9") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "C50") (unit 1)
+          (reference "C31") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "C39") (unit 1)
+          (reference "C42") (unit 1)
         )
       )
     )
@@ -2836,7 +2900,7 @@
   (symbol (lib_id "power:+3V3") (at 152.4 39.37 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 252de917-f00a-4fd5-8c12-3bc357317828)
-    (property "Reference" "#PWR0109" (at 152.4 43.18 0)
+    (property "Reference" "#PWR063" (at 152.4 43.18 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 152.4 35.8681 0)
@@ -2852,10 +2916,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0109") (unit 1)
+          (reference "#PWR063") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR093") (unit 1)
+          (reference "#PWR080") (unit 1)
         )
       )
     )
@@ -2922,10 +2986,10 @@
           (reference "C6") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "C48") (unit 1)
+          (reference "C29") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "C37") (unit 1)
+          (reference "C40") (unit 1)
         )
       )
     )
@@ -2952,17 +3016,14 @@
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
           (reference "#PWR063") (unit 1)
         )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/cb9cb53b-814d-4bdc-b9ad-369142f8d2c5"
-          (reference "#PWR073") (unit 1)
-        )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
           (reference "#PWR077") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0112") (unit 1)
+          (reference "#PWR066") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR096") (unit 1)
+          (reference "#PWR083") (unit 1)
         )
       )
     )
@@ -2989,17 +3050,14 @@
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
           (reference "#PWR045") (unit 1)
         )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/cb9cb53b-814d-4bdc-b9ad-369142f8d2c5"
-          (reference "#PWR072") (unit 1)
-        )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
           (reference "#PWR076") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0111") (unit 1)
+          (reference "#PWR065") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR095") (unit 1)
+          (reference "#PWR082") (unit 1)
         )
       )
     )
@@ -3057,10 +3115,10 @@
           (reference "C9") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "C52") (unit 1)
+          (reference "C33") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "C41") (unit 1)
+          (reference "C44") (unit 1)
         )
       )
     )
@@ -3069,7 +3127,7 @@
   (symbol (lib_id "power:GNDA") (at 45.72 41.91 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 58f9e0be-c3d6-4931-834f-48a667711fcc)
-    (property "Reference" "#PWR0102" (at 45.72 48.26 0)
+    (property "Reference" "#PWR055" (at 45.72 48.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDA" (at 45.72 46.0455 0)
@@ -3085,10 +3143,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0102") (unit 1)
+          (reference "#PWR055") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR086") (unit 1)
+          (reference "#PWR072") (unit 1)
         )
       )
     )
@@ -3097,7 +3155,7 @@
   (symbol (lib_id "SamacSys_Parts:RK73H1ETTP75R0F") (at 128.27 148.59 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5b6682b6-8fe9-424b-8eba-3ffd130b8188)
-    (property "Reference" "R35" (at 130.2512 156.8363 90)
+    (property "Reference" "R16" (at 130.2512 156.8363 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "75R" (at 130.2512 158.7573 90)
@@ -3138,10 +3196,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "R35") (unit 1)
+          (reference "R16") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "R24") (unit 1)
+          (reference "R28") (unit 1)
         )
       )
     )
@@ -3168,17 +3226,14 @@
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
           (reference "#PWR063") (unit 1)
         )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/cb9cb53b-814d-4bdc-b9ad-369142f8d2c5"
-          (reference "#PWR073") (unit 1)
-        )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
           (reference "#PWR077") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0108") (unit 1)
+          (reference "#PWR062") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR092") (unit 1)
+          (reference "#PWR079") (unit 1)
         )
       )
     )
@@ -3238,10 +3293,80 @@
       )
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "Y2") (unit 1)
+          (reference "Y1") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "Y1") (unit 1)
+          (reference "Y2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "SamacSys_Parts:RC2010JK-0710KL") (at 50.8 93.98 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 7ec3543c-b3fd-47f7-84ef-5d145a0144db)
+    (property "Reference" "R10" (at 44.45 83.82 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Value" "10k" (at 44.45 85.741 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "SamacSys_Parts:RESC5025X65N" (at 49.53 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Datasheet" "https://www.arrow.com/en/products/rc2010jk-0710kl/yageo" (at 52.07 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Description" "Res Thick Film 2010 10K Ohm 5% 0.75W(3/4W) +/-100ppm/C Pad SMD T/R" (at 54.61 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Height" "0.65" (at 57.15 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Manufacturer_Name" "KEMET" (at 59.69 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Manufacturer_Part_Number" "RC2010JK-0710KL" (at 62.23 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Mouser Part Number" "603-RC2010JK-0710KL" (at 64.77 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/YAGEO/RC2010JK-0710KL?qs=sNpmnPgvziOLj5uuquGIow%3D%3D" (at 67.31 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Arrow Part Number" "RC2010JK-0710KL" (at 69.85 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/rc2010jk-0710kl/yageo" (at 72.39 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Mouser Testing Part Number" "" (at 74.93 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Mouser Testing Price/Stock" "" (at 77.47 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (pin "1" (uuid 3c6f0ece-18fa-48dd-974a-b9349fb3572f))
+    (pin "2" (uuid 6d8008dc-cba8-45f9-b256-a48043835be2))
+    (instances
+      (project "Oro Testbed v2"
+        (path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
+          (reference "R10") (unit 1)
+        )
+        (path "/3d0fc623-63eb-45e5-a304-e470d9b3a173/7310340d-2c15-4c32-b17d-f4923dae9f8e"
+          (reference "R8") (unit 1)
+        )
+      )
+      (project "Oro Link rev2"
+        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/1b3eede1-74b0-4c0b-b4f1-7ec1bfc1f54f"
+          (reference "R16") (unit 1)
+        )
+        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
+          (reference "R10") (unit 1)
+        )
+        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
+          (reference "R22") (unit 1)
         )
       )
     )
@@ -3299,10 +3424,10 @@
           (reference "C9") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "C54") (unit 1)
+          (reference "C35") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "C43") (unit 1)
+          (reference "C46") (unit 1)
         )
       )
     )
@@ -3311,7 +3436,7 @@
   (symbol (lib_id "SamacSys_Parts:CPDT-5V0U-HF") (at 212.09 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 840e9d02-63e8-40fb-921d-c7fc59632483)
-    (property "Reference" "D12" (at 229.87 70.7009 0)
+    (property "Reference" "D6" (at 229.87 70.7009 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "CPDT-5V0U-HF" (at 229.87 72.6219 0)
@@ -3353,10 +3478,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "D12") (unit 1)
+          (reference "D6") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "D10") (unit 1)
+          (reference "D8") (unit 1)
         )
       )
     )
@@ -3414,10 +3539,10 @@
           (reference "C9") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "C53") (unit 1)
+          (reference "C34") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "C42") (unit 1)
+          (reference "C45") (unit 1)
         )
       )
     )
@@ -3426,7 +3551,7 @@
   (symbol (lib_id "SamacSys_Parts:RK73H1ETTP75R0F") (at 151.13 148.59 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8c3590ca-d449-4dac-9fba-b11b068e73bd)
-    (property "Reference" "R38" (at 153.1112 156.8363 90)
+    (property "Reference" "R19" (at 153.1112 156.8363 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "75R" (at 153.1112 158.7573 90)
@@ -3467,10 +3592,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "R38") (unit 1)
+          (reference "R19") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "R27") (unit 1)
+          (reference "R31") (unit 1)
         )
       )
     )
@@ -3479,7 +3604,7 @@
   (symbol (lib_id "SamacSys_Parts:RK73H1ETTP75R0F") (at 143.51 148.59 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 902c3e93-26cd-44b4-97f8-8694e9f6caaf)
-    (property "Reference" "R37" (at 145.4912 156.8363 90)
+    (property "Reference" "R18" (at 145.4912 156.8363 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "75R" (at 145.4912 158.7573 90)
@@ -3520,10 +3645,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "R37") (unit 1)
+          (reference "R18") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "R26") (unit 1)
+          (reference "R30") (unit 1)
         )
       )
     )
@@ -3581,10 +3706,10 @@
           (reference "C9") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "C55") (unit 1)
+          (reference "C36") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "C44") (unit 1)
+          (reference "C47") (unit 1)
         )
       )
     )
@@ -3593,7 +3718,7 @@
   (symbol (lib_id "power:GNDA") (at 55.88 93.98 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 95f4c061-c9e3-4244-95d2-c4e966d0b5f4)
-    (property "Reference" "#PWR0104" (at 55.88 100.33 0)
+    (property "Reference" "#PWR058" (at 55.88 100.33 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDA" (at 55.88 98.1155 0)
@@ -3609,10 +3734,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0104") (unit 1)
+          (reference "#PWR058") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR088") (unit 1)
+          (reference "#PWR075") (unit 1)
         )
       )
     )
@@ -3621,7 +3746,7 @@
   (symbol (lib_id "power:+3V3") (at 55.88 24.13 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 960121d6-81a5-4427-b794-f1dba7f58587)
-    (property "Reference" "#PWR0103" (at 55.88 27.94 0)
+    (property "Reference" "#PWR057" (at 55.88 27.94 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 55.88 20.6281 0)
@@ -3637,10 +3762,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0103") (unit 1)
+          (reference "#PWR057") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR087") (unit 1)
+          (reference "#PWR074") (unit 1)
         )
       )
     )
@@ -3649,7 +3774,7 @@
   (symbol (lib_id "power:GNDA") (at 245.11 129.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 979ba95d-5f60-41f6-bf5e-7f29aee340ff)
-    (property "Reference" "#PWR0115" (at 245.11 135.89 0)
+    (property "Reference" "#PWR069" (at 245.11 135.89 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDA" (at 245.11 133.35 0)
@@ -3665,10 +3790,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0115") (unit 1)
+          (reference "#PWR069") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR099") (unit 1)
+          (reference "#PWR086") (unit 1)
         )
       )
     )
@@ -3677,7 +3802,7 @@
   (symbol (lib_id "SamacSys_Parts:AC0805FR-07470RL") (at 246.38 119.38 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9b981d4b-b92a-4a1a-b263-1ed7da1425c1)
-    (property "Reference" "R40" (at 255.27 115.1509 0)
+    (property "Reference" "R21" (at 255.27 115.1509 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "470R" (at 255.27 117.0719 0)
@@ -3718,10 +3843,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "R40") (unit 1)
+          (reference "R21") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "R29") (unit 1)
+          (reference "R33") (unit 1)
         )
       )
     )
@@ -3730,7 +3855,7 @@
   (symbol (lib_id "Oro:FerriteBead") (at 83.82 105.41 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a1031079-2221-4320-bccf-f24365fb9936)
-    (property "Reference" "FB8" (at 86.36 111.76 90)
+    (property "Reference" "FB2" (at 86.36 111.76 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "BLM02PX600SN1D" (at 86.36 113.681 90)
@@ -3771,10 +3896,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "FB8") (unit 1)
+          (reference "FB2") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "FB7") (unit 1)
+          (reference "FB3") (unit 1)
         )
       )
     )
@@ -3823,14 +3948,11 @@
     (pin "2" (uuid 950fe643-9862-4a72-a635-10ae2c6a0e6e))
     (instances
       (project "Oro Link rev2"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/cb9cb53b-814d-4bdc-b9ad-369142f8d2c5"
-          (reference "C31") (unit 1)
-        )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "C51") (unit 1)
+          (reference "C32") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "C40") (unit 1)
+          (reference "C43") (unit 1)
         )
       )
     )
@@ -3839,7 +3961,7 @@
   (symbol (lib_id "power:+3V3") (at 83.82 104.14 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a8178754-3444-4842-a14a-2918b719bb0e)
-    (property "Reference" "#PWR0105" (at 83.82 107.95 0)
+    (property "Reference" "#PWR059" (at 83.82 107.95 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 83.82 100.6381 0)
@@ -3855,10 +3977,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0105") (unit 1)
+          (reference "#PWR059") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR089") (unit 1)
+          (reference "#PWR076") (unit 1)
         )
       )
     )
@@ -3867,7 +3989,7 @@
   (symbol (lib_id "SamacSys_Parts:RC1210FR-0749R9L") (at 50.8 124.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ae0d22cf-3470-4136-8a87-9d06515c40d4)
-    (property "Reference" "R30" (at 59.69 122.1519 0)
+    (property "Reference" "R11" (at 59.69 122.1519 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "RC1210FR-0749R9L" (at 59.69 122.1519 0)
@@ -3908,10 +4030,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "R30") (unit 1)
+          (reference "R11") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "R19") (unit 1)
+          (reference "R23") (unit 1)
         )
       )
     )
@@ -3938,17 +4060,14 @@
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
           (reference "#PWR046") (unit 1)
         )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/cb9cb53b-814d-4bdc-b9ad-369142f8d2c5"
-          (reference "#PWR074") (unit 1)
-        )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
           (reference "#PWR078") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0114") (unit 1)
+          (reference "#PWR068") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR098") (unit 1)
+          (reference "#PWR085") (unit 1)
         )
       )
     )
@@ -4006,10 +4125,38 @@
           (reference "C9") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "C56") (unit 1)
+          (reference "C37") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "C45") (unit 1)
+          (reference "C48") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 50.8 93.98 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid b5351dbd-41a3-4327-957d-99a3741fe3ba)
+    (property "Reference" "#PWR056" (at 50.8 100.33 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 50.8 98.1155 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 50.8 93.98 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 50.8 93.98 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid b51c61d7-8f55-4e54-b705-31a9222f9c9d))
+    (instances
+      (project "Oro Link rev2"
+        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
+          (reference "#PWR056") (unit 1)
+        )
+        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
+          (reference "#PWR073") (unit 1)
         )
       )
     )
@@ -4018,7 +4165,7 @@
   (symbol (lib_id "SamacSys_Parts:RC1210FR-0749R9L") (at 50.8 153.67 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b90ec79e-2b62-4dc6-a42d-0032e009f175)
-    (property "Reference" "R33" (at 59.69 151.3619 0)
+    (property "Reference" "R14" (at 59.69 151.3619 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "RC1210FR-0749R9L" (at 59.69 151.3619 0)
@@ -4059,10 +4206,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "R33") (unit 1)
+          (reference "R14") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "R22") (unit 1)
+          (reference "R26") (unit 1)
         )
       )
     )
@@ -4089,17 +4236,14 @@
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
           (reference "#PWR062") (unit 1)
         )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/cb9cb53b-814d-4bdc-b9ad-369142f8d2c5"
-          (reference "#PWR075") (unit 1)
-        )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
           (reference "#PWR079") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0116") (unit 1)
+          (reference "#PWR070") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR0100") (unit 1)
+          (reference "#PWR087") (unit 1)
         )
       )
     )
@@ -4108,7 +4252,7 @@
   (symbol (lib_id "power:GND") (at 127 30.48 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bb5e47cf-0e77-4a8e-b2a5-a5a0d14fc915)
-    (property "Reference" "#PWR0107" (at 127 36.83 0)
+    (property "Reference" "#PWR061" (at 127 36.83 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 127 34.6155 0)
@@ -4124,10 +4268,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0107") (unit 1)
+          (reference "#PWR061") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR091") (unit 1)
+          (reference "#PWR078") (unit 1)
         )
       )
     )
@@ -4136,7 +4280,7 @@
   (symbol (lib_id "SamacSys_Parts:RK73H1ETTP75R0F") (at 135.89 148.59 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c41826f7-a05d-4524-b2dc-54689899322b)
-    (property "Reference" "R36" (at 137.8712 156.8363 90)
+    (property "Reference" "R17" (at 137.8712 156.8363 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "75R" (at 137.8712 158.7573 90)
@@ -4177,10 +4321,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "R36") (unit 1)
+          (reference "R17") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "R25") (unit 1)
+          (reference "R29") (unit 1)
         )
       )
     )
@@ -4189,7 +4333,7 @@
   (symbol (lib_id "SamacSys_Parts:AC0805FR-07470RL") (at 246.38 111.76 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cbfac9b6-861b-4ca0-9d69-8598ea5af2ca)
-    (property "Reference" "R39" (at 255.27 107.5309 0)
+    (property "Reference" "R20" (at 255.27 107.5309 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "470R" (at 255.27 109.4519 0)
@@ -4230,10 +4374,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "R39") (unit 1)
+          (reference "R20") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "R28") (unit 1)
+          (reference "R32") (unit 1)
         )
       )
     )
@@ -4257,14 +4401,11 @@
     (pin "1" (uuid aee61b0c-a942-40f2-9016-be54d8eadad2))
     (instances
       (project "Oro Link rev2"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/cb9cb53b-814d-4bdc-b9ad-369142f8d2c5"
-          (reference "#PWR060") (unit 1)
-        )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0113") (unit 1)
+          (reference "#PWR067") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR097") (unit 1)
+          (reference "#PWR084") (unit 1)
         )
       )
     )
@@ -4316,17 +4457,14 @@
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
           (reference "C30") (unit 1)
         )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/cb9cb53b-814d-4bdc-b9ad-369142f8d2c5"
-          (reference "C34") (unit 1)
-        )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
           (reference "C35") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "C58") (unit 1)
+          (reference "C39") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "C47") (unit 1)
+          (reference "C50") (unit 1)
         )
       )
     )
@@ -4335,7 +4473,7 @@
   (symbol (lib_id "SamacSys_Parts:RC1210FR-0749R9L") (at 50.8 147.32 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid df608411-f2bd-4c59-a00a-9cb9271dc6aa)
-    (property "Reference" "R32" (at 59.69 145.0119 0)
+    (property "Reference" "R13" (at 59.69 145.0119 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "RC1210FR-0749R9L" (at 59.69 145.0119 0)
@@ -4376,10 +4514,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "R32") (unit 1)
+          (reference "R13") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "R21") (unit 1)
+          (reference "R25") (unit 1)
         )
       )
     )
@@ -4437,10 +4575,10 @@
           (reference "C9") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "C57") (unit 1)
+          (reference "C38") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "C46") (unit 1)
+          (reference "C49") (unit 1)
         )
       )
     )
@@ -4521,7 +4659,7 @@
       )
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "IC6") (unit 1)
+          (reference "IC4") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
           (reference "IC5") (unit 1)
@@ -4533,7 +4671,7 @@
   (symbol (lib_id "power:GNDA") (at 165.1 80.01 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f0026dc2-9281-43e4-ac56-5479c4e46a1c)
-    (property "Reference" "#PWR0110" (at 165.1 86.36 0)
+    (property "Reference" "#PWR064" (at 165.1 86.36 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDA" (at 165.1 84.1455 0)
@@ -4549,10 +4687,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR0110") (unit 1)
+          (reference "#PWR064") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR094") (unit 1)
+          (reference "#PWR081") (unit 1)
         )
       )
     )
@@ -4561,7 +4699,7 @@
   (symbol (lib_id "SamacSys_Parts:PT61017XPEL") (at 91.44 129.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f5228a8a-c392-48f4-a943-c95626f1ee7a)
-    (property "Reference" "T2" (at 105.41 124.0409 0)
+    (property "Reference" "T1" (at 105.41 124.0409 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "PT61017XPEL" (at 105.41 125.9619 0)
@@ -4616,10 +4754,10 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "T2") (unit 1)
+          (reference "T1") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "T1") (unit 1)
+          (reference "T2") (unit 1)
         )
       )
     )
@@ -4677,10 +4815,10 @@
           (reference "C9") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "C49") (unit 1)
+          (reference "C30") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "C38") (unit 1)
+          (reference "C41") (unit 1)
         )
       )
     )
