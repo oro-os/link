@@ -9,6 +9,8 @@
     (date "2023-03-01")
     (rev "2")
     (company "Oro Operating System")
+    (comment 1 "://oro.sh")
+    (comment 2 "Joshua Lee Junon")
   )
 
   (lib_symbols
@@ -1806,7 +1808,7 @@
   (symbol (lib_id "SamacSys_Parts:UUP1H0R1MCL1GS") (at 92.71 125.73 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1cfa70f5-4f15-407d-99c1-ebb0ae512f1e)
-    (property "Reference" "C59" (at 91.44 127 0)
+    (property "Reference" "C58" (at 91.44 127 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "0.1u" (at 82.55 124.46 0)
@@ -1847,7 +1849,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "C59") (unit 1)
+          (reference "C58") (unit 1)
         )
       )
     )
@@ -1920,7 +1922,7 @@
   (symbol (lib_id "power:GND") (at 165.1 97.79 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 31c6d0b2-eb16-4d34-b888-198b0dced39a)
-    (property "Reference" "#PWR0110" (at 165.1 104.14 0)
+    (property "Reference" "#PWR0140" (at 165.1 104.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 165.1 101.9255 0)
@@ -1936,7 +1938,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR0110") (unit 1)
+          (reference "#PWR0140") (unit 1)
         )
       )
     )
@@ -1989,7 +1991,7 @@
           (reference "C30") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "C60") (unit 1)
+          (reference "C59") (unit 1)
         )
       )
     )
@@ -1998,7 +2000,7 @@
   (symbol (lib_id "power:GND") (at 113.03 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 57e2be60-c43c-4d0b-84e6-8d80384a06a8)
-    (property "Reference" "#PWR0109" (at 113.03 80.01 0)
+    (property "Reference" "#PWR0139" (at 113.03 80.01 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 113.03 77.7955 0)
@@ -2014,7 +2016,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR0109") (unit 1)
+          (reference "#PWR0139") (unit 1)
         )
       )
     )
@@ -2023,7 +2025,7 @@
   (symbol (lib_id "SamacSys_Parts:UUP1H0R1MCL1GS") (at 80.01 138.43 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 582fc32c-688e-470e-aa77-589f06d76d42)
-    (property "Reference" "C58" (at 91.44 139.7 0)
+    (property "Reference" "C57" (at 91.44 139.7 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "0.1u" (at 90.17 139.7 0)
@@ -2064,7 +2066,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "C58") (unit 1)
+          (reference "C57") (unit 1)
         )
       )
     )
@@ -2092,7 +2094,7 @@
           (reference "#PWR051") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR0112") (unit 1)
+          (reference "#PWR0142") (unit 1)
         )
       )
     )
@@ -2101,7 +2103,7 @@
   (symbol (lib_id "power:GND") (at 100.33 143.51 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8ed1e282-67fe-4aed-9863-8bee2d68bfd3)
-    (property "Reference" "#PWR0107" (at 100.33 149.86 0)
+    (property "Reference" "#PWR0137" (at 100.33 149.86 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 100.33 147.6455 0)
@@ -2117,7 +2119,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR0107") (unit 1)
+          (reference "#PWR0137") (unit 1)
         )
       )
     )
@@ -2126,7 +2128,7 @@
   (symbol (lib_id "SamacSys_Parts:206-124") (at 124.46 74.93 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 91be2c4a-5970-4859-b3c6-1beefcce36e9)
-    (property "Reference" "S2" (at 135.89 68.58 0)
+    (property "Reference" "S3" (at 135.89 68.58 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "206-124" (at 135.89 71.3519 0)
@@ -2181,7 +2183,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "S2") (unit 1)
+          (reference "S3") (unit 1)
         )
       )
     )
@@ -2209,7 +2211,7 @@
           (reference "#PWR046") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR0114") (unit 1)
+          (reference "#PWR0144") (unit 1)
         )
       )
     )
@@ -2237,7 +2239,7 @@
           (reference "#PWR052") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR0116") (unit 1)
+          (reference "#PWR0146") (unit 1)
         )
       )
     )
@@ -2246,7 +2248,7 @@
   (symbol (lib_id "SamacSys_Parts:206-125") (at 168.91 74.93 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b0f0699a-6c79-4ea3-adf4-12e37f73c18b)
-    (property "Reference" "S3" (at 180.34 68.58 0)
+    (property "Reference" "S4" (at 180.34 68.58 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "206-125" (at 180.34 71.3519 0)
@@ -2305,7 +2307,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "S3") (unit 1)
+          (reference "S4") (unit 1)
         )
       )
     )
@@ -2314,7 +2316,7 @@
   (symbol (lib_id "SamacSys_Parts:UUP1H0R1MCL1GS") (at 80.01 132.08 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b2fa6d01-135d-450b-8134-31289fee8542)
-    (property "Reference" "C57" (at 91.44 133.35 0)
+    (property "Reference" "C56" (at 91.44 133.35 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "0.1u" (at 90.17 133.35 0)
@@ -2355,7 +2357,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "C57") (unit 1)
+          (reference "C56") (unit 1)
         )
       )
     )
@@ -2383,7 +2385,7 @@
           (reference "#PWR050") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR0111") (unit 1)
+          (reference "#PWR0141") (unit 1)
         )
       )
     )
@@ -2392,7 +2394,7 @@
   (symbol (lib_id "power:+3V3") (at 104.14 74.93 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b565ef16-b0de-4fc0-a298-7eece67202e4)
-    (property "Reference" "#PWR0108" (at 104.14 78.74 0)
+    (property "Reference" "#PWR0138" (at 104.14 78.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 104.14 71.4281 0)
@@ -2408,7 +2410,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR0108") (unit 1)
+          (reference "#PWR0138") (unit 1)
         )
       )
     )
@@ -2417,7 +2419,7 @@
   (symbol (lib_id "power:+3V3") (at 72.39 138.43 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cdff9d65-6039-4089-af6b-9f2c426a84b3)
-    (property "Reference" "#PWR0106" (at 72.39 142.24 0)
+    (property "Reference" "#PWR0136" (at 72.39 142.24 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 72.39 134.9281 0)
@@ -2433,7 +2435,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR0106") (unit 1)
+          (reference "#PWR0136") (unit 1)
         )
       )
     )
@@ -2442,7 +2444,7 @@
   (symbol (lib_id "SamacSys_Parts:UUP1H0R1MCL1GS") (at 80.01 113.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid df2ffd48-73dd-4630-b51e-b397ba6d2f96)
-    (property "Reference" "C55" (at 91.44 114.3 0)
+    (property "Reference" "C54" (at 91.44 114.3 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "0.1u" (at 90.17 114.3 0)
@@ -2483,7 +2485,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "C55") (unit 1)
+          (reference "C54") (unit 1)
         )
       )
     )
@@ -2558,7 +2560,7 @@
       )
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "J9") (unit 1)
+          (reference "J27") (unit 1)
         )
       )
     )
@@ -2586,7 +2588,7 @@
           (reference "#PWR063") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR0113") (unit 1)
+          (reference "#PWR0143") (unit 1)
         )
       )
     )
@@ -2651,7 +2653,7 @@
           (reference "D6") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "D14") (unit 1)
+          (reference "D11") (unit 1)
         )
       )
     )
@@ -2679,7 +2681,7 @@
           (reference "#PWR049") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR0115") (unit 1)
+          (reference "#PWR0145") (unit 1)
         )
       )
     )
@@ -2688,7 +2690,7 @@
   (symbol (lib_id "SamacSys_Parts:UUP1H0R1MCL1GS") (at 80.01 119.38 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f40cd09b-237b-4f7d-b25c-afbfc52ea367)
-    (property "Reference" "C56" (at 91.44 120.65 0)
+    (property "Reference" "C55" (at 91.44 120.65 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "0.1u" (at 90.17 120.65 0)
@@ -2729,7 +2731,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "C56") (unit 1)
+          (reference "C55") (unit 1)
         )
       )
     )

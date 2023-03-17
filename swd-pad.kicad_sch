@@ -9,6 +9,8 @@
     (date "2023-03-01")
     (rev "2")
     (company "Oro Operating System")
+    (comment 1 "://oro.sh")
+    (comment 2 "Joshua Lee Junon")
   )
 
   (lib_symbols
@@ -1806,7 +1808,7 @@
           (reference "#PWR062") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "#PWR095") (unit 1)
+          (reference "#PWR0131") (unit 1)
         )
       )
     )
@@ -1870,7 +1872,7 @@
           (reference "D3") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "D10") (unit 1)
+          (reference "D8") (unit 1)
         )
       )
     )
@@ -1923,7 +1925,7 @@
           (reference "D5") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "D11") (unit 1)
+          (reference "D9") (unit 1)
         )
       )
     )
@@ -1951,7 +1953,7 @@
           (reference "#PWR045") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "#PWR090") (unit 1)
+          (reference "#PWR0126") (unit 1)
         )
       )
     )
@@ -1982,7 +1984,7 @@
           (reference "#PWR050") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "#PWR093") (unit 1)
+          (reference "#PWR0129") (unit 1)
         )
       )
     )
@@ -1991,7 +1993,7 @@
   (symbol (lib_id "power:+3V3") (at 74.93 80.01 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 70b6ef1c-3703-4e6c-abd6-3be6bd054161)
-    (property "Reference" "#PWR089" (at 74.93 83.82 0)
+    (property "Reference" "#PWR0125" (at 74.93 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 74.93 76.5081 0)
@@ -2007,7 +2009,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "#PWR089") (unit 1)
+          (reference "#PWR0125") (unit 1)
         )
       )
     )
@@ -2016,7 +2018,7 @@
   (symbol (lib_id "Oro:OroConn6p") (at 149.86 78.74 0) (unit 1)
     (in_bom no) (on_board yes) (dnp no)
     (uuid 7c3d8a37-cbdf-4b29-aeed-f95b4cf28d44)
-    (property "Reference" "J6" (at 148.59 68.58 0)
+    (property "Reference" "J24" (at 148.59 68.58 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "OroConn6p" (at 149.86 93.1168 0)
@@ -2040,7 +2042,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "J6") (unit 1)
+          (reference "J24") (unit 1)
         )
       )
     )
@@ -2049,7 +2051,7 @@
   (symbol (lib_id "power:GND") (at 170.18 82.55 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a75f0ad6-e9f7-40d5-9845-b3d1feadcaf5)
-    (property "Reference" "#PWR094" (at 170.18 88.9 0)
+    (property "Reference" "#PWR0130" (at 170.18 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 170.18 86.6855 0)
@@ -2065,7 +2067,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "#PWR094") (unit 1)
+          (reference "#PWR0130") (unit 1)
         )
       )
     )
@@ -2093,7 +2095,7 @@
           (reference "#PWR046") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "#PWR092") (unit 1)
+          (reference "#PWR0128") (unit 1)
         )
       )
     )
@@ -2121,7 +2123,7 @@
           (reference "#PWR063") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "#PWR091") (unit 1)
+          (reference "#PWR0127") (unit 1)
         )
       )
     )
@@ -2136,11 +2138,23 @@
     (property "Value" "BYV10D-600PJ" (at 96.52 76.4046 0)
       (effects (font (size 1.524 1.524)))
     )
-    (property "Footprint" "DPAK3_TO-252_WEN" (at 96.52 76.454 0)
+    (property "Footprint" "BYV10D-600PJ:BYV10D-600PJ" (at 96.52 76.454 0)
       (effects (font (size 1.524 1.524)) hide)
     )
-    (property "Datasheet" "" (at 83.82 80.01 0)
-      (effects (font (size 1.524 1.524)))
+    (property "Datasheet" "https://www.mouser.de/datasheet/2/848/BYV10D_600P-1947876.pdf" (at 83.82 80.01 0)
+      (effects (font (size 1.524 1.524)) hide)
+    )
+    (property "Manufacturer_Name" "WeEn Semiconductors" (at 83.82 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Manufacturer_Part_Number" "BYV10D-600PJ" (at 83.82 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Mouser Part Number" "771-BYV10D-600PJ" (at 83.82 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Mouser Price/Stock" "https://www.mouser.de/ProductDetail/WeEn-Semiconductors/BYV10D-600PJ" (at 83.82 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
     )
     (pin "1" (uuid d1cd9925-20e1-46ee-be04-b8ca10992128))
     (pin "2" (uuid 6b55bf73-4201-4eec-ab20-fef205298eb6))
@@ -2201,7 +2215,7 @@
           (reference "C30") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "C51") (unit 1)
+          (reference "C52") (unit 1)
         )
       )
     )

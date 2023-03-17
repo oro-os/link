@@ -9,6 +9,8 @@
     (date "2023-03-01")
     (rev "2")
     (company "Oro Operating System")
+    (comment 1 "://oro.sh")
+    (comment 2 "Joshua Lee Junon")
   )
 
   (lib_symbols
@@ -593,7 +595,7 @@
           (reference "D?") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
-          (reference "D12") (unit 1)
+          (reference "D10") (unit 1)
         )
       )
     )
@@ -602,7 +604,7 @@
   (symbol (lib_id "SamacSys_Parts:10129378-902003BLF") (at 124.46 104.14 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 35782f9f-5529-4814-88eb-e2827a5cdca5)
-    (property "Reference" "J8" (at 114.3 98.409 0)
+    (property "Reference" "J26" (at 114.3 98.409 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10129378-902003BLF" (at 114.3 100.33 0)
@@ -643,7 +645,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
-          (reference "J8") (unit 1)
+          (reference "J26") (unit 1)
         )
       )
     )
@@ -652,7 +654,7 @@
   (symbol (lib_id "SamacSys_Parts:10129378-902003BLF") (at 124.46 91.44 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3902f9dd-e9ca-423a-98d9-e55399f8737d)
-    (property "Reference" "J7" (at 114.3 85.709 0)
+    (property "Reference" "J25" (at 114.3 85.709 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10129378-902003BLF" (at 114.3 87.63 0)
@@ -693,7 +695,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
-          (reference "J7") (unit 1)
+          (reference "J25") (unit 1)
         )
       )
     )
@@ -702,7 +704,7 @@
   (symbol (lib_id "power:GNDPWR") (at 196.85 109.22 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4973befb-bed4-4261-8240-4488e84718fc)
-    (property "Reference" "#PWR099" (at 196.85 114.3 0)
+    (property "Reference" "#PWR0135" (at 196.85 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDPWR" (at 196.723 112.9491 0)
@@ -718,7 +720,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
-          (reference "#PWR099") (unit 1)
+          (reference "#PWR0135") (unit 1)
         )
       )
     )
@@ -727,7 +729,7 @@
   (symbol (lib_id "power:GNDPWR") (at 165.1 116.84 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c666d049-653b-4e08-95c4-96f0cfff6659)
-    (property "Reference" "#PWR097" (at 165.1 121.92 0)
+    (property "Reference" "#PWR0133" (at 165.1 121.92 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDPWR" (at 164.973 120.5691 0)
@@ -743,7 +745,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
-          (reference "#PWR097") (unit 1)
+          (reference "#PWR0133") (unit 1)
         )
       )
     )
@@ -752,7 +754,7 @@
   (symbol (lib_id "SamacSys_Parts:HV2225Y102KXMATHV") (at 168.91 116.84 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d4bc5366-5bbb-4692-ac35-d26fd7128ca7)
-    (property "Reference" "C52" (at 175.26 111.3409 0)
+    (property "Reference" "C53" (at 175.26 111.3409 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1nF 5kV" (at 175.26 113.2619 0)
@@ -793,7 +795,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
-          (reference "C52") (unit 1)
+          (reference "C53") (unit 1)
         )
       )
     )
@@ -802,7 +804,7 @@
   (symbol (lib_id "power:GND") (at 185.42 116.84 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid dccb56ba-2020-4de1-9951-637250f00472)
-    (property "Reference" "#PWR098" (at 185.42 123.19 0)
+    (property "Reference" "#PWR0134" (at 185.42 123.19 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 185.42 120.9755 0)
@@ -818,7 +820,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
-          (reference "#PWR098") (unit 1)
+          (reference "#PWR0134") (unit 1)
         )
       )
     )
@@ -827,7 +829,7 @@
   (symbol (lib_id "power:GNDPWR") (at 153.67 109.22 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid dfd93511-44fa-4b36-a4a2-2a46d203a9d5)
-    (property "Reference" "#PWR096" (at 153.67 114.3 0)
+    (property "Reference" "#PWR0132" (at 153.67 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDPWR" (at 153.543 112.9491 0)
@@ -843,7 +845,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6f0a294d-fd09-4bb5-9458-a2c8fc68902c"
-          (reference "#PWR096") (unit 1)
+          (reference "#PWR0132") (unit 1)
         )
       )
     )
