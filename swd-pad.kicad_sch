@@ -1715,7 +1715,7 @@
           (reference "#PWR062") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "#PWR0131") (unit 1)
+          (reference "#PWR076") (unit 1)
         )
       )
     )
@@ -1779,7 +1779,7 @@
           (reference "D3") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "D8") (unit 1)
+          (reference "D7") (unit 1)
         )
       )
     )
@@ -1832,7 +1832,7 @@
           (reference "D5") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "D9") (unit 1)
+          (reference "D8") (unit 1)
         )
       )
     )
@@ -1860,7 +1860,7 @@
           (reference "#PWR045") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "#PWR0126") (unit 1)
+          (reference "#PWR073") (unit 1)
         )
       )
     )
@@ -1891,7 +1891,7 @@
           (reference "#PWR050") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "#PWR0129") (unit 1)
+          (reference "#PWR074") (unit 1)
         )
       )
     )
@@ -1900,7 +1900,7 @@
   (symbol (lib_id "power:+3V3") (at 74.93 80.01 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 70b6ef1c-3703-4e6c-abd6-3be6bd054161)
-    (property "Reference" "#PWR0125" (at 74.93 83.82 0)
+    (property "Reference" "#PWR072" (at 74.93 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 74.93 76.5081 0)
@@ -1916,7 +1916,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "#PWR0125") (unit 1)
+          (reference "#PWR072") (unit 1)
         )
       )
     )
@@ -1925,7 +1925,7 @@
   (symbol (lib_id "Oro:OroConn6p") (at 149.86 78.74 0) (unit 1)
     (in_bom no) (on_board yes) (dnp no)
     (uuid 7c3d8a37-cbdf-4b29-aeed-f95b4cf28d44)
-    (property "Reference" "J24" (at 148.59 68.58 0)
+    (property "Reference" "J6" (at 148.59 68.58 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "OroConn6p" (at 149.86 93.1168 0)
@@ -1949,7 +1949,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "J24") (unit 1)
+          (reference "J6") (unit 1)
         )
       )
     )
@@ -1958,7 +1958,7 @@
   (symbol (lib_id "power:GND") (at 170.18 82.55 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a75f0ad6-e9f7-40d5-9845-b3d1feadcaf5)
-    (property "Reference" "#PWR0130" (at 170.18 88.9 0)
+    (property "Reference" "#PWR075" (at 170.18 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 170.18 86.6855 0)
@@ -1974,7 +1974,7 @@
     (instances
       (project "Oro Link rev2"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "#PWR0130") (unit 1)
+          (reference "#PWR075") (unit 1)
         )
       )
     )
