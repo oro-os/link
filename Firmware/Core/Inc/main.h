@@ -59,6 +59,10 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define ETH2_RST__Pin GPIO_PIN_13
 #define ETH2_RST__GPIO_Port GPIOC
+#define PSU_OK_Pin GPIO_PIN_1
+#define PSU_OK_GPIO_Port GPIOC
+#define PSU_ON_Pin GPIO_PIN_2
+#define PSU_ON_GPIO_Port GPIOC
 #define ETH1_RST__Pin GPIO_PIN_0
 #define ETH1_RST__GPIO_Port GPIOB
 #define ETH1_INT__Pin GPIO_PIN_1
@@ -66,15 +70,13 @@ void Error_Handler(void);
 #define ETH1_INT__EXTI_IRQn EXTI1_IRQn
 #define DBG_LED_Pin GPIO_PIN_12
 #define DBG_LED_GPIO_Port GPIOE
-#define PSU_ON_Pin GPIO_PIN_13
-#define PSU_ON_GPIO_Port GPIOB
-#define PSU_OK_Pin GPIO_PIN_14
-#define PSU_OK_GPIO_Port GPIOB
-#define SYS_RESET_Pin GPIO_PIN_15
-#define SYS_RESET_GPIO_Port GPIOB
 #define SYS_POWER_Pin GPIO_PIN_8
 #define SYS_POWER_GPIO_Port GPIOD
-#define OLED_RST__Pin GPIO_PIN_5
+#define SYS_RESET_Pin GPIO_PIN_9
+#define SYS_RESET_GPIO_Port GPIOD
+#define OLED_DC_Pin GPIO_PIN_11
+#define OLED_DC_GPIO_Port GPIOC
+#define OLED_RST__Pin GPIO_PIN_0
 #define OLED_RST__GPIO_Port GPIOD
 #define ETH2_INT__Pin GPIO_PIN_9
 #define ETH2_INT__GPIO_Port GPIOB
