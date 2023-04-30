@@ -763,7 +763,7 @@
   (symbol (lib_id "SamacSys_Parts:ESDS302DBVR") (at 30.48 57.785 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2572ff69-8133-444c-bc70-9ecd93aa7426)
-    (property "Reference" "D15" (at 44.45 52.2859 0)
+    (property "Reference" "D2" (at 44.45 52.2859 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "ESDS302DBVR" (at 44.45 54.2069 0)
@@ -807,7 +807,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "D15") (unit 1)
+          (reference "D2") (unit 1)
         )
       )
     )
@@ -816,7 +816,7 @@
   (symbol (lib_id "power:GNDPWR") (at 222.25 138.43 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2ad7d067-8072-46ec-9c08-71c45fb8988d)
-    (property "Reference" "#PWR01" (at 222.25 143.51 0)
+    (property "Reference" "#PWR02" (at 222.25 143.51 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDPWR" (at 222.25 142.24 0)
@@ -832,7 +832,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "#PWR01") (unit 1)
+          (reference "#PWR02") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
           (reference "#PWR024") (unit 1)
@@ -863,7 +863,7 @@
           (reference "#PWR025") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "#PWR02") (unit 1)
+          (reference "#PWR03") (unit 1)
         )
       )
     )
@@ -908,7 +908,7 @@
   (symbol (lib_id "SamacSys_Parts:ESDS302DBVR") (at 30.48 42.545 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8c98d064-a1d8-4cb5-9f3f-5cba9d4d2cd1)
-    (property "Reference" "D14" (at 44.45 37.0459 0)
+    (property "Reference" "D1" (at 44.45 37.0459 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "ESDS302DBVR" (at 44.45 38.9669 0)
@@ -952,7 +952,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "D14") (unit 1)
+          (reference "D1") (unit 1)
         )
       )
     )
@@ -1021,7 +1021,7 @@
       )
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "H6") (unit 1)
+          (reference "H4") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
           (reference "H6") (unit 1)
@@ -1074,7 +1074,7 @@
           (reference "B3") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "B4") (unit 1)
+          (reference "B1") (unit 1)
         )
       )
     )
@@ -1083,7 +1083,7 @@
   (symbol (lib_id "power:GNDPWR") (at 26.035 64.77 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid de2c54e8-80b7-467f-ad0f-a8962981e75a)
-    (property "Reference" "#PWR021" (at 26.035 69.85 0)
+    (property "Reference" "#PWR01" (at 26.035 69.85 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GNDPWR" (at 26.162 68.4991 0)
@@ -1099,7 +1099,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "#PWR021") (unit 1)
+          (reference "#PWR01") (unit 1)
         )
       )
     )
@@ -1108,7 +1108,7 @@
   (symbol (lib_id "SamacSys_Parts:67996-408HLF") (at 97.155 33.02 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f1b868e3-d970-40c4-a87d-e75bedaaca03)
-    (property "Reference" "J10" (at 107.315 27.5209 0)
+    (property "Reference" "J1" (at 107.315 27.5209 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "67996-408HLF" (at 107.315 29.4419 0)
@@ -1155,7 +1155,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "J10") (unit 1)
+          (reference "J1") (unit 1)
         )
       )
     )
