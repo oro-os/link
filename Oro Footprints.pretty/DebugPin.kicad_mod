@@ -1,0 +1,13 @@
+(footprint "DebugPin" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (attr through_hole exclude_from_bom)
+  (fp_text reference "REF**" (at 0 -1.27 unlocked) (layer "F.SilkS") hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp c3781382-5741-4bfc-afd5-4ab2608de485)
+  )
+  (fp_text value "DebugPin" (at 0 1 unlocked) (layer "F.Fab")
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 8e06df71-2cdb-4e7e-92ee-cbfaa6749458)
+  )
+  (pad "1" thru_hole circle (at 0 0) (size 1.1 1.1) (drill 0.762) (layers "*.Cu" "*.Mask") (tstamp 784a3d26-a167-4ac9-b30b-b7a70b03f7c3))
+)
