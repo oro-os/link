@@ -1774,7 +1774,7 @@
   (dimension (type aligned) (layer "Dwgs.User") (tstamp b5fd5f89-dfbb-44a1-9c6c-24fc3d45bc32)
     (pts (xy -7.75 8) (xy -7.75 0))
     (height -3.85)
-    (gr_text "8.0000 mm" (at -12.75 4 90) (layer "Dwgs.User") (tstamp 52d6fe93-50e8-4011-90fd-d02c2e130cf7)
+    (gr_text "8.0000 mm" (at -12.75 4 90) (layer "Dwgs.User") (tstamp b5fd5f89-dfbb-44a1-9c6c-24fc3d45bc32)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (format (prefix "") (suffix "") (units 2) (units_format 1) (precision 4))
@@ -1821,37 +1821,31 @@
     (thermal_bridge_angle 45)
     (options (clearance outline) (anchor circle))
     (primitives
-      (gr_line (start 0 0) (end 0 1) (width 0.12))
     ) (tstamp 99e84585-c27c-4db9-956b-458c3075a0be))
   (pad "2" smd custom (at 2.5 3.6) (size 0.5 0.5) (layers "F.Cu")
     (thermal_bridge_angle 45)
     (options (clearance outline) (anchor circle))
     (primitives
-      (gr_line (start 0 0) (end 1 1) (width 0.12))
     ) (tstamp 4938b83c-0746-490b-83a5-2ae12e016871))
   (pad "3" smd custom (at 4.4 0.5) (size 0.5 0.5) (layers "F.Cu")
     (thermal_bridge_angle 45)
     (options (clearance outline) (anchor circle))
     (primitives
-      (gr_line (start 0 0) (end 1 0) (width 0.12))
     ) (tstamp 4491f2b0-a0c4-4ac9-be33-5ed557504b8c))
   (pad "4" smd custom (at 1.015297 -4.407894) (size 0.5 0.5) (layers "F.Cu")
     (thermal_bridge_angle 45)
     (options (clearance outline) (anchor circle))
     (primitives
-      (gr_line (start 0 0) (end 0 -1) (width 0.12))
     ) (tstamp 8998d44a-f2dc-437f-9504-cd0318ea3167))
   (pad "5" smd custom (at -2.1 -4) (size 0.5 0.5) (layers "F.Cu")
     (thermal_bridge_angle 45)
     (options (clearance outline) (anchor circle))
     (primitives
-      (gr_line (start 0 0) (end -1 -1) (width 0.12))
     ) (tstamp cef37060-848b-4d67-beb6-2fdb11ffce60))
   (pad "6" smd custom (at -4.5 -0.3) (size 0.5 0.5) (layers "F.Cu")
     (thermal_bridge_angle 45)
     (options (clearance outline) (anchor circle))
     (primitives
-      (gr_line (start 0 0) (end -1 0) (width 0.12))
     ) (tstamp 0781174d-2263-462d-b940-d3bd24a2c02c))
   (zone (net 0) (net_name "") (layers "*.Cu") (tstamp 8ac188be-f552-4b3e-8b10-1cc7c2b94ee2) (name "NO_ENTRY") (hatch edge 0.5)
     (connect_pads (clearance 0))
@@ -2048,7 +2042,7 @@
   (zone (net 0) (net_name "") (layers "F.Cu" "F.Paste" "F.SilkS" "F.CrtYd") (tstamp 871d2ee3-8a96-4eeb-838e-0e0bae886e1e) (name "NO_ENTRY") (hatch edge 0.5)
     (connect_pads (clearance 0))
     (min_thickness 0.25) (filled_areas_thickness no)
-    (keepout (tracks allowed) (vias not_allowed) (pads not_allowed) (copperpour not_allowed) (footprints not_allowed))
+    (keepout (tracks allowed) (vias allowed) (pads not_allowed) (copperpour allowed) (footprints not_allowed))
     (fill (thermal_gap 0.5) (thermal_bridge_width 0.5))
     (polygon
       (pts
