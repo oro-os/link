@@ -705,15 +705,10 @@
     (uuid ff742753-2cc4-45a9-980b-9f05e1480727)
   )
 
-  (text "SPI1 = ETH1 = SYSETH\nSPI2 = ETH2 = EXTETH\nSPI3 = OLED\nUART7 = BOARD SERIAL\nUSART2 = SYS SERIAL (TO RS232 CIRCUIT)\n\nTOP = SIGNALS (INCL. ETH LINES)\n+2  = GND\n-2  = VDD\nBOT = RAIL/NON-SIGNAL TRACES"
+  (text "SPI1 = ETH1 = SYSETH\nSPI2 = ETH2 = EXTETH\nSPI3 = OLED\nUART7 = BOARD SERIAL\nUSART2 = SYS SERIAL (TO RS232 CIRCUIT)\n\nTOP = SIGNAL\n+1  = GND\n-1  = VDD\nBOT = SIGNAL"
     (at 40.005 188.595 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 3c640dba-fa52-4fbc-b48a-7d17584c9cc7)
-  )
-  (text "BOARD JUNCTIONS: 690367180872\nPERIPHERAL JUNCTIONS: 690357100872"
-    (at 40.005 165.735 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 72181aa1-767c-413d-8006-ceee05ee5ba7)
   )
 
   (netclass_flag "" (length 2.54) (shape round) (at 222.25 120.65 90)
