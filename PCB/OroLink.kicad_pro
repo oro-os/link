@@ -429,6 +429,23 @@
       },
       {
         "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "3V3",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(174, 103, 255)",
+        "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 7
+      },
+      {
+        "bus_width": 12,
         "clearance": 0.5,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -442,7 +459,7 @@
         "track_width": 1.0,
         "via_diameter": 1.0,
         "via_drill": 0.5,
-        "wire_width": 6
+        "wire_width": 7
       },
       {
         "bus_width": 12,
@@ -485,34 +502,35 @@
     "net_colors": null,
     "netclass_assignments": {
       "+5V": "5V",
-      "/External Ethernet/CT_45": "ETH",
-      "/External Ethernet/CT_78": "ETH",
-      "/External Ethernet/RX+": "ETH",
-      "/External Ethernet/RX-": "ETH",
-      "/External Ethernet/TPIN+": "ETH",
-      "/External Ethernet/TPIN-": "ETH",
-      "/External Ethernet/TPOUT+": "ETH",
-      "/External Ethernet/TPOUT-": "ETH",
-      "/External Ethernet/TX+": "ETH",
-      "/External Ethernet/TX-": "ETH",
       "/Power Supply/5VSB": "5V",
-      "/System Ethernet/CT_45": "ETH",
-      "/System Ethernet/CT_78": "ETH",
-      "/System Ethernet/RX+": "ETH",
-      "/System Ethernet/RX-": "ETH",
-      "/System Ethernet/TPIN+": "ETH",
-      "/System Ethernet/TPIN-": "ETH",
-      "/System Ethernet/TPOUT+": "ETH",
-      "/System Ethernet/TPOUT-": "ETH",
-      "/System Ethernet/TX+": "ETH",
-      "/System Ethernet/TX-": "ETH",
-      "GNDPWR": "ESD",
-      "Net-(C33-Pad1)": "ETH",
-      "Net-(C43-Pad1)": "ETH",
-      "Net-(T1-CT_1)": "ETH",
-      "Net-(T2-CT_1)": "ETH"
+      "GNDPWR": "ESD"
     },
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "3V3",
+        "pattern": "+3V3"
+      },
+      {
+        "netclass": "5V",
+        "pattern": "+5V"
+      },
+      {
+        "netclass": "ESD",
+        "pattern": "GNDPWR"
+      },
+      {
+        "netclass": "ETH",
+        "pattern": "* Ethernet/ETH_*"
+      },
+      {
+        "netclass": "3V3",
+        "pattern": "*/3V3_*"
+      },
+      {
+        "netclass": "ESD",
+        "pattern": "Earth"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {

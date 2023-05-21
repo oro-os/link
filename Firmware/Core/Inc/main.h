@@ -57,6 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define ETH2_XFRM_EN_Pin GPIO_PIN_2
+#define ETH2_XFRM_EN_GPIO_Port GPIOE
 #define ETH2_RST__Pin GPIO_PIN_13
 #define ETH2_RST__GPIO_Port GPIOC
 #define PSU_OK_Pin GPIO_PIN_1
@@ -68,6 +70,8 @@ void Error_Handler(void);
 #define ETH1_INT__Pin GPIO_PIN_1
 #define ETH1_INT__GPIO_Port GPIOB
 #define ETH1_INT__EXTI_IRQn EXTI1_IRQn
+#define ETH1_XFRM_EN_Pin GPIO_PIN_10
+#define ETH1_XFRM_EN_GPIO_Port GPIOE
 #define DBG_LED_Pin GPIO_PIN_12
 #define DBG_LED_GPIO_Port GPIOE
 #define SYS_POWER_Pin GPIO_PIN_8
