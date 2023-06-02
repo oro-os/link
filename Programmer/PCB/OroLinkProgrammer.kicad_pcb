@@ -144,7 +144,7 @@
     (property "ki_description" "BergStik, Board to Board connector, Unshrouded vertical header, Through Hole, Double Row, 10 Positions, 2.54 mm (0.100in) Pitch")
     (path "/ceed4c24-858d-45c9-a3c3-42a880da552e")
     (attr through_hole)
-    (fp_text reference "J1" (at 0 0) (layer "F.SilkS")
+    (fp_text reference "J1" (at 0 0) (layer "F.SilkS") hide
         (effects (font (size 1.27 1.27) (thickness 0.254)))
       (tstamp 3ef356ec-b6b0-49a7-948c-91109b7e8e5b)
     )
@@ -437,7 +437,7 @@
     (property "ki_description" "Slide Switches WS-SLSV Slide Switch SMD 7.65mm x 5.5mm")
     (path "/f06e9223-7515-4e90-8eeb-46ccea1b82b5")
     (attr smd)
-    (fp_text reference "S2" (at 0 0 -90) (layer "F.SilkS")
+    (fp_text reference "S2" (at 0 0 -90) (layer "F.SilkS") hide
         (effects (font (size 1.27 1.27) (thickness 0.254)))
       (tstamp 6115d78a-f0e5-4d17-83d2-d00ed73afc88)
     )
@@ -580,7 +580,7 @@
     (property "ki_description" "Worlds smallest 555 timer with low power, high accuracy and a Fmax of 3MHz")
     (path "/153e2b39-6f54-4c4d-9720-2f07a03dd4ed")
     (attr smd)
-    (fp_text reference "IC2" (at 0 0) (layer "F.SilkS")
+    (fp_text reference "IC2" (at 0 0) (layer "F.SilkS") hide
         (effects (font (size 1.27 1.27) (thickness 0.254)))
       (tstamp 9fb277ef-3b39-4664-8066-7b6612e78f63)
     )
@@ -842,7 +842,7 @@
     (property "ki_description" "Thick Film Resistors - SMD 0.25W 1Kohm 5% 200ppm Anti-Pulse")
     (path "/ae6aab23-01b5-4c0e-a514-280dbd269c8c")
     (attr smd)
-    (fp_text reference "R4" (at 0 0 -90) (layer "F.SilkS")
+    (fp_text reference "R4" (at 0 0 -90) (layer "F.SilkS") hide
         (effects (font (size 1.27 1.27) (thickness 0.254)))
       (tstamp 90267226-a42a-441f-929f-65e338653fce)
     )
