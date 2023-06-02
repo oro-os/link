@@ -1271,7 +1271,7 @@
   (symbol (lib_id "power:+3V3") (at 99.06 109.855 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c3619692-46af-4a2d-9c50-3b15d8add45a)
-    (property "Reference" "#PWR078" (at 99.06 113.665 0)
+    (property "Reference" "#PWR076" (at 99.06 113.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 99.06 106.3531 0)
@@ -1287,7 +1287,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/259c9346-7ad9-40c3-9e14-9b19afc78ddf"
-          (reference "#PWR078") (unit 1)
+          (reference "#PWR076") (unit 1)
         )
       )
     )
