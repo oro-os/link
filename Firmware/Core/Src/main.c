@@ -70,6 +70,13 @@ static void MX_USART3_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+int __io_putchar(int ch)
+{
+ // Write character to ITM ch.0
+ ITM_SendChar(ch);
+ return(ch);
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -113,10 +120,22 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  static unsigned count = 0;
+  printf("Hello, Oro");
   while (1)
   {
     /* USER CODE END WHILE */
 
+	  ++count;
+	  HAL_GPIO_TogglePin(DBGLED_GPIO_Port, DBGLED_Pin);
+	  HAL_Delay(500);
+
+	  count += 1;
+	  count %= 100;
+
+	  if (count == 0) {
+		  HAL_GPIO_TogglePin(PSU_ON_GPIO_Port, PSU_ON_Pin);
+	  }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
