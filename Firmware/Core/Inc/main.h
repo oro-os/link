@@ -57,6 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define OLED_EN_Pin GPIO_PIN_2
+#define OLED_EN_GPIO_Port GPIOE
 #define OLED_RST_Pin GPIO_PIN_13
 #define OLED_RST_GPIO_Port GPIOC
 #define OLED_DC_Pin GPIO_PIN_14
@@ -65,6 +67,8 @@ void Error_Handler(void);
 #define CLOCK_IN_GPIO_Port GPIOH
 #define OLED_MOSI_Pin GPIO_PIN_3
 #define OLED_MOSI_GPIO_Port GPIOC
+#define SYSETH_EN_Pin GPIO_PIN_2
+#define SYSETH_EN_GPIO_Port GPIOA
 #define SYSETH_XFRM_EN_Pin GPIO_PIN_3
 #define SYSETH_XFRM_EN_GPIO_Port GPIOA
 #define SYSETH_SS_Pin GPIO_PIN_4
@@ -94,6 +98,8 @@ void Error_Handler(void);
 #define RS232_CTS_GPIO_Port GPIOB
 #define RS232_RTS_Pin GPIO_PIN_14
 #define RS232_RTS_GPIO_Port GPIOB
+#define RS232_EN_Pin GPIO_PIN_8
+#define RS232_EN_GPIO_Port GPIOD
 #define SYS_POWER_Pin GPIO_PIN_8
 #define SYS_POWER_GPIO_Port GPIOC
 #define SYS_RESET_Pin GPIO_PIN_9
@@ -127,8 +133,12 @@ void Error_Handler(void);
 #define PSU_OK_GPIO_Port GPIOD
 #define PSU_ON_Pin GPIO_PIN_6
 #define PSU_ON_GPIO_Port GPIOD
+#define EXTETH_EN_Pin GPIO_PIN_7
+#define EXTETH_EN_GPIO_Port GPIOD
 #define SWO_Pin GPIO_PIN_3
 #define SWO_GPIO_Port GPIOB
+#define INDLIGHTS_EN_Pin GPIO_PIN_4
+#define INDLIGHTS_EN_GPIO_Port GPIOB
 #define INDLIGHTS_SCL_Pin GPIO_PIN_6
 #define INDLIGHTS_SCL_GPIO_Port GPIOB
 #define INDLIGHTS_SDA_Pin GPIO_PIN_7
