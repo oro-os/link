@@ -129,6 +129,8 @@ void Error_Handler(void);
 #define EXTETH_XFRM_EN_GPIO_Port GPIOD
 #define OLED_SCK_Pin GPIO_PIN_3
 #define OLED_SCK_GPIO_Port GPIOD
+#define PSU_STANDBY_Pin GPIO_PIN_4
+#define PSU_STANDBY_GPIO_Port GPIOD
 #define PSU_OK_Pin GPIO_PIN_5
 #define PSU_OK_GPIO_Port GPIOD
 #define PSU_ON_Pin GPIO_PIN_6
