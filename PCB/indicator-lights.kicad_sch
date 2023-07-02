@@ -6,8 +6,8 @@
 
   (title_block
     (title "Oro Link")
-    (date "2023-06-02")
-    (rev "5")
+    (date "2023-07-02")
+    (rev "6")
     (company "Oro Operating System")
     (comment 1 "://oro.sh")
     (comment 2 "Joshua Lee Junon")
@@ -1347,7 +1347,7 @@
           (reference "C18") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/49c51f54-e113-47ff-b1ad-86c9ad73cafa"
-          (reference "C61") (unit 1)
+          (reference "C60") (unit 1)
         )
       )
     )
@@ -1381,7 +1381,7 @@
           (reference "#PWR060") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/49c51f54-e113-47ff-b1ad-86c9ad73cafa"
-          (reference "#PWR089") (unit 1)
+          (reference "#PWR079") (unit 1)
         )
       )
     )
@@ -1463,7 +1463,7 @@
           (reference "R58") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/49c51f54-e113-47ff-b1ad-86c9ad73cafa"
-          (reference "R61") (unit 1)
+          (reference "R59") (unit 1)
         )
       )
     )
@@ -1663,7 +1663,7 @@
           (reference "C5") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/49c51f54-e113-47ff-b1ad-86c9ad73cafa"
-          (reference "C60") (unit 1)
+          (reference "C59") (unit 1)
         )
       )
     )
@@ -1672,7 +1672,7 @@
   (symbol (lib_id "power:GND") (at 87.63 113.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 82d5a328-ee63-4374-a3d4-b3f67aa2133c)
-    (property "Reference" "#PWR088" (at 87.63 119.38 0)
+    (property "Reference" "#PWR078" (at 87.63 119.38 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 87.63 117.1655 0)
@@ -1688,7 +1688,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/49c51f54-e113-47ff-b1ad-86c9ad73cafa"
-          (reference "#PWR088") (unit 1)
+          (reference "#PWR078") (unit 1)
         )
       )
     )
@@ -1836,7 +1836,7 @@
           (reference "R3") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/49c51f54-e113-47ff-b1ad-86c9ad73cafa"
-          (reference "R62") (unit 1)
+          (reference "R60") (unit 1)
         )
       )
     )
@@ -1884,7 +1884,7 @@
           (reference "#PWR044") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/49c51f54-e113-47ff-b1ad-86c9ad73cafa"
-          (reference "#PWR090") (unit 1)
+          (reference "#PWR080") (unit 1)
         )
       )
     )
@@ -1964,7 +1964,7 @@
   (symbol (lib_id "Oro:CRGP0402F5K6") (at 88.9 109.22 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid fd1692da-86b4-414e-8aaa-79c8c9e20750)
-    (property "Reference" "R60" (at 95.25 106.68 0)
+    (property "Reference" "R58" (at 95.25 106.68 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "5.6K" (at 100.33 106.68 0)
@@ -2005,7 +2005,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/49c51f54-e113-47ff-b1ad-86c9ad73cafa"
-          (reference "R60") (unit 1)
+          (reference "R58") (unit 1)
         )
       )
     )

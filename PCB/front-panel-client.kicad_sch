@@ -6,8 +6,8 @@
 
   (title_block
     (title "Oro Link")
-    (date "2023-06-02")
-    (rev "5")
+    (date "2023-07-02")
+    (rev "6")
     (company "Oro Operating System")
     (comment 1 "://oro.sh")
     (comment 2 "Joshua Lee Junon")
@@ -908,7 +908,7 @@
   (symbol (lib_id "power:GND") (at 116.84 138.43 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 186e6b4d-b3c2-4844-9e7d-c05c39397629)
-    (property "Reference" "#PWR027" (at 116.84 144.78 0)
+    (property "Reference" "#PWR026" (at 116.84 144.78 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 116.84 142.5655 0)
@@ -924,7 +924,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6eeb4496-d532-42b5-95b8-3d397c9a21d1"
-          (reference "#PWR027") (unit 1)
+          (reference "#PWR026") (unit 1)
         )
       )
     )
@@ -1000,7 +1000,7 @@
   (symbol (lib_id "SamacSys_Parts:SG73P2ATTD102J") (at 177.8 92.71 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2f347be5-42b9-4128-9fd8-cf6276cc5b93)
-    (property "Reference" "R14" (at 186.69 96.9391 0)
+    (property "Reference" "R13" (at 186.69 96.9391 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1k" (at 186.69 95.0181 0)
@@ -1047,7 +1047,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6eeb4496-d532-42b5-95b8-3d397c9a21d1"
-          (reference "R14") (unit 1)
+          (reference "R13") (unit 1)
         )
       )
     )
@@ -1185,7 +1185,7 @@
           (reference "R35") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6eeb4496-d532-42b5-95b8-3d397c9a21d1"
-          (reference "R13") (unit 1)
+          (reference "R12") (unit 1)
         )
       )
     )
@@ -1396,7 +1396,7 @@
           (reference "R35") (unit 1)
         )
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6eeb4496-d532-42b5-95b8-3d397c9a21d1"
-          (reference "R12") (unit 1)
+          (reference "R11") (unit 1)
         )
       )
     )
@@ -1405,7 +1405,7 @@
   (symbol (lib_id "SamacSys_Parts:SG73P2ATTD102J") (at 104.14 83.82 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bd840174-eed8-46f8-b988-110399aafb80)
-    (property "Reference" "R11" (at 113.03 79.5909 0)
+    (property "Reference" "R10" (at 113.03 79.5909 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1k" (at 113.03 81.5119 0)
@@ -1452,7 +1452,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6eeb4496-d532-42b5-95b8-3d397c9a21d1"
-          (reference "R11") (unit 1)
+          (reference "R10") (unit 1)
         )
       )
     )
@@ -1461,7 +1461,7 @@
   (symbol (lib_id "power:GND") (at 172.72 138.43 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fc5fc3e9-b72d-44c6-80c4-2266cb9dd51b)
-    (property "Reference" "#PWR028" (at 172.72 144.78 0)
+    (property "Reference" "#PWR027" (at 172.72 144.78 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 172.72 142.5655 0)
@@ -1477,7 +1477,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/6eeb4496-d532-42b5-95b8-3d397c9a21d1"
-          (reference "#PWR028") (unit 1)
+          (reference "#PWR027") (unit 1)
         )
       )
     )

@@ -6,8 +6,8 @@
 
   (title_block
     (title "Oro Link")
-    (date "2023-06-02")
-    (rev "5")
+    (date "2023-07-02")
+    (rev "6")
     (company "Oro Operating System")
     (comment 1 "://oro.sh")
     (comment 2 "Joshua Lee Junon")
@@ -1012,7 +1012,7 @@
   (symbol (lib_id "power:GND") (at 236.22 113.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1eb5416f-c158-4265-9cd9-75c1e460e24a)
-    (property "Reference" "#PWR093" (at 236.22 119.38 0)
+    (property "Reference" "#PWR025" (at 236.22 119.38 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 236.22 117.1655 0)
@@ -1028,7 +1028,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "#PWR093") (unit 1)
+          (reference "#PWR025") (unit 1)
         )
       )
     )
@@ -1037,7 +1037,7 @@
   (symbol (lib_id "SamacSys_Parts:AZ1084CD-3.3TRG1") (at 197.485 94.615 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1f54be72-08f0-4927-ba74-c99d826ebbfc)
-    (property "Reference" "D4" (at 215.265 89.1159 0)
+    (property "Reference" "D3" (at 215.265 89.1159 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "AZ1084CD-3.3TRG1" (at 215.265 91.0369 0)
@@ -1082,7 +1082,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "D4") (unit 1)
+          (reference "D3") (unit 1)
         )
       )
     )
@@ -1308,7 +1308,7 @@
   (symbol (lib_id "SamacSys_Parts:UCZ1H220MCL1GS") (at 236.22 99.06 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 41c50728-17dd-4f80-a8f4-eae1595df50e)
-    (property "Reference" "C63" (at 239.522 104.7663 90)
+    (property "Reference" "C19" (at 239.522 104.7663 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "22u" (at 239.522 106.6873 90)
@@ -1349,7 +1349,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "C63") (unit 1)
+          (reference "C19") (unit 1)
         )
       )
     )
@@ -1358,7 +1358,7 @@
   (symbol (lib_id "power:GND") (at 193.675 113.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 422fb54a-230f-4eb6-9978-c3ac58c1f671)
-    (property "Reference" "#PWR091" (at 193.675 119.38 0)
+    (property "Reference" "#PWR023" (at 193.675 119.38 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 193.675 117.1655 0)
@@ -1374,7 +1374,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "#PWR091") (unit 1)
+          (reference "#PWR023") (unit 1)
         )
       )
     )
@@ -1448,7 +1448,7 @@
   (symbol (lib_id "power:+3V3") (at 236.22 92.075 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6bfc7a96-0033-4ef5-88d9-228210f285f7)
-    (property "Reference" "#PWR092" (at 236.22 95.885 0)
+    (property "Reference" "#PWR024" (at 236.22 95.885 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 236.22 88.5731 0)
@@ -1464,7 +1464,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "#PWR092") (unit 1)
+          (reference "#PWR024") (unit 1)
         )
       )
     )
@@ -1602,7 +1602,7 @@
   (symbol (lib_id "SamacSys_Parts:VZT100M1HTR-0406") (at 189.23 99.06 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid aebf90ac-1a9c-4bd9-a8a7-17c36a264430)
-    (property "Reference" "C64" (at 186.055 104.759 90)
+    (property "Reference" "C18" (at 186.055 104.759 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10u" (at 186.055 106.68 90)
@@ -1643,7 +1643,7 @@
     (instances
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "C64") (unit 1)
+          (reference "C18") (unit 1)
         )
       )
     )
@@ -1753,7 +1753,7 @@
       )
       (project "OroLink"
         (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "#PWR094") (unit 1)
+          (reference "#PWR022") (unit 1)
         )
       )
     )
