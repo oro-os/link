@@ -1,5 +1,5 @@
 <div align="center">
-	<img src="https://github.com/oro-os/oro-link-x86/raw/master/Asset/oro-banner.svg?sanitize=true" />
+	<img src="https://github.com/oro-os/oro-link-x86/raw/master/Asset/screenshot.png" />
 </div>
 
 # Oro Link (for x86 machines)
@@ -86,6 +86,12 @@ flowchart TD
 ```
 
 # License
+
+<div align="center">
+	<img src="https://github.com/oro-os/oro-link-x86/raw/master/Asset/oro-banner.svg?sanitize=true" />
+</div>
+
+Part of the Oro Operating System project.
 
 The Oro Link is released to the public, WARRANTY FREE
 and provided AS IS. The Oro project and its contributors are NOT
