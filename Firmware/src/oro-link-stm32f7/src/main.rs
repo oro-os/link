@@ -1,5 +1,7 @@
 #![no_main]
 #![no_std]
+#![deprecated(note="the stm32f7 firmware implementation of the Oro Link is primarily used for debugging via the Nucleo boards and is NOT a chip used in any of the boards themselves; you're probably looking for another implementation")]
+
 use core::panic::PanicInfo;
 use stm32f7::stm32f7x6::Peripherals;
 
