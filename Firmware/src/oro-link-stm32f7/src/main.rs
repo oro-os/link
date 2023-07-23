@@ -11,21 +11,15 @@ use stm32f7::stm32f7x6::Peripherals;
 #[no_mangle]
 fn main() -> ! {
 	let per = Peripherals::take().unwrap();
-
-	// Enable the clock for GPIOB
 	per.RCC.ahb1enr.write(|w| w.gpioben().bit(true));
-
-	// Configure pin as output
 	per.GPIOB.moder.write(|w| w.moder7().bits(0b01));
 
-	// can't return so we go into an infinite loop here
+	let mut on: bool = true;
 	loop {
-		// Toggle the LED output
-		per.GPIOB
-			.odr
-			.modify(|r, w| w.odr7().bit(r.odr7().bit_is_clear()));
+		per.GPIOB.odr.modify(|_, w| w.odr7().bit(on));
+		on = !on;
 
-		for _i in 0..100000 {
+		for _i in 0..50000 {
 			asm::nop()
 		}
 	}

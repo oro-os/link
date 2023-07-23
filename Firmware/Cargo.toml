@@ -12,8 +12,8 @@ members = [
 	"src/oro-link-stm32f7"
 ]
 
-#[profile.release]
-#opt-level = 3       # Maximum optimizations
-#lto = "fat"         # Perform LTO across all crates
-#codegen-units = 1   # Reduce number of codegen units to increase optimizations.
-#strip = true        # Strip symbols from binary
+[profile.release]
+opt-level = 3       # Maximum optimizations
+codegen-units = 1   # Reduce number of codegen units to increase optimizations.
+# FIXME: For some reason, this causes the firmware not to boot.
+#lto = "fat"        # Perform LTO across all crates
