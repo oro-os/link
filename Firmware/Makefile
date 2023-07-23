@@ -12,8 +12,8 @@ clean:
 	rm -rf target
 
 stm32f7: target/$(CARGO_MODE)/oro-link-stm32f7.bin
-.PHONY: target/thumbv7em-none-eabi/$(CARGO_MODE)/oro-link-stm32f7
-target/thumbv7em-none-eabi/$(CARGO_MODE)/oro-link-stm32f7:
+.PHONY: target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-stm32f7
+target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-stm32f7:
 	cargo build --$(CARGO_MODE) -p $(@F)
-target/$(CARGO_MODE)/%.bin: target/thumbv7em-none-eabi/$(CARGO_MODE)/%
+target/$(CARGO_MODE)/%.bin: target/thumbv7em-none-eabihf/$(CARGO_MODE)/%
 	arm-none-eabi-objcopy --output binary "$<" "$@"
