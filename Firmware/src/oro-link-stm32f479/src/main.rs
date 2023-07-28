@@ -5,17 +5,13 @@ mod clock;
 mod dbg;
 
 use core::panic::PanicInfo;
-use stm32f4xx_hal::{
-	pac,
-	prelude::*,
-	serial::{Config, Serial},
-};
+use stm32f4xx_hal::{pac, prelude::*};
 
 struct Stm32F479;
 
 impl oro_link_firmware::Arch for Stm32F479 {
-	fn debug_write(s: &str) {
-		self::dbg::write(s)
+	fn debug_write(args: ::core::fmt::Arguments) {
+		self::dbg::write(args)
 	}
 }
 

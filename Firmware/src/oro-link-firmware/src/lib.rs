@@ -1,7 +1,7 @@
 #![no_std]
 
 mod arch;
-mod main;
+mod entry;
 
 pub use arch::Arch;
-pub use main::main;
+pub use entry::main;

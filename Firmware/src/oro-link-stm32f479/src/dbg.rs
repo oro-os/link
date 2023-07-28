@@ -1,12 +1,7 @@
 //! Debug output (UART7) handling
 
-use core::fmt::Write;
-use stm32f4xx_hal::{
-	gpio::PushPull,
-	pac::UART7,
-	rcc::Clocks,
-	serial::{Config, Instance, Serial, Tx},
-};
+use core::fmt::{Arguments, Write};
+use stm32f4xx_hal::{pac::UART7, serial::Tx};
 
 static mut TX_SERIAL: Option<Tx<UART7, u8>> = None;
 
@@ -16,17 +11,19 @@ pub fn init(tx: Tx<UART7, u8>) {
 	}
 }
 
-pub fn write(s: &str) {
-	unsafe { TX_SERIAL.as_mut().unwrap() }.write_str(s).unwrap();
+pub fn write(args: Arguments) {
+	unsafe { TX_SERIAL.as_mut().unwrap() }
+		.write_fmt(args)
+		.unwrap();
 }
 
 macro_rules! init_dbg {
 	($uart:expr, $tx_pin:expr, $clocks:expr) => {
 		crate::dbg::init(
-			Serial::tx(
+			::stm32f4xx_hal::serial::Serial::tx(
 				$uart,
 				$tx_pin,
-				Config::default()
+				::stm32f4xx_hal::serial::Config::default()
 					.baudrate(115200.bps())
 					.wordlength_8()
 					.parity_none(),

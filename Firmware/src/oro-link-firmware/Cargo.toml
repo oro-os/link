@@ -6,9 +6,7 @@ authors = { workspace = true }
 edition = { workspace = true }
 repository = { workspace = true }
 
-# [features]
-# default = []
-# stm32f7 = [ "oro-link-stm32f7" ]
-#
-# [dependencies]
-# oro-link-stm32f7 = { path = "../oro-link-stm32f7", optional = true }
+[lib]
+path = "src/lib.rs"
+test = false
+bench = false
