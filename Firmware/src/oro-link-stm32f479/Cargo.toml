@@ -1,5 +1,5 @@
 [package]
-name = "oro-link-stm32f7"
+name = "oro-link-stm32f479"
 version = { workspace = true }
 publish = { workspace = true }
 authors = { workspace = true }
@@ -7,11 +7,11 @@ edition = { workspace = true }
 repository = { workspace = true }
 
 [[bin]]
-name = "oro-link-stm32f7"
+name = "oro-link-stm32f479"
 path = "src/main.rs"
 test = false
 bench = false
 
 [dependencies]
 oro-link-firmware = { path = "../oro-link-firmware" }
-stm32f7xx-hal = { version = "0.7.0", features = [ "stm32f756" ] }
+stm32f4xx-hal = { version = "0.17.1", features = [ "stm32f479" ] }
