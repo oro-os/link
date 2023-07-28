@@ -26,6 +26,7 @@ macro_rules! init_dbg {
 				::stm32f4xx_hal::serial::Config::default()
 					.baudrate(115200.bps())
 					.wordlength_8()
+					.stopbits(::stm32f4xx_hal::serial::config::StopBits::STOP1)
 					.parity_none(),
 				&$clocks,
 			)
