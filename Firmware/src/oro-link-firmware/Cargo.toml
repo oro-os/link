@@ -10,3 +10,6 @@ repository = { workspace = true }
 path = "src/lib.rs"
 test = false
 bench = false
+
+[dev-dependencies]
+rusty-hook = "0.11.2"
