@@ -3,8 +3,11 @@ use crate::arch::Arch;
 static mut DEBUG_WRITE: Option<fn(::core::fmt::Arguments)> = None;
 
 #[doc(hidden)]
-pub fn _print(args: ::core::fmt::Arguments) {
-	unsafe { DEBUG_WRITE }.as_ref().unwrap()(args);
+pub fn _print(#[allow(unused)] args: ::core::fmt::Arguments) {
+	#[cfg(feature = "debug_serial")]
+	{
+		unsafe { DEBUG_WRITE }.as_ref().unwrap()(args);
+	}
 }
 
 #[macro_export]

@@ -7,6 +7,10 @@ CARGO_MODE := release
 CARGO_FLAGS := --release
 endif
 
+ifdef SERIAL
+CARGO_FLAGS += --features debug_serial
+endif
+
 all: stm32f479
 
 clean:
@@ -24,6 +28,6 @@ clippy:
 stm32f479: target/$(CARGO_MODE)/oro-link-stm32f479.bin
 .PHONY: target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-stm32f479
 target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-stm32f479:
-	cargo build --$(CARGO_MODE) --target=thumbv7em-none-eabihf -p $(@F)
+	cargo build $(CARGO_FLAGS) --target=thumbv7em-none-eabihf -p $(@F)
 target/$(CARGO_MODE)/%.bin: target/thumbv7em-none-eabihf/$(CARGO_MODE)/%
 	arm-none-eabi-objcopy --output binary "$<" "$@"

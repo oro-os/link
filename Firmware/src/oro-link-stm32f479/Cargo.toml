@@ -12,6 +12,10 @@ path = "src/main.rs"
 test = false
 bench = false
 
+[features]
+default = []
+debug_serial = ["oro-link-firmware/debug_serial"]
+
 [dependencies]
 oro-link-firmware = { path = "../oro-link-firmware" }
 stm32f4xx-hal = { version = "0.17.1", features = [ "stm32f479" ] }
