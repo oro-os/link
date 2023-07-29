@@ -1,16 +1,22 @@
-[workspace.package]
+[package]
+name = "oro-link-firmware"
+description = "Oro Link firmware"
 version = "0.0.0"
 publish = false
 edition = "2021"
 authors = [ "Joshua Lee Junon <junon@oro.sh> (https://github.com/qix-)" ]
 repository = "https://github.com/oro-os/oro-link-x86"
 
-[workspace]
-resolver = "2"
-members = [
-	"src/oro-link-firmware",
-	"src/oro-link-stm32f479"
-]
+[features]
+default = []
+debug_serial = []
+stm32f479 = [ "stm32f4xx-hal", "stm32f4xx-hal/stm32f479" ]
+
+[dependencies]
+stm32f4xx-hal = { version = "0.17.1", optional = true }
+
+[dev-dependencies]
+rusty-hook = "0.11.2"
 
 [profile.release]
 opt-level = 3       # Maximum optimizations

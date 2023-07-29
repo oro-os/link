@@ -1,19 +1,29 @@
-#![no_main]
 #![no_std]
-
-mod clock;
-mod dbg;
+#![no_main]
 
 use core::panic::PanicInfo;
 use stm32f4xx_hal::{pac, prelude::*};
 
-struct Stm32F479;
+//use crate::arch::Arch;
+//
+//#[doc(hidden)]
+//pub fn _print(#[allow(unused)] args: ::core::fmt::Arguments) {
+//	#[cfg(feature = "debug_serial")]
+//	{
+//		unsafe { DEBUG_WRITE }.as_ref().unwrap()(args);
+//	}
+//}
 
-impl oro_link_firmware::Arch for Stm32F479 {
-	fn debug_write(args: ::core::fmt::Arguments) {
-		self::dbg::write(args)
-	}
-}
+//#[macro_export]
+//macro_rules! print {
+//	($($arg:tt)*) => ($crate::entry::_print(format_args!($($arg)*)));
+//}
+//
+//#[macro_export]
+//macro_rules! println {
+//	() => ($crate::print!("\n"));
+//	($($arg:tt)*) => ($crate::print!("{}\n", format_args!($($arg)*)));
+//}
 
 #[panic_handler]
 fn panic(_panic: &PanicInfo<'_>) -> ! {
@@ -21,13 +31,13 @@ fn panic(_panic: &PanicInfo<'_>) -> ! {
 }
 
 #[no_mangle]
-fn main() -> ! {
+pub fn main() -> ! {
 	let p = pac::Peripherals::take().unwrap();
 	//let mut syscfg = p.SYSCFG.constrain();
 
 	// Initialize the clock
-	self::clock::init(&p.RCC);
-	let clocks = p.RCC.constrain().cfgr.freeze();
+	//self::clock::init(&p.RCC);
+	//let clocks = p.RCC.constrain().cfgr.freeze();
 
 	//let gpioa = p.GPIOA.split();
 	//let mut gpiob = p.GPIOB.split();
@@ -36,8 +46,8 @@ fn main() -> ! {
 	let gpioe = p.GPIOE.split();
 	//let gpiof = p.GPIOF.split();
 
-	//let mut indlights_scl = gpiob.pb6.into_alternate();
-	//let mut indlights_sda = gpiob.pb7.into_alternate();
+	//let mut indlights_scl = gpiob.pb6.into_alternate_open_drain();
+	//let mut indlights_sda = gpiob.pb7.into_alternate_open_drain();
 	//let mut indlights_en = gpiob.pb4.into_push_pull_output();
 
 	//let mut syseth_miso = gpioa.pa6.into_alternate();
@@ -66,7 +76,7 @@ fn main() -> ! {
 	//let mut exteth_int = gpiod.pd1.make_interrupt_source(&mut syscfg);
 
 	//let mut uart_rx = gpioe.pe7.into_alternate();
-	let uart_tx = gpioe.pe8.into_alternate();
+	//let uart_tx = gpioe.pe8.into_alternate();
 
 	//let mut rs232_cts = gpiob.pb13.into_alternate();
 	//let mut rs232_rts = gpiob.pb14.into_alternate();
@@ -86,9 +96,11 @@ fn main() -> ! {
 
 	let mut dbgled = gpioe.pe12.into_push_pull_output();
 
-	self::dbg::init_dbg!(p.UART7, uart_tx, clocks);
+	//self::dbg::init_dbg!(p.UART7, uart_tx, clocks);
 
-	oro_link_firmware::main::<Stm32F479>();
+	//oro_link_firmware::main::<Stm32F479>();
+
+	//let i2c = p.I2C1.i2c((indlights_scl, indlights_sda), i2c::Mode::standard(100000.Hz()), &clocks);
 
 	loop {
 		dbgled.set_high();

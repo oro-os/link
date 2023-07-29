@@ -216,13 +216,6 @@ name = "oro-link-firmware"
 version = "0.0.0"
 dependencies = [
  "rusty-hook",
-]
-
-[[package]]
-name = "oro-link-stm32f479"
-version = "0.0.0"
-dependencies = [
- "oro-link-firmware",
  "stm32f4xx-hal",
 ]
 
