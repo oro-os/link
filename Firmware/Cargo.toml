@@ -9,8 +9,16 @@ repository = "https://github.com/oro-os/oro-link-x86"
 
 [features]
 default = []
-debug_serial = []
-stm32f479 = [ "stm32f4xx-hal", "stm32f4xx-hal/stm32f479" ]
+
+# supported platforms
+stm32f479 = [
+	"stm32f4xx-hal",
+	"stm32f4xx-hal/stm32f479",
+	"is31fl3218"
+]
+
+# common peripherals
+is31fl3218 = []
 
 [dependencies]
 stm32f4xx-hal = { version = "0.17.1", optional = true }

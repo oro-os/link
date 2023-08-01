@@ -3,19 +3,18 @@
 
 mod arch;
 
-use self::arch::{Arch, DebugLed};
+use self::arch::{color, Arch, Color, DebugLed, IndicatorLights};
+use core::fmt::Write;
 #[cfg(not(test))]
 use core::panic::PanicInfo;
-use core::{fmt::Write, mem::MaybeUninit};
 
-static mut DEBUG_WRITE: MaybeUninit<<self::arch::Impl as Arch>::DebugSerialImpl> =
-	MaybeUninit::uninit();
+static mut DEBUG_WRITE: Option<<self::arch::Impl as Arch>::DebugSerialImpl> = None;
 
 #[doc(hidden)]
 pub fn _debug_print(args: ::core::fmt::Arguments) {
-	unsafe { DEBUG_WRITE.assume_init_mut() }
-		.write_fmt(args)
-		.unwrap();
+	if let Some(write) = unsafe { &mut DEBUG_WRITE } {
+		write.write_fmt(args).unwrap();
+	}
 }
 
 #[macro_export]
@@ -31,20 +30,38 @@ macro_rules! println {
 
 #[cfg(not(test))]
 #[panic_handler]
-fn panic(_panic: &PanicInfo<'_>) -> ! {
+fn panic(panic: &PanicInfo<'_>) -> ! {
+	println!("PANIC: {:#?}", panic);
 	loop {}
 }
 
 #[no_mangle]
 pub fn main() -> ! {
-	let (mut dbgled, dbgserial) = unsafe { self::arch::Impl::initialize() };
+	let (mut dbgled, dbgserial, mut indlights) = unsafe { self::arch::Impl::initialize() };
 	unsafe {
-		DEBUG_WRITE.write(dbgserial);
+		DEBUG_WRITE = Some(dbgserial);
 	}
 
 	println!("Hello from {}!", "println");
 
+	indlights.enable();
+
+	const COLORS: [Color; 5] = [
+		color::BLACK,
+		color::WHITE,
+		color::RED,
+		color::GREEN,
+		color::BLUE,
+	];
+
+	let mut color_idx = 0;
+
 	loop {
+		indlights.first(COLORS[color_idx % COLORS.len()]);
+		indlights.second(COLORS[(color_idx + 1) % COLORS.len()]);
+		indlights.third(COLORS[(color_idx + 2) % COLORS.len()]);
+		color_idx = (color_idx + 1) % COLORS.len();
+
 		dbgled.on();
 		for _ in 0..1000000 {
 			unsafe {

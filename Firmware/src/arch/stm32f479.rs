@@ -1,6 +1,8 @@
+use super::common::Is31fl3218;
 use stm32f4xx_hal::{
 	gpio::{Output, Pin, PinState},
-	pac::{self, RCC, UART7},
+	i2c,
+	pac::{self, I2C1, RCC, UART7},
 	prelude::*,
 	serial::{Serial, Tx},
 };
@@ -12,8 +14,13 @@ type Stm32f479DebugSerial = Tx<UART7, u8>;
 impl super::Arch for Stm32f479 {
 	type DebugLedImpl = Stm32f479DebugLed;
 	type DebugSerialImpl = Stm32f479DebugSerial;
+	type IndicatorLightsImpl = Stm32f479IndicatorLights;
 
-	unsafe fn initialize() -> (Self::DebugLedImpl, Self::DebugSerialImpl) {
+	unsafe fn initialize() -> (
+		Self::DebugLedImpl,
+		Self::DebugSerialImpl,
+		Self::IndicatorLightsImpl,
+	) {
 		let p = pac::Peripherals::take().unwrap();
 		//let mut syscfg = p.SYSCFG.constrain();
 
@@ -22,15 +29,15 @@ impl super::Arch for Stm32f479 {
 		let clocks = p.RCC.constrain().cfgr.freeze();
 
 		//let gpioa = p.GPIOA.split();
-		//let gpiob = p.GPIOB.split();
+		let gpiob = p.GPIOB.split();
 		//let gpioc = p.GPIOC.split();
 		//let mut gpiod = p.GPIOD.split();
 		let gpioe = p.GPIOE.split();
 		//let gpiof = p.GPIOF.split();
 
-		//let mut indlights_scl = gpiob.pb6.into_alternate_open_drain();
-		//let mut indlights_sda = gpiob.pb7.into_alternate_open_drain();
-		//let mut indlights_en = gpiob.pb4.into_push_pull_output();
+		let indlights_scl = gpiob.pb6.into_alternate_open_drain();
+		let indlights_sda = gpiob.pb7.into_alternate_open_drain();
+		let indlights_en = gpiob.pb4.into_push_pull_output(); // TODO set to open-drain
 
 		//let mut syseth_miso = gpioa.pa6.into_alternate();
 		//let mut syseth_mosi = gpioa.pa7.into_alternate();
@@ -82,7 +89,11 @@ impl super::Arch for Stm32f479 {
 
 		//oro_link_firmware::main::<Stm32F479>();
 
-		//let i2c = p.I2C1.i2c((indlights_scl, indlights_sda), i2c::Mode::standard(100000.Hz()), &clocks);
+		let indicator_lights_iface = p.I2C1.i2c(
+			(indlights_scl, indlights_sda),
+			i2c::Mode::standard(100000.Hz()),
+			&clocks,
+		);
 
 		(
 			Stm32f479DebugLed { pin: dbgled },
@@ -97,6 +108,10 @@ impl super::Arch for Stm32f479 {
 				&clocks,
 			)
 			.unwrap(),
+			Stm32f479IndicatorLights {
+				en_pin: indlights_en,
+				controller: Is31fl3218::new(indicator_lights_iface),
+			},
 		)
 	}
 }
@@ -108,6 +123,67 @@ pub struct Stm32f479DebugLed {
 impl super::DebugLed for Stm32f479DebugLed {
 	fn set_bit(&mut self, on: bool) {
 		self.pin.set_state(PinState::from(on));
+	}
+}
+
+pub struct Stm32f479IndicatorLights {
+	en_pin: Pin<'B', 4, Output>,
+	controller: Is31fl3218<i2c::I2c<I2C1>>,
+}
+
+impl<I2C: i2c::Instance> super::common::I2c for i2c::I2c<I2C> {
+	type Error = i2c::Error;
+	fn read(&mut self, addr: u8, buffer: &mut [u8]) -> Result<(), Self::Error> {
+		<i2c::I2c<I2C>>::read(self, addr, buffer)
+	}
+	fn write(&mut self, addr: u8, buffer: &[u8]) -> Result<(), Self::Error> {
+		<i2c::I2c<I2C>>::write(self, addr, buffer)
+	}
+}
+
+impl super::IndicatorLights for Stm32f479IndicatorLights {
+	fn first<C: Into<super::Color>>(&mut self, color: C) {
+		let (r, g, b) = color.into().premultiply_alpha();
+		self.controller.set_channel(0, r);
+		self.controller.set_channel(1, g);
+		self.controller.set_channel(17, b);
+		self.controller.present();
+	}
+
+	fn second<C: Into<super::Color>>(&mut self, color: C) {
+		let (r, g, b) = color.into().premultiply_alpha();
+		self.controller.set_channel(12, r);
+		self.controller.set_channel(13, g);
+		self.controller.set_channel(11, b);
+		self.controller.present();
+	}
+
+	fn third<C: Into<super::Color>>(&mut self, color: C) {
+		let (r, g, b) = color.into().premultiply_alpha();
+		self.controller.set_channel(16, r);
+		self.controller.set_channel(14, g);
+		self.controller.set_channel(15, b);
+		self.controller.present();
+	}
+
+	fn enable(&mut self) {
+		self.en_pin.set_high();
+		for _ in 0..1000 {
+			unsafe { ::core::arch::asm!("NOP") };
+		}
+		self.controller.enable();
+	}
+
+	fn disable(&mut self) {
+		self.controller.disable();
+		for _ in 0..1000 {
+			unsafe { ::core::arch::asm!("NOP") };
+		}
+		self.en_pin.set_low();
+	}
+
+	fn all_off(&mut self) {
+		self.controller.reset();
 	}
 }
 

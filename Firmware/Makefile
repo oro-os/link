@@ -7,10 +7,6 @@ CARGO_MODE := release
 CARGO_FLAGS := --release
 endif
 
-ifdef SERIAL
-CARGO_FLAGS += --features debug_serial
-endif
-
 all: stm32f479
 
 clean:
