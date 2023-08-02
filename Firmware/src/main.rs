@@ -79,7 +79,7 @@ pub fn main() -> ! {
 		color::MAGENTA,
 	];
 
-	for color_idx in 0..(COLORS.len() * 2) {
+	for color_idx in 0..COLORS.len() {
 		indlights.first(COLORS[color_idx % COLORS.len()]);
 		indlights.second(COLORS[(color_idx + 1) % COLORS.len()]);
 		indlights.third(COLORS[(color_idx + 2) % COLORS.len()]);
