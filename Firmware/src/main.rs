@@ -3,6 +3,8 @@
 
 mod arch;
 
+use crate::arch::SystemUnderTest;
+
 use self::arch::{color, Arch, Color, DebugLed, IndicatorLights};
 use core::fmt::Write;
 #[cfg(not(test))]
@@ -35,14 +37,34 @@ fn panic(panic: &PanicInfo<'_>) -> ! {
 	loop {}
 }
 
+macro_rules! sleep_ticks {
+	($n:literal) => {
+		for _ in 0..$n {
+			unsafe {
+				::core::arch::asm!("NOP");
+			}
+		}
+	};
+}
+
 #[no_mangle]
 pub fn main() -> ! {
-	let (mut dbgled, dbgserial, mut indlights) = unsafe { self::arch::Impl::initialize() };
+	let (mut dbgled, dbgserial, mut indlights, mut power_controller) =
+		unsafe { self::arch::Impl::initialize() };
 	unsafe {
 		DEBUG_WRITE = Some(dbgserial);
 	}
 
-	println!("Hello from {}!", "println");
+	println!(
+		"Oro Link x86 rev6 firmware (version {})",
+		env!("CARGO_PKG_VERSION")
+	);
+	println!("beginning POST:");
+
+	dbgled.on();
+	sleep_ticks!(500000);
+	dbgled.off();
+	println!("... debug led OK");
 
 	indlights.enable();
 
@@ -57,25 +79,29 @@ pub fn main() -> ! {
 		color::MAGENTA,
 	];
 
-	let mut color_idx = 0;
-
-	loop {
+	for color_idx in 0..(COLORS.len() * 2) {
 		indlights.first(COLORS[color_idx % COLORS.len()]);
 		indlights.second(COLORS[(color_idx + 1) % COLORS.len()]);
 		indlights.third(COLORS[(color_idx + 2) % COLORS.len()]);
-		color_idx = (color_idx + 1) % COLORS.len();
-
-		dbgled.on();
-		for _ in 0..1000000 {
-			unsafe {
-				::core::arch::asm!("NOP");
-			}
-		}
-		dbgled.off();
-		for _ in 0..1000000 {
-			unsafe {
-				::core::arch::asm!("NOP");
-			}
-		}
+		sleep_ticks!(500000);
 	}
+
+	indlights.all_off();
+
+	println!("... indicator lights OK");
+
+	power_controller.set_power_state(arch::PowerState::Standby);
+	println!("... psu standby OK");
+	sleep_ticks!(10000000);
+	power_controller.set_power_state(arch::PowerState::On);
+	println!("... psu power OK");
+	sleep_ticks!(10000000);
+	power_controller.set_power_state(arch::PowerState::Off);
+	println!("... psu OK");
+	sleep_ticks!(10000000);
+
+	println!("... ORO LINK OK");
+
+	#[allow(clippy::empty_loop)] // XXX DEBUG
+	loop {}
 }

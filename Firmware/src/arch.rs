@@ -27,6 +27,8 @@ pub trait Arch {
 	type DebugSerialImpl: Write;
 	/// Concrete implementation for the indicator lights
 	type IndicatorLightsImpl: IndicatorLights;
+	/// Concrete implementation for the system-under-test (SUT) controller
+	type SystemUnderTestImpl: SystemUnderTest;
 
 	/// Initializes the Oro Link architecture and all of the necessary peripherals
 	/// needed for operation
@@ -41,6 +43,7 @@ pub trait Arch {
 		Self::DebugLedImpl,
 		Self::DebugSerialImpl,
 		Self::IndicatorLightsImpl,
+		Self::SystemUnderTestImpl,
 	);
 }
 
@@ -213,4 +216,48 @@ pub trait IndicatorLights {
 
 	/// Enables the controller (may be a no-op on unsupported chips)
 	fn enable(&mut self) {}
+}
+
+/// Power states in which a system under test can be.
+/// The controller will properly transition between them,
+/// which may block for a few hundred milliseconds.
+#[derive(Debug, Clone, Copy)]
+pub enum PowerState {
+	/// Both the motherboard +5VSB line and PSU are off.
+	Off,
+	/// The motherboard +5bSB line is on, but the PSU is off.
+	Standby,
+	/// Both the motherboard +5VSB line and PSU are on.
+	On,
+}
+
+/// Controller for the system under test (switches, CPU, etc.)
+pub trait SystemUnderTest {
+	/// Set the power state of the machine. Must transition between
+	/// all combinations properly, which **might block** if the operation
+	/// is complex.
+	fn set_power_state(&mut self, new_state: PowerState);
+
+	/// Triggers a reset of the machine (via the reset switch)
+	/// with a pulse length of 10000 NOP's.
+	fn reset(&mut self) {
+		self.reset_ticks(10000);
+	}
+
+	/// Triggers a reset of the machine (via the reset switch)
+	/// with the specify number of NOP instructions (ticks).
+	fn reset_ticks(&mut self, ticks: usize);
+
+	/// Triggers an ACPI power signal to the machine (via the power switch)
+	/// with a pulse length of 10000 NOP's.
+	fn power(&mut self) {
+		self.reset_ticks(10000);
+	}
+
+	/// Triggers an ACPI power signal to the machine (via the power switch)
+	/// with the specify number of NOP instructions (ticks).
+	fn power_ticks(&mut self, ticks: usize);
+
+	/// Returns whether or not PWR_OK is high.
+	fn power_ok(&self) -> bool;
 }

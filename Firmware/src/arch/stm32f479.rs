@@ -1,6 +1,6 @@
 use super::common::Is31fl3218;
 use stm32f4xx_hal::{
-	gpio::{Output, Pin, PinState},
+	gpio::{Input, Output, Pin, PinState},
 	i2c,
 	pac::{self, I2C1, RCC, UART7},
 	prelude::*,
@@ -15,11 +15,13 @@ impl super::Arch for Stm32f479 {
 	type DebugLedImpl = Stm32f479DebugLed;
 	type DebugSerialImpl = Stm32f479DebugSerial;
 	type IndicatorLightsImpl = Stm32f479IndicatorLights;
+	type SystemUnderTestImpl = Stm32f479SystemUnderTest;
 
 	unsafe fn initialize() -> (
 		Self::DebugLedImpl,
 		Self::DebugSerialImpl,
 		Self::IndicatorLightsImpl,
+		Self::SystemUnderTestImpl,
 	) {
 		let p = pac::Peripherals::take().unwrap();
 		//let mut syscfg = p.SYSCFG.constrain();
@@ -30,8 +32,8 @@ impl super::Arch for Stm32f479 {
 
 		//let gpioa = p.GPIOA.split();
 		let gpiob = p.GPIOB.split();
-		//let gpioc = p.GPIOC.split();
-		//let mut gpiod = p.GPIOD.split();
+		let gpioc = p.GPIOC.split();
+		let gpiod = p.GPIOD.split();
 		let gpioe = p.GPIOE.split();
 		//let gpiof = p.GPIOF.split();
 
@@ -76,12 +78,12 @@ impl super::Arch for Stm32f479 {
 		//let mut usb_dn = gpioa.pa11.into_alternate();
 		//let mut usb_dp = gpioa.pa12.into_alternate();
 
-		//let mut sys_power = gpioc.pc8.into_push_pull_output();
-		//let mut sys_reset = gpioc.pc9.into_push_pull_output();
+		let sys_power = gpioc.pc8.into_push_pull_output();
+		let sys_reset = gpioc.pc9.into_push_pull_output();
 
-		//let mut psu_standby = gpiod.pd4.into_push_pull_output();
-		//let mut psu_on = gpiod.pd6.into_push_pull_output();
-		//let mut psu_ok = gpiod.pd5.make_interrupt_source(&mut syscfg);
+		let psu_standby = gpiod.pd4.into_push_pull_output();
+		let psu_on = gpiod.pd6.into_push_pull_output();
+		let psu_ok = gpiod.pd5.into_input();
 
 		let dbgled = gpioe.pe12.into_push_pull_output();
 
@@ -104,9 +106,21 @@ impl super::Arch for Stm32f479 {
 				&clocks,
 			)
 			.unwrap(),
-			Stm32f479IndicatorLights {
-				en_pin: indlights_en,
-				controller: Is31fl3218::new(indicator_lights_iface),
+			{
+				let mut indlights = Stm32f479IndicatorLights {
+					en_pin: indlights_en,
+					controller: Is31fl3218::new(indicator_lights_iface),
+				};
+				indlights.controller.reset();
+				indlights
+			},
+			Stm32f479SystemUnderTest {
+				current_state: super::PowerState::Off,
+				reset_pin: sys_reset,
+				power_pin: sys_power,
+				psu_on_pin: psu_on,
+				psu_standby_pin: psu_standby,
+				psu_ok_pin: psu_ok,
 			},
 		)
 	}
@@ -180,6 +194,102 @@ impl super::IndicatorLights for Stm32f479IndicatorLights {
 
 	fn all_off(&mut self) {
 		self.controller.reset();
+	}
+}
+
+pub struct Stm32f479SystemUnderTest {
+	current_state: super::PowerState,
+	reset_pin: Pin<'C', 9, Output>,
+	power_pin: Pin<'C', 8, Output>,
+	psu_on_pin: Pin<'D', 6, Output>,
+	psu_standby_pin: Pin<'D', 4, Output>,
+	psu_ok_pin: Pin<'D', 5, Input>,
+}
+
+impl super::SystemUnderTest for Stm32f479SystemUnderTest {
+	fn power_ok(&self) -> bool {
+		self.psu_ok_pin.is_high()
+	}
+	fn reset_ticks(&mut self, ticks: usize) {
+		self.reset_pin.set_high();
+		for _ in 0..ticks {
+			unsafe {
+				::core::arch::asm!("NOP");
+			}
+		}
+		self.reset_pin.set_low();
+	}
+	fn power_ticks(&mut self, ticks: usize) {
+		self.power_pin.set_high();
+		for _ in 0..ticks {
+			unsafe {
+				::core::arch::asm!("NOP");
+			}
+		}
+		self.power_pin.set_low();
+	}
+	fn set_power_state(&mut self, new_state: super::PowerState) {
+		use super::PowerState as PS;
+		match (self.current_state, new_state) {
+			(PS::Off, PS::Off) => { /* NO-OP */ }
+			(PS::Off, PS::Standby) => {
+				// Turn on the PSU standby
+				self.psu_standby_pin.set_high();
+				// Allow some time for the motherboard to come online
+				for _ in 0..1000000 {
+					unsafe {
+						::core::arch::asm!("NOP");
+					}
+				}
+			}
+			(PS::Off, PS::On) => {
+				// First transition to standby
+				self.set_power_state(PS::Standby);
+				// Then transition to on
+				self.set_power_state(PS::On);
+			}
+			(PS::Standby, PS::Off) => {
+				// Turn off the 5VSB pin
+				self.psu_standby_pin.set_low();
+				// Allow motherboard to drain
+				for _ in 0..1000000 {
+					unsafe {
+						::core::arch::asm!("NOP");
+					}
+				}
+			}
+			(PS::Standby, PS::Standby) => { /* NO-OP */ }
+			(PS::Standby, PS::On) => {
+				// Turn on the PSU
+				self.psu_on_pin.set_high();
+				// Wait for the PWR_OK signal to come up.
+				// roughly about 100ms
+				while !self.power_ok() {}
+			}
+			(PS::On, PS::Off) => {
+				// First transition to standby
+				self.set_power_state(PS::Standby);
+				// Then transition to off
+				self.set_power_state(PS::Off);
+			}
+			(PS::On, PS::Standby) => {
+				// Turn off the PSU
+				self.psu_on_pin.set_low();
+				// Wait for the PWR_OK signal to go low.
+				// Usually around 16-150ms after (and about 1ms
+				// before the rail actually go dark).
+				while self.power_ok() {}
+				// Give the PSU a little breathing room.
+				for _ in 0..100000 {
+					unsafe {
+						::core::arch::asm!("NOP");
+					}
+				}
+			}
+			(PS::On, PS::On) => { /* NO-OP */ }
+		}
+
+		self.current_state = new_state;
 	}
 }
 
