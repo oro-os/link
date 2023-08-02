@@ -89,7 +89,7 @@ impl super::Arch for Stm32f479 {
 
 		let indicator_lights_iface = p.I2C1.i2c(
 			(indlights_scl, indlights_sda),
-			i2c::Mode::standard(100000.Hz()),
+			i2c::Mode::fast(400000.Hz(), i2c::DutyCycle::Ratio2to1),
 			&clocks,
 		);
 
