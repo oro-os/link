@@ -176,6 +176,7 @@ impl From<(u8, u8, u8, u8)> for Color {
 	}
 }
 
+#[allow(unused)]
 pub mod color {
 	use super::Color;
 
@@ -183,7 +184,10 @@ pub mod color {
 	pub const WHITE: Color = Color::new_rgba(0xFFFFFFFF);
 	pub const RED: Color = Color::new_rgba(0xFF0000FF);
 	pub const GREEN: Color = Color::new_rgba(0x00FF00FF);
-	pub const BLUE: Color = Color::new_rgba(0xFF0000FF);
+	pub const BLUE: Color = Color::new_rgba(0x0000FFFF);
+	pub const CYAN: Color = Color::new_rgba(0x00FFFFFF);
+	pub const MAGENTA: Color = Color::new_rgba(0xFF00FFFF);
+	pub const YELLOW: Color = Color::new_rgba(0xFFFF00FF);
 }
 
 /// Controller for the 3 indicator lights

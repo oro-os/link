@@ -46,12 +46,15 @@ pub fn main() -> ! {
 
 	indlights.enable();
 
-	const COLORS: [Color; 5] = [
+	const COLORS: [Color; 8] = [
 		color::BLACK,
 		color::WHITE,
 		color::RED,
+		color::YELLOW,
 		color::GREEN,
+		color::CYAN,
 		color::BLUE,
+		color::MAGENTA,
 	];
 
 	let mut color_idx = 0;
