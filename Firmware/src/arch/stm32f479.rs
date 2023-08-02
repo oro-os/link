@@ -85,10 +85,6 @@ impl super::Arch for Stm32f479 {
 
 		let dbgled = gpioe.pe12.into_push_pull_output();
 
-		//self::dbg::init_dbg!(p.UART7, uart_tx, clocks);
-
-		//oro_link_firmware::main::<Stm32F479>();
-
 		let indicator_lights_iface = p.I2C1.i2c(
 			(indlights_scl, indlights_sda),
 			i2c::Mode::standard(100000.Hz()),
