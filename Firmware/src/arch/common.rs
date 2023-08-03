@@ -5,9 +5,7 @@ use core::fmt::Debug;
 
 // Indicator lighting controller: IS31FL3218
 #[cfg(feature = "is31fl3218")]
-mod is31fl3218;
-#[cfg(feature = "is31fl3218")]
-pub use self::is31fl3218::Is31fl3218;
+pub mod is31fl3218;
 
 /// I2C proxy abstraction; since each of the archs
 /// will use different HAL backend libraries of their own,

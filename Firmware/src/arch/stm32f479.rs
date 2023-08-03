@@ -1,54 +1,89 @@
-use super::common::Is31fl3218;
+use core::cell::RefCell;
+use embedded_hal::blocking::delay::DelayMs as DelayMsTrait;
+use enc28j60::{smoltcp_phy::Phy, Enc28j60};
 use stm32f4xx_hal::{
-	gpio::{Input, Output, Pin, PinState},
+	gpio::{Input, OpenDrain, Output, Pin, PinState},
+	hal::spi::MODE_0,
 	i2c,
-	pac::{self, I2C1, RCC, UART7},
+	pac::{self, I2C1, RCC, SPI1, SPI3, TIM1, UART7},
 	prelude::*,
 	serial::{Serial, Tx},
+	spi::Spi,
+	timer::DelayMs,
 };
 
 pub struct Stm32f479;
 
 type Stm32f479DebugSerial = Tx<UART7, u8>;
 
+static mut SHARED_DELAY: Option<RefCell<DelayMs<TIM1>>> = None;
+
+struct SharedDelay;
+
+impl DelayMsTrait<u8> for SharedDelay {
+	fn delay_ms(&mut self, ms: u8) {
+		if let Some(ref mut sd) = unsafe { &mut SHARED_DELAY } {
+			sd.borrow_mut().delay_ms(ms)
+		}
+	}
+}
+
 impl super::Arch for Stm32f479 {
 	type DebugLedImpl = Stm32f479DebugLed;
 	type DebugSerialImpl = Stm32f479DebugSerial;
 	type IndicatorLightsImpl = Stm32f479IndicatorLights;
 	type SystemUnderTestImpl = Stm32f479SystemUnderTest;
+	type ExternalEthernetDeviceImpl =
+		Phy<'static, Spi<SPI3>, Pin<'A', 15, Output<OpenDrain>>, Pin<'D', 1>, Pin<'D', 0, Output>>;
+	type SystemEthernetDeviceImpl =
+		Phy<'static, Spi<SPI1>, Pin<'A', 4, Output<OpenDrain>>, Pin<'B', 0>, Pin<'B', 1, Output>>;
 
-	unsafe fn initialize() -> (
+	unsafe fn initialize(
+		config: super::ArchConfig,
+	) -> (
 		Self::DebugLedImpl,
 		Self::DebugSerialImpl,
 		Self::IndicatorLightsImpl,
 		Self::SystemUnderTestImpl,
+		super::EthernetInterfaces<Self::ExternalEthernetDeviceImpl, Self::SystemEthernetDeviceImpl>,
 	) {
 		let p = pac::Peripherals::take().unwrap();
-		//let mut syscfg = p.SYSCFG.constrain();
+		let mut syscfg = p.SYSCFG.constrain();
 
-		// Initialize the clock
 		init_clock(&p.RCC);
 		let clocks = p.RCC.constrain().cfgr.freeze();
 
-		//let gpioa = p.GPIOA.split();
+		unsafe {
+			SHARED_DELAY = Some(RefCell::new(p.TIM1.delay_ms(&clocks)));
+		}
+
+		let gpioa = p.GPIOA.split();
 		let gpiob = p.GPIOB.split();
 		let gpioc = p.GPIOC.split();
 		let gpiod = p.GPIOD.split();
 		let gpioe = p.GPIOE.split();
-		//let gpiof = p.GPIOF.split();
 
 		let indlights_scl = gpiob.pb6.into_alternate_open_drain();
 		let indlights_sda = gpiob.pb7.into_alternate_open_drain();
 		let indlights_en = gpiob.pb4.into_push_pull_output(); // TODO set to open-drain
 
-		//let mut syseth_miso = gpioa.pa6.into_alternate();
-		//let mut syseth_mosi = gpioa.pa7.into_alternate();
-		//let mut syseth_ss = gpioa.pa4.into_alternate();
-		//let mut syseth_sck = gpioa.pa5.into_alternate();
-		//let mut syseth_rst = gpiob.pb1.into_push_pull_output();
-		//let mut syseth_int = gpiob.pb0.make_interrupt_source(&mut syscfg);
-		//let mut syseth_en = gpioa.pa2.into_push_pull_output();
-		//let mut syseth_xfrm_en = gpioa.pa3.into_push_pull_output();
+		let mut exteth_miso = gpioc.pc11.into_alternate();
+		let mut exteth_mosi = gpioc.pc12.into_alternate();
+		let mut exteth_ss = gpioa.pa15.into_open_drain_output();
+		let mut exteth_sck = gpioc.pc10.into_alternate();
+		let mut exteth_rst = gpiod.pd0.into_push_pull_output();
+		let mut exteth_int = gpiod.pd1.into_input();
+		let mut exteth_en = gpiod.pd7.into_push_pull_output();
+		let mut exteth_xfrm_en = gpiod.pd2.into_push_pull_output();
+
+		let mut syseth_miso = gpioa.pa6.into_alternate();
+		let mut syseth_mosi = gpioa.pa7.into_alternate();
+		let mut syseth_ss = gpioa.pa4.into_open_drain_output();
+		let mut syseth_sck = gpioa.pa5.into_alternate();
+		let mut syseth_rst = gpiob.pb1.into_push_pull_output();
+		let mut syseth_int = gpiob.pb0.into_input();
+		let mut syseth_en = gpioa.pa2.into_push_pull_output();
+		let mut syseth_xfrm_en = gpioa.pa3.into_push_pull_output();
 
 		//let mut oled_mosi = gpioc.pc3.into_alternate();
 		//let mut oled_ss = gpiob.pb9.into_alternate();
@@ -56,15 +91,6 @@ impl super::Arch for Stm32f479 {
 		//let mut oled_rst = gpioc.pc13.into_push_pull_output();
 		//let mut oled_dc = gpioc.pc14.into_push_pull_output();
 		//let mut oled_en = gpioe.pe2.into_push_pull_output();
-
-		//let mut exteth_miso = gpioc.pc11.into_alternate();
-		//let mut exteth_mosi = gpioc.pc12.into_alternate();
-		//let mut exteth_ss = gpioa.pa15.into_alternate();
-		//let mut exteth_sck = gpioc.pc10.into_alternate();
-		//let mut exteth_rst = gpiod.pd0.into_push_pull_output();
-		//let mut exteth_xfrm_en = gpiod.pd2.into_push_pull_output();
-		//let mut exteth_en = gpiod.pd7.into_push_pull_output();
-		//let mut exteth_int = gpiod.pd1.make_interrupt_source(&mut syscfg);
 
 		//let mut uart_rx = gpioe.pe7.into_alternate();
 		let uart_tx = gpioe.pe8.into_alternate();
@@ -93,6 +119,89 @@ impl super::Arch for Stm32f479 {
 			&clocks,
 		);
 
+		let ext_eth_spi = p.SPI3.spi(
+			(exteth_sck, exteth_miso, exteth_mosi),
+			MODE_0,
+			10.MHz(), // TODO set to 20MHz and test (this is what the datasheet specifies)
+			&clocks,
+		);
+
+		let ext_hw_addr = smoltcp::wire::HardwareAddress::Ethernet(
+			smoltcp::wire::EthernetAddress::from_bytes(&config.ext_eth_mac),
+		);
+
+		let ext_eth_iface = Enc28j60::new(
+			ext_eth_spi,
+			exteth_ss,
+			exteth_int,
+			exteth_rst,
+			&mut SharedDelay,
+			0x1000,
+			config.ext_eth_mac,
+		)
+		.unwrap();
+
+		static mut ext_eth_buf_rx: [u8; 0x1000] = [0; 0x1000];
+		static mut ext_eth_buf_tx: [u8; 0x1000] = [0; 0x1000];
+
+		let mut ext_eth_phy = enc28j60::smoltcp_phy::Phy::new(
+			ext_eth_iface,
+			unsafe { &mut ext_eth_buf_rx },
+			unsafe { &mut ext_eth_buf_tx },
+		);
+
+		let ext_config = smoltcp::iface::Config::new(ext_hw_addr);
+		// TODO ext_config.random_seed = get_random_seed()
+
+		let ext_interface = smoltcp::iface::Interface::new(
+			ext_config,
+			&mut ext_eth_phy,
+			smoltcp::time::Instant::from_millis(0), // TODO actually get the current time
+		);
+
+		// TODO DEBUG - needs to be implemented via trait
+		exteth_xfrm_en.set_high();
+
+		let sys_eth_spi = p.SPI1.spi(
+			(syseth_sck, syseth_miso, syseth_mosi),
+			MODE_0,
+			10.MHz(), // TODO set to 20MHz and test (this is what the datasheet specifies)
+			&clocks,
+		);
+
+		let sys_hw_addr = smoltcp::wire::HardwareAddress::Ethernet(
+			smoltcp::wire::EthernetAddress::from_bytes(&config.sys_eth_mac),
+		);
+
+		let sys_eth_iface = Enc28j60::new(
+			sys_eth_spi,
+			syseth_ss,
+			syseth_int,
+			syseth_rst,
+			&mut SharedDelay,
+			0x1000,
+			config.sys_eth_mac,
+		)
+		.unwrap();
+
+		static mut sys_eth_buf_rx: [u8; 0x1000] = [0; 0x1000];
+		static mut sys_eth_buf_tx: [u8; 0x1000] = [0; 0x1000];
+
+		let mut sys_eth_phy = enc28j60::smoltcp_phy::Phy::new(
+			sys_eth_iface,
+			unsafe { &mut sys_eth_buf_rx },
+			unsafe { &mut sys_eth_buf_tx },
+		);
+
+		let mut sys_config = smoltcp::iface::Config::new(sys_hw_addr);
+		// TODO sys_config.random_seed = get_random_seed()
+
+		let sys_interface = smoltcp::iface::Interface::new(
+			sys_config,
+			&mut sys_eth_phy,
+			smoltcp::time::Instant::from_millis(0), // TODO actually get the current time
+		);
+
 		(
 			Stm32f479DebugLed { pin: dbgled },
 			Serial::tx(
@@ -109,7 +218,7 @@ impl super::Arch for Stm32f479 {
 			{
 				let mut indlights = Stm32f479IndicatorLights {
 					en_pin: indlights_en,
-					controller: Is31fl3218::new(indicator_lights_iface),
+					controller: super::common::is31fl3218::Is31fl3218::new(indicator_lights_iface),
 				};
 				indlights.controller.reset();
 				indlights
@@ -121,6 +230,16 @@ impl super::Arch for Stm32f479 {
 				psu_on_pin: psu_on,
 				psu_standby_pin: psu_standby,
 				psu_ok_pin: psu_ok,
+			},
+			super::EthernetInterfaces {
+				external: super::EthernetPhy {
+					iface: ext_interface,
+					device: ext_eth_phy,
+				},
+				system: super::EthernetPhy {
+					iface: sys_interface,
+					device: sys_eth_phy,
+				},
 			},
 		)
 	}
@@ -138,7 +257,7 @@ impl super::DebugLed for Stm32f479DebugLed {
 
 pub struct Stm32f479IndicatorLights {
 	en_pin: Pin<'B', 4, Output>,
-	controller: Is31fl3218<i2c::I2c<I2C1>>,
+	controller: super::common::is31fl3218::Is31fl3218<i2c::I2c<I2C1>>,
 }
 
 impl<I2C: i2c::Instance> super::common::I2c for i2c::I2c<I2C> {

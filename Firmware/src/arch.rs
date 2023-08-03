@@ -6,6 +6,7 @@ mod stm32f479;
 pub use stm32f479::Stm32f479 as Impl;
 
 use core::fmt::Write;
+use smoltcp::{iface::Interface as EthernetInterface, phy::Device as PhyDevice};
 
 // Assert that the implementation implements Arch
 #[doc(hidden)]
@@ -14,6 +15,28 @@ fn implements_arch()
 where
 	Impl: Arch,
 {
+}
+
+/// Configuration for the architecture's peripherals
+pub struct ArchConfig {
+	pub ext_eth_mac: [u8; 6],
+	pub sys_eth_mac: [u8; 6],
+}
+
+/// Owning handles to an ethernet phy and its device
+pub struct EthernetPhy<PHY: PhyDevice> {
+	/// The smoltcp ethernet interface
+	pub iface: EthernetInterface,
+	/// The phy device
+	pub device: PHY,
+}
+
+/// Set of ethernet interfaces corresponding to the external/system interfaces
+pub struct EthernetInterfaces<EXT: PhyDevice, SYS: PhyDevice> {
+	/// The network interface that is connected to the outside world
+	pub external: EthernetPhy<EXT>,
+	/// The network interface that is connected to the system under test
+	pub system: EthernetPhy<SYS>,
 }
 
 /// Any supported "architecture" (platform/chip/...) must implement this
@@ -29,6 +52,10 @@ pub trait Arch {
 	type IndicatorLightsImpl: IndicatorLights;
 	/// Concrete implementation for the system-under-test (SUT) controller
 	type SystemUnderTestImpl: SystemUnderTest;
+	/// Concrete implementation for the external ethernet PHY device
+	type ExternalEthernetDeviceImpl: PhyDevice;
+	/// Concrete implementation for the system ethernet PHY device
+	type SystemEthernetDeviceImpl: PhyDevice;
 
 	/// Initializes the Oro Link architecture and all of the necessary peripherals
 	/// needed for operation
@@ -39,11 +66,14 @@ pub trait Arch {
 	///
 	/// Further, **this function may NOT use `println!()` or any other print functions!**
 	/// It should also avoid panicking. No output will show up!
-	unsafe fn initialize() -> (
+	unsafe fn initialize(
+		config: ArchConfig,
+	) -> (
 		Self::DebugLedImpl,
 		Self::DebugSerialImpl,
 		Self::IndicatorLightsImpl,
 		Self::SystemUnderTestImpl,
+		EthernetInterfaces<Self::ExternalEthernetDeviceImpl, Self::SystemEthernetDeviceImpl>,
 	);
 }
 

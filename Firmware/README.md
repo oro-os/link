@@ -14,12 +14,21 @@ when perusing the sources.
 ## Building
 
 With a sufficiently up-to-date Rust nightly toolchain and `arm-none-eabi-*`
-utilities installed, run `make`.
+utilities installed, run `make`:
 
-Flashable binaries will show up in `target/release`, named by their uC model.
+```shell
+make \
+	# (OPTIONAL) The last three octets of the
+	# external ethernet interface MAC address
+	# (default: "44:45:56" ('DEV'))
+	EXTMAC="78:9A:BC" \
+	# (OPTIONAL) if provided, builds in debug mode
+	# (default: release mode)
+	DEBUG=1
+```
 
-To build in debug mode, use `make DEBUG=1`. Binaries will thus show up in
-`target/debug`.
+Flashable binaries will show up in `target/debug` or `target/release`,
+named by their uC model.
 
 # License
 
