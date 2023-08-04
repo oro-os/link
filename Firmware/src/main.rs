@@ -14,12 +14,16 @@ use core::panic::PanicInfo;
 
 /// The first three bytes of the MAC address are the
 /// organizationally unique identifier (OUD), in this case
-/// 'ORO' (as ASCII -> hex).
-///
-/// A coincidence here is that, intentionally, the first
-/// octet 'O' has mask `0b10`, which means it will appear to
-/// other systems as a locally administered MAC address.
-const MAC_VENDOR: u32 = 0x4f524f;
+/// '.oO' (as ASCII -> hex).
+const MAC_VENDOR: u32 = 0x2E6F4F;
+sa::static_assert!(
+	(MAC_VENDOR & 0x010000) == 0,
+	"MAC_VENDOR cannot be a group MAC address (0:0 must be 0)"
+);
+sa::static_assert!(
+	(MAC_VENDOR & 0x020000) != 0,
+	"MAC_VENDOR must be a local MAC address (0:1 must be 1)"
+);
 /// The last three bytes of the system ethernet MAC address
 /// are the unique device number. This is the same for all
 /// link cards - 'SUT' (as ASCII -> hex).
