@@ -117,9 +117,9 @@ pub trait SystemUnderTest {
 	unsafe fn set_power_state(&mut self, new_state: PowerState);
 
 	/// Triggers a reset of the machine (via the reset switch)
-	/// with a pulse length of 50ms.
+	/// with a pulse length of 100ms.
 	fn reset(&mut self) {
-		self.reset_ms(50);
+		self.reset_ms(100);
 	}
 
 	/// Triggers a reset of the machine (via the reset switch),
@@ -127,9 +127,9 @@ pub trait SystemUnderTest {
 	fn reset_ms(&mut self, ms: u64);
 
 	/// Triggers an ACPI power signal to the machine (via the power switch)
-	/// with a pulse length of 50ms.
+	/// with a pulse length of 100ms.
 	fn power(&mut self) {
-		self.power_ms(50);
+		self.power_ms(100);
 	}
 
 	/// Triggers an ACPI power signal to the machine (via the power switch),
