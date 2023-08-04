@@ -11,15 +11,29 @@ resolver = "2"
 
 [features]
 default = []
+
+# Supported uC's
+# NOTE: one uC model == one board variant.
 stm32f479vg = [
-	"cortex-m",
-	"embassy-stm32",
-	"embassy-stm32/stm32f479vg"
+	"stm32",
+	"embassy-stm32/stm32f479vg",
+	"is31fl3218"
 ]
+
+# Supported peripheral chips
+# NOTE: don't use directly; only meant to be used by uC features
+is31fl3218 = []
+
+# Chip types
+# NOTE: don't use directly; only meant to be used by uC features
 cortex-m = [
 	"dep:cortex-m",
 	"cortex-m-rt",
 	"embassy-executor/arch-cortex-m"
+]
+stm32 = [
+	"cortex-m",
+	"embassy-stm32",
 ]
 
 [dependencies]

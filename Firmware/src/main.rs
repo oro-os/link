@@ -2,11 +2,14 @@
 #![no_main]
 #![feature(type_alias_impl_trait)]
 
+mod chip;
+mod uc;
+
 #[cfg(not(test))]
 use core::panic::PanicInfo;
 use embassy_executor::Spawner;
-use embassy_stm32::gpio::{Level, Output, Speed};
 use embassy_time::{Duration, Timer};
+use uc::DebugLed;
 
 #[cfg(not(test))]
 #[panic_handler]
@@ -16,15 +19,13 @@ fn panic(_panic: &PanicInfo<'_>) -> ! {
 
 #[embassy_executor::main]
 pub async fn main(_spawner: Spawner) {
-	let p = embassy_stm32::init(Default::default());
-
-	let mut led = Output::new(p.PE12, Level::Low, Speed::Low);
+	let (mut debug_led, _) = uc::init();
 
 	loop {
-		led.set_high();
+		debug_led.on();
 		Timer::after(Duration::from_millis(300)).await;
 
-		led.set_low();
+		debug_led.off();
 		Timer::after(Duration::from_millis(300)).await;
 	}
 }
