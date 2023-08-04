@@ -13,7 +13,11 @@ bind_interrupts!(struct Irqs {
 	I2C1_EV => i2c::InterruptHandler<peripherals::I2C1>;
 });
 
-pub fn init() -> (impl uc::DebugLed, impl uc::SystemUnderTest) {
+pub fn init() -> (
+	impl uc::DebugLed,
+	impl uc::SystemUnderTest,
+	impl uc::IndicatorLights,
+) {
 	let config = Config::default();
 
 	let p = embassy_stm32::init(config);
@@ -32,8 +36,7 @@ pub fn init() -> (impl uc::DebugLed, impl uc::SystemUnderTest) {
 	);
 
 	ind_on.set_high();
-	let mut indicators = crate::chip::is31fl3218::Is31fl3218::new(i2c);
-	indicators.enable();
+	let indicators = crate::chip::is31fl3218::Is31fl3218::new(i2c);
 
 	(
 		peripheral::DebugLed::new(Output::new(p.PE12, Level::Low, Speed::Low)),
@@ -44,6 +47,7 @@ pub fn init() -> (impl uc::DebugLed, impl uc::SystemUnderTest) {
 			Output::new(p.PD4, Level::Low, Speed::Low),
 			Input::new(p.PD5, Pull::Up),
 		),
+		super::Is31fl3218IndicatorLights::<_, 0, 1, 17, 12, 13, 11, 16, 14, 15>::new(indicators),
 	)
 }
 
