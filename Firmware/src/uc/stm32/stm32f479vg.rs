@@ -18,7 +18,12 @@ pub fn init() -> (
 	impl uc::SystemUnderTest,
 	impl uc::IndicatorLights,
 ) {
-	let config = Config::default();
+	let mut config = Config::default();
+	config.rcc.hse = Some(Hertz::mhz(26));
+	config.rcc.bypass_hse = false;
+	config.rcc.hclk = Some(Hertz(168409091));
+	config.rcc.sys_ck = Some(Hertz(168409091));
+	config.rcc.pll48 = true;
 
 	let p = embassy_stm32::init(config);
 
