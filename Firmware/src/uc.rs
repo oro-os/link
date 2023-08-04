@@ -129,7 +129,7 @@ pub trait SystemUnderTest {
 	/// Triggers an ACPI power signal to the machine (via the power switch)
 	/// with a pulse length of 10000 NOP's.
 	fn power(&mut self) {
-		self.reset_ticks(100000);
+		self.power_ticks(100000);
 	}
 
 	/// Triggers an ACPI power signal to the machine (via the power switch)
