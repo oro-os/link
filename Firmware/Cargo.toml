@@ -6,62 +6,58 @@ publish = false
 edition = "2021"
 authors = [ "Joshua Lee Junon <junon@oro.sh> (https://github.com/qix-)" ]
 repository = "https://github.com/oro-os/oro-link-x86"
+license = "MIT"
+resolver = "2"
 
 [features]
 default = []
-
-# supported platforms
-stm32f479 = [
-	"stm32f4xx-hal",
-	"stm32f4xx-hal/stm32f479",
-	"is31fl3218",
-	"enc28j60",
-	"smoltcp/iface-max-addr-count-2",
-	"smoltcp/iface-max-multicast-group-count-2",
-	"smoltcp/iface-neighbor-cache-count-4",
-	"smoltcp/iface-max-route-count-2",
-	"smoltcp/fragmentation-buffer-size-2048",
-	"smoltcp/assembler-max-segment-count-8",
-	"smoltcp/reassembly-buffer-size-2048",
-	"smoltcp/reassembly-buffer-count-2",
-	"smoltcp/dns-max-result-count-1",
-	"smoltcp/dns-max-server-count-1",
-	"smoltcp/dns-max-name-size-64"
+stm32f479vg = [
+	"cortex-m",
+	"embassy-stm32",
+	"embassy-stm32/stm32f479vg"
 ]
-
-# common peripherals
-is31fl3218 = []
-enc28j60 = ["dep:enc28j60", "embedded-hal"]
+cortex-m = [
+	"dep:cortex-m",
+	"cortex-m-rt",
+	"embassy-executor/arch-cortex-m"
+]
 
 [dependencies]
-embedded-hal = { version = "0.2.7", optional = true }
-enc28j60 = { version = "0.3.0", optional = true, git = "https://github.com/oro-os/enc28j60", features = [ "smoltcp" ] }
-sa = "2.0.0"
-stm32f4xx-hal = { version = "0.17.1", optional = true }
+cortex-m-rt = { version = "0.7.3", optional = true }
 
-[dependencies.smoltcp]
-version = "0.10.0"
-default-features = false
+[dependencies.cortex-m]
+version = "0.7.7"
+optional = true
 features = [
-	"medium-ethernet",
-	"medium-ip",
-	"proto-dhcpv4",
-	"proto-dns",
-	"proto-igmp",
-	"proto-ipv4",
-	"proto-ipv4-fragmentation",
-	"proto-ipv6",
-	"socket",
-	"socket-dhcpv4",
-	"socket-dns",
-	"socket-icmp",
-	"socket-raw",
-	"socket-tcp",
-	"socket-udp"
+	"critical-section-single-core",
+	"inline-asm"
 ]
 
-[dev-dependencies]
-rusty-hook = "0.11.2"
+[dependencies.embassy-executor]
+git = "https://github.com/embassy-rs/embassy"
+features = [
+	"nightly",
+	"integrated-timers",
+	"executor-thread"
+]
+
+[dependencies.embassy-time]
+git = "https://github.com/embassy-rs/embassy"
+features = [
+	"nightly",
+	"unstable-traits",
+	"tick-hz-32_768"
+]
+
+[dependencies.embassy-stm32]
+optional = true
+git = "https://github.com/embassy-rs/embassy"
+features = [
+	"nightly",
+	"unstable-traits",
+	"unstable-pac",
+	"time-driver-any"
+]
 
 [profile.release]
 opt-level = 3       # Maximum optimizations
