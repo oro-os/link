@@ -8,6 +8,7 @@ use embassy_stm32::{
 	gpio::{Input, Output, Pin},
 	i2c,
 };
+use embassy_time::{block_for, Duration};
 
 impl<'d, T: i2c::Instance, TXDMA, RXDMA> chip::I2c for i2c::I2c<'d, T, TXDMA, RXDMA> {
 	type Error = i2c::Error;
@@ -176,23 +177,15 @@ where
 	PSUSB: Pin,
 	SYSON: Pin,
 {
-	fn reset_ticks(&mut self, ticks: usize) {
+	fn reset_ms(&mut self, ms: u64) {
 		self.reset_pin.set_high();
-		for _ in 0..ticks {
-			unsafe {
-				::core::arch::asm!("NOP");
-			}
-		}
+		block_for(Duration::from_millis(ms));
 		self.reset_pin.set_low();
 	}
 
-	fn power_ticks(&mut self, ticks: usize) {
+	fn power_ms(&mut self, ms: u64) {
 		self.power_pin.set_high();
-		for _ in 0..ticks {
-			unsafe {
-				::core::arch::asm!("NOP");
-			}
-		}
+		block_for(Duration::from_millis(ms));
 		self.power_pin.set_low();
 	}
 

@@ -117,24 +117,24 @@ pub trait SystemUnderTest {
 	unsafe fn set_power_state(&mut self, new_state: PowerState);
 
 	/// Triggers a reset of the machine (via the reset switch)
-	/// with a pulse length of 10000 NOP's.
+	/// with a pulse length of 50ms.
 	fn reset(&mut self) {
-		self.reset_ticks(100000);
+		self.reset_ms(50);
 	}
 
-	/// Triggers a reset of the machine (via the reset switch)
-	/// with the specify number of NOP instructions (ticks).
-	fn reset_ticks(&mut self, ticks: usize);
+	/// Triggers a reset of the machine (via the reset switch),
+	/// holding it for a specific number of milliseconds.
+	fn reset_ms(&mut self, ms: u64);
 
 	/// Triggers an ACPI power signal to the machine (via the power switch)
-	/// with a pulse length of 10000 NOP's.
+	/// with a pulse length of 50ms.
 	fn power(&mut self) {
-		self.power_ticks(100000);
+		self.power_ms(50);
 	}
 
-	/// Triggers an ACPI power signal to the machine (via the power switch)
-	/// with the specify number of NOP instructions (ticks).
-	fn power_ticks(&mut self, ticks: usize);
+	/// Triggers an ACPI power signal to the machine (via the power switch),
+	/// holding it for a specific number of milliseconds.
+	fn power_ms(&mut self, ms: u64);
 }
 
 /// A singular color of an indicator light; may be gamma corrected
