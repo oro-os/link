@@ -3,6 +3,7 @@ mod stm32;
 #[cfg(feature = "stm32")]
 pub use stm32::*;
 
+pub use embassy_net::driver::Driver as EthernetDriver;
 use embassy_time::{block_for, Duration};
 
 /// Controller for the MCU's debug LED, which is just a single LED used
@@ -307,5 +308,8 @@ mod _check_init {
 		Init::ok(init())
 	}
 
-	impl<DBG: DebugLed, SUT: SystemUnderTest, IND: IndicatorLights> Init for (DBG, SUT, IND) {}
+	impl<DBG: DebugLed, SUT: SystemUnderTest, IND: IndicatorLights, EXTETH: EthernetDriver> Init
+		for (DBG, SUT, IND, EXTETH)
+	{
+	}
 }

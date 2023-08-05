@@ -1,6 +1,9 @@
 #[cfg(feature = "is31fl3218")]
 pub mod is31fl3218;
 
+#[cfg(feature = "enc28j60")]
+pub use embassy_net_enc28j60 as enc28j60;
+
 use core::fmt::Debug;
 
 /// I2C proxy abstraction; since each of the archs
