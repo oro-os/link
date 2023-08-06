@@ -93,6 +93,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "40ac3d0c0a542d0ab5521211f873f62706a7136df415676f676d347e5a41dd80"
 dependencies = [
  "bitflags",
+ "defmt",
  "embedded-hal 0.2.7",
  "nb 1.1.0",
  "vcell",
@@ -228,8 +229,9 @@ dependencies = [
 [[package]]
 name = "embassy-embedded-hal"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#d3937872925da1165ba0af993af16afd36bfa584"
+source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
 dependencies = [
+ "defmt",
  "embassy-futures",
  "embassy-sync",
  "embassy-time",
@@ -244,11 +246,12 @@ dependencies = [
 [[package]]
 name = "embassy-executor"
 version = "0.2.0"
-source = "git+https://github.com/oro-os/embassy.git#d3937872925da1165ba0af993af16afd36bfa584"
+source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
 dependencies = [
  "atomic-polyfill 1.0.3",
  "cortex-m",
  "critical-section",
+ "defmt",
  "embassy-macros",
  "embassy-time",
  "futures-util",
@@ -258,22 +261,23 @@ dependencies = [
 [[package]]
 name = "embassy-futures"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#d3937872925da1165ba0af993af16afd36bfa584"
+source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
 
 [[package]]
 name = "embassy-hal-internal"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#d3937872925da1165ba0af993af16afd36bfa584"
+source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
 dependencies = [
  "cortex-m",
  "critical-section",
+ "defmt",
  "num-traits",
 ]
 
 [[package]]
 name = "embassy-macros"
 version = "0.2.0"
-source = "git+https://github.com/oro-os/embassy.git#d3937872925da1165ba0af993af16afd36bfa584"
+source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
 dependencies = [
  "darling",
  "proc-macro2",
@@ -284,11 +288,12 @@ dependencies = [
 [[package]]
 name = "embassy-net"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#d3937872925da1165ba0af993af16afd36bfa584"
+source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
 dependencies = [
  "as-slice 0.2.1",
  "atomic-polyfill 1.0.3",
  "atomic-pool",
+ "defmt",
  "embassy-net-driver",
  "embassy-sync",
  "embassy-time",
@@ -305,12 +310,15 @@ dependencies = [
 [[package]]
 name = "embassy-net-driver"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#d3937872925da1165ba0af993af16afd36bfa584"
+source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+dependencies = [
+ "defmt",
+]
 
 [[package]]
 name = "embassy-net-enc28j60"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#d3937872925da1165ba0af993af16afd36bfa584"
+source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
 dependencies = [
  "defmt",
  "embassy-futures",
@@ -323,7 +331,7 @@ dependencies = [
 [[package]]
 name = "embassy-stm32"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#d3937872925da1165ba0af993af16afd36bfa584"
+source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
 dependencies = [
  "atomic-polyfill 1.0.3",
  "bit_field",
@@ -332,6 +340,7 @@ dependencies = [
  "cortex-m",
  "cortex-m-rt",
  "critical-section",
+ "defmt",
  "document-features",
  "embassy-embedded-hal",
  "embassy-futures",
@@ -362,10 +371,11 @@ dependencies = [
 [[package]]
 name = "embassy-sync"
 version = "0.2.0"
-source = "git+https://github.com/oro-os/embassy.git#d3937872925da1165ba0af993af16afd36bfa584"
+source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
 dependencies = [
  "cfg-if",
  "critical-section",
+ "defmt",
  "embedded-io",
  "futures-util",
  "heapless",
@@ -374,11 +384,12 @@ dependencies = [
 [[package]]
 name = "embassy-time"
 version = "0.1.2"
-source = "git+https://github.com/oro-os/embassy.git#d3937872925da1165ba0af993af16afd36bfa584"
+source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
 dependencies = [
  "atomic-polyfill 1.0.3",
  "cfg-if",
  "critical-section",
+ "defmt",
  "embedded-hal 0.2.7",
  "embedded-hal 1.0.0-alpha.11",
  "embedded-hal-async",
@@ -389,7 +400,10 @@ dependencies = [
 [[package]]
 name = "embassy-usb-driver"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#d3937872925da1165ba0af993af16afd36bfa584"
+source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+dependencies = [
+ "defmt",
+]
 
 [[package]]
 name = "embedded-hal"
@@ -441,6 +455,9 @@ name = "embedded-io"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ef1a6892d9eef45c8fa6b9e0086428a2cca8491aca8f787c534a3d6d0bcb3ced"
+dependencies = [
+ "defmt",
+]
 
 [[package]]
 name = "embedded-nal"
@@ -603,6 +620,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "db04bc24a18b9ea980628ecf00e6c0264f3c1426dac36c00cb49b6fbad8b0743"
 dependencies = [
  "atomic-polyfill 0.1.11",
+ "defmt",
  "hash32",
  "rustc_version 0.4.0",
  "spin",
@@ -817,6 +835,7 @@ dependencies = [
  "bitflags",
  "byteorder",
  "cfg-if",
+ "defmt",
  "heapless",
  "managed",
 ]

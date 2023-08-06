@@ -58,6 +58,7 @@ features = [
 [dependencies.embassy-executor]
 git = "https://github.com/oro-os/embassy.git"
 features = [
+	"defmt",
 	"nightly",
 	"integrated-timers",
 	"executor-thread"
@@ -66,6 +67,7 @@ features = [
 [dependencies.embassy-time]
 git = "https://github.com/oro-os/embassy.git"
 features = [
+	"defmt",
 	"nightly",
 	"unstable-traits",
 	"tick-hz-32_768"
@@ -75,6 +77,7 @@ features = [
 optional = true
 git = "https://github.com/oro-os/embassy.git"
 features = [
+	"defmt",
 	"nightly",
 	"unstable-traits",
 	"unstable-pac",
@@ -84,6 +87,7 @@ features = [
 [dependencies.embassy-net]
 git = "https://github.com/oro-os/embassy.git"
 features = [
+	"defmt",
 	"nightly",
 	"unstable-traits",
 	"udp",

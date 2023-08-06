@@ -7,7 +7,7 @@ mod uc;
 
 #[cfg(not(test))]
 use core::panic::PanicInfo;
-use defmt::{error, info};
+use defmt::{error, info, warn};
 use embassy_executor::Spawner;
 use embassy_net::Stack;
 use embassy_time::{Duration, Timer};
@@ -63,7 +63,7 @@ pub async fn main(spawner: Spawner) {
 		)
 	};
 
-	let _extnet = unsafe {
+	let extnet = unsafe {
 		EXT_ETH_STACK = {
 			fn init(extnet: Stack<ExtEthDriver>) -> Option<Stack<ExtEthDriver>> {
 				Some(extnet)
@@ -80,6 +80,18 @@ pub async fn main(spawner: Spawner) {
 		debug_led.on();
 		Timer::after(Duration::from_millis(100)).await;
 		debug_led.off();
-		Timer::after(Duration::from_millis(300)).await;
+		Timer::after(Duration::from_millis(3000)).await;
+
+		match extnet
+			.dns_query("oro.sh", embassy_net::dns::DnsQueryType::A)
+			.await
+		{
+			Ok(addr) => {
+				info!("resolved: oro.sh @ {:?}", addr[0]);
+			}
+			Err(err) => {
+				warn!("resolved: oro.sh FAILED: {:?}", err);
+			}
+		}
 	}
 }

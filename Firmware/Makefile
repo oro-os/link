@@ -12,7 +12,7 @@ export EXTMAC=44:45:56
 endif
 
 ifndef LEVEL
-LEVEL := trace
+LEVEL := warn
 endif
 
 export DEFMT_LOG = $(LEVEL)
