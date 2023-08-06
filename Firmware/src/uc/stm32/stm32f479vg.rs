@@ -129,7 +129,7 @@ pub fn init() -> (
 	let mut extconf = spi::Config::default();
 	extconf.mode = spi::MODE_0;
 	extconf.bit_order = spi::BitOrder::MsbFirst;
-	extconf.frequency = Hertz(500_000);
+	extconf.frequency = Hertz(8_000_000);
 
 	let extspi = Spi::new(p.SPI3, p.PC10, p.PC12, p.PC11, NoDma, NoDma, extconf);
 
