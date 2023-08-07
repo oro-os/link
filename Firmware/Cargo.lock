@@ -3,6 +3,12 @@
 version = 3
 
 [[package]]
+name = "arraydeque"
+version = "0.4.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f0ffd3d69bd89910509a5d31d1f1353f38ccffdd116dd0099bbd6627f7bd8ad8"
+
+[[package]]
 name = "as-slice"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -58,6 +64,12 @@ name = "autocfg"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
+
+[[package]]
+name = "az"
+version = "1.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7b7e4c2464d97fe331d41de9d5db0def0a96f4d823b8b32a2efd503578988973"
 
 [[package]]
 name = "bare-metal"
@@ -218,6 +230,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "display-interface"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7517c040926d7b02b111884aa089177db80878533127f7c1b480d852c5fb4112"
+
+[[package]]
 name = "document-features"
 version = "0.2.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -301,7 +319,7 @@ dependencies = [
  "embedded-nal-async",
  "futures",
  "generic-array 0.14.7",
- "heapless",
+ "heapless 0.7.16",
  "managed",
  "smoltcp",
  "stable_deref_trait",
@@ -378,7 +396,7 @@ dependencies = [
  "defmt",
  "embedded-io",
  "futures-util",
- "heapless",
+ "heapless 0.7.16",
 ]
 
 [[package]]
@@ -394,7 +412,7 @@ dependencies = [
  "embedded-hal 1.0.0-alpha.11",
  "embedded-hal-async",
  "futures-util",
- "heapless",
+ "heapless 0.7.16",
 ]
 
 [[package]]
@@ -403,6 +421,48 @@ version = "0.1.0"
 source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
 dependencies = [
  "defmt",
+]
+
+[[package]]
+name = "embedded-dma"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "994f7e5b5cb23521c22304927195f236813053eb9c065dd2226a32ba64695446"
+dependencies = [
+ "stable_deref_trait",
+]
+
+[[package]]
+name = "embedded-graphics"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cd2a8e0250a7e1212828166b01eed0219e488ebb2599f44624a29c9bd249f397"
+dependencies = [
+ "az",
+ "byteorder",
+ "embedded-graphics-core",
+ "float-cmp",
+ "micromath",
+]
+
+[[package]]
+name = "embedded-graphics-core"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ba9ecd261f991856250d2207f6d8376946cd9f412a2165d3b75bc87a0bc7a044"
+dependencies = [
+ "az",
+ "byteorder",
+]
+
+[[package]]
+name = "embedded-graphics-framebuf"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "22354420f68727fa24d1e2741dae1e9a041065e80fb63b35a8d19c647a85be76"
+dependencies = [
+ "embedded-dma",
+ "embedded-graphics",
 ]
 
 [[package]]
@@ -465,7 +525,7 @@ version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "db9efecb57ab54fa918730f2874d7d37647169c50fa1357fecb81abee840b113"
 dependencies = [
- "heapless",
+ "heapless 0.7.16",
  "nb 1.1.0",
  "no-std-net 0.5.0",
 ]
@@ -478,7 +538,7 @@ checksum = "27ce84f518ca912777ec143db235f4d615e3bf8d4e46d507d6ef12daf5b1df98"
 dependencies = [
  "embedded-io",
  "embedded-nal",
- "heapless",
+ "heapless 0.7.16",
  "no-std-net 0.6.0",
 ]
 
@@ -495,6 +555,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "052997a894670d0cde873faa7405bc98e2fd29f569d2acd568561bc1c396b35a"
 dependencies = [
  "embedded-storage",
+]
+
+[[package]]
+name = "float-cmp"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "98de4bbd547a563b716d8dfa9aad1cb19bfab00f4fa09a6a4ed21dbcf44ce9c4"
+dependencies = [
+ "num-traits",
 ]
 
 [[package]]
@@ -606,11 +675,32 @@ dependencies = [
 
 [[package]]
 name = "hash32"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d4041af86e63ac4298ce40e5cca669066e75b6f1aa3390fe2561ffa5e1d9f4cc"
+dependencies = [
+ "byteorder",
+]
+
+[[package]]
+name = "hash32"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b0c35f58762feb77d74ebe43bdbc3210f09be9fe6742234d573bacc26ed92b67"
 dependencies = [
  "byteorder",
+]
+
+[[package]]
+name = "heapless"
+version = "0.5.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "74911a68a1658cfcfb61bc0ccfbd536e3b6e906f8c2f7883ee50157e3e2184f1"
+dependencies = [
+ "as-slice 0.1.5",
+ "generic-array 0.13.3",
+ "hash32 0.1.1",
+ "stable_deref_trait",
 ]
 
 [[package]]
@@ -621,7 +711,7 @@ checksum = "db04bc24a18b9ea980628ecf00e6c0264f3c1426dac36c00cb49b6fbad8b0743"
 dependencies = [
  "atomic-polyfill 0.1.11",
  "defmt",
- "hash32",
+ "hash32 0.2.1",
  "rustc_version 0.4.0",
  "spin",
  "stable_deref_trait",
@@ -654,6 +744,12 @@ name = "managed"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0ca88d725a0a943b096803bd34e73a4437208b6077654cc4ecb2947a5f91618d"
+
+[[package]]
+name = "micromath"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "39617bc909d64b068dcffd0e3e31679195b5576d0c83fadc52690268cc2b2b55"
 
 [[package]]
 name = "nb"
@@ -698,14 +794,19 @@ dependencies = [
  "cortex-m",
  "cortex-m-rt",
  "defmt",
+ "display-interface",
  "embassy-executor",
  "embassy-net",
  "embassy-net-enc28j60",
  "embassy-stm32",
  "embassy-time",
- "embedded-hal 0.2.7",
+ "embedded-graphics",
+ "embedded-graphics-core",
+ "embedded-graphics-framebuf",
+ "embedded-hal 1.0.0-alpha.11",
  "embedded-hal-bus",
- "heapless",
+ "heapless 0.7.16",
+ "ssd1362",
  "static_cell",
 ]
 
@@ -836,7 +937,7 @@ dependencies = [
  "byteorder",
  "cfg-if",
  "defmt",
- "heapless",
+ "heapless 0.7.16",
  "managed",
 ]
 
@@ -847,6 +948,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6980e8d7511241f8acf4aebddbb1ff938df5eebe98691418c4468d0b72a96a67"
 dependencies = [
  "lock_api",
+]
+
+[[package]]
+name = "ssd1362"
+version = "0.1.0"
+source = "git+https://github.com/oro-os/ssd1362.git#02e47e761bc6bb87c35712695df28c70a4ee471e"
+dependencies = [
+ "arraydeque",
+ "display-interface",
+ "embedded-hal 0.2.7",
+ "generic-array 0.14.7",
+ "heapless 0.5.6",
 ]
 
 [[package]]

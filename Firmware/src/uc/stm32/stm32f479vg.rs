@@ -68,7 +68,7 @@ unsafe impl Logger for DebugLogger {
 pub fn init() -> (
 	impl uc::DebugLed,
 	impl uc::SystemUnderTest,
-	impl uc::IndicatorLights,
+	impl uc::Monitor,
 	impl uc::EthernetDriver,
 ) {
 	let mut config = Config::default();
@@ -114,7 +114,48 @@ pub fn init() -> (
 	);
 
 	let indicators = crate::chip::is31fl3218::Is31fl3218::new(i2c);
+	let indicators =
+		crate::chip::is31fl3218::IndicatorLights::<_, 0, 1, 17, 12, 13, 11, 16, 14, 15>::new(
+			indicators,
+		);
+
 	info!("... indicators INIT");
+
+	let mut oled_en = Output::new(p.PE2, Level::Low, Speed::Low);
+	let mut oled_rst = Output::new(p.PC13, Level::Low, Speed::Low);
+	oled_en.set_high();
+	oled_rst.set_high();
+	// Keep it high even after we return
+	::core::mem::forget(oled_en);
+	::core::mem::forget(oled_rst);
+
+	let mut oledconf = spi::Config::default();
+	oledconf.mode = spi::MODE_0;
+	oledconf.bit_order = spi::BitOrder::MsbFirst;
+	oledconf.frequency = Hertz(1_000_000);
+
+	let mut oled = crate::chip::ssd1362::SSD1362::new(
+		ExclusiveDevice::new(
+			Spi::new_txonly(p.SPI2, p.PD3, p.PC3, NoDma, NoDma, oledconf),
+			OutputOpenDrain::new(p.PB9, Level::High, Speed::VeryHigh, Pull::None),
+			Delay,
+		),
+		Output::new(p.PC14, Level::High, Speed::VeryHigh),
+		true,
+	)
+	.unwrap();
+
+	oled.on().unwrap();
+	oled.clear().unwrap();
+
+	info!("... oled INIT");
+
+	let monitor =
+		crate::uc::helper::monitor::three_indicators_oled_256x64::ThreeIndicatorsOled256x64::new(
+			oled, indicators,
+		);
+
+	info!("... monitor INIT");
 
 	let mut exteth_en = Output::new(p.PD7, Level::Low, Speed::Low);
 	let mut exteth_xfrm_en = Output::new(p.PD2, Level::Low, Speed::Low);
@@ -151,18 +192,21 @@ pub fn init() -> (
 
 	info!("... external ethernet INIT");
 
-	(
-		super::DebugLed::new(Output::new(p.PE12, Level::Low, Speed::Low)),
-		super::SystemUnderTest::new(
-			Output::new(p.PC9, Level::Low, Speed::Low),
-			Output::new(p.PC8, Level::Low, Speed::Low),
-			Output::new(p.PD6, Level::Low, Speed::Low),
-			Output::new(p.PD4, Level::Low, Speed::Low),
-			Input::new(p.PD5, Pull::Up),
-		),
-		super::Is31fl3218IndicatorLights::<_, 0, 1, 17, 12, 13, 11, 16, 14, 15>::new(indicators),
-		exteth,
-	)
+	let system = super::SystemUnderTest::new(
+		Output::new(p.PC9, Level::Low, Speed::Low),
+		Output::new(p.PC8, Level::Low, Speed::Low),
+		Output::new(p.PD6, Level::Low, Speed::Low),
+		Output::new(p.PD4, Level::Low, Speed::Low),
+		Input::new(p.PD5, Pull::Up),
+	);
+
+	info!("... system under test INIT");
+
+	let debug_led = super::DebugLed::new(Output::new(p.PE12, Level::Low, Speed::Low));
+
+	info!("... debug led INIT");
+
+	(debug_led, system, monitor, exteth)
 }
 
 impl<'d, T: usart::BasicInstance, TxDma, RxDma> ByteWriter for Uart<'d, T, TxDma, RxDma> {

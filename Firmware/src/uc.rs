@@ -1,3 +1,5 @@
+pub mod helper;
+
 #[cfg(feature = "stm32")]
 mod stm32;
 #[cfg(feature = "stm32")]
@@ -5,6 +7,7 @@ pub use stm32::*;
 
 pub use embassy_net::driver::Driver as EthernetDriver;
 use embassy_time::{block_for, Duration};
+use heapless::String;
 
 /// Controller for the MCU's debug LED, which is just a single LED used
 /// to test basic I/O during POST and other states the firmware decides
@@ -138,157 +141,64 @@ pub trait SystemUnderTest {
 	fn power_ms(&mut self, ms: u64);
 }
 
-/// A singular color of an indicator light; may be gamma corrected
-/// by the implementation (do not gamma correct yourself).
-#[derive(Debug, Clone, Copy)]
-pub struct Color {
-	pub r: u8,
-	pub g: u8,
-	pub b: u8,
-	pub a: u8,
+/// A singular mode that a monitor should be in.
+#[derive(Default, Clone, Copy, PartialEq, Eq)]
+pub enum Scene {
+	/// Displays the Oro logo and any aesthetically pleasing effect on
+	/// LEDs, etc.
+	#[default]
+	OroLogo,
+	/// Displays a running log of diagnostic frames.
+	Log,
 }
 
-#[allow(unused)]
-impl Color {
-	/// Constructs a new `Color` given individual component values
-	pub const fn new(r: u8, g: u8, b: u8, a: u8) -> Self {
-		Self { r, g, b, a }
-	}
-
-	/// Constructs a new `Color` given a single RGBA integer
-	/// (e.g. 0xAABBCCDD)
-	pub const fn new_rgba(rgba: u32) -> Self {
-		Self {
-			r: ((rgba >> 24) & 0xFF) as u8,
-			g: ((rgba >> 16) & 0xFF) as u8,
-			b: ((rgba >> 8) & 0xFF) as u8,
-			a: (rgba & 0xFF) as u8,
-		}
-	}
-
-	/// Modifies the alpha value
-	pub const fn alpha(mut self, new_alpha: u8) -> Self {
-		self.a = new_alpha;
-		self
-	}
-
-	/// Modifies the red value
-	pub const fn red(mut self, new_red: u8) -> Self {
-		self.r = new_red;
-		self
-	}
-
-	/// Modifies the blue value
-	pub const fn blue(mut self, new_blue: u8) -> Self {
-		self.b = new_blue;
-		self
-	}
-
-	/// Modifies the green value
-	pub const fn green(mut self, new_green: u8) -> Self {
-		self.g = new_green;
-		self
-	}
-
-	/// Creates a new color with the modified alpha value
-	pub const fn with_alpha(&self, new_alpha: u8) -> Self {
-		Self {
-			r: self.r,
-			g: self.g,
-			b: self.b,
-			a: new_alpha,
-		}
-	}
-
-	/// Creates a new color with the modified red value
-	pub const fn with_red(&self, new_red: u8) -> Self {
-		Self {
-			r: new_red,
-			g: self.g,
-			b: self.b,
-			a: self.a,
-		}
-	}
-
-	/// Creates a new color with the modified blue value
-	pub const fn with_blue(&self, new_blue: u8) -> Self {
-		Self {
-			r: self.r,
-			g: self.g,
-			b: new_blue,
-			a: self.a,
-		}
-	}
-
-	/// Creates a new color with the modified green value
-	pub const fn with_green(&self, new_green: u8) -> Self {
-		Self {
-			r: self.r,
-			g: new_green,
-			b: self.b,
-			a: self.a,
-		}
-	}
-
-	/// Pre-multiplies the alpha without performing a float cast
-	pub fn premultiply_alpha(&self) -> (u8, u8, u8) {
-		(
-			((((self.r as u16) * (self.a as u16)) >> 8) + 1) as u8,
-			((((self.g as u16) * (self.a as u16)) >> 8) + 1) as u8,
-			((((self.b as u16) * (self.a as u16)) >> 8) + 1) as u8,
-		)
-	}
+/// A log frame's severity level.
+/// All log frames are considered important if the firmware pushes them;
+/// implementations of [`Monitor`] should not perform any filtering.
+pub enum LogSeverity {
+	Info,
+	Warn,
+	Error,
 }
 
-impl From<u32> for Color {
-	fn from(v: u32) -> Self {
-		Color::new_rgba(v)
-	}
+/// A singular log frame.
+/// All log frames are considered important if the firmware pushes them;
+/// implementations of [`Monitor`] should not perform any filtering.
+///
+/// Log lines that are too long should split on the nearest whitespace.
+pub struct LogFrame {
+	pub severity: LogSeverity,
+	pub message: String<256>,
 }
 
-impl From<(u8, u8, u8, u8)> for Color {
-	fn from(v: (u8, u8, u8, u8)) -> Self {
-		Color::new(v.0, v.1, v.2, v.3)
-	}
-}
+/// The monitor/screen and indicators for monitoring the status of the
+/// system. This is a **very high level** API for screens and indicators
+/// lights as it's needed by the firmware, thus providing the platform-specific
+/// hardware implementators to change how status is displayed to the user.
+pub trait Monitor {
+	/// Enable/disable standby mode. When standby mode is enabled,
+	/// the firmware is indicating that nothing is happening at that specific moment,
+	/// and that the monitor should (eventually) turn off to conserve power/reduce
+	/// light output. Standby **does not** have to have an immediate effect; for example,
+	/// the LEDs/OLED/etc. may fade out over a long period of time.
+	fn standby_mode(&mut self, enable: bool);
 
-#[allow(unused)]
-pub mod color {
-	use super::Color;
+	/// Switches the scene of the monitor. A 'scene' is a whole-frame mode
+	/// in which certain information is shown. If the same scene as the current
+	/// scene is passed, nothing should happen (do **not** restart the scene, for example).
+	fn set_scene(&mut self, scene: Scene);
 
-	pub const BLACK: Color = Color::new_rgba(0);
-	pub const WHITE: Color = Color::new_rgba(0xFFFFFFFF);
-	pub const RED: Color = Color::new_rgba(0xFF0000FF);
-	pub const GREEN: Color = Color::new_rgba(0x00FF00FF);
-	pub const BLUE: Color = Color::new_rgba(0x0000FFFF);
-	pub const CYAN: Color = Color::new_rgba(0x00FFFFFF);
-	pub const MAGENTA: Color = Color::new_rgba(0xFF00FFFF);
-	pub const YELLOW: Color = Color::new_rgba(0xFFFF00FF);
-}
+	/// Consumes a log frame. If the current monitor scene is not [`Scene::Log`],
+	/// the log frame should be stored for later display. Log frames that would otherwise
+	/// go out of frame can be dropped and forgotten about.
+	///
+	/// Firmware only pushes important log frames; implementors of this trait should not
+	/// peform any filtering themselves.
+	fn push_log(&mut self, frame: LogFrame);
 
-/// Controller for the 3 indicator lights
-pub trait IndicatorLights {
-	/// Sets the color of the first indicator light
-	fn first<C: Into<Color>>(&mut self, color: C);
-
-	/// Sets the color of the second indicator light
-	fn second<C: Into<Color>>(&mut self, color: C);
-
-	/// Sets the color of the third indicator light
-	fn third<C: Into<Color>>(&mut self, color: C);
-
-	/// Turns off all lights (may not disable the chip)
-	fn all_off(&mut self) {
-		self.first(color::BLACK);
-		self.second(color::BLACK);
-		self.third(color::BLACK);
-	}
-
-	/// Disables the controller (may be a no-op on unsupported chips)
-	fn disable(&mut self) {}
-
-	/// Enables the controller (may be a no-op on unsupported chips)
-	fn enable(&mut self) {}
+	/// Should be called frequently - at least 60 times a second, but can be called
+	/// faster. Must be passed a monotonic millisecond instance.
+	fn tick(&mut self, millis: u64);
 }
 
 // Validates the contract of the init() function.
@@ -308,8 +218,8 @@ mod _check_init {
 		Init::ok(init())
 	}
 
-	impl<DBG: DebugLed, SUT: SystemUnderTest, IND: IndicatorLights, EXTETH: EthernetDriver> Init
-		for (DBG, SUT, IND, EXTETH)
+	impl<DBG: DebugLed, SUT: SystemUnderTest, MON: Monitor, EXTETH: EthernetDriver> Init
+		for (DBG, SUT, MON, EXTETH)
 	{
 	}
 }

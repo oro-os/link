@@ -10,9 +10,9 @@ use core::panic::PanicInfo;
 use defmt::{error, info, warn};
 use embassy_executor::Spawner;
 use embassy_net::Stack;
-use embassy_time::{Duration, Timer};
+use embassy_time::{Duration, Instant, Timer};
 use static_cell::make_static;
-use uc::DebugLed;
+use uc::{DebugLed, Monitor as _};
 
 #[cfg(not(test))]
 #[panic_handler]
@@ -37,9 +37,22 @@ async fn net_task() {
 	unsafe { EXT_ETH_STACK.as_ref().unwrap().run().await };
 }
 
+type Monitor = impl uc::Monitor;
+static mut MONITOR: Option<Monitor> = None;
+
+#[embassy_executor::task]
+async fn monitor_task() {
+	let mut monitor = unsafe { MONITOR.take().unwrap() };
+	loop {
+		let millis = Instant::now().as_millis();
+		monitor.tick(millis);
+		Timer::after(Duration::from_millis(1000 / 60)).await;
+	}
+}
+
 #[embassy_executor::main]
 pub async fn main(spawner: Spawner) {
-	let (mut debug_led, _system, _indicators, exteth) = uc::init();
+	let (mut debug_led, _system, monitor, exteth) = uc::init();
 
 	info!(
 		"Oro Link x86 booting (version {})",
@@ -48,6 +61,15 @@ pub async fn main(spawner: Spawner) {
 
 	// Let peripherals power on
 	Timer::after(Duration::from_millis(300)).await;
+
+	unsafe {
+		MONITOR = {
+			fn init(monitor: Monitor) -> Option<Monitor> {
+				Some(monitor)
+			}
+			init(monitor)
+		};
+	}
 
 	let extnet = {
 		let seed = [0; 8]; // TODO use RNG from `uc` module
@@ -63,7 +85,7 @@ pub async fn main(spawner: Spawner) {
 		)
 	};
 
-	let extnet = unsafe {
+	let _extnet = unsafe {
 		EXT_ETH_STACK = {
 			fn init(extnet: Stack<ExtEthDriver>) -> Option<Stack<ExtEthDriver>> {
 				Some(extnet)
@@ -75,23 +97,12 @@ pub async fn main(spawner: Spawner) {
 	};
 
 	spawner.spawn(net_task()).unwrap();
+	spawner.spawn(monitor_task()).unwrap();
 
 	loop {
 		debug_led.on();
 		Timer::after(Duration::from_millis(100)).await;
 		debug_led.off();
 		Timer::after(Duration::from_millis(3000)).await;
-
-		match extnet
-			.dns_query("oro.sh", embassy_net::dns::DnsQueryType::A)
-			.await
-		{
-			Ok(addr) => {
-				info!("resolved: oro.sh @ {:?}", addr[0]);
-			}
-			Err(err) => {
-				warn!("resolved: oro.sh FAILED: {:?}", err);
-			}
-		}
 	}
 }
