@@ -84,15 +84,27 @@ impl OroLogoRenderer {
 		// TODO XXX DEBUG
 		use embedded_graphics::primitives::rectangle::Rectangle;
 		target.clear(Gray4::new(0)).ok();
-		target
-			.fill_solid(
-				&Rectangle::new(
-					(((millis >> 2) % (256 - 21)) as i32, 0).into(),
-					(21, 15).into(),
-				),
-				Gray4::new(15),
-			)
-			.ok();
+		for y in (0..63).step_by(3) {
+			let opac = ((((((millis + (((y * 32428234) ^ 0b10101010) % 5000)) / 50) % 32) as i32)
+				- 16)
+				.abs())
+			.min(15);
+			let color = Gray4::new(opac as u8);
+			let mut x =
+				((millis / ((((y * 7) ^ 0b11101) % 39) + 13)) % (256 + (110 * 2))) as i32 - 110;
+			if ((y ^ 0b10) % 2) == 1 {
+				x = 256 - x;
+			}
+			target
+				.fill_solid(
+					&Rectangle::new(
+						(x, y as i32).into(),
+						((((y * 29) % 70) + 40) as u32, 3).into(),
+					),
+					color,
+				)
+				.ok();
+		}
 		target.present().unwrap();
 	}
 

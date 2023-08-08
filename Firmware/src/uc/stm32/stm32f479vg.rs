@@ -93,7 +93,8 @@ pub async fn init(
 			Delay,
 		),
 		Output::new(p.PC14, Level::High, Speed::VeryHigh),
-		true,
+		true, // do a flip
+		137,  // gamma value
 	)
 	.unwrap();
 

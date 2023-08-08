@@ -66,19 +66,38 @@ macro_rules! reset_cursor {
 }
 
 impl<SPI: super::TransactWrite, DC: super::Pin> SSD1362<SPI, DC> {
-	pub fn new(spi: SPI, dc: DC, flip: bool) -> Result<Self, SPI::Error> {
+	/// Gamma value for each of the 16 luminance values `x = 0..15`
+	/// is calculated as `(gs/15)((x + 1)/64) * 180` (180 being max).
+	/// Thus, a value of `64` is linear gamma, higher values
+	/// bias low (slow-to-bright) and lower values bias
+	/// high (fast-to-bright).
+	///
+	/// Calculator: https://www.desmos.com/calculator/clxn0szg2p
+	pub fn new(spi: SPI, dc: DC, flip: bool, gamma: u8) -> Result<Self, SPI::Error> {
 		let mut s = Self {
 			spi,
 			dc,
 			framebuf: FrameBuf::new(),
 		};
-		s.init(flip)?;
+		s.init(flip, gamma)?;
 		s.on()?;
 		s.clear()?;
 		Ok(s)
 	}
 
-	fn init(&mut self, flip: bool) -> Result<(), SPI::Error> {
+	fn init(&mut self, flip: bool, gamma: u8) -> Result<(), SPI::Error> {
+		// Calculate gamma steps
+		let mut gamma_cmd = [0u8; 15];
+		gamma_cmd[0] = 0xB8; // Set gamma table
+		let a: f32 = gamma.into();
+		let a = (a + 1.0) / 64.0;
+		for i in 1..16 {
+			use micromath::F32Ext;
+			let x: f32 = i as f32;
+			let gv = (x / 15.0).powf(a) * 180.0;
+			gamma_cmd[i - 1] = gv as u8;
+		}
+
 		cmd!(self);
 		send!(
 			self,
@@ -208,10 +227,11 @@ impl<SPI: super::TransactWrite, DC: super::Pin> SSD1362<SPI, DC> {
 		send!(
 			self,
 			[
-				// Set Linear LUT
-				0xB9,
+				// Set gamma LUT
+				0xB8
 			]
 		)?;
+		self.spi.transact_wo(&gamma_cmd[..])?;
 		send!(
 			self,
 			[
