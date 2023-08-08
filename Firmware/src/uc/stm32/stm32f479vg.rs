@@ -84,7 +84,7 @@ pub async fn init(
 	let mut oledconf = spi::Config::default();
 	oledconf.mode = spi::MODE_0;
 	oledconf.bit_order = spi::BitOrder::MsbFirst;
-	oledconf.frequency = Hertz(1_000_000);
+	oledconf.frequency = Hertz(8_000_000);
 
 	let mut oled = crate::chip::ssd1362::SSD1362::new(
 		ExclusiveDevice::new(

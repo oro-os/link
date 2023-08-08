@@ -86,7 +86,10 @@ impl OroLogoRenderer {
 		target.clear(Gray4::new(0)).ok();
 		target
 			.fill_solid(
-				&Rectangle::new((0, 0).into(), (21, 15).into()),
+				&Rectangle::new(
+					(((millis >> 2) % (256 - 21)) as i32, 0).into(),
+					(21, 15).into(),
+				),
 				Gray4::new(15),
 			)
 			.ok();
