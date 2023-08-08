@@ -143,6 +143,7 @@ pub enum OledPowerState {
 impl OledPowerState {
 	/// For peripherals that cannot handle inverting the display, call this function
 	/// and handle the result normally.
+	#[allow(unused)]
 	fn no_invert(self) -> Self {
 		match self {
 			Self::Invert => Self::Dimmed,
@@ -152,6 +153,7 @@ impl OledPowerState {
 
 	/// For peripherals that cannot handle nuanced power/brightness states, use this
 	/// method to get an "on" or "off" boolean.
+	#[allow(unused)]
 	fn simplified(self) -> bool {
 		match self {
 			Self::Standby => false,

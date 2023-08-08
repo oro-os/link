@@ -7,7 +7,7 @@ mod uc;
 
 #[cfg(not(test))]
 use core::panic::PanicInfo;
-use defmt::{error, info, warn};
+use defmt::{error, info};
 use embassy_executor::Spawner;
 use embassy_net::Stack;
 use embassy_time::{Duration, Instant, Timer};

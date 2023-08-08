@@ -150,7 +150,7 @@ async fn defmt_task(mut logger: defmt_brtt::DefmtConsumer, mut w: ImplWrite) {
 }
 
 /// Starts the global defmt task. **Must be called before any defmt log statements.**
-pub fn start_defmt_task(spawner: &Spawner, mut w: ImplWrite) {
-	let mut logger = defmt_brtt::init().unwrap();
+pub fn start_defmt_task(spawner: &Spawner, w: ImplWrite) {
+	let logger = defmt_brtt::init().unwrap();
 	spawner.must_spawn(defmt_task(logger, w));
 }

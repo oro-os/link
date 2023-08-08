@@ -12,7 +12,7 @@ use embassy_stm32::{
 	usart::{self, Uart},
 	Config,
 };
-use embassy_time::{Delay, Duration, Timer};
+use embassy_time::Delay;
 use embedded_hal_bus::spi::ExclusiveDevice;
 
 bind_interrupts!(struct Irqs {
@@ -37,7 +37,7 @@ pub async fn init(
 
 	let p = embassy_stm32::init(config);
 
-	let mut debug_write = Uart::new(p.UART7, p.PE7, p.PE8, Irqs, NoDma, NoDma, {
+	let debug_write = Uart::new(p.UART7, p.PE7, p.PE8, Irqs, NoDma, NoDma, {
 		let mut config = usart::Config::default();
 		config.baudrate = 115200;
 		config.data_bits = usart::DataBits::DataBits8;
