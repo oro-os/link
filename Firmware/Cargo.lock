@@ -813,8 +813,13 @@ dependencies = [
  "embedded-hal-bus",
  "heapless",
  "micromath",
+ "perlin2d",
  "static_cell",
 ]
+
+[[package]]
+name = "perlin2d"
+version = "0.2.6"
 
 [[package]]
 name = "pin-project-lite"

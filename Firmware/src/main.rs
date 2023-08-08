@@ -1,6 +1,6 @@
 #![no_std]
 #![no_main]
-#![feature(type_alias_impl_trait)]
+#![feature(type_alias_impl_trait, core_intrinsics)]
 
 mod chip;
 mod uc;
@@ -46,7 +46,7 @@ async fn monitor_task() {
 	loop {
 		let millis = Instant::now().as_millis();
 		monitor.tick(millis);
-		Timer::after(Duration::from_millis(1000 / 60)).await;
+		Timer::after(Duration::from_millis(1000 / 240)).await;
 	}
 }
 

@@ -83,17 +83,27 @@ impl<I2C: I2c> Is31fl3218<I2C> {
 	///
 	/// Changes are not immediately written; call `present()`
 	/// to send changes to the chip.
+	#[cfg_attr(not(feature = "is31fl3218-gamma-correction"), inline(always))]
 	pub fn set_channel(&mut self, channel: u8, value: u8) {
-		let corrected_value = if value == 0 {
-			0
-		} else {
-			GAMMA64[value as usize >> 2]
-		};
-		self.set_channel_pwm(channel, corrected_value);
+		#[cfg(not(feature = "is31fl3218-gamma-correction"))]
+		{
+			self.set_channel_pwm(channel, value);
+		}
+
+		#[cfg(feature = "is31fl3218-gamma-correction")]
+		{
+			let corrected_value = if value == 0 {
+				0
+			} else {
+				GAMMA64[value as usize >> 2]
+			};
+			self.set_channel_pwm(channel, corrected_value);
+		}
 	}
 }
 
 /// 64-step gamma correction LUT based on datasheet
+#[cfg(feature = "is31fl3218-gamma-correction")]
 const GAMMA64: [u8; 64] = [
 	0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 29, 32, 35, 38, 41, 44, 47, 50,
 	53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 94, 99, 104, 109, 114, 119, 124, 129, 134, 140, 146,
@@ -137,6 +147,7 @@ impl<
 	}
 }
 
+#[cfg(feature = "helper-three-indicators")]
 impl<
 	I2C: super::I2c,
 	const R0: u8,

@@ -2,7 +2,7 @@
 
 /// A singular color of an indicator light; may be gamma corrected
 /// by the implementation (do not gamma correct yourself).
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, ::defmt::Format)]
 pub struct Color {
 	pub r: u8,
 	pub g: u8,
@@ -94,11 +94,15 @@ impl Color {
 
 	/// Pre-multiplies the alpha without performing a float cast
 	pub fn premultiply_alpha(&self) -> (u8, u8, u8) {
-		(
-			((((self.r as u16) * (self.a as u16)) >> 8) + 1) as u8,
-			((((self.g as u16) * (self.a as u16)) >> 8) + 1) as u8,
-			((((self.b as u16) * (self.a as u16)) >> 8) + 1) as u8,
-		)
+		if self.a == 255 {
+			(self.r, self.g, self.b)
+		} else {
+			(
+				((((self.r as u16) * (self.a as u16)) >> 8) + 1) as u8,
+				((((self.g as u16) * (self.a as u16)) >> 8) + 1) as u8,
+				((((self.b as u16) * (self.a as u16)) >> 8) + 1) as u8,
+			)
+		}
 	}
 }
 
@@ -111,6 +115,12 @@ impl From<u32> for Color {
 impl From<(u8, u8, u8, u8)> for Color {
 	fn from(v: (u8, u8, u8, u8)) -> Self {
 		Color::new(v.0, v.1, v.2, v.3)
+	}
+}
+
+impl From<(u8, u8, u8)> for Color {
+	fn from(v: (u8, u8, u8)) -> Self {
+		Color::new(v.0, v.1, v.2, 255)
 	}
 }
 
