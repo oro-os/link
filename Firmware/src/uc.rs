@@ -5,6 +5,7 @@ mod stm32;
 #[cfg(feature = "stm32")]
 pub use stm32::*;
 
+use embassy_executor::Spawner;
 pub use embassy_net::driver::Driver as EthernetDriver;
 use embassy_time::{block_for, Duration};
 use heapless::String;
@@ -214,8 +215,15 @@ mod _check_init {
 		}
 	}
 
-	fn _check_init() {
-		Init::ok(init())
+	macro_rules! fake_ref {
+		($ty:ty) => {
+			#[allow(deref_nullptr, clippy::zero_ptr)]
+			&*(0x0 as *const $ty)
+		};
+	}
+
+	async unsafe fn _check_init() {
+		Init::ok(init(fake_ref![Spawner]).await)
 	}
 
 	impl<DBG: DebugLed, SUT: SystemUnderTest, MON: Monitor, EXTETH: EthernetDriver> Init

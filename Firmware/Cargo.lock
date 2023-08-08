@@ -81,6 +81,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "bbqueue"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fd3baa8859d1a4c7411039a75c0599a4640ef1c9a8fc811e4325b00e6cfe0a55"
+dependencies = [
+ "defmt",
+]
+
+[[package]]
 name = "bit_field"
 version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -208,6 +217,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "defmt-brtt"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c2f0ac3635d0c89d12b8101fcb44a7625f5f030a1c0491124b74467eb5a58a78"
+dependencies = [
+ "bbqueue",
+ "critical-section",
+ "defmt",
+]
+
+[[package]]
 name = "defmt-macros"
 version = "0.3.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -227,6 +247,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "269924c02afd7f94bc4cecbfa5c379f6ffcf9766b3408fe63d22c728654eccd0"
 dependencies = [
  "thiserror",
+]
+
+[[package]]
+name = "defmt-ringbuf"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7df6721831a826a056636d1b9ff007df2f9ed3dd4a8c677f4c7fe341cd703f60"
+dependencies = [
+ "cortex-m",
+ "critical-section",
+ "defmt",
 ]
 
 [[package]]
@@ -250,7 +281,7 @@ version = "0.1.0"
 source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
 dependencies = [
  "defmt",
- "embassy-futures",
+ "embassy-futures 0.1.0 (git+https://github.com/oro-os/embassy.git)",
  "embassy-sync",
  "embassy-time",
  "embedded-hal 0.2.7",
@@ -275,6 +306,12 @@ dependencies = [
  "futures-util",
  "static_cell",
 ]
+
+[[package]]
+name = "embassy-futures"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "47e5367165d347c039360f784812f493b001583ab6a3dd8622f4ce9c30374ec3"
 
 [[package]]
 name = "embassy-futures"
@@ -339,7 +376,7 @@ version = "0.1.0"
 source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
 dependencies = [
  "defmt",
- "embassy-futures",
+ "embassy-futures 0.1.0 (git+https://github.com/oro-os/embassy.git)",
  "embassy-net-driver",
  "embassy-time",
  "embedded-hal 1.0.0-alpha.11",
@@ -361,7 +398,7 @@ dependencies = [
  "defmt",
  "document-features",
  "embassy-embedded-hal",
- "embassy-futures",
+ "embassy-futures 0.1.0 (git+https://github.com/oro-os/embassy.git)",
  "embassy-hal-internal",
  "embassy-net-driver",
  "embassy-sync",
@@ -794,8 +831,11 @@ dependencies = [
  "cortex-m",
  "cortex-m-rt",
  "defmt",
+ "defmt-brtt",
+ "defmt-ringbuf",
  "display-interface",
  "embassy-executor",
+ "embassy-futures 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "embassy-net",
  "embassy-net-enc28j60",
  "embassy-stm32",

@@ -44,7 +44,7 @@ doc:
 	env cargo doc $(CARGO_FLAGS) --all --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem --open
 
 log:
-	socat FILE:/dev/ttyS16,b115200,nonblock,cs8,cstopb=1,raw,parenb=0 stdout | defmt-print -e target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware
+	socat FILE:/dev/ttyS16,b115200,nonblock,cs8,cstopb=1,raw,parenb=0 stdout | defmt-print -e target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware --show-skipped-frames
 
 stm32f479vg: target/$(CARGO_MODE)/oro-link-stm32f479vg.bin
 .PHONY: target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware

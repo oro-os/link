@@ -46,7 +46,8 @@ cortex-m = [
 stm32 = [
 	"cortex-m",
 	"embassy-stm32",
-	"embedded-hal"
+	"embedded-hal",
+	"defmt-brtt"
 ]
 
 # Helpers
@@ -60,7 +61,10 @@ helper-monitor-three-indicators-oled-256x64 = [
 [dependencies]
 cortex-m-rt = { version = "0.7.3", optional = true }
 defmt = { version = "0.3.5", default-features = false }
+defmt-brtt = { version = "0.1.1", features = ["async-await"], optional = true }
+defmt-ringbuf = "0.2.0"
 display-interface = { version = "0.4.1", optional = true }
+embassy-futures = "0.1.0"
 embassy-net-enc28j60 = { version = "0.1.0", optional = true, git = "https://github.com/oro-os/embassy.git", features = ["defmt"] }
 embedded-graphics = { version = "0.8.0", optional = true }
 embedded-graphics-core = { version = "0.4.0", optional = true }

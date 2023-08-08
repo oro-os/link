@@ -1,5 +1,6 @@
 use crate::uc;
-use defmt::{info, Encoder, Logger};
+use defmt::info;
+use embassy_executor::Spawner;
 use embassy_stm32::{
 	bind_interrupts,
 	dma::NoDma,
@@ -11,7 +12,7 @@ use embassy_stm32::{
 	usart::{self, Uart},
 	Config,
 };
-use embassy_time::Delay;
+use embassy_time::{Delay, Duration, Timer};
 use embedded_hal_bus::spi::ExclusiveDevice;
 
 bind_interrupts!(struct Irqs {
@@ -19,53 +20,9 @@ bind_interrupts!(struct Irqs {
 	UART7 => usart::InterruptHandler<peripherals::UART7>;
 });
 
-trait ByteWriter {
-	fn write(&mut self, buf: &[u8]);
-	fn flush(&mut self);
-}
-
-type ImplWriter = impl ByteWriter;
-static mut DEBUG_WRITE: Option<ImplWriter> = None;
-static mut ENCODER: Encoder = Encoder::new();
-
-#[defmt::global_logger]
-struct DebugLogger;
-
-unsafe impl Logger for DebugLogger {
-	fn acquire() {
-		unsafe {
-			ENCODER.start_frame(|bytes| {
-				if let Some(writer) = DEBUG_WRITE.as_mut() {
-					writer.write(bytes);
-				}
-			})
-		}
-	}
-	unsafe fn flush() {
-		if let Some(writer) = DEBUG_WRITE.as_mut() {
-			writer.flush();
-		}
-	}
-	unsafe fn release() {
-		unsafe {
-			ENCODER.end_frame(|bytes| {
-				if let Some(writer) = DEBUG_WRITE.as_mut() {
-					writer.write(bytes);
-					writer.flush();
-				}
-			})
-		}
-	}
-	unsafe fn write(bytes: &[u8]) {
-		ENCODER.write(bytes, |bytes| {
-			if let Some(writer) = DEBUG_WRITE.as_mut() {
-				writer.write(bytes);
-			}
-		});
-	}
-}
-
-pub fn init() -> (
+pub async fn init(
+	spawner: &Spawner,
+) -> (
 	impl uc::DebugLed,
 	impl uc::SystemUnderTest,
 	impl uc::Monitor,
@@ -80,7 +37,7 @@ pub fn init() -> (
 
 	let p = embassy_stm32::init(config);
 
-	let debug_write = Uart::new(p.UART7, p.PE7, p.PE8, Irqs, NoDma, NoDma, {
+	let mut debug_write = Uart::new(p.UART7, p.PE7, p.PE8, Irqs, NoDma, NoDma, {
 		let mut config = usart::Config::default();
 		config.baudrate = 115200;
 		config.data_bits = usart::DataBits::DataBits8;
@@ -89,12 +46,7 @@ pub fn init() -> (
 		config
 	});
 
-	unsafe {
-		fn init(v: ImplWriter) -> Option<ImplWriter> {
-			Some(v)
-		}
-		DEBUG_WRITE = init(debug_write);
-	}
+	super::start_defmt_task(spawner, debug_write);
 
 	info!("initializing STM32f479vg...");
 
@@ -207,14 +159,4 @@ pub fn init() -> (
 	info!("... debug led INIT");
 
 	(debug_led, system, monitor, exteth)
-}
-
-impl<'d, T: usart::BasicInstance, TxDma, RxDma> ByteWriter for Uart<'d, T, TxDma, RxDma> {
-	fn write(&mut self, buf: &[u8]) {
-		self.blocking_write(buf).unwrap();
-	}
-
-	fn flush(&mut self) {
-		self.blocking_flush().unwrap();
-	}
 }

@@ -52,7 +52,7 @@ async fn monitor_task() {
 
 #[embassy_executor::main]
 pub async fn main(spawner: Spawner) {
-	let (mut debug_led, _system, monitor, exteth) = uc::init();
+	let (mut debug_led, _system, monitor, exteth) = uc::init(&spawner).await;
 
 	info!(
 		"Oro Link x86 booting (version {})",

@@ -4,11 +4,13 @@ mod stm32f479vg;
 pub use stm32f479vg::*;
 
 use crate::chip;
+use embassy_executor::Spawner;
 use embassy_stm32::{
 	gpio::{Input, Output, Pin},
 	i2c,
 };
 use embassy_time::{block_for, Duration};
+use embedded_hal::serial::Write;
 
 /// Implementation of I2c proxies for STM32 I2c peripherals.
 impl<'d, T: i2c::Instance, TXDMA, RXDMA> chip::I2c for i2c::I2c<'d, T, TXDMA, RXDMA> {
@@ -132,4 +134,23 @@ where
 
 		self.current_state = new_state;
 	}
+}
+
+pub type ImplWrite = impl Write<u8>;
+#[embassy_executor::task]
+async fn defmt_task(mut logger: defmt_brtt::DefmtConsumer, mut w: ImplWrite) {
+	loop {
+		let grant = logger.wait_for_log().await;
+		let buf = grant.buf();
+		let len = buf.len();
+		w.write(buf).unwrap();
+		w.flush().unwrap();
+		grant.release(len);
+	}
+}
+
+/// Starts the global defmt task. **Must be called before any defmt log statements.**
+pub fn start_defmt_task(spawner: &Spawner, mut w: ImplWrite) {
+	let mut logger = defmt_brtt::init().unwrap();
+	spawner.must_spawn(defmt_task(logger, w));
 }
