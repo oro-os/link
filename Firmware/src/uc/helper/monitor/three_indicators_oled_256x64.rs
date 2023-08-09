@@ -5,11 +5,14 @@
 use crate::{
 	chip::{BufferedDrawTarget, OledPeripheral, OledPowerState},
 	uc::{
-		helper::three_indicators::{Color, IndicatorLights},
+		helper::{
+			oro_logo::OroLogo,
+			three_indicators::{Color, IndicatorLights},
+		},
 		LogFrame, Monitor, Scene,
 	},
 };
-use embedded_graphics_core::{draw_target::DrawTarget, pixelcolor::Gray4};
+use embedded_graphics::{draw_target::DrawTarget, pixelcolor::Gray4, Drawable};
 use perlin2d::PerlinNoise2D;
 
 pub trait OledTarget: DrawTarget<Color = Gray4> + BufferedDrawTarget + OledPeripheral {}
@@ -95,6 +98,8 @@ where
 }
 
 struct OroLogoRenderer {
+	logo: OroLogo,
+	next_frame_at: u64,
 	noisegen: PerlinNoise2D,
 }
 
@@ -102,6 +107,8 @@ impl Default for OroLogoRenderer {
 	fn default() -> Self {
 		Self {
 			noisegen: PerlinNoise2D::new(10, 1.0, 0.5, 1.0, 1.0, (100.0, 100.0), 0.0, 101),
+			next_frame_at: 0u64,
+			logo: OroLogo::new(((256 - 64) / 2, 0).into()),
 		}
 	}
 }
@@ -133,20 +140,21 @@ impl OroLogoRenderer {
 			let n = (n * 0.5).min(1.0).max(-1.0);
 			let n = n * 0.5 + 0.5;
 			let v = n * FLICKER_AMOUNT + (1.0 - FLICKER_AMOUNT);
-			let v = if v < 0.1 {
-				v * v * v * v * v * v * v * v * v * v * v * v
+			let v = if v < 0.3 {
+				v * v * v * v * v * v * v * v * v * v * v * v * v * v * v * v * v * v
 			} else {
-				(v * v * v * v * v * v * v * v * v) * 0.9 + 0.1
+				(v * v * v * v * v * v * v * v * v) * 0.7 + 0.3
 			};
-			let s = v * 0.8;
+			let v = v * v * v;
+			let s = v * 0.85;
 			let s = s * s;
 			let h = (on - 1.6).min(1.0).max(0.0) * (0.805 - 0.402) + 0.402;
 			let v = (v - (on * 0.04)).max(0.0).min(1.0);
 			let mut color: Color = hsv_to_rgb(h, s, v).into();
 
 			// Adjust GB to match R luminance
-			color.g = (color.g as f64 * 0.6) as u8;
-			color.b = (color.b as f64 * 0.6) as u8;
+			color.g = (color.g as f64 * 0.5) as u8;
+			color.b = (color.b as f64 * 0.5) as u8;
 
 			match i {
 				0 => lights.first(color),
@@ -156,31 +164,13 @@ impl OroLogoRenderer {
 			}
 		}
 
-		// TODO XXX DEBUG
-		use embedded_graphics::primitives::rectangle::Rectangle;
-		target.clear(Gray4::new(0)).ok();
-		for y in (0..63).step_by(3) {
-			let opac = ((((((millis + (((y * 32428234) ^ 0b10101010) % 5000)) / 50) % 32) as i32)
-				- 16)
-				.abs())
-			.min(15);
-			let color = Gray4::new(opac as u8);
-			let mut x =
-				((millis / ((((y * 7) ^ 0b11101) % 39) + 13)) % (256 + (110 * 2))) as i32 - 110;
-			if ((y ^ 0b10) % 2) == 1 {
-				x = 256 - x;
-			}
-			target
-				.fill_solid(
-					&Rectangle::new(
-						(x, y as i32).into(),
-						((((y * 29) % 70) + 40) as u32, 3).into(),
-					),
-					color,
-				)
-				.ok();
+		// Advance next frame if need be
+		if self.next_frame_at <= millis {
+			self.next_frame_at += 1000 / OroLogo::fps();
+			self.logo.advance();
+			self.logo.draw(target).ok();
+			target.present().unwrap();
 		}
-		target.present().unwrap();
 	}
 
 	fn invalidate<D: OledTarget>(&mut self, target: &mut D) {}
@@ -207,7 +197,7 @@ impl LogRenderer {
 	fn blur(&mut self) {}
 }
 
-/// Ported from https://github.com/Qix-/color-convert/blob/master/conversions.js
+/// Ported from <https://github.com/Qix-/color-convert/blob/master/conversions.js>
 ///
 /// All domains are `0..=1`.
 fn hsv_to_rgb(h: f64, s: f64, v: f64) -> (u8, u8, u8) {

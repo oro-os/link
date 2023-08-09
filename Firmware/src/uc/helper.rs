@@ -2,6 +2,7 @@
 //! layouts/revisions/etc.
 
 pub mod monitor;
+pub mod oro_logo;
 
 #[cfg(feature = "helper-three-indicators")]
 pub mod three_indicators;

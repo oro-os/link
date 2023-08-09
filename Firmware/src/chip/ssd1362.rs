@@ -72,7 +72,7 @@ impl<SPI: super::TransactWrite, DC: super::Pin> SSD1362<SPI, DC> {
 	/// bias low (slow-to-bright) and lower values bias
 	/// high (fast-to-bright).
 	///
-	/// Calculator: https://www.desmos.com/calculator/clxn0szg2p
+	/// Calculator: <https://www.desmos.com/calculator/clxn0szg2p>
 	pub fn new(spi: SPI, dc: DC, flip: bool, gamma: u8) -> Result<Self, SPI::Error> {
 		let mut s = Self {
 			spi,
