@@ -256,6 +256,7 @@ trait F64Floor {
 }
 
 impl F64Floor for f64 {
+	#[inline(always)] // showed better results in Godbolt
 	fn floor(self) -> f64 {
 		let r = self % 1.0;
 		if self < 0.0 {
