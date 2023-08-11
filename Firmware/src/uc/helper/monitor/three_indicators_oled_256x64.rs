@@ -12,6 +12,7 @@ use crate::{
 		LogFrame, Monitor, Scene,
 	},
 };
+use defmt::unwrap;
 use embedded_graphics::{draw_target::DrawTarget, pixelcolor::Gray4, Drawable};
 use perlin2d::PerlinNoise2D;
 
@@ -91,7 +92,7 @@ where
 					self.logo_renderer
 						.tick(millis, &mut self.target, &mut self.indicators)
 				}
-				Scene::Log => self.log_renderer.tick(millis),
+				Scene::Log => self.log_renderer.tick(millis, &mut self.target),
 			}
 		}
 	}
@@ -173,8 +174,6 @@ impl OroLogoRenderer {
 		}
 	}
 
-	fn invalidate<D: OledTarget>(&mut self, target: &mut D) {}
-
 	fn focus<I: IndicatorLights>(&mut self, lights: &mut I) {
 		lights.enable();
 	}
@@ -186,11 +185,42 @@ impl OroLogoRenderer {
 struct LogRenderer {}
 
 impl LogRenderer {
-	fn tick(&mut self, millis: u64) {}
+	fn tick<D: OledTarget>(&mut self, _millis: u64, target: &mut D) {
+		// XXX DEBUG
+		use crate::font::{face, Font};
 
-	fn invalidate(&mut self) {}
+		const WHITE: Gray4 = Gray4::new(15);
+		const BLACK: Gray4 = Gray4::new(0);
 
-	fn push_log(&mut self, frame: LogFrame) {}
+		let mut x = 0;
+		for c in "Grüße, ".chars() {
+			if c == ' ' {
+				x += 3;
+			} else {
+				x += face::TermNormal::draw_char(c, target, x, 5, WHITE, BLACK);
+			}
+		}
+
+		for c in "Oro OS".chars() {
+			if c == ' ' {
+				x += 3;
+			} else {
+				x += face::TermBold::draw_char(c, target, x, 5, WHITE, BLACK);
+			}
+		}
+
+		for c in "!".chars() {
+			if c == ' ' {
+				x += 3;
+			} else {
+				x += face::TermNormal::draw_char(c, target, x, 5, WHITE, BLACK);
+			}
+		}
+
+		target.present().unwrap();
+	}
+
+	fn push_log(&mut self, _frame: LogFrame) {}
 
 	fn focus(&mut self) {}
 

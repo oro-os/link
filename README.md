@@ -101,6 +101,9 @@ of the device, under any circumstances.
 The Oro Link's PCB and associated custom footprints are released
 under the [MIT License](LICENSE).
 
+The _Enter Command_ font used for text display is released CC-BY-4.0
+by [Font End Dev (jeti)](https://fontenddev.com).
+
 Unless otherwise specified, all Oro Link firmware (software code)
 is licensed under the same license. Please note that much of the
 generated code is provided by the STM32 toolchain and is separately

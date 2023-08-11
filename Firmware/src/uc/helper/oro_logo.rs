@@ -29,6 +29,7 @@ pub struct OroLogo {
 	pos: Point,
 }
 
+#[allow(unused)]
 impl OroLogo {
 	pub fn new(position: Point) -> Self {
 		Self {

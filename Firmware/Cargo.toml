@@ -9,6 +9,8 @@ repository = "https://github.com/oro-os/oro-link-x86"
 license = "MIT"
 resolver = "2"
 
+build = "build.rs"
+
 [features]
 default = []
 
@@ -135,6 +137,13 @@ features = [
 	"medium-ip",
 	"igmp",
 ]
+
+[build-dependencies]
+pixglyph = "0.1.0"
+proc-macro2 = "1.0.66"
+quote = "1.0.32"
+syn = { version = "2.0.28", features = ["full"] }
+ttf-parser = "0.18.0"
 
 [profile.release]
 opt-level = 3       # Maximum optimizations

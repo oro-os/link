@@ -3,6 +3,7 @@
 #![feature(type_alias_impl_trait, core_intrinsics)]
 
 mod chip;
+mod font;
 mod uc;
 
 #[cfg(not(test))]
@@ -42,7 +43,12 @@ static mut MONITOR: Option<Monitor> = None;
 
 #[embassy_executor::task]
 async fn monitor_task() {
+	use uc::Scene;
+
 	let mut monitor = unsafe { MONITOR.take().unwrap() };
+
+	monitor.set_scene(Scene::Log);
+
 	loop {
 		let millis = Instant::now().as_millis();
 		monitor.tick(millis);

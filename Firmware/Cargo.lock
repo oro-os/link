@@ -902,7 +902,12 @@ dependencies = [
  "micromath",
  "oro-logo-rle",
  "perlin2d",
+ "pixglyph",
+ "proc-macro2",
+ "quote",
  "static_cell",
+ "syn 2.0.28",
+ "ttf-parser",
 ]
 
 [[package]]
@@ -932,6 +937,15 @@ name = "pin-utils"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
+
+[[package]]
+name = "pixglyph"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9eefadd393715fe315c8cdcd587f893b818a6dfe4f6f9faeb44b764c7c38fd8b"
+dependencies = [
+ "ttf-parser",
+]
 
 [[package]]
 name = "proc-macro-error"
@@ -1150,6 +1164,12 @@ dependencies = [
  "quote",
  "syn 2.0.28",
 ]
+
+[[package]]
+name = "ttf-parser"
+version = "0.18.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0609f771ad9c6155384897e1df4d948e692667cc0588548b68eb44d052b27633"
 
 [[package]]
 name = "typenum"
