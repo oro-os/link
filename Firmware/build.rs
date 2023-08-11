@@ -7,7 +7,7 @@ use ttf_parser::Face;
 
 const TERM_CHARMAP: &str = "?abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()`,.<>/[]-_~'\"=+;:©µ¿{}ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
 const HEIGHT: f32 = 16.0;
-const BASE_TOP: f32 = HEIGHT - 1.0;
+const BASE_TOP: f32 = HEIGHT - 2.0;
 const BASE_LEFT: f32 = 1.0;
 const THRESHOLD: u8 = 250;
 
@@ -69,16 +69,30 @@ fn render_font(id: &str, path: &str, charmap: &str) -> TokenStream {
 
 	quote! {
 		pub struct #id_syn;
-		impl Font<#num_chars, #num_bytes> for #id_syn {
-			const CHARMAP: [char; #num_chars] = [ #char_syn ];
-			const IDXMAP: [u16; #num_chars] = [ #idx_syn ];
-			const DATA: [u8; #num_bytes] = [ #bytes_syn ];
+		impl FontData for #id_syn {
+			#[inline(always)]
+			fn charmap() -> &'static [char] {
+				const CHARMAP: [char; #num_chars] = [ #char_syn ];
+				&CHARMAP[..]
+			}
+
+			#[inline(always)]
+			fn idxmap() -> &'static [u16] {
+				const IDXMAP: [u16; #num_chars] = [ #idx_syn ];
+				&IDXMAP[..]
+			}
+
+			#[inline(always)]
+			fn data() -> &'static [u8] {
+				const DATA: [u8; #num_bytes] = [ #bytes_syn ];
+				&DATA[..]
+			}
 		}
 	}
 }
 
 pub fn main() {
-	let mut font_source = quote! { use crate::font::Font; };
+	let mut font_source = quote! { use super::FontData; };
 	font_source
 		.extend(render_font("TermNormal", "font/EnterCommand.ttf", TERM_CHARMAP).into_iter());
 	font_source

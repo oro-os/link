@@ -4,6 +4,7 @@
 
 use crate::{
 	chip::{BufferedDrawTarget, OledPeripheral, OledPowerState},
+	font::{face, Font},
 	uc::{
 		helper::{
 			oro_logo::OroLogo,
@@ -12,7 +13,6 @@ use crate::{
 		LogFrame, Monitor, Scene,
 	},
 };
-use defmt::unwrap;
 use embedded_graphics::{draw_target::DrawTarget, pixelcolor::Gray4, Drawable};
 use perlin2d::PerlinNoise2D;
 
@@ -187,35 +187,27 @@ struct LogRenderer {}
 impl LogRenderer {
 	fn tick<D: OledTarget>(&mut self, _millis: u64, target: &mut D) {
 		// XXX DEBUG
-		use crate::font::{face, Font};
-
 		const WHITE: Gray4 = Gray4::new(15);
 		const BLACK: Gray4 = Gray4::new(0);
 
-		let mut x = 0;
-		for c in "Grüße, ".chars() {
-			if c == ' ' {
-				x += 3;
-			} else {
-				x += face::TermNormal::draw_char(c, target, x, 5, WHITE, BLACK);
-			}
-		}
-
-		for c in "Oro OS".chars() {
-			if c == ' ' {
-				x += 3;
-			} else {
-				x += face::TermBold::draw_char(c, target, x, 5, WHITE, BLACK);
-			}
-		}
-
-		for c in "!".chars() {
-			if c == ' ' {
-				x += 3;
-			} else {
-				x += face::TermNormal::draw_char(c, target, x, 5, WHITE, BLACK);
-			}
-		}
+		face::TermNormal::draw_chars("Hello, Oro!".chars(), target, 0, 0, WHITE, BLACK);
+		face::TermNormal::draw_chars(
+			"This is the second line.".chars(),
+			target,
+			0,
+			16,
+			WHITE,
+			BLACK,
+		);
+		face::TermNormal::draw_chars("And the third line!".chars(), target, 0, 32, WHITE, BLACK);
+		face::TermNormal::draw_chars(
+			"Finally, the fourth line. :)".chars(),
+			target,
+			0,
+			48,
+			WHITE,
+			BLACK,
+		);
 
 		target.present().unwrap();
 	}
