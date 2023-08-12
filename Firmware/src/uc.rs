@@ -5,6 +5,7 @@ mod stm32;
 #[cfg(feature = "stm32")]
 pub use stm32::*;
 
+use core::cell::RefCell;
 use embassy_executor::Spawner;
 pub use embassy_net::driver::Driver as EthernetDriver;
 use embassy_time::{block_for, Duration};
@@ -156,10 +157,22 @@ pub enum Scene {
 /// A log frame's severity level.
 /// All log frames are considered important if the firmware pushes them;
 /// implementations of [`Monitor`] should not perform any filtering.
+#[allow(unused)]
+#[derive(Clone, Copy, PartialEq, Eq)]
 pub enum LogSeverity {
 	Info,
 	Warn,
 	Error,
+}
+
+impl LogSeverity {
+	pub fn log<M: Monitor>(self, monitor: &RefCell<M>, message: String<256>) {
+		let mut monitor = monitor.borrow_mut();
+		monitor.push_log(LogFrame {
+			severity: self,
+			message,
+		});
+	}
 }
 
 /// A singular log frame.

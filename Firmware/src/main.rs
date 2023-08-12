@@ -6,6 +6,7 @@ mod chip;
 mod font;
 mod uc;
 
+use core::cell::RefCell;
 #[cfg(not(test))]
 use core::panic::PanicInfo;
 use defmt::{error, info};
@@ -13,7 +14,7 @@ use embassy_executor::Spawner;
 use embassy_net::Stack;
 use embassy_time::{Duration, Instant, Timer};
 use static_cell::make_static;
-use uc::{DebugLed, Monitor as _};
+use uc::{DebugLed, LogSeverity, Monitor as _, Scene};
 
 #[cfg(not(test))]
 #[panic_handler]
@@ -39,19 +40,16 @@ async fn net_task() {
 }
 
 type Monitor = impl uc::Monitor;
-static mut MONITOR: Option<Monitor> = None;
+static mut MONITOR: Option<RefCell<Monitor>> = None;
 
 #[embassy_executor::task]
 async fn monitor_task() {
-	use uc::Scene;
-
-	let mut monitor = unsafe { MONITOR.take().unwrap() };
-
-	monitor.set_scene(Scene::Log);
-
 	loop {
-		let millis = Instant::now().as_millis();
-		monitor.tick(millis);
+		{
+			let mut monitor = unsafe { MONITOR.as_ref().unwrap().borrow_mut() };
+			let millis = Instant::now().as_millis();
+			monitor.tick(millis);
+		}
 		Timer::after(Duration::from_millis(1000 / 240)).await;
 	}
 }
@@ -60,22 +58,31 @@ async fn monitor_task() {
 pub async fn main(spawner: Spawner) {
 	let (mut debug_led, _system, monitor, exteth) = uc::init(&spawner).await;
 
+	// Let peripherals power on
+	Timer::after(Duration::from_millis(50)).await;
+
+	unsafe {
+		MONITOR = {
+			fn init(monitor: Monitor) -> Option<RefCell<Monitor>> {
+				Some(RefCell::new(monitor))
+			}
+			init(monitor)
+		};
+	}
+
 	info!(
 		"Oro Link x86 booting (version {})",
 		env!("CARGO_PKG_VERSION")
 	);
 
-	// Let peripherals power on
-	Timer::after(Duration::from_millis(300)).await;
-
 	unsafe {
-		MONITOR = {
-			fn init(monitor: Monitor) -> Option<Monitor> {
-				Some(monitor)
-			}
-			init(monitor)
-		};
+		MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
 	}
+
+	LogSeverity::Info.log(
+		unsafe { MONITOR.as_ref().unwrap() },
+		"booting oro link...".into(),
+	);
 
 	let extnet = {
 		let seed = [0; 8]; // TODO use RNG from `uc` module
@@ -104,6 +111,8 @@ pub async fn main(spawner: Spawner) {
 
 	spawner.spawn(net_task()).unwrap();
 	spawner.spawn(monitor_task()).unwrap();
+
+	LogSeverity::Info.log(unsafe { MONITOR.as_ref().unwrap() }, "booted OK".into());
 
 	loop {
 		debug_led.on();

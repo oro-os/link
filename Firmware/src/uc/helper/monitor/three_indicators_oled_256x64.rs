@@ -10,10 +10,11 @@ use crate::{
 			oro_logo::OroLogo,
 			three_indicators::{Color, IndicatorLights},
 		},
-		LogFrame, Monitor, Scene,
+		LogFrame, LogSeverity, Monitor, Scene,
 	},
 };
 use embedded_graphics::{draw_target::DrawTarget, pixelcolor::Gray4, Drawable};
+use heapless::Deque;
 use perlin2d::PerlinNoise2D;
 
 pub trait OledTarget: DrawTarget<Color = Gray4> + BufferedDrawTarget + OledPeripheral {}
@@ -182,37 +183,66 @@ impl OroLogoRenderer {
 }
 
 #[derive(Default)]
-struct LogRenderer {}
+struct LogRenderer {
+	dirty: bool,
+	entries: Deque<LogFrame, 4>,
+}
 
 impl LogRenderer {
 	fn tick<D: OledTarget>(&mut self, _millis: u64, target: &mut D) {
-		// XXX DEBUG
+		if !self.dirty {
+			return;
+		}
+
+		self.dirty = false;
+
 		const WHITE: Gray4 = Gray4::new(15);
+		const LIGHT_GRAY: Gray4 = Gray4::new(10);
+		const DARK_GRAY: Gray4 = Gray4::new(5);
 		const BLACK: Gray4 = Gray4::new(0);
 
-		face::TermNormal::draw_chars("Hello, Oro!".chars(), target, 0, 0, WHITE, BLACK);
-		face::TermNormal::draw_chars(
-			"This is the second line.".chars(),
-			target,
-			0,
-			16,
-			WHITE,
-			BLACK,
-		);
-		face::TermNormal::draw_chars("And the third line!".chars(), target, 0, 32, WHITE, BLACK);
-		face::TermNormal::draw_chars(
-			"Finally, the fourth line. :)".chars(),
-			target,
-			0,
-			48,
-			WHITE,
-			BLACK,
-		);
+		target.clear(BLACK).ok();
+
+		for (i, entry) in self.entries.iter().enumerate() {
+			match entry.severity {
+				LogSeverity::Info => face::TermNormal::draw_chars(
+					entry.message.chars(),
+					target,
+					0,
+					i as i32 * 16,
+					DARK_GRAY,
+					BLACK,
+				),
+				LogSeverity::Warn => face::TermBold::draw_chars(
+					entry.message.chars(),
+					target,
+					0,
+					i as i32 * 16,
+					LIGHT_GRAY,
+					BLACK,
+				),
+				LogSeverity::Error => face::TermBold::draw_chars(
+					entry.message.chars(),
+					target,
+					0,
+					i as i32 * 16,
+					WHITE,
+					BLACK,
+				),
+			};
+		}
 
 		target.present().unwrap();
 	}
 
-	fn push_log(&mut self, _frame: LogFrame) {}
+	fn push_log(&mut self, frame: LogFrame) {
+		if self.entries.len() == 4 {
+			self.entries.pop_front();
+		}
+
+		self.entries.push_back(frame).ok();
+		self.dirty = true;
+	}
 
 	fn focus(&mut self) {}
 
