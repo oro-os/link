@@ -20,6 +20,8 @@ pub trait Font {
 		black: PIX,
 	) -> i32;
 
+	fn char_width(chr: char) -> i32;
+
 	fn draw_chars<PIX: PixelColor, TAR: DrawTarget<Color = PIX>, I: IntoIterator<Item = char>>(
 		chrs: I,
 		target: &mut TAR,
@@ -41,6 +43,12 @@ pub trait Font {
 }
 
 impl<T: FontData> Font for T {
+	fn char_width(chr: char) -> i32 {
+		let idx = Self::charmap().binary_search(&chr).unwrap_or(0);
+		let offset = Self::idxmap()[idx] as usize;
+		Self::data()[offset + 1] as i32
+	}
+
 	fn draw_char<PIX: PixelColor, TAR: DrawTarget<Color = PIX>>(
 		chr: char,
 		target: &mut TAR,

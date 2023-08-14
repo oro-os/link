@@ -13,7 +13,9 @@ use crate::{
 		LogFrame, LogSeverity, Monitor, Scene,
 	},
 };
-use embedded_graphics::{draw_target::DrawTarget, pixelcolor::Gray4, Drawable};
+use embedded_graphics::{
+	draw_target::DrawTarget, pixelcolor::Gray4, primitives::Rectangle, Drawable,
+};
 use heapless::{Deque, String};
 use perlin2d::PerlinNoise2D;
 
@@ -278,6 +280,7 @@ impl LogRenderer {
 #[derive(Debug, Default)]
 struct TestRenderer {
 	total: usize,
+	count: usize,
 	author: String<256>,
 	title: String<256>,
 	ref_id: String<256>,
@@ -305,6 +308,31 @@ impl TestRenderer {
 		face::TermNormal::draw_chars(self.ref_id.chars(), target, 0, 32, LIGHT_GRAY, BLACK);
 		face::TermNormal::draw_chars(self.current_test.chars(), target, 0, 48, DARK_GRAY, BLACK);
 
+		let pct = (self.count * 100) / self.total;
+		let pct_chars = [
+			(b'0' + ((pct / 10) % 10) as u8) as char,
+			(b'0' + (pct % 10) as u8) as char,
+			'%',
+		];
+		let total_width: i32 = pct_chars
+			.iter()
+			.cloned()
+			.map(face::Progress::char_width)
+			.sum();
+		let padded_width = total_width + 3;
+
+		target
+			.fill_solid(
+				&Rectangle::new(
+					(256i32 - padded_width, 0i32).into(),
+					(padded_width as u32, 64u32).into(),
+				),
+				WHITE,
+			)
+			.ok();
+
+		face::Progress::draw_chars(pct_chars, target, 256 - total_width, 0, WHITE, BLACK);
+
 		target.present().ok();
 	}
 
@@ -323,6 +351,7 @@ impl TestRenderer {
 		ref_id: String<256>,
 	) {
 		self.total = total;
+		self.count = 0;
 		self.author = author;
 		self.title = title;
 		self.ref_id = ref_id;
@@ -332,6 +361,7 @@ impl TestRenderer {
 	fn start_test(&mut self, name: String<256>) {
 		self.current_test = name;
 		self.dirty = true;
+		self.count += 1;
 	}
 }
 
