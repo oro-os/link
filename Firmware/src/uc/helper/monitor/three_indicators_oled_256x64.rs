@@ -308,7 +308,7 @@ impl TestRenderer {
 		face::TermNormal::draw_chars(self.ref_id.chars(), target, 0, 32, LIGHT_GRAY, BLACK);
 		face::TermNormal::draw_chars(self.current_test.chars(), target, 0, 48, DARK_GRAY, BLACK);
 
-		let pct = (self.count * 100) / self.total;
+		let pct = ((self.count as i32 - 1).max(0) * 100) as usize / self.total;
 		let pct_chars = [
 			(b'0' + ((pct / 10) % 10) as u8) as char,
 			(b'0' + (pct % 10) as u8) as char,
@@ -319,7 +319,7 @@ impl TestRenderer {
 			.cloned()
 			.map(face::Progress::char_width)
 			.sum();
-		let padded_width = total_width + 3;
+		let padded_width = total_width + 5;
 
 		target
 			.fill_solid(
