@@ -14,8 +14,13 @@ use crate::{
 	},
 };
 use embedded_graphics::{draw_target::DrawTarget, pixelcolor::Gray4, Drawable};
-use heapless::Deque;
+use heapless::{Deque, String};
 use perlin2d::PerlinNoise2D;
+
+const WHITE: Gray4 = Gray4::new(15);
+const LIGHT_GRAY: Gray4 = Gray4::new(10);
+const DARK_GRAY: Gray4 = Gray4::new(5);
+const BLACK: Gray4 = Gray4::new(0);
 
 pub trait OledTarget: DrawTarget<Color = Gray4> + BufferedDrawTarget + OledPeripheral {}
 
@@ -31,6 +36,7 @@ where
 	current_scene: Option<Scene>,
 	logo_renderer: OroLogoRenderer,
 	log_renderer: LogRenderer,
+	test_renderer: TestRenderer,
 }
 
 impl<D, I> ThreeIndicatorsOled256x64<D, I>
@@ -45,6 +51,7 @@ where
 			current_scene: None,
 			logo_renderer: Default::default(),
 			log_renderer: Default::default(),
+			test_renderer: Default::default(),
 		};
 
 		// Focus the first scene
@@ -72,13 +79,15 @@ where
 			None => {}
 			Some(Scene::OroLogo) => self.logo_renderer.blur(),
 			Some(Scene::Log) => self.log_renderer.blur(),
+			Some(Scene::Test) => self.test_renderer.blur(),
 		}
 
 		self.current_scene = Some(scene);
 
 		match scene {
 			Scene::OroLogo => self.logo_renderer.focus(&mut self.indicators),
-			Scene::Log => self.log_renderer.focus(),
+			Scene::Log => self.log_renderer.focus(&mut self.indicators),
+			Scene::Test => self.test_renderer.focus(&mut self.indicators),
 		}
 	}
 
@@ -94,8 +103,27 @@ where
 						.tick(millis, &mut self.target, &mut self.indicators)
 				}
 				Scene::Log => self.log_renderer.tick(millis, &mut self.target),
+				Scene::Test => {
+					self.test_renderer
+						.tick(millis, &mut self.target, &mut self.indicators)
+				}
 			}
 		}
+	}
+
+	fn start_test_run(
+		&mut self,
+		total: usize,
+		author: String<256>,
+		title: String<256>,
+		ref_id: String<256>,
+	) {
+		self.test_renderer
+			.start_test_run(total, author, title, ref_id);
+	}
+
+	fn start_test(&mut self, name: String<256>) {
+		self.test_renderer.start_test(name);
 	}
 }
 
@@ -196,11 +224,6 @@ impl LogRenderer {
 
 		self.dirty = false;
 
-		const WHITE: Gray4 = Gray4::new(15);
-		const LIGHT_GRAY: Gray4 = Gray4::new(10);
-		const DARK_GRAY: Gray4 = Gray4::new(5);
-		const BLACK: Gray4 = Gray4::new(0);
-
 		target.clear(BLACK).ok();
 
 		for (i, entry) in self.entries.iter().enumerate() {
@@ -244,9 +267,72 @@ impl LogRenderer {
 		self.dirty = true;
 	}
 
-	fn focus(&mut self) {}
+	fn focus<I: IndicatorLights>(&mut self, lights: &mut I) {
+		lights.disable();
+		self.dirty = true;
+	}
 
 	fn blur(&mut self) {}
+}
+
+#[derive(Debug, Default)]
+struct TestRenderer {
+	total: usize,
+	author: String<256>,
+	title: String<256>,
+	ref_id: String<256>,
+	current_test: String<256>,
+	dirty: bool,
+}
+
+impl TestRenderer {
+	fn tick<D: OledTarget, I: IndicatorLights>(
+		&mut self,
+		_millis: u64,
+		target: &mut D,
+		_lights: &mut I,
+	) {
+		if !self.dirty {
+			return;
+		}
+
+		self.dirty = false;
+
+		target.clear(BLACK).ok();
+
+		face::TermBold::draw_chars(self.author.chars(), target, 0, 0, WHITE, BLACK);
+		face::TermNormal::draw_chars(self.title.chars(), target, 0, 16, WHITE, BLACK);
+		face::TermNormal::draw_chars(self.ref_id.chars(), target, 0, 32, LIGHT_GRAY, BLACK);
+		face::TermNormal::draw_chars(self.current_test.chars(), target, 0, 48, DARK_GRAY, BLACK);
+
+		target.present().ok();
+	}
+
+	fn focus<I: IndicatorLights>(&mut self, lights: &mut I) {
+		lights.enable();
+		self.dirty = true;
+	}
+
+	fn blur(&mut self) {}
+
+	fn start_test_run(
+		&mut self,
+		total: usize,
+		author: String<256>,
+		title: String<256>,
+		ref_id: String<256>,
+	) {
+		self.total = total;
+		self.author = author;
+		self.title = title;
+		self.ref_id = ref_id;
+		self.dirty = true;
+	}
+
+	fn start_test(&mut self, name: String<256>) {
+		self.current_test = name;
+		self.dirty = true;
+	}
 }
 
 /// Ported from <https://github.com/Qix-/color-convert/blob/master/conversions.js>

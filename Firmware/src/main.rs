@@ -114,10 +114,43 @@ pub async fn main(spawner: Spawner) {
 
 	LogSeverity::Info.log(unsafe { MONITOR.as_ref().unwrap() }, "booted OK".into());
 
+	// XXX DEBUG
+	unsafe {
+		let mut monitor = MONITOR.as_ref().unwrap().borrow_mut();
+		monitor.set_scene(Scene::Test);
+		monitor.start_test_run(
+			144,
+			"@qix-".into(),
+			"add root ring, modules, and loaders".into(),
+			"feat/refactor-root-ring".into(),
+		);
+	}
+
+	// XXX DEBUG
+	const TEST_NAMES: [&str; 7] = [
+		"move_ref_into_storage",
+		"bring_up_net_cards",
+		"memory_should_align_to_6",
+		"invalid_ring_id",
+		"too_many_modules_handler",
+		"page_fault_handler",
+		"phantom_writes_handler",
+	];
+
 	loop {
 		debug_led.on();
 		Timer::after(Duration::from_millis(100)).await;
 		debug_led.off();
-		Timer::after(Duration::from_millis(3000)).await;
+		Timer::after(Duration::from_millis(2000)).await;
+
+		// XXX DEBUG
+		unsafe {
+			static mut I: usize = 0;
+			if I < 144 {
+				let mut monitor = MONITOR.as_ref().unwrap().borrow_mut();
+				monitor.start_test(TEST_NAMES[I % TEST_NAMES.len()].into());
+				I += 1;
+			}
+		}
 	}
 }

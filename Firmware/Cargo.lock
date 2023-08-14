@@ -298,7 +298,7 @@ dependencies = [
 [[package]]
 name = "embassy-embedded-hal"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
 dependencies = [
  "defmt",
  "embassy-futures",
@@ -315,7 +315,7 @@ dependencies = [
 [[package]]
 name = "embassy-executor"
 version = "0.2.0"
-source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
 dependencies = [
  "atomic-polyfill 1.0.3",
  "cortex-m",
@@ -330,12 +330,12 @@ dependencies = [
 [[package]]
 name = "embassy-futures"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
 
 [[package]]
 name = "embassy-hal-internal"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
 dependencies = [
  "cortex-m",
  "critical-section",
@@ -346,7 +346,7 @@ dependencies = [
 [[package]]
 name = "embassy-macros"
 version = "0.2.0"
-source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
 dependencies = [
  "darling",
  "proc-macro2",
@@ -357,7 +357,7 @@ dependencies = [
 [[package]]
 name = "embassy-net"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
 dependencies = [
  "as-slice 0.2.1",
  "atomic-polyfill 1.0.3",
@@ -379,7 +379,7 @@ dependencies = [
 [[package]]
 name = "embassy-net-driver"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
 dependencies = [
  "defmt",
 ]
@@ -387,7 +387,7 @@ dependencies = [
 [[package]]
 name = "embassy-net-enc28j60"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
 dependencies = [
  "defmt",
  "embassy-futures",
@@ -400,7 +400,7 @@ dependencies = [
 [[package]]
 name = "embassy-stm32"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
 dependencies = [
  "atomic-polyfill 1.0.3",
  "bit_field",
@@ -440,7 +440,7 @@ dependencies = [
 [[package]]
 name = "embassy-sync"
 version = "0.2.0"
-source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
 dependencies = [
  "cfg-if",
  "critical-section",
@@ -453,7 +453,7 @@ dependencies = [
 [[package]]
 name = "embassy-time"
 version = "0.1.2"
-source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
 dependencies = [
  "atomic-polyfill 1.0.3",
  "cfg-if",
@@ -469,7 +469,7 @@ dependencies = [
 [[package]]
 name = "embassy-usb-driver"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#0e17861bf8c924984f6d73446bc79ea5e47f2f96"
+source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
 dependencies = [
  "defmt",
 ]
@@ -485,9 +485,9 @@ dependencies = [
 
 [[package]]
 name = "embedded-graphics"
-version = "0.8.0"
+version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cd2a8e0250a7e1212828166b01eed0219e488ebb2599f44624a29c9bd249f397"
+checksum = "0649998afacf6d575d126d83e68b78c0ab0e00ca2ac7e9b3db11b4cbe8274ef0"
 dependencies = [
  "az",
  "byteorder",
@@ -925,12 +925,13 @@ dependencies = [
 [[package]]
 name = "perlin2d"
 version = "0.2.6"
+source = "git+https://github.com/oro-os/perlin2d.git#6722293e219a837b6a290a3aa2f9433e730f6adc"
 
 [[package]]
 name = "pin-project-lite"
-version = "0.2.11"
+version = "0.2.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2c516611246607d0c04186886dbb3a754368ef82c79e9827a802c6d836dd111c"
+checksum = "12cc1b0bf1727a77a54b6654e7b5f1af8604923edc8b81885f8ec92f9e3f0a05"
 
 [[package]]
 name = "pin-utils"

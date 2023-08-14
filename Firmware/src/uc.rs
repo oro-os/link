@@ -152,6 +152,8 @@ pub enum Scene {
 	OroLogo,
 	/// Displays a running log of diagnostic frames.
 	Log,
+	/// Displays the status of a test run.
+	Test,
 }
 
 /// A log frame's severity level.
@@ -209,6 +211,22 @@ pub trait Monitor {
 	/// Firmware only pushes important log frames; implementors of this trait should not
 	/// peform any filtering themselves.
 	fn push_log(&mut self, frame: LogFrame);
+
+	/// Starts a test run with the given number of tests.
+	/// Every successive call to "start_test" will decrement that count by one
+	/// in order to show progress.
+	///
+	/// NOTE: This does NOT change the scene!
+	fn start_test_run(
+		&mut self,
+		total: usize,
+		author: String<256>,
+		title: String<256>,
+		ref_id: String<256>,
+	);
+
+	/// Indicates the start of a new test
+	fn start_test(&mut self, name: String<256>);
 
 	/// Should be called frequently - at least 60 times a second, but can be called
 	/// faster. Must be passed a monotonic millisecond instance.
