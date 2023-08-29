@@ -9,7 +9,7 @@ use embassy_stm32::{
 	peripherals,
 	spi::{self, Spi},
 	time::Hertz,
-	usart::{self, Uart},
+	usart::{self, BufferedUart},
 	Config,
 };
 use embassy_time::Delay;
@@ -17,7 +17,7 @@ use embedded_hal_bus::spi::ExclusiveDevice;
 
 bind_interrupts!(struct Irqs {
 	I2C1_EV => i2c::InterruptHandler<peripherals::I2C1>;
-	UART7 => usart::InterruptHandler<peripherals::UART7>;
+	UART7 => usart::BufferedInterruptHandler<peripherals::UART7>;
 });
 
 pub async fn init(
@@ -37,14 +37,27 @@ pub async fn init(
 
 	let p = embassy_stm32::init(config);
 
-	let debug_write = Uart::new(p.UART7, p.PE7, p.PE8, Irqs, NoDma, NoDma, {
-		let mut config = usart::Config::default();
-		config.baudrate = 115200;
-		config.data_bits = usart::DataBits::DataBits8;
-		config.stop_bits = usart::StopBits::STOP1;
-		config.parity = usart::Parity::ParityNone;
-		config
-	});
+	let debug_write = {
+		static mut TX_BUF: [u8; 64] = [0u8; 64];
+		static mut RX_BUF: [u8; 8] = [0u8; 8];
+
+		BufferedUart::new(
+			p.UART7,
+			Irqs,
+			p.PE7,
+			p.PE8,
+			unsafe { &mut TX_BUF },
+			unsafe { &mut RX_BUF },
+			{
+				let mut config = usart::Config::default();
+				config.baudrate = 115200;
+				config.data_bits = usart::DataBits::DataBits8;
+				config.stop_bits = usart::StopBits::STOP1;
+				config.parity = usart::Parity::ParityNone;
+				config
+			},
+		)
+	};
 
 	super::start_defmt_task(spawner, debug_write);
 

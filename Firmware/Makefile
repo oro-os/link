@@ -1,4 +1,4 @@
-.PHONY: all clean lint clippy fmt doc log stm32f479vg
+.PHONY: all clean lint clippy fmt doc log stm32f479vg stm32f479vg.run
 
 ifdef DEBUG
 CARGO_MODE := debug
@@ -13,6 +13,10 @@ endif
 
 ifndef LEVEL
 LEVEL := warn
+endif
+
+ifndef PROBE_RUN
+PROBE_RUN := probe-run
 endif
 
 export DEFMT_LOG = $(LEVEL)
@@ -45,6 +49,9 @@ doc:
 
 log:
 	socat FILE:/dev/ttyS16,b115200,nonblock,cs8,cstopb=1,raw,parenb=0 stdout | defmt-print -e target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware --show-skipped-frames
+
+stm32f479vg.run: stm32f479vg
+	$(PROBE_RUN) --chip stm32f479vg target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware
 
 stm32f479vg: target/$(CARGO_MODE)/oro-link-stm32f479vg.bin
 .PHONY: target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware

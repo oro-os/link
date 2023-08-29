@@ -4,17 +4,24 @@
 
 mod chip;
 mod font;
+mod net;
 mod uc;
 
 use core::cell::RefCell;
 #[cfg(not(test))]
 use core::panic::PanicInfo;
-use defmt::{error, info};
+use defmt::{debug, error, info};
 use embassy_executor::Spawner;
-use embassy_net::Stack;
+use embassy_net::{ConfigV4, Ipv4Address, Stack};
 use embassy_time::{Duration, Instant, Timer};
 use static_cell::make_static;
 use uc::{DebugLed, LogSeverity, Monitor as _, Scene};
+
+#[defmt::panic_handler]
+fn defmt_panic() -> ! {
+	#[allow(clippy::empty_loop)]
+	loop {}
+}
 
 #[cfg(not(test))]
 #[panic_handler]
@@ -28,15 +35,15 @@ fn panic(panic: &PanicInfo<'_>) -> ! {
 			.downcast_ref::<&str>()
 			.unwrap_or(&"<unknown>")
 	);
+	#[allow(clippy::empty_loop)]
 	loop {}
 }
 
 type ExtEthDriver = impl uc::EthernetDriver;
-static mut EXT_ETH_STACK: Option<Stack<ExtEthDriver>> = None;
 
 #[embassy_executor::task]
-async fn net_task() {
-	unsafe { EXT_ETH_STACK.as_ref().unwrap().run().await };
+async fn net_task(stack: &'static Stack<ExtEthDriver>) {
+	stack.run().await;
 }
 
 type Monitor = impl uc::Monitor;
@@ -54,9 +61,23 @@ async fn monitor_task() {
 	}
 }
 
+type ImplDebugLed = impl uc::DebugLed;
+static mut DEBUG_LED: Option<ImplDebugLed> = None;
+
+#[embassy_executor::task]
+async fn blink_debug_led() {
+	let mut debug_led = unsafe { DEBUG_LED.take().unwrap() };
+	loop {
+		debug_led.on();
+		Timer::after(Duration::from_millis(100)).await;
+		debug_led.off();
+		Timer::after(Duration::from_millis(2000)).await;
+	}
+}
+
 #[embassy_executor::main]
 pub async fn main(spawner: Spawner) {
-	let (mut debug_led, _system, monitor, exteth) = uc::init(&spawner).await;
+	let (debug_led, _system, monitor, exteth) = uc::init(&spawner).await;
 
 	// Let peripherals power on
 	Timer::after(Duration::from_millis(50)).await;
@@ -90,67 +111,79 @@ pub async fn main(spawner: Spawner) {
 
 		let config = embassy_net::Config::dhcpv4(Default::default());
 
-		Stack::new(
+		&*make_static!(Stack::new(
 			exteth,
 			config,
-			make_static!(embassy_net::StackResources::<2>::new()),
+			make_static!(embassy_net::StackResources::<16>::new()),
 			seed,
-		)
+		))
 	};
 
-	let _extnet = unsafe {
-		EXT_ETH_STACK = {
-			fn init(extnet: Stack<ExtEthDriver>) -> Option<Stack<ExtEthDriver>> {
-				Some(extnet)
-			}
-			init(extnet)
-		};
-
-		EXT_ETH_STACK.as_ref().unwrap()
-	};
-
-	spawner.spawn(net_task()).unwrap();
-	spawner.spawn(monitor_task()).unwrap();
-
-	LogSeverity::Info.log(unsafe { MONITOR.as_ref().unwrap() }, "booted OK".into());
-
-	// XXX DEBUG
 	unsafe {
-		let mut monitor = MONITOR.as_ref().unwrap().borrow_mut();
-		monitor.set_scene(Scene::Test);
-		monitor.start_test_run(
-			144,
-			"@qix-".into(),
-			"add root ring, modules, and loaders".into(),
-			"feat/refactor-root-ring".into(),
+		DEBUG_LED = {
+			fn init(debugled: ImplDebugLed) -> Option<ImplDebugLed> {
+				Some(debugled)
+			}
+
+			init(debug_led)
+		};
+	}
+
+	spawner.spawn(net_task(extnet)).unwrap();
+	spawner.spawn(monitor_task()).unwrap();
+	spawner.spawn(blink_debug_led()).unwrap();
+
+	LogSeverity::Info.log(
+		unsafe { MONITOR.as_ref().unwrap() },
+		"waiting for DHCP lease...".into(),
+	);
+
+	loop {
+		if extnet.is_config_up() {
+			break;
+		}
+
+		Timer::after(Duration::from_millis(100)).await;
+		debug!("still waiting for config up...");
+	}
+
+	debug!("config is up");
+
+	LogSeverity::Info.log(
+		unsafe { MONITOR.as_ref().unwrap() },
+		"reconfiguring DNS...".into(),
+	);
+
+	Timer::after(Duration::from_millis(100)).await;
+
+	let mut current_config = extnet.config_v4().unwrap();
+	current_config.dns_servers.clear();
+	current_config
+		.dns_servers
+		.push(Ipv4Address([1, 1, 1, 1]))
+		.unwrap();
+	current_config
+		.dns_servers
+		.push(Ipv4Address([94, 16, 114, 254]))
+		.unwrap();
+	extnet.set_config_v4(ConfigV4::Static(current_config));
+
+	LogSeverity::Info.log(
+		unsafe { MONITOR.as_ref().unwrap() },
+		"synchronizing time...".into(),
+	);
+
+	if let Some(unixtime) = net::get_unixtime(extnet).await {
+	} else {
+		LogSeverity::Error.log(
+			unsafe { MONITOR.as_ref().unwrap() },
+			"failed to get time!".into(),
 		);
 	}
 
-	// XXX DEBUG
-	const TEST_NAMES: [&str; 7] = [
-		"move_ref_into_storage",
-		"bring_up_net_cards",
-		"memory_should_align_to_6",
-		"invalid_ring_id",
-		"too_many_modules_handler",
-		"page_fault_handler",
-		"phantom_writes_handler",
-	];
+	LogSeverity::Info.log(unsafe { MONITOR.as_ref().unwrap() }, "booted OK".into());
 
 	loop {
-		debug_led.on();
-		Timer::after(Duration::from_millis(100)).await;
-		debug_led.off();
 		Timer::after(Duration::from_millis(2000)).await;
-
-		// XXX DEBUG
-		unsafe {
-			static mut I: usize = 0;
-			if I < 144 {
-				let mut monitor = MONITOR.as_ref().unwrap().borrow_mut();
-				monitor.start_test(TEST_NAMES[I % TEST_NAMES.len()].into());
-				I += 1;
-			}
-		}
 	}
 }

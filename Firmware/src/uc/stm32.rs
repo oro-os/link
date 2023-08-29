@@ -10,7 +10,9 @@ use embassy_stm32::{
 	i2c,
 };
 use embassy_time::{block_for, Duration};
-use embedded_hal::serial::Write;
+use embedded_io::Write;
+
+use defmt_rtt as _;
 
 /// Implementation of I2c proxies for STM32 I2c peripherals.
 impl<'d, T: i2c::Instance, TXDMA, RXDMA> chip::I2c for i2c::I2c<'d, T, TXDMA, RXDMA> {
@@ -136,21 +138,5 @@ where
 	}
 }
 
-pub type ImplWrite = impl Write<u8>;
-#[embassy_executor::task]
-async fn defmt_task(mut logger: defmt_brtt::DefmtConsumer, mut w: ImplWrite) {
-	loop {
-		let grant = logger.wait_for_log().await;
-		let buf = grant.buf();
-		let len = buf.len();
-		w.write(buf).unwrap();
-		w.flush().unwrap();
-		grant.release(len);
-	}
-}
-
 /// Starts the global defmt task. **Must be called before any defmt log statements.**
-pub fn start_defmt_task(spawner: &Spawner, w: ImplWrite) {
-	let logger = defmt_brtt::init().unwrap();
-	spawner.must_spawn(defmt_task(logger, w));
-}
+pub fn start_defmt_task<T>(_spawner: &Spawner, _w: T) {}

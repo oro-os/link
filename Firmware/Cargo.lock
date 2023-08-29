@@ -92,15 +92,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "bbqueue"
-version = "0.5.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fd3baa8859d1a4c7411039a75c0599a4640ef1c9a8fc811e4325b00e6cfe0a55"
-dependencies = [
- "defmt",
-]
-
-[[package]]
 name = "bit_field"
 version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -218,7 +209,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "strsim",
- "syn 2.0.28",
+ "syn 2.0.29",
 ]
 
 [[package]]
@@ -229,7 +220,7 @@ checksum = "836a9bbc7ad63342d6d6e7b815ccab164bc77a2d95d84bc3117a8c0d5c98e2d5"
 dependencies = [
  "darling_core",
  "quote",
- "syn 2.0.28",
+ "syn 2.0.29",
 ]
 
 [[package]]
@@ -243,17 +234,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "defmt-brtt"
-version = "0.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c2f0ac3635d0c89d12b8101fcb44a7625f5f030a1c0491124b74467eb5a58a78"
-dependencies = [
- "bbqueue",
- "critical-section",
- "defmt",
-]
-
-[[package]]
 name = "defmt-macros"
 version = "0.3.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -263,7 +243,7 @@ dependencies = [
  "proc-macro-error",
  "proc-macro2",
  "quote",
- "syn 2.0.28",
+ "syn 2.0.29",
 ]
 
 [[package]]
@@ -276,12 +256,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "defmt-ringbuf"
-version = "0.2.0"
+name = "defmt-rtt"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7df6721831a826a056636d1b9ff007df2f9ed3dd4a8c677f4c7fe341cd703f60"
+checksum = "609923761264dd99ed9c7d209718cda4631c5fe84668e0f0960124cbb844c49f"
 dependencies = [
- "cortex-m",
  "critical-section",
  "defmt",
 ]
@@ -298,14 +277,14 @@ dependencies = [
 [[package]]
 name = "embassy-embedded-hal"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
+source = "git+https://github.com/oro-os/embassy.git#a4d78a655217fadcf005b0ae835eb115594dc2b2"
 dependencies = [
  "defmt",
  "embassy-futures",
  "embassy-sync",
  "embassy-time",
  "embedded-hal 0.2.7",
- "embedded-hal 1.0.0-alpha.11",
+ "embedded-hal 1.0.0-rc.1",
  "embedded-hal-async",
  "embedded-storage",
  "embedded-storage-async",
@@ -314,8 +293,8 @@ dependencies = [
 
 [[package]]
 name = "embassy-executor"
-version = "0.2.0"
-source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
+version = "0.3.0"
+source = "git+https://github.com/oro-os/embassy.git#a4d78a655217fadcf005b0ae835eb115594dc2b2"
 dependencies = [
  "atomic-polyfill 1.0.3",
  "cortex-m",
@@ -330,12 +309,12 @@ dependencies = [
 [[package]]
 name = "embassy-futures"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
+source = "git+https://github.com/oro-os/embassy.git#a4d78a655217fadcf005b0ae835eb115594dc2b2"
 
 [[package]]
 name = "embassy-hal-internal"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
+source = "git+https://github.com/oro-os/embassy.git#a4d78a655217fadcf005b0ae835eb115594dc2b2"
 dependencies = [
  "cortex-m",
  "critical-section",
@@ -345,19 +324,19 @@ dependencies = [
 
 [[package]]
 name = "embassy-macros"
-version = "0.2.0"
-source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
+version = "0.2.1"
+source = "git+https://github.com/oro-os/embassy.git#a4d78a655217fadcf005b0ae835eb115594dc2b2"
 dependencies = [
  "darling",
  "proc-macro2",
  "quote",
- "syn 2.0.28",
+ "syn 2.0.29",
 ]
 
 [[package]]
 name = "embassy-net"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
+source = "git+https://github.com/oro-os/embassy.git#a4d78a655217fadcf005b0ae835eb115594dc2b2"
 dependencies = [
  "as-slice 0.2.1",
  "atomic-polyfill 1.0.3",
@@ -366,7 +345,7 @@ dependencies = [
  "embassy-net-driver",
  "embassy-sync",
  "embassy-time",
- "embedded-io",
+ "embedded-io-async",
  "embedded-nal-async",
  "futures",
  "generic-array 0.14.7",
@@ -379,7 +358,7 @@ dependencies = [
 [[package]]
 name = "embassy-net-driver"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
+source = "git+https://github.com/oro-os/embassy.git#a4d78a655217fadcf005b0ae835eb115594dc2b2"
 dependencies = [
  "defmt",
 ]
@@ -387,20 +366,20 @@ dependencies = [
 [[package]]
 name = "embassy-net-enc28j60"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
+source = "git+https://github.com/oro-os/embassy.git#a4d78a655217fadcf005b0ae835eb115594dc2b2"
 dependencies = [
  "defmt",
  "embassy-futures",
  "embassy-net-driver",
  "embassy-time",
- "embedded-hal 1.0.0-alpha.11",
+ "embedded-hal 1.0.0-rc.1",
  "embedded-hal-async",
 ]
 
 [[package]]
 name = "embassy-stm32"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
+source = "git+https://github.com/oro-os/embassy.git#a4d78a655217fadcf005b0ae835eb115594dc2b2"
 dependencies = [
  "atomic-polyfill 1.0.3",
  "bit_field",
@@ -419,10 +398,11 @@ dependencies = [
  "embassy-time",
  "embassy-usb-driver",
  "embedded-hal 0.2.7",
- "embedded-hal 1.0.0-alpha.11",
+ "embedded-hal 1.0.0-rc.1",
  "embedded-hal-async",
  "embedded-hal-nb",
  "embedded-io",
+ "embedded-io-async",
  "embedded-storage",
  "embedded-storage-async",
  "futures",
@@ -440,27 +420,26 @@ dependencies = [
 [[package]]
 name = "embassy-sync"
 version = "0.2.0"
-source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
+source = "git+https://github.com/oro-os/embassy.git#a4d78a655217fadcf005b0ae835eb115594dc2b2"
 dependencies = [
  "cfg-if",
  "critical-section",
  "defmt",
- "embedded-io",
  "futures-util",
  "heapless",
 ]
 
 [[package]]
 name = "embassy-time"
-version = "0.1.2"
-source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
+version = "0.1.3"
+source = "git+https://github.com/oro-os/embassy.git#a4d78a655217fadcf005b0ae835eb115594dc2b2"
 dependencies = [
  "atomic-polyfill 1.0.3",
  "cfg-if",
  "critical-section",
  "defmt",
  "embedded-hal 0.2.7",
- "embedded-hal 1.0.0-alpha.11",
+ "embedded-hal 1.0.0-rc.1",
  "embedded-hal-async",
  "futures-util",
  "heapless",
@@ -469,7 +448,7 @@ dependencies = [
 [[package]]
 name = "embassy-usb-driver"
 version = "0.1.0"
-source = "git+https://github.com/oro-os/embassy.git#fed2b5fff12483e2d7ad37746d4aac0ef9603db6"
+source = "git+https://github.com/oro-os/embassy.git#a4d78a655217fadcf005b0ae835eb115594dc2b2"
 dependencies = [
  "defmt",
 ]
@@ -528,69 +507,79 @@ dependencies = [
 
 [[package]]
 name = "embedded-hal"
-version = "1.0.0-alpha.11"
+version = "1.0.0-rc.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f7724ebabcadfeb15920571dd727bc8ccde8586e52f2890bdb8182fdf42c3ff2"
+checksum = "2894bc2f0457b8ca3d6b8ab8aad64d9337583672494013457f86c5a9146c0e22"
 
 [[package]]
 name = "embedded-hal-async"
-version = "0.2.0-alpha.2"
+version = "1.0.0-rc.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "918285ec7b18edb024d4adc64f6f16cdc7c4d72eadfc85c3313d1e0ff40e0229"
+checksum = "76a8a3517745342155b3b00895a0f78417a453fb800d97a8bf4777d5720acde9"
 dependencies = [
- "embedded-hal 1.0.0-alpha.11",
+ "embedded-hal 1.0.0-rc.1",
 ]
 
 [[package]]
 name = "embedded-hal-bus"
-version = "0.1.0-alpha.3"
+version = "0.1.0-rc.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0b36407d17c7b9de899bf9ff24d497d7bb02e52f2385045632f5e6b50187e954"
+checksum = "662822f2853efaa9629ba6d424d7b0cbf8f7f52d68a8919c9afe56e7f9dd1b2a"
 dependencies = [
  "critical-section",
- "embedded-hal 1.0.0-alpha.11",
+ "embedded-hal 1.0.0-rc.1",
 ]
 
 [[package]]
 name = "embedded-hal-nb"
-version = "1.0.0-alpha.3"
+version = "1.0.0-rc.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a09e4c3f8a54e60803405e1cc17e36c963ab32e654f8d6bb49d48cd8116360d7"
+checksum = "257e3bb0163c69195acb0ebe0083b017b963235861d5ea9741626abdc55f39c9"
 dependencies = [
- "embedded-hal 1.0.0-alpha.11",
+ "embedded-hal 1.0.0-rc.1",
  "nb 1.1.0",
 ]
 
 [[package]]
 name = "embedded-io"
-version = "0.4.0"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ef1a6892d9eef45c8fa6b9e0086428a2cca8491aca8f787c534a3d6d0bcb3ced"
+checksum = "658bbadc628dc286b9ae02f0cb0f5411c056eb7487b72f0083203f115de94060"
 dependencies = [
  "defmt",
 ]
 
 [[package]]
-name = "embedded-nal"
-version = "0.6.0"
+name = "embedded-io-async"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "db9efecb57ab54fa918730f2874d7d37647169c50fa1357fecb81abee840b113"
+checksum = "1394754ad749a560b25a0c70dcd2b66a450824a1311fc475bb2ccbfabe7f8414"
+dependencies = [
+ "defmt",
+ "embedded-io",
+]
+
+[[package]]
+name = "embedded-nal"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "447416d161ba378782c13e82b11b267d6d2104b4913679a7c5640e7e94f96ea7"
 dependencies = [
  "heapless",
  "nb 1.1.0",
- "no-std-net 0.5.0",
+ "no-std-net",
 ]
 
 [[package]]
 name = "embedded-nal-async"
-version = "0.4.0"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "27ce84f518ca912777ec143db235f4d615e3bf8d4e46d507d6ef12daf5b1df98"
+checksum = "e706b5288eceaa582155b24d54e23385429402e4e99ae984f4a0a6a65b635f15"
 dependencies = [
- "embedded-io",
+ "embedded-io-async",
  "embedded-nal",
  "heapless",
- "no-std-net 0.6.0",
+ "no-std-net",
 ]
 
 [[package]]
@@ -628,9 +617,9 @@ dependencies = [
 
 [[package]]
 name = "flate2"
-version = "1.0.26"
+version = "1.0.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3b9429470923de8e8cbd4d2dc513535400b4b3fef0319fb5c4e1f520a7bef743"
+checksum = "c6c98ee8095e9d1dcbf2fcc6d95acccb90d1c81db1e44725c6a984b1dbdfb010"
 dependencies = [
  "crc32fast",
  "miniz_oxide",
@@ -695,7 +684,7 @@ checksum = "89ca545a94061b6365f2c7355b4b32bd20df3ff95f02da9329b34ccc3bd6ee72"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.28",
+ "syn 2.0.29",
 ]
 
 [[package]]
@@ -864,12 +853,6 @@ checksum = "8d5439c4ad607c3c23abf66de8c8bf57ba8adcd1f129e699851a6e43935d339d"
 
 [[package]]
 name = "no-std-net"
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1bcece43b12349917e096cddfa66107277f123e6c96a5aea78711dc601a47152"
-
-[[package]]
-name = "no-std-net"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "43794a0ace135be66a25d3ae77d41b91615fb68ae937f904090203e81f755b65"
@@ -896,8 +879,7 @@ dependencies = [
  "cortex-m",
  "cortex-m-rt",
  "defmt",
- "defmt-brtt",
- "defmt-ringbuf",
+ "defmt-rtt",
  "embassy-executor",
  "embassy-net",
  "embassy-net-enc28j60",
@@ -906,8 +888,9 @@ dependencies = [
  "embedded-graphics",
  "embedded-graphics-core",
  "embedded-graphics-framebuf",
- "embedded-hal 1.0.0-alpha.11",
+ "embedded-hal 1.0.0-rc.1",
  "embedded-hal-bus",
+ "embedded-io",
  "heapless",
  "micromath",
  "oro-logo-rle",
@@ -916,8 +899,9 @@ dependencies = [
  "png",
  "proc-macro2",
  "quote",
+ "smoltcp",
  "static_cell",
- "syn 2.0.28",
+ "syn 2.0.29",
  "ttf-parser",
 ]
 
@@ -930,7 +914,7 @@ dependencies = [
  "lodepng",
  "proc-macro2",
  "quote",
- "syn 2.0.28",
+ "syn 2.0.29",
 ]
 
 [[package]]
@@ -940,9 +924,9 @@ source = "git+https://github.com/oro-os/perlin2d.git#6722293e219a837b6a290a3aa2f
 
 [[package]]
 name = "pin-project-lite"
-version = "0.2.12"
+version = "0.2.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "12cc1b0bf1727a77a54b6654e7b5f1af8604923edc8b81885f8ec92f9e3f0a05"
+checksum = "8afb450f006bf6385ca15ef45d71d2288452bc3683ce2e2cacc0d18e4be60b58"
 
 [[package]]
 name = "pin-utils"
@@ -961,9 +945,9 @@ dependencies = [
 
 [[package]]
 name = "png"
-version = "0.17.9"
+version = "0.17.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "59871cc5b6cce7eaccca5a802b4173377a1c2ba90654246789a8fa2334426d11"
+checksum = "dd75bf2d8dd3702b9707cdbc56a5b9ef42cec752eb8b3bafc01234558442aa64"
 dependencies = [
  "bitflags",
  "crc32fast",
@@ -1007,9 +991,9 @@ dependencies = [
 
 [[package]]
 name = "quote"
-version = "1.0.32"
+version = "1.0.33"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "50f3b39ccfb720540debaa0164757101c08ecb8d326b15358ce76a62c7e85965"
+checksum = "5267fca4496028628a95160fc423a33e8b2e6af8a5302579e322e4b520293cae"
 dependencies = [
  "proc-macro2",
 ]
@@ -1142,7 +1126,7 @@ dependencies = [
 [[package]]
 name = "stm32-metapac"
 version = "13.0.0"
-source = "git+https://github.com/embassy-rs/stm32-data-generated?tag=stm32-data-82a24863823a3daf0ca664c7fdf008379d0a0d42#bbeb605921a31a7d6327aa6ff8909768e43a7e63"
+source = "git+https://github.com/embassy-rs/stm32-data-generated?tag=stm32-data-9a61a1f090462df8bd1751f89951f04934fdceb3#f3567ba60e424901d239e2550f3db455b6448ed4"
 dependencies = [
  "cortex-m",
  "cortex-m-rt",
@@ -1167,9 +1151,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.28"
+version = "2.0.29"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "04361975b3f5e348b2189d8dc55bc942f278b2d482a6a0365de5bdd62d351567"
+checksum = "c324c494eba9d92503e6f1ef2e6df781e78f6a7705a0202d9801b198807d518a"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1178,22 +1162,22 @@ dependencies = [
 
 [[package]]
 name = "thiserror"
-version = "1.0.44"
+version = "1.0.47"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "611040a08a0439f8248d1990b111c95baa9c704c805fa1f62104b39655fd7f90"
+checksum = "97a802ec30afc17eee47b2855fc72e0c4cd62be9b4efe6591edde0ec5bd68d8f"
 dependencies = [
  "thiserror-impl",
 ]
 
 [[package]]
 name = "thiserror-impl"
-version = "1.0.44"
+version = "1.0.47"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "090198534930841fab3a5d1bb637cde49e339654e606195f8d9c76eeb081dc96"
+checksum = "6bb623b56e39ab7dcd4b1b98bb6c8f8d907ed255b18de254088016b27a8ee19b"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.28",
+ "syn 2.0.29",
 ]
 
 [[package]]
