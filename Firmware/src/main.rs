@@ -1,6 +1,6 @@
 #![no_std]
 #![no_main]
-#![feature(type_alias_impl_trait, core_intrinsics)]
+#![feature(type_alias_impl_trait, core_intrinsics, byte_slice_trim_ascii)]
 
 mod chip;
 mod font;
@@ -10,12 +10,12 @@ mod uc;
 use core::cell::RefCell;
 #[cfg(not(test))]
 use core::panic::PanicInfo;
-use defmt::{debug, error, info};
+use defmt::{error, info};
 use embassy_executor::Spawner;
 use embassy_net::{ConfigV4, Ipv4Address, Stack};
 use embassy_time::{Duration, Instant, Timer};
 use static_cell::make_static;
-use uc::{DebugLed, LogSeverity, Monitor as _, Scene};
+use uc::{DebugLed, LogSeverity, Monitor as _, Scene, WallClock};
 
 #[defmt::panic_handler]
 fn defmt_panic() -> ! {
@@ -77,7 +77,7 @@ async fn blink_debug_led() {
 
 #[embassy_executor::main]
 pub async fn main(spawner: Spawner) {
-	let (debug_led, _system, monitor, exteth) = uc::init(&spawner).await;
+	let (debug_led, _system, monitor, exteth, mut wall_clock) = uc::init(&spawner).await;
 
 	// Let peripherals power on
 	Timer::after(Duration::from_millis(50)).await;
@@ -144,10 +144,7 @@ pub async fn main(spawner: Spawner) {
 		}
 
 		Timer::after(Duration::from_millis(100)).await;
-		debug!("still waiting for config up...");
 	}
-
-	debug!("config is up");
 
 	LogSeverity::Info.log(
 		unsafe { MONITOR.as_ref().unwrap() },
@@ -173,7 +170,9 @@ pub async fn main(spawner: Spawner) {
 		"synchronizing time...".into(),
 	);
 
-	if let Some(unixtime) = net::get_unixtime(extnet).await {
+	if let Some(datetime) = net::get_datetime(extnet).await {
+		info!("current datetime: {:#?}", datetime);
+		wall_clock.set_datetime(datetime);
 	} else {
 		LogSeverity::Error.log(
 			unsafe { MONITOR.as_ref().unwrap() },
@@ -184,6 +183,6 @@ pub async fn main(spawner: Spawner) {
 	LogSeverity::Info.log(unsafe { MONITOR.as_ref().unwrap() }, "booted OK".into());
 
 	loop {
-		Timer::after(Duration::from_millis(2000)).await;
+		Timer::after(Duration::from_millis(10000)).await;
 	}
 }

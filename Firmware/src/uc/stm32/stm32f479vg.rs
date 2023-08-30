@@ -7,10 +7,10 @@ use embassy_stm32::{
 	gpio::{Input, Level, Output, OutputOpenDrain, Pull, Speed},
 	i2c::{self, I2c},
 	peripherals,
+	rtc::{self, RtcClockSource},
 	spi::{self, Spi},
 	time::Hertz,
-	usart::{self, BufferedUart},
-	Config,
+	usart, Config,
 };
 use embassy_time::Delay;
 use embedded_hal_bus::spi::ExclusiveDevice;
@@ -21,14 +21,16 @@ bind_interrupts!(struct Irqs {
 });
 
 pub async fn init(
-	spawner: &Spawner,
+	_spawner: &Spawner,
 ) -> (
 	impl uc::DebugLed,
 	impl uc::SystemUnderTest,
 	impl uc::Monitor,
 	impl uc::EthernetDriver,
+	impl uc::WallClock,
 ) {
 	let mut config = Config::default();
+	config.rcc.rtc = Some(RtcClockSource::LSI);
 	config.rcc.hse = Some(Hertz::mhz(26));
 	config.rcc.bypass_hse = false;
 	config.rcc.hclk = Some(Hertz(168409091));
@@ -36,30 +38,6 @@ pub async fn init(
 	config.rcc.pll48 = true;
 
 	let p = embassy_stm32::init(config);
-
-	let debug_write = {
-		static mut TX_BUF: [u8; 64] = [0u8; 64];
-		static mut RX_BUF: [u8; 8] = [0u8; 8];
-
-		BufferedUart::new(
-			p.UART7,
-			Irqs,
-			p.PE7,
-			p.PE8,
-			unsafe { &mut TX_BUF },
-			unsafe { &mut RX_BUF },
-			{
-				let mut config = usart::Config::default();
-				config.baudrate = 115200;
-				config.data_bits = usart::DataBits::DataBits8;
-				config.stop_bits = usart::StopBits::STOP1;
-				config.parity = usart::Parity::ParityNone;
-				config
-			},
-		)
-	};
-
-	super::start_defmt_task(spawner, debug_write);
 
 	info!("initializing STM32f479vg...");
 
@@ -85,6 +63,14 @@ pub async fn init(
 		);
 
 	info!("... indicators INIT");
+
+	let wall_clock = rtc::Rtc::new(
+		p.RTC,
+		rtc::RtcConfig::default()
+			.async_prescaler(127)
+			.sync_prescaler(255),
+	);
+	info!("... rtc INIT");
 
 	let mut oled_en = Output::new(p.PE2, Level::Low, Speed::Low);
 	let mut oled_rst = Output::new(p.PC13, Level::Low, Speed::Low);
@@ -172,5 +158,5 @@ pub async fn init(
 
 	info!("... debug led INIT");
 
-	(debug_led, system, monitor, exteth)
+	(debug_led, system, monitor, exteth, wall_clock)
 }

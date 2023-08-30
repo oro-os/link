@@ -4,13 +4,11 @@ mod stm32f479vg;
 pub use stm32f479vg::*;
 
 use crate::chip;
-use embassy_executor::Spawner;
 use embassy_stm32::{
 	gpio::{Input, Output, Pin},
 	i2c,
 };
 use embassy_time::{block_for, Duration};
-use embedded_io::Write;
 
 use defmt_rtt as _;
 
@@ -138,5 +136,59 @@ where
 	}
 }
 
-/// Starts the global defmt task. **Must be called before any defmt log statements.**
-pub fn start_defmt_task<T>(_spawner: &Spawner, _w: T) {}
+impl From<super::DateTime> for embassy_stm32::rtc::DateTime {
+	fn from(v: super::DateTime) -> Self {
+		use embassy_stm32::rtc::DayOfWeek as D;
+		Self {
+			year: v.year,
+			month: v.month,
+			day: v.day,
+			hour: v.hour,
+			minute: v.minute,
+			second: v.second,
+			day_of_week: match v.day_of_week {
+				0 => D::Sunday,
+				1 => D::Monday,
+				2 => D::Tuesday,
+				3 => D::Wednesday,
+				4 => D::Thursday,
+				5 => D::Friday,
+				6 => D::Saturday,
+				_ => panic!(),
+			},
+		}
+	}
+}
+
+impl super::WallClock for embassy_stm32::rtc::Rtc {
+	fn set_datetime(&mut self, dt: super::DateTime) {
+		embassy_stm32::rtc::Rtc::set_daylight_savings(self, dt.dst);
+		embassy_stm32::rtc::Rtc::set_datetime(self, dt.into()).ok();
+	}
+
+	fn get_datetime(&self) -> Option<super::DateTime> {
+		self.now()
+			.map(|dt| {
+				use embassy_stm32::rtc::DayOfWeek as D;
+				super::DateTime {
+					year: dt.year,
+					month: dt.month,
+					day: dt.day,
+					day_of_week: match dt.day_of_week {
+						D::Sunday => 0,
+						D::Monday => 1,
+						D::Tuesday => 2,
+						D::Wednesday => 3,
+						D::Thursday => 4,
+						D::Friday => 5,
+						D::Saturday => 6,
+					},
+					hour: dt.hour,
+					minute: dt.minute,
+					second: dt.second,
+					dst: self.get_daylight_savings(),
+				}
+			})
+			.ok()
+	}
+}

@@ -233,6 +233,32 @@ pub trait Monitor {
 	fn tick(&mut self, millis: u64);
 }
 
+/// A real-world date/time
+#[derive(Default, Clone, defmt::Format)]
+pub struct DateTime {
+	pub year: u16,
+	/// 1 is January
+	pub month: u8,
+	/// 1 is the first day
+	pub day: u8,
+	/// 0 is Sunday, 1 is Monday
+	pub day_of_week: u8,
+	pub hour: u8,
+	pub minute: u8,
+	pub second: u8,
+	/// Whether or not we're observing DST
+	pub dst: bool,
+}
+
+/// Implements a wall clock (RTC)
+pub trait WallClock {
+	/// Sets the current date/time
+	fn set_datetime(&mut self, dt: DateTime);
+
+	/// Gets the current date/time
+	fn get_datetime(&self) -> Option<DateTime>;
+}
+
 // Validates the contract of the init() function.
 #[allow(unused)]
 #[doc(hidden)]
@@ -257,8 +283,13 @@ mod _check_init {
 		Init::ok(init(fake_ref![Spawner]).await)
 	}
 
-	impl<DBG: DebugLed, SUT: SystemUnderTest, MON: Monitor, EXTETH: EthernetDriver> Init
-		for (DBG, SUT, MON, EXTETH)
+	impl<
+		DBG: DebugLed,
+		SUT: SystemUnderTest,
+		MON: Monitor,
+		EXTETH: EthernetDriver,
+		CLOCK: WallClock,
+	> Init for (DBG, SUT, MON, EXTETH, CLOCK)
 	{
 	}
 }
