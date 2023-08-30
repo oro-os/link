@@ -148,9 +148,9 @@ pub trait SystemUnderTest {
 pub enum Scene {
 	/// Displays the Oro logo and any aesthetically pleasing effect on
 	/// LEDs, etc.
-	#[default]
 	OroLogo,
 	/// Displays a running log of diagnostic frames.
+	#[default]
 	Log,
 	/// Displays the status of a test run.
 	Test,
