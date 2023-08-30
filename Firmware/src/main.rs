@@ -159,10 +159,6 @@ pub async fn main(spawner: Spawner) {
 		.dns_servers
 		.push(Ipv4Address([1, 1, 1, 1]))
 		.unwrap();
-	current_config
-		.dns_servers
-		.push(Ipv4Address([94, 16, 114, 254]))
-		.unwrap();
 	extnet.set_config_v4(ConfigV4::Static(current_config));
 
 	LogSeverity::Info.log(
@@ -180,9 +176,47 @@ pub async fn main(spawner: Spawner) {
 		);
 	}
 
+	let mut current_config = extnet.config_v4().unwrap();
+	current_config.dns_servers.clear();
+	current_config
+		.dns_servers
+		.push(Ipv4Address([94, 16, 114, 254]))
+		.unwrap();
+	extnet.set_config_v4(ConfigV4::Static(current_config));
+
 	LogSeverity::Info.log(unsafe { MONITOR.as_ref().unwrap() }, "booted OK".into());
 
 	loop {
-		Timer::after(Duration::from_millis(10000)).await;
+		LogSeverity::Warn.log(
+			unsafe { MONITOR.as_ref().unwrap() },
+			"starting new test session in 1s".into(),
+		);
+		Timer::after(Duration::from_millis(1000)).await;
+
+		unsafe {
+			MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
+		}
+
+		LogSeverity::Info.log(
+			unsafe { MONITOR.as_ref().unwrap() },
+			"resolving oro.dyn".into(),
+		);
+
+		let oro_dyn = match extnet
+			.dns_query("oro.dyn", embassy_net::dns::DnsQueryType::A)
+			.await
+		{
+			Ok(a) => a,
+			Err(err) => {
+				error!("failed to fetch oro.dyn address: {:?}", err);
+				LogSeverity::Error.log(
+					unsafe { MONITOR.as_ref().unwrap() },
+					"failed to resolve oro.dyn".into(),
+				);
+				continue;
+			}
+		};
+
+		info!("oro.dyn resolved to {:?}", oro_dyn);
 	}
 }
