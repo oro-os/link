@@ -15,7 +15,7 @@ use embassy_executor::Spawner;
 use embassy_net::{ConfigV4, Ipv4Address, Stack};
 use embassy_time::{Duration, Instant, Timer};
 use static_cell::make_static;
-use uc::{DebugLed, LogSeverity, Monitor as _, Scene, WallClock};
+use uc::{DebugLed, LogSeverity, Monitor as _, Rng, Scene, WallClock};
 
 #[defmt::panic_handler]
 fn defmt_panic() -> ! {
@@ -77,10 +77,7 @@ async fn blink_debug_led() {
 
 #[embassy_executor::main]
 pub async fn main(spawner: Spawner) {
-	let (debug_led, _system, monitor, exteth, mut wall_clock) = uc::init(&spawner).await;
-
-	// Let peripherals power on
-	Timer::after(Duration::from_millis(50)).await;
+	let (debug_led, _system, monitor, exteth, mut wall_clock, mut rng) = uc::init(&spawner).await;
 
 	unsafe {
 		MONITOR = {
@@ -106,9 +103,7 @@ pub async fn main(spawner: Spawner) {
 	);
 
 	let extnet = {
-		let seed = [0; 8]; // TODO use RNG from `uc` module
-		let seed = u64::from_le_bytes(seed);
-
+		let seed = rng.next_u64();
 		let config = embassy_net::Config::dhcpv4(Default::default());
 
 		&*make_static!(Stack::new(
@@ -217,6 +212,11 @@ pub async fn main(spawner: Spawner) {
 			}
 		};
 
-		info!("oro.dyn resolved to {:?}", oro_dyn);
+		info!("oro.dyn resolved to {:?}; connecting...", oro_dyn);
+
+		LogSeverity::Info.log(
+			unsafe { MONITOR.as_ref().unwrap() },
+			"connecting to oro.dyn...".into(),
+		);
 	}
 }

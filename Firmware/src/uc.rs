@@ -10,6 +10,7 @@ use embassy_executor::Spawner;
 pub use embassy_net::driver::Driver as EthernetDriver;
 use embassy_time::{block_for, Duration};
 use heapless::String;
+pub use rand_core::RngCore as Rng;
 
 /// Controller for the MCU's debug LED, which is just a single LED used
 /// to test basic I/O during POST and other states the firmware decides
@@ -289,7 +290,8 @@ mod _check_init {
 		MON: Monitor,
 		EXTETH: EthernetDriver,
 		CLOCK: WallClock,
-	> Init for (DBG, SUT, MON, EXTETH, CLOCK)
+		RNG: Rng,
+	> Init for (DBG, SUT, MON, EXTETH, CLOCK, RNG)
 	{
 	}
 }

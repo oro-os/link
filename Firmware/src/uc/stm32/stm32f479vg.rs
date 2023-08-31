@@ -6,18 +6,19 @@ use embassy_stm32::{
 	dma::NoDma,
 	gpio::{Input, Level, Output, OutputOpenDrain, Pull, Speed},
 	i2c::{self, I2c},
-	peripherals,
+	peripherals, rng,
 	rtc::{self, RtcClockSource},
 	spi::{self, Spi},
 	time::Hertz,
 	usart, Config,
 };
-use embassy_time::Delay;
+use embassy_time::{Delay, Duration, Timer};
 use embedded_hal_bus::spi::ExclusiveDevice;
 
 bind_interrupts!(struct Irqs {
 	I2C1_EV => i2c::InterruptHandler<peripherals::I2C1>;
 	UART7 => usart::BufferedInterruptHandler<peripherals::UART7>;
+	HASH_RNG => rng::InterruptHandler<peripherals::RNG>;
 });
 
 pub async fn init(
@@ -28,6 +29,7 @@ pub async fn init(
 	impl uc::Monitor,
 	impl uc::EthernetDriver,
 	impl uc::WallClock,
+	impl uc::Rng,
 ) {
 	let mut config = Config::default();
 	config.rcc.rtc = Some(RtcClockSource::LSI);
@@ -71,6 +73,9 @@ pub async fn init(
 			.sync_prescaler(255),
 	);
 	info!("... rtc INIT");
+
+	// Let OLED power on (affects first power-on cycle, typically)
+	Timer::after(Duration::from_millis(50)).await;
 
 	let mut oled_en = Output::new(p.PE2, Level::Low, Speed::Low);
 	let mut oled_rst = Output::new(p.PC13, Level::Low, Speed::Low);
@@ -164,5 +169,9 @@ pub async fn init(
 
 	info!("... debug led INIT");
 
-	(debug_led, system, monitor, exteth, wall_clock)
+	let rng_gen = rng::Rng::new(p.RNG, Irqs);
+
+	info!("... rng INIT");
+
+	(debug_led, system, monitor, exteth, wall_clock, rng_gen)
 }
