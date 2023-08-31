@@ -12,8 +12,14 @@ export EXTMAC=44:45:56
 endif
 
 ifndef LEVEL
-LEVEL := warn
+ifeq ($(CARGO_MODE),release)
+LEVEL := info
+else
+LEVEL := trace
 endif
+endif
+
+LEVEL := $(LEVEL),embassy_hal_internal=warn
 
 ifndef PROBE_RUN
 PROBE_RUN := probe-run
