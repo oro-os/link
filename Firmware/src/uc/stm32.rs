@@ -192,3 +192,25 @@ impl super::WallClock for embassy_stm32::rtc::Rtc {
 			.ok()
 	}
 }
+
+pub fn get_exteth_mac() -> [u8; 6] {
+	use sha2::Digest;
+
+	let mut sha256 = sha2::Sha256::new();
+
+	for i in 0..3 {
+		sha256.update(stm32_metapac::UID.uid(i).read().to_be_bytes());
+	}
+
+	let hash = sha256.finalize();
+
+	let mut macaddr = [0u8; 6];
+	macaddr[0] = b'.';
+	macaddr[1] = b'o';
+	macaddr[2] = b'O';
+	macaddr[3] = hash[29];
+	macaddr[4] = hash[30];
+	macaddr[5] = hash[31];
+
+	macaddr
+}

@@ -1,5 +1,5 @@
 use crate::uc;
-use defmt::info;
+use defmt::{debug, info};
 use embassy_executor::Spawner;
 use embassy_stm32::{
 	bind_interrupts,
@@ -136,13 +136,19 @@ pub async fn init(
 
 	info!("... external ethernet dev INIT");
 
+	let extmac = super::get_exteth_mac();
+
+	debug!("... device MAC: {:?}", extmac);
+
 	let exteth = crate::chip::enc28j60::Enc28j60::new(
 		extdev,
 		Some(Output::new(p.PD0, Level::High, Speed::VeryHigh)),
-		[b'.', b'o', b'O', b'D', b'E', b'V'],
+		extmac,
 	);
 
 	info!("... external ethernet INIT");
+
+	// TODO setup syseth with mac [b'.', b'o', b'O', b'D', b'E', b'V']
 
 	let system = super::SystemUnderTest::new(
 		Output::new(p.PC9, Level::Low, Speed::Low),
