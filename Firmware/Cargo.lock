@@ -247,6 +247,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "curve25519"
+version = "0.1.0"
+source = "git+https://github.com/oro-os/curve25519-rs#b808e235ce84834c737ff54b78d0abff1ac25d82"
+dependencies = [
+ "cc",
+]
+
+[[package]]
 name = "darling"
 version = "0.20.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -955,6 +963,7 @@ dependencies = [
  "aes",
  "cortex-m",
  "cortex-m-rt",
+ "curve25519",
  "defmt",
  "defmt-rtt",
  "embassy-executor",

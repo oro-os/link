@@ -25,9 +25,12 @@ ifndef PROBE_RUN
 PROBE_RUN := probe-run
 endif
 
-export DEFMT_LOG = $(LEVEL)
+ifdef DEV_IP
+CARGO_FLAGS += --features oro-connect-to-ip
+endif
 
-export ORO_EXT_MAC_ID = "$(EXTMAC)"
+export DEFMT_LOG = $(LEVEL)
+export ORO_CONNECT_TO_IP = $(DEV_IP)
 
 # The default here is for my own machine. Change it to refer to
 # the serial device being used by your STLink. On Windows/WSL,

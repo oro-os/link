@@ -10,12 +10,15 @@ mod uc;
 use core::cell::RefCell;
 #[cfg(not(test))]
 use core::panic::PanicInfo;
-use defmt::{error, info};
+use defmt::{error, info, warn};
 use embassy_executor::Spawner;
-use embassy_net::{ConfigV4, Ipv4Address, Stack};
+use embassy_net::{tcp::TcpSocket, ConfigV4, Ipv4Address, Stack};
 use embassy_time::{Duration, Instant, Timer};
 use static_cell::make_static;
 use uc::{DebugLed, LogSeverity, Monitor as _, Rng, Scene, WallClock};
+
+/// The port that the Oro Link CI/CD
+const ORO_CICD_PORT: u16 = 1337;
 
 #[defmt::panic_handler]
 fn defmt_panic() -> ! {
@@ -73,6 +76,97 @@ async fn blink_debug_led() {
 		debug_led.off();
 		Timer::after(Duration::from_millis(2000)).await;
 	}
+}
+
+#[cfg(feature = "oro-connect-to-ip")]
+async fn connect_to_oro<'a>(
+	stack: &'static Stack<ExtEthDriver>,
+	sock: &mut TcpSocket<'a>,
+) -> Result<(), ()> {
+	const DEV_IP: &'static str = env!("ORO_CONNECT_TO_IP");
+
+	let mut ip_bytes = [0u8; 4];
+	for (i, octet) in DEV_IP
+		.split(".")
+		.take(4)
+		.map(|s| s.parse::<u8>().unwrap())
+		.enumerate()
+	{
+		ip_bytes[i] = octet;
+	}
+
+	warn!(
+		"oro link firmware was built with 'oro-connect-to-ip'; skipping oro.dyn resolution and instead connecting to {:?}",
+		ip_bytes
+	);
+
+	let ip = Ipv4Address::new(ip_bytes[0], ip_bytes[1], ip_bytes[2], ip_bytes[3]);
+
+	if let Err(err) = sock.connect((ip, ORO_CICD_PORT)).await {
+		error!("failed to connect to {:?}: {:?}", ip, err);
+
+		LogSeverity::Error.log(
+			unsafe { MONITOR.as_ref().unwrap() },
+			"failed to connect (dev IP)".into(),
+		);
+
+		return Err(());
+	}
+
+	Ok(())
+}
+
+#[cfg(not(feature = "oro-connect-to-ip"))]
+async fn connect_to_oro<'a>(
+	stack: &'static Stack<ExtEthDriver>,
+	sock: &mut TcpSocket<'a>,
+) -> Result<(), ()> {
+	LogSeverity::Info.log(
+		unsafe { MONITOR.as_ref().unwrap() },
+		"resolving oro.dyn".into(),
+	);
+
+	let oro_dyn = match stack
+		.dns_query("oro.dyn", embassy_net::dns::DnsQueryType::A)
+		.await
+	{
+		Ok(a) => {
+			if a.is_empty() {
+				error!("failed to fetch oro.dyn address: resolved address zero count");
+				return Err(());
+			}
+
+			a[0]
+		}
+		Err(err) => {
+			error!("failed to fetch oro.dyn address: {:?}", err);
+			LogSeverity::Error.log(
+				unsafe { MONITOR.as_ref().unwrap() },
+				"failed to resolve oro.dyn".into(),
+			);
+			return Err(());
+		}
+	};
+
+	info!("oro.dyn resolved to {:?}; connecting...", oro_dyn);
+
+	LogSeverity::Info.log(
+		unsafe { MONITOR.as_ref().unwrap() },
+		"connecting to oro.dyn...".into(),
+	);
+
+	if let Err(err) = sock.connect((oro_dyn, ORO_CICD_PORT)).await {
+		error!("failed to connect to oro.dyn ({:?}): {:?}", oro_dyn, err);
+
+		LogSeverity::Error.log(
+			unsafe { MONITOR.as_ref().unwrap() },
+			"failed to connect".into(),
+		);
+
+		return Err(());
+	}
+
+	Ok(())
 }
 
 #[embassy_executor::main]
@@ -181,6 +275,13 @@ pub async fn main(spawner: Spawner) {
 
 	LogSeverity::Info.log(unsafe { MONITOR.as_ref().unwrap() }, "booted OK".into());
 
+	let mut tx_buf = [0u8; 2048];
+	let mut rx_buf = [0u8; 2048];
+	let mut sock = TcpSocket::new(extnet, &mut rx_buf[..], &mut tx_buf[..]);
+	sock.set_timeout(Some(Duration::from_secs(5)));
+	sock.set_keep_alive(Some(Duration::from_secs(2)));
+	sock.set_hop_limit(None);
+
 	loop {
 		LogSeverity::Warn.log(
 			unsafe { MONITOR.as_ref().unwrap() },
@@ -192,31 +293,50 @@ pub async fn main(spawner: Spawner) {
 			MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
 		}
 
+		if connect_to_oro(extnet, &mut sock).await.is_err() {
+			Timer::after(Duration::from_millis(10000)).await;
+			continue;
+		}
+
+		info!("connected to oro.dyn");
 		LogSeverity::Info.log(
 			unsafe { MONITOR.as_ref().unwrap() },
-			"resolving oro.dyn".into(),
+			"connected to oro.dyn".into(),
 		);
 
-		let oro_dyn = match extnet
-			.dns_query("oro.dyn", embassy_net::dns::DnsQueryType::A)
-			.await
-		{
-			Ok(a) => a,
-			Err(err) => {
-				error!("failed to fetch oro.dyn address: {:?}", err);
-				LogSeverity::Error.log(
-					unsafe { MONITOR.as_ref().unwrap() },
-					"failed to resolve oro.dyn".into(),
-				);
-				continue;
-			}
-		};
+		Timer::after(Duration::from_millis(1000)).await;
 
-		info!("oro.dyn resolved to {:?}; connecting...", oro_dyn);
-
+		info!("closing socket to oro.dyn");
 		LogSeverity::Info.log(
 			unsafe { MONITOR.as_ref().unwrap() },
-			"connecting to oro.dyn...".into(),
+			"terminating connection to oro.dyn...".into(),
 		);
+
+		sock.abort();
+
+		if let Err(err) = sock.flush().await {
+			warn!(
+				"failed to flush oro.dyn socket after call to abort(); socket may act abnormally: {:?}",
+				err
+			);
+			LogSeverity::Warn.log(
+				unsafe { MONITOR.as_ref().unwrap() },
+				"failed to close connection!".into(),
+			);
+			LogSeverity::Warn.log(
+				unsafe { MONITOR.as_ref().unwrap() },
+				"oro link may need a reset!".into(),
+			);
+		}
+
+		// Generate key
+		//		let mut private_key = [0u8; 32];
+		//		rng.fill_bytes(&mut private_key);
+		//		let private_key = curve25519::curve25519_sk(private_key);
+		//		let public_key = curve25519::curve25519_pk(private_key.clone());
+		//
+		//		let their_public_key = [0u8; 32]; // XXX TODO
+		//
+		//		let key = curve25519::curve25519(private_key, their_public_key);
 	}
 }

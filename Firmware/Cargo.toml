@@ -14,6 +14,11 @@ build = "build.rs"
 [features]
 default = []
 
+# Development features
+# NOTE: You *can* use these directly, but
+#       you should probably use the Makefile instead.
+oro-connect-to-ip = []
+
 # Supported uC's
 # NOTE: one uC model == one board variant.
 stm32f479vg = [
@@ -88,6 +93,7 @@ aes = "0.8.3"
 stm32-metapac = { version = "13.0.0", optional = true }
 sha2 = { version = "0.10.7", default-features = false, features = ["asm-aarch64"] }
 rand_core = "0.6.4"
+curve25519 = { git = "https://github.com/oro-os/curve25519-rs" }
 
 [dependencies.smoltcp]
 version = "0.10.0"
