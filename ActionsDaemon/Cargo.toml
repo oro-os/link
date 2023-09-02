@@ -1,0 +1,21 @@
+[package]
+name = "oro-link-daemon"
+description = "Oro Link CI/CD daemon"
+version = "0.0.0"
+edition = "2021"
+publish = false
+authors = [ "Joshua Lee Junon <junon@oro.sh> (https://github.com/qix-)" ]
+repository = "https://github.com/oro-os/oro-link-x86"
+license = "MIT"
+resolver = "2"
+
+[dependencies]
+aes = "0.8.3"
+async-io = "1.13.0"
+async-std = { version = "1.12.0", features = ["attributes"] }
+curve25519 = { git = "https://github.com/oro-os/curve25519-rs", version = "0.1.0" }
+envconfig = "0.10.0"
+log = "0.4.20"
+rmp = "0.8.12"
+stderrlog = "0.5.4"
+systemd-journal-logger = "1.0.0"
