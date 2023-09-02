@@ -16,6 +16,7 @@ async-std = { version = "1.12.0", features = ["attributes"] }
 curve25519 = { git = "https://github.com/oro-os/curve25519-rs", version = "0.1.0" }
 envconfig = "0.10.0"
 log = "0.4.20"
+rand = "0.8.5"
 rmp = "0.8.12"
 stderrlog = "0.5.4"
 systemd-journal-logger = "1.0.0"

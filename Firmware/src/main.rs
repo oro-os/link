@@ -7,13 +7,15 @@ mod font;
 mod net;
 mod uc;
 
+use aes::{cipher::KeyInit, Aes256Dec, Aes256Enc};
 use core::cell::RefCell;
 #[cfg(not(test))]
 use core::panic::PanicInfo;
-use defmt::{error, info, warn};
+use defmt::{debug, error, info, warn};
 use embassy_executor::Spawner;
 use embassy_net::{tcp::TcpSocket, ConfigV4, Ipv4Address, Stack};
 use embassy_time::{Duration, Instant, Timer};
+use embedded_io_async::{Read, Write};
 use static_cell::make_static;
 use uc::{DebugLed, LogSeverity, Monitor as _, Rng, Scene, WallClock};
 
@@ -80,7 +82,7 @@ async fn blink_debug_led() {
 
 #[cfg(feature = "oro-connect-to-ip")]
 async fn connect_to_oro<'a>(
-	stack: &'static Stack<ExtEthDriver>,
+	_stack: &'static Stack<ExtEthDriver>,
 	sock: &mut TcpSocket<'a>,
 ) -> Result<(), ()> {
 	const DEV_IP: &'static str = env!("ORO_CONNECT_TO_IP");
@@ -312,6 +314,20 @@ pub async fn main(spawner: Spawner) {
 			"terminating connection to oro.dyn...".into(),
 		);
 
+		let r = run_test_session(&mut rng, &mut sock).await;
+
+		unsafe {
+			MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
+		}
+
+		if let Err(err) = r {
+			error!("error with test session socket: {:?}", err);
+			LogSeverity::Error.log(
+				unsafe { MONITOR.as_ref().unwrap() },
+				"test session failure".into(),
+			);
+		}
+
 		sock.abort();
 
 		if let Err(err) = sock.flush().await {
@@ -328,15 +344,74 @@ pub async fn main(spawner: Spawner) {
 				"oro link may need a reset!".into(),
 			);
 		}
-
-		// Generate key
-		//		let mut private_key = [0u8; 32];
-		//		rng.fill_bytes(&mut private_key);
-		//		let private_key = curve25519::curve25519_sk(private_key);
-		//		let public_key = curve25519::curve25519_pk(private_key.clone());
-		//
-		//		let their_public_key = [0u8; 32]; // XXX TODO
-		//
-		//		let key = curve25519::curve25519(private_key, their_public_key);
 	}
+}
+
+enum TestSessionError {
+	EmNet(embassy_net::tcp::Error),
+	WriteAll(embedded_io_async::WriteAllError<embassy_net::tcp::Error>),
+	ReadExact(embedded_io_async::ReadExactError<embassy_net::tcp::Error>),
+}
+
+impl defmt::Format for TestSessionError {
+	fn format(&self, fmt: defmt::Formatter) {
+		match self {
+			TestSessionError::EmNet(err) => defmt::Format::format(err, fmt),
+			TestSessionError::WriteAll(err) => defmt::Format::format(err, fmt),
+			TestSessionError::ReadExact(err) => defmt::Format::format(err, fmt),
+		}
+	}
+}
+
+impl From<embassy_net::tcp::Error> for TestSessionError {
+	fn from(value: embassy_net::tcp::Error) -> Self {
+		TestSessionError::EmNet(value)
+	}
+}
+
+impl From<embedded_io_async::WriteAllError<embassy_net::tcp::Error>> for TestSessionError {
+	fn from(value: embedded_io_async::WriteAllError<embassy_net::tcp::Error>) -> Self {
+		TestSessionError::WriteAll(value)
+	}
+}
+
+impl From<embedded_io_async::ReadExactError<embassy_net::tcp::Error>> for TestSessionError {
+	fn from(value: embedded_io_async::ReadExactError<embassy_net::tcp::Error>) -> Self {
+		TestSessionError::ReadExact(value)
+	}
+}
+
+async fn run_test_session<'a, RNG: uc::Rng>(
+	rng: &mut RNG,
+	sock: &mut TcpSocket<'a>,
+) -> Result<(), TestSessionError> {
+	// Generate key
+	let mut private_key = [0u8; 32];
+	rng.fill_bytes(&mut private_key);
+	let private_key = curve25519::curve25519_sk(private_key);
+	let public_key = curve25519::curve25519_pk(private_key);
+
+	sock.write_all(&public_key[..]).await?;
+
+	let mut their_public_key = [0u8; 32];
+	sock.read_exact(&mut their_public_key).await?;
+
+	let key = curve25519::curve25519(private_key, their_public_key);
+
+	let enc = Aes256Enc::new_from_slice(&key[..]).unwrap();
+	let dec = Aes256Dec::new_from_slice(&key[..]).unwrap();
+
+	debug!("encryption key negotiated");
+
+	// XXX TODO
+	let mut block: [u8; 16] = [
+		b'H', b'i', b',', b' ', b'O', b'r', b'o', b'!', 0, 0, 0, 0, 0, 0, 0, 0,
+	];
+	use aes::cipher::BlockEncrypt;
+	enc.encrypt_block((&mut block).into());
+	sock.write_all(&block[..]).await?;
+	debug!("WROTE HELLO");
+	Timer::after(Duration::from_millis(5000)).await;
+
+	Ok(())
 }
