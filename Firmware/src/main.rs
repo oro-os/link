@@ -285,6 +285,10 @@ pub async fn main(spawner: Spawner) {
 	sock.set_keep_alive(Some(Duration::from_secs(2)));
 	sock.set_hop_limit(None);
 
+	/* XXX TODO DEBUG */
+
+	/* XXX TODO END DEBUG */
+
 	loop {
 		LogSeverity::Warn.log(
 			unsafe { MONITOR.as_ref().unwrap() },

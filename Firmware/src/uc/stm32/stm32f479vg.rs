@@ -40,6 +40,7 @@ pub async fn init(
 	config.rcc.hclk = Some(Hertz(168409091));
 	config.rcc.sys_ck = Some(Hertz(168409091));
 	config.rcc.pll48 = true;
+	config.rcc.lsi = true;
 
 	let p = embassy_stm32::init(config);
 
@@ -68,12 +69,7 @@ pub async fn init(
 
 	info!("... indicators INIT");
 
-	let wall_clock = rtc::Rtc::new(
-		p.RTC,
-		rtc::RtcConfig::default()
-			.async_prescaler(127)
-			.sync_prescaler(255),
-	);
+	let wall_clock = rtc::Rtc::new(p.RTC, rtc::RtcConfig::default());
 	info!("... rtc INIT");
 
 	// Let OLED power on (affects first power-on cycle, typically)
@@ -197,6 +193,7 @@ pub async fn init(
 		p.DMA1_CH1,
 		syscom_config,
 	)
+	.expect("failed to create SUT usart pair")
 	.split();
 
 	const DMA_BUF_SIZE: usize = 256;
