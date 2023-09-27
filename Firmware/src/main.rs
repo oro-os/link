@@ -173,7 +173,8 @@ async fn connect_to_oro<'a>(
 
 #[embassy_executor::main]
 pub async fn main(spawner: Spawner) {
-	let (debug_led, _system, monitor, exteth, mut wall_clock, mut rng) = uc::init(&spawner).await;
+	let (debug_led, _system, monitor, exteth, mut wall_clock, mut rng, _syscom_tx, _syscom_rx) =
+		uc::init(&spawner).await;
 
 	unsafe {
 		MONITOR = {

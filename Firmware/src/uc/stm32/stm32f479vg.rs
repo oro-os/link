@@ -17,7 +17,7 @@ use embedded_hal_bus::spi::ExclusiveDevice;
 
 bind_interrupts!(struct Irqs {
 	I2C1_EV => i2c::InterruptHandler<peripherals::I2C1>;
-	UART7 => usart::BufferedInterruptHandler<peripherals::UART7>;
+	USART3 => usart::InterruptHandler<peripherals::USART3>;
 	HASH_RNG => rng::InterruptHandler<peripherals::RNG>;
 });
 
@@ -30,6 +30,8 @@ pub async fn init(
 	impl uc::EthernetDriver,
 	impl uc::WallClock,
 	impl uc::Rng,
+	impl uc::UartTx,
+	impl uc::UartRx,
 ) {
 	let mut config = Config::default();
 	config.rcc.rtc = Some(RtcClockSource::LSI);
@@ -173,5 +175,37 @@ pub async fn init(
 
 	info!("... rng INIT");
 
-	(debug_led, system, monitor, exteth, wall_clock, rng_gen)
+	let mut syscom_config = usart::Config::default();
+	syscom_config.baudrate = 38400;
+	syscom_config.data_bits = usart::DataBits::DataBits8;
+	syscom_config.stop_bits = usart::StopBits::STOP1;
+	syscom_config.parity = usart::Parity::ParityNone;
+
+	// TODO maybe expose this somehow so that the test runner can turn it on and off.
+	let mut syscom_on = Output::new(p.PD8, Level::Low, Speed::Low);
+	syscom_on.set_high();
+	::core::mem::forget(syscom_on); // Keep it high even after we return.
+
+	let (syscom_tx, syscom_rx) = usart::Uart::new_with_rtscts(
+		p.USART3,
+		p.PB11,
+		p.PB10,
+		Irqs,
+		p.PB14,
+		p.PB13,
+		p.DMA1_CH3,
+		p.DMA1_CH1,
+		syscom_config,
+	)
+	.split();
+
+	const DMA_BUF_SIZE: usize = 256;
+	static mut DMA_BUF: [u8; DMA_BUF_SIZE] = [0; DMA_BUF_SIZE];
+	let syscom_rx = syscom_rx.into_ring_buffered(unsafe { DMA_BUF.as_mut() });
+
+	info!("... system com INIT");
+
+	(
+		debug_led, system, monitor, exteth, wall_clock, rng_gen, syscom_tx, syscom_rx,
+	)
 }

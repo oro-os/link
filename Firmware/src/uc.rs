@@ -9,6 +9,7 @@ use core::cell::RefCell;
 use embassy_executor::Spawner;
 pub use embassy_net::driver::Driver as EthernetDriver;
 use embassy_time::{block_for, Duration};
+use embedded_io_async::{Read as AsyncRead, Write as AsyncWrite};
 use heapless::String;
 pub use rand_core::RngCore as Rng;
 
@@ -260,6 +261,14 @@ pub trait WallClock {
 	fn get_datetime(&self) -> Option<DateTime>;
 }
 
+/// The writing end of the system's Uart
+pub trait UartTx: AsyncWrite {}
+/// The reading end of the system's Uart
+pub trait UartRx: AsyncRead {}
+
+impl<T> UartTx for T where T: AsyncWrite {}
+impl<T> UartRx for T where T: AsyncRead {}
+
 // Validates the contract of the init() function.
 #[allow(unused)]
 #[doc(hidden)]
@@ -291,7 +300,9 @@ mod _check_init {
 		EXTETH: EthernetDriver,
 		CLOCK: WallClock,
 		RNG: Rng,
-	> Init for (DBG, SUT, MON, EXTETH, CLOCK, RNG)
+		USARTTX: UartTx,
+		USARTRX: UartRx,
+	> Init for (DBG, SUT, MON, EXTETH, CLOCK, RNG, USARTTX, USARTRX)
 	{
 	}
 }
