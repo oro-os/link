@@ -25,6 +25,12 @@ ifndef PROBE_RUN
 PROBE_RUN := probe-run
 endif
 
+ifeq ($(CARGO_MODE),debug)
+PROBE_RUN_FLAGS := --log-format "{t} {L} {s} <{f}:{l}>"
+else
+PROBE_RUN_FLAGS := --log-format "{t} {L} {s}"
+endif
+
 ifdef DEV_IP
 CARGO_FLAGS += --features oro-connect-to-ip
 endif
@@ -57,7 +63,7 @@ doc:
 	env cargo doc $(CARGO_FLAGS) --all --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem --open
 
 stm32f479vg.run: stm32f479vg
-	$(PROBE_RUN) --chip stm32f479vg target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware
+	$(PROBE_RUN) $(PROBE_RUN_FLAGS) --chip stm32f479vg target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware
 
 stm32f479vg: target/$(CARGO_MODE)/oro-link-stm32f479vg.bin
 .PHONY: target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware

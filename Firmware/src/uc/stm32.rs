@@ -8,9 +8,11 @@ use embassy_stm32::{
 	gpio::{Input, Output, Pin},
 	i2c,
 };
-use embassy_time::{block_for, Duration};
+use embassy_time::{block_for, Duration, Instant};
 
 use defmt_rtt as _;
+
+defmt::timestamp!("{=u64:us}", Instant::now().as_micros());
 
 /// Implementation of I2c proxies for STM32 I2c peripherals.
 impl<'d, T: i2c::Instance, TXDMA, RXDMA> chip::I2c for i2c::I2c<'d, T, TXDMA, RXDMA> {
