@@ -269,6 +269,33 @@ pub trait UartRx: AsyncRead {}
 impl<T> UartTx for T where T: AsyncWrite {}
 impl<T> UartRx for T where T: AsyncRead {}
 
+/// The system ethernet device, used primarily for
+/// loading kernel images.
+pub trait SystemEthernet {
+	/// Receives a packet from the driver.
+	/// The returned packet is a full Ethernet frame.
+	///
+	/// # Panics
+	/// Panics if `buf` is less than 1514 bytes.
+	async fn recv<'a>(&mut self, buf: &'a mut [u8]) -> Option<&'a mut [u8]>;
+
+	/// Sends a packet to the driver.
+	///
+	/// Flushes any other pending packets for writing.
+	///
+	/// It is not guaranteed that the packet has been
+	/// fully transmitted by the time this method returns.
+	///
+	/// NOTE: This method may block if flushing packets.
+	///
+	/// # Panics
+	/// Panics if `buf` is more than 1514 bytes.
+	fn send(&mut self, buf: &[u8]);
+
+	/// Returns whether or not the link is up
+	fn is_link_up(&mut self) -> bool;
+}
+
 // Validates the contract of the init() function.
 #[allow(unused)]
 #[doc(hidden)]
@@ -298,11 +325,12 @@ mod _check_init {
 		SUT: SystemUnderTest,
 		MON: Monitor,
 		EXTETH: EthernetDriver,
+		SYSETH: SystemEthernet,
 		CLOCK: WallClock,
 		RNG: Rng,
 		USARTTX: UartTx,
 		USARTRX: UartRx,
-	> Init for (DBG, SUT, MON, EXTETH, CLOCK, RNG, USARTTX, USARTRX)
+	> Init for (DBG, SUT, MON, EXTETH, SYSETH, CLOCK, RNG, USARTTX, USARTRX)
 	{
 	}
 }

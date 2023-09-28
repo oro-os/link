@@ -28,6 +28,7 @@ pub async fn init(
 	impl uc::SystemUnderTest,
 	impl uc::Monitor,
 	impl uc::EthernetDriver,
+	impl uc::SystemEthernet,
 	impl uc::WallClock,
 	impl uc::Rng,
 	impl uc::UartTx,
@@ -127,6 +128,7 @@ pub async fn init(
 	extconf.bit_order = spi::BitOrder::MsbFirst;
 	extconf.frequency = Hertz(8_000_000);
 
+	// TODO use DMA
 	let extspi = Spi::new(p.SPI3, p.PC10, p.PC12, p.PC11, NoDma, NoDma, extconf);
 
 	info!("... external ethernet comms INIT");
@@ -141,7 +143,7 @@ pub async fn init(
 
 	let extmac = super::get_exteth_mac();
 
-	debug!("... device MAC: {:?}", extmac);
+	debug!("... external MAC: {:?}", extmac);
 
 	let exteth = crate::chip::enc28j60::Enc28j60::new(
 		extdev,
@@ -151,7 +153,41 @@ pub async fn init(
 
 	info!("... external ethernet INIT");
 
-	// TODO setup syseth with mac [b'.', b'o', b'O', b'D', b'E', b'V']
+	let mut syseth_en = Output::new(p.PA2, Level::Low, Speed::Low);
+	let mut syseth_xfrm_en = Output::new(p.PA3, Level::Low, Speed::Low);
+	syseth_en.set_high();
+	syseth_xfrm_en.set_high();
+	// Keep them high even after we return.
+	::core::mem::forget(syseth_en);
+	::core::mem::forget(syseth_xfrm_en);
+
+	info!("... system ethernet transformer INIT");
+
+	let mut sysconf = spi::Config::default();
+	sysconf.mode = spi::MODE_0;
+	sysconf.bit_order = spi::BitOrder::MsbFirst;
+	sysconf.frequency = Hertz(8_000_000);
+
+	// TODO use DMA
+	let sysspi = Spi::new(p.SPI1, p.PA5, p.PA7, p.PA6, NoDma, NoDma, sysconf);
+
+	info!("... system ethernet comms INIT");
+
+	let sysdev = ExclusiveDevice::new(
+		sysspi,
+		OutputOpenDrain::new(p.PA4, Level::High, Speed::VeryHigh, Pull::None),
+		Delay,
+	);
+
+	info!("... system ethernet dev INIT");
+
+	let syseth = crate::chip::enc28j60::Enc28j60::new(
+		sysdev,
+		Some(Output::new(p.PB1, Level::High, Speed::VeryHigh)),
+		[b'.', b'o', b'O', b'D', b'E', b'V'],
+	);
+
+	info!("... system ethernet INIT");
 
 	let system = super::SystemUnderTest::new(
 		Output::new(p.PC9, Level::Low, Speed::Low),
@@ -203,6 +239,6 @@ pub async fn init(
 	info!("... system com INIT");
 
 	(
-		debug_led, system, monitor, exteth, wall_clock, rng_gen, syscom_tx, syscom_rx,
+		debug_led, system, monitor, exteth, syseth, wall_clock, rng_gen, syscom_tx, syscom_rx,
 	)
 }

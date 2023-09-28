@@ -1,6 +1,11 @@
 #![no_std]
 #![no_main]
-#![feature(type_alias_impl_trait, core_intrinsics, byte_slice_trim_ascii)]
+#![feature(
+	type_alias_impl_trait,
+	core_intrinsics,
+	byte_slice_trim_ascii,
+	async_fn_in_trait
+)]
 
 mod chip;
 mod font;
@@ -173,8 +178,17 @@ async fn connect_to_oro<'a>(
 
 #[embassy_executor::main]
 pub async fn main(spawner: Spawner) {
-	let (debug_led, _system, monitor, exteth, mut wall_clock, mut rng, _syscom_tx, _syscom_rx) =
-		uc::init(&spawner).await;
+	let (
+		debug_led,
+		_system,
+		monitor,
+		exteth,
+		_syseth,
+		mut wall_clock,
+		mut rng,
+		_syscom_tx,
+		_syscom_rx,
+	) = uc::init(&spawner).await;
 
 	unsafe {
 		MONITOR = {
