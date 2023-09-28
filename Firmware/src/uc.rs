@@ -8,7 +8,7 @@ pub use stm32::*;
 use core::cell::RefCell;
 use embassy_executor::Spawner;
 pub use embassy_net::driver::Driver as EthernetDriver;
-use embassy_time::{block_for, Duration};
+use embassy_time::{block_for, Duration, Instant, Timer};
 use embedded_io_async::{Read as AsyncRead, Write as AsyncWrite};
 use heapless::String;
 pub use rand_core::RngCore as Rng;
@@ -269,15 +269,72 @@ pub trait UartRx: AsyncRead {}
 impl<T> UartTx for T where T: AsyncWrite {}
 impl<T> UartRx for T where T: AsyncRead {}
 
-/// The system ethernet device, used primarily for
-/// loading kernel images.
-pub trait SystemEthernet {
-	/// Receives a packet from the driver.
+/// A low-level ethernet device, used primarily for
+/// the system ethernet.
+pub trait RawEthernetDriver {
+	/// Receives a packet if one is available. If not, returns `None`.
+	///
 	/// The returned packet is a full Ethernet frame.
 	///
 	/// # Panics
 	/// Panics if `buf` is less than 1514 bytes.
-	async fn recv<'a>(&mut self, buf: &'a mut [u8]) -> Option<&'a mut [u8]>;
+	async fn try_recv(&mut self, buf: &mut [u8]) -> Option<usize>;
+
+	/// Receives a packet from the driver, returning `None` after a timeout, checking
+	/// every 50 milliseconds.
+	///
+	/// The returned packet is a full Ethernet frame.
+	///
+	/// # Panics
+	/// Panics if `buf` is less than 1514 bytes.
+	async fn recv_timeout(&mut self, buf: &mut [u8], timeout: Duration) -> Option<usize> {
+		self.recv_timeout_delay(buf, timeout, Duration::from_millis(50))
+			.await
+	}
+
+	/// Receives a packet from the driver, returning `None` after a timeout, checking
+	/// every `delay` slices of time.
+	///
+	/// The returned packet is a full Ethernet frame.
+	///
+	/// # Panics
+	/// Panics if `buf` is less than 1514 bytes.
+	async fn recv_timeout_delay(
+		&mut self,
+		buf: &mut [u8],
+		timeout: Duration,
+		delay: Duration,
+	) -> Option<usize> {
+		let start_time = Instant::now();
+
+		loop {
+			if let Some(len) = self.try_recv(buf).await {
+				return Some(len);
+			}
+
+			let now = Instant::now();
+
+			if now.duration_since(start_time) >= timeout {
+				return None;
+			}
+
+			Timer::after(delay).await;
+		}
+	}
+
+	/// Receives a packet from the driver, waiting indefinitely for a packet to be received.
+	///
+	/// The returned packet is a full Ethernet frame.
+	///
+	/// # Panics
+	/// Panics if `buf` is less than 1514 bytes.
+	async fn recv(&mut self, buf: &mut [u8]) -> usize {
+		loop {
+			if let Some(len) = self.recv_timeout(buf, Duration::from_secs(60)).await {
+				return len;
+			}
+		}
+	}
 
 	/// Sends a packet to the driver.
 	///
@@ -325,7 +382,7 @@ mod _check_init {
 		SUT: SystemUnderTest,
 		MON: Monitor,
 		EXTETH: EthernetDriver,
-		SYSETH: SystemEthernet,
+		SYSETH: RawEthernetDriver,
 		CLOCK: WallClock,
 		RNG: Rng,
 		USARTTX: UartTx,

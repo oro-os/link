@@ -28,7 +28,7 @@ pub async fn init(
 	impl uc::SystemUnderTest,
 	impl uc::Monitor,
 	impl uc::EthernetDriver,
-	impl uc::SystemEthernet,
+	impl uc::RawEthernetDriver,
 	impl uc::WallClock,
 	impl uc::Rng,
 	impl uc::UartTx,
@@ -181,13 +181,22 @@ pub async fn init(
 
 	info!("... system ethernet dev INIT");
 
-	let syseth = crate::chip::enc28j60::Enc28j60::new(
+	let mut syseth = crate::chip::enc28j60::Enc28j60::new(
 		sysdev,
 		Some(Output::new(p.PB1, Level::High, Speed::VeryHigh)),
 		[b'.', b'o', b'O', b'D', b'E', b'V'],
 	);
 
 	info!("... system ethernet INIT");
+
+	// Tell the chip we want to accept ALL packets from the system
+	syseth.accept(&[
+		embassy_net_enc28j60::Packet::Broadcast,
+		embassy_net_enc28j60::Packet::Multicast,
+		embassy_net_enc28j60::Packet::Unicast,
+	]);
+
+	info!("... system ethernet config INIT");
 
 	let system = super::SystemUnderTest::new(
 		Output::new(p.PC9, Level::Low, Speed::Low),

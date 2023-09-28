@@ -3,13 +3,13 @@ use embedded_hal::{digital::OutputPin, spi::SpiDevice};
 
 const MAX_ETH_FRAME: usize = 1514;
 
-impl<S, O> crate::uc::SystemEthernet for Enc28j60<S, O>
+impl<S, O> crate::uc::RawEthernetDriver for Enc28j60<S, O>
 where
 	S: SpiDevice,
 	O: OutputPin,
 {
 	#[inline]
-	async fn recv<'a>(&mut self, buf: &'a mut [u8]) -> Option<&'a mut [u8]> {
+	async fn try_recv(&mut self, buf: &mut [u8]) -> Option<usize> {
 		assert!(
 			buf.len() >= MAX_ETH_FRAME,
 			"`buf` is smaller than the maximum ethernet frame"

@@ -22,7 +22,10 @@ use embassy_net::{tcp::TcpSocket, ConfigV4, Ipv4Address, Stack};
 use embassy_time::{Duration, Instant, Timer};
 use embedded_io_async::{Read, Write};
 use static_cell::make_static;
-use uc::{DebugLed, LogSeverity, Monitor as _, Rng, Scene, WallClock};
+use uc::{
+	DebugLed, LogSeverity, Monitor as _, PowerState, RawEthernetDriver, Rng, Scene,
+	SystemUnderTest, WallClock,
+};
 
 /// The port that the Oro Link CI/CD
 const ORO_CICD_PORT: u16 = 1337;
@@ -180,10 +183,10 @@ async fn connect_to_oro<'a>(
 pub async fn main(spawner: Spawner) {
 	let (
 		debug_led,
-		_system,
+		mut system,
 		monitor,
 		exteth,
-		_syseth,
+		mut syseth,
 		mut wall_clock,
 		mut rng,
 		_syscom_tx,
@@ -239,130 +242,148 @@ pub async fn main(spawner: Spawner) {
 	spawner.spawn(monitor_task()).unwrap();
 	spawner.spawn(blink_debug_led()).unwrap();
 
-	LogSeverity::Info.log(
-		unsafe { MONITOR.as_ref().unwrap() },
-		"waiting for DHCP lease...".into(),
-	);
+	/*
+		LogSeverity::Info.log(
+			unsafe { MONITOR.as_ref().unwrap() },
+			"waiting for DHCP lease...".into(),
+		);
 
-	loop {
-		if extnet.is_config_up() {
-			break;
+		loop {
+			if extnet.is_config_up() {
+				break;
+			}
+
+			Timer::after(Duration::from_millis(100)).await;
 		}
+
+		LogSeverity::Info.log(
+			unsafe { MONITOR.as_ref().unwrap() },
+			"reconfiguring DNS...".into(),
+		);
 
 		Timer::after(Duration::from_millis(100)).await;
-	}
 
-	LogSeverity::Info.log(
-		unsafe { MONITOR.as_ref().unwrap() },
-		"reconfiguring DNS...".into(),
-	);
+		let mut current_config = extnet.config_v4().unwrap();
+		current_config.dns_servers.clear();
+		current_config
+			.dns_servers
+			.push(Ipv4Address([1, 1, 1, 1]))
+			.unwrap();
+		extnet.set_config_v4(ConfigV4::Static(current_config));
 
-	Timer::after(Duration::from_millis(100)).await;
-
-	let mut current_config = extnet.config_v4().unwrap();
-	current_config.dns_servers.clear();
-	current_config
-		.dns_servers
-		.push(Ipv4Address([1, 1, 1, 1]))
-		.unwrap();
-	extnet.set_config_v4(ConfigV4::Static(current_config));
-
-	LogSeverity::Info.log(
-		unsafe { MONITOR.as_ref().unwrap() },
-		"synchronizing time...".into(),
-	);
-
-	if let Some(datetime) = net::get_datetime(extnet).await {
-		info!("current datetime: {:#?}", datetime);
-		wall_clock.set_datetime(datetime);
-	} else {
-		LogSeverity::Error.log(
-			unsafe { MONITOR.as_ref().unwrap() },
-			"failed to get time!".into(),
-		);
-	}
-
-	let mut current_config = extnet.config_v4().unwrap();
-	current_config.dns_servers.clear();
-	current_config
-		.dns_servers
-		.push(Ipv4Address([94, 16, 114, 254]))
-		.unwrap();
-	extnet.set_config_v4(ConfigV4::Static(current_config));
-
-	LogSeverity::Info.log(unsafe { MONITOR.as_ref().unwrap() }, "booted OK".into());
-
-	let mut tx_buf = [0u8; 2048];
-	let mut rx_buf = [0u8; 2048];
-	let mut sock = TcpSocket::new(extnet, &mut rx_buf[..], &mut tx_buf[..]);
-	sock.set_timeout(Some(Duration::from_secs(5)));
-	sock.set_keep_alive(Some(Duration::from_secs(2)));
-	sock.set_hop_limit(None);
-
-	/* XXX TODO DEBUG */
-
-	/* XXX TODO END DEBUG */
-
-	loop {
-		LogSeverity::Warn.log(
-			unsafe { MONITOR.as_ref().unwrap() },
-			"starting new test session in 1s".into(),
-		);
-		Timer::after(Duration::from_millis(1000)).await;
-
-		unsafe {
-			MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
-		}
-
-		if connect_to_oro(extnet, &mut sock).await.is_err() {
-			Timer::after(Duration::from_millis(10000)).await;
-			continue;
-		}
-
-		info!("connected to oro.dyn");
 		LogSeverity::Info.log(
 			unsafe { MONITOR.as_ref().unwrap() },
-			"connected to oro.dyn".into(),
+			"synchronizing time...".into(),
 		);
 
-		Timer::after(Duration::from_millis(1000)).await;
-
-		info!("closing socket to oro.dyn");
-		LogSeverity::Info.log(
-			unsafe { MONITOR.as_ref().unwrap() },
-			"terminating connection to oro.dyn...".into(),
-		);
-
-		let r = run_test_session(&mut rng, &mut sock).await;
-
-		unsafe {
-			MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
-		}
-
-		if let Err(err) = r {
-			error!("error with test session socket: {:?}", err);
+		if let Some(datetime) = net::get_datetime(extnet).await {
+			info!("current datetime: {:#?}", datetime);
+			wall_clock.set_datetime(datetime);
+		} else {
 			LogSeverity::Error.log(
 				unsafe { MONITOR.as_ref().unwrap() },
-				"test session failure".into(),
+				"failed to get time!".into(),
 			);
 		}
 
-		sock.abort();
+		let mut current_config = extnet.config_v4().unwrap();
+		current_config.dns_servers.clear();
+		current_config
+			.dns_servers
+			.push(Ipv4Address([94, 16, 114, 254]))
+			.unwrap();
+		extnet.set_config_v4(ConfigV4::Static(current_config));
 
-		if let Err(err) = sock.flush().await {
-			warn!(
-				"failed to flush oro.dyn socket after call to abort(); socket may act abnormally: {:?}",
-				err
-			);
-			LogSeverity::Warn.log(
-				unsafe { MONITOR.as_ref().unwrap() },
-				"failed to close connection!".into(),
-			);
-			LogSeverity::Warn.log(
-				unsafe { MONITOR.as_ref().unwrap() },
-				"oro link may need a reset!".into(),
-			);
+		LogSeverity::Info.log(unsafe { MONITOR.as_ref().unwrap() }, "booted OK".into());
+
+		let mut tx_buf = [0u8; 2048];
+		let mut rx_buf = [0u8; 2048];
+		let mut sock = TcpSocket::new(extnet, &mut rx_buf[..], &mut tx_buf[..]);
+		sock.set_timeout(Some(Duration::from_secs(5)));
+		sock.set_keep_alive(Some(Duration::from_secs(2)));
+		sock.set_hop_limit(None);
+	*/
+
+	// XXX TODO DEBUG
+	debug!("booting the system");
+	system.transition_power_state(PowerState::On);
+	system.power();
+	Timer::after(Duration::from_millis(3000)).await;
+	debug!("system booted, waiting for link to come online...");
+	loop {
+		if syseth.is_link_up() {
+			break;
 		}
+		Timer::after(Duration::from_millis(1000)).await;
+	}
+	debug!("link is up; waiting for packet...");
+	let mut buf = [0u8; 2048];
+	let len = syseth.recv(&mut buf).await;
+	debug!("received {} bytes!!!!!", len);
+
+	loop {
+		Timer::after(Duration::from_millis(1000)).await;
+		/*
+				LogSeverity::Warn.log(
+					unsafe { MONITOR.as_ref().unwrap() },
+					"starting new test session in 1s".into(),
+				);
+				Timer::after(Duration::from_millis(1000)).await;
+
+				unsafe {
+					MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
+				}
+
+				if connect_to_oro(extnet, &mut sock).await.is_err() {
+					Timer::after(Duration::from_millis(10000)).await;
+					continue;
+				}
+
+				info!("connected to oro.dyn");
+				LogSeverity::Info.log(
+					unsafe { MONITOR.as_ref().unwrap() },
+					"connected to oro.dyn".into(),
+				);
+
+				Timer::after(Duration::from_millis(1000)).await;
+
+				info!("closing socket to oro.dyn");
+				LogSeverity::Info.log(
+					unsafe { MONITOR.as_ref().unwrap() },
+					"terminating connection to oro.dyn...".into(),
+				);
+
+				let r = run_test_session(&mut rng, &mut sock).await;
+
+				unsafe {
+					MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
+				}
+
+				if let Err(err) = r {
+					error!("error with test session socket: {:?}", err);
+					LogSeverity::Error.log(
+						unsafe { MONITOR.as_ref().unwrap() },
+						"test session failure".into(),
+					);
+				}
+
+				sock.abort();
+
+				if let Err(err) = sock.flush().await {
+					warn!(
+						"failed to flush oro.dyn socket after call to abort(); socket may act abnormally: {:?}",
+						err
+					);
+					LogSeverity::Warn.log(
+						unsafe { MONITOR.as_ref().unwrap() },
+						"failed to close connection!".into(),
+					);
+					LogSeverity::Warn.log(
+						unsafe { MONITOR.as_ref().unwrap() },
+						"oro link may need a reset!".into(),
+					);
+				}
+		*/
 	}
 }
 
@@ -434,3 +455,7 @@ async fn run_test_session<'a, RNG: uc::Rng>(
 
 	Ok(())
 }
+
+trait DhcpServer: uc::RawEthernetDriver {}
+
+impl<T> DhcpServer for T where T: uc::RawEthernetDriver {}
