@@ -91,7 +91,7 @@ pub async fn init(
 
 	let mut oled = crate::chip::ssd1362::SSD1362::new(
 		ExclusiveDevice::new(
-			Spi::new_txonly(p.SPI2, p.PD3, p.PC3, NoDma, NoDma, oledconf),
+			Spi::new_txonly(p.SPI2, p.PD3, p.PC3, p.DMA1_CH4, NoDma, oledconf),
 			OutputOpenDrain::new(p.PB9, Level::High, Speed::VeryHigh, Pull::None),
 			Delay,
 		),
