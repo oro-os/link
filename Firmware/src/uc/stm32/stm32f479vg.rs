@@ -56,7 +56,7 @@ pub async fn init(
 		p.PB6,
 		p.PB7,
 		Irqs,
-		NoDma,
+		p.DMA1_CH6,
 		NoDma,
 		Hertz(400_000),
 		Default::default(),
