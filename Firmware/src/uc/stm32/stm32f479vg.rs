@@ -128,8 +128,9 @@ pub async fn init(
 	extconf.bit_order = spi::BitOrder::MsbFirst;
 	extconf.frequency = Hertz(8_000_000);
 
-	// TODO use DMA
-	let extspi = Spi::new(p.SPI3, p.PC10, p.PC12, p.PC11, NoDma, NoDma, extconf);
+	let extspi = Spi::new(
+		p.SPI3, p.PC10, p.PC12, p.PC11, p.DMA1_CH5, p.DMA1_CH0, extconf,
+	);
 
 	info!("... external ethernet comms INIT");
 
@@ -168,8 +169,7 @@ pub async fn init(
 	sysconf.bit_order = spi::BitOrder::MsbFirst;
 	sysconf.frequency = Hertz(8_000_000);
 
-	// TODO use DMA
-	let sysspi = Spi::new(p.SPI1, p.PA5, p.PA7, p.PA6, NoDma, NoDma, sysconf);
+	let sysspi = Spi::new(p.SPI1, p.PA5, p.PA7, p.PA6, p.DMA2_CH3, p.DMA2_CH0, sysconf);
 
 	info!("... system ethernet comms INIT");
 
