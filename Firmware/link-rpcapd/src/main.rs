@@ -39,7 +39,7 @@ struct Options {
 	verbose: bool,
 
 	/// The address on which to bind the RPCAP server
-	#[arg(short = 'H', long = "host", default_value_t = {"0.0.0.0".to_string()})]
+	#[arg(short = 'H', long = "host", default_value_t = {"127.0.0.1".to_string()})]
 	bind_host: String,
 
 	/// The port on which to bind the RPCAP server
