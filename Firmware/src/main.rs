@@ -311,7 +311,6 @@ pub async fn main(spawner: Spawner) {
 	debug!("booting the system");
 	system.transition_power_state(PowerState::On);
 	system.power();
-	Timer::after(Duration::from_millis(3000)).await;
 	debug!("system booted, waiting for link to come online...");
 	loop {
 		if syseth.is_link_up() {
@@ -320,12 +319,18 @@ pub async fn main(spawner: Spawner) {
 		Timer::after(Duration::from_millis(1000)).await;
 	}
 	debug!("link is up; waiting for packet...");
-	let mut buf = [0u8; 2048];
-	let len = syseth.recv(&mut buf).await;
-	debug!("received {} bytes!!!!!", len);
+	negotiate_with_sut(&mut syseth).await;
 
 	loop {
-		Timer::after(Duration::from_millis(1000)).await;
+		loop {
+			let mut buf = [0u8; 2048];
+			if let Some(len) = syseth.try_recv(&mut buf).await {
+				debug!("received {} bytes", len);
+			} else {
+				break;
+			}
+		}
+		Timer::after(Duration::from_millis(5000)).await;
 		/*
 				LogSeverity::Warn.log(
 					unsafe { MONITOR.as_ref().unwrap() },
@@ -464,6 +469,11 @@ struct RawEthernetCaptureDriver<D: uc::RawEthernetDriver, P: uc::PacketTracer>(D
 impl<D: uc::RawEthernetDriver, P: uc::PacketTracer> uc::RawEthernetDriver
 	for RawEthernetCaptureDriver<D, P>
 {
+	#[inline]
+	fn address(&self) -> [u8; 6] {
+		self.0.address()
+	}
+
 	async fn try_recv(&mut self, buf: &mut [u8]) -> Option<usize> {
 		if let Some(count) = self.0.try_recv(buf).await {
 			let pkt = &buf[..count];
@@ -479,11 +489,70 @@ impl<D: uc::RawEthernetDriver, P: uc::PacketTracer> uc::RawEthernetDriver
 		self.0.send(buf).await
 	}
 
+	#[inline]
 	fn is_link_up(&mut self) -> bool {
 		self.0.is_link_up()
 	}
 }
 
-trait DhcpServer: uc::RawEthernetDriver {}
+async fn negotiate_with_sut<E: RawEthernetDriver>(eth: &mut E) {
+	use smoltcp::wire;
 
-impl<T> DhcpServer for T where T: uc::RawEthernetDriver {}
+	let mut buffer = [0u8; 4096];
+
+	let length = {
+		let mut eth_frame = wire::EthernetFrame::new_checked(&mut buffer[..]).unwrap();
+		eth_frame.set_src_addr(wire::EthernetAddress(eth.address()));
+		eth_frame.set_dst_addr(wire::EthernetAddress([0x33, 0x33, 0x00, 0x00, 0x00, 0x02]));
+		eth_frame.set_ethertype(wire::EthernetProtocol::Ipv6);
+		let eth_payload_len = eth_frame.payload_mut().len();
+
+		wire::EthernetFrame::<&mut [u8]>::header_len() + {
+			// IPv4 mapped 10.0.0.1
+			let src_addr =
+				wire::Ipv6Address([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xff, 0xff, 0x0a, 0, 0, 0x01]);
+			// All nodes address (ff02::1)
+			// https://www.menandmice.com/blog/ipv6-reference-multicast#well-known-ipv6-multicast-addresses
+			let dst_addr =
+				wire::Ipv6Address([0xff, 0x02, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x01]);
+
+			let mut ipv6_packet = wire::Ipv6Packet::new_checked(eth_frame.payload_mut()).unwrap();
+			ipv6_packet.set_src_addr(src_addr);
+			ipv6_packet.set_dst_addr(dst_addr);
+			ipv6_packet.set_hop_limit(255);
+			ipv6_packet.set_version(6);
+			ipv6_packet.set_next_header(wire::IpProtocol::Icmpv6);
+			ipv6_packet.set_payload_len((eth_payload_len - ipv6_packet.header_len()) as u16);
+
+			let icmp_len = {
+				let mut icmpv6_packet =
+					wire::Icmpv6Packet::new_unchecked(ipv6_packet.payload_mut());
+
+				icmpv6_packet.set_msg_type(wire::Icmpv6Message::RouterAdvert);
+				// Managed tells the peer that DHCP is available
+				// https://www.arubanetworks.com/techdocs/AOS-CX/10.07/HTML/5200-7864/Content/Chp_IPv6_RA/IPv6_RA_cmds/ipv-nd-ra-man-con-fla-10.htm
+				icmpv6_packet.set_router_flags(wire::NdiscRouterFlags::MANAGED);
+				icmpv6_packet.set_router_lifetime(smoltcp::time::Duration::from_secs(10 * 60));
+
+				icmpv6_packet.header_len()
+			};
+
+			ipv6_packet.set_payload_len(icmp_len as u16);
+
+			// Must occur after packet is constructed
+			{
+				let mut icmpv6_packet =
+					wire::Icmpv6Packet::new_unchecked(ipv6_packet.payload_mut());
+				icmpv6_packet.fill_checksum(
+					&wire::IpAddress::Ipv6(src_addr),
+					&wire::IpAddress::Ipv6(dst_addr),
+				);
+			}
+
+			ipv6_packet.total_len()
+		}
+	};
+
+	let packet = &buffer[..length];
+	eth.send(packet).await;
+}

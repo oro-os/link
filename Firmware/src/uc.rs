@@ -272,6 +272,9 @@ impl<T> UartRx for T where T: AsyncRead {}
 /// A low-level ethernet device, used primarily for
 /// the system ethernet.
 pub trait RawEthernetDriver {
+	/// Returns the MAC address assigned to this device.
+	fn address(&self) -> [u8; 6];
+
 	/// Receives a packet if one is available. If not, returns `None`.
 	///
 	/// The returned packet is a full Ethernet frame.

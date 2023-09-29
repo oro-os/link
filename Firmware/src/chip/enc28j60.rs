@@ -9,6 +9,11 @@ where
 	O: OutputPin,
 {
 	#[inline]
+	fn address(&self) -> [u8; 6] {
+		Enc28j60::address(self)
+	}
+
+	#[inline]
 	async fn try_recv(&mut self, buf: &mut [u8]) -> Option<usize> {
 		assert!(
 			buf.len() >= MAX_ETH_FRAME,
