@@ -164,3 +164,8 @@ ttf-parser = "0.18.0"
 opt-level = 3       # Maximum optimizations
 codegen-units = 1   # Reduce number of codegen units to increase optimizations.
 lto = "fat"         # Perform LTO across all crates
+
+[workspace]
+members = [
+	"link-rpcapd"
+]

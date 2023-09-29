@@ -33,6 +33,7 @@ pub async fn init(
 	impl uc::Rng,
 	impl uc::UartTx,
 	impl uc::UartRx,
+	impl uc::PacketTracer,
 ) {
 	let mut config = Config::default();
 	config.rcc.rtc = Some(RtcClockSource::LSI);
@@ -247,7 +248,20 @@ pub async fn init(
 
 	info!("... system com INIT");
 
+	let mut auxcom_config = usart::Config::default();
+	auxcom_config.baudrate = 38400;
+	auxcom_config.data_bits = usart::DataBits::DataBits8;
+	auxcom_config.stop_bits = usart::StopBits::STOP1;
+	auxcom_config.parity = usart::Parity::ParityNone;
+	auxcom_config.assume_noise_free = false;
+
+	let auxcom_tx = usart::UartTx::new(p.UART7, p.PE8, NoDma, auxcom_config)
+		.expect("failed to create aux uart pair");
+
+	info!("... aux com INIT");
+
 	(
 		debug_led, system, monitor, exteth, syseth, wall_clock, rng_gen, syscom_tx, syscom_rx,
+		auxcom_tx,
 	)
 }

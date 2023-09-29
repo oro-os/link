@@ -347,10 +347,21 @@ pub trait RawEthernetDriver {
 	///
 	/// # Panics
 	/// Panics if `buf` is more than 1514 bytes.
-	fn send(&mut self, buf: &[u8]);
+	async fn send(&mut self, buf: &[u8]);
 
 	/// Returns whether or not the link is up
 	fn is_link_up(&mut self) -> bool;
+}
+
+/// Writes packets to a peripheral for use with a PCAP-like daemon.
+pub trait PacketTracer {
+	/// Trace a packet. Sends the u16be length and then the packet
+	/// contents over the transport medium.
+	///
+	/// # Panics
+	/// If `buf` is larger than 65535 (`u16::MAX`) bytes long, or
+	/// if a communication error occurred and couldn't be recovered from.
+	async fn trace_packet(&mut self, buf: &[u8]);
 }
 
 // Validates the contract of the init() function.
@@ -387,7 +398,20 @@ mod _check_init {
 		RNG: Rng,
 		USARTTX: UartTx,
 		USARTRX: UartRx,
-	> Init for (DBG, SUT, MON, EXTETH, SYSETH, CLOCK, RNG, USARTTX, USARTRX)
+		PKTTRACER: PacketTracer,
+	> Init
+		for (
+			DBG,
+			SUT,
+			MON,
+			EXTETH,
+			SYSETH,
+			CLOCK,
+			RNG,
+			USARTTX,
+			USARTRX,
+			PKTTRACER,
+		)
 	{
 	}
 }

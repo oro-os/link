@@ -186,12 +186,15 @@ pub async fn main(spawner: Spawner) {
 		mut system,
 		monitor,
 		exteth,
-		mut syseth,
+		syseth,
 		mut wall_clock,
 		mut rng,
 		_syscom_tx,
 		_syscom_rx,
+		packet_tracer,
 	) = uc::init(&spawner).await;
+
+	let mut syseth = RawEthernetCaptureDriver(syseth, packet_tracer);
 
 	unsafe {
 		MONITOR = {
@@ -454,6 +457,31 @@ async fn run_test_session<'a, RNG: uc::Rng>(
 	Timer::after(Duration::from_millis(5000)).await;
 
 	Ok(())
+}
+
+struct RawEthernetCaptureDriver<D: uc::RawEthernetDriver, P: uc::PacketTracer>(D, P);
+
+impl<D: uc::RawEthernetDriver, P: uc::PacketTracer> uc::RawEthernetDriver
+	for RawEthernetCaptureDriver<D, P>
+{
+	async fn try_recv(&mut self, buf: &mut [u8]) -> Option<usize> {
+		if let Some(count) = self.0.try_recv(buf).await {
+			let pkt = &buf[..count];
+			self.1.trace_packet(pkt).await;
+			Some(count)
+		} else {
+			None
+		}
+	}
+
+	async fn send(&mut self, buf: &[u8]) {
+		self.1.trace_packet(buf).await;
+		self.0.send(buf).await
+	}
+
+	fn is_link_up(&mut self) -> bool {
+		self.0.is_link_up()
+	}
 }
 
 trait DhcpServer: uc::RawEthernetDriver {}

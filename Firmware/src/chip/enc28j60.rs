@@ -18,7 +18,7 @@ where
 	}
 
 	#[inline]
-	fn send(&mut self, buf: &[u8]) {
+	async fn send(&mut self, buf: &[u8]) {
 		// We don't need to panic here since the enc28j60 library does it for us.
 		Enc28j60::transmit(self, buf)
 	}

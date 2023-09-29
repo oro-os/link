@@ -6,7 +6,7 @@ pub use stm32f479vg::*;
 use crate::chip;
 use embassy_stm32::{
 	gpio::{Input, Output, Pin},
-	i2c,
+	i2c, usart,
 };
 use embassy_time::{block_for, Duration, Instant};
 
@@ -215,4 +215,14 @@ pub fn get_exteth_mac() -> [u8; 6] {
 	macaddr[5] = hash[31];
 
 	macaddr
+}
+
+impl<'d, T: usart::BasicInstance, TxDma> super::PacketTracer for usart::UartTx<'d, T, TxDma> {
+	async fn trace_packet(&mut self, buf: &[u8]) {
+		debug_assert!(buf.len() <= u16::MAX as usize);
+		let len_bytes = (buf.len() as u16).to_be_bytes();
+		self.blocking_write(&len_bytes[..]).unwrap();
+		self.blocking_write(buf).unwrap();
+		self.blocking_flush().unwrap();
+	}
 }

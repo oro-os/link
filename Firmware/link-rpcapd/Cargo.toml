@@ -1,0 +1,14 @@
+[package]
+name = "link-rpcapd"
+description = "A remote PCAP (RPCAP) daemon to sniff wire traffic between the SUT and the Oro link using e.g. WireShark"
+publish = false
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-broadcast = "0.5.1"
+async-std = { version = "1.12.0", features = ["attributes"] }
+clap = { version = "4.4.5", features = ["derive"] }
+futures-lite = "1.13.0"
+log = "0.4.20"
+pretty_env_logger = "0.5.0"

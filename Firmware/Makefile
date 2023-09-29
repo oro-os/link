@@ -1,4 +1,4 @@
-.PHONY: all clean lint clippy fmt doc stm32f479vg stm32f479vg.run
+.PHONY: all clean lint clippy fmt doc stm32f479vg stm32f479vg.run clippy-rpcap
 
 ifdef DEBUG
 CARGO_MODE := debug
@@ -54,13 +54,16 @@ fmt:
 	env cargo fmt --all
 
 lint:
-	env cargo fmt -- --check --verbose
+	env cargo fmt --all -- --check --verbose
 
-clippy:
-	env cargo clippy $(CARGO_FLAGS) --all --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem -- -D clippy::all
+clippy: clippy-rpcap
+	env cargo clippy $(CARGO_FLAGS) --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem -- -D clippy::all
+
+clippy-rpcap:
+	env cargo clippy $(CARGO_FLAGS) --package link-rpcapd -- -D clippy::all
 
 doc:
-	env cargo doc $(CARGO_FLAGS) --all --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem --open
+	env cargo doc $(CARGO_FLAGS) --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem --open
 
 stm32f479vg.run: stm32f479vg
 	$(PROBE_RUN) $(PROBE_RUN_FLAGS) --speed 40000 --chip stm32f479vg target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware
