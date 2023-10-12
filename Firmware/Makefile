@@ -1,4 +1,4 @@
-.PHONY: all clean lint clippy fmt doc stm32f479vg stm32f479vg.run clippy-rpcap
+.PHONY: all clean lint clippy fmt doc stm32f479vg stm32f479vg.run clippy-rpcap rpcap
 
 ifdef DEBUG
 CARGO_MODE := debug
@@ -35,6 +35,14 @@ ifdef DEV_IP
 CARGO_FLAGS += --features oro-connect-to-ip
 endif
 
+ifndef PLINK
+PLINK := plink.exe
+endif
+
+ifndef COM
+COM = COM16
+endif
+
 export DEFMT_LOG = $(LEVEL)
 export ORO_CONNECT_TO_IP = $(DEV_IP)
 
@@ -55,6 +63,9 @@ fmt:
 
 lint:
 	env cargo fmt --all -- --check --verbose
+
+rpcap:
+	$(PLINK) -sercfg 38400,8,n,1,X -serial $(COM) | env LEVEL=debug cargo run $(CARGO_FLAGS) -p link-rpcapd
 
 clippy: clippy-rpcap
 	env cargo clippy $(CARGO_FLAGS) --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem -- -D clippy::all
