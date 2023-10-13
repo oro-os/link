@@ -6,7 +6,7 @@ use smoltcp::{
 	},
 };
 
-pub fn res_router_advertisement(buf: &mut [u8], src_addr: EthernetAddress) -> usize {
+pub fn icmpv6_router_advertisement(buf: &mut [u8], src_addr: EthernetAddress) -> usize {
 	let mut eth_frame = EthernetFrame::new_checked(buf).unwrap();
 	eth_frame.set_src_addr(src_addr);
 	// Ipv6 multicast 0x02 address

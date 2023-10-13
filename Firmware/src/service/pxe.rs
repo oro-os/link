@@ -99,6 +99,7 @@ pub async fn run_icmpv6(token: Icmpv6Token, device_address: EthernetAddress) {
 		debug_assert_eq!(frame.ethertype(), EthernetProtocol::Ipv6);
 		let ipv6_frame = Ipv6Packet::new_checked(frame.payload()).unwrap();
 		debug_assert_eq!(ipv6_frame.next_header(), IpProtocol::Icmpv6);
+
 		if let Ok(icmpv6_frame) = Icmpv6Packet::new_checked(ipv6_frame.payload()) {
 			match icmpv6_frame.msg_type() {
 				Icmpv6Message::RouterSolicit => {
@@ -107,12 +108,14 @@ pub async fn run_icmpv6(token: Icmpv6Token, device_address: EthernetAddress) {
 					unsafe {
 						res_buffer.set_len(res_buffer.capacity());
 					}
-					let len = packet::res_router_advertisement(&mut res_buffer[..], device_address);
+					let len =
+						packet::icmpv6_router_advertisement(&mut res_buffer[..], device_address);
 					unsafe {
 						res_buffer.set_len(len);
 					}
 					token.1.send(res_buffer).await;
 				}
+
 				mtype => {
 					trace!("icmpv6 dropping unsupported message type ({:?})", mtype);
 				}
