@@ -10,65 +10,129 @@
 //!
 //! I'm not explaining this well, I know, but this whole thing has been a giant headache
 //! today and so far this is the cleanest way I can think about implementing this.
+//!
+//! TODO: Implement copy-free packet handling.
+
+mod packet;
 
 use crate::uc::RawEthernetDriver;
-use defmt::debug;
+use defmt::{debug, trace};
+use embassy_futures::select::{select, Either};
 use embassy_sync::{
 	blocking_mutex::raw::NoopRawMutex,
 	channel::{Channel, Receiver, Sender},
 };
-use smoltcp::wire::EthernetFrame;
+use heapless::Vec;
+use smoltcp::wire::{
+	EthernetAddress, EthernetFrame, EthernetProtocol, Icmpv6Message, Icmpv6Packet, IpProtocol,
+	Ipv6Packet,
+};
 use static_cell::make_static;
 
-type EthChannel = Channel<NoopRawMutex, EthernetFrame<&'static [u8]>, 8>;
-type EthSender = Sender<'static, NoopRawMutex, EthernetFrame<&'static [u8]>, 8>;
-type EthReceiver = Receiver<'static, NoopRawMutex, EthernetFrame<&'static [u8]>, 8>;
+const BUFFER_SIZE: usize = 2048;
+type Buffer = Vec<u8, BUFFER_SIZE>;
 
-macro_rules! select {
-	($first_id:ident @ $first_future:expr => $first_block:block $second_id:ident @ $second_future:expr => $second_block:block) => {
-		async move {
-			match ::embassy_futures::select::select($first_future, $second_future).await {
-				::embassy_futures::select::Either::First($first_id) => $first_block,
-				::embassy_futures::select::Either::Second($second_id) => $second_block,
-			}
-		}
-	};
-}
+type EthChannel = Channel<NoopRawMutex, Buffer, 2>;
+type EthSender = Sender<'static, NoopRawMutex, Buffer, 2>;
+type EthReceiver = Receiver<'static, NoopRawMutex, Buffer, 2>;
 
 pub async fn run_broker<D: RawEthernetDriver>(token: BrokerToken, mut driver: D) {
 	debug!("starting net broker");
 
-	let mut buf = &mut *make_static!([0u8; 2048]);
+	static mut BUFFER: [u8; BUFFER_SIZE] = [0u8; BUFFER_SIZE];
 
 	loop {
-		let recv_future = driver.recv(buf);
-		let outgoing_future = token.outgoing.receive();
-
-		select! {
-			len @ recv_future => {
-				debug!("broker: got recv'd packet: {}", len);
-			}
-
-			_msg @ outgoing_future => {
-				debug!("broker: got outdoing packet");
-			}
+		let result = async {
+			let recv_future = driver.recv(unsafe { &mut BUFFER[..] });
+			let outgoing_future = token.outgoing.receive();
+			select(recv_future, outgoing_future).await
 		}
 		.await;
+
+		match result {
+			Either::First(len) => {
+				if let Ok(frame) = EthernetFrame::new_checked(unsafe { &BUFFER[..len] }) {
+					match frame.ethertype() {
+						EthernetProtocol::Ipv6 => {
+							if let Ok(ipv6_frame) = Ipv6Packet::new_checked(frame.payload()) {
+								match ipv6_frame.next_header() {
+									IpProtocol::Icmpv6 => {
+										let copy =
+											Buffer::from_slice(unsafe { &BUFFER[..len] }).unwrap();
+										token.icmp.send(copy).await;
+									}
+									proto => {
+										trace!(
+											"broker dropping unsupported ipv6 frame ({:?})",
+											proto
+										);
+									}
+								}
+							} else {
+								trace!(
+									"broker dropping too-small ipv6 frame ({})",
+									frame.payload().len()
+								);
+							}
+						}
+						etype => {
+							trace!("broker dropping unsupported ethertype frame ({:?})", etype);
+						}
+					}
+				} else {
+					trace!("broker dropping too-small ethernet frame ({})", len);
+				}
+			}
+
+			Either::Second(msg) => {
+				trace!("sending packet with length {}", msg.len());
+				driver.send(&msg[..]).await;
+			}
+		}
 	}
 }
 
-pub async fn run_icmp(token: IcmpToken) {}
+pub async fn run_icmpv6(token: Icmpv6Token, device_address: EthernetAddress) {
+	loop {
+		let buffer = token.0.receive().await;
+		let frame = EthernetFrame::new_checked(&buffer[..]).unwrap();
+		debug_assert_eq!(frame.ethertype(), EthernetProtocol::Ipv6);
+		let ipv6_frame = Ipv6Packet::new_checked(frame.payload()).unwrap();
+		debug_assert_eq!(ipv6_frame.next_header(), IpProtocol::Icmpv6);
+		if let Ok(icmpv6_frame) = Icmpv6Packet::new_checked(ipv6_frame.payload()) {
+			match icmpv6_frame.msg_type() {
+				Icmpv6Message::RouterSolicit => {
+					debug!("system sent router solicitation; sending advertisement");
+					let mut res_buffer = Buffer::new();
+					unsafe {
+						res_buffer.set_len(res_buffer.capacity());
+					}
+					let len = packet::res_router_advertisement(&mut res_buffer[..], device_address);
+					unsafe {
+						res_buffer.set_len(len);
+					}
+					token.1.send(res_buffer).await;
+				}
+				mtype => {
+					trace!("icmpv6 dropping unsupported message type ({:?})", mtype);
+				}
+			}
+		} else {
+			trace!("icmpv6 dropping too-short icmpv6 packet ({})", buffer.len());
+		}
+	}
+}
 
 pub struct BrokerToken {
 	outgoing: EthReceiver,
 	icmp: EthSender,
 }
 
-pub struct IcmpToken(EthReceiver, EthSender);
+pub struct Icmpv6Token(EthReceiver, EthSender);
 
 pub struct PxeTokens {
 	pub broker_token: BrokerToken,
-	pub icmp_token: IcmpToken,
+	pub icmpv6_token: Icmpv6Token,
 }
 
 pub fn init_pxe() -> PxeTokens {
@@ -85,6 +149,6 @@ pub fn init_pxe() -> PxeTokens {
 			outgoing: outgoing_receiver,
 			icmp: icmp_sender,
 		},
-		icmp_token: IcmpToken(icmp_receiver, outgoing_sender),
+		icmpv6_token: Icmpv6Token(icmp_receiver, outgoing_sender),
 	}
 }

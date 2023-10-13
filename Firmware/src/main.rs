@@ -21,8 +21,11 @@ use defmt::{debug, error, info};
 use embassy_executor::Spawner;
 use embassy_net::Stack;
 use embassy_time::{Duration, Timer};
+use smoltcp::wire::EthernetAddress;
 use static_cell::make_static;
 use uc::{LogSeverity, Monitor as _, PowerState, Rng, Scene, SystemUnderTest};
+
+use crate::uc::RawEthernetDriver;
 
 #[defmt::panic_handler]
 fn defmt_panic() -> ! {
@@ -75,8 +78,8 @@ async fn pxe_broker_task(token: service::pxe::BrokerToken, driver: SysEthDriver)
 }
 
 #[embassy_executor::task]
-async fn pxe_icmp_task(token: service::pxe::IcmpToken) {
-	service::pxe::run_icmp(token).await
+async fn pxe_icmpv6_task(token: service::pxe::Icmpv6Token, mac_addr: EthernetAddress) {
+	service::pxe::run_icmpv6(token, mac_addr).await
 }
 
 #[embassy_executor::main]
@@ -132,13 +135,14 @@ pub async fn main(spawner: Spawner) {
 	let syseth = RawEthernetCaptureDriver(syseth, packet_tracer);
 	let pxe_tokens = service::pxe::init_pxe();
 
-	spawner.spawn(net_stack_task(extnet)).unwrap();
-	spawner.spawn(monitor_task()).unwrap();
-	spawner.spawn(debug_led_task(debug_led)).unwrap();
-	spawner
-		.spawn(pxe_broker_task(pxe_tokens.broker_token, syseth))
-		.unwrap();
-	spawner.spawn(pxe_icmp_task(pxe_tokens.icmp_token)).unwrap();
+	spawner.must_spawn(net_stack_task(extnet));
+	spawner.must_spawn(monitor_task());
+	spawner.must_spawn(debug_led_task(debug_led));
+	spawner.must_spawn(pxe_icmpv6_task(
+		pxe_tokens.icmpv6_token,
+		EthernetAddress(syseth.address()),
+	));
+	spawner.must_spawn(pxe_broker_task(pxe_tokens.broker_token, syseth));
 
 	// XXX TODO DEBUG
 	debug!("booting the system");
