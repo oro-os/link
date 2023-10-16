@@ -1,7 +1,15 @@
 use crate::uc::DateTime;
 use defmt::{debug, error, warn};
-use embassy_net::{dns::DnsQueryType, driver::Driver, tcp::TcpSocket, Stack};
+use embassy_net::{
+	dns::DnsQueryType,
+	driver::Driver,
+	tcp::TcpSocket,
+	udp::{PacketMetadata, UdpSocket},
+	Stack,
+};
 use embassy_time::{Duration, Timer};
+use heapless::Vec;
+use smoltcp::wire;
 
 trait ParseAsciiNum
 where
@@ -160,4 +168,115 @@ pub async fn get_datetime<D: Driver + 'static>(stack: &Stack<D>) -> Option<DateT
 	}
 }
 
-pub async fn boot_pxe() {}
+pub async fn boot_pxe<D: Driver + 'static>(stack: &Stack<D>) {
+	let mut rx_meta = [PacketMetadata::EMPTY; 16];
+	let mut rx_buffer = [0; 4096];
+	let mut tx_meta = [PacketMetadata::EMPTY; 16];
+	let mut tx_buffer = [0; 4096];
+	let mut buf = [0; 4096];
+
+	let mut socket = UdpSocket::new(
+		stack,
+		&mut rx_meta,
+		&mut rx_buffer,
+		&mut tx_meta,
+		&mut tx_buffer,
+	);
+
+	socket.bind(wire::DHCP_SERVER_PORT).unwrap();
+
+	let (n, _) = socket.recv_from(&mut buf).await.unwrap();
+	let packet = if let Ok(packet) = wire::DhcpPacket::new_checked(&buf[..n]) {
+		packet
+	} else {
+		warn!("pxe: invalid DHCP length: {}", n);
+		return;
+	};
+
+	let request = match wire::DhcpRepr::parse(&packet) {
+		Ok(request) => request,
+		Err(err) => {
+			warn!("pxe: failed to parse DHCP request: {}", err);
+			return;
+		}
+	};
+
+	if request.message_type != wire::DhcpMessageType::Discover {
+		warn!(
+			"pxe: peer sent invalid DHCP message type: {}",
+			request.message_type
+		);
+		return;
+	}
+
+	const TFTP_SERVER: &str = "10.0.0.1";
+	const TFTP_BOOTFILE: &str = "ORO_BOOT";
+
+	let response = wire::DhcpRepr {
+		message_type: wire::DhcpMessageType::Offer,
+		transaction_id: request.transaction_id,
+		secs: request.secs,
+		client_hardware_address: request.client_hardware_address,
+		client_ip: wire::Ipv4Address([0, 0, 0, 0]),
+		your_ip: wire::Ipv4Address([10, 0, 0, 2]),
+		server_ip: wire::Ipv4Address([10, 0, 0, 1]),
+		router: Some(wire::Ipv4Address([10, 0, 0, 1])),
+		subnet_mask: Some(wire::Ipv4Address([255, 255, 255, 0])),
+		relay_agent_ip: wire::Ipv4Address([0, 0, 0, 0]),
+		broadcast: true,
+		requested_ip: None,
+		client_identifier: None,
+		server_identifier: Some(wire::Ipv4Address([10, 0, 0, 1])),
+		parameter_request_list: None,
+		dns_servers: Some(Vec::from_slice(&[wire::Ipv4Address([10, 0, 0, 1])]).unwrap()),
+		max_size: None,
+		lease_duration: Some(u32::MAX),
+		renew_duration: None,
+		rebind_duration: None,
+		// https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml
+		additional_options: &[
+			// 13 - boot file size in 512-byte chunks (16 bit NE)
+			wire::DhcpOption {
+				kind: 13,
+				data: &(42u16).to_be_bytes(),
+			},
+			// 66 - TFTP server name
+			wire::DhcpOption {
+				kind: 66,
+				data: TFTP_SERVER.as_bytes(),
+			},
+			// 67 - bootfile name
+			wire::DhcpOption {
+				kind: 67,
+				data: TFTP_BOOTFILE.as_bytes(),
+			},
+		],
+	};
+
+	let mut response_buf = [0; 2048];
+	let mut response_packet = wire::DhcpPacket::new_checked(&mut response_buf[..]).unwrap();
+	response.emit(&mut response_packet).unwrap();
+
+	debug!("pxe: sending offer (len={})", response.buffer_len());
+
+	match socket
+		.send_to(
+			&response_buf[..response.buffer_len()],
+			wire::IpEndpoint {
+				addr: wire::IpAddress::Ipv4(wire::Ipv4Address([255, 255, 255, 255])),
+				port: wire::DHCP_CLIENT_PORT,
+			},
+		)
+		.await
+	{
+		Ok(()) => {
+			debug!("pxe: sent DHCP offer");
+		}
+		Err(err) => {
+			warn!("pxe: failed to send DHCP offer: {:?}", err);
+			return;
+		}
+	}
+
+	Timer::after(Duration::from_millis(8000)).await;
+}

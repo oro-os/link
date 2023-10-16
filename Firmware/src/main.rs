@@ -17,7 +17,7 @@ mod uc;
 use core::cell::RefCell;
 #[cfg(not(test))]
 use core::{panic::PanicInfo, task::Context};
-use defmt::{debug, error, info, trace};
+use defmt::{debug, error, info, trace, warn};
 use embassy_executor::Spawner;
 use embassy_net::{
 	driver::{Capabilities, HardwareAddress, LinkState, RxToken, TxToken},
@@ -116,8 +116,6 @@ pub async fn main(spawner: Spawner) {
 		"booting oro link...".into(),
 	);
 
-	let syseth = EthernetCaptureDriver(syseth, RefCell::new(packet_tracer));
-
 	let extnet = {
 		let seed = rng.next_u64();
 		let config = embassy_net::Config::dhcpv4(Default::default());
@@ -138,6 +136,8 @@ pub async fn main(spawner: Spawner) {
 			dns_servers: Vec::new(),
 		});
 
+		let syseth = EthernetCaptureDriver(syseth, RefCell::new(packet_tracer));
+
 		&*make_static!(Stack::new(
 			syseth,
 			config,
@@ -151,14 +151,21 @@ pub async fn main(spawner: Spawner) {
 	spawner.must_spawn(monitor_task());
 	spawner.must_spawn(debug_led_task(debug_led));
 
-	// XXX TODO DEBUG
-	debug!("booting the system");
-	system.transition_power_state(PowerState::On);
-	system.power();
-	debug!("system booted");
-
 	loop {
-		Timer::after(Duration::from_millis(5000)).await;
+		// XXX TODO DEBUG
+		debug!("booting the system");
+		system.transition_power_state(PowerState::On);
+		system.power();
+		debug!("system booted; booting PXE...");
+
+		net::boot_pxe(sysnet).await;
+
+		debug!("pxe boot attempted; shutting down...");
+		Timer::after(Duration::from_millis(3000)).await;
+		system.transition_power_state(PowerState::Off);
+
+		debug!("shut down; restarting in 8s...");
+		Timer::after(Duration::from_millis(8000)).await;
 	}
 }
 
@@ -187,6 +194,7 @@ impl<D: uc::EthernetDriver, P: uc::PacketTracer> embassy_net::driver::Driver
 	}
 
 	fn transmit(&mut self, cx: &mut Context<'_>) -> Option<Self::TxToken<'_>> {
+		debug!("DRIVER TRANSMIT CALLED");
 		match self.0.transmit(cx) {
 			None => None,
 			Some(txt) => Some(EthernetCaptureTxToken(txt, &self.1)),
