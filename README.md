@@ -41,6 +41,11 @@ the Link can also cut power directly to the system via the `PS_ON`
 line of the Power Supply Unit (PSU) in cases where tests have failed,
 timed out, or where the SUT is otherwise un-responsive.
 
+The link also sniffs and traces all packets sent/received by the
+Link/SUT ethernet controller (using the `link-rpcap` utility),
+allowing for applications like WireShark to connect and sniff
+all packets sent between the two for debugging purposes.
+
 ```mermaid
 %%{ init: { 'flowchart': { 'curve': 'linear' } } }%%
 flowchart TD
@@ -51,12 +56,17 @@ flowchart TD
        linkusb["USB OTG HID Device"]
        linkusart["USART"]
        linkfp["Power & PWR/RST/PS_ON MOSFETs"]
+       linkecon["Edge Connector"]
+       linkauxuart["Auxilary UART"]
 
        linkmcu<-->linksyseth
        linkexteth<-->linkmcu
        linkmcu<-->linkusb
        linkmcu<-->linkusart
-       linkmcu<-->linkfp
+       linkmcu<--->linkfp
+       linkmcu<-->linkauxuart
+       linkmcu<-->|SWD|linkecon
+       linkauxuart<-->|"Remote PCAP\n(SUT/Link packet sniffing\nvia Wireshark)"|linkecon
     end
 
     subgraph "System Under Test (SUT)"
@@ -75,14 +85,18 @@ flowchart TD
     end
 
     psu["Power Supply Unit (PSU)"]
+    stlink["ST-Link"]
+    devmachine["Dev Machine"]
 
-    psu---->|5VSB / PSOK / PS_ON / COM|linkfp
+    psu----->|5VSB / PSOK / PS_ON / COM|linkfp
     linkfp-->|5VSB|sut5vsb
     linksyseth<-->|PXE Boot / TFTP|suteth
     linkusb<-->|Mouse / Keyboard HID Devices|sutusb
     linkusart<-->|Oro Test Protocol|sutusart
-    linkfp-->|PWR / RST|sutfp
+    linkfp--->|PWR / RST|sutfp
     gr<-->linkexteth
+    linkecon<-->stlink
+    stlink<-->|USB|devmachine
 ```
 
 # License
@@ -101,14 +115,13 @@ of the device, under any circumstances.
 The Oro Link's PCB and associated custom footprints are released
 under the [MIT License](LICENSE).
 
+Unless otherwise specified, all Oro Link firmware (software code)
+is licensed under the same license.
+
 The _Enter Command_ font used for text display is released CC-BY-4.0
 by [Font End Dev (jeti)](https://fontenddev.com).
 
-Unless otherwise specified, all Oro Link firmware (software code)
-is licensed under the same license. Please note that much of the
-generated code is provided by the STM32 toolchain and is separately
-licensed. Please refer to their respective licenses and copyrights,
-provided inline.
-
 All other materials are, unless otherwise specified, provided
 under the same license.
+
+Dependencies are under their respective licenses.
