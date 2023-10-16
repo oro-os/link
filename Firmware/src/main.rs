@@ -194,7 +194,6 @@ impl<D: uc::EthernetDriver, P: uc::PacketTracer> embassy_net::driver::Driver
 	}
 
 	fn transmit(&mut self, cx: &mut Context<'_>) -> Option<Self::TxToken<'_>> {
-		debug!("DRIVER TRANSMIT CALLED");
 		match self.0.transmit(cx) {
 			None => None,
 			Some(txt) => Some(EthernetCaptureTxToken(txt, &self.1)),

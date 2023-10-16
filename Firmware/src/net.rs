@@ -203,16 +203,51 @@ pub async fn boot_pxe<D: Driver + 'static>(stack: &Stack<D>) {
 
 	if request.message_type != wire::DhcpMessageType::Discover {
 		warn!(
-			"pxe: peer sent invalid DHCP message type: {}",
+			"pxe: peer sent invalid DHCP message type (expected Discover): {}",
 			request.message_type
 		);
 		return;
 	}
 
+	let mut requested_tftp_server = false;
+	let mut requested_boot_file = false;
+
+	// https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml
+	for option in packet.options() {
+		// 55 - Parameter Request List
+		if option.kind == 55 {
+			for kind in option.data {
+				match kind {
+					// 66 - TFTP server name
+					66 => {
+						requested_tftp_server = true;
+					}
+					// 67 - bootfile name
+					67 => {
+						requested_boot_file = true;
+					}
+					_ => {}
+				}
+			}
+		}
+	}
+
+	if !requested_boot_file {
+		warn!("pxe: peer didn't request boot file in DHCP request");
+		return;
+	}
+
+	if !requested_tftp_server {
+		warn!("pxe: peer didn't request TFTP server in DHCP request");
+		return;
+	}
+
+	debug!("pxe: got DHCP discovery");
+
 	const TFTP_SERVER: &str = "10.0.0.1";
 	const TFTP_BOOTFILE: &str = "ORO_BOOT";
 
-	let response = wire::DhcpRepr {
+	let mut response = wire::DhcpRepr {
 		message_type: wire::DhcpMessageType::Offer,
 		transaction_id: request.transaction_id,
 		secs: request.secs,
@@ -253,30 +288,100 @@ pub async fn boot_pxe<D: Driver + 'static>(stack: &Stack<D>) {
 		],
 	};
 
-	let mut response_buf = [0; 2048];
-	let mut response_packet = wire::DhcpPacket::new_checked(&mut response_buf[..]).unwrap();
-	response.emit(&mut response_packet).unwrap();
-
-	debug!("pxe: sending offer (len={})", response.buffer_len());
-
-	match socket
-		.send_to(
-			&response_buf[..response.buffer_len()],
-			wire::IpEndpoint {
-				addr: wire::IpAddress::Ipv4(wire::Ipv4Address([255, 255, 255, 255])),
-				port: wire::DHCP_CLIENT_PORT,
-			},
-		)
-		.await
 	{
-		Ok(()) => {
-			debug!("pxe: sent DHCP offer");
+		let mut response_buf = [0; 2048];
+		let mut response_packet = wire::DhcpPacket::new_checked(&mut response_buf[..]).unwrap();
+		response.emit(&mut response_packet).unwrap();
+
+		debug!("pxe: sending offer (len={})", response.buffer_len());
+
+		match socket
+			.send_to(
+				&response_buf[..response.buffer_len()],
+				wire::IpEndpoint {
+					addr: wire::IpAddress::Ipv4(wire::Ipv4Address([255, 255, 255, 255])),
+					port: wire::DHCP_CLIENT_PORT,
+				},
+			)
+			.await
+		{
+			Ok(()) => {
+				debug!("pxe: sent DHCP offer");
+			}
+			Err(err) => {
+				warn!("pxe: failed to send DHCP offer: {:?}", err);
+				return;
+			}
 		}
+	}
+
+	let (n, _) = socket.recv_from(&mut buf).await.unwrap();
+	let packet = if let Ok(packet) = wire::DhcpPacket::new_checked(&buf[..n]) {
+		packet
+	} else {
+		warn!("pxe: invalid DHCP length: {}", n);
+		return;
+	};
+
+	let request = match wire::DhcpRepr::parse(&packet) {
+		Ok(request) => request,
 		Err(err) => {
-			warn!("pxe: failed to send DHCP offer: {:?}", err);
+			warn!("pxe: failed to parse DHCP request: {}", err);
+			return;
+		}
+	};
+
+	if request.message_type != wire::DhcpMessageType::Request {
+		warn!(
+			"pxe: peer sent invalid DHCP message type (expected Request): {}",
+			request.message_type
+		);
+		return;
+	}
+
+	match request.requested_ip {
+		Some(ip) => {
+			if ip != wire::Ipv4Address([10, 0, 0, 2]) {
+				warn!("pxe: peer requested IP that we didn't offer");
+				return;
+			}
+		}
+		None => {
+			warn!("pxe: peer sent DHCP request without a requested IP");
 			return;
 		}
 	}
 
-	Timer::after(Duration::from_millis(8000)).await;
+	debug!("pxe: got DHCP request");
+
+	response.message_type = wire::DhcpMessageType::Ack;
+
+	{
+		let mut response_buf = [0; 2048];
+		let mut response_packet = wire::DhcpPacket::new_checked(&mut response_buf[..]).unwrap();
+		response.emit(&mut response_packet).unwrap();
+
+		debug!("pxe: sending ack (len={})", response.buffer_len());
+
+		match socket
+			.send_to(
+				&response_buf[..response.buffer_len()],
+				wire::IpEndpoint {
+					addr: wire::IpAddress::Ipv4(wire::Ipv4Address([255, 255, 255, 255])),
+					port: wire::DHCP_CLIENT_PORT,
+				},
+			)
+			.await
+		{
+			Ok(()) => {
+				debug!("pxe: sent DHCP ack");
+			}
+			Err(err) => {
+				warn!("pxe: failed to send DHCP ack: {:?}", err);
+				return;
+			}
+		}
+	}
+
+	Timer::after(Duration::from_millis(5000)).await;
 }
