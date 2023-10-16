@@ -17,7 +17,7 @@ mod uc;
 use core::cell::RefCell;
 #[cfg(not(test))]
 use core::{panic::PanicInfo, task::Context};
-use defmt::{debug, error, info, trace, warn};
+use defmt::{debug, error, info};
 use embassy_executor::Spawner;
 use embassy_net::{
 	driver::{Capabilities, HardwareAddress, LinkState, RxToken, TxToken},
@@ -158,7 +158,7 @@ pub async fn main(spawner: Spawner) {
 		system.power();
 		debug!("system booted; booting PXE...");
 
-		net::boot_pxe(sysnet).await;
+		net::pxe::handshake_dhcp(sysnet).await;
 
 		debug!("pxe boot attempted; shutting down...");
 		Timer::after(Duration::from_millis(3000)).await;
