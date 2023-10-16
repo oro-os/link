@@ -175,6 +175,9 @@ quote = "1.0.32"
 syn = { version = "2.0.28", features = ["full"] }
 ttf-parser = "0.18.0"
 
+[profile.dev]
+opt-level = 1
+
 [profile.release]
 opt-level = 3       # Maximum optimizations
 codegen-units = 1   # Reduce number of codegen units to increase optimizations.
