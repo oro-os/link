@@ -215,8 +215,9 @@ impl<'a, T: TxToken, P: uc::PacketTracer> TxToken for EthernetCaptureTxToken<'a,
 		F: FnOnce(&mut [u8]) -> R,
 	{
 		self.0.consume(len, |buf| {
+			let r = f(buf);
 			self.1.borrow_mut().trace_packet(buf);
-			f(buf)
+			r
 		})
 	}
 }
