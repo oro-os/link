@@ -218,7 +218,7 @@ pub fn get_exteth_mac() -> [u8; 6] {
 }
 
 impl<'d, T: usart::BasicInstance, TxDma> super::PacketTracer for usart::UartTx<'d, T, TxDma> {
-	async fn trace_packet(&mut self, buf: &[u8]) {
+	fn trace_packet(&mut self, buf: &[u8]) {
 		debug_assert!(buf.len() <= u16::MAX as usize);
 		let len_bytes = (buf.len() as u16).to_be_bytes();
 		self.blocking_write(&len_bytes[..]).unwrap();

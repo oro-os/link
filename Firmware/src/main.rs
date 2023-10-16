@@ -16,16 +16,17 @@ mod uc;
 
 use core::cell::RefCell;
 #[cfg(not(test))]
-use core::panic::PanicInfo;
-use defmt::{debug, error, info};
+use core::{panic::PanicInfo, task::Context};
+use defmt::{debug, error, info, trace};
 use embassy_executor::Spawner;
-use embassy_net::Stack;
+use embassy_net::{
+	driver::{Capabilities, HardwareAddress, LinkState, RxToken, TxToken},
+	Ipv4Address, Ipv4Cidr, Stack, StaticConfigV4,
+};
 use embassy_time::{Duration, Timer};
-use smoltcp::wire::EthernetAddress;
+use heapless::Vec;
 use static_cell::make_static;
 use uc::{LogSeverity, Monitor as _, PowerState, Rng, Scene, SystemUnderTest};
-
-use crate::uc::RawEthernetDriver;
 
 #[defmt::panic_handler]
 fn defmt_panic() -> ! {
@@ -49,12 +50,17 @@ fn panic(panic: &PanicInfo<'_>) -> ! {
 	loop {}
 }
 
-type ExtEthDriver = impl uc::EthernetDriver;
-type SysEthDriver = impl uc::RawEthernetDriver;
+type ExtEthernetDriver = impl uc::EthernetDriver;
+type SysEthernetDriver = impl uc::EthernetDriver;
 type ImplDebugLed = impl uc::DebugLed;
 
 #[embassy_executor::task]
-async fn net_stack_task(stack: &'static Stack<ExtEthDriver>) {
+async fn net_ext_stack_task(stack: &'static Stack<ExtEthernetDriver>) {
+	stack.run().await;
+}
+
+#[embassy_executor::task]
+async fn net_sys_stack_task(stack: &'static Stack<SysEthernetDriver>) {
 	stack.run().await;
 }
 
@@ -70,16 +76,6 @@ async fn monitor_task() {
 #[embassy_executor::task]
 async fn debug_led_task(debug_led: ImplDebugLed) {
 	service::debug_led::run(debug_led).await
-}
-
-#[embassy_executor::task]
-async fn pxe_broker_task(token: service::pxe::BrokerToken, driver: SysEthDriver) {
-	service::pxe::run_broker(token, driver).await
-}
-
-#[embassy_executor::task]
-async fn pxe_icmpv6_task(token: service::pxe::Icmpv6Token, mac_addr: EthernetAddress) {
-	service::pxe::run_icmpv6(token, mac_addr).await
 }
 
 #[embassy_executor::main]
@@ -120,6 +116,8 @@ pub async fn main(spawner: Spawner) {
 		"booting oro link...".into(),
 	);
 
+	let syseth = EthernetCaptureDriver(syseth, RefCell::new(packet_tracer));
+
 	let extnet = {
 		let seed = rng.next_u64();
 		let config = embassy_net::Config::dhcpv4(Default::default());
@@ -132,17 +130,26 @@ pub async fn main(spawner: Spawner) {
 		))
 	};
 
-	let syseth = RawEthernetCaptureDriver(syseth, packet_tracer);
-	let pxe_tokens = service::pxe::init_pxe();
+	let sysnet = {
+		let seed = rng.next_u64();
+		let config = embassy_net::Config::ipv4_static(StaticConfigV4 {
+			address: Ipv4Cidr::new(Ipv4Address([10, 0, 0, 1]), 24),
+			gateway: None,
+			dns_servers: Vec::new(),
+		});
 
-	spawner.must_spawn(net_stack_task(extnet));
+		&*make_static!(Stack::new(
+			syseth,
+			config,
+			make_static!(embassy_net::StackResources::<16>::new()),
+			seed,
+		))
+	};
+
+	spawner.must_spawn(net_ext_stack_task(extnet));
+	spawner.must_spawn(net_sys_stack_task(sysnet));
 	spawner.must_spawn(monitor_task());
 	spawner.must_spawn(debug_led_task(debug_led));
-	spawner.must_spawn(pxe_icmpv6_task(
-		pxe_tokens.icmpv6_token,
-		EthernetAddress(syseth.address()),
-	));
-	spawner.must_spawn(pxe_broker_task(pxe_tokens.broker_token, syseth));
 
 	// XXX TODO DEBUG
 	debug!("booting the system");
@@ -155,33 +162,73 @@ pub async fn main(spawner: Spawner) {
 	}
 }
 
-struct RawEthernetCaptureDriver<D: uc::RawEthernetDriver, P: uc::PacketTracer>(D, P);
+struct EthernetCaptureDriver<D: uc::EthernetDriver, P: uc::PacketTracer>(D, RefCell<P>);
 
-impl<D: uc::RawEthernetDriver, P: uc::PacketTracer> uc::RawEthernetDriver
-	for RawEthernetCaptureDriver<D, P>
+struct EthernetCaptureTxToken<'a, T: TxToken, P: uc::PacketTracer>(T, &'a RefCell<P>);
+
+struct EthernetCaptureRxToken<'a, T: RxToken, P: uc::PacketTracer>(T, &'a RefCell<P>);
+
+impl<D: uc::EthernetDriver, P: uc::PacketTracer> embassy_net::driver::Driver
+	for EthernetCaptureDriver<D, P>
 {
-	#[inline]
-	fn address(&self) -> [u8; 6] {
-		self.0.address()
-	}
+	type RxToken<'a> = EthernetCaptureRxToken<'a, D::RxToken<'a>, P> where P: 'a, D: 'a;
+	type TxToken<'a> = EthernetCaptureTxToken<'a, D::TxToken<'a>, P> where P: 'a, D: 'a;
 
-	async fn try_recv(&mut self, buf: &mut [u8]) -> Option<usize> {
-		if let Some(count) = self.0.try_recv(buf).await {
-			let pkt = &buf[..count];
-			self.1.trace_packet(pkt).await;
-			Some(count)
+	fn receive(&mut self, cx: &mut Context<'_>) -> Option<(Self::RxToken<'_>, Self::TxToken<'_>)> {
+		let res = self.0.receive(cx);
+		if let Some((rxt, txt)) = res {
+			Some((
+				EthernetCaptureRxToken(rxt, &self.1),
+				EthernetCaptureTxToken(txt, &self.1),
+			))
 		} else {
 			None
 		}
 	}
 
-	async fn send(&mut self, buf: &[u8]) {
-		self.1.trace_packet(buf).await;
-		self.0.send(buf).await
+	fn transmit(&mut self, cx: &mut Context<'_>) -> Option<Self::TxToken<'_>> {
+		match self.0.transmit(cx) {
+			None => None,
+			Some(txt) => Some(EthernetCaptureTxToken(txt, &self.1)),
+		}
 	}
 
 	#[inline]
-	fn is_link_up(&mut self) -> bool {
-		self.0.is_link_up()
+	fn link_state(&mut self, cx: &mut Context<'_>) -> LinkState {
+		self.0.link_state(cx)
+	}
+
+	#[inline]
+	fn capabilities(&self) -> Capabilities {
+		self.0.capabilities()
+	}
+
+	#[inline]
+	fn hardware_address(&self) -> HardwareAddress {
+		self.0.hardware_address()
+	}
+}
+
+impl<'a, T: TxToken, P: uc::PacketTracer> TxToken for EthernetCaptureTxToken<'a, T, P> {
+	fn consume<R, F>(self, len: usize, f: F) -> R
+	where
+		F: FnOnce(&mut [u8]) -> R,
+	{
+		self.0.consume(len, |buf| {
+			self.1.borrow_mut().trace_packet(buf);
+			f(buf)
+		})
+	}
+}
+
+impl<'a, T: RxToken, P: uc::PacketTracer> RxToken for EthernetCaptureRxToken<'a, T, P> {
+	fn consume<R, F>(self, f: F) -> R
+	where
+		F: FnOnce(&mut [u8]) -> R,
+	{
+		self.0.consume(|buf| {
+			self.1.borrow_mut().trace_packet(buf);
+			f(buf)
+		})
 	}
 }

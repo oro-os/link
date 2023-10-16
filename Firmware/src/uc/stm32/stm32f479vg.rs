@@ -28,7 +28,7 @@ pub async fn init(
 	impl uc::SystemUnderTest,
 	impl uc::Monitor,
 	impl uc::EthernetDriver,
-	impl uc::RawEthernetDriver,
+	impl uc::EthernetDriver,
 	impl uc::WallClock,
 	impl uc::Rng,
 	impl uc::UartTx,

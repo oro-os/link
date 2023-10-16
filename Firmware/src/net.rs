@@ -159,3 +159,5 @@ pub async fn get_datetime<D: Driver + 'static>(stack: &Stack<D>) -> Option<DateT
 		None
 	}
 }
+
+pub async fn boot_pxe() {}
