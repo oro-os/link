@@ -1,3 +1,0 @@
-[alias]
-ci-lint = [ "fmt", "--", "--check", "--verbose" ]
-ci-clippy = [ "clippy", "--all", "--", "-D", "clippy::all" ]

@@ -192,5 +192,6 @@ lto = "fat"         # Perform LTO across all crates
 
 [workspace]
 members = [
-	"link-rpcapd"
+	"link-rpcapd",
+	"link-daemon"
 ]
