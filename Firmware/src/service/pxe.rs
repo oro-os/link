@@ -1,4 +1,4 @@
-use defmt::{debug, warn};
+use defmt::{trace, warn};
 use embassy_net::{
 	driver::Driver,
 	udp::{PacketMetadata, UdpSocket},
@@ -119,14 +119,14 @@ pub async fn run<D: Driver + 'static>(stack: &Stack<D>) -> ! {
 					continue;
 				}
 
-				debug!("pxe: got DHCP discovery");
+				trace!("pxe: got DHCP discovery");
 
 				let mut response = BASE_RESPONSE.clone();
 				response.secs = request.secs;
 				response.client_hardware_address = request.client_hardware_address;
 				response.transaction_id = request.transaction_id;
 
-				debug!("pxe: sending offer (len={})", response.buffer_len());
+				trace!("pxe: sending offer (len={})", response.buffer_len());
 
 				response
 			}
@@ -144,7 +144,7 @@ pub async fn run<D: Driver + 'static>(stack: &Stack<D>) -> ! {
 					}
 				}
 
-				debug!("pxe: got DHCP request");
+				trace!("pxe: got DHCP request");
 
 				let mut response = BASE_RESPONSE.clone();
 				response.message_type = DhcpMessageType::Ack;
@@ -152,7 +152,7 @@ pub async fn run<D: Driver + 'static>(stack: &Stack<D>) -> ! {
 				response.client_hardware_address = request.client_hardware_address;
 				response.transaction_id = request.transaction_id;
 
-				debug!("pxe: sending ack (len={})", response.buffer_len());
+				trace!("pxe: sending ack (len={})", response.buffer_len());
 
 				response
 			}
@@ -177,7 +177,7 @@ pub async fn run<D: Driver + 'static>(stack: &Stack<D>) -> ! {
 			.await
 		{
 			Ok(()) => {
-				debug!("pxe: sent DHCP response");
+				trace!("pxe: sent DHCP response");
 			}
 			Err(err) => {
 				warn!("pxe: failed to send DHCP response: {:?}", err);
