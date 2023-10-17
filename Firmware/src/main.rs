@@ -53,34 +53,38 @@ fn panic(panic: &PanicInfo<'_>) -> ! {
 type ExtEthernetDriver = impl uc::EthernetDriver;
 type SysEthernetDriver = impl uc::EthernetDriver;
 type ImplDebugLed = impl uc::DebugLed;
-
-#[embassy_executor::task]
-async fn net_ext_stack_task(stack: &'static Stack<ExtEthernetDriver>) {
-	stack.run().await;
-}
-
-#[embassy_executor::task]
-async fn net_sys_stack_task(stack: &'static Stack<SysEthernetDriver>) {
-	stack.run().await;
-}
-
 type Monitor = impl uc::Monitor;
 static mut MONITOR: Option<RefCell<Monitor>> = None;
 
 #[embassy_executor::task]
-async fn monitor_task() {
+async fn net_ext_stack_task(stack: &'static Stack<ExtEthernetDriver>) -> ! {
+	stack.run().await
+}
+
+#[embassy_executor::task]
+async fn net_sys_stack_task(stack: &'static Stack<SysEthernetDriver>) -> ! {
+	stack.run().await
+}
+
+#[embassy_executor::task]
+async fn monitor_task() -> ! {
 	let monitor = unsafe { MONITOR.as_ref().unwrap() };
 	service::monitor::run(monitor).await
 }
 
 #[embassy_executor::task]
-async fn debug_led_task(debug_led: ImplDebugLed) {
+async fn debug_led_task(debug_led: ImplDebugLed) -> ! {
 	service::debug_led::run(debug_led).await
 }
 
 #[embassy_executor::task]
-async fn pxe_task(stack: &'static Stack<SysEthernetDriver>) {
+async fn pxe_task(stack: &'static Stack<SysEthernetDriver>) -> ! {
 	service::pxe::run(stack).await
+}
+
+#[embassy_executor::task]
+async fn tftp_task(stack: &'static Stack<SysEthernetDriver>) -> ! {
+	service::tftp::run(stack).await
 }
 
 #[embassy_executor::main]
@@ -156,6 +160,7 @@ pub async fn main(spawner: Spawner) {
 	spawner.must_spawn(monitor_task());
 	spawner.must_spawn(debug_led_task(debug_led));
 	spawner.must_spawn(pxe_task(sysnet));
+	spawner.must_spawn(tftp_task(sysnet));
 
 	loop {
 		// XXX TODO DEBUG

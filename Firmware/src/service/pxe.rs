@@ -49,27 +49,26 @@ const BASE_RESPONSE: DhcpRepr = DhcpRepr {
 };
 
 pub async fn run<D: Driver + 'static>(stack: &Stack<D>) -> ! {
-	static mut DHCP_RX_META: [PacketMetadata; 16] = [PacketMetadata::EMPTY; 16];
-	static mut DHCP_TX_META: [PacketMetadata; 16] = [PacketMetadata::EMPTY; 16];
-	static mut DHCP_RX_BUFFER: [u8; 2048] = [0; 2048];
-	static mut DHCP_TX_BUFFER: [u8; 2048] = [0; 2048];
-
+	let mut rx_meta = [PacketMetadata::EMPTY; 16];
+	let mut tx_meta = [PacketMetadata::EMPTY; 16];
+	let mut rx_buffer = [0; 2048];
+	let mut tx_buffer = [0; 2048];
 	let mut buf = [0; 2048];
 
-	let mut dhcp_socket = unsafe {
+	let mut socket = unsafe {
 		UdpSocket::new(
 			stack,
-			&mut DHCP_RX_META,
-			&mut DHCP_RX_BUFFER,
-			&mut DHCP_TX_META,
-			&mut DHCP_TX_BUFFER,
+			&mut rx_meta,
+			&mut rx_buffer,
+			&mut tx_meta,
+			&mut tx_buffer,
 		)
 	};
 
-	dhcp_socket.bind(DHCP_SERVER_PORT).unwrap();
+	socket.bind(DHCP_SERVER_PORT).unwrap();
 
 	loop {
-		let (n, _) = dhcp_socket.recv_from(&mut buf).await.unwrap();
+		let (n, _) = socket.recv_from(&mut buf).await.unwrap();
 		let packet = if let Ok(packet) = DhcpPacket::new_checked(&buf[..n]) {
 			packet
 		} else {
@@ -167,7 +166,7 @@ pub async fn run<D: Driver + 'static>(stack: &Stack<D>) -> ! {
 		let mut response_packet = DhcpPacket::new_checked(&mut response_buf[..]).unwrap();
 		response.emit(&mut response_packet).unwrap();
 
-		match dhcp_socket
+		match socket
 			.send_to(
 				&response_buf[..response.buffer_len()],
 				IpEndpoint {
