@@ -78,6 +78,11 @@ async fn debug_led_task(debug_led: ImplDebugLed) {
 	service::debug_led::run(debug_led).await
 }
 
+#[embassy_executor::task]
+async fn pxe_task(stack: &'static Stack<SysEthernetDriver>) {
+	service::pxe::run(stack).await
+}
+
 #[embassy_executor::main]
 pub async fn main(spawner: Spawner) {
 	let (
@@ -150,18 +155,18 @@ pub async fn main(spawner: Spawner) {
 	spawner.must_spawn(net_sys_stack_task(sysnet));
 	spawner.must_spawn(monitor_task());
 	spawner.must_spawn(debug_led_task(debug_led));
+	spawner.must_spawn(pxe_task(sysnet));
 
 	loop {
 		// XXX TODO DEBUG
 		debug!("booting the system");
 		system.transition_power_state(PowerState::On);
 		system.power();
-		debug!("system booted; booting PXE...");
 
-		net::pxe::handshake_dhcp(sysnet).await;
+		debug!("system booted; waiting for PXE...");
+		Timer::after(Duration::from_millis(30000)).await;
 
 		debug!("pxe boot attempted; shutting down...");
-		Timer::after(Duration::from_millis(3000)).await;
 		system.transition_power_state(PowerState::Off);
 
 		debug!("shut down; restarting in 8s...");
