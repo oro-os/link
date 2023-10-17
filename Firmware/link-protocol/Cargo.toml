@@ -1,0 +1,9 @@
+[package]
+name = "link-protocol"
+description = "Protocol between the Oro Link and the daemon server"
+publish = false
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+defmt = { version = "0.3.5", default-features = false, optional = true }

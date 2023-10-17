@@ -54,6 +54,7 @@ type SysEthernetDriver = impl uc::EthernetDriver;
 type ImplDebugLed = impl uc::DebugLed;
 type ImplMonitor = impl uc::Monitor;
 type ImplWallClock = impl uc::WallClock;
+type ImplRng = impl uc::Rng;
 static mut MONITOR: Option<RefCell<ImplMonitor>> = None;
 
 #[embassy_executor::task]
@@ -90,6 +91,11 @@ async fn tftp_task(stack: &'static Stack<SysEthernetDriver>) -> ! {
 #[embassy_executor::task]
 async fn time_task(stack: &'static Stack<ExtEthernetDriver>, wall_clock: ImplWallClock) -> ! {
 	service::time::run(stack, wall_clock).await
+}
+
+#[embassy_executor::task]
+async fn daemon_task(stack: &'static Stack<ExtEthernetDriver>, rng: ImplRng) -> ! {
+	service::daemon::run(stack, rng).await
 }
 
 #[embassy_executor::main]
@@ -167,6 +173,7 @@ pub async fn main(spawner: Spawner) {
 	spawner.must_spawn(pxe_task(sysnet));
 	spawner.must_spawn(tftp_task(sysnet));
 	spawner.must_spawn(time_task(extnet, wall_clock));
+	spawner.must_spawn(daemon_task(extnet, rng));
 
 	loop {
 		// XXX TODO DEBUG

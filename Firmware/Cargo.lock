@@ -959,21 +959,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "embedded-msgpack"
-version = "0.3.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "940b95a2be9c025785d7c6262ac0d0ed38848eeaea126f1ee4d69ba6eaae1da9"
-dependencies = [
- "byteorder",
- "heapless",
- "num-traits",
- "paste",
- "serde",
- "serde_bytes",
- "zerocopy",
-]
-
-[[package]]
 name = "embedded-nal"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1456,11 +1441,18 @@ dependencies = [
  "async-std",
  "curve25519",
  "envconfig",
+ "link-protocol",
  "log",
  "rand",
- "rmp",
  "stderrlog",
  "systemd-journal-logger",
+]
+
+[[package]]
+name = "link-protocol"
+version = "0.1.0"
+dependencies = [
+ "defmt",
 ]
 
 [[package]]
@@ -1647,8 +1639,8 @@ dependencies = [
  "embedded-hal 1.0.0-rc.1",
  "embedded-hal-bus",
  "embedded-io-async",
- "embedded-msgpack",
  "heapless",
+ "link-protocol",
  "micromath",
  "oro-logo-rle",
  "perlin2d",
@@ -1683,12 +1675,6 @@ name = "parking"
 version = "2.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e52c774a4c39359c1d1c52e43f73dd91a75a614652c825408eec30c95a9b2067"
-
-[[package]]
-name = "paste"
-version = "1.0.14"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "de3145af08024dea9fa9914f381a17b8fc6034dfb00f3a84013f7ff43f29ed4c"
 
 [[package]]
 name = "perlin2d"
@@ -1883,17 +1869,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "rmp"
-version = "0.8.12"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f9860a6cc38ed1da53456442089b4dfa35e7cedaa326df63017af88385e6b20"
-dependencies = [
- "byteorder",
- "num-traits",
- "paste",
-]
-
-[[package]]
 name = "rustc_version"
 version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1984,15 +1959,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8e422a44e74ad4001bdc8eede9a4570ab52f71190e9c076d14369f38b9200537"
 dependencies = [
  "serde_derive",
-]
-
-[[package]]
-name = "serde_bytes"
-version = "0.11.12"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ab33ec92f677585af6d88c65593ae2375adde54efdbf16d597f2cbc7a6d368ff"
-dependencies = [
- "serde",
 ]
 
 [[package]]
@@ -2496,24 +2462,3 @@ name = "windows_x86_64_msvc"
 version = "0.48.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ed94fce61571a4006852b7389a063ab983c02eb1bb37b47f8272ce92d06d9538"
-
-[[package]]
-name = "zerocopy"
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5e59ec1d2457bd6c0dd89b50e7d9d6b0b647809bf3f0a59ac85557046950b7b2"
-dependencies = [
- "byteorder",
- "zerocopy-derive",
-]
-
-[[package]]
-name = "zerocopy-derive"
-version = "0.3.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6505e6815af7de1746a08f69c69606bb45695a17149517680f3b2149713b19a3"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 1.0.109",
-]

@@ -76,6 +76,7 @@ oro-logo-64 = ["oro-logo-rle/oro-logo-64"]
 oro-logo-32 = ["oro-logo-rle/oro-logo-32"]
 
 [dependencies]
+link-protocol = { path = "link-protocol" }
 cortex-m-rt = { version = "0.7.3", optional = true }
 defmt = { version = "0.3.5", default-features = false }
 embassy-net-enc28j60 = { version = "0.1.0", optional = true, git = "https://github.com/oro-os/embassy.git", features = ["defmt"] }
@@ -95,7 +96,6 @@ stm32-metapac = { version = "13.0.0", optional = true }
 sha2 = { version = "0.10.7", default-features = false, features = ["asm-aarch64"] }
 rand_core = "0.6.4"
 curve25519 = { git = "https://github.com/oro-os/curve25519-rs" }
-embedded-msgpack = { version = "0.3.1", features = ["bin32", "derive-debug", "heapless"] }
 embedded-io-async = "0.5.0"
 tftp = { git = "https://github.com/oro-os/tftp.git", default-features = false, features = ["defmt"] }
 
@@ -168,7 +168,8 @@ features = [
 	"socket-dhcpv4",
 	"socket-dns",
 	"socket-dns",
-	"iface-max-multicast-group-count-3"
+	"iface-max-multicast-group-count-3",
+	"dns-max-server-count-2"
 ]
 
 [build-dependencies]
@@ -193,5 +194,6 @@ lto = "fat"         # Perform LTO across all crates
 [workspace]
 members = [
 	"link-rpcapd",
-	"link-daemon"
+	"link-daemon",
+	"link-protocol"
 ]
