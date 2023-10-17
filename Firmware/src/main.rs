@@ -10,7 +10,6 @@
 
 mod chip;
 mod font;
-mod net;
 mod service;
 mod uc;
 
@@ -53,8 +52,9 @@ fn panic(panic: &PanicInfo<'_>) -> ! {
 type ExtEthernetDriver = impl uc::EthernetDriver;
 type SysEthernetDriver = impl uc::EthernetDriver;
 type ImplDebugLed = impl uc::DebugLed;
-type Monitor = impl uc::Monitor;
-static mut MONITOR: Option<RefCell<Monitor>> = None;
+type ImplMonitor = impl uc::Monitor;
+type ImplWallClock = impl uc::WallClock;
+static mut MONITOR: Option<RefCell<ImplMonitor>> = None;
 
 #[embassy_executor::task]
 async fn net_ext_stack_task(stack: &'static Stack<ExtEthernetDriver>) -> ! {
@@ -87,6 +87,11 @@ async fn tftp_task(stack: &'static Stack<SysEthernetDriver>) -> ! {
 	service::tftp::run(stack).await
 }
 
+#[embassy_executor::task]
+async fn time_task(stack: &'static Stack<ExtEthernetDriver>, wall_clock: ImplWallClock) -> ! {
+	service::time::run(stack, wall_clock).await
+}
+
 #[embassy_executor::main]
 pub async fn main(spawner: Spawner) {
 	let (
@@ -95,7 +100,7 @@ pub async fn main(spawner: Spawner) {
 		monitor,
 		exteth,
 		syseth,
-		_wall_clock,
+		wall_clock,
 		mut rng,
 		_syscom_tx,
 		_syscom_rx,
@@ -104,7 +109,7 @@ pub async fn main(spawner: Spawner) {
 
 	unsafe {
 		MONITOR = {
-			fn init(monitor: Monitor) -> Option<RefCell<Monitor>> {
+			fn init(monitor: ImplMonitor) -> Option<RefCell<ImplMonitor>> {
 				Some(RefCell::new(monitor))
 			}
 			init(monitor)
@@ -161,6 +166,7 @@ pub async fn main(spawner: Spawner) {
 	spawner.must_spawn(debug_led_task(debug_led));
 	spawner.must_spawn(pxe_task(sysnet));
 	spawner.must_spawn(tftp_task(sysnet));
+	spawner.must_spawn(time_task(extnet, wall_clock));
 
 	loop {
 		// XXX TODO DEBUG

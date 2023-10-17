@@ -1,5 +1,5 @@
-use crate::uc::DateTime;
-use defmt::{debug, error, warn};
+use crate::uc::{DateTime, WallClock};
+use defmt::{error, trace, warn};
 use embassy_net::{dns::DnsQueryType, driver::Driver, tcp::TcpSocket, Stack};
 use embassy_time::{Duration, Timer};
 
@@ -35,23 +35,42 @@ const _: () = {
 	impl_pan!(u16);
 };
 
-pub async fn get_datetime<D: Driver + 'static>(stack: &Stack<D>) -> Option<DateTime> {
-	debug!("getting unixtime from worldtimeapi.org");
+pub async fn run<D: Driver + 'static, W: WallClock>(stack: &Stack<D>, mut wall_clock: W) -> ! {
+	loop {
+		if !stack.is_link_up() {
+			warn!("time: link not up; will wait until it is before fetching");
+			stack.wait_config_up().await;
+		}
+
+		if let Some(new_time) = get_datetime(stack).await {
+			trace!("time: new time: {:?}", new_time);
+			wall_clock.set_datetime(new_time);
+			trace!("time: re-fetch scheduled for 30m");
+			Timer::after(Duration::from_secs(60 * 30)).await;
+		} else {
+			trace!("time: re-fetch attempt after failed fetch scheduled for 1m");
+			Timer::after(Duration::from_secs(60)).await;
+		}
+	}
+}
+
+async fn get_datetime<D: Driver + 'static>(stack: &Stack<D>) -> Option<DateTime> {
+	trace!("time: getting unixtime from worldtimeapi.org");
 
 	// Resolve the worldtimeapi host
 	let ip = match stack.dns_query("worldtimeapi.org", DnsQueryType::A).await {
 		Ok(ip_vec) if !ip_vec.is_empty() => ip_vec[0],
 		Ok(_) => {
-			error!("failed to resolve 'worldtimeapi.org': no A records returned");
+			error!("time: failed to resolve 'worldtimeapi.org': no A records returned");
 			return None;
 		}
 		Err(err) => {
-			error!("failed to resolve 'worldtimeapi.org': {:?}", err);
+			error!("time: failed to resolve 'worldtimeapi.org': {:?}", err);
 			return None;
 		}
 	};
 
-	debug!("worldtimeapi.org resolved: {:?}", ip);
+	trace!("time: worldtimeapi.org resolved: {:?}", ip);
 
 	let mut recv = [0u8; 2048];
 	let mut nread;
@@ -61,11 +80,11 @@ pub async fn get_datetime<D: Driver + 'static>(stack: &Stack<D>) -> Option<DateT
 		let mut sock = TcpSocket::new(stack, &mut rx_buf, &mut tx_buf);
 
 		if let Err(err) = sock.connect((ip, 80)).await {
-			error!("failed to connect to worldtimeapi.org: {:?}", err);
+			error!("time: failed to connect to worldtimeapi.org: {:?}", err);
 			return None;
 		}
 
-		debug!("connected to worldtimeapi.org");
+		trace!("time: connected to worldtimeapi.org");
 
 		let res = sock
 			.write(
@@ -73,32 +92,38 @@ pub async fn get_datetime<D: Driver + 'static>(stack: &Stack<D>) -> Option<DateT
 			)
 			.await;
 		if let Err(err) = res {
-			error!("failed to send request to worldtimeapi.org: {:?}", err);
+			error!(
+				"time: failed to send request to worldtimeapi.org: {:?}",
+				err
+			);
 			return None;
 		}
 
-		debug!("sent request to worldtimeapi.org");
+		trace!("time: sent request to worldtimeapi.org");
 
 		nread = match sock.read(&mut recv).await {
 			Ok(nread) => nread,
 			Err(err) => {
-				error!("failed to read response from worldtimeapi.org: {:?}", err);
+				error!(
+					"time: failed to read response from worldtimeapi.org: {:?}",
+					err
+				);
 				return None;
 			}
 		};
 
 		if nread == 0 {
-			warn!("got empty response from worldtimeapi.org; retrying...");
+			warn!("time: got empty response from worldtimeapi.org; retrying...");
 			Timer::after(Duration::from_millis(500)).await;
 			continue;
 		}
 
 		if nread == 0 {
-			error!("failed to read response from worldtimeapi.org: empty response");
+			error!("time: failed to read response from worldtimeapi.org: empty response");
 			return None;
 		}
 
-		debug!("read {} bytes from worldtimeapi.org", nread);
+		trace!("time: read {} bytes from worldtimeapi.org", nread);
 		break;
 	}
 
