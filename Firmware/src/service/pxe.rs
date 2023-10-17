@@ -55,15 +55,13 @@ pub async fn run<D: Driver + 'static>(stack: &Stack<D>) -> ! {
 	let mut tx_buffer = [0; 2048];
 	let mut buf = [0; 2048];
 
-	let mut socket = unsafe {
-		UdpSocket::new(
-			stack,
-			&mut rx_meta,
-			&mut rx_buffer,
-			&mut tx_meta,
-			&mut tx_buffer,
-		)
-	};
+	let mut socket = UdpSocket::new(
+		stack,
+		&mut rx_meta,
+		&mut rx_buffer,
+		&mut tx_meta,
+		&mut tx_buffer,
+	);
 
 	socket.bind(DHCP_SERVER_PORT).unwrap();
 
