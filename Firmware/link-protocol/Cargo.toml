@@ -5,5 +5,9 @@ publish = false
 version = "0.1.0"
 edition = "2021"
 
+[features]
+defmt = ["dep:defmt", "link-protocol-binser/defmt"]
+
 [dependencies]
+link-protocol-binser = { path = "../link-protocol-binser" }
 defmt = { version = "0.3.5", default-features = false, optional = true }

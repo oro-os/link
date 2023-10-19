@@ -195,16 +195,24 @@ impl super::WallClock for embassy_stm32::rtc::Rtc {
 	}
 }
 
-pub fn get_exteth_mac() -> [u8; 6] {
-	use sha2::Digest;
+pub struct StmUniqueId;
 
-	let mut sha256 = sha2::Sha256::new();
+impl super::UniqueId for StmUniqueId {
+	fn unique_id(&self) -> [u8; 32] {
+		use sha2::Digest;
 
-	for i in 0..3 {
-		sha256.update(stm32_metapac::UID.uid(i).read().to_be_bytes());
+		let mut sha256 = sha2::Sha256::new();
+
+		for i in 0..3 {
+			sha256.update(stm32_metapac::UID.uid(i).read().to_be_bytes());
+		}
+
+		sha256.finalize().into()
 	}
+}
 
-	let hash = sha256.finalize();
+pub fn get_exteth_mac() -> [u8; 6] {
+	let hash = <StmUniqueId as super::UniqueId>::unique_id(&StmUniqueId);
 
 	let mut macaddr = [0u8; 6];
 	macaddr[0] = b'.';

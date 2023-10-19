@@ -7,7 +7,11 @@ use embedded_io_async::{Read, Write};
 
 const ORO_CICD_PORT: u16 = 1337;
 
-pub async fn run<D: Driver + 'static, R: uc::Rng>(stack: &Stack<D>, mut rng: R) -> ! {
+pub async fn run<D: Driver + 'static, R: uc::Rng, U: uc::UniqueId>(
+	stack: &Stack<D>,
+	mut rng: R,
+	uid: &U,
+) -> ! {
 	if !stack.is_link_up() {
 		warn!("net: link not up; will wait until it is before installing DNS server");
 		stack.wait_config_up().await;

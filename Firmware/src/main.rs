@@ -25,7 +25,7 @@ use embassy_net::{
 use embassy_time::{Duration, Timer};
 use heapless::Vec;
 use static_cell::make_static;
-use uc::{LogSeverity, Monitor as _, PowerState, Rng, Scene, SystemUnderTest};
+use uc::{LogSeverity, Monitor as _, PowerState, Rng, Scene, SystemUnderTest, UniqueId};
 
 #[defmt::panic_handler]
 fn defmt_panic() -> ! {
@@ -36,15 +36,18 @@ fn defmt_panic() -> ! {
 #[cfg(not(test))]
 #[panic_handler]
 fn panic(panic: &PanicInfo<'_>) -> ! {
-	error!(
-		"PANIC @ {}:{}: {}",
-		panic.location().map(|l| l.file()).unwrap_or("?"),
-		panic.location().map(|l| l.line()).unwrap_or(0),
-		panic
-			.payload()
-			.downcast_ref::<&str>()
-			.unwrap_or(&"<unknown>")
-	);
+	let line = panic.location().map(|l| l.file()).unwrap_or("?");
+	let col = panic.location().map(|l| l.line()).unwrap_or(0);
+
+	if let Some(s) = panic.payload().downcast_ref::<&str>() {
+		error!("PANIC @ {}:{}: {}", line, col, s);
+	} else if let Some(s) = panic.payload().downcast_ref::<&'static str>() {
+		error!("PANIC @ {}:{}: {}", line, col, s);
+	} else {
+		error!("PANIC @ {}:{}: <unknown>", line, col);
+	}
+
+	// TODO cortex_m::SCB::sys_reset();
 	#[allow(clippy::empty_loop)]
 	loop {}
 }
@@ -55,6 +58,7 @@ type ImplDebugLed = impl uc::DebugLed;
 type ImplMonitor = impl uc::Monitor;
 type ImplWallClock = impl uc::WallClock;
 type ImplRng = impl uc::Rng;
+type ImplUniqueId = impl uc::UniqueId;
 static mut MONITOR: Option<RefCell<ImplMonitor>> = None;
 
 #[embassy_executor::task]
@@ -94,8 +98,12 @@ async fn time_task(stack: &'static Stack<ExtEthernetDriver>, wall_clock: ImplWal
 }
 
 #[embassy_executor::task]
-async fn daemon_task(stack: &'static Stack<ExtEthernetDriver>, rng: ImplRng) -> ! {
-	service::daemon::run(stack, rng).await
+async fn daemon_task(
+	stack: &'static Stack<ExtEthernetDriver>,
+	rng: ImplRng,
+	uid: ImplUniqueId,
+) -> ! {
+	service::daemon::run(stack, rng, &uid).await
 }
 
 #[embassy_executor::main]
@@ -111,6 +119,7 @@ pub async fn main(spawner: Spawner) {
 		_syscom_tx,
 		_syscom_rx,
 		packet_tracer,
+		uid,
 	) = uc::init(&spawner).await;
 
 	unsafe {
@@ -126,6 +135,8 @@ pub async fn main(spawner: Spawner) {
 		"Oro Link x86 booting (version {})",
 		env!("CARGO_PKG_VERSION")
 	);
+
+	info!("Link UID: {:?}", uid.unique_id());
 
 	unsafe {
 		MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
@@ -166,6 +177,8 @@ pub async fn main(spawner: Spawner) {
 		))
 	};
 
+	let link_uid = uid.unique_id();
+
 	spawner.must_spawn(net_ext_stack_task(extnet));
 	spawner.must_spawn(net_sys_stack_task(sysnet));
 	spawner.must_spawn(monitor_task());
@@ -173,9 +186,40 @@ pub async fn main(spawner: Spawner) {
 	spawner.must_spawn(pxe_task(sysnet));
 	spawner.must_spawn(tftp_task(sysnet));
 	spawner.must_spawn(time_task(extnet, wall_clock));
-	spawner.must_spawn(daemon_task(extnet, rng));
+	spawner.must_spawn(daemon_task(extnet, rng, uid));
 
 	loop {
+		// XXX DEBUG
+		{
+			use ::link_protocol::{Deserialize, Serialize};
+			let mut buf = [0u8; 2048];
+			//let src = ::link_protocol::LinkMessage::LinkOnline {
+			//	uid: link_uid,
+			//	version: env!("CARGO_PKG_VERSION"),
+			//};
+			let src = ::link_protocol::LinkPacket::BeginTestSession {
+				total_tests: 1337,
+				author: "Josh Junon",
+				title: "My little test",
+				ref_id: "1234567890abcdef",
+			};
+			info!("SRC = {:#?}", src);
+			match src.serialize_into(&mut buf[..]) {
+				Ok(len) => {
+					info!("OK, serialized source: {}: {:?}", len, &buf[..len]);
+					match ::link_protocol::LinkPacket::deserialize(&buf[..len]) {
+						Ok(dst) => {
+							info!("OK, deserialized = {:#?}", dst);
+						}
+						Err(err) => {
+							error!("failed to deserialize dst: {:?}", err);
+						}
+					}
+				}
+				Err(err) => error!("failed to serialize src: {:?}", err),
+			}
+		}
+
 		// XXX TODO DEBUG
 		debug!("booting the system");
 		system.transition_power_state(PowerState::On);

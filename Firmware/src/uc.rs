@@ -280,6 +280,13 @@ pub trait PacketTracer {
 	fn trace_packet(&mut self, buf: &[u8]);
 }
 
+/// Retrieves the device's UID
+pub trait UniqueId {
+	/// Returns the unique ID from the device. Should be derived from a
+	/// SHA256 hash digest.
+	fn unique_id(&self) -> [u8; 32];
+}
+
 // Validates the contract of the init() function.
 #[allow(unused)]
 #[doc(hidden)]
@@ -315,6 +322,7 @@ mod _check_init {
 		USARTTX: UartTx,
 		USARTRX: UartRx,
 		PKTTRACER: PacketTracer,
+		UUID: UniqueId,
 	> Init
 		for (
 			DBG,
@@ -327,6 +335,7 @@ mod _check_init {
 			USARTTX,
 			USARTRX,
 			PKTTRACER,
+			UUID,
 		)
 	{
 	}

@@ -34,6 +34,7 @@ pub async fn init(
 	impl uc::UartTx,
 	impl uc::UartRx,
 	impl uc::PacketTracer,
+	impl uc::UniqueId,
 ) {
 	let mut config = Config::default();
 	config.rcc.rtc = Some(RtcClockSource::LSI);
@@ -260,8 +261,12 @@ pub async fn init(
 
 	info!("... aux com INIT");
 
+	let uid = super::StmUniqueId;
+
+	info!("... uid INIT");
+
 	(
 		debug_led, system, monitor, exteth, syseth, wall_clock, rng_gen, syscom_tx, syscom_rx,
-		auxcom_tx,
+		auxcom_tx, uid,
 	)
 }
