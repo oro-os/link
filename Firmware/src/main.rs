@@ -41,8 +41,6 @@ fn panic(panic: &PanicInfo<'_>) -> ! {
 
 	if let Some(s) = panic.payload().downcast_ref::<&str>() {
 		error!("PANIC @ {}:{}: {}", line, col, s);
-	} else if let Some(s) = panic.payload().downcast_ref::<&'static str>() {
-		error!("PANIC @ {}:{}: {}", line, col, s);
 	} else {
 		error!("PANIC @ {}:{}: <unknown>", line, col);
 	}
