@@ -189,23 +189,22 @@ pub async fn main(spawner: Spawner) {
 	loop {
 		// XXX DEBUG
 		{
+			let mut buffer: Vec<u8, 2048> = Vec::new();
 			use ::link_protocol::{Deserialize, Serialize};
-			let mut buf = [0u8; 2048];
-			//let src = ::link_protocol::LinkMessage::LinkOnline {
-			//	uid: link_uid,
-			//	version: env!("CARGO_PKG_VERSION"),
-			//};
-			let src = ::link_protocol::LinkPacket::BeginTestSession {
-				total_tests: 1337,
-				author: "Josh Junon",
-				title: "My little test",
-				ref_id: "1234567890abcdef",
+			let src = ::link_protocol::LinkPacket::LinkOnline {
+				uid: link_uid,
+				version: env!("CARGO_PKG_VERSION").into(),
 			};
 			info!("SRC = {:#?}", src);
-			match src.serialize_into(&mut buf[..]) {
-				Ok(len) => {
-					info!("OK, serialized source: {}: {:?}", len, &buf[..len]);
-					match ::link_protocol::LinkPacket::deserialize(&buf[..len]) {
+			let r = {
+				let mut writer = VecWriter::new(&mut buffer);
+				src.serialize(&mut writer).await
+			};
+			match r {
+				Ok(()) => {
+					info!("OK, serialized source: {:?}", &buffer[..]);
+					let mut reader = VecReader::new(&buffer);
+					match ::link_protocol::LinkPacket::deserialize(&mut reader).await {
 						Ok(dst) => {
 							info!("OK, deserialized = {:#?}", dst);
 						}
@@ -303,5 +302,55 @@ impl<'a, T: RxToken, P: uc::PacketTracer> RxToken for EthernetCaptureRxToken<'a,
 			self.1.borrow_mut().trace_packet(buf);
 			f(buf)
 		})
+	}
+}
+
+/* XXX just some test code */
+pub struct VecWriter<'a, const SZ: usize> {
+	buffer: &'a mut Vec<u8, SZ>,
+}
+
+impl<'a, const SZ: usize> VecWriter<'a, SZ> {
+	pub fn new(buffer: &'a mut Vec<u8, SZ>) -> Self {
+		VecWriter { buffer }
+	}
+}
+
+impl<'a, const SZ: usize> link_protocol::Write for VecWriter<'a, SZ> {
+	async fn write(&mut self, buf: &[u8]) -> Result<(), link_protocol::Error> {
+		if self.buffer.len() + buf.len() <= SZ {
+			self.buffer
+				.extend_from_slice(buf)
+				.map_err(|_| link_protocol::Error::Eof)?;
+			Ok(())
+		} else {
+			Err(link_protocol::Error::Eof)
+		}
+	}
+}
+
+pub struct VecReader<'a, const SZ: usize> {
+	buffer: &'a Vec<u8, SZ>,
+	pos: usize,
+}
+
+impl<'a, const SZ: usize> VecReader<'a, SZ> {
+	pub fn new(buffer: &'a Vec<u8, SZ>) -> Self {
+		VecReader { buffer, pos: 0 }
+	}
+}
+
+impl<'a, const SZ: usize> link_protocol::Read for VecReader<'a, SZ> {
+	async fn read(&mut self, buf: &mut [u8]) -> Result<(), link_protocol::Error> {
+		if self.pos < self.buffer.len() {
+			let available = self.buffer.len() - self.pos;
+			let to_copy = core::cmp::min(available, buf.len());
+			let src_slice = &self.buffer[self.pos..self.pos + to_copy];
+			buf[0..to_copy].copy_from_slice(src_slice);
+			self.pos += to_copy;
+			Ok(())
+		} else {
+			Err(link_protocol::Error::Eof)
+		}
 	}
 }

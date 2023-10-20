@@ -1,4 +1,5 @@
 #![no_std]
+#![feature(async_fn_in_trait)]
 
 #[cfg(feature = "defmt")]
 use defmt::Format;
@@ -16,205 +17,185 @@ pub enum Error {
 	Eof,
 }
 
-pub trait Serialize {
-	fn buffer_length(&self) -> Result<usize, Error>;
-	fn serialize_into(&self, buf: &mut [u8]) -> Result<usize, Error>;
+pub trait Write {
+	/// Write the entirety of `buf` to the stream.
+	async fn write(&mut self, buf: &[u8]) -> Result<(), Error>;
 }
 
-pub trait Deserialize<'a>
+pub trait Read {
+	/// Read exactly `buf.len()` bytes into `buf`.
+	async fn read(&mut self, buf: &mut [u8]) -> Result<(), Error>;
+}
+
+pub trait Serialize {
+	async fn serialize<W: Write>(&self, writer: &mut W) -> Result<(), Error>;
+}
+
+pub trait Deserialize
 where
 	Self: Sized,
 {
-	fn deserialize(buf: &'a [u8]) -> Result<(Self, usize), Error>;
+	async fn deserialize<R: Read>(reader: &mut R) -> Result<Self, Error>;
 }
 
 impl Serialize for u8 {
-	fn buffer_length(&self) -> Result<usize, Error> {
-		Ok(1)
-	}
-
-	fn serialize_into(&self, buf: &mut [u8]) -> Result<usize, Error> {
-		*buf.first_mut().ok_or(Error::Eof)? = *self;
-		self.buffer_length()
+	async fn serialize<W: Write>(&self, writer: &mut W) -> Result<(), Error> {
+		writer.write(&[*self]).await
 	}
 }
 
-impl Deserialize<'_> for u8 {
-	fn deserialize(buf: &[u8]) -> Result<(Self, usize), Error> {
-		Ok((*buf.first().ok_or(Error::Eof)?, 1))
+impl Deserialize for u8 {
+	async fn deserialize<R: Read>(reader: &mut R) -> Result<Self, Error> {
+		let mut buf = [0u8; 1];
+		reader.read(&mut buf).await?;
+		Ok(buf[0])
 	}
 }
 
 impl Serialize for u16 {
-	fn buffer_length(&self) -> Result<usize, Error> {
-		Ok(2)
-	}
-
-	fn serialize_into(&self, buf: &mut [u8]) -> Result<usize, Error> {
-		buf.get_mut(..2)
-			.ok_or(Error::Eof)?
-			.copy_from_slice(&self.to_be_bytes());
-		self.buffer_length()
+	async fn serialize<W: Write>(&self, writer: &mut W) -> Result<(), Error> {
+		let bytes = self.to_be_bytes();
+		writer.write(&bytes).await
 	}
 }
 
-impl Deserialize<'_> for u16 {
-	fn deserialize(buf: &[u8]) -> Result<(Self, usize), Error> {
-		let v = u16::from_be_bytes(buf.get(..2).ok_or(Error::Eof)?.try_into().unwrap());
-		Ok((v, 2))
+impl Deserialize for u16 {
+	async fn deserialize<R: Read>(reader: &mut R) -> Result<Self, Error> {
+		let mut buf = [0u8; 2];
+		reader.read(&mut buf).await?;
+		let value = u16::from_be_bytes(buf);
+		Ok(value)
 	}
 }
 
 impl Serialize for u32 {
-	fn buffer_length(&self) -> Result<usize, Error> {
-		Ok(4)
-	}
-
-	fn serialize_into(&self, buf: &mut [u8]) -> Result<usize, Error> {
-		buf.get_mut(..4)
-			.ok_or(Error::Eof)?
-			.copy_from_slice(&self.to_be_bytes());
-		self.buffer_length()
+	async fn serialize<W: Write>(&self, writer: &mut W) -> Result<(), Error> {
+		let bytes = self.to_be_bytes();
+		writer.write(&bytes).await
 	}
 }
 
-impl Deserialize<'_> for u32 {
-	fn deserialize(buf: &[u8]) -> Result<(Self, usize), Error> {
-		let v = u32::from_be_bytes(buf.get(..4).ok_or(Error::Eof)?.try_into().unwrap());
-		Ok((v, 4))
+impl Deserialize for u32 {
+	async fn deserialize<R: Read>(reader: &mut R) -> Result<Self, Error> {
+		let mut buf = [0u8; 4];
+		reader.read(&mut buf).await?;
+		let value = u32::from_be_bytes(buf);
+		Ok(value)
 	}
 }
 
 impl Serialize for u64 {
-	fn buffer_length(&self) -> Result<usize, Error> {
-		Ok(8)
-	}
-
-	fn serialize_into(&self, buf: &mut [u8]) -> Result<usize, Error> {
-		buf.get_mut(..8)
-			.ok_or(Error::Eof)?
-			.copy_from_slice(&self.to_be_bytes());
-		self.buffer_length()
+	async fn serialize<W: Write>(&self, writer: &mut W) -> Result<(), Error> {
+		let bytes = self.to_be_bytes();
+		writer.write(&bytes).await
 	}
 }
 
-impl Deserialize<'_> for u64 {
-	fn deserialize(buf: &[u8]) -> Result<(Self, usize), Error> {
-		let v = u64::from_be_bytes(buf.get(..8).ok_or(Error::Eof)?.try_into().unwrap());
-		Ok((v, 8))
+impl Deserialize for u64 {
+	async fn deserialize<R: Read>(reader: &mut R) -> Result<Self, Error> {
+		let mut buf = [0u8; 8];
+		reader.read(&mut buf).await?;
+		let value = u64::from_be_bytes(buf);
+		Ok(value)
 	}
 }
 
 impl Serialize for f32 {
-	fn buffer_length(&self) -> Result<usize, Error> {
-		Ok(4)
-	}
-
-	fn serialize_into(&self, buf: &mut [u8]) -> Result<usize, Error> {
-		buf.get_mut(..4)
-			.ok_or(Error::Eof)?
-			.copy_from_slice(&self.to_be_bytes());
-		self.buffer_length()
+	async fn serialize<W: Write>(&self, writer: &mut W) -> Result<(), Error> {
+		let bytes = self.to_be_bytes();
+		writer.write(&bytes).await
 	}
 }
 
-impl Deserialize<'_> for f32 {
-	fn deserialize(buf: &[u8]) -> Result<(Self, usize), Error> {
-		let v = f32::from_be_bytes(buf.get(..4).ok_or(Error::Eof)?.try_into().unwrap());
-		Ok((v, 4))
+impl Deserialize for f32 {
+	async fn deserialize<R: Read>(reader: &mut R) -> Result<Self, Error> {
+		let mut buf = [0u8; 4];
+		reader.read(&mut buf).await?;
+		let value = f32::from_be_bytes(buf);
+		Ok(value)
 	}
 }
 
 impl Serialize for f64 {
-	fn buffer_length(&self) -> Result<usize, Error> {
-		Ok(8)
-	}
-
-	fn serialize_into(&self, buf: &mut [u8]) -> Result<usize, Error> {
-		buf.get_mut(..8)
-			.ok_or(Error::Eof)?
-			.copy_from_slice(&self.to_be_bytes());
-		self.buffer_length()
+	async fn serialize<W: Write>(&self, writer: &mut W) -> Result<(), Error> {
+		let bytes = self.to_be_bytes();
+		writer.write(&bytes).await
 	}
 }
 
-impl Deserialize<'_> for f64 {
-	fn deserialize(buf: &[u8]) -> Result<(Self, usize), Error> {
-		let v = f64::from_be_bytes(buf.get(..8).ok_or(Error::Eof)?.try_into().unwrap());
-		Ok((v, 8))
-	}
-}
-
-impl Serialize for &str {
-	fn buffer_length(&self) -> Result<usize, Error> {
-		Serialize::buffer_length(&self.as_bytes())
-	}
-
-	fn serialize_into(&self, buf: &mut [u8]) -> Result<usize, Error> {
-		Serialize::serialize_into(&self.as_bytes(), buf)
-	}
-}
-
-impl<'a> Deserialize<'a> for &'a str {
-	fn deserialize(buf: &'a [u8]) -> Result<(Self, usize), Error> {
-		let len = buf.first().ok_or(Error::Eof)?;
-		let v = core::str::from_utf8(buf.get(1..(len + 1) as usize).ok_or(Error::Eof)?)
-			.map_err(|_| Error::MalformedString)?;
-		Ok((v, (len + 1) as usize))
-	}
-}
-
-impl Serialize for &[u8] {
-	fn buffer_length(&self) -> Result<usize, Error> {
-		if self.len() > u8::MAX as usize {
-			Err(Error::StringTooLong)
-		} else {
-			Ok(1 + self.len())
-		}
-	}
-
-	fn serialize_into(&self, buf: &mut [u8]) -> Result<usize, Error> {
-		let len = self.len();
-
-		if len > u8::MAX as usize {
-			Err(Error::StringTooLong)
-		} else {
-			*buf.first_mut().ok_or(Error::Eof)? = len as u8;
-			buf.get_mut(1..len + 1)
-				.ok_or(Error::Eof)?
-				.copy_from_slice(self);
-			Ok(len + 1)
-		}
-	}
-}
-
-impl<'a> Deserialize<'a> for &'a [u8] {
-	fn deserialize(buf: &'a [u8]) -> Result<(Self, usize), Error> {
-		let len = buf.first().ok_or(Error::Eof)?;
-		Ok((
-			buf.get(1..(len + 1) as usize).ok_or(Error::Eof)?,
-			(len + 1) as usize,
-		))
+impl Deserialize for f64 {
+	async fn deserialize<R: Read>(reader: &mut R) -> Result<Self, Error> {
+		let mut buf = [0u8; 8];
+		reader.read(&mut buf).await?;
+		let value = f64::from_be_bytes(buf);
+		Ok(value)
 	}
 }
 
 impl<const SZ: usize> Serialize for [u8; SZ] {
-	fn buffer_length(&self) -> Result<usize, Error> {
-		Ok(SZ)
-	}
-
-	fn serialize_into(&self, buf: &mut [u8]) -> Result<usize, Error> {
-		buf.get_mut(..SZ)
-			.ok_or(Error::Eof)?
-			.copy_from_slice(&self[..]);
-		Ok(SZ)
+	async fn serialize<W: Write>(&self, writer: &mut W) -> Result<(), Error> {
+		writer.write(&self[..]).await?;
+		Ok(())
 	}
 }
 
-impl<'a, const SZ: usize> Deserialize<'a> for [u8; SZ] {
-	fn deserialize(buf: &'a [u8]) -> Result<(Self, usize), Error> {
+impl<const SZ: usize> Deserialize for [u8; SZ] {
+	async fn deserialize<R: Read>(reader: &mut R) -> Result<Self, Error> {
 		let mut r = [0u8; SZ];
-		r.copy_from_slice(buf.get(..SZ).ok_or(Error::Eof)?);
-		Ok((r, SZ))
+		reader.read(&mut r).await?;
+		Ok(r)
+	}
+}
+
+#[cfg(feature = "heapless")]
+const fn num_bytes_for_size<const SZ: usize>() -> usize {
+	const U8_MAX: usize = u8::MAX as usize;
+	const U8_UPPER: usize = (u8::MAX as usize) + 1;
+	const U16_MAX: usize = u16::MAX as usize;
+
+	match SZ {
+		0..=U8_MAX => 1,
+		U8_UPPER..=U16_MAX => 2,
+		_ => 4,
+	}
+}
+
+#[cfg(feature = "heapless")]
+impl<const SZ: usize> Serialize for heapless::String<SZ> {
+	async fn serialize<W: Write>(&self, writer: &mut W) -> Result<(), Error> {
+		let bytes = self.as_bytes();
+		let len = bytes.len();
+
+		debug_assert!(len <= SZ);
+		debug_assert!(len <= u32::MAX as usize);
+
+		let num_bytes = num_bytes_for_size::<SZ>();
+
+		let len_bytes = (len as u32).to_be_bytes();
+
+		writer.write(&len_bytes[(4 - num_bytes)..]).await?;
+		writer.write(bytes).await
+	}
+}
+
+#[cfg(feature = "heapless")]
+impl<const SZ: usize> Deserialize for heapless::String<SZ> {
+	async fn deserialize<R: Read>(reader: &mut R) -> Result<Self, Error> {
+		let num_bytes = num_bytes_for_size::<SZ>();
+
+		let mut len_bytes = [0u8; 4];
+		reader.read(&mut len_bytes[4 - num_bytes..]).await?;
+
+		let len = u32::from_be_bytes(len_bytes) as usize;
+
+		if len > SZ {
+			return Err(Error::StringTooLong);
+		}
+
+		let mut buffer = [0u8; SZ];
+		reader.read(&mut buffer[..len]).await?;
+
+		let utf8 = core::str::from_utf8(&buffer[0..len]).map_err(|_| Error::MalformedString)?;
+		Ok(heapless::String::from(utf8))
 	}
 }

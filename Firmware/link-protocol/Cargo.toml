@@ -9,5 +9,6 @@ edition = "2021"
 defmt = ["dep:defmt", "link-protocol-binser/defmt"]
 
 [dependencies]
-link-protocol-binser = { path = "../link-protocol-binser" }
+link-protocol-binser = { path = "../link-protocol-binser", features = ["heapless"] }
 defmt = { version = "0.3.5", default-features = false, optional = true }
+heapless = "0.7.16"

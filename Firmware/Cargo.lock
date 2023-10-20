@@ -1441,6 +1441,7 @@ dependencies = [
  "async-std",
  "curve25519",
  "envconfig",
+ "heapless",
  "link-protocol",
  "log",
  "rand",
@@ -1453,6 +1454,7 @@ name = "link-protocol"
 version = "0.1.0"
 dependencies = [
  "defmt",
+ "heapless",
  "link-protocol-binser",
 ]
 
@@ -1461,6 +1463,7 @@ name = "link-protocol-binser"
 version = "0.1.0"
 dependencies = [
  "defmt",
+ "heapless",
  "link-protocol-binser-proc",
 ]
 

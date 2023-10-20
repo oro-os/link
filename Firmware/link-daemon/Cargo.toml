@@ -19,6 +19,7 @@ envconfig = "0.10.0"
 log = "0.4.20"
 rand = "0.8.5"
 stderrlog = "0.5.4"
+heapless = "0.7.16"
 
 [target.'cfg(target_os = "linux")'.dependencies]
 systemd-journal-logger = "1.0.0"

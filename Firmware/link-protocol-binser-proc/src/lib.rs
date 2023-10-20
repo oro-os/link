@@ -68,14 +68,12 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 
 	let mut known_discriminants = HashMap::<u8, Ident>::new();
 
-	let mut buffer_length_matches = Vec::new();
 	let mut serialize_matches = Vec::new();
 	let mut deserialize_matches = Vec::new();
 
 	for variant in ast.variants {
 		let ident = variant.ident;
 
-		let mut length_statements = Vec::new();
 		let mut serialize_statements = Vec::new();
 
 		let mut proto = None;
@@ -130,12 +128,8 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 
 		known_discriminants.insert(discriminant, ident.clone());
 
-		length_statements.push(quote! {
-			let mut total_length = 1;
-		});
-
 		serialize_statements.push(quote! {
-			let mut total_length = <u8 as ::link_protocol_binser::Serialize>::serialize_into(&#discriminant, buf)?;
+			<u8 as ::link_protocol_binser::Serialize>::serialize(&#discriminant, writer).await?;
 		});
 
 		let (destructure, construction) = match variant.fields {
@@ -149,20 +143,12 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 
 					field_idents.push(ident.clone());
 
-					length_statements.push(quote! {
-						total_length += ::link_protocol_binser::Serialize::buffer_length(#ident)?;
-					});
-
-					serialize_statements.push(quote!{
-						total_length += ::link_protocol_binser::Serialize::serialize_into(#ident, &mut buf[total_length..])?;
+					serialize_statements.push(quote! {
+						::link_protocol_binser::Serialize::serialize(#ident, writer).await?;
 					});
 
 					field_inits.push(quote! {
-						#ident : {
-							let (v, len) = <(#fieldtype) as ::link_protocol_binser::Deserialize>::deserialize(&buf[total_length..])?;
-							total_length += len;
-							v
-						},
+						#ident : <(#fieldtype) as ::link_protocol_binser::Deserialize>::deserialize(reader).await?,
 					});
 				}
 
@@ -188,20 +174,12 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 
 					field_idents.push(ident.clone());
 
-					length_statements.push(quote! {
-						total_length += ::link_protocol_binser::Serialize::buffer_length(#ident)?;
-					});
-
-					serialize_statements.push(quote!{
-						total_length += ::link_protocol_binser::Serialize::serialize_into(#ident, &mut buf[total_length..])?;
+					serialize_statements.push(quote! {
+						::link_protocol_binser::Serialize::serialize(#ident, writer).await?;
 					});
 
 					field_inits.push(quote! {
-						{
-							let (v, len) = <(#fieldtype) as ::link_protocol_binser::Deserialize<'_>>::deserialize(&buf[total_length..])?;
-							total_length += len;
-							v
-						},
+						<(#fieldtype) as ::link_protocol_binser::Deserialize<'_>>::deserialize(reader).await?,
 					});
 				}
 
@@ -220,25 +198,8 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 			Fields::Unit => (quote! {}, quote! {}),
 		};
 
-		length_statements.push(quote! {
-			total_length
-		});
-
-		serialize_statements.push(quote! {
-			debug_assert_eq!(total_length, self.buffer_length().unwrap());
-			total_length
-		});
-
-		let mut length_statements_stream = TokenStream::new();
-		length_statements_stream.append_all(length_statements.into_iter());
 		let mut serialize_statements_stream = TokenStream::new();
 		serialize_statements_stream.append_all(serialize_statements.into_iter());
-
-		buffer_length_matches.push(quote! {
-			#enum_ident :: #ident #destructure => {
-				#length_statements_stream
-			}
-		});
 
 		serialize_matches.push(quote! {
 			#enum_ident :: #ident #destructure => {
@@ -256,8 +217,6 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 	let ident = ast.ident;
 	let (generics_pre, generics_mid, generics_post) = ast.generics.split_for_impl();
 
-	let mut buffer_length_matches_stream = TokenStream::new();
-	buffer_length_matches_stream.append_all(buffer_length_matches.into_iter());
 	let mut serialize_matches_stream = TokenStream::new();
 	serialize_matches_stream.append_all(serialize_matches.into_iter());
 	let mut deserialize_matches_stream = TokenStream::new();
@@ -267,13 +226,7 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 		const _: () = {
 			#[automatically_derived]
 			impl #generics_pre ::link_protocol_binser::Serialize for #ident #generics_mid #generics_post {
-				fn buffer_length(&self) -> Result<usize, ::link_protocol_binser::Error> {
-					Ok(match self {
-						#buffer_length_matches_stream
-					})
-				}
-
-				fn serialize_into(&self, buf: &mut [u8]) -> Result<usize, ::link_protocol_binser::Error> {
+				async fn serialize<W: ::link_protocol_binser::Write>(&self, writer: &mut W) -> Result<(), ::link_protocol_binser::Error> {
 					Ok(match self {
 						#serialize_matches_stream
 					})
@@ -281,19 +234,18 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 			}
 
 			#[automatically_derived]
-			impl #generics_pre ::link_protocol_binser::Deserialize<'a> for #ident #generics_mid #generics_post {
-				fn deserialize(buf: &'a [u8]) -> Result<(Self, usize), ::link_protocol_binser::Error> {
-					let (msg_code, mut total_length) = <u8 as ::link_protocol_binser::Deserialize>::deserialize(buf)?;
+			impl #generics_pre ::link_protocol_binser::Deserialize for #ident #generics_mid #generics_post {
+				async fn deserialize<R: ::link_protocol_binser::Read>(reader: &mut R) -> Result<Self, ::link_protocol_binser::Error> {
+					let msg_code = <u8 as ::link_protocol_binser::Deserialize>::deserialize(reader).await?;
 
-					Ok((
+					Ok(
 						match msg_code {
 							#deserialize_matches_stream
 							_ => {
 								return Err(::link_protocol_binser::Error::InvalidMessageCode);
 							}
-						},
-						total_length
-					))
+						}
+					)
 				}
 			}
 		};
