@@ -17,6 +17,7 @@ struct Config {
 	pub link_server_port: u16,
 	#[envconfig(from = "LINK_SERVER_BIND", default = "0.0.0.0")]
 	pub link_server_bind: String,
+	#[cfg(target_os = "linux")]
 	#[envconfig(from = "USE_JOURNALD", default = "0")]
 	pub use_journald: u8,
 }
@@ -76,13 +77,24 @@ async fn main() -> Result<!, io::Error> {
 
 	log::set_max_level(log::LevelFilter::Trace);
 
-	if config.use_journald != 0 {
-		systemd_journal_logger::JournalLog::default()
-			.with_extra_fields(vec![("VERSION", env!("CARGO_PKG_VERSION"))])
-			.with_syslog_identifier("oro-linkd".to_string())
-			.install()
-			.expect("failed to start journald logger");
-	} else {
+	let should_fallback = true;
+
+	#[cfg(target_os = "linux")]
+	let should_fallback = {
+		if config.use_journald != 0 {
+			systemd_journal_logger::JournalLog::default()
+				.with_extra_fields(vec![("VERSION", env!("CARGO_PKG_VERSION"))])
+				.with_syslog_identifier("oro-linkd".to_string())
+				.install()
+				.expect("failed to start journald logger");
+
+			false
+		} else {
+			true
+		}
+	};
+
+	if should_fallback {
 		stderrlog::new()
 			.module(module_path!())
 			.verbosity(log::max_level())
