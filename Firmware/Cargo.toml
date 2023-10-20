@@ -182,6 +182,9 @@ quote = "1.0.32"
 syn = { version = "2.0.28", features = ["full"] }
 ttf-parser = "0.18.0"
 
+[dev-dependencies]
+rusty-hook = "0.11.2"
+
 [patch.crates-io]
 smoltcp = { git = "https://github.com/oro-os/smoltcp.git" }
 
