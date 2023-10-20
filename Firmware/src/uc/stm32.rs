@@ -4,6 +4,7 @@ mod stm32f479vg;
 pub use stm32f479vg::*;
 
 use crate::chip;
+use cortex_m::peripheral::SCB;
 use embassy_stm32::{
 	gpio::{Input, Output, Pin},
 	i2c, usart,
@@ -232,5 +233,14 @@ impl<'d, T: usart::BasicInstance, TxDma> super::PacketTracer for usart::UartTx<'
 		self.blocking_write(&len_bytes[..]).unwrap();
 		self.blocking_write(buf).unwrap();
 		self.blocking_flush().unwrap();
+	}
+}
+
+pub struct CortexResetManager;
+
+impl super::ResetManager for CortexResetManager {
+	fn reset(self) -> ! {
+		SCB::sys_reset();
+		panic!("!!! STM32 HAS NOT RESET DESPITE BEING ASKED TO !!!");
 	}
 }

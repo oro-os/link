@@ -287,6 +287,12 @@ pub trait UniqueId {
 	fn unique_id(&self) -> [u8; 32];
 }
 
+/// Handles resetting the device
+pub trait ResetManager {
+	/// Reset the link.
+	fn reset(self) -> !;
+}
+
 // Validates the contract of the init() function.
 #[allow(unused)]
 #[doc(hidden)]
@@ -323,6 +329,7 @@ mod _check_init {
 		USARTRX: UartRx,
 		PKTTRACER: PacketTracer,
 		UUID: UniqueId,
+		RST: ResetManager,
 	> Init
 		for (
 			DBG,
@@ -336,6 +343,7 @@ mod _check_init {
 			USARTRX,
 			PKTTRACER,
 			UUID,
+			RST,
 		)
 	{
 	}

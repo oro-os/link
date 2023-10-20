@@ -9,14 +9,16 @@
 )]
 
 mod chip;
+mod command;
 mod font;
 mod service;
 mod uc;
 
+use command::{Command, CommandChannel, CommandSender};
 use core::cell::RefCell;
 #[cfg(not(test))]
 use core::{panic::PanicInfo, task::Context};
-use defmt::{debug, error, info};
+use defmt::{debug, error, info, warn};
 use embassy_executor::Spawner;
 use embassy_net::{
 	driver::{Capabilities, HardwareAddress, LinkState, RxToken, TxToken},
@@ -25,7 +27,9 @@ use embassy_net::{
 use embassy_time::{Duration, Timer};
 use heapless::Vec;
 use static_cell::make_static;
-use uc::{LogSeverity, Monitor as _, PowerState, Rng, Scene, SystemUnderTest, UniqueId};
+use uc::{
+	LogSeverity, Monitor as _, PowerState, ResetManager, Rng, Scene, SystemUnderTest, UniqueId,
+};
 
 #[defmt::panic_handler]
 fn defmt_panic() -> ! {
@@ -100,12 +104,13 @@ async fn daemon_task(
 	stack: &'static Stack<ExtEthernetDriver>,
 	rng: ImplRng,
 	uid: ImplUniqueId,
+	broker_sender: CommandSender<32>,
 ) -> ! {
-	service::daemon::run(stack, rng, &uid).await
+	service::daemon::run(stack, rng, &uid, broker_sender).await
 }
 
 #[embassy_executor::main]
-pub async fn main(spawner: Spawner) {
+pub async fn main(spawner: Spawner) -> ! {
 	let (
 		debug_led,
 		mut system,
@@ -118,6 +123,7 @@ pub async fn main(spawner: Spawner) {
 		_syscom_rx,
 		packet_tracer,
 		uid,
+		rst,
 	) = uc::init(&spawner).await;
 
 	unsafe {
@@ -130,11 +136,11 @@ pub async fn main(spawner: Spawner) {
 	}
 
 	info!(
-		"Oro Link x86 booting (version {})",
+		"oro link x86 booting (version {})",
 		env!("CARGO_PKG_VERSION")
 	);
 
-	info!("Link UID: {:?}", uid.unique_id());
+	info!("link uid: {:?}", uid.unique_id());
 
 	unsafe {
 		MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
@@ -177,6 +183,11 @@ pub async fn main(spawner: Spawner) {
 
 	let link_uid = uid.unique_id();
 
+	static mut BROKER_CHANNEL: CommandChannel<32> = CommandChannel::new();
+
+	let broker_receiver = unsafe { BROKER_CHANNEL.receiver() };
+	let broker_sender = unsafe { BROKER_CHANNEL.sender() };
+
 	spawner.must_spawn(net_ext_stack_task(extnet));
 	spawner.must_spawn(net_sys_stack_task(sysnet));
 	spawner.must_spawn(monitor_task());
@@ -184,52 +195,20 @@ pub async fn main(spawner: Spawner) {
 	spawner.must_spawn(pxe_task(sysnet));
 	spawner.must_spawn(tftp_task(sysnet));
 	spawner.must_spawn(time_task(extnet, wall_clock));
-	spawner.must_spawn(daemon_task(extnet, rng, uid));
+	spawner.must_spawn(daemon_task(extnet, rng, uid, broker_sender));
 
 	loop {
-		// XXX DEBUG
-		{
-			let mut buffer: Vec<u8, 2048> = Vec::new();
-			use ::link_protocol::{Deserialize, Serialize};
-			let src = ::link_protocol::LinkPacket::LinkOnline {
-				uid: link_uid,
-				version: env!("CARGO_PKG_VERSION").into(),
-			};
-			info!("SRC = {:#?}", src);
-			let r = {
-				let mut writer = VecWriter::new(&mut buffer);
-				src.serialize(&mut writer).await
-			};
-			match r {
-				Ok(()) => {
-					info!("OK, serialized source: {:?}", &buffer[..]);
-					let mut reader = VecReader::new(&buffer);
-					match ::link_protocol::LinkPacket::deserialize(&mut reader).await {
-						Ok(dst) => {
-							info!("OK, deserialized = {:#?}", dst);
-						}
-						Err(err) => {
-							error!("failed to deserialize dst: {:?}", err);
-						}
-					}
-				}
-				Err(err) => error!("failed to serialize src: {:?}", err),
+		match broker_receiver.receive().await {
+			#[allow(clippy::diverging_sub_expression)]
+			Command::Reset => {
+				warn!("!!! LINK WILL RESET IN 50ms !!!");
+				Timer::after(Duration::from_millis(50)).await;
+				return rst.reset();
+			}
+			unknown => {
+				warn!("broker: unexpected command: {:?}", unknown);
 			}
 		}
-
-		// XXX TODO DEBUG
-		debug!("booting the system");
-		system.transition_power_state(PowerState::On);
-		system.power();
-
-		debug!("system booted; waiting for PXE...");
-		Timer::after(Duration::from_millis(30000)).await;
-
-		debug!("pxe boot attempted; shutting down...");
-		system.transition_power_state(PowerState::Off);
-
-		debug!("shut down; restarting in 8s...");
-		Timer::after(Duration::from_millis(8000)).await;
 	}
 }
 
@@ -302,55 +281,5 @@ impl<'a, T: RxToken, P: uc::PacketTracer> RxToken for EthernetCaptureRxToken<'a,
 			self.1.borrow_mut().trace_packet(buf);
 			f(buf)
 		})
-	}
-}
-
-/* XXX just some test code */
-pub struct VecWriter<'a, const SZ: usize> {
-	buffer: &'a mut Vec<u8, SZ>,
-}
-
-impl<'a, const SZ: usize> VecWriter<'a, SZ> {
-	pub fn new(buffer: &'a mut Vec<u8, SZ>) -> Self {
-		VecWriter { buffer }
-	}
-}
-
-impl<'a, const SZ: usize> link_protocol::Write for VecWriter<'a, SZ> {
-	async fn write(&mut self, buf: &[u8]) -> Result<(), link_protocol::Error> {
-		if self.buffer.len() + buf.len() <= SZ {
-			self.buffer
-				.extend_from_slice(buf)
-				.map_err(|_| link_protocol::Error::Eof)?;
-			Ok(())
-		} else {
-			Err(link_protocol::Error::Eof)
-		}
-	}
-}
-
-pub struct VecReader<'a, const SZ: usize> {
-	buffer: &'a Vec<u8, SZ>,
-	pos: usize,
-}
-
-impl<'a, const SZ: usize> VecReader<'a, SZ> {
-	pub fn new(buffer: &'a Vec<u8, SZ>) -> Self {
-		VecReader { buffer, pos: 0 }
-	}
-}
-
-impl<'a, const SZ: usize> link_protocol::Read for VecReader<'a, SZ> {
-	async fn read(&mut self, buf: &mut [u8]) -> Result<(), link_protocol::Error> {
-		if self.pos < self.buffer.len() {
-			let available = self.buffer.len() - self.pos;
-			let to_copy = core::cmp::min(available, buf.len());
-			let src_slice = &self.buffer[self.pos..self.pos + to_copy];
-			buf[0..to_copy].copy_from_slice(src_slice);
-			self.pos += to_copy;
-			Ok(())
-		} else {
-			Err(link_protocol::Error::Eof)
-		}
 	}
 }

@@ -1,4 +1,7 @@
-use crate::uc;
+use crate::{
+	command::{Command, CommandSender},
+	uc,
+};
 use aes::{cipher::KeyInit, Aes256Dec, Aes256Enc};
 use defmt::{debug, error, info, trace, warn};
 use embassy_net::{driver::Driver, tcp::TcpSocket, ConfigV4, Ipv4Address, Stack};
@@ -11,6 +14,7 @@ pub async fn run<D: Driver + 'static, R: uc::Rng, U: uc::UniqueId>(
 	stack: &Stack<D>,
 	mut rng: R,
 	uid: &U,
+	broker_sender: CommandSender<32>,
 ) -> ! {
 	if !stack.is_link_up() {
 		warn!("net: link not up; will wait until it is before installing DNS server");

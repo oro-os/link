@@ -35,6 +35,7 @@ pub async fn init(
 	impl uc::UartRx,
 	impl uc::PacketTracer,
 	impl uc::UniqueId,
+	impl uc::ResetManager,
 ) {
 	let mut config = Config::default();
 	config.rcc.rtc = Some(RtcClockSource::LSI);
@@ -265,8 +266,12 @@ pub async fn init(
 
 	info!("... uid INIT");
 
+	let rst = super::CortexResetManager;
+
+	info!("... reset manager INIT");
+
 	(
 		debug_led, system, monitor, exteth, syseth, wall_clock, rng_gen, syscom_tx, syscom_rx,
-		auxcom_tx, uid,
+		auxcom_tx, uid, rst,
 	)
 }

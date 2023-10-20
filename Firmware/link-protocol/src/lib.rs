@@ -13,6 +13,7 @@ use defmt::Format;
 /// Messages sent from the Link to the daemon.
 #[derive(Debug, Clone, LinkMessage)]
 #[cfg_attr(feature = "defmt", derive(Format))]
+#[non_exhaustive]
 pub enum LinkPacket {
 	/// The link is online and ready to receive work. Must be sent at least
 	/// once per connection.
@@ -22,6 +23,10 @@ pub enum LinkPacket {
 		/// of the PAC/etc. UID chip readout).
 		uid: [u8; 32],
 		/// The link's firmware version
-		version: String<255>,
+		version: String<32>,
 	},
+
+	/// Resets the link, which is the equivalent of hitting the reset button.
+	#[proto(id = 2)]
+	ResetLink,
 }
