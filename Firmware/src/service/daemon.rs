@@ -140,7 +140,6 @@ impl<'a, const SZ: usize> MessageReceiver<'a, SZ> {
 	}
 
 	async fn receive_packet(&mut self) -> Result<LinkPacket, LinkPacketError> {
-		self.cursor = 0;
 		let msg = LinkPacket::deserialize(self).await?;
 
 		if self.cursor > 0 && self.cursor < self.block.len() {
@@ -187,6 +186,13 @@ impl<'a, const SZ: usize> LinkProtoRead for MessageReceiver<'a, SZ> {
 		let mut off = 0;
 
 		while remaining > 0 {
+			trace!(
+				"daemon: read(): remaining={} off={} cursor={}",
+				remaining,
+				off,
+				self.cursor
+			);
+
 			if self.cursor >= self.block.len() {
 				debug_assert_eq!(self.cursor, self.block.len());
 
@@ -225,16 +231,13 @@ struct MessageSender<'a, const SZ: usize> {
 
 impl<'a, const SZ: usize> MessageSender<'a, SZ> {
 	fn new(sock: TcpWriter<'a>, tls: Aes256Enc, channel: CommandReceiver<SZ>) -> Self {
-		let s = Self {
+		Self {
 			sock,
 			tls,
 			channel,
 			block: [0; 16],
-			cursor: 16,
-		};
-
-		debug_assert!(s.cursor >= s.block.len());
-		s
+			cursor: 0,
+		}
 	}
 
 	async fn send_packet(&mut self, packet: LinkPacket) -> Result<(), LinkPacketError> {
@@ -281,7 +284,7 @@ impl<'a, const SZ: usize> LinkProtoWrite for MessageSender<'a, SZ> {
 		let mut off = 0;
 
 		while remaining > 0 {
-			debug_assert!(self.cursor < self.block.len());
+			debug_assert!(self.cursor <= self.block.len());
 
 			let to_write = remaining.min(self.block.len() - self.cursor);
 			self.block[self.cursor..self.cursor + to_write]

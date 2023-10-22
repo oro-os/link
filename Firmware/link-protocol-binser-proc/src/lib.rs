@@ -126,6 +126,15 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 			.into();
 		}
 
+		if discriminant == 0 {
+			return Error::new(
+				ident.span(),
+				"link protocol enum variant discriminants cannot be zero (0)",
+			)
+			.into_compile_error()
+			.into();
+		}
+
 		known_discriminants.insert(discriminant, ident.clone());
 
 		serialize_statements.push(quote! {

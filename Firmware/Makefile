@@ -15,7 +15,7 @@ ifndef LEVEL
 ifeq ($(CARGO_MODE),release)
 LEVEL := info
 else
-LEVEL := trace
+LEVEL := trace,embassy_net=debug
 endif
 endif
 

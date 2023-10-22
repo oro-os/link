@@ -41,15 +41,14 @@ async fn task_process_oro_link(mut stream: TcpStream) -> Result<(), io::Error> {
 
 	debug!("oro link peer encryption session negotiated");
 
-	let mut block = [0u8; 16];
-	stream.read_exact(&mut block[..]).await?;
-	debug!("got bytes: {:?}", block);
-	use aes::cipher::BlockDecrypt;
-	dec.decrypt_block((&mut block).into());
-	debug!(
-		"got message: {}",
-		core::str::from_utf8(&block[0..8]).unwrap_or("<bad string>")
-	);
+	loop {
+		let mut block = [0u8; 16];
+		stream.read_exact(&mut block[..]).await?;
+		debug!("got bytes: {:?}", block);
+		use aes::cipher::BlockDecrypt;
+		dec.decrypt_block((&mut block).into());
+		debug!("got message: {:?}", block);
+	}
 
 	Ok(())
 }
