@@ -240,7 +240,6 @@ pub struct CortexResetManager;
 
 impl super::ResetManager for CortexResetManager {
 	fn reset(self) -> ! {
-		SCB::sys_reset();
-		panic!("!!! STM32 HAS NOT RESET DESPITE BEING ASKED TO !!!");
+		SCB::sys_reset()
 	}
 }

@@ -14,7 +14,7 @@ mod font;
 mod service;
 mod uc;
 
-use command::{Command, CommandChannel, CommandSender};
+use command::{Command, CommandChannel, CommandReceiver, CommandSender};
 use core::cell::RefCell;
 #[cfg(not(test))]
 use core::{panic::PanicInfo, task::Context};
@@ -60,7 +60,6 @@ type ImplDebugLed = impl uc::DebugLed;
 type ImplMonitor = impl uc::Monitor;
 type ImplWallClock = impl uc::WallClock;
 type ImplRng = impl uc::Rng;
-type ImplUniqueId = impl uc::UniqueId;
 static mut MONITOR: Option<RefCell<ImplMonitor>> = None;
 
 #[embassy_executor::task]
@@ -103,10 +102,10 @@ async fn time_task(stack: &'static Stack<ExtEthernetDriver>, wall_clock: ImplWal
 async fn daemon_task(
 	stack: &'static Stack<ExtEthernetDriver>,
 	rng: ImplRng,
-	uid: ImplUniqueId,
 	broker_sender: CommandSender<32>,
+	daemon_receiver: CommandReceiver<16>,
 ) -> ! {
-	service::daemon::run(stack, rng, &uid, broker_sender).await
+	service::daemon::run(stack, rng, broker_sender, daemon_receiver).await
 }
 
 #[embassy_executor::main]
@@ -181,12 +180,13 @@ pub async fn main(spawner: Spawner) -> ! {
 		))
 	};
 
-	let link_uid = uid.unique_id();
-
 	static mut BROKER_CHANNEL: CommandChannel<32> = CommandChannel::new();
+	static mut DAEMON_CHANNEL: CommandChannel<16> = CommandChannel::new();
 
 	let broker_receiver = unsafe { BROKER_CHANNEL.receiver() };
 	let broker_sender = unsafe { BROKER_CHANNEL.sender() };
+	let daemon_sender = unsafe { DAEMON_CHANNEL.sender() };
+	let daemon_receiver = unsafe { DAEMON_CHANNEL.receiver() };
 
 	spawner.must_spawn(net_ext_stack_task(extnet));
 	spawner.must_spawn(net_sys_stack_task(sysnet));
@@ -195,7 +195,16 @@ pub async fn main(spawner: Spawner) -> ! {
 	spawner.must_spawn(pxe_task(sysnet));
 	spawner.must_spawn(tftp_task(sysnet));
 	spawner.must_spawn(time_task(extnet, wall_clock));
-	spawner.must_spawn(daemon_task(extnet, rng, uid, broker_sender));
+	spawner.must_spawn(daemon_task(extnet, rng, broker_sender, daemon_receiver));
+
+	// Tell the daemon we're online now.
+	debug!("broker: telling daemon we're online");
+	daemon_sender
+		.send(Command::DaemonHello {
+			uid: uid.unique_id(),
+			version: env!("CARGO_PKG_VERSION").into(),
+		})
+		.await;
 
 	loop {
 		match broker_receiver.receive().await {
@@ -203,7 +212,11 @@ pub async fn main(spawner: Spawner) -> ! {
 			Command::Reset => {
 				warn!("!!! LINK WILL RESET IN 50ms !!!");
 				Timer::after(Duration::from_millis(50)).await;
-				return rst.reset();
+				rst.reset();
+				#[allow(unreachable_code)]
+				{
+					unreachable!();
+				}
 			}
 			unknown => {
 				warn!("broker: unexpected command: {:?}", unknown);

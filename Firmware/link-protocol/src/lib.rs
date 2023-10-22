@@ -23,7 +23,7 @@ pub enum LinkPacket {
 		/// of the PAC/etc. UID chip readout).
 		uid: [u8; 32],
 		/// The link's firmware version
-		version: String<32>,
+		version: String<16>,
 	},
 
 	/// Resets the link, which is the equivalent of hitting the reset button.
