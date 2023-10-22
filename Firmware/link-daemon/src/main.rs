@@ -1,5 +1,9 @@
 #![feature(never_type, async_fn_in_trait)]
 
+use aes::{
+	cipher::{BlockDecrypt, BlockEncrypt, KeyInit},
+	Aes256Dec, Aes256Enc,
+};
 use async_std::{
 	io,
 	net::{TcpListener, TcpStream},
@@ -24,7 +28,6 @@ struct Config {
 }
 
 async fn task_process_oro_link(mut stream: TcpStream) -> Result<(), io::Error> {
-	use aes::cipher::KeyInit;
 	debug!("incoming oro link connection");
 
 	// Begin encryption negotiation
@@ -36,18 +39,27 @@ async fn task_process_oro_link(mut stream: TcpStream) -> Result<(), io::Error> {
 	stream.read_exact(&mut their_pk[..]).await?;
 	stream.write_all(&pk[..]).await?;
 	let key = curve25519::curve25519(sk, their_pk);
-	let enc = aes::Aes256Enc::new_from_slice(&key[..]).unwrap();
-	let dec = aes::Aes256Dec::new_from_slice(&key[..]).unwrap();
+	let enc = Aes256Enc::new_from_slice(&key[..]).unwrap();
+	let dec = Aes256Dec::new_from_slice(&key[..]).unwrap();
 
 	debug!("oro link peer encryption session negotiated");
 
+	// TODO XXX just some test code
+	let mut block = [0u8; 16];
 	loop {
-		let mut block = [0u8; 16];
-		stream.read_exact(&mut block[..]).await?;
-		debug!("got bytes: {:?}", block);
-		use aes::cipher::BlockDecrypt;
-		dec.decrypt_block((&mut block).into());
-		debug!("got message: {:?}", block);
+		for _ in 0..2 {
+			stream.read_exact(&mut block[..]).await?;
+			debug!("got bytes: {:?}", block);
+			dec.decrypt_block((&mut block).into());
+			debug!("got message: {:?}", block);
+		}
+
+		// TODO XXX DEBUG Send kill packet (raw bytes for now)
+		debug!("sending kill");
+		block.fill(0);
+		block[0] = 2; // reset link
+		enc.encrypt_block((&mut block).into());
+		stream.write_all(&block).await?;
 	}
 
 	Ok(())

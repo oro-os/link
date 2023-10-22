@@ -141,21 +141,7 @@ impl<'a, const SZ: usize> MessageReceiver<'a, SZ> {
 
 	async fn receive_packet(&mut self) -> Result<LinkPacket, LinkPacketError> {
 		let msg = LinkPacket::deserialize(self).await?;
-
-		if self.cursor > 0 && self.cursor < self.block.len() {
-			self.sock
-				.read_exact(&mut self.block[self.cursor..])
-				.await
-				.map_err(|err| {
-					error!(
-						"daemon: failed to read remaining block bytes after packet: {:?}",
-						err
-					);
-					LinkPacketError::Eof
-				})?;
-			self.cursor = self.block.len();
-		}
-
+		self.cursor = self.block.len(); // force a fresh read for the next packet.
 		Ok(msg)
 	}
 
@@ -196,6 +182,8 @@ impl<'a, const SZ: usize> LinkProtoRead for MessageReceiver<'a, SZ> {
 			if self.cursor >= self.block.len() {
 				debug_assert_eq!(self.cursor, self.block.len());
 
+				trace!("daemon: read(): reading 16 bytes from stream");
+
 				self.sock
 					.read_exact(&mut self.block[..])
 					.await
@@ -206,10 +194,13 @@ impl<'a, const SZ: usize> LinkProtoRead for MessageReceiver<'a, SZ> {
 
 				self.cursor = 0;
 
+				trace!("daemon: decrypting bytes from stream");
+
 				self.tls.decrypt_block((&mut self.block[..]).into());
 			}
 
 			let to_write = remaining.min(self.block.len() - self.cursor);
+			trace!("daemon: to write: {}", to_write);
 			buf[off..off + to_write]
 				.copy_from_slice(&self.block[self.cursor..self.cursor + to_write]);
 			remaining -= to_write;
