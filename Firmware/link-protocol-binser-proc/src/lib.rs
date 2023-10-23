@@ -188,7 +188,7 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 					});
 
 					field_inits.push(quote! {
-						<(#fieldtype) as ::link_protocol_binser::Deserialize<'_>>::deserialize(reader).await?,
+						<(#fieldtype) as ::link_protocol_binser::Deserialize>::deserialize(reader).await?,
 					});
 				}
 
