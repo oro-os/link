@@ -10,7 +10,7 @@ license = "MIT"
 resolver = "2"
 
 [dependencies]
-link-protocol = { path = "../link-protocol" }
+link-protocol = { path = "../link-protocol", features = ["log", "async-std"] }
 aes = "0.8.3"
 async-io = "1.13.0"
 async-std = { version = "1.12.0", features = ["attributes"] }

@@ -235,7 +235,7 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 		const _: () = {
 			#[automatically_derived]
 			impl #generics_pre ::link_protocol_binser::Serialize for #ident #generics_mid #generics_post {
-				async fn serialize<W: ::link_protocol_binser::Write>(&self, writer: &mut W) -> Result<(), ::link_protocol_binser::Error> {
+				async fn serialize<W: ::link_protocol_binser::Write>(&self, writer: &mut W) -> Result<(), ::link_protocol_binser::Error<W::Error>> {
 					Ok(match self {
 						#serialize_matches_stream
 					})
@@ -244,7 +244,7 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 
 			#[automatically_derived]
 			impl #generics_pre ::link_protocol_binser::Deserialize for #ident #generics_mid #generics_post {
-				async fn deserialize<R: ::link_protocol_binser::Read>(reader: &mut R) -> Result<Self, ::link_protocol_binser::Error> {
+				async fn deserialize<R: ::link_protocol_binser::Read>(reader: &mut R) -> Result<Self, ::link_protocol_binser::Error<R::Error>> {
 					let msg_code = <u8 as ::link_protocol_binser::Deserialize>::deserialize(reader).await?;
 
 					Ok(
