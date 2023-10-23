@@ -143,7 +143,7 @@ impl<W: Write> Write for PacketSender<W> {
 				self.tls.encrypt_block((&mut self.block[..]).into());
 
 				self.sock.write(&self.block[..]).await.map_err(|err| {
-					error!("daemon: failed to write block: {:?}", err);
+					error!("link-proto: failed to write block: {:?}", err);
 					Error::Eof
 				})?;
 
@@ -197,7 +197,7 @@ impl<R: Read> Read for PacketReceiver<R> {
 
 		while remaining > 0 {
 			trace!(
-				"daemon: read(): remaining={} off={} cursor={}",
+				"link-proto: read(): remaining={} off={} cursor={}",
 				remaining,
 				off,
 				self.cursor
@@ -206,22 +206,22 @@ impl<R: Read> Read for PacketReceiver<R> {
 			if self.cursor >= self.block.len() {
 				debug_assert_eq!(self.cursor, self.block.len());
 
-				trace!("daemon: read(): reading 16 bytes from stream");
+				trace!("link-proto: read(): reading 16 bytes from stream");
 
 				self.sock.read(&mut self.block[..]).await.map_err(|err| {
-					error!("daemon: failed reading block from socket: {:?}", err);
+					error!("link-proto: failed reading block from socket: {:?}", err);
 					Error::Eof
 				})?;
 
 				self.cursor = 0;
 
-				trace!("daemon: decrypting bytes from stream");
+				trace!("link-proto: decrypting bytes from stream");
 
 				self.tls.decrypt_block((&mut self.block[..]).into());
 			}
 
 			let to_write = remaining.min(self.block.len() - self.cursor);
-			trace!("daemon: to write: {}", to_write);
+			trace!("link-proto: to write: {}", to_write);
 			buf[off..off + to_write]
 				.copy_from_slice(&self.block[self.cursor..self.cursor + to_write]);
 			remaining -= to_write;
