@@ -77,6 +77,10 @@ where
 	}
 
 	fn set_scene(&mut self, scene: Scene) {
+		if self.current_scene == Some(scene) {
+			return;
+		}
+
 		match self.current_scene {
 			None => {}
 			Some(Scene::OroLogo) => self.logo_renderer.blur(),
@@ -87,7 +91,9 @@ where
 		self.current_scene = Some(scene);
 
 		match scene {
-			Scene::OroLogo => self.logo_renderer.focus(&mut self.indicators),
+			Scene::OroLogo => self
+				.logo_renderer
+				.focus(&mut self.indicators, &mut self.target),
 			Scene::Log => self.log_renderer.focus(&mut self.indicators),
 			Scene::Test => self.test_renderer.focus(&mut self.indicators),
 		}
@@ -205,8 +211,9 @@ impl OroLogoRenderer {
 		}
 	}
 
-	fn focus<I: IndicatorLights>(&mut self, lights: &mut I) {
+	fn focus<I: IndicatorLights, D: OledTarget>(&mut self, lights: &mut I, target: &mut D) {
 		lights.enable();
+		target.clear(BLACK).ok();
 	}
 
 	fn blur(&mut self) {}
