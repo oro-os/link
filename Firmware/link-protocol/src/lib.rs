@@ -1,6 +1,6 @@
 //! This defines the protocol for communication between the Link and the Daemon.
 //! Messages are framed with a 16-bit unsigned length prefix.
-#![cfg_attr(not(any(test, feature = "embassy")), no_std)]
+#![cfg_attr(all(not(test), feature = "embedded-io"), no_std)]
 #![feature(async_fn_in_trait)]
 
 #[cfg(feature = "channels")]

@@ -1,5 +1,10 @@
-#![no_std]
+#![cfg_attr(all(not(test), feature = "embedded-io"), no_std)]
 #![feature(async_fn_in_trait)]
+
+#[cfg(feature = "async-std")]
+mod async_std;
+#[cfg(feature = "embedded-io")]
+mod embedded_io;
 
 #[cfg(feature = "defmt")]
 use defmt::Format;
@@ -39,6 +44,8 @@ pub trait Write {
 
 	/// Write the entirety of `buf` to the stream.
 	async fn write(&mut self, buf: &[u8]) -> Result<(), Error<Self::Error>>;
+	/// Flushes the data through the socket
+	async fn flush(&mut self) -> Result<(), Self::Error>;
 }
 
 pub trait Read {

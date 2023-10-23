@@ -21,6 +21,11 @@ where
 	Write(W),
 }
 
+pub enum Side {
+	Client,
+	Server,
+}
+
 /// Negotiates a connection with a stream reader/writer, forming an
 /// encrypted channel and returning a command sender/receiver usable
 /// to send and receive AES-encrypted packets.
@@ -28,26 +33,52 @@ pub async fn negotiate<W: Write, R: Read, Rng: RngCore>(
 	mut sock_writer: W,
 	mut sock_reader: R,
 	rng: &mut Rng,
+	side: Side,
 ) -> Result<(PacketSender<W>, PacketReceiver<R>), RWError<Error<R::Error>, Error<W::Error>>> {
-	// Negotiate encryption
+	debug!("link-proto: beginning encryption negotiation");
+
 	let mut sk = [0u8; 32];
+	let mut their_pk = [0u8; 32];
+
 	rng.fill_bytes(&mut sk);
 	let sk = curve25519_sk(sk);
 	let pk = curve25519_pk(sk);
-	let mut their_pk = [0u8; 32];
 
-	// NOTE: It's important to write first, otherwise
-	// NOTE: this will deadlock. (:
-	sock_writer.write(&pk[..]).await.map_err(RWError::Write)?;
+	debug!("link-proto: generated secret key");
 
-	sock_reader
-		.read(&mut their_pk[..])
-		.await
-		.map_err(RWError::Read)?;
+	let side_order = match side {
+		Side::Client => [Side::Client, Side::Server],
+		Side::Server => [Side::Server, Side::Client],
+	};
+
+	for side in side_order {
+		match side {
+			Side::Client => {
+				debug!("link-proto: writing public key");
+				sock_writer.write(&pk[..]).await.map_err(RWError::Write)?;
+				sock_writer
+					.flush()
+					.await
+					.map_err(|err| RWError::Write(Error::Io(err)))?;
+				debug!("link-proto: wrote public key");
+			}
+			Side::Server => {
+				debug!("link-proto: reading public key");
+				sock_reader
+					.read(&mut their_pk[..])
+					.await
+					.map_err(RWError::Read)?;
+				debug!("link-proto: read public key");
+			}
+		}
+	}
 
 	let key = curve25519(sk, their_pk);
+	debug!("link-proto: generated shared key");
+
 	let enc = Aes256Enc::new_from_slice(&key[..]).unwrap();
 	let dec = Aes256Dec::new_from_slice(&key[..]).unwrap();
+	debug!("link-proto: generated encryption instances");
 
 	Ok((
 		PacketSender::new(sock_writer, enc),
@@ -82,6 +113,8 @@ impl<W: Write> PacketSender<W> {
 				<Self as Write>::write(self, &[0]).await?;
 			}
 		}
+
+		self.sock.flush().await?;
 
 		Ok(())
 	}
@@ -119,6 +152,11 @@ impl<W: Write> Write for PacketSender<W> {
 		}
 
 		Ok(())
+	}
+
+	#[inline]
+	async fn flush(&mut self) -> Result<(), Self::Error> {
+		W::flush(&mut self.sock).await
 	}
 }
 

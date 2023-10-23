@@ -8,6 +8,10 @@ use async_std::{
 };
 use envconfig::Envconfig;
 use heapless::Vec;
+use link_protocol::{
+	channel::{negotiate, RWError, Side as ChannelSide},
+	Error as ProtoError, Packet,
+};
 use log::{debug, error, info, warn};
 use rand::rngs::OsRng;
 
@@ -22,10 +26,40 @@ struct Config {
 	pub use_journald: u8,
 }
 
-async fn task_process_oro_link(mut stream: TcpStream) -> Result<(), io::Error> {
+async fn task_process_oro_link(mut stream: TcpStream) -> Result<(), ProtoError<io::Error>> {
 	debug!("incoming oro link connection");
-	todo!("use link-protocol channels");
-	Ok(())
+
+	let receiver = io::BufReader::new(stream.clone());
+	let sender = io::BufWriter::new(stream);
+
+	debug!("created streams; negotiating");
+
+	let (mut sender, mut receiver) =
+		match negotiate(sender, receiver, &mut OsRng, ChannelSide::Server).await {
+			Ok(v) => v,
+			Err(RWError::Read(err) | RWError::Write(err)) => {
+				error!("failed to negotiate encrypted channel with link: {:?}", err);
+				return Err(err);
+			}
+		};
+
+	debug!("negotiated; beginning communications");
+
+	loop {
+		let packet = receiver.receive().await?;
+
+		match packet {
+			Packet::LinkOnline { uid, version } => {
+				// XXX DEBUG send reset
+				debug!(
+					"link send online ({}, {:?}) - telling it to reset",
+					version, uid
+				);
+				sender.send(Packet::ResetLink).await?;
+			}
+			unknown => warn!("dropping unknown packet: {:?}", unknown),
+		}
+	}
 }
 
 async fn task_accept_oro_link_tcp(bind_host: String, port: u16) -> Result<(), io::Error> {
@@ -52,9 +86,10 @@ async fn main() -> Result<!, io::Error> {
 
 	log::set_max_level(log::LevelFilter::Trace);
 
+	#[allow(unused)]
 	let should_fallback = true;
 
-	#[cfg(target_os = "linux")]
+	#[cfg(target_os = "linux")] // FIXME: This isn't working.
 	let should_fallback = {
 		if config.use_journald != 0 {
 			systemd_journal_logger::JournalLog::default()
@@ -71,7 +106,8 @@ async fn main() -> Result<!, io::Error> {
 
 	if should_fallback {
 		stderrlog::new()
-			.module(module_path!())
+			//.module(module_path!())
+			.show_module_names(true)
 			.verbosity(log::max_level())
 			.timestamp(stderrlog::Timestamp::Millisecond)
 			.init()

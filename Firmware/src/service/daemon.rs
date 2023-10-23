@@ -12,7 +12,7 @@ use embassy_net::{
 use embassy_time::{Duration, Timer};
 use embedded_io_async::{Read, Write};
 use link_protocol::{
-	channel::{PacketReceiver, PacketSender},
+	channel::{PacketReceiver, PacketSender, Side},
 	Error as LinkPacketError, Packet,
 };
 
@@ -63,10 +63,64 @@ pub async fn run<D: Driver + 'static, R: uc::Rng>(
 
 		info!("daemon: negotiating daemon session");
 		let (receiver, sender) = sock.split();
-		todo!("create channel");
+		let (mut sender, mut receiver) =
+			match link_protocol::channel::negotiate(sender, receiver, &mut rng, Side::Client).await
+			{
+				Ok(v) => v,
+				Err(err) => {
+					error!(
+						"daemon: failed to negotiate encrypted channel with daemon: {:?}",
+						err
+					);
+					continue;
+				}
+			};
 
-		debug!("daemon: encryption key negotiated");
-		todo!("select between channel receive / socket receive");
+		debug!("daemon: encryption key negotiated, beginning communications");
+
+		loop {
+			match select(receiver.receive(), daemon_receiver.receive()).await {
+				Either::First(Ok(packet)) => {
+					broker_sender
+						.send(match packet {
+							Packet::ResetLink => Command::Reset,
+							unknown => {
+								warn!(
+									"daemon: received unknown packet (don't know how to forward to broker): {:?}",
+									unknown
+								);
+								continue;
+							}
+						})
+						.await
+				}
+				Either::Second(command) => {
+					let packet = match command {
+						Command::DaemonHello { uid, version } => {
+							Packet::LinkOnline { uid, version }
+						}
+						unknown => {
+							warn!(
+								"daemon: received unknown command (don't know how to send to daemon): {:?}",
+								unknown
+							);
+							continue;
+						}
+					};
+					if let Err(err) = sender.send(packet).await {
+						error!("daemon: failed to send packet: {:?}", err);
+						break;
+					}
+				}
+				Either::First(Err(err)) => {
+					error!(
+						"daemon: encountered an error receiving packet from daemon: {:?}",
+						err
+					);
+					break;
+				}
+			}
+		}
 
 		sock.abort();
 	}
