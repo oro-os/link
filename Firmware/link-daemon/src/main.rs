@@ -52,6 +52,23 @@ async fn task_process_oro_link(stream: TcpStream) -> Result<(), ProtoError<io::E
 				info!("oro link came online");
 				info!("    link firmware version: {}", version);
 				info!("    link UID:              {}", ::hex::encode_upper(uid));
+
+				// XXX DEBUG changing scene
+				sender.send(Packet::SetMonitorStandby(false)).await?;
+				sender
+					.send(Packet::SetScene(link_protocol::Scene::Logo))
+					.await?;
+				async_std::task::sleep(core::time::Duration::from_secs(3)).await;
+				sender
+					.send(Packet::SetScene(link_protocol::Scene::Log))
+					.await?;
+				sender
+					.send(Packet::Log(link_protocol::LogEntry::Info(
+						"Hello from Oro Daemon!".into(),
+					)))
+					.await?;
+				async_std::task::sleep(core::time::Duration::from_secs(3)).await;
+				sender.send(Packet::SetMonitorStandby(true)).await?;
 			}
 			unknown => warn!("dropping unknown packet: {:?}", unknown),
 		}

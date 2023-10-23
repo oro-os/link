@@ -26,10 +26,9 @@ use embassy_net::{
 };
 use embassy_time::{Duration, Timer};
 use heapless::Vec;
+use link_protocol::{self as proto, Packet};
 use static_cell::make_static;
-use uc::{
-	LogSeverity, Monitor as _, PowerState, ResetManager, Rng, Scene, SystemUnderTest, UniqueId,
-};
+use uc::{Monitor as _, ResetManager, Rng, Scene, UniqueId};
 
 #[defmt::panic_handler]
 fn defmt_panic() -> ! {
@@ -73,9 +72,9 @@ async fn net_sys_stack_task(stack: &'static Stack<SysEthernetDriver>) -> ! {
 }
 
 #[embassy_executor::task]
-async fn monitor_task() -> ! {
+async fn monitor_task(receiver: CommandReceiver<4>) -> ! {
 	let monitor = unsafe { MONITOR.as_ref().unwrap() };
-	service::monitor::run(monitor).await
+	service::monitor::run(monitor, receiver).await
 }
 
 #[embassy_executor::task]
@@ -112,7 +111,7 @@ async fn daemon_task(
 pub async fn main(spawner: Spawner) -> ! {
 	let (
 		debug_led,
-		mut system,
+		_system,
 		monitor,
 		exteth,
 		syseth,
@@ -144,11 +143,6 @@ pub async fn main(spawner: Spawner) -> ! {
 	unsafe {
 		MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
 	}
-
-	LogSeverity::Info.log(
-		unsafe { MONITOR.as_ref().unwrap() },
-		"booting oro link...".into(),
-	);
 
 	let extnet = {
 		let seed = rng.next_u64();
@@ -182,15 +176,18 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	static mut BROKER_CHANNEL: CommandChannel<32> = CommandChannel::new();
 	static mut DAEMON_CHANNEL: CommandChannel<16> = CommandChannel::new();
+	static mut MONITOR_CHANNEL: CommandChannel<4> = CommandChannel::new();
 
 	let broker_receiver = unsafe { BROKER_CHANNEL.receiver() };
 	let broker_sender = unsafe { BROKER_CHANNEL.sender() };
 	let daemon_sender = unsafe { DAEMON_CHANNEL.sender() };
 	let daemon_receiver = unsafe { DAEMON_CHANNEL.receiver() };
+	let monitor_sender = unsafe { MONITOR_CHANNEL.sender() };
+	let monitor_receiver = unsafe { MONITOR_CHANNEL.receiver() };
 
 	spawner.must_spawn(net_ext_stack_task(extnet));
 	spawner.must_spawn(net_sys_stack_task(sysnet));
-	spawner.must_spawn(monitor_task());
+	spawner.must_spawn(monitor_task(monitor_receiver));
 	spawner.must_spawn(debug_led_task(debug_led));
 	spawner.must_spawn(pxe_task(sysnet));
 	spawner.must_spawn(tftp_task(sysnet));
@@ -199,17 +196,54 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	loop {
 		match broker_receiver.receive().await {
+			Command::Packet(Packet::SetScene(scene)) => {
+				monitor_sender
+					.send(Command::SetScene(match scene {
+						proto::Scene::Log => uc::Scene::Log,
+						proto::Scene::Logo => uc::Scene::OroLogo,
+						proto::Scene::Test => uc::Scene::Test,
+						unknown => {
+							warn!(
+								"daemon: requested to switch to unknown scene: {:?}",
+								unknown
+							);
+							continue;
+						}
+					}))
+					.await
+			}
+			Command::Packet(Packet::Log(entry)) => {
+				monitor_sender
+					.send(Command::Log(match entry {
+						proto::LogEntry::Info(msg) => uc::LogSeverity::Info.make(msg),
+						proto::LogEntry::Warn(msg) => uc::LogSeverity::Warn.make(msg),
+						proto::LogEntry::Error(msg) => uc::LogSeverity::Error.make(msg),
+						unknown => {
+							warn!(
+								"daemon: requested to log to monitor with unknown level: {:?}",
+								unknown
+							);
+							continue;
+						}
+					}))
+					.await
+			}
+			Command::Packet(Packet::SetMonitorStandby(standby)) => {
+				monitor_sender.send(Command::SetStandby(standby)).await
+			}
 			Command::DaemonConnected => {
 				debug!("broker: telling daemon we're online");
 				daemon_sender
-					.send(Command::DaemonHello {
+					.send(Command::Packet(Packet::LinkOnline {
 						uid: uid.unique_id(),
 						version: env!("CARGO_PKG_VERSION").into(),
-					})
+					}))
 					.await;
 			}
+			Command::SetScene(scene) => monitor_sender.send(Command::SetScene(scene)).await,
+			Command::Log(entry) => monitor_sender.send(Command::Log(entry)).await,
 			#[allow(clippy::diverging_sub_expression)]
-			Command::Reset => {
+			Command::Packet(Packet::ResetLink) | Command::Reset => {
 				warn!("!!! LINK WILL RESET IN 50ms !!!");
 				Timer::after(Duration::from_millis(50)).await;
 				rst.reset();

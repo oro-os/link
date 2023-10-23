@@ -6,15 +6,15 @@ use defmt::{debug, error, info, trace, warn};
 use embassy_futures::select::{select, Either};
 use embassy_net::{driver::Driver, tcp::TcpSocket, ConfigV4, Ipv4Address, Stack};
 use embassy_time::{Duration, Timer};
-use link_protocol::{channel::Side, Packet};
+use link_protocol::channel::{negotiate, Side};
 
 const ORO_CICD_PORT: u16 = 1337;
 
-pub async fn run<D: Driver + 'static, R: uc::Rng>(
+pub async fn run<D: Driver + 'static, R: uc::Rng, const BSZ: usize, const DSZ: usize>(
 	stack: &Stack<D>,
 	mut rng: R,
-	broker_sender: CommandSender<32>,
-	daemon_receiver: CommandReceiver<16>,
+	broker_sender: CommandSender<BSZ>,
+	daemon_receiver: CommandReceiver<DSZ>,
 ) -> ! {
 	static mut TX_BUF: [u8; 2048] = [0u8; 2048];
 	static mut RX_BUF: [u8; 2048] = [0u8; 2048];
@@ -56,8 +56,7 @@ pub async fn run<D: Driver + 'static, R: uc::Rng>(
 		info!("daemon: negotiating daemon session");
 		let (receiver, sender) = sock.split();
 		let (mut sender, mut receiver) =
-			match link_protocol::channel::negotiate(sender, receiver, &mut rng, Side::Client).await
-			{
+			match negotiate(sender, receiver, &mut rng, Side::Client).await {
 				Ok(v) => v,
 				Err(err) => {
 					error!(
@@ -73,37 +72,15 @@ pub async fn run<D: Driver + 'static, R: uc::Rng>(
 
 		loop {
 			match select(receiver.receive(), daemon_receiver.receive()).await {
-				Either::First(Ok(packet)) => {
-					broker_sender
-						.send(match packet {
-							Packet::ResetLink => Command::Reset,
-							unknown => {
-								warn!(
-									"daemon: received unknown packet (don't know how to forward to broker): {:?}",
-									unknown
-								);
-								continue;
-							}
-						})
-						.await
-				}
-				Either::Second(command) => {
-					let packet = match command {
-						Command::DaemonHello { uid, version } => {
-							Packet::LinkOnline { uid, version }
-						}
-						unknown => {
-							warn!(
-								"daemon: received unknown command (don't know how to send to daemon): {:?}",
-								unknown
-							);
-							continue;
-						}
-					};
+				Either::First(Ok(packet)) => broker_sender.send(Command::Packet(packet)).await,
+				Either::Second(Command::Packet(packet)) => {
 					if let Err(err) = sender.send(packet).await {
 						error!("daemon: failed to send packet: {:?}", err);
 						break;
 					}
+				}
+				Either::Second(unknown) => {
+					warn!("daemon: ignoring unknown command: {:?}", unknown);
 				}
 				Either::First(Err(err)) => {
 					error!(

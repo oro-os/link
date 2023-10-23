@@ -5,7 +5,6 @@ mod stm32;
 #[cfg(feature = "stm32")]
 pub use stm32::*;
 
-use core::cell::RefCell;
 use embassy_executor::Spawner;
 pub use embassy_net::driver::Driver as EthernetDriver;
 use embassy_time::{block_for, Duration};
@@ -146,7 +145,7 @@ pub trait SystemUnderTest {
 }
 
 /// A singular mode that a monitor should be in.
-#[derive(Default, Clone, Copy, PartialEq, Eq)]
+#[derive(Default, Clone, Copy, PartialEq, Eq, defmt::Format)]
 pub enum Scene {
 	/// Displays the Oro logo and any aesthetically pleasing effect on
 	/// LEDs, etc.
@@ -162,7 +161,7 @@ pub enum Scene {
 /// All log frames are considered important if the firmware pushes them;
 /// implementations of [`Monitor`] should not perform any filtering.
 #[allow(unused)]
-#[derive(Clone, Copy, PartialEq, Eq)]
+#[derive(Clone, Copy, PartialEq, Eq, defmt::Format)]
 pub enum LogSeverity {
 	Info,
 	Warn,
@@ -170,12 +169,11 @@ pub enum LogSeverity {
 }
 
 impl LogSeverity {
-	pub fn log<M: Monitor>(self, monitor: &RefCell<M>, message: String<256>) {
-		let mut monitor = monitor.borrow_mut();
-		monitor.push_log(LogFrame {
+	pub fn make(self, message: String<255>) -> LogFrame {
+		LogFrame {
 			severity: self,
 			message,
-		});
+		}
 	}
 }
 
@@ -184,9 +182,10 @@ impl LogSeverity {
 /// implementations of [`Monitor`] should not perform any filtering.
 ///
 /// Log lines that are too long should split on the nearest whitespace.
+#[derive(Clone, defmt::Format)]
 pub struct LogFrame {
 	pub severity: LogSeverity,
-	pub message: String<256>,
+	pub message: String<255>,
 }
 
 /// The monitor/screen and indicators for monitoring the status of the
@@ -222,13 +221,13 @@ pub trait Monitor {
 	fn start_test_run(
 		&mut self,
 		total: usize,
-		author: String<256>,
-		title: String<256>,
-		ref_id: String<256>,
+		author: String<255>,
+		title: String<255>,
+		ref_id: String<255>,
 	);
 
 	/// Indicates the start of a new test
-	fn start_test(&mut self, name: String<256>);
+	fn start_test(&mut self, name: String<255>);
 
 	/// Should be called frequently - at least 60 times a second, but can be called
 	/// faster. Must be passed a monotonic millisecond instance.

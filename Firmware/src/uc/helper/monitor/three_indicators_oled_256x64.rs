@@ -122,15 +122,15 @@ where
 	fn start_test_run(
 		&mut self,
 		total: usize,
-		author: String<256>,
-		title: String<256>,
-		ref_id: String<256>,
+		author: String<255>,
+		title: String<255>,
+		ref_id: String<255>,
 	) {
 		self.test_renderer
 			.start_test_run(total, author, title, ref_id);
 	}
 
-	fn start_test(&mut self, name: String<256>) {
+	fn start_test(&mut self, name: String<255>) {
 		self.test_renderer.start_test(name);
 	}
 }
@@ -288,10 +288,10 @@ impl LogRenderer {
 struct TestRenderer {
 	total: usize,
 	count: usize,
-	author: String<256>,
-	title: String<256>,
-	ref_id: String<256>,
-	current_test: String<256>,
+	author: String<255>,
+	title: String<255>,
+	ref_id: String<255>,
+	current_test: String<255>,
 	dirty: bool,
 }
 
@@ -353,9 +353,9 @@ impl TestRenderer {
 	fn start_test_run(
 		&mut self,
 		total: usize,
-		author: String<256>,
-		title: String<256>,
-		ref_id: String<256>,
+		author: String<255>,
+		title: String<255>,
+		ref_id: String<255>,
 	) {
 		self.total = total;
 		self.count = 0;
@@ -365,7 +365,7 @@ impl TestRenderer {
 		self.dirty = true;
 	}
 
-	fn start_test(&mut self, name: String<256>) {
+	fn start_test(&mut self, name: String<255>) {
 		self.current_test = name;
 		self.dirty = true;
 		self.count += 1;

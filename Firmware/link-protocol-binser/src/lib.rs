@@ -28,6 +28,7 @@ pub enum Error<IoError: MaybeFormat> {
 	StringTooLong,
 	ArrayTooLong,
 	InvalidMessageCode,
+	InvalidEnumeration,
 	MalformedString,
 	Eof,
 	Io(IoError),
@@ -172,6 +173,21 @@ impl<const SZ: usize> Deserialize for [u8; SZ] {
 		let mut r = [0u8; SZ];
 		reader.read(&mut r).await?;
 		Ok(r)
+	}
+}
+
+impl Serialize for bool {
+	async fn serialize<W: Write>(&self, writer: &mut W) -> Result<(), Error<W::Error>> {
+		writer.write(&[*self as u8]).await?;
+		Ok(())
+	}
+}
+
+impl Deserialize for bool {
+	async fn deserialize<R: Read>(reader: &mut R) -> Result<Self, Error<R::Error>> {
+		let mut r = [0u8; 1];
+		reader.read(&mut r).await?;
+		Ok(r[0] != 0)
 	}
 }
 
