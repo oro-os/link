@@ -231,6 +231,21 @@ pub async fn main(spawner: Spawner) -> ! {
 			Command::Packet(Packet::SetMonitorStandby(standby)) => {
 				monitor_sender.send(Command::SetStandby(standby)).await
 			}
+			Command::Packet(Packet::StartTestSession {
+				total_tests,
+				author,
+				title,
+				ref_id,
+			}) => {
+				monitor_sender
+					.send(Command::StartTestSession {
+						total_tests: total_tests as usize,
+						author,
+						title,
+						ref_id,
+					})
+					.await
+			}
 			Command::DaemonConnected => {
 				debug!("broker: telling daemon we're online");
 				daemon_sender

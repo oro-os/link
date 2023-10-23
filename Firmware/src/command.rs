@@ -6,6 +6,7 @@ use embassy_sync::{
 	blocking_mutex::raw::NoopRawMutex,
 	channel::{Channel, Receiver, Sender},
 };
+use heapless::String;
 use link_protocol::Packet;
 
 pub type CommandChannel<const SZ: usize> = Channel<NoopRawMutex, Command, SZ>;
@@ -27,4 +28,11 @@ pub enum Command {
 	Log(uc::LogFrame),
 	/// Sets the monitor standby mode
 	SetStandby(bool),
+	/// Starts a new test session
+	StartTestSession {
+		total_tests: usize,
+		author: String<255>,
+		title: String<255>,
+		ref_id: String<255>,
+	},
 }

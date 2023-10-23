@@ -53,6 +53,15 @@ pub enum Packet {
 	/// turning off the display. `false` turns the monitor back on.
 	#[proto(id = 5)]
 	SetMonitorStandby(bool),
+
+	/// Starts a new test session
+	#[proto(id = 6)]
+	StartTestSession {
+		total_tests: u32,
+		author: String<255>,
+		title: String<255>,
+		ref_id: String<255>,
+	},
 }
 
 #[derive(Debug, Clone, LinkMessage)]

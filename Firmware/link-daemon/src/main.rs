@@ -54,7 +54,6 @@ async fn task_process_oro_link(stream: TcpStream) -> Result<(), ProtoError<io::E
 				info!("    link UID:              {}", ::hex::encode_upper(uid));
 
 				// XXX DEBUG changing scene
-				sender.send(Packet::SetMonitorStandby(false)).await?;
 				sender
 					.send(Packet::SetScene(link_protocol::Scene::Logo))
 					.await?;
@@ -68,7 +67,17 @@ async fn task_process_oro_link(stream: TcpStream) -> Result<(), ProtoError<io::E
 					)))
 					.await?;
 				async_std::task::sleep(core::time::Duration::from_secs(3)).await;
-				sender.send(Packet::SetMonitorStandby(true)).await?;
+				sender
+					.send(Packet::StartTestSession {
+						total_tests: 1337,
+						author: "Josh Junon".into(),
+						title: "test: daemon protocol".into(),
+						ref_id: "abcd1234abcd1234abcd1234abcd1234".into(),
+					})
+					.await?;
+				sender
+					.send(Packet::SetScene(link_protocol::Scene::Test))
+					.await?;
 			}
 			unknown => warn!("dropping unknown packet: {:?}", unknown),
 		}

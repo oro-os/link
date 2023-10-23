@@ -14,6 +14,12 @@ pub async fn run<M: Monitor, const SZ: usize>(
 					Command::SetScene(scene) => monitor.set_scene(scene),
 					Command::Log(entry) => monitor.push_log(entry),
 					Command::SetStandby(standby) => monitor.standby_mode(standby),
+					Command::StartTestSession {
+						total_tests,
+						author,
+						title,
+						ref_id,
+					} => monitor.start_test_run(total_tests, author, title, ref_id),
 					unknown => warn!("monitor: ignoring unknown command: {:?}", unknown),
 				}
 			}
