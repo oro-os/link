@@ -1,5 +1,5 @@
 use crate::{
-	macros::{debug, error, info, trace, warn},
+	macros::{debug, error, trace},
 	Deserialize, Error, Packet, Read, Serialize, Write,
 };
 use aes::{

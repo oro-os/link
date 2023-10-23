@@ -4,17 +4,9 @@ use crate::{
 };
 use defmt::{debug, error, info, trace, warn};
 use embassy_futures::select::{select, Either};
-use embassy_net::{
-	driver::Driver,
-	tcp::{TcpReader, TcpSocket, TcpWriter},
-	ConfigV4, Ipv4Address, Stack,
-};
+use embassy_net::{driver::Driver, tcp::TcpSocket, ConfigV4, Ipv4Address, Stack};
 use embassy_time::{Duration, Timer};
-use embedded_io_async::{Read, Write};
-use link_protocol::{
-	channel::{PacketReceiver, PacketSender, Side},
-	Error as LinkPacketError, Packet,
-};
+use link_protocol::{channel::Side, Packet};
 
 const ORO_CICD_PORT: u16 = 1337;
 

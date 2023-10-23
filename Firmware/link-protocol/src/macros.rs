@@ -1,25 +1,3 @@
-macro_rules! info {
-	($($e:expr),*) => {
-		#[cfg(feature = "log")]
-		::log::info!($($e),*);
-		#[cfg(feature = "defmt")]
-		::defmt::info!($($e),*);
-	}
-}
-
-pub(crate) use info;
-
-macro_rules! warn_impl {
-	($($e:expr),*) => {
-		#[cfg(feature = "log")]
-		::log::warn!($($e),*);
-		#[cfg(feature = "defmt")]
-		::defmt::warn!($($e),*);
-	}
-}
-
-pub(crate) use warn_impl as warn;
-
 macro_rules! error {
 	($($e:expr),*) => {
 		#[cfg(feature = "log")]

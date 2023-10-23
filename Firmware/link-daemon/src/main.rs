@@ -7,7 +7,6 @@ use async_std::{
 	task,
 };
 use envconfig::Envconfig;
-use heapless::Vec;
 use link_protocol::{
 	channel::{negotiate, RWError, Side as ChannelSide},
 	Error as ProtoError, Packet,
@@ -26,7 +25,7 @@ struct Config {
 	pub use_journald: u8,
 }
 
-async fn task_process_oro_link(mut stream: TcpStream) -> Result<(), ProtoError<io::Error>> {
+async fn task_process_oro_link(stream: TcpStream) -> Result<(), ProtoError<io::Error>> {
 	debug!("incoming oro link connection");
 
 	let receiver = io::BufReader::new(stream.clone());
