@@ -69,6 +69,7 @@ pub async fn run<D: Driver + 'static, R: uc::Rng>(
 			};
 
 		debug!("daemon: encryption key negotiated, beginning communications");
+		broker_sender.send(Command::DaemonConnected).await;
 
 		loop {
 			match select(receiver.receive(), daemon_receiver.receive()).await {
@@ -114,7 +115,20 @@ pub async fn run<D: Driver + 'static, R: uc::Rng>(
 			}
 		}
 
+		debug!("daemon: aborting socket to daemon");
 		sock.abort();
+		if let Err(err) = sock.flush().await {
+			error!(
+				"daemon: failed to flush after daemon socket abort: {:?}",
+				err
+			);
+			error!("daemon: link is now in a bad state; sending reset command");
+			loop {
+				broker_sender.send(Command::Reset).await;
+				Timer::after(Duration::from_secs(1)).await;
+				error!("daemon: LINK HAS NOT RESET AFTER BEING PUT INTO A BAD STATE!");
+			}
+		};
 	}
 }
 

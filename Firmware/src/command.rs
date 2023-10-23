@@ -12,6 +12,8 @@ pub type CommandSender<const SZ: usize> = Sender<'static, NoopRawMutex, Command,
 #[derive(Format)]
 #[non_exhaustive]
 pub enum Command {
+	/// A new daemon connection has been established
+	DaemonConnected,
 	/// Says hello to the daemon, bringing the link online and marking
 	/// it as available.
 	DaemonHello { uid: [u8; 32], version: String<16> },

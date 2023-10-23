@@ -197,17 +197,17 @@ pub async fn main(spawner: Spawner) -> ! {
 	spawner.must_spawn(time_task(extnet, wall_clock));
 	spawner.must_spawn(daemon_task(extnet, rng, broker_sender, daemon_receiver));
 
-	// Tell the daemon we're online now.
-	debug!("broker: telling daemon we're online");
-	daemon_sender
-		.send(Command::DaemonHello {
-			uid: uid.unique_id(),
-			version: env!("CARGO_PKG_VERSION").into(),
-		})
-		.await;
-
 	loop {
 		match broker_receiver.receive().await {
+			Command::DaemonConnected => {
+				debug!("broker: telling daemon we're online");
+				daemon_sender
+					.send(Command::DaemonHello {
+						uid: uid.unique_id(),
+						version: env!("CARGO_PKG_VERSION").into(),
+					})
+					.await;
+			}
 			#[allow(clippy::diverging_sub_expression)]
 			Command::Reset => {
 				warn!("!!! LINK WILL RESET IN 50ms !!!");

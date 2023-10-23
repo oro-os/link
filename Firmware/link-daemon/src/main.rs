@@ -49,12 +49,9 @@ async fn task_process_oro_link(stream: TcpStream) -> Result<(), ProtoError<io::E
 
 		match packet {
 			Packet::LinkOnline { uid, version } => {
-				// XXX DEBUG send reset
-				debug!(
-					"link send online ({}, {:?}) - telling it to reset",
-					version, uid
-				);
-				sender.send(Packet::ResetLink).await?;
+				info!("oro link came online");
+				info!("    link firmware version: {}", version);
+				info!("    link UID:              {}", ::hex::encode_upper(uid));
 			}
 			unknown => warn!("dropping unknown packet: {:?}", unknown),
 		}
