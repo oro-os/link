@@ -62,6 +62,22 @@ pub enum Packet {
 		title: String<255>,
 		ref_id: String<255>,
 	},
+
+	/// Starts a new test; no effect if a session isn't started.
+	#[proto(id = 7)]
+	StartTest { name: String<255> },
+
+	/// Sets the power state of the machine
+	#[proto(id = 8)]
+	SetPowerState(PowerState),
+
+	/// Sends the power signal to the machine
+	#[proto(id = 9)]
+	PressPower,
+
+	/// Sends the reset signal to the machine
+	#[proto(id = 10)]
+	PressReset,
 }
 
 #[derive(Debug, Clone, LinkMessage)]
@@ -86,4 +102,16 @@ pub enum LogEntry {
 	Warn(String<255>),
 	#[proto(id = 3)]
 	Error(String<255>),
+}
+
+#[derive(Debug, Clone, LinkMessage)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[non_exhaustive]
+pub enum PowerState {
+	#[proto(id = 1)]
+	Off,
+	#[proto(id = 2)]
+	Standby,
+	#[proto(id = 3)]
+	On,
 }

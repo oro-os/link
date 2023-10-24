@@ -28,7 +28,7 @@ use embassy_time::{Duration, Timer};
 use heapless::Vec;
 use link_protocol::{self as proto, Packet};
 use static_cell::make_static;
-use uc::{Monitor as _, ResetManager, Rng, Scene, UniqueId};
+use uc::{Monitor, PowerState, ResetManager, Rng, Scene, SystemUnderTest, UniqueId};
 
 #[defmt::panic_handler]
 fn defmt_panic() -> ! {
@@ -111,7 +111,7 @@ async fn daemon_task(
 pub async fn main(spawner: Spawner) -> ! {
 	let (
 		debug_led,
-		_system,
+		mut system,
 		monitor,
 		exteth,
 		syseth,
@@ -245,6 +245,32 @@ pub async fn main(spawner: Spawner) -> ! {
 						ref_id,
 					})
 					.await
+			}
+			Command::Packet(Packet::StartTest { name }) => {
+				monitor_sender.send(Command::StartTest { name }).await
+			}
+			Command::Packet(Packet::SetPowerState(state)) => {
+				debug!("broker: transitioning to power state: {:?}", state);
+				system.transition_power_state(match state {
+					proto::PowerState::Off => PowerState::Off,
+					proto::PowerState::Standby => PowerState::Standby,
+					proto::PowerState::On => PowerState::On,
+					_ => {
+						warn!(
+							"broker: asked to transition to unknown power state: {:?}",
+							state
+						);
+						PowerState::Off
+					}
+				});
+			}
+			Command::Packet(Packet::PressPower) => {
+				debug!("broker: pressing the power button");
+				system.power();
+			}
+			Command::Packet(Packet::PressReset) => {
+				debug!("broker: pressing the reset button");
+				system.reset();
 			}
 			Command::DaemonConnected => {
 				debug!("broker: telling daemon we're online");

@@ -35,4 +35,6 @@ pub enum Command {
 		title: String<255>,
 		ref_id: String<255>,
 	},
+	/// Starts a new test
+	StartTest { name: String<255> },
 }

@@ -20,6 +20,7 @@ pub async fn run<M: Monitor, const SZ: usize>(
 						title,
 						ref_id,
 					} => monitor.start_test_run(total_tests, author, title, ref_id),
+					Command::StartTest { name } => monitor.start_test(name),
 					unknown => warn!("monitor: ignoring unknown command: {:?}", unknown),
 				}
 			}

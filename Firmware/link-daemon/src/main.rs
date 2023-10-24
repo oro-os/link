@@ -12,7 +12,7 @@ use link_protocol::{
 	Error as ProtoError, Packet,
 };
 use log::{debug, error, info, warn};
-use rand::rngs::OsRng;
+use rand::{rngs::OsRng, RngCore};
 
 #[derive(Envconfig)]
 struct Config {
@@ -63,10 +63,14 @@ async fn task_process_oro_link(stream: TcpStream) -> Result<(), ProtoError<io::E
 					.await?;
 				sender
 					.send(Packet::Log(link_protocol::LogEntry::Info(
-						"Hello from Oro Daemon!".into(),
+						"booting machine...".into(),
 					)))
 					.await?;
-				async_std::task::sleep(core::time::Duration::from_secs(3)).await;
+				sender
+					.send(Packet::SetPowerState(link_protocol::PowerState::On))
+					.await?;
+				sender.send(Packet::PressPower).await?;
+				async_std::task::sleep(core::time::Duration::from_secs(5)).await;
 				sender
 					.send(Packet::StartTestSession {
 						total_tests: 1337,
@@ -78,6 +82,29 @@ async fn task_process_oro_link(stream: TcpStream) -> Result<(), ProtoError<io::E
 				sender
 					.send(Packet::SetScene(link_protocol::Scene::Test))
 					.await?;
+
+				for (i, name) in [
+					"test_protocol_proc_macro",
+					"test_test_harness",
+					"test_hid_mouse",
+					"test_hid_keyboard",
+				]
+				.into_iter()
+				.cycle()
+				.take(1337)
+				.enumerate()
+				{
+					if (i % 50) == 0 && i > 0 {
+						sender.send(Packet::PressReset).await?;
+					}
+					sender.send(Packet::StartTest { name: name.into() }).await?;
+					async_std::task::sleep(core::time::Duration::from_millis(
+						OsRng.next_u64() % 300,
+					))
+					.await;
+				}
+
+				sender.send(Packet::ResetLink).await?;
 			}
 			unknown => warn!("dropping unknown packet: {:?}", unknown),
 		}
