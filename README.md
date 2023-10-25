@@ -120,5 +120,5 @@ and all other materials are licensed under the same license.
 
 Firmware dependencies are under their respective licenses.
 
-The _Enter Command_ font used for text display is released CC-BY-4.0
+The _Enter Command_ font used in part for text display is released CC-BY-4.0
 by [Font End Dev (jeti)](https://fontenddev.com).
