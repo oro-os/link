@@ -285,7 +285,7 @@ pub async fn main(spawner: Spawner) -> ! {
 			Command::Log(entry) => monitor_sender.send(Command::Log(entry)).await,
 			#[allow(clippy::diverging_sub_expression)]
 			Command::Packet(Packet::ResetLink) | Command::Reset => {
-				warn!("!!! LINK WILL RESET IN 50ms !!!");
+				warn!("broker: !!! LINK WILL RESET IN 50ms !!!");
 				Timer::after(Duration::from_millis(50)).await;
 				rst.reset();
 				#[allow(unreachable_code)]
