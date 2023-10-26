@@ -243,3 +243,47 @@ impl<const SZ: usize> Deserialize for heapless::String<SZ> {
 		Ok(heapless::String::from(utf8))
 	}
 }
+
+#[cfg(feature = "heapless")]
+impl<const SZ: usize> Serialize for heapless::Vec<u8, SZ> {
+	async fn serialize<W: Write>(&self, writer: &mut W) -> Result<(), Error<W::Error>> {
+		let bytes = self.as_slice();
+		let len = bytes.len();
+
+		debug_assert!(len <= SZ);
+		debug_assert!(len <= u32::MAX as usize);
+
+		let num_bytes = num_bytes_for_size::<SZ>();
+
+		let len_bytes = (len as u32).to_be_bytes();
+
+		writer.write(&len_bytes[(4 - num_bytes)..]).await?;
+		writer.write(bytes).await
+	}
+}
+
+#[cfg(feature = "heapless")]
+impl<const SZ: usize> Deserialize for heapless::Vec<u8, SZ> {
+	async fn deserialize<R: Read>(reader: &mut R) -> Result<Self, Error<R::Error>> {
+		let num_bytes = num_bytes_for_size::<SZ>();
+
+		let mut len_bytes = [0u8; 4];
+		reader.read(&mut len_bytes[4 - num_bytes..]).await?;
+
+		let len = u32::from_be_bytes(len_bytes) as usize;
+
+		if len > SZ {
+			return Err(Error::StringTooLong);
+		}
+
+		let mut r = heapless::Vec::<u8, SZ>::new();
+		let mut_slice = unsafe {
+			r.set_len(len);
+			::core::slice::from_raw_parts_mut(r.as_mut_ptr(), SZ)
+		};
+
+		reader.read(&mut mut_slice[..len]).await?;
+
+		Ok(r)
+	}
+}

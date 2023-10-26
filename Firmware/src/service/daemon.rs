@@ -72,8 +72,10 @@ pub async fn run<D: Driver + 'static, R: uc::Rng, const BSZ: usize, const DSZ: u
 
 		loop {
 			match select(receiver.receive(), daemon_receiver.receive()).await {
-				Either::First(Ok(packet)) => broker_sender.send(Command::Packet(packet)).await,
-				Either::Second(Command::Packet(packet)) => {
+				Either::First(Ok(packet)) => {
+					broker_sender.send(Command::IncomingPacket(packet)).await
+				}
+				Either::Second(Command::OutgoingPacket(packet)) => {
 					if let Err(err) = sender.send(packet).await {
 						error!("daemon: failed to send packet: {:?}", err);
 						break;

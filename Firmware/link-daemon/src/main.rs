@@ -12,7 +12,7 @@ use link_protocol::{
 	Error as ProtoError, Packet,
 };
 use log::{debug, error, info, warn};
-use rand::{rngs::OsRng, RngCore};
+use rand::rngs::OsRng;
 
 #[derive(Envconfig)]
 struct Config {
@@ -53,58 +53,11 @@ async fn task_process_oro_link(stream: TcpStream) -> Result<(), ProtoError<io::E
 				info!("    link firmware version: {}", version);
 				info!("    link UID:              {}", ::hex::encode_upper(uid));
 
-				// XXX DEBUG changing scene
-				sender
-					.send(Packet::SetScene(link_protocol::Scene::Logo))
-					.await?;
-				async_std::task::sleep(core::time::Duration::from_secs(3)).await;
-				sender
-					.send(Packet::SetScene(link_protocol::Scene::Log))
-					.await?;
-				sender
-					.send(Packet::Log(link_protocol::LogEntry::Info(
-						"booting machine...".into(),
-					)))
-					.await?;
+				// XXX DEBUG turn on system (debugging PXE booting)
 				sender
 					.send(Packet::SetPowerState(link_protocol::PowerState::On))
 					.await?;
 				sender.send(Packet::PressPower).await?;
-				async_std::task::sleep(core::time::Duration::from_secs(5)).await;
-				sender
-					.send(Packet::StartTestSession {
-						total_tests: 1337,
-						author: "Josh Junon".into(),
-						title: "test: daemon protocol".into(),
-						ref_id: "abcd1234abcd1234abcd1234abcd1234".into(),
-					})
-					.await?;
-				sender
-					.send(Packet::SetScene(link_protocol::Scene::Test))
-					.await?;
-
-				for (i, name) in [
-					"test_protocol_proc_macro",
-					"test_test_harness",
-					"test_hid_mouse",
-					"test_hid_keyboard",
-				]
-				.into_iter()
-				.cycle()
-				.take(1337)
-				.enumerate()
-				{
-					if (i % 50) == 0 && i > 0 {
-						sender.send(Packet::PressReset).await?;
-					}
-					sender.send(Packet::StartTest { name: name.into() }).await?;
-					async_std::task::sleep(core::time::Duration::from_millis(
-						OsRng.next_u64() % 300,
-					))
-					.await;
-				}
-
-				sender.send(Packet::ResetLink).await?;
 			}
 			unknown => warn!("dropping unknown packet: {:?}", unknown),
 		}

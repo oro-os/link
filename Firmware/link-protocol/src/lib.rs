@@ -16,7 +16,7 @@ pub mod channel;
 #[cfg(feature = "channels")]
 mod macros;
 
-use heapless::String;
+use heapless::{String, Vec};
 use link_protocol_binser::LinkMessage;
 pub use link_protocol_binser::{Deserialize, Error, Read, Serialize, Write};
 
@@ -78,6 +78,26 @@ pub enum Packet {
 	/// Sends the reset signal to the machine
 	#[proto(id = 10)]
 	PressReset,
+
+	/// The SUT has requested a file with the given pathname
+	/// to be sent over TFTP (during PXE booting)
+	#[proto(id = 11)]
+	TftpRequest(String<255>),
+
+	/// The SUT has acknowledged it has received a block with the
+	/// given ID
+	#[proto(id = 12)]
+	TftpAck(u16),
+
+	/// The SUT has produced an error in response to given block,
+	/// with a given error message
+	#[proto(id = 13)]
+	TftpError(u16, String<255>),
+
+	/// A block of data to be forwarded to the SUT over TFTP in response
+	/// to a file request, given the block ID and the vector of bytes.
+	#[proto(id = 14)]
+	TftpBlock(u16, Vec<u8, 512>),
 }
 
 #[derive(Debug, Clone, LinkMessage)]

@@ -88,8 +88,12 @@ async fn pxe_task(stack: &'static Stack<SysEthernetDriver>) -> ! {
 }
 
 #[embassy_executor::task]
-async fn tftp_task(stack: &'static Stack<SysEthernetDriver>) -> ! {
-	service::tftp::run(stack).await
+async fn tftp_task(
+	stack: &'static Stack<SysEthernetDriver>,
+	broker_sender: CommandSender<32>,
+	tftp_receiver: CommandReceiver<8>,
+) -> ! {
+	service::tftp::run(stack, broker_sender, tftp_receiver).await
 }
 
 #[embassy_executor::task]
@@ -177,6 +181,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	static mut BROKER_CHANNEL: CommandChannel<32> = CommandChannel::new();
 	static mut DAEMON_CHANNEL: CommandChannel<16> = CommandChannel::new();
 	static mut MONITOR_CHANNEL: CommandChannel<4> = CommandChannel::new();
+	static mut TFTP_CHANNEL: CommandChannel<8> = CommandChannel::new();
 
 	let broker_receiver = unsafe { BROKER_CHANNEL.receiver() };
 	let broker_sender = unsafe { BROKER_CHANNEL.sender() };
@@ -184,19 +189,21 @@ pub async fn main(spawner: Spawner) -> ! {
 	let daemon_receiver = unsafe { DAEMON_CHANNEL.receiver() };
 	let monitor_sender = unsafe { MONITOR_CHANNEL.sender() };
 	let monitor_receiver = unsafe { MONITOR_CHANNEL.receiver() };
+	let tftp_sender = unsafe { TFTP_CHANNEL.sender() };
+	let tftp_receiver = unsafe { TFTP_CHANNEL.receiver() };
 
 	spawner.must_spawn(net_ext_stack_task(extnet));
 	spawner.must_spawn(net_sys_stack_task(sysnet));
 	spawner.must_spawn(monitor_task(monitor_receiver));
 	spawner.must_spawn(debug_led_task(debug_led));
 	spawner.must_spawn(pxe_task(sysnet));
-	spawner.must_spawn(tftp_task(sysnet));
+	spawner.must_spawn(tftp_task(sysnet, broker_sender, tftp_receiver));
 	spawner.must_spawn(time_task(extnet, wall_clock));
 	spawner.must_spawn(daemon_task(extnet, rng, broker_sender, daemon_receiver));
 
 	loop {
 		match broker_receiver.receive().await {
-			Command::Packet(Packet::SetScene(scene)) => {
+			Command::IncomingPacket(Packet::SetScene(scene)) => {
 				monitor_sender
 					.send(Command::SetScene(match scene {
 						proto::Scene::Log => uc::Scene::Log,
@@ -212,7 +219,7 @@ pub async fn main(spawner: Spawner) -> ! {
 					}))
 					.await
 			}
-			Command::Packet(Packet::Log(entry)) => {
+			Command::IncomingPacket(Packet::Log(entry)) => {
 				monitor_sender
 					.send(Command::Log(match entry {
 						proto::LogEntry::Info(msg) => uc::LogSeverity::Info.make(msg),
@@ -228,10 +235,10 @@ pub async fn main(spawner: Spawner) -> ! {
 					}))
 					.await
 			}
-			Command::Packet(Packet::SetMonitorStandby(standby)) => {
+			Command::IncomingPacket(Packet::SetMonitorStandby(standby)) => {
 				monitor_sender.send(Command::SetStandby(standby)).await
 			}
-			Command::Packet(Packet::StartTestSession {
+			Command::IncomingPacket(Packet::StartTestSession {
 				total_tests,
 				author,
 				title,
@@ -246,10 +253,10 @@ pub async fn main(spawner: Spawner) -> ! {
 					})
 					.await
 			}
-			Command::Packet(Packet::StartTest { name }) => {
+			Command::IncomingPacket(Packet::StartTest { name }) => {
 				monitor_sender.send(Command::StartTest { name }).await
 			}
-			Command::Packet(Packet::SetPowerState(state)) => {
+			Command::IncomingPacket(Packet::SetPowerState(state)) => {
 				debug!("broker: transitioning to power state: {:?}", state);
 				system.transition_power_state(match state {
 					proto::PowerState::Off => PowerState::Off,
@@ -264,18 +271,27 @@ pub async fn main(spawner: Spawner) -> ! {
 					}
 				});
 			}
-			Command::Packet(Packet::PressPower) => {
+			Command::IncomingPacket(Packet::PressPower) => {
 				debug!("broker: pressing the power button");
 				system.power();
 			}
-			Command::Packet(Packet::PressReset) => {
+			Command::IncomingPacket(Packet::PressReset) => {
 				debug!("broker: pressing the reset button");
 				system.reset();
+			}
+			Command::IncomingPacket(Packet::TftpBlock(bid, buf)) => {
+				tftp_sender
+					.send(Command::IncomingPacket(Packet::TftpBlock(bid, buf)))
+					.await;
+			}
+			Command::OutgoingPacket(packet) => {
+				// Forward to daemon
+				daemon_sender.send(Command::OutgoingPacket(packet)).await;
 			}
 			Command::DaemonConnected => {
 				debug!("broker: telling daemon we're online");
 				daemon_sender
-					.send(Command::Packet(Packet::LinkOnline {
+					.send(Command::OutgoingPacket(Packet::LinkOnline {
 						uid: uid.unique_id(),
 						version: env!("CARGO_PKG_VERSION").into(),
 					}))
@@ -284,7 +300,7 @@ pub async fn main(spawner: Spawner) -> ! {
 			Command::SetScene(scene) => monitor_sender.send(Command::SetScene(scene)).await,
 			Command::Log(entry) => monitor_sender.send(Command::Log(entry)).await,
 			#[allow(clippy::diverging_sub_expression)]
-			Command::Packet(Packet::ResetLink) | Command::Reset => {
+			Command::IncomingPacket(Packet::ResetLink) | Command::Reset => {
 				warn!("broker: !!! LINK WILL RESET IN 50ms !!!");
 				Timer::after(Duration::from_millis(50)).await;
 				rst.reset();

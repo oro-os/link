@@ -18,8 +18,10 @@ pub type CommandSender<const SZ: usize> = Sender<'static, NoopRawMutex, Command,
 pub enum Command {
 	/// A new daemon connection has been established
 	DaemonConnected,
-	/// A packet to be sent to, or that is received from, the daemon
-	Packet(Packet),
+	/// An incoming packet for processing
+	IncomingPacket(Packet),
+	/// An outgoing packet for sending to the daemon
+	OutgoingPacket(Packet),
 	/// Resets the link
 	Reset,
 	/// Changes the currently displayed scene
