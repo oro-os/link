@@ -284,6 +284,11 @@ pub async fn main(spawner: Spawner) -> ! {
 					.send(Command::IncomingPacket(Packet::TftpBlock(bid, buf)))
 					.await;
 			}
+			Command::IncomingPacket(Packet::TftpError(bid, msg)) => {
+				tftp_sender
+					.send(Command::IncomingPacket(Packet::TftpError(bid, msg)))
+					.await;
+			}
 			Command::OutgoingPacket(packet) => {
 				// Forward to daemon
 				daemon_sender.send(Command::OutgoingPacket(packet)).await;

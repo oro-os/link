@@ -52,13 +52,30 @@ pub async fn run<D: Driver + 'static, const S: usize, const R: usize>(
 
 							if let Ok(vec) = TryInto::<Vec<u8, 600>>::try_into(msg) {
 								if let Err(err) = socket.send_to(vec.as_slice(), ep).await {
-									error!("tftp: failed to send data block: {:?}", err);
+									error!("tftp: failed to send data block to SUT: {:?}", err);
 								} else {
 									trace!("tftp: transferred block {} of size {}", bid, buf.len());
 								}
 							} else {
 								error!(
-									"tftp: failed to send data block: constructed message was too large"
+									"tftp: failed to send data block to SUT: constructed message was too large"
+								);
+							}
+						}
+					}
+					Command::IncomingPacket(Packet::TftpError(bid, msg)) => {
+						if let Some(ep) = last_ep {
+							let msg = Message::Error(bid, msg.as_str());
+
+							if let Ok(vec) = TryInto::<Vec<u8, 300>>::try_into(msg) {
+								if let Err(err) = socket.send_to(vec.as_slice(), ep).await {
+									error!("tftp: failed to send error message to SUT: {:?}", err);
+								} else {
+									trace!("tftp: transferred error to SUT");
+								}
+							} else {
+								error!(
+									"tftp: failed to send error message to SUT: constructed message was too large"
 								);
 							}
 						}
