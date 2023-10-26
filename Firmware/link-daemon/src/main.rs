@@ -11,7 +11,7 @@ use link_protocol::{
 	channel::{negotiate, RWError, Side as ChannelSide},
 	Error as ProtoError, Packet,
 };
-use log::{debug, error, info, warn};
+use log::{debug, error, info, trace, warn};
 use rand::rngs::OsRng;
 
 #[derive(Envconfig)]
@@ -20,7 +20,7 @@ struct Config {
 	pub link_server_port: u16,
 	#[envconfig(from = "LINK_SERVER_BIND", default = "0.0.0.0")]
 	pub link_server_bind: String,
-	#[cfg(target_os = "linux")]
+	#[cfg(feature = "journald")]
 	#[envconfig(from = "USE_JOURNALD", default = "0")]
 	pub use_journald: u8,
 }
@@ -59,6 +59,18 @@ async fn task_process_oro_link(stream: TcpStream) -> Result<(), ProtoError<io::E
 					.await?;
 				sender.send(Packet::PressPower).await?;
 			}
+			Packet::TftpRequest(pathname) => {
+				trace!("TFTP requested file: {}", pathname);
+				match pathname.as_str() {
+					"ORO_BOOT" => {}
+					filepath => {
+						warn!("TFTP client requested unknown pathname: {}", filepath);
+						sender
+							.send(Packet::TftpError(0, "unknown pathname".into()))
+							.await?; // FIXME: this is probably not the correct way to do this.
+					}
+				}
+			}
 			unknown => warn!("dropping unknown packet: {:?}", unknown),
 		}
 	}
@@ -88,10 +100,13 @@ async fn main() -> Result<!, io::Error> {
 
 	log::set_max_level(log::LevelFilter::Trace);
 
+	#[cfg(all(not(feature = "journald"), not(feature = "stderr")))]
+	compile_error!("one of 'journald' and/or 'stderr' must be specified as features");
+
 	#[allow(unused)]
 	let should_fallback = true;
 
-	#[cfg(target_os = "linux")] // FIXME: This isn't working.
+	#[cfg(feature = "journald")]
 	let should_fallback = {
 		if config.use_journald != 0 {
 			systemd_journal_logger::JournalLog::default()
@@ -106,6 +121,7 @@ async fn main() -> Result<!, io::Error> {
 		}
 	};
 
+	#[cfg(feature = "stderr")]
 	if should_fallback {
 		stderrlog::new()
 			//.module(module_path!())
