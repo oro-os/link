@@ -297,22 +297,30 @@ pub async fn main(spawner: Spawner) -> ! {
 					}))
 					.await;
 			}
+			#[allow(clippy::diverging_sub_expression)]
+			Command::DaemonDisconnected => {
+				warn!("broker: daemon connection was dropped; resetting");
+				break;
+			}
 			Command::SetScene(scene) => monitor_sender.send(Command::SetScene(scene)).await,
 			Command::Log(entry) => monitor_sender.send(Command::Log(entry)).await,
 			#[allow(clippy::diverging_sub_expression)]
 			Command::IncomingPacket(Packet::ResetLink) | Command::Reset => {
-				warn!("broker: !!! LINK WILL RESET IN 50ms !!!");
-				Timer::after(Duration::from_millis(50)).await;
-				rst.reset();
-				#[allow(unreachable_code)]
-				{
-					unreachable!();
-				}
+				warn!("broker: received request to reset");
+				break;
 			}
 			unknown => {
 				warn!("broker: unexpected command: {:?}", unknown);
 			}
 		}
+	}
+
+	warn!("broker: !!! LINK WILL RESET IN 50ms !!!");
+	Timer::after(Duration::from_millis(50)).await;
+	rst.reset();
+	#[allow(unreachable_code)]
+	{
+		unreachable!();
 	}
 }
 

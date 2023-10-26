@@ -108,6 +108,8 @@ pub async fn run<D: Driver + 'static, R: uc::Rng, const BSZ: usize, const DSZ: u
 				error!("daemon: LINK HAS NOT RESET AFTER BEING PUT INTO A BAD STATE!");
 			}
 		};
+
+		broker_sender.send(Command::DaemonDisconnected).await;
 	}
 }
 
