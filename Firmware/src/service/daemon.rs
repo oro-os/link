@@ -34,11 +34,11 @@ pub async fn run<D: Driver + 'static, R: uc::Rng, const BSZ: usize, const DSZ: u
 		current_config.dns_servers.clear();
 		current_config
 			.dns_servers
-			.push(Ipv4Address([1, 1, 1, 1]))
+			.push(Ipv4Address([94, 16, 114, 254])) // TODO: pull from an opennic.oro.sh record.
 			.unwrap();
 		current_config
 			.dns_servers
-			.push(Ipv4Address([94, 16, 114, 254])) // TODO: pull from an opennic.oro.sh record.
+			.push(Ipv4Address([1, 1, 1, 1]))
 			.unwrap();
 		stack.set_config_v4(ConfigV4::Static(current_config));
 
