@@ -7,7 +7,7 @@
 //! TODO: on `#[repr(u8)]` etc. and enforce they are fieldless variants with unique
 //! TODO: discriminators and do that instead. I don't remember why I didn't add
 //! TODO: discriminators before, actually...
-#![cfg_attr(all(not(test), feature = "embedded-io"), no_std)]
+#![cfg_attr(not(feature = "std"), no_std)]
 #![feature(async_fn_in_trait)]
 #![allow(clippy::large_enum_variant)]
 

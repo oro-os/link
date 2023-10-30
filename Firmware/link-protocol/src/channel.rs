@@ -12,12 +12,21 @@ use rand_core::RngCore;
 
 #[derive(Debug)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[cfg_attr(feature = "thiserror", derive(::thiserror::Error))]
 pub enum RWError<R, W>
 where
 	R: MaybeFormat,
 	W: MaybeFormat,
 {
+	#[cfg_attr(
+		feature = "thiserror",
+		error("an error occurred reading from the peer: {0}")
+	)]
 	Read(R),
+	#[cfg_attr(
+		feature = "thiserror",
+		error("an error occurred writing to the peer: {0}")
+	)]
 	Write(W),
 }
 

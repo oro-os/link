@@ -6,11 +6,13 @@ version = "0.1.0"
 edition = "2021"
 
 [features]
+std = ["link-protocol-binser/std"]
 defmt = ["dep:defmt", "link-protocol-binser/defmt", "heapless/defmt-impl"]
 log = ["dep:log"]
 embedded-io = ["channels", "link-protocol-binser/embedded-io"]
-async-std = ["channels", "link-protocol-binser/async-std"]
+async-std = ["channels", "link-protocol-binser/async-std", "std"]
 channels = ["dep:rand_core", "dep:aes", "dep:curve25519"]
+thiserror = ["dep:thiserror", "link-protocol-binser/thiserror"]
 
 [dependencies]
 link-protocol-binser = { path = "../link-protocol-binser", features = ["heapless"] }
@@ -20,3 +22,4 @@ rand_core = { version = "0.6.4", optional = true }
 defmt = { version = "0.3.5", default-features = false, optional = true }
 log = { version = "0.4.20", optional = true }
 curve25519 = { git = "https://github.com/oro-os/curve25519-rs", optional = true }
+thiserror = { version = "1.0.50", optional = true }

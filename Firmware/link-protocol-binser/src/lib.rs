@@ -1,4 +1,4 @@
-#![cfg_attr(all(not(test), feature = "embedded-io"), no_std)]
+#![cfg_attr(not(feature = "std"), no_std)]
 #![feature(async_fn_in_trait)]
 
 #[cfg(feature = "async-std")]
@@ -11,26 +11,53 @@ use defmt::Format;
 
 pub use link_protocol_binser_proc::LinkMessage;
 
+#[cfg(feature = "std")]
+pub trait MaybeError: std::error::Error {}
+#[cfg(feature = "std")]
+impl<T> MaybeError for T where T: std::error::Error {}
+
+#[cfg(not(feature = "std"))]
+pub trait MaybeError: core::fmt::Debug {}
+#[cfg(not(feature = "std"))]
+impl<T> MaybeError for T where T: core::fmt::Debug {}
+
 #[cfg(feature = "defmt")]
-pub trait MaybeFormat: defmt::Format + core::fmt::Debug {}
+pub trait MaybeFormat: defmt::Format + MaybeError {}
 #[cfg(feature = "defmt")]
-impl<T> MaybeFormat for T where T: defmt::Format + core::fmt::Debug {}
+impl<T> MaybeFormat for T where T: defmt::Format + MaybeError {}
 
 #[cfg(not(feature = "defmt"))]
-pub trait MaybeFormat: core::fmt::Debug {}
+pub trait MaybeFormat: MaybeError {}
 #[cfg(not(feature = "defmt"))]
-impl<T> MaybeFormat for T where T: core::fmt::Debug {}
+impl<T> MaybeFormat for T where T: MaybeError {}
 
 /// Errors that may occur during (de)serialization
 #[derive(Debug, Clone, PartialEq)]
 #[cfg_attr(feature = "defmt", derive(Format))]
+#[cfg_attr(feature = "thiserror", derive(::thiserror::Error))]
 pub enum Error<IoError: MaybeFormat> {
+	#[cfg_attr(
+		feature = "thiserror",
+		error("a sent or received string was too long to fit into a fixed buffer")
+	)]
 	StringTooLong,
+	#[cfg_attr(
+		feature = "thiserror",
+		error("a sent or received array was too long to fit into a fixed buffer")
+	)]
 	ArrayTooLong,
+	#[cfg_attr(
+		feature = "thiserror",
+		error("the packet refers to an unknown message code")
+	)]
 	InvalidMessageCode,
+	#[cfg_attr(feature = "thiserror", error("an invalid enum variant was specified"))]
 	InvalidEnumeration,
+	#[cfg_attr(feature = "thiserror", error("a string failed to decode as utf-8"))]
 	MalformedString,
+	#[cfg_attr(feature = "thiserror", error("unexpected EOF"))]
 	Eof,
+	#[cfg_attr(feature = "thiserror", error("io error occurred: {0}"))]
 	Io(IoError),
 }
 
