@@ -11,7 +11,7 @@ set -euo pipefail
 ## NOTE: https://github.com/actions/runner/issues/1882#issuecomment-1782061727
 
 function check_env {
-	if [ -z "${!1}" ]; then
+	if [ -z "${!1-}" ]; then
 		echo "missing environment variable: $1" >&2
 		exit 2
 	fi
