@@ -19,8 +19,6 @@ LEVEL := trace,embassy_net=debug
 endif
 endif
 
-LEVEL := $(LEVEL),embassy_hal_internal=warn
-
 ifndef PROBE_RUN
 PROBE_RUN := probe-run
 endif
@@ -43,7 +41,7 @@ ifndef COM
 COM = COM16
 endif
 
-export DEFMT_LOG = $(LEVEL)
+export DEFMT_LOG = $(LEVEL),embassy_hal_internal=warn
 export ORO_CONNECT_TO_IP = $(DEV_IP)
 
 # The default here is for my own machine. Change it to refer to

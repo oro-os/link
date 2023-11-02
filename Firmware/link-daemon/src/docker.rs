@@ -14,7 +14,7 @@
 //!
 //! Word of the wise: If you're doing async HTTP in 2023, use Tokio. Even if you
 //! really dislike Tokio, save yourself the headache.
-use log::{debug, warn};
+use log::warn;
 use serde::{ser::SerializeSeq, Deserialize, Serialize, Serializer};
 use std::collections::HashMap;
 use url::Url;
@@ -29,6 +29,8 @@ pub enum Error {
 	HttpStatus(surf::StatusCode),
 	#[error("image failed to build: {0}")]
 	DockerBuildFailure(String),
+	#[error("failed to serialize JSON: {0}")]
+	SerdeJson(#[from] serde_json::Error),
 }
 
 impl From<surf::Error> for Error {
@@ -80,6 +82,125 @@ impl Docker {
 
 		Ok(payload.id)
 	}
+
+	pub async fn start_container(&self, id: &str) -> Result<(), Error> {
+		let res = surf::post(self.url(format!("/v1.43/containers/{id}/start")))
+			.send()
+			.await?;
+
+		res.status().ok()
+	}
+
+	pub async fn wait_for_container(&self, id: &str) -> Result<(), Error> {
+		let res = surf::post(self.url(format!("/v1.43/containers/{id}/wait")))
+			.send()
+			.await?;
+
+		res.status().ok()
+	}
+
+	pub async fn remove_container(&self, id: &str, force: bool) -> Result<(), Error> {
+		let res = surf::delete(self.url(format!("/v1.43/containers/{id}")))
+			.query(&RemoveContainerQuery { force: Some(force) })?
+			.send()
+			.await?;
+
+		res.status().ok()
+	}
+
+	pub async fn delete_stopped_containers(
+		&self,
+		labels: Option<Vec<(String, String)>>,
+	) -> Result<(usize, Vec<String>), Error> {
+		let req = surf::post(self.url("/v1.43/containers/prune"));
+
+		let req = if let Some(labels) = labels {
+			req.query(&PruneContainersQuery {
+				filters: serde_json::to_string(&LabelFilters {
+					label: HashMap::from_iter(
+						labels.into_iter().map(|(k, v)| (format!("{k}={v}"), true)),
+					),
+				})?,
+			})
+			.unwrap()
+		} else {
+			req
+		};
+
+		let mut res = req.send().await?;
+
+		res.status().ok()?;
+
+		let res: PruneContainersResponse = res.body_json().await?;
+
+		Ok((
+			res.space_reclaimed,
+			res.containers_deleted.unwrap_or_default(),
+		))
+	}
+
+	pub async fn list_containers(
+		&self,
+		labels: Option<Vec<(String, String)>>,
+	) -> Result<Vec<(String, String)>, Error> {
+		let req = surf::get(self.url("/v1.43/containers/json"));
+
+		let req = if let Some(labels) = labels {
+			req.query(&PruneContainersQuery {
+				filters: serde_json::to_string(&LabelFilters {
+					label: HashMap::from_iter(
+						labels.into_iter().map(|(k, v)| (format!("{k}={v}"), true)),
+					),
+				})?,
+			})
+			.unwrap()
+		} else {
+			req
+		};
+
+		let mut res = req.send().await?;
+
+		res.status().ok()?;
+
+		let res: Vec<ContainerListing> = res.body_json().await?;
+
+		Ok(res.into_iter().map(|l| (l.id, l.state)).collect())
+	}
+}
+
+#[derive(Serialize, Debug)]
+#[serde(rename_all = "lowercase")]
+struct RemoveContainerQuery {
+	force: Option<bool>,
+}
+
+#[derive(Deserialize, Debug)]
+#[serde(rename_all = "PascalCase")]
+struct ContainerListing {
+	id: String,
+	state: String,
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "lowercase")]
+struct LabelFilters {
+	/// Don't ask me. I had to scour the Moby source code
+	/// to figure this out. The docs have no explanation as to how
+	/// to format these.
+	label: HashMap<String, bool>,
+}
+
+#[derive(Serialize, Debug)]
+#[serde(rename_all = "lowercase")]
+struct PruneContainersQuery {
+	filters: String,
+}
+
+#[derive(Deserialize, Debug)]
+#[serde(rename_all = "PascalCase")]
+struct PruneContainersResponse {
+	containers_deleted: Option<Vec<String>>,
+	space_reclaimed: usize,
 }
 
 #[derive(Debug, Default)]
@@ -168,7 +289,7 @@ pub struct CreateContainer {
 #[derive(Serialize, Debug, Default)]
 #[serde(rename_all = "PascalCase")]
 pub struct HostConfig {
-	binds: Option<Binds>,
+	pub binds: Option<Binds>,
 }
 
 #[derive(Deserialize, Debug, Default)]

@@ -1,24 +1,25 @@
-#![feature(never_type, async_fn_in_trait)]
+#![feature(never_type, async_fn_in_trait, async_closure)]
 
 mod docker;
 
 use self::docker::Docker;
 use async_std::{
-	io,
+	fs, io,
 	net::{TcpListener, TcpStream},
-	os::unix::net::UnixListener,
+	os::unix::net::{UnixListener, UnixStream},
 	prelude::*,
-	sync::Arc,
+	sync::{Arc, Mutex},
 	task,
 };
 use envconfig::Envconfig;
+use futures::{future::FutureExt, select};
 use link_protocol::{
 	channel::{negotiate, RWError, Side as ChannelSide},
 	Error as ProtoError, Packet,
 };
 use log::{debug, error, info, trace, warn};
 use rand::rngs::OsRng;
-use std::path::PathBuf;
+use std::str::FromStr;
 
 #[derive(Envconfig)]
 struct Config {
@@ -37,6 +38,10 @@ struct Config {
 	pub gh_access_token: String,
 	#[envconfig(from = "GH_ORGANIZATION")]
 	pub gh_organization: String,
+	#[envconfig(from = "LEVEL", default = "trace")]
+	pub log_level: String,
+	#[envconfig(from = "VERBOSE", default = "0")]
+	pub verbose: u8,
 }
 
 #[derive(thiserror::Error, Debug)]
@@ -79,42 +84,136 @@ async fn task_process_oro_link(
 		return Err(Error::NoHelloPacket);
 	};
 
+	let uds_path = format!("/tmp/link-{link_id}.sock");
+	if let Err(err) = fs::remove_file(&uds_path).await {
+		if err.kind() == io::ErrorKind::NotFound {
+			trace!("uds path doesn't exist: {}", uds_path);
+		} else {
+			error!(
+				"failed to remove previous link socket: {:?}: {}",
+				err, uds_path
+			);
+			return Err(err.into());
+		}
+	}
+
+	let uds = UnixListener::bind(uds_path.to_string()).await?;
+
+	debug!("pruning all containers for this link: {link_id}");
+	let containers = docker
+		.list_containers(Some(vec![("sh.oro.link".into(), link_id.clone())]))
+		.await?;
+	debug!("pruning {} containers:", containers.len());
+	for (id, state) in containers {
+		debug!("    - {id} ({state})");
+		docker.remove_container(&id, true).await?;
+	}
+
 	let id = docker
 		.create_container(&docker::CreateContainer {
 			image: config.docker_ref.clone(),
-			labels: Some(docker::Map::new().add("sh.oro".into(), "link".into())),
+			labels: Some(
+				docker::Map::new()
+					.add("sh.oro".into(), "link".into())
+					.add("sh.oro.link".into(), link_id.clone()),
+			),
 			env: Some(
 				docker::Args::new()
 					.add("ACCESS_TOKEN".into(), config.gh_access_token.clone())
 					.add("ORGANIZATION".into(), config.gh_organization.clone())
 					.add("LABELS".into(), "self-hosted,oro,oro-link,x86_64".into()) // TODO(qix-): use self-report functionality of link
-					.add("NAME".into(), link_id),
+					.add("NAME".into(), link_id.clone()),
 			),
+			host_config: Some(docker::HostConfig {
+				binds: Some(docker::Binds(vec![(
+					uds_path,
+					"/oro-link.sock".into(),
+					None,
+				)])),
+			}),
 			..Default::default()
 		})
 		.await?;
 
 	debug!("created actions runner container: {}", id);
 
-	loop {
-		let packet = receiver.receive().await?;
+	let r = ({
+		let docker = docker.clone();
+		async || {
+			docker.start_container(&id).await?;
 
-		match packet {
-			Packet::TftpRequest(pathname) => {
-				trace!("TFTP requested file: {}", pathname);
-				match pathname.as_str() {
-					"ORO_BOOT" => {}
-					filepath => {
-						warn!("TFTP client requested unknown pathname: {}", filepath);
-						sender
-							.send(Packet::TftpError(0, "unknown pathname".into()))
-							.await?; // FIXME: this is probably not the correct way to do this.
+			let container_barrier = Arc::new(Mutex::new(()));
+
+			let container_handle = task::spawn({
+				let id = id.clone();
+				let barrier = container_barrier.clone();
+				async move {
+					let _lock = match barrier.try_lock() {
+						Some(l) => l,
+						None => panic!("container didn't acquire alive check mutex lock"),
+					};
+					docker.wait_for_container(&id).await
+				}
+			});
+
+			#[allow(clippy::large_enum_variant)]
+			enum EventType {
+				ContainerExited,
+				Packet(Packet),
+				ActionsConnection(UnixStream),
+			}
+
+			info!("actions runner for {link_id} online and waiting for jobs");
+
+			let mut uds_incoming = uds.incoming();
+
+			loop {
+				let event = select! {
+					_ = container_barrier.lock().fuse() => EventType::ContainerExited,
+					packet = receiver.receive().fuse() => EventType::Packet(packet?),
+					stream = uds_incoming.next().fuse() => EventType::ActionsConnection(stream.unwrap()?),
+				};
+
+				match event {
+					EventType::ActionsConnection(stream) => {
+						info!(
+							"actions runner for {link_id} received connection; starting test session"
+						);
 					}
+					EventType::ContainerExited => {
+						warn!(
+							"github actions runner container exited unexpectedly; fetching result"
+						);
+						let res = container_handle.await;
+						error!("github actions funner container exited: {:?}", res);
+						return Ok(res?);
+					}
+					EventType::Packet(Packet::TftpRequest(pathname)) => {
+						trace!("TFTP requested file: {}", pathname);
+						match pathname.as_str() {
+							"ORO_BOOT" => {}
+							filepath => {
+								warn!("TFTP client requested unknown pathname: {}", filepath);
+								sender
+									.send(Packet::TftpError(0, "unknown pathname".into()))
+									.await?; // FIXME: this is probably not the correct way to do this.
+							}
+						}
+					}
+					EventType::Packet(unknown) => warn!("dropping unknown packet: {:?}", unknown),
 				}
 			}
-			unknown => warn!("dropping unknown packet: {:?}", unknown),
 		}
+	})()
+	.await;
+
+	warn!("link connection closed and is returning; shutting down container: {id}");
+
+	if let Err(err) = docker.remove_container(&id, true).await {
+		error!("failed to kill docker container: {:?}", err);
 	}
+
+	r
 }
 
 async fn task_accept_oro_link_tcp(
@@ -146,7 +245,10 @@ async fn task_accept_oro_link_tcp(
 async fn main() -> Result<!, Error> {
 	let config = Config::init_from_env().unwrap();
 
-	log::set_max_level(log::LevelFilter::Trace);
+	let log_level = log::LevelFilter::from_str(&config.log_level)
+		.expect("failed to parse LEVEL environment variable");
+
+	log::set_max_level(log_level);
 
 	#[cfg(all(not(feature = "journald"), not(feature = "stderr")))]
 	compile_error!("one of 'journald' and/or 'stderr' must be specified as features");
@@ -170,10 +272,14 @@ async fn main() -> Result<!, Error> {
 
 	#[cfg(feature = "stderr")]
 	if should_fallback {
-		stderrlog::new()
-			//.module(module_path!()) // FIXME: whitelist?
-			.show_module_names(true)
-			.verbosity(log::max_level())
+		let mut slog = stderrlog::new();
+
+		if config.verbose == 0 {
+			slog.module(module_path!());
+		}
+
+		slog.show_module_names(true)
+			.verbosity(log_level)
 			.timestamp(stderrlog::Timestamp::Millisecond)
 			.init()
 			.expect("failed to start stderr logger");
@@ -183,15 +289,18 @@ async fn main() -> Result<!, Error> {
 
 	let docker = Docker::new(&config.docker_host).expect("failed to parse DOCKER_HOST uri");
 
-	trace!("building github actions image");
+	debug!(
+		"checking to see if docker ref exists: {}",
+		config.docker_ref
+	);
 	docker
 		.check_image(&config.docker_ref)
 		.await
 		.unwrap_or_else(|err| panic!("failed to check image: {:?}: {}", err, config.docker_ref));
 
-	debug!("successfully built oro github actions runner image");
-
 	let config = Arc::new(config);
+
+	debug!("beginning server");
 
 	task::spawn(async move {
 		if let Err(err) = task_accept_oro_link_tcp(
