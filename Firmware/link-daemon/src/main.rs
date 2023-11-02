@@ -1,11 +1,13 @@
 #![feature(never_type, async_fn_in_trait)]
 
+mod docker;
+
+use self::docker::Docker;
 use async_std::{
 	fs, io,
 	net::{TcpListener, TcpStream},
 	os::unix::net::UnixListener,
 	prelude::*,
-	sync::{Arc, Mutex},
 	task,
 };
 use envconfig::Envconfig;
@@ -15,7 +17,6 @@ use link_protocol::{
 };
 use log::{debug, error, info, trace, warn};
 use rand::rngs::OsRng;
-use rs_docker::Docker;
 use std::path::PathBuf;
 
 pub(crate) const IMAGE_TAG: &str = "github.com/oro-os/github-actions-runner:latest";
@@ -31,6 +32,8 @@ struct Config {
 	pub use_journald: u8,
 	#[envconfig(from = "GA_TARBALL")]
 	pub actions_tarball: String,
+	#[envconfig(from = "DOCKER_HOST")]
+	pub docker_host: String,
 }
 
 #[derive(thiserror::Error, Debug)]
@@ -43,9 +46,11 @@ pub enum Error {
 	RWError(#[from] RWError<ProtoError<io::Error>, ProtoError<io::Error>>),
 	#[error("expected link to send LinkOnline but another packet was sent instead")]
 	NoHelloPacket,
+	#[error("docker request failed: {0}")]
+	Docker(#[from] docker::Error),
 }
 
-async fn task_process_oro_link(stream: TcpStream, docker: Arc<Mutex<Docker>>) -> Result<(), Error> {
+async fn task_process_oro_link(stream: TcpStream, docker: Docker) -> Result<(), Error> {
 	debug!("incoming oro link connection");
 
 	let receiver = io::BufReader::new(stream.clone());
@@ -91,7 +96,7 @@ async fn task_process_oro_link(stream: TcpStream, docker: Arc<Mutex<Docker>>) ->
 async fn task_accept_oro_link_tcp(
 	bind_host: String,
 	port: u16,
-	docker: Arc<Mutex<Docker>>,
+	docker: Docker,
 ) -> Result<(), Error> {
 	let listener = TcpListener::bind((bind_host.as_str(), port)).await?;
 	let mut incoming = listener.incoming();
@@ -150,9 +155,7 @@ async fn main() -> Result<!, Error> {
 
 	info!("starting oro-linkd version {}", env!("CARGO_PKG_VERSION"));
 
-	trace!("connecting to docker with default settings");
-	let mut docker =
-		Docker::connect("unix:///var/run/docker.sock").expect("failed to connect to docker");
+	let docker = Docker::new(&config.docker_host).expect("failed to parse DOCKER_HOST uri");
 
 	trace!("loading actions work image tarball");
 	let tarball_data = fs::read(config.actions_tarball)
@@ -161,12 +164,17 @@ async fn main() -> Result<!, Error> {
 
 	trace!("building github actions image");
 	docker
-		.build_image(tarball_data, IMAGE_TAG.into())
+		.build_image(
+			tarball_data,
+			&docker::BuildImageQuery {
+				tag: IMAGE_TAG.into(),
+				remove_intermediate: true,
+			},
+		)
+		.await
 		.expect("failed to build oro github actions runner image");
 
 	debug!("successfully built oro github actions runner image");
-
-	let docker = Arc::new(Mutex::new(docker));
 
 	task::spawn(async move {
 		if let Err(err) =
