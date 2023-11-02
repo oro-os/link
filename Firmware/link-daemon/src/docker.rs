@@ -14,8 +14,9 @@
 //!
 //! Word of the wise: If you're doing async HTTP in 2023, use Tokio. Even if you
 //! really dislike Tokio, save yourself the headache.
-use log::debug;
-use serde::{Deserialize, Serialize};
+use log::{debug, warn};
+use serde::{ser::SerializeSeq, Deserialize, Serialize, Serializer};
+use std::collections::HashMap;
 use url::Url;
 
 #[derive(thiserror::Error, Debug)]
@@ -24,8 +25,17 @@ pub enum Error {
 	Uri(#[from] url::ParseError),
 	#[error("failed to perform HTTP request: {0}")]
 	Http(surf::Error),
+	#[error("request returned non-2xx status: {0}")]
+	HttpStatus(surf::StatusCode),
 	#[error("image failed to build: {0}")]
 	DockerBuildFailure(String),
+}
+
+impl From<surf::Error> for Error {
+	#[inline]
+	fn from(value: surf::Error) -> Self {
+		Self::Http(value)
+	}
 }
 
 #[derive(Clone)]
@@ -46,35 +56,138 @@ impl Docker {
 		r.as_str().to_string()
 	}
 
-	pub async fn build_image(
-		&self,
-		tarball: Vec<u8>,
-		query: &BuildImageQuery,
-	) -> Result<(), Error> {
-		let mut res = surf::post(self.url("/v1.43/build"))
-			.query(query)
-			.map_err(Error::Http)?
-			.body_bytes(tarball)
+	pub async fn check_image(&self, id: &str) -> Result<(), Error> {
+		let res = surf::get(self.url(format!("/v1.43/images/{id}/json")))
 			.send()
-			.await
-			.map_err(Error::Http)?;
+			.await?;
 
-		let res_text = res.body_string().await.map_err(Error::Http)?;
-		let success = res_text.contains("Successfully built");
+		res.status().ok()
+	}
 
-		if success {
-			Ok(())
-		} else {
-			Err(Error::DockerBuildFailure(res_text))
+	pub async fn create_container(&self, options: &CreateContainer) -> Result<String, Error> {
+		let mut res = surf::post(self.url("/v1.43/containers/create"))
+			.body_json(options)?
+			.send()
+			.await?;
+
+		res.status().ok()?;
+
+		let payload: CreateContainerResponse = res.body_json().await?;
+
+		for warning in payload.warnings {
+			warn!("docker: create container: {warning}");
 		}
+
+		Ok(payload.id)
 	}
 }
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
-#[serde(rename_all = "lowercase")]
-pub struct BuildImageQuery {
-	#[serde(rename = "t")]
-	pub tag: String,
-	#[serde(rename = "rm")]
-	pub remove_intermediate: bool,
+#[derive(Debug, Default)]
+pub struct Args(HashMap<String, String>);
+
+impl Args {
+	#[inline]
+	pub fn new() -> Self {
+		Default::default()
+	}
+
+	pub fn add(mut self, k: String, v: String) -> Self {
+		self.0.insert(k, v);
+		self
+	}
+}
+
+impl Serialize for Args {
+	fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+	where
+		S: Serializer,
+	{
+		let mut seq = serializer.serialize_seq(Some(self.0.len()))?;
+		for (k, v) in &self.0 {
+			seq.serialize_element(&format!("{k}={v}"))?;
+		}
+		seq.end()
+	}
+}
+
+#[derive(Debug, Default)]
+pub struct Map(HashMap<String, String>);
+
+impl Map {
+	#[inline]
+	pub fn new() -> Self {
+		Default::default()
+	}
+
+	pub fn add(mut self, k: String, v: String) -> Self {
+		self.0.insert(k, v);
+		self
+	}
+}
+
+impl Serialize for Map {
+	fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+	where
+		S: Serializer,
+	{
+		self.0.serialize(serializer)
+	}
+}
+
+#[derive(Debug, Default)]
+pub struct Binds(pub Vec<(String, String, Option<String>)>);
+
+impl Serialize for Binds {
+	fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+	where
+		S: Serializer,
+	{
+		let mut seq = serializer.serialize_seq(Some(self.0.len()))?;
+		for (src, dst, maybe_opts) in &self.0 {
+			if let Some(opts) = maybe_opts {
+				seq.serialize_element(&format!("{src}:{dst}:{opts}"))?;
+			} else {
+				seq.serialize_element(&format!("{src}:{dst}"))?;
+			}
+		}
+		seq.end()
+	}
+}
+
+#[derive(Serialize, Debug, Default)]
+#[serde(rename_all = "PascalCase")]
+pub struct CreateContainer {
+	pub attach_stdout: Option<bool>,
+	pub attach_stderr: Option<bool>,
+	pub env: Option<Args>,
+	pub image: String,
+	pub labels: Option<Map>,
+	pub host_config: Option<HostConfig>,
+}
+
+#[derive(Serialize, Debug, Default)]
+#[serde(rename_all = "PascalCase")]
+pub struct HostConfig {
+	binds: Option<Binds>,
+}
+
+#[derive(Deserialize, Debug, Default)]
+#[serde(rename_all = "PascalCase")]
+struct CreateContainerResponse {
+	id: String,
+	warnings: Vec<String>,
+}
+
+trait StatusCodeCheck {
+	fn ok(&self) -> Result<(), Error>;
+}
+
+impl StatusCodeCheck for surf::StatusCode {
+	fn ok(&self) -> Result<(), Error> {
+		if self.is_success() {
+			Ok(())
+		} else {
+			Err(Error::HttpStatus(*self))
+		}
+	}
 }

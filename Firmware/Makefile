@@ -1,4 +1,4 @@
-.PHONY: all clean lint clippy fmt doc stm32f479vg stm32f479vg.run clippy-rpcap clippy-daemon rpcap daemon docker-tar
+.PHONY: all clean lint clippy fmt doc stm32f479vg stm32f479vg.run clippy-rpcap clippy-daemon rpcap daemon docker
 
 ifdef DEBUG
 CARGO_MODE := debug
@@ -82,10 +82,8 @@ clippy-daemon:
 doc:
 	env cargo doc $(CARGO_FLAGS) --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem --open
 
-docker-tar: target/oro-link-runner.tar
-target/oro-link-runner.tar: docker/Dockerfile docker/start-oro-runner.sh
-	@mkdir -p "$(dir $@)"
-	tar cf "$@" -C docker $(^:docker/%=%)
+docker:
+	@(cd docker && docker build --rm --quiet .)
 
 stm32f479vg.run: stm32f479vg
 	$(PROBE_RUN) $(PROBE_RUN_FLAGS) --speed 40000 --chip stm32f479vg target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware

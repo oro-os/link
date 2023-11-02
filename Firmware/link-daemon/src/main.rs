@@ -4,10 +4,11 @@ mod docker;
 
 use self::docker::Docker;
 use async_std::{
-	fs, io,
+	io,
 	net::{TcpListener, TcpStream},
 	os::unix::net::UnixListener,
 	prelude::*,
+	sync::Arc,
 	task,
 };
 use envconfig::Envconfig;
@@ -19,8 +20,6 @@ use log::{debug, error, info, trace, warn};
 use rand::rngs::OsRng;
 use std::path::PathBuf;
 
-pub(crate) const IMAGE_TAG: &str = "github.com/oro-os/github-actions-runner:latest";
-
 #[derive(Envconfig)]
 struct Config {
 	#[envconfig(from = "LINK_SERVER_PORT", default = "1337")]
@@ -30,10 +29,14 @@ struct Config {
 	#[envconfig(from = "USE_JOURNALD", default = "0")]
 	#[allow(unused)]
 	pub use_journald: u8,
-	#[envconfig(from = "GA_TARBALL")]
-	pub actions_tarball: String,
 	#[envconfig(from = "DOCKER_HOST")]
 	pub docker_host: String,
+	#[envconfig(from = "DOCKER_REF")]
+	pub docker_ref: String,
+	#[envconfig(from = "GH_ACCESS_TOKEN")]
+	pub gh_access_token: String,
+	#[envconfig(from = "GH_ORGANIZATION")]
+	pub gh_organization: String,
 }
 
 #[derive(thiserror::Error, Debug)]
@@ -50,7 +53,11 @@ pub enum Error {
 	Docker(#[from] docker::Error),
 }
 
-async fn task_process_oro_link(stream: TcpStream, docker: Docker) -> Result<(), Error> {
+async fn task_process_oro_link(
+	stream: TcpStream,
+	docker: Docker,
+	config: Arc<Config>,
+) -> Result<(), Error> {
 	debug!("incoming oro link connection");
 
 	let receiver = io::BufReader::new(stream.clone());
@@ -71,6 +78,23 @@ async fn task_process_oro_link(stream: TcpStream, docker: Docker) -> Result<(), 
 		warn!("link sent something other than a hello packet");
 		return Err(Error::NoHelloPacket);
 	};
+
+	let id = docker
+		.create_container(&docker::CreateContainer {
+			image: config.docker_ref.clone(),
+			labels: Some(docker::Map::new().add("sh.oro".into(), "link".into())),
+			env: Some(
+				docker::Args::new()
+					.add("ACCESS_TOKEN".into(), config.gh_access_token.clone())
+					.add("ORGANIZATION".into(), config.gh_organization.clone())
+					.add("LABELS".into(), "self-hosted,oro,oro-link,x86_64".into()) // TODO(qix-): use self-report functionality of link
+					.add("NAME".into(), link_id),
+			),
+			..Default::default()
+		})
+		.await?;
+
+	debug!("created actions runner container: {}", id);
 
 	loop {
 		let packet = receiver.receive().await?;
@@ -97,6 +121,7 @@ async fn task_accept_oro_link_tcp(
 	bind_host: String,
 	port: u16,
 	docker: Docker,
+	config: Arc<Config>,
 ) -> Result<(), Error> {
 	let listener = TcpListener::bind((bind_host.as_str(), port)).await?;
 	let mut incoming = listener.incoming();
@@ -106,8 +131,9 @@ async fn task_accept_oro_link_tcp(
 	while let Some(stream) = incoming.next().await {
 		let stream = stream?;
 		let docker = docker.clone();
+		let config = config.clone();
 		task::spawn(async move {
-			if let Err(err) = task_process_oro_link(stream, docker).await {
+			if let Err(err) = task_process_oro_link(stream, docker, config.clone()).await {
 				error!("oro link peer connection encountered error: {:?}", err);
 			}
 		});
@@ -157,28 +183,24 @@ async fn main() -> Result<!, Error> {
 
 	let docker = Docker::new(&config.docker_host).expect("failed to parse DOCKER_HOST uri");
 
-	trace!("loading actions work image tarball");
-	let tarball_data = fs::read(config.actions_tarball)
-		.await
-		.expect("failed to read github actions worker tarball");
-
 	trace!("building github actions image");
 	docker
-		.build_image(
-			tarball_data,
-			&docker::BuildImageQuery {
-				tag: IMAGE_TAG.into(),
-				remove_intermediate: true,
-			},
-		)
+		.check_image(&config.docker_ref)
 		.await
-		.expect("failed to build oro github actions runner image");
+		.unwrap_or_else(|err| panic!("failed to check image: {:?}: {}", err, config.docker_ref));
 
 	debug!("successfully built oro github actions runner image");
 
+	let config = Arc::new(config);
+
 	task::spawn(async move {
-		if let Err(err) =
-			task_accept_oro_link_tcp(config.link_server_bind, config.link_server_port, docker).await
+		if let Err(err) = task_accept_oro_link_tcp(
+			config.link_server_bind.clone(),
+			config.link_server_port,
+			docker,
+			config,
+		)
+		.await
 		{
 			error!("oro link tcp server error: {:?}", err);
 		}
