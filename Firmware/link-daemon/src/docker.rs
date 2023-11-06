@@ -108,37 +108,6 @@ impl Docker {
 		res.status().ok()
 	}
 
-	pub async fn delete_stopped_containers(
-		&self,
-		labels: Option<Vec<(String, String)>>,
-	) -> Result<(usize, Vec<String>), Error> {
-		let req = surf::post(self.url("/v1.43/containers/prune"));
-
-		let req = if let Some(labels) = labels {
-			req.query(&PruneContainersQuery {
-				filters: serde_json::to_string(&LabelFilters {
-					label: HashMap::from_iter(
-						labels.into_iter().map(|(k, v)| (format!("{k}={v}"), true)),
-					),
-				})?,
-			})
-			.unwrap()
-		} else {
-			req
-		};
-
-		let mut res = req.send().await?;
-
-		res.status().ok()?;
-
-		let res: PruneContainersResponse = res.body_json().await?;
-
-		Ok((
-			res.space_reclaimed,
-			res.containers_deleted.unwrap_or_default(),
-		))
-	}
-
 	pub async fn list_containers(
 		&self,
 		labels: Option<Vec<(String, String)>>,
@@ -194,13 +163,6 @@ struct LabelFilters {
 #[serde(rename_all = "lowercase")]
 struct PruneContainersQuery {
 	filters: String,
-}
-
-#[derive(Deserialize, Debug)]
-#[serde(rename_all = "PascalCase")]
-struct PruneContainersResponse {
-	containers_deleted: Option<Vec<String>>,
-	space_reclaimed: usize,
 }
 
 #[derive(Debug, Default)]
