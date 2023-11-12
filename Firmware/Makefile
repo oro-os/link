@@ -1,4 +1,4 @@
-.PHONY: all clean lint clippy fmt doc stm32f479vg stm32f479vg.run clippy-rpcap clippy-daemon rpcap daemon docker
+.PHONY: all clean lint clippy fmt doc stm32f479vg stm32f479vg.run clippy-rpcap clippy-daemon rpcap daemon docker udeps
 
 ifdef DEBUG
 CARGO_MODE := debug
@@ -74,6 +74,16 @@ doc:
 
 docker:
 	@(cd docker && docker build --rm --quiet .)
+
+.PHONY: stm32f479vg.udeps other-udeps
+udeps: other-udeps # stm32f479vg.udeps
+
+stm32f479vg.udeps:
+	# NOTE: does not currently work: https://github.com/est31/cargo-udeps/issues/153
+	env cargo udeps $(CARGO_FLAGS) --no-default-features --features stm32f479vg --target variant/stm32f479vg/thumbv7em-none-eabihf.json
+
+other-udeps:
+	env cargo udeps $(CARGO_FLAGS) -p link-daemon -p link-protocol -p link-protocol-binser -p link-protocol-binser-proc -p link-rpcapd -p link-tftp-server
 
 stm32f479vg.run: stm32f479vg
 	$(PROBE_RUN) $(PROBE_RUN_FLAGS) --speed 40000 --chip stm32f479vg target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware

@@ -936,7 +936,7 @@ dependencies = [
  "embassy-macros",
  "embassy-time",
  "futures-util",
- "static_cell",
+ "static_cell 1.3.0",
 ]
 
 [[package]]
@@ -1046,7 +1046,7 @@ dependencies = [
  "sdio-host",
  "seq-macro",
  "stm32-fmc",
- "stm32-metapac 14.0.0",
+ "stm32-metapac 14.0.0 (git+https://github.com/embassy-rs/stm32-data-generated?tag=stm32-data-735cab337aad6161f3d6bcf3e49cd1f034bc3130)",
  "vcell",
 ]
 
@@ -2235,8 +2235,8 @@ dependencies = [
  "rusty-hook",
  "sha2 0.10.8",
  "smoltcp",
- "static_cell",
- "stm32-metapac 13.0.0",
+ "static_cell 2.0.0",
+ "stm32-metapac 14.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "syn 2.0.39",
  "tftp",
  "ttf-parser",
@@ -2857,6 +2857,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "static_cell"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fa6ba4cf83bf80d3eb25f098ea5e790a0a1fcb5e357442259b231e412c2d3ca0"
+dependencies = [
+ "portable-atomic",
+]
+
+[[package]]
 name = "stderrlog"
 version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2929,9 +2938,9 @@ dependencies = [
 
 [[package]]
 name = "stm32-metapac"
-version = "13.0.0"
+version = "14.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "40ea43982c181a8b10f114e09c63ad4042f99a018d6896e2259b931e15461ca0"
+checksum = "7b85756ab725cbe215e8b76458bb4169e3d6b6f32d6fbda32046f65e37a757e3"
 dependencies = [
  "cortex-m",
 ]
