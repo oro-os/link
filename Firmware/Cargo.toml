@@ -12,7 +12,8 @@ resolver = "2"
 build = "build.rs"
 
 [features]
-default = []
+# NOTE: Disable these in scripts, etc. This is mostly just for automation and checkers.
+default = ["stm32f479vg"]
 
 # Development features
 # NOTE: You *can* use these directly, but

@@ -61,7 +61,7 @@ daemon:
 	cargo run -p link-daemon $(CARGO_FLAGS)
 
 clippy: clippy-rpcap clippy-daemon
-	env cargo clippy $(CARGO_FLAGS) --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem -- -D clippy::all
+	env cargo clippy $(CARGO_FLAGS) --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --no-default-features --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem -- -D clippy::all
 
 clippy-rpcap:
 	env cargo clippy $(CARGO_FLAGS) --package link-rpcapd -- -D clippy::all
@@ -70,7 +70,7 @@ clippy-daemon:
 	env cargo clippy $(CARGO_FLAGS) --package link-daemon -- -D clippy::all
 
 doc:
-	env cargo doc $(CARGO_FLAGS) --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem --open
+	env cargo doc $(CARGO_FLAGS) --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --no-default-features --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem --open
 
 docker:
 	@(cd docker && docker build --rm --quiet .)
@@ -81,7 +81,7 @@ stm32f479vg.run: stm32f479vg
 stm32f479vg: target/$(CARGO_MODE)/oro-link-stm32f479vg.bin
 .PHONY: target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware
 target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware:
-	env cargo build $(CARGO_FLAGS) --features stm32f479vg --target variant/stm32f479vg/thumbv7em-none-eabihf.json -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem
+	env cargo build $(CARGO_FLAGS) --no-default-features --features stm32f479vg --target variant/stm32f479vg/thumbv7em-none-eabihf.json -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem
 target/$(CARGO_MODE)/oro-link-stm32f479vg.bin: target/thumbv7em-none-eabihf/$(CARGO_MODE)/oro-link-firmware
 	@mkdir -p "$(dir $@)"
 	env arm-none-eabi-objcopy --output binary "$<" "$@"
