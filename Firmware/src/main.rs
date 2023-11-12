@@ -83,8 +83,8 @@ async fn debug_led_task(debug_led: ImplDebugLed) -> ! {
 }
 
 #[embassy_executor::task]
-async fn pxe_task(stack: &'static Stack<SysEthernetDriver>) -> ! {
-	service::pxe::run(stack).await
+async fn pxe_task(stack: &'static Stack<SysEthernetDriver>, receiver: CommandReceiver<2>) -> ! {
+	service::pxe::run(stack, receiver).await
 }
 
 #[embassy_executor::task]
@@ -182,6 +182,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	static mut DAEMON_CHANNEL: CommandChannel<16> = CommandChannel::new();
 	static mut MONITOR_CHANNEL: CommandChannel<4> = CommandChannel::new();
 	static mut TFTP_CHANNEL: CommandChannel<8> = CommandChannel::new();
+	static mut PXE_CHANNEL: CommandChannel<2> = CommandChannel::new();
 
 	let broker_receiver = unsafe { BROKER_CHANNEL.receiver() };
 	let broker_sender = unsafe { BROKER_CHANNEL.sender() };
@@ -191,12 +192,14 @@ pub async fn main(spawner: Spawner) -> ! {
 	let monitor_receiver = unsafe { MONITOR_CHANNEL.receiver() };
 	let tftp_sender = unsafe { TFTP_CHANNEL.sender() };
 	let tftp_receiver = unsafe { TFTP_CHANNEL.receiver() };
+	let pxe_sender = unsafe { PXE_CHANNEL.sender() };
+	let pxe_receiver = unsafe { PXE_CHANNEL.receiver() };
 
 	spawner.must_spawn(net_ext_stack_task(extnet));
 	spawner.must_spawn(net_sys_stack_task(sysnet));
 	spawner.must_spawn(monitor_task(monitor_receiver));
 	spawner.must_spawn(debug_led_task(debug_led));
-	spawner.must_spawn(pxe_task(sysnet));
+	spawner.must_spawn(pxe_task(sysnet, pxe_receiver));
 	spawner.must_spawn(tftp_task(sysnet, broker_sender, tftp_receiver));
 	spawner.must_spawn(time_task(extnet, wall_clock));
 	spawner.must_spawn(daemon_task(extnet, rng, broker_sender, daemon_receiver));
@@ -279,14 +282,14 @@ pub async fn main(spawner: Spawner) -> ! {
 				debug!("broker: pressing the reset button");
 				system.reset();
 			}
-			Command::IncomingPacket(Packet::TftpBlock(bid, buf)) => {
+			Command::IncomingPacket(Packet::Tftp(data)) => {
 				tftp_sender
-					.send(Command::IncomingPacket(Packet::TftpBlock(bid, buf)))
+					.send(Command::IncomingPacket(Packet::Tftp(data)))
 					.await;
 			}
-			Command::IncomingPacket(Packet::TftpError(bid, msg)) => {
-				tftp_sender
-					.send(Command::IncomingPacket(Packet::TftpError(bid, msg)))
+			Command::IncomingPacket(Packet::BootfileSize(size)) => {
+				pxe_sender
+					.send(Command::IncomingPacket(Packet::BootfileSize(size)))
 					.await;
 			}
 			Command::OutgoingPacket(packet) => {

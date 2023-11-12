@@ -1,9 +1,12 @@
+use crate::command::{Command, CommandReceiver};
 use defmt::{trace, warn};
+use embassy_futures::select::{select, Either};
 use embassy_net::{
 	driver::Driver,
 	udp::{PacketMetadata, UdpSocket},
 	Stack,
 };
+use link_protocol::Packet;
 use smoltcp::wire::{
 	DhcpMessageType, DhcpOption, DhcpPacket, DhcpRepr, EthernetAddress, IpAddress, IpEndpoint,
 	Ipv4Address, DHCP_CLIENT_PORT, DHCP_SERVER_PORT,
@@ -33,22 +36,13 @@ const BASE_RESPONSE: DhcpRepr = DhcpRepr {
 	lease_duration: Some(u32::MAX),
 	renew_duration: None,
 	rebind_duration: None,
-	// https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml
-	additional_options: &[
-		// 66 - TFTP server name
-		DhcpOption {
-			kind: 66,
-			data: TFTP_SERVER.as_bytes(),
-		},
-		// 67 - bootfile name
-		DhcpOption {
-			kind: 67,
-			data: TFTP_BOOTFILE.as_bytes(),
-		},
-	],
+	additional_options: &[],
 };
 
-pub async fn run<D: Driver + 'static>(stack: &Stack<D>) -> ! {
+pub async fn run<D: Driver + 'static, const R: usize>(
+	stack: &Stack<D>,
+	receiver: CommandReceiver<R>,
+) -> ! {
 	let mut rx_meta = [PacketMetadata::EMPTY; 16];
 	let mut tx_meta = [PacketMetadata::EMPTY; 16];
 	let mut rx_buffer = [0; 2048];
@@ -65,8 +59,50 @@ pub async fn run<D: Driver + 'static>(stack: &Stack<D>) -> ! {
 
 	socket.bind(DHCP_SERVER_PORT).unwrap();
 
+	// https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml
+	let mut bootfile_size_bytes = [0u8; 2];
 	loop {
-		let (n, _) = socket.recv_from(&mut buf).await.unwrap();
+		let (n, _) = match select(socket.recv_from(&mut buf), receiver.receive()).await {
+			Either::First(packet) => packet.unwrap(),
+			Either::Second(command) => {
+				match command {
+					Command::IncomingPacket(Packet::BootfileSize(size)) => {
+						let num_chunks: u16 = ((size + 511) / 512).try_into().unwrap_or_else(|_| {
+						warn!("pxe: bootfile size is too large ({} bytes) to fit into u16 as 512-byte chunks ({} chunks of 512 bytes, which is > 65535)", size, (size + 511) / 512);
+						u16::MAX
+						});
+						bootfile_size_bytes = num_chunks.to_ne_bytes();
+						trace!(
+							"pxe: bootfile size set to {} chunks of 512 bytes",
+							num_chunks
+						);
+					}
+					unknown => {
+						warn!("pxe: ignoring unknown command: {:?}", unknown);
+					}
+				}
+				continue;
+			}
+		};
+
+		let additional_options = [
+			// 13 - Boot File Size (in 512 byte chunks)
+			DhcpOption {
+				kind: 13,
+				data: &bootfile_size_bytes,
+			},
+			// 66 - TFTP server name
+			DhcpOption {
+				kind: 66,
+				data: TFTP_SERVER.as_bytes(),
+			},
+			// 67 - bootfile name
+			DhcpOption {
+				kind: 67,
+				data: TFTP_BOOTFILE.as_bytes(),
+			},
+		];
+
 		let packet = if let Ok(packet) = DhcpPacket::new_checked(&buf[..n]) {
 			packet
 		} else {
@@ -123,6 +159,7 @@ pub async fn run<D: Driver + 'static>(stack: &Stack<D>) -> ! {
 				response.secs = request.secs;
 				response.client_hardware_address = request.client_hardware_address;
 				response.transaction_id = request.transaction_id;
+				response.additional_options = &additional_options;
 
 				trace!("pxe: sending offer (len={})", response.buffer_len());
 
@@ -149,6 +186,7 @@ pub async fn run<D: Driver + 'static>(stack: &Stack<D>) -> ! {
 				response.secs = request.secs;
 				response.client_hardware_address = request.client_hardware_address;
 				response.transaction_id = request.transaction_id;
+				response.additional_options = &additional_options;
 
 				trace!("pxe: sending ack (len={})", response.buffer_len());
 

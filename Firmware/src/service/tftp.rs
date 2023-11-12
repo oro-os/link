@@ -8,7 +8,6 @@ use embassy_net::{
 };
 use heapless::Vec;
 use link_protocol::Packet;
-use tftp::{FileOperation, Message};
 
 const TFTP_PORT: u16 = 69;
 
@@ -46,38 +45,16 @@ pub async fn run<D: Driver + 'static, const S: usize, const R: usize>(
 			}
 			Either::Second(msg) => {
 				match msg {
-					Command::IncomingPacket(Packet::TftpBlock(bid, buf)) => {
+					Command::IncomingPacket(Packet::Tftp(data)) => {
 						if let Some(ep) = last_ep {
-							let msg = Message::Data(bid, buf.as_slice().try_into().unwrap());
-
-							if let Ok(vec) = TryInto::<Vec<u8, 600>>::try_into(msg) {
-								if let Err(err) = socket.send_to(vec.as_slice(), ep).await {
-									error!("tftp: failed to send data block to SUT: {:?}", err);
-								} else {
-									trace!("tftp: transferred block {} of size {}", bid, buf.len());
-								}
-							} else {
-								error!(
-									"tftp: failed to send data block to SUT: constructed message was too large"
-								);
+							trace!("tftp: forwarding tftp packet to SUT of size {}", data.len());
+							if let Err(err) = socket.send_to(data.as_slice(), ep).await {
+								error!("tftp: failed to send tftp packet to SUT: {:?}", err);
 							}
-						}
-					}
-					Command::IncomingPacket(Packet::TftpError(bid, msg)) => {
-						if let Some(ep) = last_ep {
-							let msg = Message::Error(bid, msg.as_str());
-
-							if let Ok(vec) = TryInto::<Vec<u8, 300>>::try_into(msg) {
-								if let Err(err) = socket.send_to(vec.as_slice(), ep).await {
-									error!("tftp: failed to send error message to SUT: {:?}", err);
-								} else {
-									trace!("tftp: transferred error to SUT");
-								}
-							} else {
-								error!(
-									"tftp: failed to send error message to SUT: constructed message was too large"
-								);
-							}
+						} else {
+							warn!(
+								"tftp: daemon sent a tftp packet to SUT but SUT has not communicated with us yet; ignoring"
+							);
 						}
 					}
 					unknown => {
@@ -90,39 +67,24 @@ pub async fn run<D: Driver + 'static, const S: usize, const R: usize>(
 
 		last_ep = Some(ep);
 
-		let message = match Message::try_from(&buf[..n]) {
-			Ok(msg) => msg,
+		let data = match Vec::from_slice(&buf[..n]) {
+			Ok(d) => d,
 			Err(err) => {
-				warn!("tftp: invalid incoming message; dropping: {:?}", err);
+				error!(
+					"tftp: failed to create tftp packet buffer with data from daemon for SUT: {:?}",
+					err
+				);
 				continue;
 			}
 		};
 
+		trace!(
+			"tftp: forwarding tftp packet to daemon of size {}",
+			data.len()
+		);
+
 		broker_sender
-			.send(Command::OutgoingPacket(match message {
-				Message::File {
-					operation,
-					path,
-					mode: _,
-				} => match operation {
-					FileOperation::Write => {
-						warn!(
-							"tftp: system under test sent a write file request unexpected: {:?}",
-							path
-						);
-						continue;
-					}
-					FileOperation::Read => Packet::TftpRequest(path.into()),
-				},
-				Message::Data(_bid, _buf) => {
-					warn!(
-						"tftp: system under test sent a buffer of data to us unexpectedly; ignoring"
-					);
-					continue;
-				}
-				Message::Ack(bid) => Packet::TftpAck(bid),
-				Message::Error(bid, msg) => Packet::TftpError(bid, msg.into()),
-			}))
+			.send(Command::OutgoingPacket(Packet::Tftp(data)))
 			.await;
 	}
 }

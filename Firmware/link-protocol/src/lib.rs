@@ -79,25 +79,15 @@ pub enum Packet {
 	#[proto(id = 10)]
 	PressReset,
 
-	/// The SUT has requested a file with the given pathname
-	/// to be sent over TFTP (during PXE booting)
+	/// A TFTP packet, proxied to the daemon verbatim.
 	#[proto(id = 11)]
-	TftpRequest(String<255>),
+	Tftp(Vec<u8, 1984>),
 
-	/// The SUT has acknowledged it has received a block with the
-	/// given ID
+	/// Tells the PXE service how big the boot file size is
+	/// **MUST** be sent before a test session is started (or at least
+	/// before the system is turned on).
 	#[proto(id = 12)]
-	TftpAck(u16),
-
-	/// The SUT has produced an error in response to given block,
-	/// with a given error message
-	#[proto(id = 13)]
-	TftpError(u16, String<255>),
-
-	/// A block of data to be forwarded to the SUT over TFTP in response
-	/// to a file request, given the block ID and the vector of bytes.
-	#[proto(id = 14)]
-	TftpBlock(u16, Vec<u8, 512>),
+	BootfileSize(u64),
 }
 
 #[derive(Debug, Clone, LinkMessage)]

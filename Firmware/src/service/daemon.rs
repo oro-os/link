@@ -3,7 +3,7 @@ use crate::{
 	uc,
 };
 use defmt::{debug, error, info, trace, warn};
-use embassy_futures::select::{select, Either};
+use embassy_futures::select::select;
 use embassy_net::{driver::Driver, tcp::TcpSocket, ConfigV4, Ipv4Address, Stack};
 use embassy_time::{Duration, Timer};
 use link_protocol::channel::{negotiate, Side};
@@ -70,29 +70,38 @@ pub async fn run<D: Driver + 'static, R: uc::Rng, const BSZ: usize, const DSZ: u
 		debug!("daemon: encryption key negotiated, beginning communications");
 		broker_sender.send(Command::DaemonConnected).await;
 
-		loop {
-			match select(receiver.receive(), daemon_receiver.receive()).await {
-				Either::First(Ok(packet)) => {
-					broker_sender.send(Command::IncomingPacket(packet)).await
-				}
-				Either::Second(Command::OutgoingPacket(packet)) => {
-					if let Err(err) = sender.send(packet).await {
-						error!("daemon: failed to send packet: {:?}", err);
-						break;
+		select(
+			async move {
+				loop {
+					match receiver.receive().await {
+						Ok(packet) => broker_sender.send(Command::IncomingPacket(packet)).await,
+						Err(err) => {
+							error!(
+								"daemon: encountered an error receiving packet from daemon: {:?}",
+								err
+							);
+							break;
+						}
 					}
 				}
-				Either::Second(unknown) => {
-					warn!("daemon: ignoring unknown command: {:?}", unknown);
+			},
+			async move {
+				loop {
+					match daemon_receiver.receive().await {
+						Command::OutgoingPacket(packet) => {
+							if let Err(err) = sender.send(packet).await {
+								error!("daemon: failed to send packet: {:?}", err);
+								break;
+							}
+						}
+						unknown => {
+							warn!("daemon: ignoring unknown command: {:?}", unknown);
+						}
+					}
 				}
-				Either::First(Err(err)) => {
-					error!(
-						"daemon: encountered an error receiving packet from daemon: {:?}",
-						err
-					);
-					break;
-				}
-			}
-		}
+			},
+		)
+		.await;
 
 		debug!("daemon: aborting socket to daemon");
 		sock.abort();
@@ -110,6 +119,7 @@ pub async fn run<D: Driver + 'static, R: uc::Rng, const BSZ: usize, const DSZ: u
 		};
 
 		broker_sender.send(Command::DaemonDisconnected).await;
+		debug!("daemon: socket has been aborted; starting again");
 	}
 }
 

@@ -188,18 +188,6 @@ async fn task_process_oro_link(
 						error!("github actions funner container exited: {:?}", res);
 						return Ok(res?);
 					}
-					EventType::Packet(Packet::TftpRequest(pathname)) => {
-						trace!("TFTP requested file: {}", pathname);
-						match pathname.as_str() {
-							"ORO_BOOT" => {}
-							filepath => {
-								warn!("TFTP client requested unknown pathname: {}", filepath);
-								sender
-									.send(Packet::TftpError(0, "unknown pathname".into()))
-									.await?; // FIXME: this is probably not the correct way to do this.
-							}
-						}
-					}
 					EventType::Packet(unknown) => warn!("dropping unknown packet: {:?}", unknown),
 				}
 			}
