@@ -12,22 +12,14 @@ export EXTMAC=44:45:56
 endif
 
 ifndef LEVEL
-ifeq ($(CARGO_MODE),release)
-LEVEL := info
-else
 LEVEL := trace,embassy_net=debug
-endif
 endif
 
 ifndef PROBE_RUN
 PROBE_RUN := probe-run
 endif
 
-ifeq ($(CARGO_MODE),debug)
 PROBE_RUN_FLAGS := --log-format "{t} {L} {s} <{f}:{l}>" --verbose --verify
-else
-PROBE_RUN_FLAGS := --log-format "{t} {L} {s}" --verify
-endif
 
 ifdef DEV_IP
 CARGO_FLAGS += --features oro-connect-to-ip

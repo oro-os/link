@@ -81,13 +81,17 @@ pub enum Packet {
 
 	/// A TFTP packet, proxied to the daemon verbatim.
 	#[proto(id = 11)]
-	Tftp(Vec<u8, 1984>),
+	Tftp(Vec<u8, 1700>),
 
 	/// Tells the PXE service how big the boot file size is
 	/// **MUST** be sent before a test session is started (or at least
 	/// before the system is turned on).
 	#[proto(id = 12)]
 	BootfileSize(u64),
+
+	/// A serial line transmission (either to or from the system)
+	#[proto(id = 13)]
+	Serial(Vec<u8, 256>),
 }
 
 #[derive(Debug, Clone, LinkMessage)]

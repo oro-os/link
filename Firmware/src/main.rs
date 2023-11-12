@@ -59,6 +59,8 @@ type ImplDebugLed = impl uc::DebugLed;
 type ImplMonitor = impl uc::Monitor;
 type ImplWallClock = impl uc::WallClock;
 type ImplRng = impl uc::Rng;
+type ImplUartTx = impl uc::UartTx;
+type ImplUartRx = impl uc::UartRx;
 static mut MONITOR: Option<RefCell<ImplMonitor>> = None;
 
 #[embassy_executor::task]
@@ -90,8 +92,8 @@ async fn pxe_task(stack: &'static Stack<SysEthernetDriver>, receiver: CommandRec
 #[embassy_executor::task]
 async fn tftp_task(
 	stack: &'static Stack<SysEthernetDriver>,
-	broker_sender: CommandSender<32>,
-	tftp_receiver: CommandReceiver<8>,
+	broker_sender: CommandSender<8>,
+	tftp_receiver: CommandReceiver<3>,
 ) -> ! {
 	service::tftp::run(stack, broker_sender, tftp_receiver).await
 }
@@ -105,10 +107,20 @@ async fn time_task(stack: &'static Stack<ExtEthernetDriver>, wall_clock: ImplWal
 async fn daemon_task(
 	stack: &'static Stack<ExtEthernetDriver>,
 	rng: ImplRng,
-	broker_sender: CommandSender<32>,
-	daemon_receiver: CommandReceiver<16>,
+	broker_sender: CommandSender<8>,
+	daemon_receiver: CommandReceiver<4>,
 ) -> ! {
 	service::daemon::run(stack, rng, broker_sender, daemon_receiver).await
+}
+
+#[embassy_executor::task]
+async fn serial_task(
+	tx: ImplUartTx,
+	rx: ImplUartRx,
+	broker_sender: CommandSender<8>,
+	serial_receiver: CommandReceiver<2>,
+) -> ! {
+	service::serial::run(tx, rx, broker_sender, serial_receiver).await
 }
 
 #[embassy_executor::main]
@@ -121,8 +133,8 @@ pub async fn main(spawner: Spawner) -> ! {
 		syseth,
 		wall_clock,
 		mut rng,
-		_syscom_tx,
-		_syscom_rx,
+		syscom_tx,
+		syscom_rx,
 		packet_tracer,
 		uid,
 		rst,
@@ -178,11 +190,12 @@ pub async fn main(spawner: Spawner) -> ! {
 		))
 	};
 
-	static mut BROKER_CHANNEL: CommandChannel<32> = CommandChannel::new();
-	static mut DAEMON_CHANNEL: CommandChannel<16> = CommandChannel::new();
+	static mut BROKER_CHANNEL: CommandChannel<8> = CommandChannel::new();
+	static mut DAEMON_CHANNEL: CommandChannel<4> = CommandChannel::new();
 	static mut MONITOR_CHANNEL: CommandChannel<4> = CommandChannel::new();
-	static mut TFTP_CHANNEL: CommandChannel<8> = CommandChannel::new();
+	static mut TFTP_CHANNEL: CommandChannel<3> = CommandChannel::new();
 	static mut PXE_CHANNEL: CommandChannel<2> = CommandChannel::new();
+	static mut SERIAL_CHANNEL: CommandChannel<2> = CommandChannel::new();
 
 	let broker_receiver = unsafe { BROKER_CHANNEL.receiver() };
 	let broker_sender = unsafe { BROKER_CHANNEL.sender() };
@@ -194,6 +207,8 @@ pub async fn main(spawner: Spawner) -> ! {
 	let tftp_receiver = unsafe { TFTP_CHANNEL.receiver() };
 	let pxe_sender = unsafe { PXE_CHANNEL.sender() };
 	let pxe_receiver = unsafe { PXE_CHANNEL.receiver() };
+	let serial_sender = unsafe { SERIAL_CHANNEL.sender() };
+	let serial_receiver = unsafe { SERIAL_CHANNEL.receiver() };
 
 	spawner.must_spawn(net_ext_stack_task(extnet));
 	spawner.must_spawn(net_sys_stack_task(sysnet));
@@ -203,6 +218,12 @@ pub async fn main(spawner: Spawner) -> ! {
 	spawner.must_spawn(tftp_task(sysnet, broker_sender, tftp_receiver));
 	spawner.must_spawn(time_task(extnet, wall_clock));
 	spawner.must_spawn(daemon_task(extnet, rng, broker_sender, daemon_receiver));
+	spawner.must_spawn(serial_task(
+		syscom_tx,
+		syscom_rx,
+		broker_sender,
+		serial_receiver,
+	));
 
 	loop {
 		match broker_receiver.receive().await {
@@ -290,6 +311,11 @@ pub async fn main(spawner: Spawner) -> ! {
 			Command::IncomingPacket(Packet::BootfileSize(size)) => {
 				pxe_sender
 					.send(Command::IncomingPacket(Packet::BootfileSize(size)))
+					.await;
+			}
+			Command::IncomingPacket(Packet::Serial(data)) => {
+				serial_sender
+					.send(Command::IncomingPacket(Packet::Serial(data)))
 					.await;
 			}
 			Command::OutgoingPacket(packet) => {
