@@ -6,9 +6,14 @@ use aes::{
 	cipher::{BlockDecrypt, BlockEncrypt, KeyInit},
 	Aes256Dec, Aes256Enc,
 };
+#[cfg(feature = "async-std")]
+use async_std::sync::Mutex;
+use core::ops::DerefMut;
 use curve25519::{curve25519, curve25519_pk, curve25519_sk};
 use link_protocol_binser::MaybeFormat;
 use rand_core::RngCore;
+#[cfg(feature = "embassy")]
+type Mutex<T> = ::embassy_sync::mutex::Mutex<::embassy_sync::blocking_mutex::raw::NoopRawMutex, T>;
 
 #[derive(Debug)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
@@ -96,25 +101,37 @@ pub async fn negotiate<W: Write, R: Read, Rng: RngCore>(
 }
 
 pub struct PacketSender<W: Write> {
+	sock: Mutex<BlockSender<W>>,
+}
+
+impl<W: Write> PacketSender<W> {
+	fn new(sock: W, tls: Aes256Enc) -> Self {
+		Self {
+			sock: Mutex::new(BlockSender {
+				sock,
+				tls,
+				block: [0; 16],
+				cursor: 0,
+			}),
+		}
+	}
+
+	pub async fn send(&mut self, packet: Packet) -> Result<(), Error<W::Error>> {
+		let mut sock = self.sock.lock().await;
+		packet.serialize(sock.deref_mut()).await?;
+		sock.flush().await
+	}
+}
+
+struct BlockSender<W: Write> {
 	sock: W,
 	tls: Aes256Enc,
 	block: [u8; 16],
 	cursor: usize,
 }
 
-impl<W: Write> PacketSender<W> {
-	fn new(sock: W, tls: Aes256Enc) -> Self {
-		Self {
-			sock,
-			tls,
-			block: [0; 16],
-			cursor: 0,
-		}
-	}
-
-	pub async fn send(&mut self, packet: Packet) -> Result<(), Error<W::Error>> {
-		packet.serialize(self).await?;
-
+impl<W: Write> BlockSender<W> {
+	async fn flush(&mut self) -> Result<(), Error<W::Error>> {
 		// Flush any remaining contents in the last block
 		// Kind of a hack to DRY up the sending sequence...
 		if self.cursor > 0 {
@@ -123,13 +140,11 @@ impl<W: Write> PacketSender<W> {
 			}
 		}
 
-		self.sock.flush().await?;
-
-		Ok(())
+		Ok(self.sock.flush().await?)
 	}
 }
 
-impl<W: Write> Write for PacketSender<W> {
+impl<W: Write> Write for BlockSender<W> {
 	type Error = W::Error;
 
 	async fn write(&mut self, buf: &[u8]) -> Result<(), Error<W::Error>> {
@@ -151,10 +166,13 @@ impl<W: Write> Write for PacketSender<W> {
 
 				self.tls.encrypt_block((&mut self.block[..]).into());
 
-				self.sock.write(&self.block[..]).await.map_err(|err| {
-					error!("link-proto: failed to write block: {:?}", err);
-					Error::Eof
-				})?;
+				self.sock
+					.write(&self.block[..])
+					.await
+					.map_err(|#[allow(unused)] err| {
+						error!("link-proto: failed to write block: {:?}", err);
+						Error::Eof
+					})?;
 
 				self.cursor = 0;
 			}
@@ -170,34 +188,37 @@ impl<W: Write> Write for PacketSender<W> {
 }
 
 pub struct PacketReceiver<R: Read> {
+	sock: Mutex<BlockReceiver<R>>,
+}
+
+impl<R: Read> PacketReceiver<R> {
+	fn new(sock: R, tls: Aes256Dec) -> Self {
+		Self {
+			sock: Mutex::new(BlockReceiver {
+				sock,
+				tls,
+				cursor: 16, // must start as >= the block size!
+				block: [0; 16],
+			}),
+		}
+	}
+
+	pub async fn receive(&mut self) -> Result<Packet, Error<R::Error>> {
+		let mut sock = self.sock.lock().await;
+		let msg = Packet::deserialize(sock.deref_mut()).await?;
+		sock.cursor = sock.block.len(); // force a fresh read for the next packet.
+		Ok(msg)
+	}
+}
+
+struct BlockReceiver<R: Read> {
 	sock: R,
 	tls: Aes256Dec,
 	cursor: usize,
 	block: [u8; 16],
 }
 
-impl<R: Read> PacketReceiver<R> {
-	fn new(sock: R, tls: Aes256Dec) -> Self {
-		let s = Self {
-			sock,
-			tls,
-			cursor: 16,
-			block: [0; 16],
-		};
-
-		debug_assert!(s.cursor >= s.block.len());
-
-		s
-	}
-
-	pub async fn receive(&mut self) -> Result<Packet, Error<R::Error>> {
-		let msg = Packet::deserialize(self).await?;
-		self.cursor = self.block.len(); // force a fresh read for the next packet.
-		Ok(msg)
-	}
-}
-
-impl<R: Read> Read for PacketReceiver<R> {
+impl<R: Read> Read for BlockReceiver<R> {
 	type Error = R::Error;
 
 	async fn read(&mut self, buf: &mut [u8]) -> Result<(), Error<R::Error>> {
@@ -217,10 +238,13 @@ impl<R: Read> Read for PacketReceiver<R> {
 
 				trace!("link-proto: read(): reading 16 bytes from stream");
 
-				self.sock.read(&mut self.block[..]).await.map_err(|err| {
-					error!("link-proto: failed reading block from socket: {:?}", err);
-					Error::Eof
-				})?;
+				self.sock
+					.read(&mut self.block[..])
+					.await
+					.map_err(|#[allow(unused)] err| {
+						error!("link-proto: failed reading block from socket: {:?}", err);
+						Error::Eof
+					})?;
 
 				self.cursor = 0;
 
