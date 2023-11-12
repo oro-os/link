@@ -50,7 +50,7 @@ pub enum Error<IoError: MaybeFormat> {
 		feature = "thiserror",
 		error("the packet refers to an unknown message code")
 	)]
-	InvalidMessageCode,
+	InvalidMessageCode(u8),
 	#[cfg_attr(feature = "thiserror", error("an invalid enum variant was specified"))]
 	InvalidEnumeration,
 	#[cfg_attr(feature = "thiserror", error("a string failed to decode as utf-8"))]

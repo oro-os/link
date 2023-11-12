@@ -250,8 +250,8 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 					Ok(
 						match msg_code {
 							#deserialize_matches_stream
-							_ => {
-								return Err(::link_protocol_binser::Error::InvalidMessageCode);
+							unknown => {
+								return Err(::link_protocol_binser::Error::InvalidMessageCode(unknown));
 							}
 						}
 					)
