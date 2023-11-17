@@ -2090,10 +2090,13 @@ name = "link-test"
 version = "0.1.0"
 dependencies = [
  "async-std",
+ "async-tftp",
  "clap",
  "futures",
  "heapless",
  "link-protocol",
+ "log",
+ "pretty_env_logger",
  "rand 0.8.5",
  "thiserror",
 ]

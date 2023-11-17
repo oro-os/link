@@ -1,13 +1,19 @@
 #![feature(never_type)]
 
-use async_std::{io, os::unix::net::UnixStream, prelude::*, process};
+use async_std::{fs, io, os::unix::net::UnixStream, prelude::*, process, task};
+use async_tftp::packet::Packet as Tftp;
 use clap::Parser;
 use futures::{select, FutureExt};
 use link_protocol::{
 	channel::{self, RWError, Side as ChannelSide},
 	Error as PacketError, Packet,
 };
-use std::process::ExitStatus;
+use log::{debug, error, info, trace, warn};
+use std::{
+	path::{Component, Path, PathBuf},
+	process::ExitStatus,
+	time::Duration,
+};
 
 /// Runs a test session on an Oro Link.
 ///
@@ -65,10 +71,16 @@ struct Config {
 	session_ref: String,
 	/// The total number of tests that will be run
 	#[arg(long = "num-tests")]
-	session_num_tests: u64,
+	session_num_tests: u32,
+	/// Show verbose output
+	#[arg(long = "verbose", short = 'v', action)]
+	verbose: bool,
 	/// The command to run
 	#[arg(last = true)]
 	cmd: Vec<String>,
+	/// TFTP data block timeout in milliseconds
+	#[arg(long = "timeout", default_value = "500")]
+	timeout: u64,
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -81,11 +93,37 @@ enum Error {
 	RWError(#[from] RWError<PacketError<io::Error>, PacketError<io::Error>>),
 	#[error("child process closed an output stream")]
 	Eof,
+	#[error("expected an ack for a piece of data")]
+	ExpectedAck,
+	#[error("tftp parse/serialize error: {0}")]
+	Tftp(#[from] async_tftp::Error),
+	#[error("tftp client sent error: {0}")]
+	TftpPacket(#[from] async_tftp::packet::Error),
+	#[error("tftp client sent unexpected acknowledgement of block {0}")]
+	UnexpectedAck(u16),
+	#[error("tftp client sent unexpected data packet for block {0}")]
+	UnexpectedData(u16),
+	#[error("tftp client sent unexpected options ack (OACK)")]
+	UnexpectedOack,
+	#[error("tftp client sent unexpected write request (WRQ) (system is read-only)")]
+	UnexpectedWrq,
+	#[error("artifact is larger than TFTP supports: {0} chunks of {0} bytes")]
+	TooBig(usize, usize),
 }
 
 #[async_std::main]
 async fn main() -> Result<!, Error> {
 	let config = Config::parse();
+
+	if std::env::var("LEVEL").is_err() {
+		std::env::set_var("LEVEL", "debug");
+	}
+
+	if config.verbose {
+		std::env::set_var("LEVEL", "trace");
+	}
+
+	pretty_env_logger::try_init_timed_custom_env("LEVEL").expect("failed to initialize logger");
 
 	let sock = UnixStream::connect(config.socket_path).await?;
 
@@ -109,12 +147,34 @@ async fn main() -> Result<!, Error> {
 		.stderr(process::Stdio::piped())
 		.spawn()?;
 
+	info!("reporting PXE sizes");
+	let size_bios = artifact_size(&config.pxe_dir, &config.pxe_entry_bios).await?;
+	debug!("    BIOS bootfile size:   {}", size_bios);
+
+	let size_uefi = artifact_size(&config.pxe_dir, &config.pxe_entry_uefi).await?;
+	debug!("    UEFI bootfile size:   {}", size_uefi);
+
+	sender
+		.send(Packet::BootfileSize {
+			uefi: size_uefi,
+			bios: size_bios,
+		})
+		.await?;
+
+	info!("starting test session");
+	sender
+		.send(Packet::StartTestSession {
+			total_tests: config.session_num_tests,
+			author: config.session_author.as_str().into(),
+			title: config.session_name.as_str().into(),
+			ref_id: config.session_ref.as_str().into(),
+		})
+		.await?;
+
 	let mut child_stdin = child_process.stdin.take().unwrap();
 	let mut child_stderr = child_process.stderr.take().unwrap();
 
 	let mut child_stdout = io::BufReader::new(child_process.stdout.take().unwrap()).lines();
-
-	let mut stderr_buf = [0u8; 4096];
 
 	#[allow(clippy::large_enum_variant)]
 	enum Event {
@@ -123,6 +183,8 @@ async fn main() -> Result<!, Error> {
 		ChildExit(ExitStatus),
 		Link(Packet),
 	}
+
+	let mut stderr_buf = [0u8; 4096];
 
 	let mut number_passed = 0;
 	let mut number_failed = 0;
@@ -197,6 +259,158 @@ async fn main() -> Result<!, Error> {
 				Packet::Serial(data) => {
 					child_stdin.write_all(&data[..]).await?;
 				}
+				Packet::Tftp(data) => {
+					trace!("received tftp packet of size {}", data.len());
+					let packet = async_tftp::parse::parse_packet(data.as_ref())?;
+					trace!("parsed tftp packet: {packet:?}");
+
+					match packet {
+						Tftp::Ack(bid) => {
+							return Err(Error::UnexpectedAck(bid));
+						}
+						Tftp::Data(bid, _) => {
+							return Err(Error::UnexpectedData(bid));
+						}
+						Tftp::Error(msg) => {
+							Err(msg)?;
+							unreachable!();
+						}
+						Tftp::OAck(_) => {
+							return Err(Error::UnexpectedOack);
+						}
+						Tftp::Wrq(_) => {
+							return Err(Error::UnexpectedWrq);
+						}
+						Tftp::Rrq(req) => {
+							let artifact = if req.filename == "ORO_BOOT_UEFI" {
+								debug!(
+									"reading entry point artifact: {} (re-written from ORO_BOOT_UEFI, root: {})",
+									config.pxe_entry_uefi, config.pxe_dir
+								);
+								artifact_bytes(&config.pxe_dir, &config.pxe_entry_uefi).await?
+							} else if req.filename == "ORO_BOOT_BIOS" {
+								debug!(
+									"reading entry point artifact: {} (re-written from ORO_BOOT_BIOS, root: {})",
+									config.pxe_entry_bios, config.pxe_dir
+								);
+								artifact_bytes(&config.pxe_dir, &config.pxe_entry_bios).await?
+							} else {
+								debug!(
+									"reading artifact: {} (root: {})",
+									req.filename, config.pxe_dir
+								);
+								artifact_bytes(&config.pxe_dir, &req.filename).await?
+							};
+
+							let mut opts = req.opts;
+							let chunk_size = opts.block_size.unwrap_or(512) as usize;
+
+							if opts.transfer_size.is_some() {
+								opts.transfer_size = Some(artifact.len() as u64);
+							}
+
+							let opt_ack = Tftp::OAck(opts.clone());
+							let buf = heapless::Vec::from_iter(opt_ack.to_bytes());
+							sender.send(Packet::Tftp(buf)).await?;
+							trace!("sent OACK");
+
+							let maybe_oack_ack = receiver.receive().await?;
+							if let Packet::Tftp(data) = maybe_oack_ack {
+								let packet = async_tftp::parse::parse_packet(data.as_ref())?;
+								match packet {
+								Tftp::Ack(bid) if bid == 0 => {
+									debug!("got oack ack (bid=0); continuing");
+								}
+								Tftp::Error(err)
+									if err
+										== async_tftp::packet::Error::OptionsNegotiationFailed =>
+								{
+									debug!(
+										"client rejected options; will allow client to re-negotiate"
+									);
+									continue;
+								}
+								unknown => {
+									error!(
+										"expected OACK acknowledgement but TFTP client sent something else: {unknown:?}"
+									);
+									return Err(Error::ExpectedAck);
+								}
+							}
+							} else {
+								error!(
+									"expected OACK acknowledgement (ack bid=0) but got different packet: {maybe_oack_ack:?}"
+								);
+								return Err(Error::ExpectedAck);
+							}
+
+							let num_chunks = (artifact.len() + chunk_size - 1) / chunk_size;
+							let mut offset = 0;
+
+							if num_chunks > u16::MAX as usize {
+								return Err(Error::TooBig(num_chunks, chunk_size));
+							}
+
+							for i in 1..=num_chunks {
+								let new_offset = (offset + chunk_size).min(artifact.len());
+								let buf = &artifact[offset..new_offset];
+								let data = Tftp::Data(i as u16, buf);
+								let buf = heapless::Vec::from_iter(data.to_bytes());
+								offset = new_offset;
+
+								debug!("sending block {i} of {num_chunks}");
+								sender.send(Packet::Tftp(buf.clone())).await?;
+
+								loop {
+									let received_packet = select! {
+										packet = receiver.receive().fuse() => packet?,
+										_ = task::sleep(Duration::from_millis(config.timeout)).fuse() => {
+											trace!("resending block {i}");
+											sender.send(Packet::Tftp(buf.clone())).await?;
+											continue;
+										}
+									};
+
+									match received_packet {
+										Packet::Tftp(ack_data) => {
+											let packet =
+												async_tftp::parse::parse_packet(&ack_data[..]);
+											match packet {
+												Err(err) => return Err(Error::Tftp(err)),
+												Ok(Tftp::Ack(bid)) => {
+													if bid == i as u16 {
+														debug!("client ack'd block {i}");
+														break;
+													} else {
+														debug!(
+															"ignoring invalid ack'd block {bid} (expecting {i}); resending block {i}"
+														);
+														continue;
+													}
+												}
+												Ok(Tftp::Error(err)) => {
+													return Err(Error::TftpPacket(err));
+												}
+												Ok(unknown) => {
+													warn!(
+														"expected ACK during data transfer but got another TFTP packet instead: {unknown:?}"
+													);
+													return Err(Error::ExpectedAck);
+												}
+											}
+										}
+										unknown => {
+											warn!(
+												"expected ACK during data transfer but got unknown packet instead: {unknown:?}"
+											);
+											return Err(Error::ExpectedAck);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 				unknown => {
 					println!("WARNING: ignoring unknown packet from link: {unknown:?}");
 				}
@@ -215,4 +429,25 @@ async fn main() -> Result<!, Error> {
 	);
 
 	std::process::exit(exit_status);
+}
+
+fn make_artifact_path(root: &str, filename: &str) -> PathBuf {
+	Path::new(filename)
+		.components()
+		.filter(|c| !matches!(c, Component::RootDir))
+		.fold(PathBuf::from(root), |mut r, c| {
+			r.push(c);
+			r
+		})
+}
+
+async fn artifact_size(root: &str, filename: &str) -> Result<u64, Error> {
+	let filepath = make_artifact_path(root, filename);
+	let metadata = fs::metadata(filepath).await?;
+	Ok(metadata.len())
+}
+
+async fn artifact_bytes(root: &str, filename: &str) -> Result<Vec<u8>, Error> {
+	let filepath = make_artifact_path(root, filename);
+	Ok(fs::read(filepath).await?)
 }

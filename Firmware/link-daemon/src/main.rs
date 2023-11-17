@@ -156,18 +156,18 @@ async fn task_process_oro_link(
 				}
 			});
 
-			#[allow(clippy::large_enum_variant)]
-			enum EventType {
-				ContainerExited,
-				Packet(Packet),
-				ActionsConnection(UnixStream),
-			}
-
 			info!("actions runner for {link_id} online and waiting for jobs");
 
 			let mut uds_incoming = uds.incoming();
 
-			loop {
+			let uds_stream = 'get_stream: loop {
+				#[allow(clippy::large_enum_variant)]
+				enum EventType {
+					ContainerExited,
+					Packet(Packet),
+					ActionsConnection(UnixStream),
+				}
+
 				let event = select! {
 					_ = container_barrier.lock().fuse() => EventType::ContainerExited,
 					packet = receiver.receive().fuse() => EventType::Packet(packet?),
@@ -179,6 +179,8 @@ async fn task_process_oro_link(
 						info!(
 							"actions runner for {link_id} received connection; starting test session"
 						);
+
+						break 'get_stream stream;
 					}
 					EventType::ContainerExited => {
 						warn!(
@@ -188,7 +190,78 @@ async fn task_process_oro_link(
 						error!("github actions funner container exited: {:?}", res);
 						return Ok(res?);
 					}
-					EventType::Packet(unknown) => warn!("dropping unknown packet: {:?}", unknown),
+					EventType::Packet(unknown) => warn!("dropping unknown packet from link: {:?}", unknown),
+				}
+			};
+
+			let (mut uds_sender, mut uds_receiver) = negotiate(
+				io::BufWriter::new(uds_stream.clone()),
+				io::BufReader::new(uds_stream),
+				&mut OsRng,
+				ChannelSide::Server,
+			).await?;
+
+			loop {
+				#[allow(clippy::large_enum_variant)]
+				enum EventType {
+					ContainerExited,
+					Packet(Packet),
+					UdsPacket(Packet),
+				}
+
+				let event = select! {
+					_ = container_barrier.lock().fuse() => EventType::ContainerExited,
+					packet = receiver.receive().fuse() => EventType::Packet(packet?),
+					uds_packet = uds_receiver.receive().fuse() => EventType::UdsPacket(uds_packet?),
+				};
+
+				match event {
+					EventType::ContainerExited => {
+						warn!(
+							"github actions runner container exited unexpectedly; fetching result"
+						);
+						let res = container_handle.await;
+						error!("github actions funner container exited: {:?}", res);
+						return Ok(res?);
+					}
+					EventType::UdsPacket(Packet::Serial(data)) => {
+						trace!("serial: daemon -> link: {}", data.len());
+						sender.send(Packet::Serial(data)).await?;
+					}
+					EventType::Packet(Packet::Serial(data)) => {
+						trace!("serial: link -> daemon: {}", data.len());
+						uds_sender.send(Packet::Serial(data)).await?;
+					}
+					EventType::UdsPacket(Packet::BootfileSize { uefi, bios }) => {
+						trace!("bootfile size: daemon -> link: uefi={uefi} bios={bios}");
+						sender.send(Packet::BootfileSize { uefi, bios }).await?;
+					}
+					EventType::UdsPacket(Packet::Tftp(data)) => {
+						trace!("tftp: daemon -> link: {}", data.len());
+						sender.send(Packet::Tftp(data)).await?;
+					}
+					EventType::Packet(Packet::Tftp(data)) => {
+						trace!("tftp: link -> daemon: {}", data.len());
+						uds_sender.send(Packet::Tftp(data)).await?;
+					}
+					EventType::UdsPacket(Packet::PressPower) => {
+						trace!("press power: daemon -> link");
+						sender.send(Packet::PressPower).await?;
+					}
+					EventType::UdsPacket(Packet::PressReset) => {
+						trace!("press reset: daemon -> link");
+						sender.send(Packet::PressReset).await?;
+					}
+					EventType::UdsPacket(Packet::StartTest { name }) => {
+						trace!("start test: daemon -> link: {}", name);
+						sender.send(Packet::StartTest { name }).await?;
+					}
+					EventType::UdsPacket(Packet::StartTestSession { total_tests, author, title, ref_id }) => {
+						trace!("start test session: daemon -> link: total_tests={total_tests} author={author} title={title} ref_id={ref_id}");
+						sender.send(Packet::StartTestSession { total_tests, author, title, ref_id }).await?;
+					}
+					EventType::UdsPacket(unknown) => warn!("dropping unknown packet from container: {unknown:?}"),
+					EventType::Packet(unknown) => warn!("dropping unknown packet from link: {unknown:?}"),
 				}
 			}
 		}
