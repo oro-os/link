@@ -7,8 +7,9 @@ WORKDIR /actions-runner
 RUN tar xzf ../actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 RUN ./bin/installdependencies.sh
 RUN useradd -ms /bin/bash github
+RUN mkdir /oro
 COPY start-oro-runner.sh start-oro-runner.sh
 RUN chmod +x start-oro-runner.sh
-RUN chown -R github /actions-runner
+RUN chown -R github /actions-runner /oro
 USER github
 ENTRYPOINT ["./start-oro-runner.sh"]

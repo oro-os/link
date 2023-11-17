@@ -1,5 +1,5 @@
 use crate::command::{Command, CommandReceiver};
-use defmt::{trace, warn};
+use defmt::{debug, trace, warn};
 use embassy_futures::select::{select, Either};
 use embassy_net::{
 	driver::Driver,
@@ -13,7 +13,8 @@ use smoltcp::wire::{
 };
 
 const TFTP_SERVER: &str = "10.0.0.1";
-const TFTP_BOOTFILE: &str = "ORO_BOOT";
+const TFTP_BOOTFILE_BIOS: &str = "ORO_BOOT_BIOS";
+const TFTP_BOOTFILE_UEFI: &str = "ORO_BOOT_UEFI";
 
 const BASE_RESPONSE: DhcpRepr = DhcpRepr {
 	message_type: DhcpMessageType::Offer,
@@ -60,22 +61,39 @@ pub async fn run<D: Driver + 'static, const R: usize>(
 	socket.bind(DHCP_SERVER_PORT).unwrap();
 
 	// https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml
-	let mut bootfile_size_bytes = [0u8; 2];
+	let mut bootfile_size_bios = 0;
+	let mut bootfile_size_uefi = 0;
+	let mut use_uefi = false;
+
 	loop {
 		let (n, _) = match select(socket.recv_from(&mut buf), receiver.receive()).await {
 			Either::First(packet) => packet.unwrap(),
 			Either::Second(command) => {
 				match command {
-					Command::IncomingPacket(Packet::BootfileSize(size)) => {
-						let num_chunks: u16 = ((size + 511) / 512).try_into().unwrap_or_else(|_| {
-						warn!("pxe: bootfile size is too large ({} bytes) to fit into u16 as 512-byte chunks ({} chunks of 512 bytes, which is > 65535)", size, (size + 511) / 512);
-						u16::MAX
-						});
-						bootfile_size_bytes = num_chunks.to_ne_bytes();
-						trace!(
-							"pxe: bootfile size set to {} chunks of 512 bytes",
-							num_chunks
-						);
+					Command::IncomingPacket(Packet::BootfileSize { bios, uefi }) => {
+						{
+							bootfile_size_bios = ((bios + 511) / 512).try_into().unwrap_or_else(|_| {
+								warn!("pxe: BIOS bootfile size is too large ({} bytes) to fit into u16 as 512-byte chunks ({} chunks of 512 bytes, which is > 65535)", bios, (bios + 511) / 512);
+								u16::MAX
+							});
+
+							trace!(
+								"pxe: BIOS bootfile size set to {} chunks of 512 bytes",
+								bootfile_size_bios
+							);
+						}
+
+						{
+							bootfile_size_uefi = ((uefi + 511) / 512).try_into().unwrap_or_else(|_| {
+								warn!("pxe: UEFI bootfile size is too large ({} bytes) to fit into u16 as 512-byte chunks ({} chunks of 512 bytes, which is > 65535)", uefi, (uefi + 511) / 512);
+								u16::MAX
+							});
+
+							trace!(
+								"pxe: UEFI bootfile size set to {} chunks of 512 bytes",
+								bootfile_size_uefi
+							);
+						}
 					}
 					unknown => {
 						warn!("pxe: ignoring unknown command: {:?}", unknown);
@@ -84,24 +102,6 @@ pub async fn run<D: Driver + 'static, const R: usize>(
 				continue;
 			}
 		};
-
-		let additional_options = [
-			// 13 - Boot File Size (in 512 byte chunks)
-			DhcpOption {
-				kind: 13,
-				data: &bootfile_size_bytes,
-			},
-			// 66 - TFTP server name
-			DhcpOption {
-				kind: 66,
-				data: TFTP_SERVER.as_bytes(),
-			},
-			// 67 - bootfile name
-			DhcpOption {
-				kind: 67,
-				data: TFTP_BOOTFILE.as_bytes(),
-			},
-		];
 
 		let packet = if let Ok(packet) = DhcpPacket::new_checked(&buf[..n]) {
 			packet
@@ -118,15 +118,16 @@ pub async fn run<D: Driver + 'static, const R: usize>(
 			}
 		};
 
-		let response = match request.message_type {
-			DhcpMessageType::Discover => {
-				let mut requested_tftp_server = false;
-				let mut requested_boot_file = false;
+		if request.message_type == DhcpMessageType::Discover {
+			let mut requested_tftp_server = false;
+			let mut requested_boot_file = false;
 
-				// https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml
-				for option in packet.options() {
+			// https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml
+			for option in packet.options() {
+				debug!("@@@@ {}", option.kind);
+				match option.kind {
 					// 55 - Parameter Request List
-					if option.kind == 55 {
+					55 => {
 						for kind in option.data {
 							match kind {
 								// 66 - TFTP server name
@@ -137,22 +138,82 @@ pub async fn run<D: Driver + 'static, const R: usize>(
 								67 => {
 									requested_boot_file = true;
 								}
+
 								_ => {}
 							}
 						}
 					}
-				}
+					// 93 - Client System Architecture Type
+					93 => {
+						let arch =
+							u16::from_be_bytes(option.data[0..2].try_into().unwrap_or_else(|_| {
+								warn!("pxe: peer sent invalid option 93 data");
+								[0, 0]
+							}));
 
-				if !requested_boot_file {
-					warn!("pxe: peer didn't request boot file in DHCP request; dropping");
-					continue;
+						match arch {
+							// 0 - BIOS
+							0 => {
+								debug!("pxe: peer requested BIOS boot file");
+							}
+							// 6 - EFI Byte Code / 7 - UEFI Byte Code
+							6 | 7 => {
+								debug!("pxe: peer requested UEFI boot file");
+								use_uefi = true;
+							}
+							unknown => {
+								warn!(
+									"pxe: DHCP offer contained unknown architecture type: {}",
+									unknown
+								);
+							}
+						}
+					}
+					_ => {}
 				}
+			}
 
-				if !requested_tftp_server {
-					warn!("pxe: peer didn't request TFTP server in DHCP request; dropping");
-					continue;
-				}
+			if !requested_boot_file {
+				warn!("pxe: peer didn't request boot file in DHCP request; dropping");
+				continue;
+			}
 
+			if !requested_tftp_server {
+				warn!("pxe: peer didn't request TFTP server in DHCP request; dropping");
+				continue;
+			}
+		}
+
+		let current_bootfile_size_bytes = if use_uefi {
+			bootfile_size_uefi.to_be_bytes()
+		} else {
+			bootfile_size_bios.to_be_bytes()
+		};
+
+		let additional_options = [
+			// 13 - Boot File Size (in 512 byte chunks)
+			DhcpOption {
+				kind: 13,
+				data: &current_bootfile_size_bytes[..],
+			},
+			// 66 - TFTP server name
+			DhcpOption {
+				kind: 66,
+				data: TFTP_SERVER.as_bytes(),
+			},
+			// 67 - bootfile name
+			DhcpOption {
+				kind: 67,
+				data: if use_uefi {
+					TFTP_BOOTFILE_UEFI.as_bytes()
+				} else {
+					TFTP_BOOTFILE_BIOS.as_bytes()
+				},
+			},
+		];
+
+		let response = match request.message_type {
+			DhcpMessageType::Discover => {
 				trace!("pxe: got DHCP discovery");
 
 				let mut response = BASE_RESPONSE.clone();

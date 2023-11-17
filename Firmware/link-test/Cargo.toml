@@ -1,0 +1,15 @@
+[package]
+name = "link-test"
+description = "Test CLI for use in GitHub Actions"
+publish = false
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-std = { version = "1.12.0", features = ["attributes", "unstable"] }
+link-protocol = { path = "../link-protocol", features = ["log", "async-std", "thiserror"] }
+clap = { version = "4.4.5", features = ["derive"] }
+thiserror = "1.0.50"
+futures = "0.3.29"
+rand = "0.8.5"
+heapless = "0.7.16"

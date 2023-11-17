@@ -93,7 +93,7 @@ async fn pxe_task(stack: &'static Stack<SysEthernetDriver>, receiver: CommandRec
 async fn tftp_task(
 	stack: &'static Stack<SysEthernetDriver>,
 	broker_sender: CommandSender<8>,
-	tftp_receiver: CommandReceiver<3>,
+	tftp_receiver: CommandReceiver<5>,
 ) -> ! {
 	service::tftp::run(stack, broker_sender, tftp_receiver).await
 }
@@ -193,7 +193,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	static mut BROKER_CHANNEL: CommandChannel<8> = CommandChannel::new();
 	static mut DAEMON_CHANNEL: CommandChannel<4> = CommandChannel::new();
 	static mut MONITOR_CHANNEL: CommandChannel<4> = CommandChannel::new();
-	static mut TFTP_CHANNEL: CommandChannel<3> = CommandChannel::new();
+	static mut TFTP_CHANNEL: CommandChannel<5> = CommandChannel::new();
 	static mut PXE_CHANNEL: CommandChannel<2> = CommandChannel::new();
 	static mut SERIAL_CHANNEL: CommandChannel<2> = CommandChannel::new();
 
@@ -308,9 +308,9 @@ pub async fn main(spawner: Spawner) -> ! {
 					.send(Command::IncomingPacket(Packet::Tftp(data)))
 					.await;
 			}
-			Command::IncomingPacket(Packet::BootfileSize(size)) => {
+			Command::IncomingPacket(Packet::BootfileSize { bios, uefi }) => {
 				pxe_sender
-					.send(Command::IncomingPacket(Packet::BootfileSize(size)))
+					.send(Command::IncomingPacket(Packet::BootfileSize { bios, uefi }))
 					.await;
 			}
 			Command::IncomingPacket(Packet::Serial(data)) => {

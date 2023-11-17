@@ -83,11 +83,11 @@ pub enum Packet {
 	#[proto(id = 11)]
 	Tftp(Vec<u8, 1700>),
 
-	/// Tells the PXE service how big the boot file size is
+	/// Tells the PXE service how big the boot file size(s) are.
 	/// **MUST** be sent before a test session is started (or at least
 	/// before the system is turned on).
 	#[proto(id = 12)]
-	BootfileSize(u64),
+	BootfileSize { uefi: u64, bios: u64 },
 
 	/// A serial line transmission (either to or from the system)
 	#[proto(id = 13)]

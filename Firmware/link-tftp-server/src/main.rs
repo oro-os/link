@@ -15,20 +15,26 @@ use std::{
 /// Serves files over TFTP to the system under test via a Link connection.
 /// This is only useful for debugging and testing and isn't used by the
 /// CI/CD pipeline.
-#[derive(Parser)]
+#[derive(Parser, Clone)]
 struct Options {
 	/// Show verbose (trace) output
 	#[arg(long, short = 'v', action)]
 	verbose: bool,
-	/// The name of the boot file (the Link requests ORO_BOOT as the entry point; this filename is
+	/// The name of the UEFI boot file (the Link requests ORO_BOOT as the entry point; this filename is
 	/// rewritten to the value of this option)
-	#[arg(long, short = 'b', default_value = "BOOTX64.EFI")]
-	bootfile: String,
-	/// The name of the pre-boot file. If specified, the first request for ORO_BOOT will start
+	#[arg(long = "bootfile-uefi", short = 'B', default_value = "BOOTX64.EFI")]
+	bootfile_uefi: String,
+	/// The name of the BIOS boot file
+	#[arg(long = "bootfile-bios", short = 'b', default_value = "boot.bin")]
+	bootfile_bios: String,
+	/// The name of the UEFI pre-boot file. If specified, the first request for ORO_BOOT will start
 	/// with this file, and all subsequent requests for ORO_BOOT will resolve to the normal bootfile.
 	/// Useful when booting with e.g. iPXE.
-	#[arg(long, short = 'p')]
-	preboot: Option<String>,
+	#[arg(long = "preboot-uefi", short = 'P')]
+	preboot_uefi: Option<String>,
+	/// The name of the BIOS pre-boot file.
+	#[arg(long = "preboot-bios", short = 'p')]
+	preboot_bios: Option<String>,
 	/// How long to wait before resending certain TFTP packets, in milliseconds
 	/// (CAUTION: Values lower than 500ms might back up the Link board if the mobo
 	/// has a slow PXE chip with high backpressure)
@@ -92,14 +98,9 @@ async fn main() -> Result<(), Error> {
 		let stream = stream?;
 		debug!("incoming connection");
 		task::spawn({
-			let root_dir = config.directory.clone();
-			let bootfile = config.bootfile.clone();
-			let preboot = config.preboot.clone();
-			let resend_after = config.timeout;
+			let config = config.clone();
 			async move {
-				if let Err(err) =
-					handle_client(stream, root_dir, bootfile, preboot, resend_after).await
-				{
+				if let Err(err) = handle_client(stream, config).await {
 					error!("client handler error: {err:?}");
 				} else {
 					debug!("client handler returned gracefully");
@@ -113,13 +114,7 @@ async fn main() -> Result<(), Error> {
 	Ok(())
 }
 
-async fn handle_client(
-	stream: net::TcpStream,
-	root_dir: String,
-	bootfile: String,
-	mut preboot: Option<String>,
-	resend_after: u64,
-) -> Result<!, Error> {
+async fn handle_client(stream: net::TcpStream, config: Options) -> Result<!, Error> {
 	debug!("negotiating channel");
 	let receiver = io::BufReader::new(stream.clone());
 	let sender = io::BufWriter::new(stream);
@@ -130,6 +125,8 @@ async fn handle_client(
 	let (ch_sender, ch_receiver) = async_std::channel::bounded(16);
 
 	task::spawn(async move { while ch_sender.send(receiver.receive().await).await.is_ok() {} });
+
+	let mut has_prebooted = false;
 
 	loop {
 		match ch_receiver.recv().await?? {
@@ -146,7 +143,7 @@ async fn handle_client(
 						return Err(Error::UnexpectedData(bid));
 					}
 					Tftp::Error(msg) => {
-						Err(msg.clone())?;
+						Err(msg)?;
 						unreachable!();
 					}
 					Tftp::OAck(_) => {
@@ -156,23 +153,50 @@ async fn handle_client(
 						return Err(Error::UnexpectedWrq);
 					}
 					Tftp::Rrq(req) => {
-						let artifact = if req.filename == "ORO_BOOT" {
-							if let Some(preboot) = preboot.take() {
+						let artifact = if req.filename == "ORO_BOOT_UEFI" {
+							if let Some(preboot) = config
+								.preboot_uefi
+								.as_ref()
+								.and_then(|p| has_prebooted.then_some(p))
+							{
 								debug!(
-									"reading pre-boot entry point artifact: {} (re-written from ORO_BOOT, root: {})",
-									preboot, root_dir
+									"reading pre-boot entry point artifact: {} (re-written from ORO_BOOT_UEFI, root: {})",
+									preboot, config.directory
 								);
-								artifact_bytes(&root_dir, &preboot).await?
+								has_prebooted = true;
+								artifact_bytes(&config.directory, preboot).await?
 							} else {
 								debug!(
-									"reading entry point artifact: {} (re-written from ORO_BOOT, root: {})",
-									bootfile, root_dir
+									"reading entry point artifact: {} (re-written from ORO_BOOT_UEFI, root: {})",
+									config.bootfile_uefi, config.directory
 								);
-								artifact_bytes(&root_dir, &bootfile).await?
+								artifact_bytes(&config.directory, &config.bootfile_uefi).await?
+							}
+						} else if req.filename == "ORO_BOOT_BIOS" {
+							if let Some(preboot) = config
+								.preboot_bios
+								.as_ref()
+								.and_then(|p| has_prebooted.then_some(p))
+							{
+								debug!(
+									"reading pre-boot entry point artifact: {} (re-written from ORO_BOOT_BIOS, root: {})",
+									preboot, config.directory
+								);
+								has_prebooted = true;
+								artifact_bytes(&config.directory, preboot).await?
+							} else {
+								debug!(
+									"reading entry point artifact: {} (re-written from ORO_BOOT_BIOS, root: {})",
+									config.bootfile_bios, config.directory
+								);
+								artifact_bytes(&config.directory, &config.bootfile_bios).await?
 							}
 						} else {
-							debug!("reading artifact: {} (root: {})", req.filename, root_dir);
-							artifact_bytes(&root_dir, &req.filename).await?
+							debug!(
+								"reading artifact: {} (root: {})",
+								req.filename, config.directory
+							);
+							artifact_bytes(&config.directory, &req.filename).await?
 						};
 
 						let mut opts = req.opts;
@@ -237,7 +261,7 @@ async fn handle_client(
 							loop {
 								let received_packet = select! {
 									packet = ch_receiver.recv().fuse() => packet??,
-									_ = task::sleep(Duration::from_millis(resend_after)).fuse() => {
+									_ = task::sleep(Duration::from_millis(config.timeout)).fuse() => {
 										trace!("resending block {i}");
 										sender.send(Packet::Tftp(buf.clone())).await?;
 										continue;
@@ -289,14 +313,35 @@ async fn handle_client(
 				info!("    link firmware version: {}", version);
 				info!("    link UID:              {}", hexid);
 
-				debug!("retrieving bootfile size");
-				let size = artifact_size(&root_dir, &bootfile).await?;
-				debug!("telling link pxe service the bootfile size is {size}");
-				sender.send(Packet::BootfileSize(size as u64)).await?;
+				debug!("retrieving bootfile sizes");
+
+				let size_bios = if config.preboot_bios.is_some() {
+					artifact_size(&config.directory, config.preboot_bios.as_ref().unwrap()).await?
+				} else {
+					artifact_size(&config.directory, &config.bootfile_bios).await?
+				};
+				debug!("    BIOS bootfile size:   {}", size_bios);
+
+				let size_uefi = if config.preboot_uefi.is_some() {
+					artifact_size(&config.directory, config.preboot_uefi.as_ref().unwrap()).await?
+				} else {
+					artifact_size(&config.directory, &config.bootfile_uefi).await?
+				};
+				debug!("    UEFI bootfile size:   {}", size_uefi);
+
+				sender
+					.send(Packet::BootfileSize {
+						uefi: size_uefi,
+						bios: size_bios,
+					})
+					.await?;
+
 				debug!("instructing the link to boot the SUT");
 				sender.send(Packet::SetPowerState(PowerState::On)).await?;
+
 				debug!("instructing the link to press the power switch");
 				sender.send(Packet::PressPower).await?;
+
 				info!("link has brought the system online; beginning tftp communication");
 			}
 			unknown => {
