@@ -15,7 +15,7 @@ use envconfig::Envconfig;
 use futures::{future::FutureExt, select};
 use link_protocol::{
 	channel::{negotiate, RWError, Side as ChannelSide},
-	Error as ProtoError, Packet,
+	Error as ProtoError, Packet, PowerState, Scene,
 };
 use log::{debug, error, info, trace, warn};
 use rand::rngs::OsRng;
@@ -201,6 +201,9 @@ async fn task_process_oro_link(
 				ChannelSide::Server,
 			).await?;
 
+			let mut bootfile_size_packet = None;
+			let mut start_test_suite_packet = None;
+
 			loop {
 				#[allow(clippy::large_enum_variant)]
 				enum EventType {
@@ -234,9 +237,17 @@ async fn task_process_oro_link(
 					}
 					EventType::UdsPacket(Packet::BootfileSize { uefi, bios }) => {
 						trace!("bootfile size: daemon -> link: uefi={uefi} bios={bios}");
-						sender.send(Packet::BootfileSize { uefi, bios }).await?;
+						bootfile_size_packet = Some(Packet::BootfileSize { uefi, bios });
 					}
 					EventType::UdsPacket(Packet::Tftp(data)) => {
+						// If we've started a session, start showing it now that TFTP
+						// has started.
+						if let Some(packet) = start_test_suite_packet.take() {
+							debug!("got first tftp packet; sending test suite start packet");
+							sender.send(packet).await?;
+							sender.send(Packet::SetScene(Scene::Test)).await?;
+						}
+
 						trace!("tftp: daemon -> link: {}", data.len());
 						sender.send(Packet::Tftp(data)).await?;
 					}
@@ -258,10 +269,27 @@ async fn task_process_oro_link(
 					}
 					EventType::UdsPacket(Packet::StartTestSession { total_tests, author, title, ref_id }) => {
 						trace!("start test session: daemon -> link: total_tests={total_tests} author={author} title={title} ref_id={ref_id}");
-						sender.send(Packet::StartTestSession { total_tests, author, title, ref_id }).await?;
+						start_test_suite_packet = Some(Packet::StartTestSession { total_tests, author, title, ref_id });
 					}
 					EventType::UdsPacket(unknown) => warn!("dropping unknown packet from container: {unknown:?}"),
 					EventType::Packet(unknown) => warn!("dropping unknown packet from link: {unknown:?}"),
+				}
+
+				if bootfile_size_packet.is_some() && start_test_suite_packet.is_some() {
+					// Send the bootfile size packet first, then the start test suite packet.
+					// This is because the start test suite packet will cause the link to
+					// start the test suite, which will cause it to start downloading the
+					// boot file. If we send the start test suite packet first, the link
+					// will start downloading the boot file before it knows how big it is,
+					// which will cause it to fail.
+					trace!("disabling monitor standby");
+					sender.send(Packet::SetMonitorStandby(false)).await?;
+					trace!("setting scene to logo");
+					sender.send(Packet::SetScene(Scene::Logo)).await?;
+					trace!("informing link of bootfile sizes");
+					sender.send(bootfile_size_packet.clone().take().unwrap()).await?;
+					trace!("turning on the machine");
+					sender.send(Packet::SetPowerState(PowerState::On)).await?;
 				}
 			}
 		}
