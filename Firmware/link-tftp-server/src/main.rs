@@ -336,6 +336,11 @@ async fn handle_client(stream: net::TcpStream, config: Options) -> Result<!, Err
 					})
 					.await?;
 
+				debug!("instructing link to switch to logo view");
+				sender
+					.send(Packet::SetScene(link_protocol::Scene::Logo))
+					.await?;
+
 				debug!("instructing the link to boot the SUT");
 				sender.send(Packet::SetPowerState(PowerState::On)).await?;
 
