@@ -124,7 +124,6 @@ pub async fn run<D: Driver + 'static, const R: usize>(
 
 			// https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml
 			for option in packet.options() {
-				debug!("@@@@ {}", option.kind);
 				match option.kind {
 					// 55 - Parameter Request List
 					55 => {

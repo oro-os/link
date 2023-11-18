@@ -204,6 +204,7 @@ async fn task_process_oro_link(
 
 			let mut bootfile_size_packet = None;
 			let mut start_test_suite_packet = None;
+			let mut has_booted = false;
 
 			loop {
 				#[allow(clippy::large_enum_variant)]
@@ -276,13 +277,14 @@ async fn task_process_oro_link(
 					EventType::Packet(unknown) => warn!("dropping unknown packet from link: {unknown:?}"),
 				}
 
-				if bootfile_size_packet.is_some() && start_test_suite_packet.is_some() {
+				if bootfile_size_packet.is_some() && start_test_suite_packet.is_some() && !has_booted {
 					// Send the bootfile size packet first, then the start test suite packet.
 					// This is because the start test suite packet will cause the link to
 					// start the test suite, which will cause it to start downloading the
 					// boot file. If we send the start test suite packet first, the link
 					// will start downloading the boot file before it knows how big it is,
 					// which will cause it to fail.
+					has_booted = true;
 					trace!("disabling monitor standby");
 					sender.send(Packet::SetMonitorStandby(false)).await?;
 					trace!("setting scene to logo");
