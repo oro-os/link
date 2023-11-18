@@ -19,7 +19,7 @@ use link_protocol::{
 };
 use log::{debug, error, info, trace, warn};
 use rand::rngs::OsRng;
-use std::str::FromStr;
+use std::{os::unix::fs::PermissionsExt, str::FromStr};
 
 #[derive(Envconfig)]
 struct Config {
@@ -98,6 +98,7 @@ async fn task_process_oro_link(
 	}
 
 	let uds = UnixListener::bind(uds_path.to_string()).await?;
+	fs::set_permissions(&uds_path, fs::Permissions::from_mode(0o777)).await?;
 
 	debug!("pruning all containers for this link: {link_id}");
 	let containers = docker
