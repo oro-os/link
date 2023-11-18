@@ -13,7 +13,7 @@ pub async fn run<M: Monitor, const SZ: usize>(
 				match command {
 					Command::SetScene(scene) => monitor.set_scene(scene),
 					Command::Log(entry) => monitor.push_log(entry),
-					Command::SetStandby(standby) => monitor.standby_mode(standby),
+					//Command::SetStandby(standby) => monitor.standby_mode(standby),
 					Command::StartTestSession {
 						total_tests,
 						author,
@@ -29,6 +29,6 @@ pub async fn run<M: Monitor, const SZ: usize>(
 			monitor.tick(millis);
 		}
 
-		Timer::after(Duration::from_millis(1000 / 240)).await;
+		Timer::after(Duration::from_millis(1000 / 60)).await;
 	}
 }
