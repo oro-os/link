@@ -291,6 +291,8 @@ async fn task_process_oro_link(
 					sender.send(bootfile_size_packet.clone().take().unwrap()).await?;
 					trace!("turning on the machine");
 					sender.send(Packet::SetPowerState(PowerState::On)).await?;
+					trace!("pressing power button");
+					sender.send(Packet::PressPower).await?;
 				}
 			}
 		}
