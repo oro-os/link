@@ -125,10 +125,18 @@ async fn main() -> Result<!, Error> {
 
 	pretty_env_logger::try_init_timed_custom_env("LEVEL").expect("failed to initialize logger");
 
+	info!("running Oro Link test session");
+	info!("  title:       {}", config.session_name);
+	info!("  author:      {}", config.session_author);
+	info!("  ref:         {}", config.session_ref);
+	info!("  total tests: {}", config.session_num_tests);
+
 	let sock = UnixStream::connect(config.socket_path).await?;
+	trace!("connecting to unix stream");
 
 	let receiver = io::BufReader::new(sock.clone());
 	let sender = io::BufWriter::new(sock);
+	trace!("created buffered reader/writer");
 
 	let (mut sender, mut receiver) = channel::negotiate(
 		sender,
@@ -137,6 +145,7 @@ async fn main() -> Result<!, Error> {
 		ChannelSide::Client,
 	)
 	.await?;
+	trace!("negotiated link channel");
 
 	let mut child_process = process::Command::new(config.cmd[0].clone())
 		.args(&config.cmd[1..])
@@ -146,8 +155,9 @@ async fn main() -> Result<!, Error> {
 		.stdout(process::Stdio::piped())
 		.stderr(process::Stdio::piped())
 		.spawn()?;
+	trace!("spawned child process");
 
-	info!("reporting PXE sizes");
+	debug!("reporting PXE sizes");
 	let size_bios = artifact_size(&config.pxe_dir, &config.pxe_entry_bios).await?;
 	debug!("    BIOS bootfile size:   {}", size_bios);
 
@@ -160,6 +170,7 @@ async fn main() -> Result<!, Error> {
 			bios: size_bios,
 		})
 		.await?;
+	trace!("sent bootfile sizes");
 
 	info!("starting test session");
 	sender
@@ -170,11 +181,14 @@ async fn main() -> Result<!, Error> {
 			ref_id: config.session_ref.as_str().into(),
 		})
 		.await?;
+	trace!("sent test session start");
 
 	let mut child_stdin = child_process.stdin.take().unwrap();
 	let mut child_stderr = child_process.stderr.take().unwrap();
+	trace!("took child process stdin/stderr");
 
 	let mut child_stdout = io::BufReader::new(child_process.stdout.take().unwrap()).lines();
+	trace!("took child process stdout");
 
 	#[allow(clippy::large_enum_variant)]
 	enum Event {
@@ -192,6 +206,7 @@ async fn main() -> Result<!, Error> {
 
 	let mut exit_status;
 
+	trace!("entering event loop");
 	loop {
 		let event = select! {
 			line = child_stdout.next().fuse() => Event::ChildStdout(line.ok_or(Error::Eof)??),
@@ -200,9 +215,11 @@ async fn main() -> Result<!, Error> {
 			packet = receiver.receive().fuse() => Event::Link(packet?),
 		};
 
+		trace!("handling event");
+
 		match event {
 			Event::ChildExit(status) => {
-				println!("test process exited with status {status}");
+				warn!("test process exited with status {status}");
 				exit_status = status.code().unwrap_or(0);
 				break;
 			}
@@ -215,30 +232,30 @@ async fn main() -> Result<!, Error> {
 
 				match first {
 					"power" => {
-						println!("pressing the power button of the machine");
+						info!("pressing the power button of the machine");
 						sender.send(Packet::PressPower).await?;
 					}
 					"reset" => {
-						println!("pressing the reset button of the machine");
+						info!("pressing the reset button of the machine");
 						sender.send(Packet::PressReset).await?;
 					}
 					"echo" => {
-						println!("> {rest}");
+						info!("> {rest}");
 					}
 					"test" => {
-						println!("+++ {rest}");
+						info!("+++ {rest}");
 						sender.send(Packet::StartTest { name: rest.into() }).await?;
 					}
 					"pass" => {
-						println!("--- PASS");
+						info!("--- PASS");
 						number_passed += 1;
 					}
 					"fail" => {
-						println!("--- FAIL");
+						info!("--- FAIL");
 						number_failed += 1;
 					}
 					"skip" => {
-						println!("--- SKIP");
+						info!("--- SKIP");
 						number_skipped += 1;
 					}
 					unknown => {
@@ -412,7 +429,7 @@ async fn main() -> Result<!, Error> {
 					}
 				}
 				unknown => {
-					println!("WARNING: ignoring unknown packet from link: {unknown:?}");
+					warn!("ignoring unknown packet from link: {unknown:?}");
 				}
 			},
 		}
@@ -424,9 +441,9 @@ async fn main() -> Result<!, Error> {
 		exit_status = 1;
 	}
 
-	println!(
-		"\n\ntotal passed: {number_passed}\ntotal failed: {number_failed}\ntotal skipped: {number_skipped}"
-	);
+	info!("total passed: {number_passed}");
+	info!("total failed: {number_failed}");
+	info!("total skipped: {number_skipped}");
 
 	std::process::exit(exit_status);
 }
