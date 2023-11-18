@@ -47,6 +47,7 @@ fi
 	--labels "self-hosted,${LABELS}" \
 	--replace \
 	--no-default-labels \
+	--ephemeral \
 	--name "${NAME}"
 
 cleanup() {
