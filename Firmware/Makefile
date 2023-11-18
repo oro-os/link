@@ -68,7 +68,7 @@ doc:
 	env cargo doc $(CARGO_FLAGS) --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --no-default-features --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem --open
 
 docker:
-	@(cd docker && docker build --rm --quiet .)
+	@(docker build --rm -f docker/Dockerfile .)
 
 .PHONY: stm32f479vg.udeps other-udeps
 udeps: other-udeps # stm32f479vg.udeps
