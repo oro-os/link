@@ -328,37 +328,52 @@ async fn main() -> Result<!, Error> {
 
 							let opt_ack = Tftp::OAck(opts.clone());
 							let buf = heapless::Vec::from_iter(opt_ack.to_bytes());
-							sender.send(Packet::Tftp(buf)).await?;
+							sender.send(Packet::Tftp(buf.clone())).await?;
 							trace!("sent OACK");
 
-							let maybe_oack_ack = receiver.receive().await?;
-							if let Packet::Tftp(data) = maybe_oack_ack {
-								let packet = async_tftp::parse::parse_packet(data.as_ref())?;
-								match packet {
-								Tftp::Ack(bid) if bid == 0 => {
-									debug!("got oack ack (bid=0); continuing");
-								}
-								Tftp::Error(err)
-									if err
-										== async_tftp::packet::Error::OptionsNegotiationFailed =>
-								{
-									debug!(
-										"client rejected options; will allow client to re-negotiate"
-									);
-									continue;
-								}
-								unknown => {
+							let should_continue = loop {
+								let maybe_oack_ack = select! {
+									packet = receiver.receive().fuse() => packet?,
+									_ = task::sleep(Duration::from_millis(config.timeout)).fuse() => {
+										trace!("resending OACK");
+										sender.send(Packet::Tftp(buf.clone())).await?;
+										continue;
+									}
+								};
+
+								if let Packet::Tftp(data) = maybe_oack_ack {
+									let packet = async_tftp::parse::parse_packet(data.as_ref())?;
+									match packet {
+										Tftp::Ack(bid) if bid == 0 => {
+											debug!("got oack ack (bid=0); continuing");
+											break false;
+										}
+										Tftp::Error(err)
+											if err
+												== async_tftp::packet::Error::OptionsNegotiationFailed =>
+										{
+											debug!(
+												"client rejected options; will allow client to re-negotiate"
+											);
+											break true;
+										}
+										unknown => {
+											error!(
+												"expected OACK acknowledgement but TFTP client sent something else: {unknown:?}"
+											);
+											return Err(Error::ExpectedAck);
+										}
+									}
+								} else {
 									error!(
-										"expected OACK acknowledgement but TFTP client sent something else: {unknown:?}"
+										"expected OACK acknowledgement (ack bid=0) but got different packet: {maybe_oack_ack:?}"
 									);
 									return Err(Error::ExpectedAck);
 								}
-							}
-							} else {
-								error!(
-									"expected OACK acknowledgement (ack bid=0) but got different packet: {maybe_oack_ack:?}"
-								);
-								return Err(Error::ExpectedAck);
+							};
+
+							if should_continue {
+								continue;
 							}
 
 							let num_chunks = (artifact.len() + chunk_size - 1) / chunk_size;
