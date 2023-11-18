@@ -128,7 +128,7 @@ async fn task_process_oro_link(
 				binds: Some(docker::Binds(vec![(
 					uds_path,
 					"/oro-link.sock".into(),
-					None,
+					Some("rw".into()),
 				)])),
 			}),
 			..Default::default()
