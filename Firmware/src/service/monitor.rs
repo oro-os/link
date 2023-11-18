@@ -13,6 +13,7 @@ pub async fn run<M: Monitor, const SZ: usize>(
 				match command {
 					Command::SetScene(scene) => monitor.set_scene(scene),
 					Command::Log(entry) => monitor.push_log(entry),
+					// FIXME(qix-): disabled until I figure out why it's not working properly.
 					//Command::SetStandby(standby) => monitor.standby_mode(standby),
 					Command::StartTestSession {
 						total_tests,
