@@ -5,13 +5,13 @@ use async_std::{
 	io::{BufReader, BufWriter, ErrorKind},
 	net::TcpStream,
 	os::unix::net::UnixListener,
-	task::{self},
+	task::{self, JoinHandle},
 };
 use futures::{prelude::*, select};
 use link_protocol::{channel, Packet, PowerState, Scene};
 use log::{debug, error, info, trace, warn};
 use rand::rngs::OsRng;
-use std::os::unix::fs::PermissionsExt;
+use std::{os::unix::fs::PermissionsExt, time::Duration};
 
 macro_rules! race_all_or_cancel {
 	($f1:expr) => {
@@ -37,6 +37,7 @@ enum ControlMessage {
 	EstablishedLink { id: String },
 	EstablishedServer { path: String },
 	Packet(Packet),
+	End,
 }
 
 #[derive(Debug)]
@@ -50,6 +51,7 @@ pub(crate) async fn run_session(config: Config, link_stream: TcpStream) -> Resul
 	let (broker_sender, broker_receiver) = make_bounded_channel(32);
 	let (link_sender, link_receiver) = make_bounded_channel(32);
 	let (client_sender, client_receiver) = make_bounded_channel(32);
+	let (docker_sender, docker_receiver) = make_bounded_channel(2);
 
 	let link_handle = task::spawn(handle_link(
 		link_stream,
@@ -77,10 +79,20 @@ pub(crate) async fn run_session(config: Config, link_stream: TcpStream) -> Resul
 	};
 
 	// start the docker container
-	let docker_handle = task::spawn(handle_docker(config, link_id.clone(), client_path));
+	let docker_handle = task::spawn(handle_docker(
+		config,
+		link_id.clone(),
+		client_path,
+		docker_receiver,
+	));
 
 	// start the broker
-	let broker_handle = task::spawn(handle_broker(broker_receiver, link_sender, client_sender));
+	let broker_handle = task::spawn(handle_broker(
+		broker_receiver,
+		link_sender,
+		client_sender,
+		docker_sender,
+	));
 
 	race_all_or_cancel!(link_handle, client_handle, docker_handle, broker_handle)
 }
@@ -89,6 +101,7 @@ async fn handle_broker(
 	broker: Receiver<BrokerMessage>,
 	link: Sender<ControlMessage>,
 	client: Sender<ControlMessage>,
+	docker: Sender<ControlMessage>,
 ) -> Result<(), Error> {
 	debug!("starting broker");
 
@@ -156,6 +169,9 @@ async fn handle_broker(
 				}))
 				.await?;
 				has_sent_test_session = true;
+			}
+			BrokerMessage::Client(ControlMessage::End) => {
+				docker.send(ControlMessage::End).await?;
 			}
 			unknown => {
 				error!("unexpected message sent to broker: {unknown:?}");
@@ -283,20 +299,41 @@ async fn handle_client(
 		select! {
 			packet = incoming.receive().fuse() => {
 				trace!("client -> broker: {packet:?}");
-				broker.send(BrokerMessage::Client(ControlMessage::Packet(packet?))).await?;
+				if let Ok(packet) = packet {
+					broker.send(BrokerMessage::Client(ControlMessage::Packet(packet))).await?;
+				} else {
+					warn!("github actions runner disconnected");
+					break;
+				}
 			},
 			packet = receiver.recv().fuse() => match packet? {
 				ControlMessage::Packet(packet) => {
 					trace!("broker -> client: {packet:?}");
-					outgoing.send(packet).await?;
+					if outgoing.send(packet).await.is_err() {
+						warn!("github actions runner disconnected");
+						break;
+					}
 				},
 				unknown => panic!("unexpected message from broker: {unknown:?}")
 			}
 		}
 	}
+
+	broker
+		.send(BrokerMessage::Client(ControlMessage::End))
+		.await?;
+	debug!("sent end control message to broker; will now hibernate");
+
+	async_std::future::pending::<Result<(), Error>>().await.ok();
+	unreachable!("hibernating");
 }
 
-async fn handle_docker(config: Config, link_id: String, socket_path: String) -> Result<(), Error> {
+async fn handle_docker(
+	config: Config,
+	link_id: String,
+	socket_path: String,
+	receiver: Receiver<ControlMessage>,
+) -> Result<(), Error> {
 	let docker = Docker::new(&config.docker_host)?;
 
 	debug!("pruning all containers for this link: {link_id}");
@@ -344,15 +381,48 @@ async fn handle_docker(config: Config, link_id: String, socket_path: String) -> 
 	docker.start_container(&id).await?;
 
 	debug!("container started; waiting for exit: {id}");
-	docker.wait_for_container(&id).await?;
-	warn!("actions runner container exited");
+	let (exit_sender, exit_receiver) = make_bounded_channel(1);
+	let exit_handle: JoinHandle<Result<(), Error>> = task::spawn({
+		let docker = docker.clone();
+		let id = id.clone();
+		async move {
+			docker.wait_for_container(&id).await?;
+			exit_sender.send(()).await?;
+			warn!("actions runner container exited");
+			Ok(())
+		}
+	});
 
-	debug!("removing container: {id}");
+	let should_wait = select! {
+			packet = receiver.recv().fuse() => match packet? {
+				ControlMessage::End => {
+					info!("test program indicated that the test suite is finished; waiting 60s for container to exit");
+					true
+				}
+				unknown => panic!("unexpected message from broker: {unknown:?}")
+			},
+			_ = exit_receiver.recv().fuse() => {
+				info!("container exited");
+				false
+			}
+	};
+
+	if should_wait {
+		let timed_out = async_std::future::timeout(Duration::from_secs(60), exit_handle)
+			.await
+			.is_err();
+
+		if timed_out {
+			warn!("container exit timed out after 60s; killing: {id}");
+		} else {
+			info!("container exited normally; removing: {id}");
+		}
+	}
+
 	docker.remove_container(&id, true).await?;
-	debug!("removed container: {id}");
-
-	// disarm the container guard
 	container_guard.id = None;
+
+	info!("container removed: {id}");
 
 	Ok(())
 }
