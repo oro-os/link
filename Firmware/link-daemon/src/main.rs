@@ -8,7 +8,7 @@ use async_std::{io, net::TcpListener, prelude::*, task};
 use envconfig::Envconfig;
 
 use link_protocol::{channel::RWError, Error as ProtoError};
-use log::{debug, error, info};
+use log::{debug, error, info, warn};
 
 use std::str::FromStr;
 
@@ -142,6 +142,8 @@ async fn main() -> Result<!, Error> {
 		task::spawn(async move {
 			if let Err(err) = self::session::run_session(config, stream).await {
 				error!("oro link peer connection encountered error: {:?}", err);
+			} else {
+				warn!("oro link peer connection ended with OK result");
 			}
 		});
 	}
