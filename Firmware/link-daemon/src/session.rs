@@ -8,7 +8,7 @@ use async_std::{
 	task::{self},
 };
 use futures::{prelude::*, select};
-use link_protocol::{channel, Packet};
+use link_protocol::{channel, Packet, PowerState, Scene};
 use log::{debug, error, info, trace, warn};
 use rand::rngs::OsRng;
 use std::os::unix::fs::PermissionsExt;
@@ -87,19 +87,99 @@ pub(crate) async fn run_session(config: Config, link_stream: TcpStream) -> Resul
 
 async fn handle_broker(
 	broker: Receiver<BrokerMessage>,
-	_link: Sender<ControlMessage>,
-	_client: Sender<ControlMessage>,
+	link: Sender<ControlMessage>,
+	client: Sender<ControlMessage>,
 ) -> Result<(), Error> {
 	debug!("starting broker");
 
-	#[allow(clippy::never_loop)]
+	let mut has_sent_bootfile_size = false;
+	let mut has_sent_test_session = false;
+	let mut has_started_test_session = false;
+	let mut has_started_first_test = false;
+
 	loop {
-		#[allow(clippy::match_single_binding)]
 		match broker.recv().await? {
+			BrokerMessage::Link(ControlMessage::Packet(Packet::Serial(data))) => {
+				client
+					.send(ControlMessage::Packet(Packet::Serial(data)))
+					.await?;
+			}
+			BrokerMessage::Client(ControlMessage::Packet(Packet::Serial(data))) => {
+				link.send(ControlMessage::Packet(Packet::Serial(data)))
+					.await?;
+			}
+			BrokerMessage::Client(ControlMessage::Packet(Packet::BootfileSize { uefi, bios })) => {
+				link.send(ControlMessage::Packet(Packet::BootfileSize { uefi, bios }))
+					.await?;
+				has_sent_bootfile_size = true;
+			}
+			BrokerMessage::Client(ControlMessage::Packet(Packet::PressPower)) => {
+				link.send(ControlMessage::Packet(Packet::PressPower))
+					.await?;
+			}
+			BrokerMessage::Client(ControlMessage::Packet(Packet::PressReset)) => {
+				link.send(ControlMessage::Packet(Packet::PressReset))
+					.await?;
+			}
+			BrokerMessage::Link(ControlMessage::Packet(Packet::Tftp(data))) => {
+				client
+					.send(ControlMessage::Packet(Packet::Tftp(data)))
+					.await?;
+			}
+			BrokerMessage::Client(ControlMessage::Packet(Packet::Tftp(data))) => {
+				link.send(ControlMessage::Packet(Packet::Tftp(data)))
+					.await?;
+			}
+			BrokerMessage::Client(ControlMessage::Packet(Packet::StartTest { name })) => {
+				if !has_started_first_test {
+					has_started_first_test = true;
+
+					// Switch to testing scene
+					link.send(ControlMessage::Packet(Packet::SetScene(Scene::Test)))
+						.await?;
+				}
+
+				link.send(ControlMessage::Packet(Packet::StartTest { name }))
+					.await?;
+			}
+			BrokerMessage::Client(ControlMessage::Packet(Packet::StartTestSession {
+				total_tests,
+				author,
+				title,
+				ref_id,
+			})) => {
+				link.send(ControlMessage::Packet(Packet::StartTestSession {
+					total_tests,
+					author,
+					title,
+					ref_id,
+				}))
+				.await?;
+				has_sent_test_session = true;
+			}
 			unknown => {
 				error!("unexpected message sent to broker: {unknown:?}");
 				return Err(Error::UnexpectedPacket);
 			}
+		}
+
+		if has_sent_bootfile_size && has_sent_test_session && !has_started_test_session {
+			has_started_test_session = true;
+
+			// Turn on the monitor
+			link.send(ControlMessage::Packet(Packet::SetMonitorStandby(false)))
+				.await?;
+			// Then set the scene to the logo
+			link.send(ControlMessage::Packet(Packet::SetScene(Scene::Logo)))
+				.await?;
+			// Turn on the machine
+			link.send(ControlMessage::Packet(Packet::SetPowerState(
+				PowerState::On,
+			)))
+			.await?;
+			// Press the power button
+			link.send(ControlMessage::Packet(Packet::PressPower))
+				.await?;
 		}
 	}
 }
