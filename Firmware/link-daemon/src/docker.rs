@@ -27,8 +27,6 @@ pub enum Error {
 	Http(surf::Error),
 	#[error("request returned non-2xx status: {0}")]
 	HttpStatus(surf::StatusCode),
-	#[error("image failed to build: {0}")]
-	DockerBuildFailure(String),
 	#[error("failed to serialize JSON: {0}")]
 	SerdeJson(#[from] serde_json::Error),
 }
