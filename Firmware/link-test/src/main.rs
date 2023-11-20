@@ -81,6 +81,9 @@ struct Config {
 	/// TFTP data block timeout in milliseconds
 	#[arg(long = "timeout", default_value = "500")]
 	timeout: u64,
+	/// Whether to output Github Actions control messages along with certain output
+	#[arg(long = "github-actions", short = 'g', action)]
+	github_actions: bool,
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -109,6 +112,32 @@ enum Error {
 	UnexpectedWrq,
 	#[error("artifact is larger than TFTP supports: {0} chunks of {0} bytes")]
 	TooBig(usize, usize),
+}
+
+macro_rules! debug_group {
+	($github_actions:expr, $($tt:tt)*) => {
+		if $github_actions {
+			println!("::group::{}", format!($($tt)*));
+		} else {
+			debug!($($tt)*);
+		}
+	}
+}
+
+macro_rules! debug_group_end {
+	($github_actions:expr) => {
+		if $github_actions {
+			println!("::endgroup::");
+		}
+	};
+}
+
+struct GroupGuard(bool);
+
+impl Drop for GroupGuard {
+	fn drop(&mut self) {
+		debug_group_end!(self.0);
+	}
 }
 
 #[async_std::main]
@@ -212,6 +241,8 @@ async fn main() -> Result<!, Error> {
 			line = child_stdout.next().fuse() => Event::ChildStdout(line.ok_or(Error::Eof)??),
 			len = child_stderr.read(&mut stderr_buf).fuse() => Event::ChildStderr(len?),
 			status = child_process.status().fuse() => Event::ChildExit(status?),
+			// FIXME(qix-): This is susceptible to stream corruption if the child process performs I/O.
+			// FIXME(qix-): We should be putting these things into their own tasks and use channels instead.
 			packet = receiver.receive().fuse() => Event::Link(packet?),
 		};
 
@@ -299,22 +330,30 @@ async fn main() -> Result<!, Error> {
 							return Err(Error::UnexpectedWrq);
 						}
 						Tftp::Rrq(req) => {
+							let _group_guard = GroupGuard(config.github_actions);
+
 							let artifact = if req.filename == "ORO_BOOT_UEFI" {
-								debug!(
+								debug_group!(
+									config.github_actions,
 									"reading entry point artifact: {} (re-written from ORO_BOOT_UEFI, root: {})",
-									config.pxe_entry_uefi, config.pxe_dir
+									config.pxe_entry_uefi,
+									config.pxe_dir
 								);
 								artifact_bytes(&config.pxe_dir, &config.pxe_entry_uefi).await?
 							} else if req.filename == "ORO_BOOT_BIOS" {
-								debug!(
+								debug_group!(
+									config.github_actions,
 									"reading entry point artifact: {} (re-written from ORO_BOOT_BIOS, root: {})",
-									config.pxe_entry_bios, config.pxe_dir
+									config.pxe_entry_bios,
+									config.pxe_dir
 								);
 								artifact_bytes(&config.pxe_dir, &config.pxe_entry_bios).await?
 							} else {
-								debug!(
+								debug_group!(
+									config.github_actions,
 									"reading artifact: {} (root: {})",
-									req.filename, config.pxe_dir
+									req.filename,
+									config.pxe_dir
 								);
 								artifact_bytes(&config.pxe_dir, &req.filename).await?
 							};
