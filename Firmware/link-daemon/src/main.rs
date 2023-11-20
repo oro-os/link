@@ -58,6 +58,24 @@ pub enum Error {
 	Docker(#[from] docker::Error),
 }
 
+struct ContainerGuard<'a> {
+	docker: &'a Docker,
+	id: String,
+}
+
+impl<'a> Drop for ContainerGuard<'a> {
+	fn drop(&mut self) {
+		let docker = self.docker.clone();
+		let id = self.id.clone();
+		debug!("dropping container guard; killing container: {}", id);
+		task::spawn(async move {
+			if let Err(err) = docker.remove_container(&id, true).await {
+				error!("failed to kill docker container: {:?}", err);
+			}
+		});
+	}
+}
+
 async fn task_process_oro_link(
 	stream: TcpStream,
 	docker: Docker,
@@ -137,6 +155,11 @@ async fn task_process_oro_link(
 		.await?;
 
 	debug!("created actions runner container: {}", id);
+
+	let _container_guard = ContainerGuard {
+		docker: &docker,
+		id: id.clone(),
+	};
 
 	let r = ({
 		let docker = docker.clone();
