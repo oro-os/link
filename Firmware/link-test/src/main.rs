@@ -235,10 +235,10 @@ async fn main() -> Result<!, Error> {
 	trace!("entering event loop");
 	loop {
 		// We force the event 'queue' to consider the child process exiting first.
-		let event = match child_process.try_status() {
-			Ok(status) => Event::ChildExit(status.map(|s| s.code().unwrap_or(0)).unwrap_or(0)),
-			Err(_) => select! {
-				status = child_process.status().fuse() => Event::ChildExit(status.map(|s| s.code().unwrap_or(0)).unwrap_or(0)),
+		let event = match child_process.try_status()? {
+			Some(status) => Event::ChildExit(status.code().unwrap_or(1)),
+			None => select! {
+				status = child_process.status().fuse() => Event::ChildExit(status?.code().unwrap_or(1)),
 				line = child_stdout.next().fuse() => match line {
 					Some(Ok(line)) => Event::ChildStdout(line),
 					None | Some(Err(_)) => {
