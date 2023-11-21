@@ -11,7 +11,6 @@ use link_protocol::{
 use log::{debug, error, info, trace, warn};
 use std::{
 	path::{Component, Path, PathBuf},
-	process::ExitStatus,
 	time::Duration,
 };
 
@@ -94,8 +93,6 @@ enum Error {
 	Packet(#[from] PacketError<io::Error>),
 	#[error("IO error during link connection negotiation")]
 	RWError(#[from] RWError<PacketError<io::Error>, PacketError<io::Error>>),
-	#[error("child process closed an output stream")]
-	Eof,
 	#[error("expected an ack for a piece of data")]
 	ExpectedAck,
 	#[error("tftp parse/serialize error: {0}")]
@@ -223,7 +220,7 @@ async fn main() -> Result<!, Error> {
 	enum Event {
 		ChildStdout(String),
 		ChildStderr(usize),
-		ChildExit(ExitStatus),
+		ChildExit(i32),
 		Link(Packet),
 	}
 
@@ -237,22 +234,29 @@ async fn main() -> Result<!, Error> {
 
 	trace!("entering event loop");
 	loop {
-		let event = select! {
-			status = child_process.status().fuse() => Event::ChildExit(status?),
-			line = child_stdout.next().fuse() => match line {
-				Some(Ok(line)) => Event::ChildStdout(line),
-				None | Some(Err(_)) if child_process.try_status()?.is_some() => continue,
-				Some(Err(err)) => Err(err)?,
-				None => Err(Error::Eof)?,
+		// We force the event 'queue' to consider the child process exiting first.
+		let event = match child_process.try_status() {
+			Ok(status) => Event::ChildExit(status.map(|s| s.code().unwrap_or(0)).unwrap_or(0)),
+			Err(_) => select! {
+				status = child_process.status().fuse() => Event::ChildExit(status.map(|s| s.code().unwrap_or(0)).unwrap_or(0)),
+				line = child_stdout.next().fuse() => match line {
+					Some(Ok(line)) => Event::ChildStdout(line),
+					None | Some(Err(_)) => {
+						debug!("child process stdout closed");
+						continue;
+					}
+				},
+				len = child_stderr.read(&mut stderr_buf).fuse() => match len {
+					Ok(len) => Event::ChildStderr(len),
+					Err(err) => {
+						debug!("child process stderr closed: {:?}", err);
+						continue;
+					}
+				},
+				// FIXME(qix-): This is susceptible to stream corruption if the child process performs I/O.
+				// FIXME(qix-): We should be putting these things into their own tasks and use channels instead.
+				packet = receiver.receive().fuse() => Event::Link(packet?),
 			},
-			len = child_stderr.read(&mut stderr_buf).fuse() => match len {
-				Ok(len) => Event::ChildStderr(len),
-				Err(_) if child_process.try_status()?.is_some() => continue,
-				Err(err) => Err(err)?,
-			},
-			// FIXME(qix-): This is susceptible to stream corruption if the child process performs I/O.
-			// FIXME(qix-): We should be putting these things into their own tasks and use channels instead.
-			packet = receiver.receive().fuse() => Event::Link(packet?),
 		};
 
 		trace!("handling event");
@@ -260,7 +264,7 @@ async fn main() -> Result<!, Error> {
 		match event {
 			Event::ChildExit(status) => {
 				warn!("test process exited with status {status}");
-				exit_status = status.code().unwrap_or(0);
+				exit_status = status;
 				break;
 			}
 			Event::ChildStdout(line) => {
@@ -502,6 +506,11 @@ async fn main() -> Result<!, Error> {
 	let force_error = number_failed > 0 || total_reported != config.session_num_tests;
 	if force_error {
 		exit_status = 1;
+	}
+
+	if total_reported == 0 {
+		warn!("no tests were executed!");
+		exit_status = 3;
 	}
 
 	info!("total passed: {number_passed}");
