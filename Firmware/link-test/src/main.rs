@@ -239,8 +239,17 @@ async fn main() -> Result<!, Error> {
 	loop {
 		let event = select! {
 			status = child_process.status().fuse() => Event::ChildExit(status?),
-			line = child_stdout.next().fuse() => Event::ChildStdout(line.ok_or(Error::Eof)??),
-			len = child_stderr.read(&mut stderr_buf).fuse() => Event::ChildStderr(len?),
+			line = child_stdout.next().fuse() => match line {
+				Some(Ok(line)) => Event::ChildStdout(line),
+				None | Some(Err(_)) if child_process.try_status()?.is_some() => continue,
+				Some(Err(err)) => Err(err)?,
+				None => Err(Error::Eof)?,
+			},
+			len = child_stderr.read(&mut stderr_buf).fuse() => match len {
+				Ok(len) => Event::ChildStderr(len),
+				Err(_) if child_process.try_status()?.is_some() => continue,
+				Err(err) => Err(err)?,
+			},
 			// FIXME(qix-): This is susceptible to stream corruption if the child process performs I/O.
 			// FIXME(qix-): We should be putting these things into their own tasks and use channels instead.
 			packet = receiver.receive().fuse() => Event::Link(packet?),
