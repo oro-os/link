@@ -99,8 +99,6 @@ enum Error {
 	Tftp(#[from] async_tftp::Error),
 	#[error("tftp client sent error: {0}")]
 	TftpPacket(#[from] async_tftp::packet::Error),
-	#[error("tftp client sent unexpected acknowledgement of block {0}")]
-	UnexpectedAck(u16),
 	#[error("tftp client sent unexpected data packet for block {0}")]
 	UnexpectedData(u16),
 	#[error("tftp client sent unexpected options ack (OACK)")]
@@ -327,7 +325,7 @@ async fn main() -> Result<!, Error> {
 
 					match packet {
 						Tftp::Ack(bid) => {
-							return Err(Error::UnexpectedAck(bid));
+							debug!("ignoring unexpected ack for block {bid}");
 						}
 						Tftp::Data(bid, _) => {
 							return Err(Error::UnexpectedData(bid));
