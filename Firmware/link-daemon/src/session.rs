@@ -358,7 +358,7 @@ async fn handle_docker(
 				crate::docker::Args::new()
 					.add("ACCESS_TOKEN".into(), config.gh_access_token.clone())
 					.add("ORGANIZATION".into(), config.gh_organization.clone())
-					.add("LABELS".into(), "self-hosted,oro,oro-link,x86_64".into()) // TODO(qix-): use self-report functionality of link
+					.add("LABELS".into(), "self-hosted,oro,oro-link,x64".into()) // TODO(qix-): use self-report functionality of link
 					.add("NAME".into(), link_id.clone()),
 			),
 			host_config: Some(crate::docker::HostConfig {
