@@ -1,5 +1,5 @@
 <div align="center">
-	<img src="https://github.com/oro-os/link/raw/master/Asset/screenshot.png" />
+	<img src="https://github.com/oro-os/link/raw/master/asset/screenshot.png" />
 </div>
 
 # Oro Link
@@ -27,7 +27,7 @@ of a single device/arch board exist, links go to the currently used/developed/su
 # License
 
 <div align="center">
-	<img src="https://github.com/oro-os/link/raw/master/Asset/oro-banner.svg?sanitize=true" />
+	<img src="https://github.com/oro-os/link/raw/master/asset/oro-banner.svg?sanitize=true" />
 </div>
 
 Part of the Oro Operating System project.
