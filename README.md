@@ -17,6 +17,12 @@ GitHub Actions the ability to test changes directly on real hardware
 alongside emulated environments, allowing for changes to be tested
 against niche or problematic hardware configurations.
 
+## Project Layout
+
+All PCBs are located in `pcb/`, where all of the server infrastructure and firmware for the PCBs
+is located in `firmware/` since it's a workspace with some local dependencies (e.g. the protocol
+spoken between the boards and the CI/CD daemon).
+
 ## Supported Devices / Architectures
 
 The supported architectures are listed here. In the case that several revisions or variants
