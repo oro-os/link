@@ -23,6 +23,8 @@ All PCBs are located in `pcb/`, where all of the server infrastructure and firmw
 is located in `firmware/` since it's a workspace with some local dependencies (e.g. the protocol
 spoken between the boards and the CI/CD daemon).
 
+Each of the PCBs included in the project are described in the [`pcb/` directory's readme](pcb/).
+
 ## Supported Devices / Architectures
 
 The supported architectures are listed here. In the case that several revisions or variants
