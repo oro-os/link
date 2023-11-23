@@ -349,6 +349,9 @@ async fn handle_client(stream: net::TcpStream, config: Options) -> Result<!, Err
 
 				info!("link has brought the system online; beginning tftp communication");
 			}
+			Packet::Serial(data) => {
+				io::stdout().write_all(&data[..]).await?;
+			}
 			unknown => {
 				warn!("unknown/unsupported packet sent from link: {unknown:?}");
 			}
