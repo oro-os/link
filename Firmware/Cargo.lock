@@ -2043,6 +2043,7 @@ dependencies = [
  "link-protocol",
  "log",
  "rand 0.8.5",
+ "rusty-hook",
  "serde",
  "serde_json",
  "stderrlog",
@@ -2050,6 +2051,47 @@ dependencies = [
  "systemd-journal-logger",
  "thiserror",
  "url",
+]
+
+[[package]]
+name = "link-firmware-x86"
+version = "1.0.0"
+dependencies = [
+ "cortex-m",
+ "cortex-m-rt",
+ "defmt",
+ "defmt-rtt",
+ "embassy-executor",
+ "embassy-futures",
+ "embassy-net",
+ "embassy-net-enc28j60",
+ "embassy-stm32",
+ "embassy-sync",
+ "embassy-time",
+ "embedded-graphics",
+ "embedded-graphics-core",
+ "embedded-graphics-framebuf",
+ "embedded-hal 1.0.0-rc.1",
+ "embedded-hal-bus",
+ "embedded-io-async",
+ "heapless",
+ "link-protocol",
+ "micromath",
+ "oro-logo-rle",
+ "perlin2d",
+ "pixglyph",
+ "png",
+ "proc-macro2",
+ "quote",
+ "rand_core 0.6.4",
+ "rusty-hook",
+ "sha2 0.10.8",
+ "smoltcp",
+ "static_cell 2.0.0",
+ "stm32-metapac 14.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "syn 2.0.39",
+ "tftp",
+ "ttf-parser",
 ]
 
 [[package]]
@@ -2330,47 +2372,6 @@ dependencies = [
  "libc",
  "pkg-config",
  "vcpkg",
-]
-
-[[package]]
-name = "oro-link-firmware"
-version = "1.0.0"
-dependencies = [
- "cortex-m",
- "cortex-m-rt",
- "defmt",
- "defmt-rtt",
- "embassy-executor",
- "embassy-futures",
- "embassy-net",
- "embassy-net-enc28j60",
- "embassy-stm32",
- "embassy-sync",
- "embassy-time",
- "embedded-graphics",
- "embedded-graphics-core",
- "embedded-graphics-framebuf",
- "embedded-hal 1.0.0-rc.1",
- "embedded-hal-bus",
- "embedded-io-async",
- "heapless",
- "link-protocol",
- "micromath",
- "oro-logo-rle",
- "perlin2d",
- "pixglyph",
- "png",
- "proc-macro2",
- "quote",
- "rand_core 0.6.4",
- "rusty-hook",
- "sha2 0.10.8",
- "smoltcp",
- "static_cell 2.0.0",
- "stm32-metapac 14.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "syn 2.0.39",
- "tftp",
- "ttf-parser",
 ]
 
 [[package]]

@@ -7,7 +7,6 @@ publish = false
 authors = [ "Joshua Lee Junon <junon@oro.sh> (https://github.com/qix-)" ]
 repository = "https://github.com/oro-os/oro-link-x86"
 license = "MIT"
-resolver = "2"
 
 [features]
 default = ["stderr"]
@@ -33,3 +32,6 @@ serde = { version = "1.0.190", features = ["derive"] }
 url = "2.4.1"
 surf = "2.3.2"
 futures = "0.3.29"
+
+[dev-dependencies]
+rusty-hook = "0.11.2"

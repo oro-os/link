@@ -1,0 +1,185 @@
+[package]
+name = "link-firmware-x86"
+description = "Oro Link x86 firmware"
+publish = false
+edition = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+license = { workspace = true }
+version = { workspace = true }
+
+build = "build.rs"
+
+[features]
+# NOTE: Disable these in scripts, etc. This is mostly just for automation and checkers.
+default = ["stm32f479vg"]
+
+# Development features
+# NOTE: You *can* use these directly, but
+#       you should probably use the Makefile instead.
+oro-connect-to-ip = []
+
+# Supported uC's
+# NOTE: one uC model == one board variant.
+stm32f479vg = [
+	"stm32",
+	"embassy-stm32/stm32f479vg",
+	"stm32-metapac/stm32f479vg",
+	"is31fl3218",
+	"enc28j60",
+	"ssd1362",
+	"helper-three-indicators",
+	"helper-monitor-three-indicators-oled-256x64"
+]
+
+# Supported peripheral chips
+# NOTE: don't use directly; only meant to be used by uC features
+is31fl3218 = []
+is31fl3218-gamma-correction = []
+enc28j60 = ["embassy-net-enc28j60"]
+ssd1362 = [
+	"embedded-graphics",
+	"embedded-graphics-framebuf",
+	"embedded-graphics-core",
+	"micromath"
+]
+
+# Chip types
+# NOTE: don't use directly; only meant to be used by uC features
+cortex-m = [
+	"dep:cortex-m",
+	"cortex-m-rt",
+	"embassy-executor/arch-cortex-m"
+]
+stm32 = [
+	"cortex-m",
+	"embassy-stm32",
+	"embedded-hal",
+	"embedded-hal-bus",
+	"stm32-metapac"
+]
+
+# Helpers
+# NOTE: don't use directly; only meant to be used by uC features
+helper-three-indicators = []
+helper-monitor-three-indicators-oled-256x64 = [
+	"helper-three-indicators",
+	"embedded-graphics",
+	"embedded-graphics-core",
+	"perlin2d",
+	"oro-logo-64"
+]
+oro-logo-1024 = ["oro-logo-rle/oro-logo-1024"]
+oro-logo-512 = ["oro-logo-rle/oro-logo-512"]
+oro-logo-256 = ["oro-logo-rle/oro-logo-256"]
+oro-logo-64 = ["oro-logo-rle/oro-logo-64"]
+oro-logo-32 = ["oro-logo-rle/oro-logo-32"]
+
+[dependencies]
+link-protocol = { path = "../link-protocol", features = ["defmt", "embedded-io", "embassy"] }
+cortex-m-rt = { version = "0.7.3", optional = true }
+defmt = { version = "0.3.5", default-features = false }
+embassy-net-enc28j60 = { version = "0.1.0", optional = true, git = "https://github.com/oro-os/embassy.git", features = ["defmt"] }
+embedded-graphics = { version = "0.8.0", optional = true }
+embedded-graphics-core = { version = "0.4.0", optional = true }
+embedded-graphics-framebuf = { version = "0.5.0", optional = true }
+embedded-hal = { version = "1.0.0-alpha.11", optional = true }
+embedded-hal-bus = { version = "0.1.0-rc.1", optional = true }
+heapless = "0.7.16"
+micromath = { version = "2.0.0", optional = true }
+static_cell = { version = "2.0.0", features = ["nightly"] }
+perlin2d = { version = "0.2.6", git = "https://github.com/oro-os/perlin2d.git", default-features = false, optional = true }
+oro-logo-rle = { git = "https://github.com/oro-os/oro-logo-rle", version = "0.1.0", default-features = false }
+defmt-rtt = "0.4.0"
+stm32-metapac = { version = "14.0.0", optional = true }
+sha2 = { version = "0.10.7", default-features = false, features = ["asm-aarch64"] }
+rand_core = "0.6.4"
+embedded-io-async = "0.5.0"
+tftp = { git = "https://github.com/oro-os/tftp.git", default-features = false, features = ["defmt", "heapless"] }
+embassy-sync = { git = "https://github.com/oro-os/embassy.git" }
+embassy-futures = { git = "https://github.com/oro-os/embassy.git" }
+
+[dependencies.cortex-m]
+version = "0.7.7"
+optional = true
+features = [
+	"critical-section-single-core",
+	"inline-asm"
+]
+
+[dependencies.embassy-executor]
+git = "https://github.com/oro-os/embassy.git"
+features = [
+	"nightly",
+	"integrated-timers",
+	"executor-thread"
+]
+
+[dependencies.embassy-time]
+git = "https://github.com/oro-os/embassy.git"
+features = [
+	"nightly",
+	"unstable-traits",
+	"tick-hz-32_768"
+]
+
+[dependencies.embassy-stm32]
+optional = true
+git = "https://github.com/oro-os/embassy.git"
+features = [
+	"defmt",
+	"nightly",
+	"unstable-traits",
+	"unstable-pac",
+	"time-driver-any"
+]
+
+[dependencies.embassy-net]
+git = "https://github.com/oro-os/embassy.git"
+features = [
+	"defmt",
+	"nightly",
+	"tcp",
+	"udp",
+	"igmp",
+	"dns",
+	"dhcpv4",
+	"proto-ipv4",
+	"proto-ipv6",
+	"medium-ethernet"
+]
+
+[dependencies.smoltcp]
+version = "0.10.0"
+default-features = false
+features = [
+	"medium-ethernet",
+	"defmt",
+	"packetmeta-id",
+	"async",
+	"proto-igmp",
+	"proto-dhcpv4",
+	"proto-ipv4-fragmentation",
+	"proto-dns",
+	"proto-ipv4",
+	"socket-icmp",
+	"socket-udp",
+	"socket-tcp",
+	"socket-dhcpv4",
+	"socket-dns",
+	"socket-dns",
+	"iface-max-multicast-group-count-3",
+	"dns-max-server-count-2"
+]
+
+[build-dependencies]
+pixglyph = "0.1.0"
+png = "0.17.9"
+proc-macro2 = "1.0.66"
+quote = "1.0.32"
+syn = { version = "2.0.28", features = ["full"] }
+ttf-parser = "0.18.0"
+
+[dev-dependencies]
+rusty-hook = "0.11.2"
+
