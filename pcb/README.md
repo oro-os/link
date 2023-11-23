@@ -15,6 +15,13 @@ self-standing projects (that use the `.lib/` folder). Further,
 some of these PCBs are specific to individual rigs and may not
 be interesting to most people.
 
+## `link-rpi-base`
+
+This is the base board for Raspberry Pi test rigs. It hosts
+the microcontroller, network interface, etc. as well as a
+board-to-board connector that interfaces with one of the
+daughter boards (R-Pi version specific).
+
 ## `link-x86-obt`
 
 > **NOTE:** This project file is a _legacy_ PCB that hasn't
@@ -81,3 +88,35 @@ If you're interested in using the VGA display linked above, I
 recommend to take it apart, desolder the transducer (beeper)
 in the top corner of the board, and replace it with a resistor,
 lest you go insane.
+
+# Making a new board
+
+If you want to add a project here, you'll need to do a few things:
+
+1. Make the folder here. Use kebab-case, such as `link-rpi-2` instead of
+   `LinkRpi2`.
+2. Open KiCad and create the project in the folder. Uncheck the box that
+   asks if you want to create a project folder. Preferably, name the project
+   using TitleCase, such as `LinkRpi2`.
+3. From any **non-legacy** project (see the above list), copy `fp-lib-table`
+   and `sym-lib-table` into the new project's directory. **Restart KiCad.**
+4. In both the schematic and the PCB layout, go to _File > Page Setup..._
+   and change the worksheet to `${KIPRJMOD}/../.lib/Oro.kicad_wks`.
+5. If you're using common sheets to re-use some of the modular schematics
+   from other boards, **always use relative paths**
+   (e.g. `${KIPRJMOD}/../.lib/<something>`).
+
+If you're adding a component, it is **highly** recommended to add it from
+[Ultra Librarian](https://ultralibrarian.com).
+
+Symbols and footprints must be added to `.lib/Oro.kicad_sym` and `.lib/Oro.pretty/`,
+respectively. STEP models should be placed in `.lib/step` and properly linked up
+from within the footprint (usually requires manually editing the footprint after
+loading it into `Oro.pretty/`).
+
+Further, make sure to update the footprint ID in the symbol after moving it into the
+Oro library.
+
+Most importantly, **you must make sure all common fields are populated and accurate**.
+These are fields found on other symbols, the names of which must match **exactly**.
+For example, Mouser ID, Mfr. ID, etc.
