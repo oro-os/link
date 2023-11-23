@@ -2,8 +2,11 @@
 name = "link-rpcapd"
 description = "A remote PCAP (RPCAP) daemon to sniff wire traffic between the SUT and the Oro link using e.g. WireShark"
 publish = false
-version = "0.1.0"
-edition = "2021"
+version = { workspace = true }
+edition = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+license = { workspace = true }
 
 [dependencies]
 async-broadcast = "0.5.1"

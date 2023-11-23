@@ -4,7 +4,7 @@ RUN apt update && apt upgrade -y && env DEBIAN_FRONTEND=noninteractive apt insta
 FROM base AS link-test
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain nightly
 RUN echo 'export PATH="$PATH:$HOME/.cargo/bin"' >> $HOME/.bashrc
-WORKDIR /oro-link-x86
+WORKDIR /oro-link
 COPY . ./
 RUN bash -l -c 'cargo build --release -p link-test'
 RUN cp target/release/link-test /link-test

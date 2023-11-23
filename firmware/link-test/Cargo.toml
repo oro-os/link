@@ -2,8 +2,11 @@
 name = "link-test"
 description = "Test CLI for use in GitHub Actions"
 publish = false
-version = "0.1.0"
-edition = "2021"
+edition = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+license = { workspace = true }
+version = { workspace = true }
 
 [dependencies]
 async-std = { version = "1.12.0", features = ["attributes", "unstable"] }

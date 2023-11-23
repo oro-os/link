@@ -2,8 +2,11 @@
 name = "link-protocol-binser"
 description = "The Oro Link protocol 'binser' serializer"
 publish = false
-version = "0.1.0"
-edition = "2021"
+version = { workspace = true }
+edition = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+license = { workspace = true }
 
 [features]
 std = []

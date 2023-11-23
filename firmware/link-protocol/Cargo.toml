@@ -1,9 +1,11 @@
 [package]
 name = "link-protocol"
 description = "Protocol between the Oro Link and the daemon server"
-publish = false
-version = "0.1.0"
-edition = "2021"
+version = { workspace = true }
+edition = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+license = { workspace = true }
 
 [features]
 std = ["link-protocol-binser/std"]

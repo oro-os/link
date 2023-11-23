@@ -2,8 +2,11 @@
 name = "link-tftp-server"
 description = "Starts a TFTP server that handles TFTP requests from the link (and nothing else)"
 publish = false
-version = "0.1.0"
-edition = "2021"
+edition = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+license = { workspace = true }
+version = { workspace = true }
 
 [dependencies]
 link-protocol = { path = "../link-protocol", features = ["log", "async-std", "thiserror"] }
