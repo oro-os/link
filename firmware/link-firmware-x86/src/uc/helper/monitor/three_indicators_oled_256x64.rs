@@ -1,4 +1,4 @@
-//! A [`Monitor`](crate::uc::Monitor) implementation for board configurations
+//! A [`Monitor`] implementation for board configurations
 //! with three indicator RGB LED situated to the right of a 256x64 OLED screen.
 //! Assumes a Gray4 screen.
 

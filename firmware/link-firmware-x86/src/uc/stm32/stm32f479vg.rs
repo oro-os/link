@@ -46,12 +46,20 @@ pub async fn init(
 	config.rcc.ahb_pre = rcc::AHBPrescaler::DIV1;
 	config.rcc.sys = rcc::Sysclk::PLL1_P;
 	config.rcc.pll = Some(rcc::Pll {
-		prediv: rcc::PllPreDiv::DIV13,
-		mul: rcc::PllMul::MUL180,
+		prediv: rcc::PllPreDiv::DIV22,
+		mul: rcc::PllMul::MUL285,
 		divp: Some(rcc::PllPDiv::DIV2),
-		divq: Some(rcc::PllQDiv::DIV4),
+		divq: Some(rcc::PllQDiv::DIV7),
 		divr: Some(rcc::PllRDiv::DIV2),
 	});
+
+	let mut clock_mux = rcc::mux::ClockMux::default();
+	clock_mux.clk48sel = rcc::mux::Clk48sel::PLL1_Q;
+	clock_mux.dsisel = rcc::mux::Dsisel::DSI_PHY;
+	clock_mux.sdiosel = rcc::mux::Sdiosel::CLK48;
+
+	config.rcc.mux = clock_mux;
+
 	config.rcc.apb1_pre = rcc::APBPrescaler::DIV4;
 	config.rcc.apb2_pre = rcc::APBPrescaler::DIV2;
 
