@@ -77,11 +77,15 @@ pub async fn init(
 	info!("... rtc INIT");
 
 	// Let OLED power on (affects first power-on cycle, typically)
-	Timer::after(Duration::from_millis(50)).await;
+	Timer::after(Duration::from_millis(100)).await;
 
 	let mut oled_en = Output::new(p.PE2, Level::Low, Speed::Low);
 	let mut oled_rst = Output::new(p.PC13, Level::Low, Speed::Low);
+	oled_en.set_low();
+	oled_rst.set_low();
+	Timer::after(Duration::from_millis(100)).await;
 	oled_en.set_high();
+	Timer::after(Duration::from_millis(100)).await;
 	oled_rst.set_high();
 	// Keep it high even after we return
 	::core::mem::forget(oled_en);

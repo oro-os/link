@@ -79,10 +79,6 @@ pub enum Packet {
 	#[proto(id = 10)]
 	PressReset,
 
-	/// A TFTP packet, proxied to the daemon verbatim.
-	#[proto(id = 11)]
-	Tftp(Vec<u8, 1700>),
-
 	/// Tells the PXE service how big the boot file size(s) are.
 	/// **MUST** be sent before a test session is started (or at least
 	/// before the system is turned on).

@@ -85,20 +85,6 @@ async fn debug_led_task(debug_led: ImplDebugLed) -> ! {
 }
 
 #[embassy_executor::task]
-async fn pxe_task(stack: &'static Stack<SysEthernetDriver>, receiver: CommandReceiver<2>) -> ! {
-	service::pxe::run(stack, receiver).await
-}
-
-#[embassy_executor::task]
-async fn tftp_task(
-	stack: &'static Stack<SysEthernetDriver>,
-	broker_sender: CommandSender<8>,
-	tftp_receiver: CommandReceiver<5>,
-) -> ! {
-	service::tftp::run(stack, broker_sender, tftp_receiver).await
-}
-
-#[embassy_executor::task]
 async fn time_task(stack: &'static Stack<ExtEthernetDriver>, wall_clock: ImplWallClock) -> ! {
 	service::time::run(stack, wall_clock).await
 }
@@ -147,6 +133,10 @@ pub async fn main(spawner: Spawner) -> ! {
 			}
 			init(monitor)
 		};
+
+		let mut mon = MONITOR.as_ref().unwrap().borrow_mut();
+		mon.standby_mode(false);
+		mon.set_scene(Scene::OroLogo);
 	}
 
 	info!(
@@ -156,9 +146,9 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	info!("link uid: {:?}", uid.unique_id());
 
-	unsafe {
-		MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
-	}
+	//unsafe {
+	//	MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
+	//}
 
 	let extnet = {
 		let seed = rng.next_u64();
@@ -193,8 +183,6 @@ pub async fn main(spawner: Spawner) -> ! {
 	static mut BROKER_CHANNEL: CommandChannel<8> = CommandChannel::new();
 	static mut DAEMON_CHANNEL: CommandChannel<4> = CommandChannel::new();
 	static mut MONITOR_CHANNEL: CommandChannel<4> = CommandChannel::new();
-	static mut TFTP_CHANNEL: CommandChannel<5> = CommandChannel::new();
-	static mut PXE_CHANNEL: CommandChannel<2> = CommandChannel::new();
 	static mut SERIAL_CHANNEL: CommandChannel<2> = CommandChannel::new();
 
 	let broker_receiver = unsafe { BROKER_CHANNEL.receiver() };
@@ -203,10 +191,6 @@ pub async fn main(spawner: Spawner) -> ! {
 	let daemon_receiver = unsafe { DAEMON_CHANNEL.receiver() };
 	let monitor_sender = unsafe { MONITOR_CHANNEL.sender() };
 	let monitor_receiver = unsafe { MONITOR_CHANNEL.receiver() };
-	let tftp_sender = unsafe { TFTP_CHANNEL.sender() };
-	let tftp_receiver = unsafe { TFTP_CHANNEL.receiver() };
-	let pxe_sender = unsafe { PXE_CHANNEL.sender() };
-	let pxe_receiver = unsafe { PXE_CHANNEL.receiver() };
 	let serial_sender = unsafe { SERIAL_CHANNEL.sender() };
 	let serial_receiver = unsafe { SERIAL_CHANNEL.receiver() };
 
@@ -214,8 +198,6 @@ pub async fn main(spawner: Spawner) -> ! {
 	spawner.must_spawn(net_sys_stack_task(sysnet));
 	spawner.must_spawn(monitor_task(monitor_receiver));
 	spawner.must_spawn(debug_led_task(debug_led));
-	spawner.must_spawn(pxe_task(sysnet, pxe_receiver));
-	spawner.must_spawn(tftp_task(sysnet, broker_sender, tftp_receiver));
 	spawner.must_spawn(time_task(extnet, wall_clock));
 	spawner.must_spawn(daemon_task(extnet, rng, broker_sender, daemon_receiver));
 	spawner.must_spawn(serial_task(
@@ -302,16 +284,6 @@ pub async fn main(spawner: Spawner) -> ! {
 			Command::IncomingPacket(Packet::PressReset) => {
 				debug!("broker: pressing the reset button");
 				system.reset();
-			}
-			Command::IncomingPacket(Packet::Tftp(data)) => {
-				tftp_sender
-					.send(Command::IncomingPacket(Packet::Tftp(data)))
-					.await;
-			}
-			Command::IncomingPacket(Packet::BootfileSize { bios, uefi }) => {
-				pxe_sender
-					.send(Command::IncomingPacket(Packet::BootfileSize { bios, uefi }))
-					.await;
 			}
 			Command::IncomingPacket(Packet::Serial(data)) => {
 				serial_sender

@@ -134,15 +134,6 @@ async fn handle_broker(
 				link.send(ControlMessage::Packet(Packet::PressReset))
 					.await?;
 			}
-			BrokerMessage::Link(ControlMessage::Packet(Packet::Tftp(data))) => {
-				client
-					.send(ControlMessage::Packet(Packet::Tftp(data)))
-					.await?;
-			}
-			BrokerMessage::Client(ControlMessage::Packet(Packet::Tftp(data))) => {
-				link.send(ControlMessage::Packet(Packet::Tftp(data)))
-					.await?;
-			}
 			BrokerMessage::Client(ControlMessage::Packet(Packet::StartTest { name })) => {
 				if !has_started_first_test {
 					has_started_first_test = true;

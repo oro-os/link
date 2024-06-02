@@ -1,4 +1,4 @@
-.PHONY: all clean lint clippy fmt doc x86.stm32f479vg x86.stm32f479vg.run rpcap daemon docker udeps
+.PHONY: all clean lint clippy fmt doc x86.stm32f479vgt6 x86.stm32f479vgt6.run rpcap daemon docker udeps
 
 ifdef DEBUG
 CARGO_MODE := debug
@@ -12,14 +12,14 @@ export EXTMAC=44:45:56
 endif
 
 ifndef LEVEL
-LEVEL := trace,embassy_net=debug
+LEVEL := trace,embassy_net=debug,embassy_net_enc28j60=debug
 endif
 
-ifndef PROBE_RUN
-PROBE_RUN := probe-run
+ifndef PROBE_RS
+PROBE_RS := probe-rs
 endif
 
-PROBE_RUN_FLAGS := --log-format "{t} {L} {s} <{f}:{l}>" --verbose --verify
+PROBE_RS_FLAGS := --log-format "{t} {L} {s} <{f}:{l}>" # --verify
 
 ifdef DEV_IP
 CARGO_FLAGS += --features oro-connect-to-ip
@@ -43,7 +43,7 @@ ifndef LOGDEV
 LOGDEV := /dev/ttyS16
 endif
 
-all: x86.stm32f479vg
+all: x86.stm32f479vgt6
 
 clean:
 	rm -rf target
@@ -62,7 +62,7 @@ daemon:
 
 clippy:
 	env cargo clippy $(CARGO_FLAGS) -p link-firmware-x86 --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --no-default-features --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem -- -D clippy::all
-	env cargo clippy $(CARGO_FLAGS) -p link-rpcapd -p link-protocol -p link-daemon -p link-tftp-server -p link-test -- -D clippy::all
+	env cargo clippy $(CARGO_FLAGS) -p link-rpcapd -p link-protocol -p link-daemon -p link-repl -- -D clippy::all
 
 doc:
 	env cargo doc $(CARGO_FLAGS) -p link-firmware-x86 --target=variant/stm32f479vg/thumbv7em-none-eabihf.json --no-default-features --features stm32f479vg -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem --open
@@ -70,20 +70,20 @@ doc:
 docker:
 	@(docker build --rm -f docker/Dockerfile .)
 
-.PHONY: x86.stm32f479vg.udeps other-udeps
-udeps: other-udeps # stm32f479vg.udeps
+.PHONY: x86.stm32f479vgt6.udeps other-udeps
+udeps: other-udeps # stm32f479vgt6.udeps
 
-x86.stm32f479vg.udeps:
+x86.stm32f479vgt6.udeps:
 	# NOTE: does not currently work: https://github.com/est31/cargo-udeps/issues/153
 	env cargo udeps $(CARGO_FLAGS) -p link-firmware-x86 --no-default-features --features stm32f479vg --target variant/stm32f479vg/thumbv7em-none-eabihf.json
 
 other-udeps:
-	env cargo udeps $(CARGO_FLAGS) -p link-daemon -p link-protocol -p link-protocol-binser -p link-protocol-binser-proc -p link-rpcapd -p link-tftp-server
+	env cargo udeps $(CARGO_FLAGS) -p link-daemon -p link-protocol -p link-protocol-binser -p link-protocol-binser-proc -p link-rpcapd
 
-x86.stm32f479vg.run: x86.stm32f479vg
-	$(PROBE_RUN) $(PROBE_RUN_FLAGS) --speed 40000 --chip stm32f479vg target/thumbv7em-none-eabihf/$(CARGO_MODE)/link-firmware-x86
+x86.stm32f479vgt6.run: x86.stm32f479vgt6
+	$(PROBE_RS) run $(PROBE_RS_FLAGS) --speed 4000 --chip STM32F479VGTx target/thumbv7em-none-eabihf/$(CARGO_MODE)/link-firmware-x86
 
-x86.stm32f479vg: target/$(CARGO_MODE)/link-firmware-x86-stm32f479vg.bin
+x86.stm32f479vgt6: target/$(CARGO_MODE)/link-firmware-x86-stm32f479vg.bin
 .PHONY: target/thumbv7em-none-eabihf/$(CARGO_MODE)/link-firmware-x86
 target/thumbv7em-none-eabihf/$(CARGO_MODE)/link-firmware-x86:
 	env cargo build $(CARGO_FLAGS) -p link-firmware-x86 --no-default-features --features stm32f479vg --target variant/stm32f479vg/thumbv7em-none-eabihf.json -Zunstable-options -Zbuild-std=core,compiler_builtins -Zbuild-std-features=compiler-builtins-mem
