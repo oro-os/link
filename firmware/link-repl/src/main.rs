@@ -5,7 +5,7 @@ use envconfig::Envconfig;
 
 use link_protocol::{
 	channel::{PacketSender, RWError},
-	Error as ProtoError, PowerState,
+	Error as ProtoError, LogEntry, PowerState,
 };
 use mini_async_repl::{
 	command::{Command, CommandArgInfo, CommandArgType, ExecuteCommand},
@@ -196,7 +196,40 @@ fn make_repl(outgoing: PacketSender<BufWriter<TcpStream>>) -> Repl {
 			Command::new(
 				"presses the reset button",
 				vec![],
-				Box::new(ResetButtonCommand(outgoing)),
+				Box::new(ResetButtonCommand(outgoing.clone())),
+			),
+		)
+		.add(
+			"info",
+			Command::new(
+				"logs an info message",
+				vec![CommandArgInfo::new_with_name(
+					CommandArgType::String,
+					"message",
+				)],
+				Box::new(InfoLogCommand(outgoing.clone())),
+			),
+		)
+		.add(
+			"warn",
+			Command::new(
+				"logs a warning message",
+				vec![CommandArgInfo::new_with_name(
+					CommandArgType::String,
+					"message",
+				)],
+				Box::new(WarnLogCommand(outgoing.clone())),
+			),
+		)
+		.add(
+			"error",
+			Command::new(
+				"logs an error message",
+				vec![CommandArgInfo::new_with_name(
+					CommandArgType::String,
+					"message",
+				)],
+				Box::new(ErrorLogCommand(outgoing)),
 			),
 		)
 		.build()
@@ -372,6 +405,78 @@ impl ExecuteCommand for ResetButtonCommand {
 
 			sender.send(packet).await?;
 
+			Ok(CommandStatus::Done)
+		})
+	}
+}
+
+struct InfoLogCommand(Arc<Mutex<PacketSender<BufWriter<TcpStream>>>>);
+
+impl ExecuteCommand for InfoLogCommand {
+	fn execute(
+		&mut self,
+		args: Vec<String>,
+		_args_info: Vec<mini_async_repl::command::CommandArgInfo>,
+	) -> std::pin::Pin<
+		Box<
+			dyn Future<Output = mini_async_repl::anyhow::Result<mini_async_repl::CommandStatus>>
+				+ '_,
+		>,
+	> {
+		Box::pin(async move {
+			let mut sender = self.0.lock().await;
+			let packet = Packet::Log(LogEntry::Info(heapless::String::<255>::from_iter(
+				args.join(" ").chars(),
+			)));
+			sender.send(packet).await?;
+			Ok(CommandStatus::Done)
+		})
+	}
+}
+
+struct WarnLogCommand(Arc<Mutex<PacketSender<BufWriter<TcpStream>>>>);
+
+impl ExecuteCommand for WarnLogCommand {
+	fn execute(
+		&mut self,
+		args: Vec<String>,
+		_args_info: Vec<mini_async_repl::command::CommandArgInfo>,
+	) -> std::pin::Pin<
+		Box<
+			dyn Future<Output = mini_async_repl::anyhow::Result<mini_async_repl::CommandStatus>>
+				+ '_,
+		>,
+	> {
+		Box::pin(async move {
+			let mut sender = self.0.lock().await;
+			let packet = Packet::Log(LogEntry::Warn(heapless::String::<255>::from_iter(
+				args.join(" ").chars(),
+			)));
+			sender.send(packet).await?;
+			Ok(CommandStatus::Done)
+		})
+	}
+}
+
+struct ErrorLogCommand(Arc<Mutex<PacketSender<BufWriter<TcpStream>>>>);
+
+impl ExecuteCommand for ErrorLogCommand {
+	fn execute(
+		&mut self,
+		args: Vec<String>,
+		_args_info: Vec<mini_async_repl::command::CommandArgInfo>,
+	) -> std::pin::Pin<
+		Box<
+			dyn Future<Output = mini_async_repl::anyhow::Result<mini_async_repl::CommandStatus>>
+				+ '_,
+		>,
+	> {
+		Box::pin(async move {
+			let mut sender = self.0.lock().await;
+			let packet = Packet::Log(LogEntry::Error(heapless::String::<255>::from_iter(
+				args.join(" ").chars(),
+			)));
+			sender.send(packet).await?;
 			Ok(CommandStatus::Done)
 		})
 	}
