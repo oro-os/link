@@ -50,9 +50,6 @@ fn panic(panic: &PanicInfo<'_>) -> ! {
 	loop {}
 }
 
-//type ImplMonitor = impl uc::Monitor;
-//static mut MONITOR: Option<RefCell<ImplMonitor>> = None;
-
 #[embassy_executor::task]
 async fn net_ext_stack_task(stack: &'static Stack<impl uc::EthernetDriver>) -> ! {
 	stack.run().await
