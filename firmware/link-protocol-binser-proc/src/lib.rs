@@ -227,9 +227,9 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 	let (generics_pre, generics_mid, generics_post) = ast.generics.split_for_impl();
 
 	let mut serialize_matches_stream = TokenStream::new();
-	serialize_matches_stream.append_all(serialize_matches.into_iter());
+	serialize_matches_stream.append_all(serialize_matches);
 	let mut deserialize_matches_stream = TokenStream::new();
-	deserialize_matches_stream.append_all(deserialize_matches.into_iter());
+	deserialize_matches_stream.append_all(deserialize_matches);
 
 	quote! {
 		const _: () = {

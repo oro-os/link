@@ -192,11 +192,17 @@ fn render_font(id: &str, path: &str, charmap: &str) -> TokenStream {
 
 pub fn main() {
 	let mut font_source = quote! { use super::FontData; };
-	font_source
-		.extend(render_font("TermNormal", "../font/EnterCommand.ttf", TERM_CHARMAP).into_iter());
-	font_source
-		.extend(render_font("TermBold", "../font/EnterCommand-Bold.ttf", TERM_CHARMAP).into_iter());
-	font_source.extend(render_progress_font("../font/progress").into_iter());
+	font_source.extend(render_font(
+		"TermNormal",
+		"../font/EnterCommand.ttf",
+		TERM_CHARMAP,
+	));
+	font_source.extend(render_font(
+		"TermBold",
+		"../font/EnterCommand-Bold.ttf",
+		TERM_CHARMAP,
+	));
+	font_source.extend(render_progress_font("../font/progress"));
 
 	let source = font_source.to_string();
 

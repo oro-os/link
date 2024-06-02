@@ -45,6 +45,7 @@ pub enum PowerState {
 }
 
 /// Controller for the system under test (switches, CPU, etc.)
+#[allow(dead_code)]
 pub trait SystemUnderTest {
 	/// Returns whether or not the SUT is requesting for the PSU
 	/// to be turned on.
@@ -192,6 +193,7 @@ pub struct LogFrame {
 /// system. This is a **very high level** API for screens and indicators
 /// lights as it's needed by the firmware, thus providing the platform-specific
 /// hardware implementators to change how status is displayed to the user.
+#[allow(dead_code)]
 pub trait Monitor {
 	/// Enable/disable standby mode. When standby mode is enabled,
 	/// the firmware is indicating that nothing is happening at that specific moment,
@@ -252,6 +254,7 @@ pub struct DateTime {
 }
 
 /// Implements a wall clock (RTC)
+#[allow(dead_code)]
 pub trait WallClock {
 	/// Sets the current date/time
 	fn set_datetime(&mut self, dt: DateTime);

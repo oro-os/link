@@ -7,8 +7,6 @@
 //!
 //! **DO NOT - I REPEAT - DO _NOT_ RUN THIS IN AN UNTRUSTED
 //! NETWORK OR ENVIRONMENT.**
-#![feature(async_fn_in_trait)]
-
 mod rpcap;
 
 use async_broadcast::{broadcast as make_broadcast, InactiveReceiver as InactiveBroadcastReceiver};
@@ -48,6 +46,7 @@ struct Options {
 }
 
 #[derive(Clone, Debug)]
+#[allow(dead_code)]
 enum Event {
 	Frame {
 		data: Vec<u8>,

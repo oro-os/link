@@ -31,6 +31,7 @@ pub struct Interface {
 }
 
 #[derive(Clone, Debug)]
+#[allow(dead_code)]
 pub enum RPCAPMessage {
 	AuthRequest {
 		auth_type: AuthType,
@@ -268,9 +269,7 @@ where
 	Self: Sized,
 {
 	async fn parse_be<R: ReadExt + Unpin>(s: &mut R) -> Result<Self, io::Error>;
-	async fn parse_le<R: ReadExt + Unpin>(s: &mut R) -> Result<Self, io::Error>;
 	async fn encode_be<W: WriteExt + Unpin>(&self, s: &mut W) -> Result<(), io::Error>;
-	async fn encode_le<W: WriteExt + Unpin>(&self, s: &mut W) -> Result<(), io::Error>;
 }
 
 trait TypedParser: ReadExt + Unpin + Sized {
@@ -282,11 +281,6 @@ trait TypedParser: ReadExt + Unpin + Sized {
 	#[inline]
 	async fn parse_be<T: MultibyteTranscoderType>(&mut self) -> Result<T, io::Error> {
 		T::parse_be(self).await
-	}
-
-	#[inline]
-	async fn parse_le<T: MultibyteTranscoderType>(&mut self) -> Result<T, io::Error> {
-		T::parse_le(self).await
 	}
 }
 
@@ -301,11 +295,6 @@ trait TypedEncoder: WriteExt + Unpin + Sized {
 	#[inline]
 	async fn encode_be<T: MultibyteTranscoderType>(&mut self, v: &T) -> Result<(), io::Error> {
 		v.encode_be(self).await
-	}
-
-	#[inline]
-	async fn encode_le<T: MultibyteTranscoderType>(&mut self, v: &T) -> Result<(), io::Error> {
-		v.encode_le(self).await
 	}
 }
 
@@ -330,19 +319,8 @@ impl MultibyteTranscoderType for u16 {
 		Ok(u16::from_be_bytes(buf))
 	}
 
-	async fn parse_le<R: ReadExt + Unpin>(s: &mut R) -> Result<Self, io::Error> {
-		let mut buf = [0u8; 2];
-		s.read_exact(&mut buf[..]).await?;
-		Ok(u16::from_le_bytes(buf))
-	}
-
 	async fn encode_be<W: WriteExt + Unpin>(&self, s: &mut W) -> Result<(), io::Error> {
 		let buf = (*self).to_be_bytes();
-		s.write_all(&buf).await
-	}
-
-	async fn encode_le<W: WriteExt + Unpin>(&self, s: &mut W) -> Result<(), io::Error> {
-		let buf = (*self).to_le_bytes();
 		s.write_all(&buf).await
 	}
 }
@@ -354,19 +332,8 @@ impl MultibyteTranscoderType for u32 {
 		Ok(u32::from_be_bytes(buf))
 	}
 
-	async fn parse_le<R: ReadExt + Unpin>(s: &mut R) -> Result<Self, io::Error> {
-		let mut buf = [0u8; 4];
-		s.read_exact(&mut buf[..]).await?;
-		Ok(u32::from_le_bytes(buf))
-	}
-
 	async fn encode_be<W: WriteExt + Unpin>(&self, s: &mut W) -> Result<(), io::Error> {
 		let buf = (*self).to_be_bytes();
-		s.write_all(&buf).await
-	}
-
-	async fn encode_le<W: WriteExt + Unpin>(&self, s: &mut W) -> Result<(), io::Error> {
-		let buf = (*self).to_le_bytes();
 		s.write_all(&buf).await
 	}
 }

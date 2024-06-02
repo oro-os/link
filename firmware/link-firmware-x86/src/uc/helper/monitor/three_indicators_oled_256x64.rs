@@ -164,9 +164,7 @@ impl OroLogoRenderer {
 		const LIGHT_OFFSET: f64 = 100.0; // ms, scaled inversely to TIME_SCALE
 		let millisf = millis as f64;
 		let light_offset = self.noisegen.get_noise(millisf * 1.5, 0.0);
-		let light_offset = (light_offset * 3.0 * LIGHT_OFFSET)
-			.min(LIGHT_OFFSET)
-			.max(-LIGHT_OFFSET);
+		let light_offset = (light_offset * 3.0 * LIGHT_OFFSET).clamp(-LIGHT_OFFSET, LIGHT_OFFSET);
 
 		for i in 0..3 {
 			let fi = i as f64;
@@ -175,7 +173,7 @@ impl OroLogoRenderer {
 				.noisegen
 				.get_noise(0.0, millisf + (fi * light_offset) * TIME_SCALE);
 			let on = n * 0.8;
-			let n = (n * 0.5).min(1.0).max(-1.0);
+			let n = (n * 0.5).clamp(-1.0, 1.0);
 			let n = n * 0.5 + 0.5;
 			let v = n * FLICKER_AMOUNT + (1.0 - FLICKER_AMOUNT);
 			let v = if v < 0.3 {
@@ -186,8 +184,8 @@ impl OroLogoRenderer {
 			let v = v * v * v;
 			let s = v * 0.85;
 			let s = s * s;
-			let h = (on - 1.6).min(1.0).max(0.0) * (0.805 - 0.402) + 0.402;
-			let v = (v - (on * 0.04)).max(0.0).min(1.0);
+			let h = (on - 1.6).clamp(0.0, 1.0) * (0.805 - 0.402) + 0.402;
+			let v = (v - (on * 0.04)).clamp(0.0, 1.0);
 			let mut color: Color = hsv_to_rgb(h, s, v).into();
 
 			// Adjust GB to match R luminance

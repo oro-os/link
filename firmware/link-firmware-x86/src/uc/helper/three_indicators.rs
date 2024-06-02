@@ -139,6 +139,7 @@ pub mod color {
 }
 
 /// Controller for the 3 indicator lights
+#[allow(dead_code)]
 pub trait IndicatorLights {
 	/// Sets the color of the first indicator light
 	fn first<C: Into<Color>>(&mut self, color: C);

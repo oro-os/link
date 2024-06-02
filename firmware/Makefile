@@ -19,7 +19,7 @@ ifndef PROBE_RS
 PROBE_RS := probe-rs
 endif
 
-PROBE_RS_FLAGS := --log-format "{t} {L} {s} <{f}:{l}>" # --verify
+PROBE_RS_FLAGS := #--log-format "{t} {L} {s} <{f}:{l}>" # --verify
 
 ifdef DEV_IP
 CARGO_FLAGS += --features oro-connect-to-ip

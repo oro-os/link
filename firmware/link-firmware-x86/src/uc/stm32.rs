@@ -6,8 +6,10 @@ pub use stm32f479vg::*;
 use crate::chip;
 use cortex_m::peripheral::SCB;
 use embassy_stm32::{
-	gpio::{Input, Output, Pin},
-	i2c, usart,
+	gpio::{Input, Output},
+	i2c,
+	mode::Mode,
+	usart,
 };
 use embassy_time::{block_for, Duration, Instant};
 
@@ -16,7 +18,7 @@ use defmt_rtt as _;
 defmt::timestamp!("{=u64:us}", Instant::now().as_micros());
 
 /// Implementation of I2c proxies for STM32 I2c peripherals.
-impl<'d, T: i2c::Instance, TXDMA, RXDMA> chip::I2c for i2c::I2c<'d, T, TXDMA, RXDMA> {
+impl<'d, M: Mode> chip::I2c for i2c::I2c<'d, M> {
 	type Error = i2c::Error;
 
 	#[inline]
@@ -31,53 +33,39 @@ impl<'d, T: i2c::Instance, TXDMA, RXDMA> chip::I2c for i2c::I2c<'d, T, TXDMA, RX
 }
 
 /// Implements a (`DebugLed`)(super::DebugLed) for a single STM32 pin.
-pub struct DebugLed<'d, P: Pin> {
-	pin: Output<'d, P>,
+pub struct DebugLed<'d> {
+	pin: Output<'d>,
 }
 
-impl<'d, P: Pin> DebugLed<'d, P> {
-	pub fn new(pin: Output<'d, P>) -> Self {
+impl<'d> DebugLed<'d> {
+	pub fn new(pin: Output<'d>) -> Self {
 		Self { pin }
 	}
 }
 
-impl<P: Pin> super::DebugLed for DebugLed<'_, P> {
+impl super::DebugLed for DebugLed<'_> {
 	fn set_bit(&mut self, on: bool) {
 		self.pin.set_level(on.into());
 	}
 }
 
 /// Implements a (`SystemUnderTest`)[super::SystemUnderTest] for a collection of STM32 pins.
-pub struct SystemUnderTest<'d, RST, PWR, PSUON, PSUSB, SYSON>
-where
-	RST: Pin,
-	PWR: Pin,
-	PSUON: Pin,
-	PSUSB: Pin,
-	SYSON: Pin,
-{
+pub struct SystemUnderTest<'d> {
 	current_state: super::PowerState,
-	reset_pin: Output<'d, RST>,
-	power_pin: Output<'d, PWR>,
-	psu_on_pin: Output<'d, PSUON>,
-	psu_standby_pin: Output<'d, PSUSB>,
-	sys_on_pin: Input<'d, SYSON>,
+	reset_pin: Output<'d>,
+	power_pin: Output<'d>,
+	psu_on_pin: Output<'d>,
+	psu_standby_pin: Output<'d>,
+	sys_on_pin: Input<'d>,
 }
 
-impl<'d, RST, PWR, PSUON, PSUSB, SYSON> SystemUnderTest<'d, RST, PWR, PSUON, PSUSB, SYSON>
-where
-	RST: Pin,
-	PWR: Pin,
-	PSUON: Pin,
-	PSUSB: Pin,
-	SYSON: Pin,
-{
+impl<'d> SystemUnderTest<'d> {
 	pub fn new(
-		reset_pin: Output<'d, RST>,
-		power_pin: Output<'d, PWR>,
-		psu_on_pin: Output<'d, PSUON>,
-		psu_standby_pin: Output<'d, PSUSB>,
-		sys_on_pin: Input<'d, SYSON>,
+		reset_pin: Output<'d>,
+		power_pin: Output<'d>,
+		psu_on_pin: Output<'d>,
+		psu_standby_pin: Output<'d>,
+		sys_on_pin: Input<'d>,
 	) -> Self {
 		Self {
 			current_state: super::PowerState::Off,
@@ -90,15 +78,7 @@ where
 	}
 }
 
-impl<'d, RST, PWR, PSUON, PSUSB, SYSON> super::SystemUnderTest
-	for SystemUnderTest<'d, RST, PWR, PSUON, PSUSB, SYSON>
-where
-	RST: Pin,
-	PWR: Pin,
-	PSUON: Pin,
-	PSUSB: Pin,
-	SYSON: Pin,
-{
+impl<'d> super::SystemUnderTest for SystemUnderTest<'d> {
 	fn reset_ms(&mut self, ms: u64) {
 		self.reset_pin.set_high();
 		block_for(Duration::from_millis(ms));
@@ -142,14 +122,11 @@ where
 impl From<super::DateTime> for embassy_stm32::rtc::DateTime {
 	fn from(v: super::DateTime) -> Self {
 		use embassy_stm32::rtc::DayOfWeek as D;
-		Self {
-			year: v.year,
-			month: v.month,
-			day: v.day,
-			hour: v.hour,
-			minute: v.minute,
-			second: v.second,
-			day_of_week: match v.day_of_week {
+		Self::from(
+			v.year,
+			v.month,
+			v.day,
+			match v.day_of_week {
 				0 => D::Sunday,
 				1 => D::Monday,
 				2 => D::Tuesday,
@@ -159,7 +136,11 @@ impl From<super::DateTime> for embassy_stm32::rtc::DateTime {
 				6 => D::Saturday,
 				_ => panic!(),
 			},
-		}
+			v.hour,
+			v.minute,
+			v.second,
+		)
+		.unwrap()
 	}
 }
 
@@ -174,10 +155,10 @@ impl super::WallClock for embassy_stm32::rtc::Rtc {
 			.map(|dt| {
 				use embassy_stm32::rtc::DayOfWeek as D;
 				super::DateTime {
-					year: dt.year,
-					month: dt.month,
-					day: dt.day,
-					day_of_week: match dt.day_of_week {
+					year: dt.year(),
+					month: dt.month(),
+					day: dt.day(),
+					day_of_week: match dt.day_of_week() {
 						D::Sunday => 0,
 						D::Monday => 1,
 						D::Tuesday => 2,
@@ -186,9 +167,9 @@ impl super::WallClock for embassy_stm32::rtc::Rtc {
 						D::Friday => 5,
 						D::Saturday => 6,
 					},
-					hour: dt.hour,
-					minute: dt.minute,
-					second: dt.second,
+					hour: dt.hour(),
+					minute: dt.minute(),
+					second: dt.second(),
 					dst: self.get_daylight_savings(),
 				}
 			})
@@ -226,7 +207,7 @@ pub fn get_exteth_mac() -> [u8; 6] {
 	macaddr
 }
 
-impl<'d, T: usart::BasicInstance, TxDma> super::PacketTracer for usart::UartTx<'d, T, TxDma> {
+impl<'d, M: Mode> super::PacketTracer for usart::UartTx<'d, M> {
 	fn trace_packet(&mut self, buf: &[u8]) {
 		debug_assert!(buf.len() <= u16::MAX as usize);
 		let len_bytes = (buf.len() as u16).to_be_bytes();

@@ -1,4 +1,4 @@
-#![feature(never_type, async_fn_in_trait, async_closure)]
+#![feature(never_type, async_closure)]
 
 mod docker;
 mod session;
@@ -36,6 +36,7 @@ pub(crate) struct Config {
 }
 
 #[derive(thiserror::Error, Debug)]
+#[allow(clippy::enum_variant_names)]
 pub(crate) enum Error {
 	#[error("i/o error")]
 	AsyncIo(#[from] io::Error),

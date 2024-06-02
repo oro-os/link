@@ -1,12 +1,7 @@
 #![no_std]
 #![no_main]
-#![feature(
-	type_alias_impl_trait,
-	core_intrinsics,
-	byte_slice_trim_ascii,
-	async_fn_in_trait,
-	trait_alias
-)]
+#![allow(internal_features)]
+#![feature(type_alias_impl_trait, core_intrinsics, trait_alias)]
 
 mod chip;
 mod command;
@@ -28,7 +23,9 @@ use embassy_time::{Duration, Timer};
 use heapless::Vec;
 use link_protocol::{self as proto, Packet};
 use static_cell::make_static;
-use uc::{Monitor, PowerState, ResetManager, Rng, Scene, SystemUnderTest, UniqueId};
+use uc::{
+	DebugLed, Monitor, PowerState, ResetManager, Rng, Scene, SystemUnderTest, UniqueId, WallClock,
+};
 
 #[defmt::panic_handler]
 fn defmt_panic() -> ! {
@@ -53,46 +50,45 @@ fn panic(panic: &PanicInfo<'_>) -> ! {
 	loop {}
 }
 
-type ExtEthernetDriver = impl uc::EthernetDriver;
-type SysEthernetDriver = impl uc::EthernetDriver;
-type ImplDebugLed = impl uc::DebugLed;
-type ImplMonitor = impl uc::Monitor;
-type ImplWallClock = impl uc::WallClock;
-type ImplRng = impl uc::Rng;
-type ImplUartTx = impl uc::UartTx;
-type ImplUartRx = impl uc::UartRx;
-static mut MONITOR: Option<RefCell<ImplMonitor>> = None;
+//type ImplMonitor = impl uc::Monitor;
+//static mut MONITOR: Option<RefCell<ImplMonitor>> = None;
 
 #[embassy_executor::task]
-async fn net_ext_stack_task(stack: &'static Stack<ExtEthernetDriver>) -> ! {
+async fn net_ext_stack_task(stack: &'static Stack<impl uc::EthernetDriver>) -> ! {
 	stack.run().await
 }
 
 #[embassy_executor::task]
-async fn net_sys_stack_task(stack: &'static Stack<SysEthernetDriver>) -> ! {
+async fn net_sys_stack_task(stack: &'static Stack<impl uc::EthernetDriver>) -> ! {
 	stack.run().await
 }
 
 #[embassy_executor::task]
-async fn monitor_task(receiver: CommandReceiver<4>) -> ! {
-	let monitor = unsafe { MONITOR.as_ref().unwrap() };
-	service::monitor::run(monitor, receiver).await
+async fn monitor_task(
+	receiver: CommandReceiver<4>,
+	monitor: RefCell<impl uc::Monitor + 'static>,
+) -> ! {
+	//let monitor = unsafe { MONITOR.as_ref().unwrap() };
+	service::monitor::run(&monitor, receiver).await
 }
 
 #[embassy_executor::task]
-async fn debug_led_task(debug_led: ImplDebugLed) -> ! {
+async fn debug_led_task(debug_led: impl DebugLed + 'static) -> ! {
 	service::debug_led::run(debug_led).await
 }
 
 #[embassy_executor::task]
-async fn time_task(stack: &'static Stack<ExtEthernetDriver>, wall_clock: ImplWallClock) -> ! {
+async fn time_task(
+	stack: &'static Stack<impl uc::EthernetDriver>,
+	wall_clock: impl WallClock + 'static,
+) -> ! {
 	service::time::run(stack, wall_clock).await
 }
 
 #[embassy_executor::task]
 async fn daemon_task(
-	stack: &'static Stack<ExtEthernetDriver>,
-	rng: ImplRng,
+	stack: &'static Stack<impl uc::EthernetDriver>,
+	rng: impl Rng + 'static,
 	broker_sender: CommandSender<8>,
 	daemon_receiver: CommandReceiver<4>,
 ) -> ! {
@@ -101,8 +97,8 @@ async fn daemon_task(
 
 #[embassy_executor::task]
 async fn serial_task(
-	tx: ImplUartTx,
-	rx: ImplUartRx,
+	tx: impl uc::UartTx + 'static,
+	rx: impl uc::UartRx + 'static,
 	broker_sender: CommandSender<8>,
 	serial_receiver: CommandReceiver<2>,
 ) -> ! {
@@ -126,19 +122,6 @@ pub async fn main(spawner: Spawner) -> ! {
 		rst,
 	) = uc::init(&spawner).await;
 
-	unsafe {
-		MONITOR = {
-			fn init(monitor: ImplMonitor) -> Option<RefCell<ImplMonitor>> {
-				Some(RefCell::new(monitor))
-			}
-			init(monitor)
-		};
-
-		let mut mon = MONITOR.as_ref().unwrap().borrow_mut();
-		mon.standby_mode(false);
-		mon.set_scene(Scene::OroLogo);
-	}
-
 	info!(
 		"oro link x86 booting (version {})",
 		env!("CARGO_PKG_VERSION")
@@ -146,9 +129,9 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	info!("link uid: {:?}", uid.unique_id());
 
-	//unsafe {
-	//	MONITOR.as_ref().unwrap().borrow_mut().set_scene(Scene::Log);
-	//}
+	let monitor = RefCell::new(monitor);
+
+	monitor.borrow_mut().set_scene(Scene::Log);
 
 	let extnet = {
 		let seed = rng.next_u64();
@@ -196,7 +179,7 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	spawner.must_spawn(net_ext_stack_task(extnet));
 	spawner.must_spawn(net_sys_stack_task(sysnet));
-	spawner.must_spawn(monitor_task(monitor_receiver));
+	spawner.must_spawn(monitor_task(monitor_receiver, monitor));
 	spawner.must_spawn(debug_led_task(debug_led));
 	spawner.must_spawn(time_task(extnet, wall_clock));
 	spawner.must_spawn(daemon_task(extnet, rng, broker_sender, daemon_receiver));
@@ -299,7 +282,7 @@ pub async fn main(spawner: Spawner) -> ! {
 				daemon_sender
 					.send(Command::OutgoingPacket(Packet::LinkOnline {
 						uid: uid.unique_id(),
-						version: env!("CARGO_PKG_VERSION").into(),
+						version: env!("CARGO_PKG_VERSION").try_into().unwrap(),
 					}))
 					.await;
 			}

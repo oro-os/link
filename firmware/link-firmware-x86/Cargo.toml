@@ -85,7 +85,7 @@ embedded-graphics-core = { version = "0.4.0", optional = true }
 embedded-graphics-framebuf = { version = "0.5.0", optional = true }
 embedded-hal = { version = "1.0.0-alpha.11", optional = true }
 embedded-hal-bus = { version = "0.1.0-rc.1", optional = true }
-heapless = "0.7.16"
+heapless = "0.8"
 micromath = { version = "2.0.0", optional = true }
 static_cell = { version = "2.0.0", features = ["nightly"] }
 perlin2d = { version = "0.2.6", git = "https://github.com/oro-os/perlin2d.git", default-features = false, optional = true }
@@ -94,7 +94,7 @@ defmt-rtt = "0.4.0"
 stm32-metapac = { version = "14.0.0", optional = true }
 sha2 = { version = "0.10.7", default-features = false, features = ["asm-aarch64"] }
 rand_core = "0.6.4"
-embedded-io-async = "0.5.0"
+embedded-io-async = "0.6.1"
 embassy-sync = { git = "https://github.com/oro-os/embassy.git" }
 embassy-futures = { git = "https://github.com/oro-os/embassy.git" }
 
@@ -109,16 +109,14 @@ features = [
 [dependencies.embassy-executor]
 git = "https://github.com/oro-os/embassy.git"
 features = [
-	"nightly",
 	"integrated-timers",
-	"executor-thread"
+	"executor-thread",
+	"task-arena-size-98304",
 ]
 
 [dependencies.embassy-time]
 git = "https://github.com/oro-os/embassy.git"
 features = [
-	"nightly",
-	"unstable-traits",
 	"tick-hz-32_768"
 ]
 
@@ -127,8 +125,6 @@ optional = true
 git = "https://github.com/oro-os/embassy.git"
 features = [
 	"defmt",
-	"nightly",
-	"unstable-traits",
 	"unstable-pac",
 	"time-driver-any"
 ]
@@ -137,7 +133,6 @@ features = [
 git = "https://github.com/oro-os/embassy.git"
 features = [
 	"defmt",
-	"nightly",
 	"tcp",
 	"udp",
 	"igmp",
@@ -149,7 +144,7 @@ features = [
 ]
 
 [dependencies.smoltcp]
-version = "0.10.0"
+version = "0.11.0"
 default-features = false
 features = [
 	"medium-ethernet",

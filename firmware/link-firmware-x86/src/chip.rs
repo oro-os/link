@@ -15,6 +15,7 @@ use core::fmt::Debug;
 /// to be a common type between them that the common peripheral
 /// types can use to accept and interact with the concrete
 /// implementations of the underlying types.
+#[allow(dead_code)]
 pub trait I2c {
 	/// The opaque error type for read/write errors by the underlying
 	/// HAL subsystem.
@@ -28,6 +29,7 @@ pub trait I2c {
 
 /// SPI proxy abstraction; implementations must handle switching/slave select
 /// as well as mode selection, etc.
+#[allow(dead_code)]
 pub trait Transact {
 	/// The opaque error type for read/write errors by the underlying
 	/// HAL subsystem.
@@ -41,6 +43,7 @@ pub trait Transact {
 
 /// SPI proxy abstraction; implementations must handle switching/slave select
 /// as well as mode selection, etc.
+#[allow(dead_code)]
 pub trait TransactRead {
 	/// The opaque error type for read/write errors by the underlying
 	/// HAL subsystem.

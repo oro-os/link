@@ -3,11 +3,9 @@ use defmt::{debug, info};
 use embassy_executor::Spawner;
 use embassy_stm32::{
 	bind_interrupts,
-	dma::NoDma,
 	gpio::{Input, Level, Output, OutputOpenDrain, Pull, Speed},
 	i2c::{self, I2c},
-	peripherals, rng,
-	rtc::{self, RtcClockSource},
+	peripherals, rcc, rng, rtc,
 	spi::{self, Spi},
 	time::Hertz,
 	usart, Config,
@@ -16,7 +14,8 @@ use embassy_time::{Delay, Duration, Timer};
 use embedded_hal_bus::spi::ExclusiveDevice;
 
 bind_interrupts!(struct Irqs {
-	I2C1_EV => i2c::InterruptHandler<peripherals::I2C1>;
+	I2C1_EV => i2c::EventInterruptHandler<peripherals::I2C1>;
+	I2C1_ER => i2c::ErrorInterruptHandler<peripherals::I2C1>;
 	USART3 => usart::InterruptHandler<peripherals::USART3>;
 	HASH_RNG => rng::InterruptHandler<peripherals::RNG>;
 });
@@ -38,13 +37,23 @@ pub async fn init(
 	impl uc::ResetManager,
 ) {
 	let mut config = Config::default();
-	config.rcc.rtc = Some(RtcClockSource::LSI);
-	config.rcc.hse = Some(Hertz::mhz(26));
-	config.rcc.bypass_hse = false;
-	config.rcc.hclk = Some(Hertz(168409091));
-	config.rcc.sys_ck = Some(Hertz(168409091));
-	config.rcc.pll48 = true;
-	config.rcc.lsi = true;
+	config.rcc.ls.rtc = rcc::RtcClockSource::LSI;
+	config.rcc.hse = Some(rcc::Hse {
+		freq: Hertz::mhz(26),
+		mode: rcc::HseMode::Oscillator,
+	});
+	config.rcc.pll_src = rcc::PllSource::HSE;
+	config.rcc.ahb_pre = rcc::AHBPrescaler::DIV1;
+	config.rcc.sys = rcc::Sysclk::PLL1_P;
+	config.rcc.pll = Some(rcc::Pll {
+		prediv: rcc::PllPreDiv::DIV13,
+		mul: rcc::PllMul::MUL180,
+		divp: Some(rcc::PllPDiv::DIV2),
+		divq: Some(rcc::PllQDiv::DIV4),
+		divr: Some(rcc::PllRDiv::DIV2),
+	});
+	config.rcc.apb1_pre = rcc::APBPrescaler::DIV4;
+	config.rcc.apb2_pre = rcc::APBPrescaler::DIV2;
 
 	let p = embassy_stm32::init(config);
 
@@ -60,7 +69,7 @@ pub async fn init(
 		p.PB7,
 		Irqs,
 		p.DMA1_CH6,
-		NoDma,
+		p.DMA1_CH5,
 		Hertz(400_000),
 		Default::default(),
 	);
@@ -98,7 +107,7 @@ pub async fn init(
 
 	let mut oled = crate::chip::ssd1362::SSD1362::new(
 		ExclusiveDevice::new(
-			Spi::new_txonly(p.SPI2, p.PD3, p.PC3, p.DMA1_CH4, NoDma, oledconf),
+			Spi::new_txonly(p.SPI2, p.PD3, p.PC3, p.DMA1_CH4, oledconf),
 			OutputOpenDrain::new(p.PB9, Level::High, Speed::VeryHigh, Pull::None),
 			Delay,
 		),
@@ -136,7 +145,7 @@ pub async fn init(
 	extconf.frequency = Hertz(8_000_000);
 
 	let extspi = Spi::new(
-		p.SPI3, p.PC10, p.PC12, p.PC11, p.DMA1_CH5, p.DMA1_CH0, extconf,
+		p.SPI3, p.PC10, p.PC12, p.PC11, p.DMA1_CH7, p.DMA1_CH2, extconf,
 	);
 
 	info!("... external ethernet comms INIT");
@@ -261,7 +270,7 @@ pub async fn init(
 	auxcom_config.parity = usart::Parity::ParityNone;
 	auxcom_config.assume_noise_free = false;
 
-	let auxcom_tx = usart::UartTx::new(p.UART7, p.PE8, NoDma, auxcom_config)
+	let auxcom_tx = usart::UartTx::new_blocking(p.UART7, p.PE8, auxcom_config)
 		.expect("failed to create aux uart pair");
 
 	info!("... aux com INIT");

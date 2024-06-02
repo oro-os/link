@@ -1,10 +1,12 @@
 #![cfg_attr(not(feature = "std"), no_std)]
-#![feature(async_fn_in_trait)]
+#![allow(async_fn_in_trait)]
 
 #[cfg(feature = "async-std")]
 mod async_std;
 #[cfg(feature = "embedded-io")]
 mod embedded_io;
+
+use core::str::FromStr;
 
 #[cfg(feature = "defmt")]
 use defmt::Format;
@@ -267,7 +269,7 @@ impl<const SZ: usize> Deserialize for heapless::String<SZ> {
 		reader.read(&mut buffer[..len]).await?;
 
 		let utf8 = core::str::from_utf8(&buffer[0..len]).map_err(|_| Error::MalformedString)?;
-		Ok(heapless::String::from(utf8))
+		Ok(heapless::String::from_str(utf8).unwrap())
 	}
 }
 
