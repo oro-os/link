@@ -143,6 +143,14 @@ features = [
 	"medium-ethernet"
 ]
 
+[dependencies.embassy-usb]
+git = "https://github.com/oro-os/embassy.git"
+features = [
+	"defmt",
+	"usbd-hid",
+	"max-interface-count-1",
+]
+
 [dependencies.smoltcp]
 version = "0.11.0"
 default-features = false

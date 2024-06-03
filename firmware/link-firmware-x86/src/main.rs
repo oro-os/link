@@ -19,6 +19,7 @@ use embassy_net::{
 	driver::{Capabilities, HardwareAddress, LinkState, RxToken, TxToken},
 	Ipv4Address, Ipv4Cidr, Stack, StaticConfigV4,
 };
+use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 use heapless::Vec;
 use link_protocol::{self as proto, Packet};
@@ -63,10 +64,9 @@ async fn net_sys_stack_task(stack: &'static Stack<impl uc::EthernetDriver>) -> !
 #[embassy_executor::task]
 async fn monitor_task(
 	receiver: CommandReceiver<4>,
-	monitor: RefCell<impl uc::Monitor + 'static>,
+	monitor: &'static Mutex<NoopRawMutex, impl uc::Monitor>,
 ) -> ! {
-	//let monitor = unsafe { MONITOR.as_ref().unwrap() };
-	service::monitor::run(&monitor, receiver).await
+	service::monitor::run(monitor, receiver).await
 }
 
 #[embassy_executor::task]
@@ -126,9 +126,30 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	info!("link uid: {:?}", uid.unique_id());
 
-	let monitor = RefCell::new(monitor);
+	static mut BROKER_CHANNEL: CommandChannel<8> = CommandChannel::new();
+	static mut DAEMON_CHANNEL: CommandChannel<4> = CommandChannel::new();
+	static mut MONITOR_CHANNEL: CommandChannel<4> = CommandChannel::new();
+	static mut SERIAL_CHANNEL: CommandChannel<2> = CommandChannel::new();
 
-	monitor.borrow_mut().set_scene(Scene::Log);
+	let broker_receiver = unsafe { BROKER_CHANNEL.receiver() };
+	let broker_sender = unsafe { BROKER_CHANNEL.sender() };
+	let daemon_sender = unsafe { DAEMON_CHANNEL.sender() };
+	let daemon_receiver = unsafe { DAEMON_CHANNEL.receiver() };
+	let monitor_sender = unsafe { MONITOR_CHANNEL.sender() };
+	let monitor_receiver = unsafe { MONITOR_CHANNEL.receiver() };
+	let serial_sender = unsafe { SERIAL_CHANNEL.sender() };
+	let serial_receiver = unsafe { SERIAL_CHANNEL.receiver() };
+
+	let monitor = &*make_static!(Mutex::<NoopRawMutex, _>::new(monitor));
+
+	spawner.must_spawn(debug_led_task(debug_led));
+	spawner.must_spawn(monitor_task(monitor_receiver, monitor));
+
+	monitor.lock().await.set_scene(Scene::OroLogo);
+
+	Timer::after(Duration::from_secs(2)).await;
+
+	monitor.lock().await.set_scene(Scene::Log);
 
 	let extnet = {
 		let seed = rng.next_u64();
@@ -141,6 +162,8 @@ pub async fn main(spawner: Spawner) -> ! {
 			seed,
 		))
 	};
+
+	spawner.must_spawn(net_ext_stack_task(extnet));
 
 	let sysnet = {
 		let seed = rng.next_u64();
@@ -160,24 +183,8 @@ pub async fn main(spawner: Spawner) -> ! {
 		))
 	};
 
-	static mut BROKER_CHANNEL: CommandChannel<8> = CommandChannel::new();
-	static mut DAEMON_CHANNEL: CommandChannel<4> = CommandChannel::new();
-	static mut MONITOR_CHANNEL: CommandChannel<4> = CommandChannel::new();
-	static mut SERIAL_CHANNEL: CommandChannel<2> = CommandChannel::new();
-
-	let broker_receiver = unsafe { BROKER_CHANNEL.receiver() };
-	let broker_sender = unsafe { BROKER_CHANNEL.sender() };
-	let daemon_sender = unsafe { DAEMON_CHANNEL.sender() };
-	let daemon_receiver = unsafe { DAEMON_CHANNEL.receiver() };
-	let monitor_sender = unsafe { MONITOR_CHANNEL.sender() };
-	let monitor_receiver = unsafe { MONITOR_CHANNEL.receiver() };
-	let serial_sender = unsafe { SERIAL_CHANNEL.sender() };
-	let serial_receiver = unsafe { SERIAL_CHANNEL.receiver() };
-
-	spawner.must_spawn(net_ext_stack_task(extnet));
 	spawner.must_spawn(net_sys_stack_task(sysnet));
-	spawner.must_spawn(monitor_task(monitor_receiver, monitor));
-	spawner.must_spawn(debug_led_task(debug_led));
+
 	spawner.must_spawn(time_task(extnet, wall_clock));
 	spawner.must_spawn(daemon_task(extnet, rng, broker_sender, daemon_receiver));
 	spawner.must_spawn(serial_task(

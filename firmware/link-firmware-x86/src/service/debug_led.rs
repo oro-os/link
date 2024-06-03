@@ -6,6 +6,10 @@ pub async fn run<L: DebugLed>(mut debug_led: L) -> ! {
 		debug_led.on();
 		Timer::after(Duration::from_millis(40)).await;
 		debug_led.off();
+		Timer::after(Duration::from_millis(70)).await;
+		debug_led.on();
+		Timer::after(Duration::from_millis(40)).await;
+		debug_led.off();
 		Timer::after(Duration::from_millis(2000)).await;
 	}
 }
