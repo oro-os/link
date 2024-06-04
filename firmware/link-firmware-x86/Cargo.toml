@@ -97,6 +97,8 @@ rand_core = "0.6.4"
 embedded-io-async = "0.6.1"
 embassy-sync = { git = "https://github.com/oro-os/embassy.git" }
 embassy-futures = { git = "https://github.com/oro-os/embassy.git" }
+# XXX DEBUG: This is just to test USB connectivity.
+usbd-hid = "0.7.0"
 
 [dependencies.cortex-m]
 version = "0.7.7"

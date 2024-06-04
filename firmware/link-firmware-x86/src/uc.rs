@@ -150,9 +150,9 @@ pub trait SystemUnderTest {
 pub enum Scene {
 	/// Displays the Oro logo and any aesthetically pleasing effect on
 	/// LEDs, etc.
+	#[default]
 	OroLogo,
 	/// Displays a running log of diagnostic frames.
-	#[default]
 	Log,
 	/// Displays the status of a test run.
 	Test,
@@ -299,6 +299,8 @@ pub trait ResetManager {
 #[allow(unused)]
 #[doc(hidden)]
 mod _check_init {
+	use embassy_usb::{driver::Driver, Builder};
+
 	use super::*;
 	trait Init {
 		fn ok(self)
@@ -320,6 +322,7 @@ mod _check_init {
 	}
 
 	impl<
+		'usb,
 		DBG: DebugLed,
 		SUT: SystemUnderTest,
 		MON: Monitor,
@@ -332,6 +335,7 @@ mod _check_init {
 		PKTTRACER: PacketTracer,
 		UUID: UniqueId,
 		RST: ResetManager,
+		UsbDriver: Driver<'usb>,
 	> Init
 		for (
 			DBG,
@@ -346,6 +350,7 @@ mod _check_init {
 			PKTTRACER,
 			UUID,
 			RST,
+			Builder<'usb, UsbDriver>,
 		)
 	{
 	}

@@ -21,6 +21,7 @@ use embassy_net::{
 };
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
+use embassy_usb as usb;
 use heapless::Vec;
 use link_protocol::{self as proto, Packet};
 use static_cell::make_static;
@@ -102,6 +103,15 @@ async fn serial_task(
 	service::serial::run(tx, rx, broker_sender, serial_receiver).await
 }
 
+#[embassy_executor::task]
+async fn usb_task(
+	usb_builder: usb::Builder<'static, impl usb::driver::Driver<'static> + 'static>,
+	broker_sender: CommandSender<8>,
+	usb_receiver: CommandReceiver<16>,
+) -> ! {
+	service::usb::run(usb_builder, broker_sender, usb_receiver).await
+}
+
 #[embassy_executor::main]
 pub async fn main(spawner: Spawner) -> ! {
 	let (
@@ -117,6 +127,7 @@ pub async fn main(spawner: Spawner) -> ! {
 		packet_tracer,
 		uid,
 		rst,
+		usb_builder,
 	) = uc::init(&spawner).await;
 
 	info!(
@@ -130,6 +141,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	static mut DAEMON_CHANNEL: CommandChannel<4> = CommandChannel::new();
 	static mut MONITOR_CHANNEL: CommandChannel<4> = CommandChannel::new();
 	static mut SERIAL_CHANNEL: CommandChannel<2> = CommandChannel::new();
+	static mut USB_CHANNEL: CommandChannel<16> = CommandChannel::new();
 
 	let broker_receiver = unsafe { BROKER_CHANNEL.receiver() };
 	let broker_sender = unsafe { BROKER_CHANNEL.sender() };
@@ -139,6 +151,8 @@ pub async fn main(spawner: Spawner) -> ! {
 	let monitor_receiver = unsafe { MONITOR_CHANNEL.receiver() };
 	let serial_sender = unsafe { SERIAL_CHANNEL.sender() };
 	let serial_receiver = unsafe { SERIAL_CHANNEL.receiver() };
+	let usb_sender = unsafe { USB_CHANNEL.sender() };
+	let usb_receiver = unsafe { USB_CHANNEL.receiver() };
 
 	let monitor = &*make_static!(Mutex::<NoopRawMutex, _>::new(monitor));
 
@@ -184,6 +198,8 @@ pub async fn main(spawner: Spawner) -> ! {
 	};
 
 	spawner.must_spawn(net_sys_stack_task(sysnet));
+
+	spawner.must_spawn(usb_task(usb_builder, broker_sender, usb_receiver));
 
 	spawner.must_spawn(time_task(extnet, wall_clock));
 	spawner.must_spawn(daemon_task(extnet, rng, broker_sender, daemon_receiver));
@@ -275,6 +291,11 @@ pub async fn main(spawner: Spawner) -> ! {
 			Command::IncomingPacket(Packet::Serial(data)) => {
 				serial_sender
 					.send(Command::IncomingPacket(Packet::Serial(data)))
+					.await;
+			}
+			Command::IncomingPacket(Packet::DebugUsbKey(key)) => {
+				usb_sender
+					.send(Command::IncomingPacket(Packet::DebugUsbKey(key)))
 					.await;
 			}
 			Command::OutgoingPacket(packet) => {

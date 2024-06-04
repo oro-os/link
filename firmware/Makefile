@@ -81,7 +81,7 @@ other-udeps:
 	env cargo udeps $(CARGO_FLAGS) -p link-daemon -p link-protocol -p link-protocol-binser -p link-protocol-binser-proc -p link-rpcapd
 
 x86.stm32f479vgt6.run: x86.stm32f479vgt6
-	$(PROBE_RS) run $(PROBE_RS_FLAGS) --speed 4000 --chip STM32F479VGTx target/thumbv7em-none-eabihf/$(CARGO_MODE)/link-firmware-x86
+	$(PROBE_RS) run $(PROBE_RS_FLAGS) --speed 3300 --chip STM32F479VGTx target/thumbv7em-none-eabihf/$(CARGO_MODE)/link-firmware-x86
 
 x86.stm32f479vgt6: target/$(CARGO_MODE)/link-firmware-x86-stm32f479vg.bin
 .PHONY: target/thumbv7em-none-eabihf/$(CARGO_MODE)/link-firmware-x86

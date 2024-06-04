@@ -87,6 +87,10 @@ pub enum Packet {
 	/// A serial line transmission (either to or from the system)
 	#[proto(id = 13)]
 	Serial(Vec<u8, 256>),
+
+	/// (DEBUG) An HID key for USB HID testing
+	#[proto(id = 14)]
+	DebugUsbKey(u8),
 }
 
 #[derive(Debug, Clone, LinkMessage)]

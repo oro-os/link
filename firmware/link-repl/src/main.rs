@@ -229,7 +229,18 @@ fn make_repl(outgoing: PacketSender<BufWriter<TcpStream>>) -> Repl {
 					CommandArgType::String,
 					"message",
 				)],
-				Box::new(ErrorLogCommand(outgoing)),
+				Box::new(ErrorLogCommand(outgoing.clone())),
+			),
+		)
+		.add(
+			"key",
+			Command::new(
+				"presses a key on the USB HID keyboard",
+				vec![CommandArgInfo::new_with_name(
+					CommandArgType::I32,
+					"keycode",
+				)],
+				Box::new(KeyPressDebugCommand(outgoing)),
 			),
 		)
 		.build()
@@ -476,6 +487,32 @@ impl ExecuteCommand for ErrorLogCommand {
 			let packet = Packet::Log(LogEntry::Error(heapless::String::<255>::from_iter(
 				args.join(" ").chars(),
 			)));
+			sender.send(packet).await?;
+			Ok(CommandStatus::Done)
+		})
+	}
+}
+
+struct KeyPressDebugCommand(Arc<Mutex<PacketSender<BufWriter<TcpStream>>>>);
+
+impl ExecuteCommand for KeyPressDebugCommand {
+	fn execute(
+		&mut self,
+		args: Vec<String>,
+		_args_info: Vec<mini_async_repl::command::CommandArgInfo>,
+	) -> std::pin::Pin<
+		Box<
+			dyn Future<Output = mini_async_repl::anyhow::Result<mini_async_repl::CommandStatus>>
+				+ '_,
+		>,
+	> {
+		Box::pin(async move {
+			let mut sender = self.0.lock().await;
+			let packet = Packet::DebugUsbKey(
+				args[0]
+					.parse()
+					.map_err(|_| mini_async_repl::anyhow::anyhow!("invalid keycode"))?,
+			);
 			sender.send(packet).await?;
 			Ok(CommandStatus::Done)
 		})

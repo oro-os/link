@@ -1,3 +1,5 @@
+use core::ptr::addr_of_mut;
+
 use crate::uc;
 use defmt::{debug, info};
 use embassy_executor::Spawner;
@@ -8,9 +10,10 @@ use embassy_stm32::{
 	peripherals, rcc, rng, rtc,
 	spi::{self, Spi},
 	time::Hertz,
-	usart, Config,
+	usart, usb as stm32_usb, Config,
 };
 use embassy_time::{Delay, Duration, Timer};
+use embassy_usb as usb;
 use embedded_hal_bus::spi::ExclusiveDevice;
 
 bind_interrupts!(struct Irqs {
@@ -18,9 +21,10 @@ bind_interrupts!(struct Irqs {
 	I2C1_ER => i2c::ErrorInterruptHandler<peripherals::I2C1>;
 	USART3 => usart::InterruptHandler<peripherals::USART3>;
 	HASH_RNG => rng::InterruptHandler<peripherals::RNG>;
+	OTG_FS => stm32_usb::InterruptHandler<peripherals::USB_OTG_FS>;
 });
 
-pub async fn init(
+pub async fn init<'usb>(
 	_spawner: &Spawner,
 ) -> (
 	impl uc::DebugLed,
@@ -35,6 +39,7 @@ pub async fn init(
 	impl uc::PacketTracer,
 	impl uc::UniqueId,
 	impl uc::ResetManager,
+	usb::Builder<'usb, impl usb::driver::Driver<'usb>>,
 ) {
 	let mut config = Config::default();
 	config.rcc.ls.rtc = rcc::RtcClockSource::LSI;
@@ -291,8 +296,66 @@ pub async fn init(
 
 	info!("... reset manager INIT");
 
+	static mut EP_OUT_BUFFER: [u8; 256] = [0u8; 256];
+
+	let mut config = stm32_usb::Config::default();
+	config.vbus_detection = true;
+
+	let driver = stm32_usb::Driver::new_fs(
+		p.USB_OTG_FS,
+		Irqs,
+		p.PA12,
+		p.PA11,
+		unsafe { &mut *addr_of_mut!(EP_OUT_BUFFER) },
+		config,
+	);
+
+	let mut usb_config = usb::Config::new(0x1337, 0x9001);
+	usb_config.manufacturer = Some("Oro Operating System");
+	usb_config.product = Some("Oro Link");
+	usb_config.serial_number = Some("this-is-just-a-test-device");
+	usb_config.max_power = 0;
+	usb_config.max_packet_size_0 = 64;
+
+	// Required for windows compatibility.
+	// https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.9.1/kconfig/CONFIG_CDC_ACM_IAD.html#help
+	usb_config.device_class = 0xEF;
+	usb_config.device_sub_class = 0x02;
+	usb_config.device_protocol = 0x01;
+	usb_config.composite_with_iads = true;
+
+	static mut CONFIG_DESCRIPTOR: [u8; 256] = [0; 256];
+	static mut BOS_DESCRIPTOR: [u8; 256] = [0; 256];
+	// You can also add a Microsoft OS descriptor.
+	static mut MSOS_DESCRIPTOR: [u8; 256] = [0; 256];
+	static mut CONTROL_BUF: [u8; 64] = [0; 64];
+
+	let usb_builder = unsafe {
+		usb::Builder::new(
+			driver,
+			usb_config,
+			&mut *addr_of_mut!(CONFIG_DESCRIPTOR),
+			&mut *addr_of_mut!(BOS_DESCRIPTOR),
+			&mut *addr_of_mut!(MSOS_DESCRIPTOR),
+			&mut *addr_of_mut!(CONTROL_BUF),
+		)
+	};
+
+	info!("... usb INIT");
+
 	(
-		debug_led, system, monitor, exteth, syseth, wall_clock, rng_gen, syscom_tx, syscom_rx,
-		auxcom_tx, uid, rst,
+		debug_led,
+		system,
+		monitor,
+		exteth,
+		syseth,
+		wall_clock,
+		rng_gen,
+		syscom_tx,
+		syscom_rx,
+		auxcom_tx,
+		uid,
+		rst,
+		usb_builder,
 	)
 }
