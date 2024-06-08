@@ -1000,16 +1000,6 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 105.41) (xy 124.46 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3ae45b58-093b-4770-af1d-0954498e28fb")
-	)
-	(wire
-		(pts
 			(xy 114.3 142.875) (xy 124.46 142.875)
 		)
 		(stroke
@@ -1227,16 +1217,6 @@
 			(type default)
 		)
 		(uuid "762a0d21-d547-4cc9-ad0d-2ed9bb6c2c20")
-	)
-	(wire
-		(pts
-			(xy 114.3 76.835) (xy 124.46 76.835)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "76b99586-ad18-4eeb-8010-5f8e662b39fd")
 	)
 	(wire
 		(pts
@@ -2806,8 +2786,8 @@
 		)
 	)
 	(sheet
-		(at 81.28 103.505)
-		(size 33.02 21.59)
+		(at 81.28 106.172)
+		(size 33.02 18.923)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -2818,7 +2798,7 @@
 		)
 		(uuid "52771c01-2e58-4900-abe5-411f688d020f")
 		(property "Sheetname" "System Ethernet"
-			(at 81.28 102.7934 0)
+			(at 81.28 105.4604 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2905,16 +2885,6 @@
 			)
 			(uuid "65d9b964-5628-4ff9-ae07-d886f6feb677")
 		)
-		(pin "EN" input
-			(at 114.3 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "bb756568-aecb-4684-9dcd-88d93202842b")
-		)
 		(instances
 			(project "OroLink"
 				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
@@ -2982,8 +2952,8 @@
 		)
 	)
 	(sheet
-		(at 81.28 74.295)
-		(size 33.02 22.86)
+		(at 81.28 77.47)
+		(size 33.02 19.685)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -2994,7 +2964,7 @@
 		)
 		(uuid "7cebe953-3148-4b67-a6c9-1f2594261687")
 		(property "Sheetname" "External Ethernet"
-			(at 81.28 73.5834 0)
+			(at 81.28 76.7584 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3080,16 +3050,6 @@
 				(justify right)
 			)
 			(uuid "6e81c5c3-5fa3-48fd-9c16-5a030657d996")
-		)
-		(pin "EN" input
-			(at 114.3 76.835 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "b1193e4a-8be2-4b72-b485-719506e291f3")
 		)
 		(instances
 			(project "OroLink"
@@ -3665,26 +3625,6 @@
 				(justify right)
 			)
 			(uuid "532978d9-df8e-49cf-8ae9-5c29b4a5ec8d")
-		)
-		(pin "EXTETH_EN" output
-			(at 124.46 76.835 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "4ac4bded-1fba-4925-a200-a1aba39c17dc")
-		)
-		(pin "SYSETH_EN" output
-			(at 124.46 105.41 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "0e4aea69-3d86-47ed-a2b3-587a516bc255")
 		)
 		(pin "PSU_SB" output
 			(at 170.18 61.595 0)
