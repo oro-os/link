@@ -1,1551 +1,3932 @@
-(kicad_sch (version 20230121) (generator eeschema)
-
-  (uuid ffe571db-ea8d-4282-af34-5684a97c6779)
-
-  (paper "A4")
-
-  (title_block
-    (title "Oro Link")
-    (date "2023-07-15")
-    (rev "6")
-    (company "Oro Operating System")
-    (comment 1 "://oro.sh")
-    (comment 2 "Joshua Lee Junon")
-  )
-
-  (lib_symbols
-    (symbol "Oro:MSAST1L3YB5104KFNA01" (pin_names (offset 0.762)) (in_bom yes) (on_board yes)
-      (property "Reference" "C" (at 8.89 6.35 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "MSAST1L3YB5104KFNA01" (at 8.89 3.81 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "CAPC1005X33N" (at 8.89 1.27 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Datasheet" "https://www.mouser.de/datasheet/2/396/TaiyoYuden_MSAST1L3YB5104KFNA01_SS-3009733.pdf" (at 8.89 -1.27 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 0402 25VDC 0.1uF 10% X5R" (at 8.89 -3.81 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Height" "0.33" (at 8.89 -6.35 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Name" "TAIYO YUDEN" (at 8.89 -8.89 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Part_Number" "MSAST1L3YB5104KFNA01" (at 8.89 -11.43 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Part Number" "963-MSAST1L3YB5104KF" (at 8.89 -13.97 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Price/Stock" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/MSAST1L3YB5104KFNA01?qs=tlsG%2FOw5FFhBwK%252BMwEZpCA%3D%3D" (at 8.89 -16.51 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Part Number" "" (at 8.89 -19.05 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Price/Stock" "" (at 8.89 -21.59 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "ki_description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 0402 25VDC 0.1uF 10% X5R" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "MSAST1L3YB5104KFNA01_0_0"
-        (pin passive line (at 0 0 0) (length 5.08)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 12.7 0 180) (length 5.08)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-      )
-      (symbol "MSAST1L3YB5104KFNA01_0_1"
-        (polyline
-          (pts
-            (xy 5.08 0)
-            (xy 5.588 0)
-          )
-          (stroke (width 0.1524) (type solid))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 5.588 2.54)
-            (xy 5.588 -2.54)
-          )
-          (stroke (width 0.1524) (type solid))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 7.112 0)
-            (xy 7.62 0)
-          )
-          (stroke (width 0.1524) (type solid))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 7.112 2.54)
-            (xy 7.112 -2.54)
-          )
-          (stroke (width 0.1524) (type solid))
-          (fill (type none))
-        )
-      )
-    )
-    (symbol "SamacSys_Parts:CSD13380F3T" (pin_names (offset 0.762)) (in_bom yes) (on_board yes)
-      (property "Reference" "Q" (at 11.43 3.81 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "CSD13380F3T" (at 11.43 1.27 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "CSD13380F3T" (at 11.43 -1.27 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Datasheet" "https://www.ti.com/lit/ds/symlink/csd13380f3.pdf?ts=1610053095577" (at 11.43 -3.81 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Description" "12V, N ch NexFET MOSFET, single LGA0.6x0.7, 76mOhm" (at 11.43 -6.35 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Height" "0.35" (at 11.43 -8.89 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Name" "Texas Instruments" (at 11.43 -11.43 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Part_Number" "CSD13380F3T" (at 11.43 -13.97 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Part Number" "595-CSD13380F3T" (at 11.43 -16.51 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/CSD13380F3T?qs=S8zVn2bBIh85Rpxp8sld8w%3D%3D" (at 11.43 -19.05 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Part Number" "CSD13380F3T" (at 11.43 -21.59 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Price/Stock" "https://www.arrow.com/en/products/csd13380f3t/texas-instruments" (at 11.43 -24.13 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Testing Part Number" "" (at 11.43 -26.67 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Testing Price/Stock" "" (at 11.43 -29.21 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "ki_description" "12V, N ch NexFET MOSFET, single LGA0.6x0.7, 76mOhm" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "CSD13380F3T_0_0"
-        (pin passive line (at 0 0 0) (length 2.54)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 7.62 -5.08 90) (length 2.54)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 7.62 10.16 270) (length 2.54)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "3" (effects (font (size 1.27 1.27))))
-        )
-      )
-      (symbol "CSD13380F3T_0_1"
-        (polyline
-          (pts
-            (xy 5.842 -0.508)
-            (xy 5.842 0.508)
-          )
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 5.842 0)
-            (xy 7.62 0)
-          )
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 5.842 2.032)
-            (xy 5.842 3.048)
-          )
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 5.842 5.588)
-            (xy 5.842 4.572)
-          )
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 7.62 2.54)
-            (xy 5.842 2.54)
-          )
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 7.62 2.54)
-            (xy 7.62 -2.54)
-          )
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 7.62 5.08)
-            (xy 5.842 5.08)
-          )
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 7.62 5.08)
-            (xy 7.62 7.62)
-          )
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 2.54 0)
-            (xy 5.08 0)
-            (xy 5.08 5.08)
-          )
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 5.842 2.54)
-            (xy 6.858 3.048)
-            (xy 6.858 2.032)
-            (xy 5.842 2.54)
-          )
-          (stroke (width 0.254) (type default))
-          (fill (type outline))
-        )
-        (circle (center 6.35 2.54) (radius 3.81)
-          (stroke (width 0.254) (type default))
-          (fill (type none))
-        )
-      )
-    )
-    (symbol "SamacSys_Parts:RK73H1ETTP1002F" (pin_names (offset 0.762)) (in_bom yes) (on_board yes)
-      (property "Reference" "R" (at 13.97 6.35 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "RK73H1ETTP1002F" (at 13.97 3.81 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "RESC1005X40N" (at 13.97 1.27 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Datasheet" "http://www.koaspeer.com/catimages/Products/RK73-RT/RK73-RT.pdf" (at 13.97 -1.27 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Description" "Resistor,ThickFilm1005,0.063W,10kohm" (at 13.97 -3.81 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Height" "0.4" (at 13.97 -6.35 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Name" "KOA Speer" (at 13.97 -8.89 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Part_Number" "RK73H1ETTP1002F" (at 13.97 -11.43 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Part Number" "660-RK73H1ETTP1002F" (at 13.97 -13.97 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KOA-Speer/RK73H1ETTP1002F?qs=uLfVlVfCHH2OZ4JTybrBPQ%3D%3D" (at 13.97 -16.51 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Part Number" "RK73H1ETTP1002F" (at 13.97 -19.05 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Price/Stock" "https://www.arrow.com/en/products/rk73h1ettp1002f/koa-speer-electronics?region=nac" (at 13.97 -21.59 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "ki_description" "Resistor,ThickFilm1005,0.063W,10kohm" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "RK73H1ETTP1002F_0_0"
-        (pin passive line (at 0 0 0) (length 5.08)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 17.78 0 180) (length 5.08)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-      )
-      (symbol "RK73H1ETTP1002F_0_1"
-        (polyline
-          (pts
-            (xy 5.08 1.27)
-            (xy 12.7 1.27)
-            (xy 12.7 -1.27)
-            (xy 5.08 -1.27)
-            (xy 5.08 1.27)
-          )
-          (stroke (width 0.1524) (type solid))
-          (fill (type none))
-        )
-      )
-    )
-    (symbol "SamacSys_Parts:SN75C3232EPWR" (pin_names (offset 0.762)) (in_bom yes) (on_board yes)
-      (property "Reference" "IC" (at 26.67 7.62 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "SN75C3232EPWR" (at 26.67 5.08 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "SOP65P640X120-16N" (at 26.67 2.54 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Datasheet" "http://www.ti.com/lit/gpn/sn75c3232e" (at 26.67 0 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Description" "3-V To 5.5-V Two Channel RS-232 1 Mbit/s Line Driver/Receiver with +/-15 kV IEC ESD Protection" (at 26.67 -2.54 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Height" "1.2" (at 26.67 -5.08 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Name" "Texas Instruments" (at 26.67 -7.62 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Part_Number" "SN75C3232EPWR" (at 26.67 -10.16 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Part Number" "595-SN75C3232EPWR" (at 26.67 -12.7 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Price/Stock" "https://www.mouser.com/Search/Refine.aspx?Keyword=595-SN75C3232EPWR" (at 26.67 -15.24 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Part Number" "SN75C3232EPWR" (at 26.67 -17.78 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Price/Stock" "https://www.arrow.com/en/products/sn75c3232epwr/texas-instruments" (at 26.67 -20.32 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "ki_description" "3-V To 5.5-V Two Channel RS-232 1 Mbit/s Line Driver/Receiver with +/-15 kV IEC ESD Protection" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "SN75C3232EPWR_0_0"
-        (pin passive line (at 0 0 0) (length 5.08)
-          (name "C1+" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 30.48 -15.24 180) (length 5.08)
-          (name "DIN2" (effects (font (size 1.27 1.27))))
-          (number "10" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 30.48 -12.7 180) (length 5.08)
-          (name "DIN1" (effects (font (size 1.27 1.27))))
-          (number "11" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 30.48 -10.16 180) (length 5.08)
-          (name "ROUT1" (effects (font (size 1.27 1.27))))
-          (number "12" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 30.48 -7.62 180) (length 5.08)
-          (name "RIN1" (effects (font (size 1.27 1.27))))
-          (number "13" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 30.48 -5.08 180) (length 5.08)
-          (name "DOUT1" (effects (font (size 1.27 1.27))))
-          (number "14" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 30.48 -2.54 180) (length 5.08)
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "15" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 30.48 0 180) (length 5.08)
-          (name "VCC" (effects (font (size 1.27 1.27))))
-          (number "16" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 -2.54 0) (length 5.08)
-          (name "V+" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 -5.08 0) (length 5.08)
-          (name "C1-" (effects (font (size 1.27 1.27))))
-          (number "3" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 -7.62 0) (length 5.08)
-          (name "C2+" (effects (font (size 1.27 1.27))))
-          (number "4" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 -10.16 0) (length 5.08)
-          (name "C2-" (effects (font (size 1.27 1.27))))
-          (number "5" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 -12.7 0) (length 5.08)
-          (name "V-" (effects (font (size 1.27 1.27))))
-          (number "6" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 -15.24 0) (length 5.08)
-          (name "DOUT2" (effects (font (size 1.27 1.27))))
-          (number "7" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 -17.78 0) (length 5.08)
-          (name "RIN2" (effects (font (size 1.27 1.27))))
-          (number "8" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 30.48 -17.78 180) (length 5.08)
-          (name "ROUT2" (effects (font (size 1.27 1.27))))
-          (number "9" (effects (font (size 1.27 1.27))))
-        )
-      )
-      (symbol "SN75C3232EPWR_0_1"
-        (polyline
-          (pts
-            (xy 5.08 2.54)
-            (xy 25.4 2.54)
-            (xy 25.4 -20.32)
-            (xy 5.08 -20.32)
-            (xy 5.08 2.54)
-          )
-          (stroke (width 0.1524) (type solid))
-          (fill (type none))
-        )
-      )
-    )
-    (symbol "SamacSys_Parts:UUP1H0R1MCL1GS" (pin_names (offset 0.762)) (in_bom yes) (on_board yes)
-      (property "Reference" "C" (at 8.89 6.35 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "UUP1H0R1MCL1GS" (at 8.89 3.81 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "CAPAE430X610N" (at 8.89 1.27 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Datasheet" "http://www.mouser.com/datasheet/2/293/e-uup-1513248.pdf" (at 8.89 -1.27 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Description" "Aluminum Electrolytic Capacitors - SMD 35volts 0.1uF 85c 4X5.8" (at 8.89 -3.81 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Height" "6.1" (at 8.89 -6.35 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Name" "Nichicon" (at 8.89 -8.89 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Part_Number" "UUP1H0R1MCL1GS" (at 8.89 -11.43 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Part Number" "647-UUP1H0R1MCL1GS" (at 8.89 -13.97 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nichicon/UUP1H0R1MCL1GS?qs=huzeVNXgovXvQmoxbanaNw%3D%3D" (at 8.89 -16.51 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Part Number" "UUP1H0R1MCL1GS" (at 8.89 -19.05 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Price/Stock" "https://www.arrow.com/en/products/uup1h0r1mcl1gs/nichicon?region=nac" (at 8.89 -21.59 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "ki_description" "Aluminum Electrolytic Capacitors - SMD 35volts 0.1uF 85c 4X5.8" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "UUP1H0R1MCL1GS_0_0"
-        (pin passive line (at 0 0 0) (length 2.54)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 12.7 0 180) (length 2.54)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-      )
-      (symbol "UUP1H0R1MCL1GS_0_1"
-        (polyline
-          (pts
-            (xy 2.54 0)
-            (xy 5.08 0)
-          )
-          (stroke (width 0.1524) (type solid))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 4.064 1.778)
-            (xy 4.064 0.762)
-          )
-          (stroke (width 0.1524) (type solid))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 4.572 1.27)
-            (xy 3.556 1.27)
-          )
-          (stroke (width 0.1524) (type solid))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 7.62 0)
-            (xy 10.16 0)
-          )
-          (stroke (width 0.1524) (type solid))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 5.08 2.54)
-            (xy 5.08 -2.54)
-            (xy 5.842 -2.54)
-            (xy 5.842 2.54)
-            (xy 5.08 2.54)
-          )
-          (stroke (width 0.1524) (type solid))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 7.62 2.54)
-            (xy 7.62 -2.54)
-            (xy 6.858 -2.54)
-            (xy 6.858 2.54)
-            (xy 7.62 2.54)
-          )
-          (stroke (width 0.254) (type solid))
-          (fill (type outline))
-        )
-      )
-    )
-    (symbol "power:+3V3" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
-      (property "Reference" "#PWR" (at 0 -3.81 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "+3V3" (at 0 3.556 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "global power" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Power symbol creates a global label with name \"+3V3\"" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "+3V3_0_1"
-        (polyline
-          (pts
-            (xy -0.762 1.27)
-            (xy 0 2.54)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 0 0)
-            (xy 0 2.54)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 0 2.54)
-            (xy 0.762 1.27)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-      )
-      (symbol "+3V3_1_1"
-        (pin power_in line (at 0 0 90) (length 0) hide
-          (name "+3V3" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "power:GND" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
-      (property "Reference" "#PWR" (at 0 -6.35 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "GND" (at 0 -3.81 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "global power" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Power symbol creates a global label with name \"GND\" , ground" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "GND_0_1"
-        (polyline
-          (pts
-            (xy 0 0)
-            (xy 0 -1.27)
-            (xy 1.27 -1.27)
-            (xy 0 -2.54)
-            (xy -1.27 -1.27)
-            (xy 0 -1.27)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-      )
-      (symbol "GND_1_1"
-        (pin power_in line (at 0 0 270) (length 0) hide
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-  )
-
-  (junction (at 104.14 55.245) (diameter 0) (color 0 0 0 0)
-    (uuid a11b1d7e-f885-4824-873f-d1b83e0a08dc)
-  )
-  (junction (at 212.725 102.235) (diameter 0) (color 0 0 0 0)
-    (uuid b153dc2d-d720-43ec-88cd-b04d77d5f3ce)
-  )
-  (junction (at 212.725 108.585) (diameter 0) (color 0 0 0 0)
-    (uuid b380e257-24d3-4bf0-b764-a5f06fd40e65)
-  )
-
-  (wire (pts (xy 116.84 92.075) (xy 128.27 92.075))
-    (stroke (width 0) (type default))
-    (uuid 0d66be49-115c-4321-8d3d-7b2cb961fd8f)
-  )
-  (wire (pts (xy 116.84 86.995) (xy 128.27 86.995))
-    (stroke (width 0) (type default))
-    (uuid 1b0c3fa9-1932-4ba2-8d7a-bcb433e418d2)
-  )
-  (wire (pts (xy 91.44 62.865) (xy 91.44 67.31))
-    (stroke (width 0) (type default))
-    (uuid 26610666-1387-4745-8704-5704c8f03053)
-  )
-  (wire (pts (xy 212.725 108.585) (xy 212.725 113.665))
-    (stroke (width 0) (type default))
-    (uuid 29cabc9a-878d-465c-9412-f8e0cab649bf)
-  )
-  (wire (pts (xy 128.27 55.245) (xy 128.27 57.15))
-    (stroke (width 0) (type default))
-    (uuid 2c419f0b-f465-4afa-a96e-9bcf136ce129)
-  )
-  (wire (pts (xy 104.14 55.245) (xy 104.14 59.69))
-    (stroke (width 0) (type default))
-    (uuid 4737765d-9db5-4b3f-86c4-8bfb92af9031)
-  )
-  (wire (pts (xy 104.14 55.245) (xy 99.06 55.245))
-    (stroke (width 0) (type default))
-    (uuid 4a06f52a-a253-4e85-abb5-01ce036d576b)
-  )
-  (wire (pts (xy 184.785 95.885) (xy 192.405 95.885))
-    (stroke (width 0) (type default))
-    (uuid 4a90b78b-84a2-4ac3-b08d-cdfd9d8e9e9f)
-  )
-  (wire (pts (xy 78.74 99.695) (xy 86.36 99.695))
-    (stroke (width 0) (type default))
-    (uuid 54c9216b-6402-4cb4-b3ec-752b7de18684)
-  )
-  (wire (pts (xy 126.365 55.245) (xy 128.27 55.245))
-    (stroke (width 0) (type default))
-    (uuid 6a925d6f-72e6-4d24-90ba-34dccd054f6c)
-  )
-  (wire (pts (xy 78.74 89.535) (xy 86.36 89.535))
-    (stroke (width 0) (type default))
-    (uuid 74f55c40-c75f-467d-b906-b59b2e947972)
-  )
-  (wire (pts (xy 78.74 86.995) (xy 86.36 86.995))
-    (stroke (width 0) (type default))
-    (uuid 7861e053-1ad7-46cc-b028-a5bbab378503)
-  )
-  (wire (pts (xy 116.84 99.695) (xy 128.27 99.695))
-    (stroke (width 0) (type default))
-    (uuid 8645fbb3-9702-416a-a4e3-c3062d2762ed)
-  )
-  (wire (pts (xy 184.785 83.185) (xy 192.405 83.185))
-    (stroke (width 0) (type default))
-    (uuid 8a5f2cd1-0aed-4eca-be28-dc1793b060a9)
-  )
-  (wire (pts (xy 212.725 102.235) (xy 212.725 108.585))
-    (stroke (width 0) (type default))
-    (uuid 8d110a4d-f5e7-4fa0-852f-5db4e844cb13)
-  )
-  (wire (pts (xy 212.725 95.885) (xy 212.725 102.235))
-    (stroke (width 0) (type default))
-    (uuid 8eae00b2-2df2-40ec-b89e-3c876c232e7e)
-  )
-  (wire (pts (xy 184.785 108.585) (xy 192.405 108.585))
-    (stroke (width 0) (type default))
-    (uuid 929d0e65-4d02-4321-bb2e-7ca3885a5688)
-  )
-  (wire (pts (xy 212.725 83.185) (xy 205.105 83.185))
-    (stroke (width 0) (type default))
-    (uuid a227bb33-6892-4d21-b53c-9d30ebab5d55)
-  )
-  (wire (pts (xy 116.84 104.775) (xy 128.27 104.775))
-    (stroke (width 0) (type default))
-    (uuid a7dfe36c-1d51-4736-b51f-624643250141)
-  )
-  (wire (pts (xy 116.84 94.615) (xy 128.27 94.615))
-    (stroke (width 0) (type default))
-    (uuid b40f1fac-b93b-4991-84a3-b123677d802f)
-  )
-  (wire (pts (xy 74.93 104.775) (xy 86.36 104.775))
-    (stroke (width 0) (type default))
-    (uuid bea4811b-58fc-4441-a23b-f6ab9ad2145d)
-  )
-  (wire (pts (xy 91.44 67.31) (xy 93.98 67.31))
-    (stroke (width 0) (type default))
-    (uuid c4f08b43-d1a3-43a8-9b9c-a0893d2ba8cf)
-  )
-  (wire (pts (xy 108.585 55.245) (xy 104.14 55.245))
-    (stroke (width 0) (type default))
-    (uuid c865440e-f257-4f38-9426-2392071a6fc6)
-  )
-  (wire (pts (xy 184.785 89.535) (xy 192.405 89.535))
-    (stroke (width 0) (type default))
-    (uuid c998962b-2f7d-4cf4-959c-06d0f8d5b77d)
-  )
-  (wire (pts (xy 205.105 108.585) (xy 212.725 108.585))
-    (stroke (width 0) (type default))
-    (uuid cc7b822b-2b20-4784-a541-d025b7de2665)
-  )
-  (wire (pts (xy 78.74 94.615) (xy 86.36 94.615))
-    (stroke (width 0) (type default))
-    (uuid ced3942e-d2c2-4914-bd13-696cc4d38f28)
-  )
-  (wire (pts (xy 74.93 102.235) (xy 86.36 102.235))
-    (stroke (width 0) (type default))
-    (uuid d0b6c5d3-ddb9-4a39-b9f0-c8aea0242e7e)
-  )
-  (wire (pts (xy 205.105 102.235) (xy 212.725 102.235))
-    (stroke (width 0) (type default))
-    (uuid db00529c-9a4c-4339-a8ff-1f3b18616a0e)
-  )
-  (wire (pts (xy 78.74 97.155) (xy 86.36 97.155))
-    (stroke (width 0) (type default))
-    (uuid dfd1706d-9414-45f6-870d-38e41695135d)
-  )
-  (wire (pts (xy 120.65 67.31) (xy 109.22 67.31))
-    (stroke (width 0) (type default))
-    (uuid e500e60c-30e6-48b8-8cca-82b6d8e99ffd)
-  )
-  (wire (pts (xy 184.785 102.235) (xy 192.405 102.235))
-    (stroke (width 0) (type default))
-    (uuid e5ad6fa9-15e5-47b1-ae72-d9732ce163c4)
-  )
-  (wire (pts (xy 116.84 89.535) (xy 149.225 89.535))
-    (stroke (width 0) (type default))
-    (uuid e8549487-7030-49fe-bb95-5fc6054e65da)
-  )
-  (wire (pts (xy 116.84 97.155) (xy 128.27 97.155))
-    (stroke (width 0) (type default))
-    (uuid ee0894a3-7836-4b79-b3cf-ebf272e49768)
-  )
-  (wire (pts (xy 78.74 92.075) (xy 86.36 92.075))
-    (stroke (width 0) (type default))
-    (uuid eebc0d2b-793b-4796-9d27-0a8b7f62e438)
-  )
-  (wire (pts (xy 205.105 95.885) (xy 212.725 95.885))
-    (stroke (width 0) (type default))
-    (uuid f0f79810-77e6-444a-829c-11427eb70b5c)
-  )
-  (wire (pts (xy 212.725 89.535) (xy 205.105 89.535))
-    (stroke (width 0) (type default))
-    (uuid f793fd85-495d-486f-a8c5-394cf3007a85)
-  )
-  (wire (pts (xy 116.84 102.235) (xy 128.27 102.235))
-    (stroke (width 0) (type default))
-    (uuid faff8f99-2bb2-4c9b-ab1d-f4bafd9fdbdd)
-  )
-
-  (rectangle (start 179.705 80.645) (end 180.975 80.645)
-    (stroke (width 0) (type default))
-    (fill (type none))
-    (uuid 07020cfa-66a3-458d-8a37-c0d34150efab)
-  )
-  (rectangle (start 179.705 111.125) (end 180.975 111.125)
-    (stroke (width 0) (type default))
-    (fill (type none))
-    (uuid 12319d57-423b-44a0-985b-d1f6013f69fc)
-  )
-  (rectangle (start 217.805 80.645) (end 217.805 111.125)
-    (stroke (width 0) (type default))
-    (fill (type none))
-    (uuid 3786dbd4-8a08-48c6-a094-9498179431de)
-  )
-  (rectangle (start 179.705 111.125) (end 179.705 80.645)
-    (stroke (width 0) (type default))
-    (fill (type none))
-    (uuid 499afc96-ded0-414b-b833-3c3bf11134c4)
-  )
-  (rectangle (start 175.895 108.585) (end 183.515 108.585)
-    (stroke (width 0) (type dot))
-    (fill (type none))
-    (uuid 59e2b7bc-fd8b-4352-a4ed-1ee67d59e3a8)
-  )
-  (rectangle (start 175.895 95.885) (end 183.515 95.885)
-    (stroke (width 0) (type dot))
-    (fill (type none))
-    (uuid 80e63c67-6bc3-4840-9931-6fbc1931cf92)
-  )
-  (rectangle (start 216.535 111.125) (end 217.805 111.125)
-    (stroke (width 0) (type default))
-    (fill (type none))
-    (uuid e9b7ab34-990f-4ceb-940b-d8f9f4de783e)
-  )
-  (rectangle (start 216.535 80.645) (end 217.805 80.645)
-    (stroke (width 0) (type default))
-    (fill (type none))
-    (uuid f3600112-cab0-4f81-83bf-12fb12b317b5)
-  )
-
-  (text "!POLARITY!" (at 174.625 96.52 0)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid 07a4f25c-8f1b-4830-a9fe-29f462ab6c78)
-  )
-  (text "!NON-POLAR!" (at 174.625 109.22 0)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid 6ef265cc-c1f6-43c0-b1db-da84aaa318a3)
-  )
-  (text "0.1u" (at 219.075 96.52 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid c60f7189-d8d4-4926-b6a5-f2495e4269e7)
-  )
-
-  (label "V+" (at 184.785 102.235 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 027971a8-aa82-40f4-aed2-50e73771ff7c)
-  )
-  (label "V-" (at 78.74 99.695 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 4de4d5ff-3c68-4fe1-b493-bfa467a29bdb)
-  )
-  (label "V+" (at 78.74 89.535 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 57d50a80-8ed3-41f9-a542-5738db3c75b1)
-  )
-  (label "C2+" (at 184.785 89.535 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 67ebc332-0cef-4775-a799-21d71e29e1e6)
-  )
-  (label "C1-" (at 78.74 92.075 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 802dbbd3-766f-478c-9856-1e5a1fa2397c)
-  )
-  (label "EN_3V3" (at 184.785 108.585 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 8150aa77-ef76-44c2-8340-ec7335fcced8)
-  )
-  (label "EN_3V3" (at 128.27 86.995 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid 950128f7-a996-4235-a415-483242967c82)
-  )
-  (label "EN_3V3" (at 120.65 67.31 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid 9f63e8e5-5397-43b9-9134-c136527423ba)
-  )
-  (label "C2-" (at 212.725 89.535 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid a27b65da-8e2a-4af0-8f32-85135a42f997)
-  )
-  (label "C1-" (at 212.725 83.185 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid b4d35a2a-89f6-4e3a-b34c-e0e4fef2f44c)
-  )
-  (label "C2+" (at 78.74 94.615 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid c8723387-45a3-46e3-a253-1993f08b7264)
-  )
-  (label "C1+" (at 78.74 86.995 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid ebe2e7ca-68c6-4046-bf33-8b547cfc06f0)
-  )
-  (label "V-" (at 184.785 95.885 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid f5187f3b-4a32-430c-a7ad-125cb913b16a)
-  )
-  (label "C2-" (at 78.74 97.155 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid f547165f-7046-4eb1-b09a-d34e1ff3456e)
-  )
-  (label "C1+" (at 184.785 83.185 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid fcba9fa8-647e-40e2-a0b7-3bafff6188f1)
-  )
-
-  (hierarchical_label "RTS" (shape input) (at 128.27 102.235 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 1c5dc82c-b003-4083-a1b4-63f15a75726e)
-  )
-  (hierarchical_label "RS232_RTS" (shape output) (at 74.93 102.235 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 1d096569-672a-4ef0-aaea-72197db94d8c)
-  )
-  (hierarchical_label "RX" (shape output) (at 128.27 97.155 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 3f4e7419-607e-424f-b635-3a8f71d3071a)
-  )
-  (hierarchical_label "RS232_RX" (shape output) (at 128.27 94.615 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 8dc0e5d6-73af-4106-9ca8-3b9e5296e5f5)
-  )
-  (hierarchical_label "RS232_TX" (shape output) (at 128.27 92.075 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid bf28723a-5dba-4ffb-938c-d3687e923280)
-  )
-  (hierarchical_label "RS232_CTS" (shape output) (at 74.93 104.775 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid ebed58e0-c1ac-4e22-899d-1fd0f4fbbf87)
-  )
-  (hierarchical_label "CTS" (shape output) (at 128.27 104.775 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid ec9ff147-1bbe-4fcd-840e-e43743b6bf54)
-  )
-  (hierarchical_label "EN" (shape input) (at 99.06 55.245 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid ecacfba5-39dd-44a7-892b-0a3809ad44df)
-  )
-  (hierarchical_label "TX" (shape input) (at 128.27 99.695 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid f33f3263-e0d1-47d3-a14a-214a8a6f5c19)
-  )
-
-  (symbol (lib_id "power:+3V3") (at 91.44 62.865 0) (mirror y) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 0f223c70-69ed-4f19-a89e-026932bb2157)
-    (property "Reference" "#PWR048" (at 91.44 66.675 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "+3V3" (at 91.44 59.3631 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 91.44 62.865 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 91.44 62.865 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 7144c4c4-95ba-4755-b500-3d1ae1d925b0))
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR048") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR064") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR074") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "SamacSys_Parts:CSD13380F3T") (at 104.14 59.69 90) (mirror x) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 1b2184bf-f0e3-4c0a-a177-1c213e9b6c67)
-    (property "Reference" "IC?" (at 101.6 71.5725 90)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "PMV20ENR" (at 101.6 73.4935 90)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "SamacSys_Parts:SOT95P230X110-3N" (at 101.6 76.2 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PMV20EN.pdf" (at 104.14 76.2 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Description" "MOSFET 30V N-channel Trench MOSFET" (at 106.68 76.2 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Height" "1.1" (at 109.22 76.2 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Name" "Nexperia" (at 111.76 76.2 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Part_Number" "PMV20ENR" (at 114.3 76.2 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Part Number" "771-PMV20ENR" (at 116.84 76.2 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nexperia/PMV20ENR?qs=sV%252BQJnSpgu%2FSnnW%252BQ4V7GA%3D%3D" (at 119.38 76.2 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Part Number" "PMV20ENR" (at 121.92 76.2 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/pmv20enr/nexperia?region=nac" (at 124.46 76.2 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Testing Part Number" "" (at 127 76.2 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Testing Price/Stock" "" (at 129.54 76.2 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (pin "1" (uuid 61a9ba91-db1c-44ab-bee9-040dd2f43fb5))
-    (pin "2" (uuid e59ca4cc-5353-4345-96fd-7e749078d353))
-    (pin "3" (uuid 1e3cccf2-8769-4e07-a86c-63dbf342a506))
-    (instances
-      (project "Oro Testbed v2"
-        (path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
-          (reference "IC?") (unit 1)
-        )
-        (path "/3d0fc623-63eb-45e5-a304-e470d9b3a173/62e8cddc-1c26-4fab-8954-689e69f767da"
-          (reference "IC22") (unit 1)
-        )
-      )
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "Q1") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/1b3eede1-74b0-4c0b-b4f1-7ec1bfc1f54f"
-          (reference "IC10") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "IC11") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "IC12") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "IC15") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:GND") (at 128.27 57.15 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 1b5a56b7-8d8e-450f-a82c-18d54506e0ea)
-    (property "Reference" "#PWR?" (at 128.27 63.5 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (at 128.27 60.96 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 128.27 57.15 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 128.27 57.15 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 49c6113b-d463-4da6-9101-6b6f4c77443d))
-    (instances
-      (project "Oro Testbed v2"
-        (path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/3d0fc623-63eb-45e5-a304-e470d9b3a173/62e8cddc-1c26-4fab-8954-689e69f767da"
-          (reference "#PWR089") (unit 1)
-        )
-      )
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "#PWR020") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/1b3eede1-74b0-4c0b-b4f1-7ec1bfc1f54f"
-          (reference "#PWR086") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "#PWR088") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "#PWR090") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR075") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "SamacSys_Parts:UUP1H0R1MCL1GS") (at 205.105 95.885 180) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 1cfa70f5-4f15-407d-99c1-ebb0ae512f1e)
-    (property "Reference" "C58" (at 203.835 97.155 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "0.1u" (at 194.945 94.615 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "CAPAE430X610N" (at 196.215 97.155 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Datasheet" "http://www.mouser.com/datasheet/2/293/e-uup-1513248.pdf" (at 196.215 94.615 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Description" "Aluminum Electrolytic Capacitors - SMD 35volts 0.1uF 85c 4X5.8" (at 196.215 92.075 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Height" "6.1" (at 196.215 89.535 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Name" "Nichicon" (at 196.215 86.995 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Part_Number" "UUP1H0R1MCL1GS" (at 196.215 84.455 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Part Number" "647-UUP1H0R1MCL1GS" (at 196.215 81.915 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nichicon/UUP1H0R1MCL1GS?qs=huzeVNXgovXvQmoxbanaNw%3D%3D" (at 196.215 79.375 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Part Number" "UUP1H0R1MCL1GS" (at 196.215 76.835 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/uup1h0r1mcl1gs/nichicon?region=nac" (at 196.215 74.295 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (pin "1" (uuid 88985c42-0e97-41c4-8387-6c605a955727))
-    (pin "2" (uuid 9471770c-93dd-4cb2-b00c-d97cf49ec639))
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "C58") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "SamacSys_Parts:SN75C3232EPWR") (at 86.36 86.995 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 22b29ed6-ab23-47a8-9234-ead086469d72)
-    (property "Reference" "IC14" (at 101.6 80.645 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "SN75C3232EPWR" (at 101.6 83.4169 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "SOP65P640X120-16N" (at 113.03 84.455 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Datasheet" "http://www.ti.com/lit/gpn/sn75c3232e" (at 113.03 86.995 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Description" "3-V To 5.5-V Two Channel RS-232 1 Mbit/s Line Driver/Receiver with +/-15 kV IEC ESD Protection" (at 113.03 89.535 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Height" "1.2" (at 113.03 92.075 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Name" "Texas Instruments" (at 113.03 94.615 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Part_Number" "SN75C3232EPWR" (at 113.03 97.155 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Part Number" "595-SN75C3232EPWR" (at 113.03 99.695 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Price/Stock" "https://www.mouser.com/Search/Refine.aspx?Keyword=595-SN75C3232EPWR" (at 113.03 102.235 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Part Number" "SN75C3232EPWR" (at 113.03 104.775 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/sn75c3232epwr/texas-instruments" (at 113.03 107.315 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (pin "1" (uuid f83d9029-c571-4aee-be66-992ee0e931d3))
-    (pin "10" (uuid 0acb3c03-7031-4e57-8927-59af1bb42783))
-    (pin "11" (uuid a80716b3-9ed3-4aad-b345-6b7632cfda47))
-    (pin "12" (uuid e1d3f0a4-4c62-46cd-b224-c65edbfa81e9))
-    (pin "13" (uuid a3a9f898-43d8-41c3-a01d-4e01a0b74439))
-    (pin "14" (uuid f80ccad0-9b2c-4051-88bf-f27693e91ff1))
-    (pin "15" (uuid 593becdf-a2a7-469d-8276-bdb85e1baf7e))
-    (pin "16" (uuid 0bbfc005-2b00-452e-abde-661ca75502e9))
-    (pin "2" (uuid 3b1384ee-6d86-4288-a9fd-9e9b85a81b19))
-    (pin "3" (uuid ce1d6f08-5551-434a-a343-62418291072b))
-    (pin "4" (uuid e999edca-5761-4fcc-bd26-d446abfda23c))
-    (pin "5" (uuid 0ff8076d-64b3-4f46-9ea6-5a26e9eaf8fe))
-    (pin "6" (uuid 9afceb3f-c9a8-4ecf-aa5a-83597bf1378d))
-    (pin "7" (uuid ce5aeb72-5932-4cf2-be01-040442293a6e))
-    (pin "8" (uuid 34ca4d39-f58c-48bd-8ee4-08b9f3d5dc0c))
-    (pin "9" (uuid fe207969-8815-43b7-9762-af71ef519c78))
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "IC14") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:GND") (at 149.225 89.535 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 57e2be60-c43c-4d0b-84e6-8d80384a06a8)
-    (property "Reference" "#PWR076" (at 149.225 95.885 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (at 149.225 93.6705 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 149.225 89.535 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 149.225 89.535 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 839c7abd-521a-4b46-afd4-98001422f5ed))
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR076") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "SamacSys_Parts:RK73H1ETTP1002F") (at 108.585 55.245 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 8bead07f-5ee6-4c97-afdd-e5c5d9c0d777)
-    (property "Reference" "R10" (at 117.475 50.8 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "10k" (at 119.38 52.705 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-    )
-    (property "Footprint" "RESC1005X40N" (at 122.555 53.975 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Datasheet" "http://www.koaspeer.com/catimages/Products/RK73-RT/RK73-RT.pdf" (at 122.555 56.515 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Description" "Resistor,ThickFilm1005,0.063W,10kohm" (at 122.555 59.055 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Height" "0.4" (at 122.555 61.595 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Name" "KOA Speer" (at 122.555 64.135 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Part_Number" "RK73H1ETTP1002F" (at 122.555 66.675 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Part Number" "660-RK73H1ETTP1002F" (at 122.555 69.215 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KOA-Speer/RK73H1ETTP1002F?qs=uLfVlVfCHH2OZ4JTybrBPQ%3D%3D" (at 122.555 71.755 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Part Number" "RK73H1ETTP1002F" (at 122.555 74.295 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/rk73h1ettp1002f/koa-speer-electronics?region=nac" (at 122.555 76.835 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Testing Part Number" "" (at 122.555 79.375 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Testing Price/Stock" "" (at 122.555 81.915 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (pin "1" (uuid da873add-2410-4657-ac90-d079bb9e4cb8))
-    (pin "2" (uuid 27ec8f69-e939-4576-9c33-09bbba5ee48f))
-    (instances
-      (project "Oro Testbed v2"
-        (path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
-          (reference "R10") (unit 1)
-        )
-        (path "/3d0fc623-63eb-45e5-a304-e470d9b3a173/7310340d-2c15-4c32-b17d-f4923dae9f8e"
-          (reference "R8") (unit 1)
-        )
-      )
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/1b3eede1-74b0-4c0b-b4f1-7ec1bfc1f54f"
-          (reference "R55") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
-          (reference "R56") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
-          (reference "R57") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/dd173832-34f8-47c0-be66-f527d6e2d134"
-          (reference "R34") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "R8") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "R57") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:GND") (at 212.725 113.665 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 8ed1e282-67fe-4aed-9863-8bee2d68bfd3)
-    (property "Reference" "#PWR077" (at 212.725 120.015 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (at 212.725 117.8005 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 212.725 113.665 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 212.725 113.665 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid fa068bff-82f7-490c-9a8c-3bc668582416))
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "#PWR077") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "SamacSys_Parts:UUP1H0R1MCL1GS") (at 192.405 102.235 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid b2fa6d01-135d-450b-8134-31289fee8542)
-    (property "Reference" "C56" (at 203.835 103.505 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "0.1u" (at 202.565 103.505 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "CAPAE430X610N" (at 201.295 100.965 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Datasheet" "http://www.mouser.com/datasheet/2/293/e-uup-1513248.pdf" (at 201.295 103.505 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Description" "Aluminum Electrolytic Capacitors - SMD 35volts 0.1uF 85c 4X5.8" (at 201.295 106.045 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Height" "6.1" (at 201.295 108.585 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Name" "Nichicon" (at 201.295 111.125 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Part_Number" "UUP1H0R1MCL1GS" (at 201.295 113.665 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Part Number" "647-UUP1H0R1MCL1GS" (at 201.295 116.205 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nichicon/UUP1H0R1MCL1GS?qs=huzeVNXgovXvQmoxbanaNw%3D%3D" (at 201.295 118.745 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Part Number" "UUP1H0R1MCL1GS" (at 201.295 121.285 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/uup1h0r1mcl1gs/nichicon?region=nac" (at 201.295 123.825 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (pin "1" (uuid 08d5630c-3c49-485f-827c-297c1e9174e7))
-    (pin "2" (uuid 5c6597b7-f09c-40ec-826c-b80c29c75613))
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "C56") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Oro:MSAST1L3YB5104KFNA01") (at 192.405 108.585 0) (mirror x) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid b813bcda-eee1-4632-99b1-ec7efc46bda2)
-    (property "Reference" "C16" (at 203.835 110.49 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "0.1u" (at 194.945 107.315 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "CAPC1005X33N" (at 201.295 109.855 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Datasheet" "https://www.mouser.de/datasheet/2/396/TaiyoYuden_MSAST1L3YB5104KFNA01_SS-3009733.pdf" (at 201.295 107.315 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 0402 25VDC 0.1uF 10% X5R" (at 201.295 104.775 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Height" "0.33" (at 201.295 102.235 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Name" "TAIYO YUDEN" (at 201.295 99.695 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Part_Number" "MSAST1L3YB5104KFNA01" (at 201.295 97.155 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Part Number" "963-MSAST1L3YB5104KF" (at 201.295 94.615 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Price/Stock" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/MSAST1L3YB5104KFNA01?qs=tlsG%2FOw5FFhBwK%252BMwEZpCA%3D%3D" (at 201.295 92.075 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Part Number" "" (at 201.295 89.535 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Price/Stock" "" (at 201.295 86.995 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (pin "1" (uuid af6e7ef4-e56e-4fcd-963f-c1e8294f7707))
-    (pin "2" (uuid a88661da-ba36-4dc9-baf6-91847ce12c89))
-    (instances
-      (project "Oro Testbed v2"
-        (path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
-          (reference "C16") (unit 1)
-        )
-      )
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/dd173832-34f8-47c0-be66-f527d6e2d134"
-          (reference "C13") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "C57") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "SamacSys_Parts:UUP1H0R1MCL1GS") (at 192.405 83.185 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid df2ffd48-73dd-4630-b51e-b397ba6d2f96)
-    (property "Reference" "C54" (at 203.835 84.455 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "0.1u" (at 202.565 84.455 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "CAPAE430X610N" (at 201.295 81.915 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Datasheet" "http://www.mouser.com/datasheet/2/293/e-uup-1513248.pdf" (at 201.295 84.455 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Description" "Aluminum Electrolytic Capacitors - SMD 35volts 0.1uF 85c 4X5.8" (at 201.295 86.995 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Height" "6.1" (at 201.295 89.535 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Name" "Nichicon" (at 201.295 92.075 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Part_Number" "UUP1H0R1MCL1GS" (at 201.295 94.615 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Part Number" "647-UUP1H0R1MCL1GS" (at 201.295 97.155 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nichicon/UUP1H0R1MCL1GS?qs=huzeVNXgovXvQmoxbanaNw%3D%3D" (at 201.295 99.695 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Part Number" "UUP1H0R1MCL1GS" (at 201.295 102.235 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/uup1h0r1mcl1gs/nichicon?region=nac" (at 201.295 104.775 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (pin "1" (uuid 27549311-c6a9-4418-8ec8-3e3e699d4b69))
-    (pin "2" (uuid cf8a36b9-f6e2-4b1b-b929-8d15b64923ec))
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "C54") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "SamacSys_Parts:UUP1H0R1MCL1GS") (at 192.405 89.535 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid f40cd09b-237b-4f7d-b25c-afbfc52ea367)
-    (property "Reference" "C55" (at 203.835 90.805 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "0.1u" (at 202.565 90.805 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "CAPAE430X610N" (at 201.295 88.265 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Datasheet" "http://www.mouser.com/datasheet/2/293/e-uup-1513248.pdf" (at 201.295 90.805 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Description" "Aluminum Electrolytic Capacitors - SMD 35volts 0.1uF 85c 4X5.8" (at 201.295 93.345 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Height" "6.1" (at 201.295 95.885 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Name" "Nichicon" (at 201.295 98.425 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Part_Number" "UUP1H0R1MCL1GS" (at 201.295 100.965 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Part Number" "647-UUP1H0R1MCL1GS" (at 201.295 103.505 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nichicon/UUP1H0R1MCL1GS?qs=huzeVNXgovXvQmoxbanaNw%3D%3D" (at 201.295 106.045 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Part Number" "UUP1H0R1MCL1GS" (at 201.295 108.585 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/uup1h0r1mcl1gs/nichicon?region=nac" (at 201.295 111.125 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (pin "1" (uuid c68b940d-8fc9-4db8-b8c6-c9260d66fa1c))
-    (pin "2" (uuid bb7a3b4d-422c-4392-a0e0-baeffac24778))
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
-          (reference "C55") (unit 1)
-        )
-      )
-    )
-  )
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "ffe571db-ea8d-4282-af34-5684a97c6779")
+	(paper "A4")
+	(title_block
+		(title "Oro Link")
+		(date "2023-07-15")
+		(rev "6")
+		(company "Oro Operating System")
+		(comment 1 "://oro.sh")
+		(comment 2 "Joshua Lee Junon")
+	)
+	(lib_symbols
+		(symbol "Oro:MSAST1L3YB5104KFNA01"
+			(pin_names
+				(offset 0.762)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 8.89 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "MSAST1L3YB5104KFNA01"
+				(at 8.89 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "CAPC1005X33N"
+				(at 8.89 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.mouser.de/datasheet/2/396/TaiyoYuden_MSAST1L3YB5104KFNA01_SS-3009733.pdf"
+				(at 8.89 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 0402 25VDC 0.1uF 10% X5R"
+				(at 8.89 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Height" "0.33"
+				(at 8.89 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "TAIYO YUDEN"
+				(at 8.89 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "MSAST1L3YB5104KFNA01"
+				(at 8.89 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "963-MSAST1L3YB5104KF"
+				(at 8.89 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/MSAST1L3YB5104KFNA01?qs=tlsG%2FOw5FFhBwK%252BMwEZpCA%3D%3D"
+				(at 8.89 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" ""
+				(at 8.89 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" ""
+				(at 8.89 -21.59 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(symbol "MSAST1L3YB5104KFNA01_0_0"
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 0 180)
+					(length 5.08)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "MSAST1L3YB5104KFNA01_0_1"
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 5.588 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.588 2.54) (xy 5.588 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.112 0) (xy 7.62 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.112 2.54) (xy 7.112 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
+		(symbol "SamacSys_Parts:CSD13380F3T"
+			(pin_names
+				(offset 0.762)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 11.43 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "CSD13380F3T"
+				(at 11.43 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "CSD13380F3T"
+				(at 11.43 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/csd13380f3.pdf?ts=1610053095577"
+				(at 11.43 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "12V, N ch NexFET MOSFET, single LGA0.6x0.7, 76mOhm"
+				(at 11.43 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Height" "0.35"
+				(at 11.43 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Texas Instruments"
+				(at 11.43 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "CSD13380F3T"
+				(at 11.43 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "595-CSD13380F3T"
+				(at 11.43 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/CSD13380F3T?qs=S8zVn2bBIh85Rpxp8sld8w%3D%3D"
+				(at 11.43 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" "CSD13380F3T"
+				(at 11.43 -21.59 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/csd13380f3t/texas-instruments"
+				(at 11.43 -24.13 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Testing Part Number" ""
+				(at 11.43 -26.67 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Testing Price/Stock" ""
+				(at 11.43 -29.21 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(symbol "CSD13380F3T_0_0"
+				(pin passive line
+					(at 0 0 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -5.08 90)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 10.16 270)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "CSD13380F3T_0_1"
+				(polyline
+					(pts
+						(xy 5.842 -0.508) (xy 5.842 0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.842 0) (xy 7.62 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.842 2.032) (xy 5.842 3.048)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.842 5.588) (xy 5.842 4.572)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 2.54) (xy 5.842 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 2.54) (xy 7.62 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 5.08) (xy 5.842 5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 5.08) (xy 7.62 7.62)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 5.08 0) (xy 5.08 5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.842 2.54) (xy 6.858 3.048) (xy 6.858 2.032) (xy 5.842 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 6.35 2.54)
+					(radius 3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
+		(symbol "SamacSys_Parts:RK73H1ETTP1002F"
+			(pin_names
+				(offset 0.762)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 13.97 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "RK73H1ETTP1002F"
+				(at 13.97 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "RESC1005X40N"
+				(at 13.97 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.koaspeer.com/catimages/Products/RK73-RT/RK73-RT.pdf"
+				(at 13.97 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor,ThickFilm1005,0.063W,10kohm"
+				(at 13.97 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Height" "0.4"
+				(at 13.97 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "KOA Speer"
+				(at 13.97 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "RK73H1ETTP1002F"
+				(at 13.97 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "660-RK73H1ETTP1002F"
+				(at 13.97 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KOA-Speer/RK73H1ETTP1002F?qs=uLfVlVfCHH2OZ4JTybrBPQ%3D%3D"
+				(at 13.97 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" "RK73H1ETTP1002F"
+				(at 13.97 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/rk73h1ettp1002f/koa-speer-electronics?region=nac"
+				(at 13.97 -21.59 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(symbol "RK73H1ETTP1002F_0_0"
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 17.78 0 180)
+					(length 5.08)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "RK73H1ETTP1002F_0_1"
+				(polyline
+					(pts
+						(xy 5.08 1.27) (xy 12.7 1.27) (xy 12.7 -1.27) (xy 5.08 -1.27) (xy 5.08 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
+		(symbol "SamacSys_Parts:SN75C3232EPWR"
+			(pin_names
+				(offset 0.762)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "IC"
+				(at 26.67 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SN75C3232EPWR"
+				(at 26.67 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "SOP65P640X120-16N"
+				(at 26.67 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/gpn/sn75c3232e"
+				(at 26.67 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "3-V To 5.5-V Two Channel RS-232 1 Mbit/s Line Driver/Receiver with +/-15 kV IEC ESD Protection"
+				(at 26.67 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Height" "1.2"
+				(at 26.67 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Texas Instruments"
+				(at 26.67 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "SN75C3232EPWR"
+				(at 26.67 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "595-SN75C3232EPWR"
+				(at 26.67 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.com/Search/Refine.aspx?Keyword=595-SN75C3232EPWR"
+				(at 26.67 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" "SN75C3232EPWR"
+				(at 26.67 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/sn75c3232epwr/texas-instruments"
+				(at 26.67 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(symbol "SN75C3232EPWR_0_0"
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "C1+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -15.24 180)
+					(length 5.08)
+					(name "DIN2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -12.7 180)
+					(length 5.08)
+					(name "DIN1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -10.16 180)
+					(length 5.08)
+					(name "ROUT1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -7.62 180)
+					(length 5.08)
+					(name "RIN1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -5.08 180)
+					(length 5.08)
+					(name "DOUT1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -2.54 180)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 0 180)
+					(length 5.08)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "C1-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 0)
+					(length 5.08)
+					(name "C2+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -10.16 0)
+					(length 5.08)
+					(name "C2-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -12.7 0)
+					(length 5.08)
+					(name "V-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -15.24 0)
+					(length 5.08)
+					(name "DOUT2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -17.78 0)
+					(length 5.08)
+					(name "RIN2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -17.78 180)
+					(length 5.08)
+					(name "ROUT2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "SN75C3232EPWR_0_1"
+				(polyline
+					(pts
+						(xy 5.08 2.54) (xy 25.4 2.54) (xy 25.4 -20.32) (xy 5.08 -20.32) (xy 5.08 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
+		(symbol "SamacSys_Parts:UUP1H0R1MCL1GS"
+			(pin_names
+				(offset 0.762)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 8.89 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "UUP1H0R1MCL1GS"
+				(at 8.89 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "CAPAE430X610N"
+				(at 8.89 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.mouser.com/datasheet/2/293/e-uup-1513248.pdf"
+				(at 8.89 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "Aluminum Electrolytic Capacitors - SMD 35volts 0.1uF 85c 4X5.8"
+				(at 8.89 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Height" "6.1"
+				(at 8.89 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Nichicon"
+				(at 8.89 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "UUP1H0R1MCL1GS"
+				(at 8.89 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "647-UUP1H0R1MCL1GS"
+				(at 8.89 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nichicon/UUP1H0R1MCL1GS?qs=huzeVNXgovXvQmoxbanaNw%3D%3D"
+				(at 8.89 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" "UUP1H0R1MCL1GS"
+				(at 8.89 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/uup1h0r1mcl1gs/nichicon?region=nac"
+				(at 8.89 -21.59 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(symbol "UUP1H0R1MCL1GS_0_0"
+				(pin passive line
+					(at 0 0 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "UUP1H0R1MCL1GS_0_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.064 1.778) (xy 4.064 0.762)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.572 1.27) (xy 3.556 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 0) (xy 10.16 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 2.54) (xy 5.08 -2.54) (xy 5.842 -2.54) (xy 5.842 2.54) (xy 5.08 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 2.54) (xy 7.62 -2.54) (xy 6.858 -2.54) (xy 6.858 2.54) (xy 7.62 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+		)
+		(symbol "power:+3V3"
+			(power)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+3V3"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+3V3\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+3V3_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3V3_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0) hide
+					(name "+3V3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0) hide
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 104.14 55.245)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a11b1d7e-f885-4824-873f-d1b83e0a08dc")
+	)
+	(junction
+		(at 212.725 102.235)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b153dc2d-d720-43ec-88cd-b04d77d5f3ce")
+	)
+	(junction
+		(at 212.725 108.585)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b380e257-24d3-4bf0-b764-a5f06fd40e65")
+	)
+	(wire
+		(pts
+			(xy 116.84 92.075) (xy 128.27 92.075)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d66be49-115c-4321-8d3d-7b2cb961fd8f")
+	)
+	(wire
+		(pts
+			(xy 116.84 86.995) (xy 128.27 86.995)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b0c3fa9-1932-4ba2-8d7a-bcb433e418d2")
+	)
+	(wire
+		(pts
+			(xy 91.44 62.865) (xy 91.44 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26610666-1387-4745-8704-5704c8f03053")
+	)
+	(wire
+		(pts
+			(xy 212.725 108.585) (xy 212.725 113.665)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29cabc9a-878d-465c-9412-f8e0cab649bf")
+	)
+	(wire
+		(pts
+			(xy 128.27 55.245) (xy 128.27 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c419f0b-f465-4afa-a96e-9bcf136ce129")
+	)
+	(wire
+		(pts
+			(xy 104.14 55.245) (xy 104.14 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4737765d-9db5-4b3f-86c4-8bfb92af9031")
+	)
+	(wire
+		(pts
+			(xy 104.14 55.245) (xy 99.06 55.245)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a06f52a-a253-4e85-abb5-01ce036d576b")
+	)
+	(wire
+		(pts
+			(xy 184.785 95.885) (xy 192.405 95.885)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a90b78b-84a2-4ac3-b08d-cdfd9d8e9e9f")
+	)
+	(wire
+		(pts
+			(xy 78.74 99.695) (xy 86.36 99.695)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54c9216b-6402-4cb4-b3ec-752b7de18684")
+	)
+	(wire
+		(pts
+			(xy 126.365 55.245) (xy 128.27 55.245)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a925d6f-72e6-4d24-90ba-34dccd054f6c")
+	)
+	(wire
+		(pts
+			(xy 78.74 89.535) (xy 86.36 89.535)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74f55c40-c75f-467d-b906-b59b2e947972")
+	)
+	(wire
+		(pts
+			(xy 78.74 86.995) (xy 86.36 86.995)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7861e053-1ad7-46cc-b028-a5bbab378503")
+	)
+	(wire
+		(pts
+			(xy 116.84 99.695) (xy 128.27 99.695)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8645fbb3-9702-416a-a4e3-c3062d2762ed")
+	)
+	(wire
+		(pts
+			(xy 184.785 83.185) (xy 192.405 83.185)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a5f2cd1-0aed-4eca-be28-dc1793b060a9")
+	)
+	(wire
+		(pts
+			(xy 212.725 102.235) (xy 212.725 108.585)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d110a4d-f5e7-4fa0-852f-5db4e844cb13")
+	)
+	(wire
+		(pts
+			(xy 212.725 95.885) (xy 212.725 102.235)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8eae00b2-2df2-40ec-b89e-3c876c232e7e")
+	)
+	(wire
+		(pts
+			(xy 184.785 108.585) (xy 192.405 108.585)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "929d0e65-4d02-4321-bb2e-7ca3885a5688")
+	)
+	(wire
+		(pts
+			(xy 212.725 83.185) (xy 205.105 83.185)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a227bb33-6892-4d21-b53c-9d30ebab5d55")
+	)
+	(wire
+		(pts
+			(xy 116.84 104.775) (xy 128.27 104.775)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7dfe36c-1d51-4736-b51f-624643250141")
+	)
+	(wire
+		(pts
+			(xy 116.84 94.615) (xy 128.27 94.615)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b40f1fac-b93b-4991-84a3-b123677d802f")
+	)
+	(wire
+		(pts
+			(xy 74.93 104.775) (xy 86.36 104.775)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bea4811b-58fc-4441-a23b-f6ab9ad2145d")
+	)
+	(wire
+		(pts
+			(xy 91.44 67.31) (xy 93.98 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4f08b43-d1a3-43a8-9b9c-a0893d2ba8cf")
+	)
+	(wire
+		(pts
+			(xy 108.585 55.245) (xy 104.14 55.245)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c865440e-f257-4f38-9426-2392071a6fc6")
+	)
+	(wire
+		(pts
+			(xy 184.785 89.535) (xy 192.405 89.535)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c998962b-2f7d-4cf4-959c-06d0f8d5b77d")
+	)
+	(wire
+		(pts
+			(xy 205.105 108.585) (xy 212.725 108.585)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc7b822b-2b20-4784-a541-d025b7de2665")
+	)
+	(wire
+		(pts
+			(xy 78.74 94.615) (xy 86.36 94.615)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ced3942e-d2c2-4914-bd13-696cc4d38f28")
+	)
+	(wire
+		(pts
+			(xy 74.93 102.235) (xy 86.36 102.235)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0b6c5d3-ddb9-4a39-b9f0-c8aea0242e7e")
+	)
+	(wire
+		(pts
+			(xy 205.105 102.235) (xy 212.725 102.235)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db00529c-9a4c-4339-a8ff-1f3b18616a0e")
+	)
+	(wire
+		(pts
+			(xy 78.74 97.155) (xy 86.36 97.155)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfd1706d-9414-45f6-870d-38e41695135d")
+	)
+	(wire
+		(pts
+			(xy 120.65 67.31) (xy 109.22 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e500e60c-30e6-48b8-8cca-82b6d8e99ffd")
+	)
+	(wire
+		(pts
+			(xy 184.785 102.235) (xy 192.405 102.235)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5ad6fa9-15e5-47b1-ae72-d9732ce163c4")
+	)
+	(wire
+		(pts
+			(xy 116.84 89.535) (xy 149.225 89.535)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8549487-7030-49fe-bb95-5fc6054e65da")
+	)
+	(wire
+		(pts
+			(xy 116.84 97.155) (xy 128.27 97.155)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee0894a3-7836-4b79-b3cf-ebf272e49768")
+	)
+	(wire
+		(pts
+			(xy 78.74 92.075) (xy 86.36 92.075)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eebc0d2b-793b-4796-9d27-0a8b7f62e438")
+	)
+	(wire
+		(pts
+			(xy 205.105 95.885) (xy 212.725 95.885)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0f79810-77e6-444a-829c-11427eb70b5c")
+	)
+	(wire
+		(pts
+			(xy 212.725 89.535) (xy 205.105 89.535)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f793fd85-495d-486f-a8c5-394cf3007a85")
+	)
+	(wire
+		(pts
+			(xy 116.84 102.235) (xy 128.27 102.235)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "faff8f99-2bb2-4c9b-ab1d-f4bafd9fdbdd")
+	)
+	(rectangle
+		(start 179.705 80.645)
+		(end 180.975 80.645)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 07020cfa-66a3-458d-8a37-c0d34150efab)
+	)
+	(rectangle
+		(start 179.705 111.125)
+		(end 180.975 111.125)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 12319d57-423b-44a0-985b-d1f6013f69fc)
+	)
+	(rectangle
+		(start 217.805 80.645)
+		(end 217.805 111.125)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 3786dbd4-8a08-48c6-a094-9498179431de)
+	)
+	(rectangle
+		(start 179.705 111.125)
+		(end 179.705 80.645)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 499afc96-ded0-414b-b833-3c3bf11134c4)
+	)
+	(rectangle
+		(start 175.895 108.585)
+		(end 183.515 108.585)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 59e2b7bc-fd8b-4352-a4ed-1ee67d59e3a8)
+	)
+	(rectangle
+		(start 175.895 95.885)
+		(end 183.515 95.885)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 80e63c67-6bc3-4840-9931-6fbc1931cf92)
+	)
+	(rectangle
+		(start 216.535 111.125)
+		(end 217.805 111.125)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid e9b7ab34-990f-4ceb-940b-d8f9f4de783e)
+	)
+	(rectangle
+		(start 216.535 80.645)
+		(end 217.805 80.645)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid f3600112-cab0-4f81-83bf-12fb12b317b5)
+	)
+	(text "!POLARITY!"
+		(exclude_from_sim no)
+		(at 174.625 96.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "07a4f25c-8f1b-4830-a9fe-29f462ab6c78")
+	)
+	(text "!NON-POLAR!"
+		(exclude_from_sim no)
+		(at 174.625 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6ef265cc-c1f6-43c0-b1db-da84aaa318a3")
+	)
+	(text "0.1u"
+		(exclude_from_sim no)
+		(at 219.075 96.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c60f7189-d8d4-4926-b6a5-f2495e4269e7")
+	)
+	(label "V+"
+		(at 184.785 102.235 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "027971a8-aa82-40f4-aed2-50e73771ff7c")
+	)
+	(label "V-"
+		(at 78.74 99.695 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4de4d5ff-3c68-4fe1-b493-bfa467a29bdb")
+	)
+	(label "V+"
+		(at 78.74 89.535 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "57d50a80-8ed3-41f9-a542-5738db3c75b1")
+	)
+	(label "C2+"
+		(at 184.785 89.535 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "67ebc332-0cef-4775-a799-21d71e29e1e6")
+	)
+	(label "C1-"
+		(at 78.74 92.075 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "802dbbd3-766f-478c-9856-1e5a1fa2397c")
+	)
+	(label "EN_3V3"
+		(at 184.785 108.585 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8150aa77-ef76-44c2-8340-ec7335fcced8")
+	)
+	(label "EN_3V3"
+		(at 128.27 86.995 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "950128f7-a996-4235-a415-483242967c82")
+	)
+	(label "EN_3V3"
+		(at 120.65 67.31 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9f63e8e5-5397-43b9-9134-c136527423ba")
+	)
+	(label "C2-"
+		(at 212.725 89.535 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a27b65da-8e2a-4af0-8f32-85135a42f997")
+	)
+	(label "C1-"
+		(at 212.725 83.185 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b4d35a2a-89f6-4e3a-b34c-e0e4fef2f44c")
+	)
+	(label "C2+"
+		(at 78.74 94.615 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c8723387-45a3-46e3-a253-1993f08b7264")
+	)
+	(label "C1+"
+		(at 78.74 86.995 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ebe2e7ca-68c6-4046-bf33-8b547cfc06f0")
+	)
+	(label "V-"
+		(at 184.785 95.885 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f5187f3b-4a32-430c-a7ad-125cb913b16a")
+	)
+	(label "C2-"
+		(at 78.74 97.155 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f547165f-7046-4eb1-b09a-d34e1ff3456e")
+	)
+	(label "C1+"
+		(at 184.785 83.185 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fcba9fa8-647e-40e2-a0b7-3bafff6188f1")
+	)
+	(hierarchical_label "RTS"
+		(shape input)
+		(at 128.27 102.235 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1c5dc82c-b003-4083-a1b4-63f15a75726e")
+	)
+	(hierarchical_label "RS232_RTS"
+		(shape output)
+		(at 74.93 102.235 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1d096569-672a-4ef0-aaea-72197db94d8c")
+	)
+	(hierarchical_label "RX"
+		(shape output)
+		(at 128.27 97.155 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3f4e7419-607e-424f-b635-3a8f71d3071a")
+	)
+	(hierarchical_label "RS232_RX"
+		(shape output)
+		(at 128.27 94.615 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8dc0e5d6-73af-4106-9ca8-3b9e5296e5f5")
+	)
+	(hierarchical_label "RS232_TX"
+		(shape output)
+		(at 128.27 92.075 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bf28723a-5dba-4ffb-938c-d3687e923280")
+	)
+	(hierarchical_label "RS232_CTS"
+		(shape output)
+		(at 74.93 104.775 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ebed58e0-c1ac-4e22-899d-1fd0f4fbbf87")
+	)
+	(hierarchical_label "CTS"
+		(shape output)
+		(at 128.27 104.775 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ec9ff147-1bbe-4fcd-840e-e43743b6bf54")
+	)
+	(hierarchical_label "EN"
+		(shape input)
+		(at 99.06 55.245 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ecacfba5-39dd-44a7-892b-0a3809ad44df")
+	)
+	(hierarchical_label "TX"
+		(shape input)
+		(at 128.27 99.695 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f33f3263-e0d1-47d3-a14a-214a8a6f5c19")
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 91.44 62.865 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0f223c70-69ed-4f19-a89e-026932bb2157")
+		(property "Reference" "#PWR074"
+			(at 91.44 66.675 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 91.44 59.3631 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 62.865 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 62.865 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 62.865 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7144c4c4-95ba-4755-b500-3d1ae1d925b0")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
+					(reference "#PWR074")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SamacSys_Parts:CSD13380F3T")
+		(at 104.14 59.69 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1b2184bf-f0e3-4c0a-a177-1c213e9b6c67")
+		(property "Reference" "IC?"
+			(at 101.6 71.5725 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PMV20ENR"
+			(at 101.6 73.4935 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "SamacSys_Parts:SOT95P230X110-3N"
+			(at 101.6 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PMV20EN.pdf"
+			(at 104.14 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "MOSFET 30V N-channel Trench MOSFET"
+			(at 106.68 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.1"
+			(at 109.22 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Nexperia"
+			(at 111.76 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "PMV20ENR"
+			(at 114.3 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "771-PMV20ENR"
+			(at 116.84 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nexperia/PMV20ENR?qs=sV%252BQJnSpgu%2FSnnW%252BQ4V7GA%3D%3D"
+			(at 119.38 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "PMV20ENR"
+			(at 121.92 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/pmv20enr/nexperia?region=nac"
+			(at 124.46 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Testing Part Number" ""
+			(at 127 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Testing Price/Stock" ""
+			(at 129.54 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "61a9ba91-db1c-44ab-bee9-040dd2f43fb5")
+		)
+		(pin "2"
+			(uuid "e59ca4cc-5353-4345-96fd-7e749078d353")
+		)
+		(pin "3"
+			(uuid "1e3cccf2-8769-4e07-a86c-63dbf342a506")
+		)
+		(instances
+			(project "Oro Testbed v2"
+				(path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
+					(reference "IC?")
+					(unit 1)
+				)
+				(path "/3d0fc623-63eb-45e5-a304-e470d9b3a173/62e8cddc-1c26-4fab-8954-689e69f767da"
+					(reference "IC22")
+					(unit 1)
+				)
+			)
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
+					(reference "IC15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 128.27 57.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1b5a56b7-8d8e-450f-a82c-18d54506e0ea")
+		(property "Reference" "#PWR?"
+			(at 128.27 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 128.27 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 128.27 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 128.27 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 128.27 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "49c6113b-d463-4da6-9101-6b6f4c77443d")
+		)
+		(instances
+			(project "Oro Testbed v2"
+				(path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
+					(reference "#PWR?")
+					(unit 1)
+				)
+				(path "/3d0fc623-63eb-45e5-a304-e470d9b3a173/62e8cddc-1c26-4fab-8954-689e69f767da"
+					(reference "#PWR089")
+					(unit 1)
+				)
+			)
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
+					(reference "#PWR075")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SamacSys_Parts:UUP1H0R1MCL1GS")
+		(at 205.105 95.885 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1cfa70f5-4f15-407d-99c1-ebb0ae512f1e")
+		(property "Reference" "C58"
+			(at 203.835 97.155 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 194.945 94.615 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "CAPAE430X610N"
+			(at 196.215 97.155 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.mouser.com/datasheet/2/293/e-uup-1513248.pdf"
+			(at 196.215 94.615 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Aluminum Electrolytic Capacitors - SMD 35volts 0.1uF 85c 4X5.8"
+			(at 196.215 92.075 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "6.1"
+			(at 196.215 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Nichicon"
+			(at 196.215 86.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "UUP1H0R1MCL1GS"
+			(at 196.215 84.455 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "647-UUP1H0R1MCL1GS"
+			(at 196.215 81.915 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nichicon/UUP1H0R1MCL1GS?qs=huzeVNXgovXvQmoxbanaNw%3D%3D"
+			(at 196.215 79.375 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "UUP1H0R1MCL1GS"
+			(at 196.215 76.835 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/uup1h0r1mcl1gs/nichicon?region=nac"
+			(at 196.215 74.295 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "88985c42-0e97-41c4-8387-6c605a955727")
+		)
+		(pin "2"
+			(uuid "9471770c-93dd-4cb2-b00c-d97cf49ec639")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
+					(reference "C58")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SamacSys_Parts:SN75C3232EPWR")
+		(at 86.36 86.995 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "22b29ed6-ab23-47a8-9234-ead086469d72")
+		(property "Reference" "IC14"
+			(at 101.6 80.645 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SN75C3232EPWR"
+			(at 101.6 83.4169 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "SOP65P640X120-16N"
+			(at 113.03 84.455 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/gpn/sn75c3232e"
+			(at 113.03 86.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "3-V To 5.5-V Two Channel RS-232 1 Mbit/s Line Driver/Receiver with +/-15 kV IEC ESD Protection"
+			(at 113.03 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.2"
+			(at 113.03 92.075 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Texas Instruments"
+			(at 113.03 94.615 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SN75C3232EPWR"
+			(at 113.03 97.155 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "595-SN75C3232EPWR"
+			(at 113.03 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.com/Search/Refine.aspx?Keyword=595-SN75C3232EPWR"
+			(at 113.03 102.235 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "SN75C3232EPWR"
+			(at 113.03 104.775 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/sn75c3232epwr/texas-instruments"
+			(at 113.03 107.315 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f83d9029-c571-4aee-be66-992ee0e931d3")
+		)
+		(pin "10"
+			(uuid "0acb3c03-7031-4e57-8927-59af1bb42783")
+		)
+		(pin "11"
+			(uuid "a80716b3-9ed3-4aad-b345-6b7632cfda47")
+		)
+		(pin "12"
+			(uuid "e1d3f0a4-4c62-46cd-b224-c65edbfa81e9")
+		)
+		(pin "13"
+			(uuid "a3a9f898-43d8-41c3-a01d-4e01a0b74439")
+		)
+		(pin "14"
+			(uuid "f80ccad0-9b2c-4051-88bf-f27693e91ff1")
+		)
+		(pin "15"
+			(uuid "593becdf-a2a7-469d-8276-bdb85e1baf7e")
+		)
+		(pin "16"
+			(uuid "0bbfc005-2b00-452e-abde-661ca75502e9")
+		)
+		(pin "2"
+			(uuid "3b1384ee-6d86-4288-a9fd-9e9b85a81b19")
+		)
+		(pin "3"
+			(uuid "ce1d6f08-5551-434a-a343-62418291072b")
+		)
+		(pin "4"
+			(uuid "e999edca-5761-4fcc-bd26-d446abfda23c")
+		)
+		(pin "5"
+			(uuid "0ff8076d-64b3-4f46-9ea6-5a26e9eaf8fe")
+		)
+		(pin "6"
+			(uuid "9afceb3f-c9a8-4ecf-aa5a-83597bf1378d")
+		)
+		(pin "7"
+			(uuid "ce5aeb72-5932-4cf2-be01-040442293a6e")
+		)
+		(pin "8"
+			(uuid "34ca4d39-f58c-48bd-8ee4-08b9f3d5dc0c")
+		)
+		(pin "9"
+			(uuid "fe207969-8815-43b7-9762-af71ef519c78")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
+					(reference "IC14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 149.225 89.535 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "57e2be60-c43c-4d0b-84e6-8d80384a06a8")
+		(property "Reference" "#PWR076"
+			(at 149.225 95.885 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 149.225 93.6705 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.225 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.225 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 149.225 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "839c7abd-521a-4b46-afd4-98001422f5ed")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
+					(reference "#PWR076")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SamacSys_Parts:RK73H1ETTP1002F")
+		(at 108.585 55.245 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8bead07f-5ee6-4c97-afdd-e5c5d9c0d777")
+		(property "Reference" "R10"
+			(at 117.475 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 119.38 52.705 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "RESC1005X40N"
+			(at 122.555 53.975 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.koaspeer.com/catimages/Products/RK73-RT/RK73-RT.pdf"
+			(at 122.555 56.515 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor,ThickFilm1005,0.063W,10kohm"
+			(at 122.555 59.055 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "0.4"
+			(at 122.555 61.595 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "KOA Speer"
+			(at 122.555 64.135 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RK73H1ETTP1002F"
+			(at 122.555 66.675 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "660-RK73H1ETTP1002F"
+			(at 122.555 69.215 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KOA-Speer/RK73H1ETTP1002F?qs=uLfVlVfCHH2OZ4JTybrBPQ%3D%3D"
+			(at 122.555 71.755 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "RK73H1ETTP1002F"
+			(at 122.555 74.295 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/rk73h1ettp1002f/koa-speer-electronics?region=nac"
+			(at 122.555 76.835 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Testing Part Number" ""
+			(at 122.555 79.375 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Testing Price/Stock" ""
+			(at 122.555 81.915 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "da873add-2410-4657-ac90-d079bb9e4cb8")
+		)
+		(pin "2"
+			(uuid "27ec8f69-e939-4576-9c33-09bbba5ee48f")
+		)
+		(instances
+			(project "Oro Testbed v2"
+				(path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
+					(reference "R10")
+					(unit 1)
+				)
+				(path "/3d0fc623-63eb-45e5-a304-e470d9b3a173/7310340d-2c15-4c32-b17d-f4923dae9f8e"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
+					(reference "R57")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 212.725 113.665 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8ed1e282-67fe-4aed-9863-8bee2d68bfd3")
+		(property "Reference" "#PWR077"
+			(at 212.725 120.015 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 212.725 117.8005 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 212.725 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 212.725 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 212.725 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fa068bff-82f7-490c-9a8c-3bc668582416")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
+					(reference "#PWR077")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SamacSys_Parts:UUP1H0R1MCL1GS")
+		(at 192.405 102.235 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b2fa6d01-135d-450b-8134-31289fee8542")
+		(property "Reference" "C56"
+			(at 203.835 103.505 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 202.565 103.505 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "CAPAE430X610N"
+			(at 201.295 100.965 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.mouser.com/datasheet/2/293/e-uup-1513248.pdf"
+			(at 201.295 103.505 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Aluminum Electrolytic Capacitors - SMD 35volts 0.1uF 85c 4X5.8"
+			(at 201.295 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "6.1"
+			(at 201.295 108.585 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Nichicon"
+			(at 201.295 111.125 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "UUP1H0R1MCL1GS"
+			(at 201.295 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "647-UUP1H0R1MCL1GS"
+			(at 201.295 116.205 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nichicon/UUP1H0R1MCL1GS?qs=huzeVNXgovXvQmoxbanaNw%3D%3D"
+			(at 201.295 118.745 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "UUP1H0R1MCL1GS"
+			(at 201.295 121.285 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/uup1h0r1mcl1gs/nichicon?region=nac"
+			(at 201.295 123.825 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "08d5630c-3c49-485f-827c-297c1e9174e7")
+		)
+		(pin "2"
+			(uuid "5c6597b7-f09c-40ec-826c-b80c29c75613")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
+					(reference "C56")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:MSAST1L3YB5104KFNA01")
+		(at 192.405 108.585 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b813bcda-eee1-4632-99b1-ec7efc46bda2")
+		(property "Reference" "C16"
+			(at 203.835 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 194.945 107.315 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "CAPC1005X33N"
+			(at 201.295 109.855 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/TaiyoYuden_MSAST1L3YB5104KFNA01_SS-3009733.pdf"
+			(at 201.295 107.315 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 0402 25VDC 0.1uF 10% X5R"
+			(at 201.295 104.775 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "0.33"
+			(at 201.295 102.235 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "TAIYO YUDEN"
+			(at 201.295 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "MSAST1L3YB5104KFNA01"
+			(at 201.295 97.155 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "963-MSAST1L3YB5104KF"
+			(at 201.295 94.615 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/MSAST1L3YB5104KFNA01?qs=tlsG%2FOw5FFhBwK%252BMwEZpCA%3D%3D"
+			(at 201.295 92.075 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 201.295 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 201.295 86.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "af6e7ef4-e56e-4fcd-963f-c1e8294f7707")
+		)
+		(pin "2"
+			(uuid "a88661da-ba36-4dc9-baf6-91847ce12c89")
+		)
+		(instances
+			(project "Oro Testbed v2"
+				(path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
+					(reference "C16")
+					(unit 1)
+				)
+			)
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
+					(reference "C57")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SamacSys_Parts:UUP1H0R1MCL1GS")
+		(at 192.405 83.185 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "df2ffd48-73dd-4630-b51e-b397ba6d2f96")
+		(property "Reference" "C54"
+			(at 203.835 84.455 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 202.565 84.455 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "CAPAE430X610N"
+			(at 201.295 81.915 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.mouser.com/datasheet/2/293/e-uup-1513248.pdf"
+			(at 201.295 84.455 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Aluminum Electrolytic Capacitors - SMD 35volts 0.1uF 85c 4X5.8"
+			(at 201.295 86.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "6.1"
+			(at 201.295 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Nichicon"
+			(at 201.295 92.075 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "UUP1H0R1MCL1GS"
+			(at 201.295 94.615 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "647-UUP1H0R1MCL1GS"
+			(at 201.295 97.155 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nichicon/UUP1H0R1MCL1GS?qs=huzeVNXgovXvQmoxbanaNw%3D%3D"
+			(at 201.295 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "UUP1H0R1MCL1GS"
+			(at 201.295 102.235 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/uup1h0r1mcl1gs/nichicon?region=nac"
+			(at 201.295 104.775 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "27549311-c6a9-4418-8ec8-3e3e699d4b69")
+		)
+		(pin "2"
+			(uuid "cf8a36b9-f6e2-4b1b-b929-8d15b64923ec")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
+					(reference "C54")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SamacSys_Parts:UUP1H0R1MCL1GS")
+		(at 192.405 89.535 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f40cd09b-237b-4f7d-b25c-afbfc52ea367")
+		(property "Reference" "C55"
+			(at 203.835 90.805 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 202.565 90.805 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "CAPAE430X610N"
+			(at 201.295 88.265 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.mouser.com/datasheet/2/293/e-uup-1513248.pdf"
+			(at 201.295 90.805 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Aluminum Electrolytic Capacitors - SMD 35volts 0.1uF 85c 4X5.8"
+			(at 201.295 93.345 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "6.1"
+			(at 201.295 95.885 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Nichicon"
+			(at 201.295 98.425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "UUP1H0R1MCL1GS"
+			(at 201.295 100.965 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "647-UUP1H0R1MCL1GS"
+			(at 201.295 103.505 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nichicon/UUP1H0R1MCL1GS?qs=huzeVNXgovXvQmoxbanaNw%3D%3D"
+			(at 201.295 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "UUP1H0R1MCL1GS"
+			(at 201.295 108.585 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/uup1h0r1mcl1gs/nichicon?region=nac"
+			(at 201.295 111.125 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c68b940d-8fc9-4db8-b8c6-c9260d66fa1c")
+		)
+		(pin "2"
+			(uuid "bb7a3b4d-422c-4392-a0e0-baeffac24778")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/a5104146-06a0-496e-bda0-1e4731a261c3"
+					(reference "C55")
+					(unit 1)
+				)
+			)
+		)
+	)
 )

@@ -159,6 +159,8 @@ pub async fn main(spawner: Spawner) -> ! {
 	spawner.must_spawn(debug_led_task(debug_led));
 	spawner.must_spawn(monitor_task(monitor_receiver, monitor));
 
+	system.transition_power_state(PowerState::Standby);
+
 	monitor.lock().await.set_scene(Scene::OroLogo);
 
 	Timer::after(Duration::from_secs(2)).await;

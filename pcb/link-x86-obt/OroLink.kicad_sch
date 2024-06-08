@@ -1,1524 +1,3780 @@
-(kicad_sch (version 20230121) (generator eeschema)
-
-  (uuid e89dcd22-1250-4a5b-b778-1c95a0dd623d)
-
-  (paper "A4")
-
-  (title_block
-    (title "Oro Link")
-    (date "2023-07-15")
-    (rev "6")
-    (company "Oro Operating System")
-    (comment 1 "://oro.sh")
-    (comment 2 "Joshua Lee Junon")
-  )
-
-  (lib_symbols
-    (symbol "Mechanical:MountingHole" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-      (property "Reference" "H" (at 0 5.08 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "MountingHole" (at 0 3.175 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "mounting hole" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Mounting Hole without connection" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "MountingHole*" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "MountingHole_0_1"
-        (circle (center 0 0) (radius 1.27)
-          (stroke (width 1.27) (type default))
-          (fill (type none))
-        )
-      )
-    )
-    (symbol "Oro:ESDS302DBVR_tied" (pin_names (offset 0.762)) (in_bom yes) (on_board yes)
-      (property "Reference" "D" (at 13.97 3.81 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "ESDS302DBVR" (at 13.97 1.27 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "SOT95P280X145-5N" (at 40.64 3.81 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Datasheet" "http://www.ti.com/lit/gpn/esds302" (at 40.64 1.27 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Description" "3.6V Data-Line Surge and 30kV ESD Protection Diode Array" (at 40.64 -1.27 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Height" "1.45" (at 40.64 -21.59 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Name" "Texas Instruments" (at 40.64 -6.35 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Part_Number" "ESDS302DBVR" (at 40.64 -8.89 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Part Number" "595-ESDS302DBVR" (at 40.64 -11.43 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESDS302DBVR?qs=qSfuJ%252Bfl%2Fd4NxvvS2bbWLw%3D%3D" (at 40.64 -13.97 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Part Number" "ESDS302DBVR" (at 40.64 -16.51 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Price/Stock" "https://www.arrow.com/en/products/esds302dbvr/texas-instruments" (at 40.64 -19.05 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "ki_description" "3.6V Data-Line Surge and 30kV ESD Protection Diode Array" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "ESDS302DBVR_tied_0_0"
-        (pin passive line (at 27.94 -11.43 180) (length 5.08)
-          (name "NC_1" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 -7.62 0) (length 5.08)
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 27.94 -5.08 180) (length 5.08)
-          (name "NC_2" (effects (font (size 1.27 1.27))))
-          (number "3" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 27.94 -2.54 180) (length 5.08)
-          (name "I/O1" (effects (font (size 1.27 1.27))))
-          (number "4" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 27.94 -8.89 180) (length 5.08)
-          (name "I/O2" (effects (font (size 1.27 1.27))))
-          (number "5" (effects (font (size 1.27 1.27))))
-        )
-      )
-      (symbol "ESDS302DBVR_tied_0_1"
-        (polyline
-          (pts
-            (xy 16.51 -8.89)
-            (xy 15.24 -8.89)
-            (xy 15.24 -11.43)
-            (xy 16.51 -11.43)
-          )
-          (stroke (width 0) (type dot))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 16.51 -5.08)
-            (xy 15.24 -5.08)
-            (xy 15.24 -2.54)
-            (xy 16.51 -2.54)
-          )
-          (stroke (width 0) (type dot))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 5.08 0)
-            (xy 22.86 0)
-            (xy 22.86 -13.97)
-            (xy 5.08 -13.97)
-            (xy 5.08 0)
-          )
-          (stroke (width 0.1524) (type solid))
-          (fill (type none))
-        )
-      )
-    )
-    (symbol "SamacSys_Parts:67996-408HLF" (pin_names (offset 0.762)) (in_bom yes) (on_board yes)
-      (property "Reference" "J" (at 16.51 7.62 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "67996-408HLF" (at 16.51 5.08 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "HDRV8W89P254_2X4_1016X483X858P" (at 16.51 2.54 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/67996.pdf" (at 16.51 0 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Description" "BergStik, Board to Board connector, Unshrouded vertical header, Through Hole, Double Row, 8 Positions, 2.54 mm (0.100in) Pitch" (at 16.51 -2.54 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Height" "8.58" (at 16.51 -5.08 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Name" "Amphenol Communications Solutions" (at 16.51 -7.62 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Manufacturer_Part_Number" "67996-408HLF" (at 16.51 -10.16 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Part Number" "649-67996-408HLF" (at 16.51 -12.7 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Amphenol-FCI/67996-408HLF?qs=zh4O8xspOux8A5Dq3mcAKw%3D%3D" (at 16.51 -15.24 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Part Number" "67996-408HLF" (at 16.51 -17.78 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Arrow Price/Stock" "https://www.arrow.com/en/products/67996-408hlf/amphenol-fci" (at 16.51 -20.32 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "ki_description" "BergStik, Board to Board connector, Unshrouded vertical header, Through Hole, Double Row, 8 Positions, 2.54 mm (0.100in) Pitch" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "67996-408HLF_0_0"
-        (pin passive line (at 0 0 0) (length 5.08)
-          (name "1" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 20.32 0 180) (length 5.08)
-          (name "2" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 -2.54 0) (length 5.08)
-          (name "3" (effects (font (size 1.27 1.27))))
-          (number "3" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 20.32 -2.54 180) (length 5.08)
-          (name "4" (effects (font (size 1.27 1.27))))
-          (number "4" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 -5.08 0) (length 5.08)
-          (name "5" (effects (font (size 1.27 1.27))))
-          (number "5" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 20.32 -5.08 180) (length 5.08)
-          (name "6" (effects (font (size 1.27 1.27))))
-          (number "6" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 -7.62 0) (length 5.08)
-          (name "7" (effects (font (size 1.27 1.27))))
-          (number "7" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 20.32 -7.62 180) (length 5.08)
-          (name "8" (effects (font (size 1.27 1.27))))
-          (number "8" (effects (font (size 1.27 1.27))))
-        )
-      )
-      (symbol "67996-408HLF_0_1"
-        (polyline
-          (pts
-            (xy 5.08 2.54)
-            (xy 15.24 2.54)
-            (xy 15.24 -10.16)
-            (xy 5.08 -10.16)
-            (xy 5.08 2.54)
-          )
-          (stroke (width 0.1524) (type solid))
-          (fill (type none))
-        )
-      )
-    )
-    (symbol "power:GND" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
-      (property "Reference" "#PWR" (at 0 -6.35 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "GND" (at 0 -3.81 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "global power" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Power symbol creates a global label with name \"GND\" , ground" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "GND_0_1"
-        (polyline
-          (pts
-            (xy 0 0)
-            (xy 0 -1.27)
-            (xy 1.27 -1.27)
-            (xy 0 -2.54)
-            (xy -1.27 -1.27)
-            (xy 0 -1.27)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-      )
-      (symbol "GND_1_1"
-        (pin power_in line (at 0 0 270) (length 0) hide
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-  )
-
-  (junction (at 119.38 56.515) (diameter 0) (color 0 0 0 0)
-    (uuid 29b18527-6dbf-49d3-ba0f-0ea16865cbe8)
-  )
-  (junction (at 99.06 61.595) (diameter 0) (color 0 0 0 0)
-    (uuid 4ca1c7c8-4632-48f5-87fd-c911eacb0d9d)
-  )
-  (junction (at 111.125 56.515) (diameter 0) (color 0 0 0 0)
-    (uuid 5787083e-1b0b-46b5-9cf5-dbd8f4481593)
-  )
-  (junction (at 99.06 65.405) (diameter 0) (color 0 0 0 0)
-    (uuid 7874a394-225e-4876-acac-0799cc43b688)
-  )
-  (junction (at 99.06 46.355) (diameter 0) (color 0 0 0 0)
-    (uuid 7f1224a3-b8fa-4fd2-aee9-84070693d98a)
-  )
-  (junction (at 116.84 64.135) (diameter 0) (color 0 0 0 0)
-    (uuid 99bc7eea-3b0a-4d15-8793-817cc66589ff)
-  )
-  (junction (at 114.935 61.595) (diameter 0) (color 0 0 0 0)
-    (uuid bd6fe481-d59b-4626-9e23-cd3fbc600ec2)
-  )
-  (junction (at 66.675 64.135) (diameter 0) (color 0 0 0 0)
-    (uuid d7469f64-9197-4c07-8214-357cf3ee6e9f)
-  )
-  (junction (at 121.285 59.055) (diameter 0) (color 0 0 0 0)
-    (uuid e1bd5765-82eb-4f20-8fd8-cf7d0808027d)
-  )
-  (junction (at 113.03 59.055) (diameter 0) (color 0 0 0 0)
-    (uuid e760638a-21e0-4458-a079-5aedeff01bbf)
-  )
-  (junction (at 99.06 40.005) (diameter 0) (color 0 0 0 0)
-    (uuid ea16ac5a-411e-4c7c-98fc-ad4d44a588f8)
-  )
-
-  (wire (pts (xy 114.3 132.715) (xy 124.46 132.715))
-    (stroke (width 0) (type default))
-    (uuid 0168c806-d34c-4238-bc07-a6d7b739af64)
-  )
-  (wire (pts (xy 114.3 113.03) (xy 124.46 113.03))
-    (stroke (width 0) (type default))
-    (uuid 01db7def-863f-4460-a802-2ec51dfb9367)
-  )
-  (wire (pts (xy 111.125 33.02) (xy 137.795 33.02))
-    (stroke (width 0) (type default))
-    (uuid 036d3013-9595-4cc0-bea0-90d90156a23c)
-  )
-  (wire (pts (xy 170.18 113.03) (xy 180.975 113.03))
-    (stroke (width 0) (type default))
-    (uuid 03a98f7f-d665-48ca-82cb-8419fcc843fd)
-  )
-  (wire (pts (xy 102.87 59.055) (xy 102.87 40.005))
-    (stroke (width 0) (type default))
-    (uuid 04f6c70f-3735-4e4b-b285-32a03e7c6123)
-  )
-  (wire (pts (xy 176.53 130.175) (xy 180.975 130.175))
-    (stroke (width 0) (type default))
-    (uuid 07de3d07-6e0c-475b-a80a-819fc538aa02)
-  )
-  (wire (pts (xy 99.06 65.405) (xy 99.06 67.945))
-    (stroke (width 0) (type default))
-    (uuid 0ffdaf8e-7e48-4a89-a80c-25714ea2b762)
-  )
-  (wire (pts (xy 114.3 92.075) (xy 124.46 92.075))
-    (stroke (width 0) (type default))
-    (uuid 10ca1b8d-b487-4903-8905-351b7f5e2867)
-  )
-  (wire (pts (xy 170.18 61.595) (xy 180.975 61.595))
-    (stroke (width 0) (type default))
-    (uuid 152bd8d4-ae66-44fe-b3dd-3e9e69f46ce3)
-  )
-  (wire (pts (xy 99.06 40.005) (xy 99.06 42.545))
-    (stroke (width 0) (type default))
-    (uuid 160737cb-82e3-467f-bebf-23aac6480744)
-  )
-  (wire (pts (xy 226.695 93.98) (xy 226.695 40.64))
-    (stroke (width 0) (type default))
-    (uuid 1a783963-0101-49c2-b6fb-ae61bfb14778)
-  )
-  (wire (pts (xy 114.3 79.375) (xy 124.46 79.375))
-    (stroke (width 0) (type default))
-    (uuid 1ab50632-c857-41a9-8a63-55b3d8566a6a)
-  )
-  (wire (pts (xy 111.125 56.515) (xy 111.125 33.02))
-    (stroke (width 0) (type default))
-    (uuid 25205aec-de05-41e6-83cf-cca130b6193f)
-  )
-  (wire (pts (xy 119.38 56.515) (xy 119.38 45.72))
-    (stroke (width 0) (type default))
-    (uuid 26be1d0e-50cb-48e4-9ad6-1101576f3f80)
-  )
-  (wire (pts (xy 170.18 101.6) (xy 180.975 101.6))
-    (stroke (width 0) (type default))
-    (uuid 28118b36-6637-4bcb-b125-ceab1d16aaca)
-  )
-  (wire (pts (xy 174.625 132.715) (xy 180.975 132.715))
-    (stroke (width 0) (type default))
-    (uuid 2bf1b1f3-dd96-4c6f-968f-fbd71c9585e3)
-  )
-  (wire (pts (xy 116.84 40.64) (xy 137.795 40.64))
-    (stroke (width 0) (type default))
-    (uuid 2d8cc211-894a-43ce-80f7-6bb0cb112226)
-  )
-  (wire (pts (xy 114.3 115.57) (xy 124.46 115.57))
-    (stroke (width 0) (type default))
-    (uuid 3001de68-d355-4341-b3ae-afe7b3089673)
-  )
-  (wire (pts (xy 116.84 64.135) (xy 116.84 40.64))
-    (stroke (width 0) (type default))
-    (uuid 353e7f56-5f7e-4cda-b7d4-59ab77b055a6)
-  )
-  (wire (pts (xy 119.38 56.515) (xy 124.46 56.515))
-    (stroke (width 0) (type default))
-    (uuid 37b75ee8-1328-496e-a306-99234f09c444)
-  )
-  (wire (pts (xy 114.3 105.41) (xy 124.46 105.41))
-    (stroke (width 0) (type default))
-    (uuid 3ae45b58-093b-4770-af1d-0954498e28fb)
-  )
-  (wire (pts (xy 114.3 142.875) (xy 124.46 142.875))
-    (stroke (width 0) (type default))
-    (uuid 4072240e-cfa3-47f8-837f-e2d9c720eb6b)
-  )
-  (wire (pts (xy 116.84 64.135) (xy 102.87 64.135))
-    (stroke (width 0) (type default))
-    (uuid 409aa5bf-c527-49bd-89ea-47c045537ba9)
-  )
-  (wire (pts (xy 213.995 99.06) (xy 231.775 99.06))
-    (stroke (width 0) (type default))
-    (uuid 42bdfc22-5b82-457e-a3d2-3ef5d96d01c2)
-  )
-  (wire (pts (xy 114.3 84.455) (xy 124.46 84.455))
-    (stroke (width 0) (type default))
-    (uuid 47418031-dcdc-4b38-bff9-ed373f689568)
-  )
-  (wire (pts (xy 114.935 61.595) (xy 114.935 38.1))
-    (stroke (width 0) (type default))
-    (uuid 47fd6688-0cc3-4037-9b27-bfc48643a096)
-  )
-  (wire (pts (xy 105.41 46.355) (xy 99.06 46.355))
-    (stroke (width 0) (type default))
-    (uuid 49fb8455-2a82-4128-a549-4706cc589046)
-  )
-  (wire (pts (xy 111.125 56.515) (xy 119.38 56.515))
-    (stroke (width 0) (type default))
-    (uuid 4d9a922b-8b1a-44a2-8a0f-6bf2d33d2713)
-  )
-  (wire (pts (xy 114.3 135.255) (xy 124.46 135.255))
-    (stroke (width 0) (type default))
-    (uuid 4db8af70-dc43-4e8d-a7a2-42222cf9f24b)
-  )
-  (wire (pts (xy 99.06 61.595) (xy 114.935 61.595))
-    (stroke (width 0) (type default))
-    (uuid 4dd8d431-430d-483e-85b2-d89c439b7743)
-  )
-  (wire (pts (xy 170.18 59.055) (xy 180.975 59.055))
-    (stroke (width 0) (type default))
-    (uuid 4fe290a5-c5f4-426d-95a6-8df60097a32f)
-  )
-  (wire (pts (xy 114.3 81.915) (xy 124.46 81.915))
-    (stroke (width 0) (type default))
-    (uuid 52ff3c14-b567-41c9-abbf-a2ef3f189d43)
-  )
-  (wire (pts (xy 174.625 47.625) (xy 174.625 132.715))
-    (stroke (width 0) (type default))
-    (uuid 54677c02-149b-4b23-83f7-34f549036e73)
-  )
-  (wire (pts (xy 105.41 56.515) (xy 105.41 46.355))
-    (stroke (width 0) (type default))
-    (uuid 54704a0c-804a-41be-b2d4-b12285383855)
-  )
-  (wire (pts (xy 213.995 93.98) (xy 226.695 93.98))
-    (stroke (width 0) (type default))
-    (uuid 57148e95-decf-4d21-a416-44c321855822)
-  )
-  (wire (pts (xy 114.3 123.19) (xy 124.46 123.19))
-    (stroke (width 0) (type default))
-    (uuid 5e5f2025-7d36-4e7e-bccd-f14075d0d92e)
-  )
-  (wire (pts (xy 102.87 40.005) (xy 99.06 40.005))
-    (stroke (width 0) (type default))
-    (uuid 66fc3c4a-a2a7-4c23-a789-bc8435e5e047)
-  )
-  (wire (pts (xy 99.06 59.055) (xy 99.06 61.595))
-    (stroke (width 0) (type default))
-    (uuid 672cb193-4d89-4eec-89df-5f9b1e52fd23)
-  )
-  (wire (pts (xy 71.12 43.815) (xy 66.675 43.815))
-    (stroke (width 0) (type default))
-    (uuid 690f768e-efff-4453-8ef4-ae3d6b879c1c)
-  )
-  (wire (pts (xy 158.115 33.02) (xy 234.315 33.02))
-    (stroke (width 0) (type default))
-    (uuid 69b46502-60d4-4154-9fe2-9edf26197a11)
-  )
-  (wire (pts (xy 114.3 140.335) (xy 124.46 140.335))
-    (stroke (width 0) (type default))
-    (uuid 6d5f7412-4a81-4c1d-a3ae-7c347d93f5bd)
-  )
-  (wire (pts (xy 234.315 101.6) (xy 234.315 33.02))
-    (stroke (width 0) (type default))
-    (uuid 7028f7fa-ceba-41c1-a743-5e979a45f948)
-  )
-  (wire (pts (xy 102.87 65.405) (xy 99.06 65.405))
-    (stroke (width 0) (type default))
-    (uuid 762a0d21-d547-4cc9-ad0d-2ed9bb6c2c20)
-  )
-  (wire (pts (xy 114.3 76.835) (xy 124.46 76.835))
-    (stroke (width 0) (type default))
-    (uuid 76b99586-ad18-4eeb-8010-5f8e662b39fd)
-  )
-  (wire (pts (xy 170.18 118.11) (xy 180.975 118.11))
-    (stroke (width 0) (type default))
-    (uuid 7b54ad0b-f4a9-44b5-a886-f5769a1496e0)
-  )
-  (wire (pts (xy 66.675 64.135) (xy 66.675 68.58))
-    (stroke (width 0) (type default))
-    (uuid 80f00e60-541b-4a72-b665-5495ffaaefbc)
-  )
-  (wire (pts (xy 114.3 89.535) (xy 124.46 89.535))
-    (stroke (width 0) (type default))
-    (uuid 83ed30c9-f060-4b12-84ef-26d3fb55fc99)
-  )
-  (wire (pts (xy 114.3 94.615) (xy 124.46 94.615))
-    (stroke (width 0) (type default))
-    (uuid 87c6b790-475b-4aca-beda-91c6d1a75dd0)
-  )
-  (wire (pts (xy 170.18 77.47) (xy 180.975 77.47))
-    (stroke (width 0) (type default))
-    (uuid 897a3fbf-a458-4dd6-8eb8-a567a8388310)
-  )
-  (wire (pts (xy 170.18 115.57) (xy 180.975 115.57))
-    (stroke (width 0) (type default))
-    (uuid 8a1495ed-2378-4ca1-8b57-dbe9ae54dd91)
-  )
-  (wire (pts (xy 170.18 96.52) (xy 180.975 96.52))
-    (stroke (width 0) (type default))
-    (uuid 8b7c7054-f565-4b9d-a7d0-1832ae3f140f)
-  )
-  (wire (pts (xy 170.18 135.255) (xy 180.975 135.255))
-    (stroke (width 0) (type default))
-    (uuid 8bf7584f-fd6c-4af2-bf73-64cb37c3446b)
-  )
-  (wire (pts (xy 99.06 46.355) (xy 99.06 48.895))
-    (stroke (width 0) (type default))
-    (uuid 8c020e15-2a89-47e2-b677-c295758ceb47)
-  )
-  (wire (pts (xy 121.285 59.055) (xy 121.285 47.625))
-    (stroke (width 0) (type default))
-    (uuid 8cbe5762-39c1-465d-bf72-a77c77c781bd)
-  )
-  (wire (pts (xy 170.18 145.415) (xy 180.975 145.415))
-    (stroke (width 0) (type default))
-    (uuid 924d4866-1d30-4676-90a2-f2a3e1da2929)
-  )
-  (wire (pts (xy 170.18 142.875) (xy 180.975 142.875))
-    (stroke (width 0) (type default))
-    (uuid 977abf6e-1aa6-4ed6-90f5-464ab8571b5d)
-  )
-  (wire (pts (xy 66.675 43.815) (xy 66.675 64.135))
-    (stroke (width 0) (type default))
-    (uuid 98baadb6-e09e-4910-a2c8-8e1a51ccc1a6)
-  )
-  (wire (pts (xy 114.3 120.65) (xy 124.46 120.65))
-    (stroke (width 0) (type default))
-    (uuid 9d00d30f-68a1-42eb-b2ea-fd2a7042acc2)
-  )
-  (wire (pts (xy 170.18 140.335) (xy 180.975 140.335))
-    (stroke (width 0) (type default))
-    (uuid 9fbe0aba-7154-4c92-af5d-890c437ce2bd)
-  )
-  (wire (pts (xy 170.18 93.98) (xy 180.975 93.98))
-    (stroke (width 0) (type default))
-    (uuid a1bce170-0825-4f27-8518-b3f29d266197)
-  )
-  (wire (pts (xy 114.3 86.995) (xy 124.46 86.995))
-    (stroke (width 0) (type default))
-    (uuid a41945d4-39a5-492e-9154-6006ae4870df)
-  )
-  (wire (pts (xy 102.87 59.055) (xy 113.03 59.055))
-    (stroke (width 0) (type default))
-    (uuid a89c211e-b284-4609-83c2-5093e0ad8e40)
-  )
-  (wire (pts (xy 114.3 110.49) (xy 124.46 110.49))
-    (stroke (width 0) (type default))
-    (uuid b1afb864-391d-47ed-a95c-23001178e082)
-  )
-  (wire (pts (xy 158.115 38.1) (xy 229.235 38.1))
-    (stroke (width 0) (type default))
-    (uuid b2fda4d0-b392-4799-9784-03c87961238d)
-  )
-  (wire (pts (xy 113.03 35.56) (xy 137.795 35.56))
-    (stroke (width 0) (type default))
-    (uuid b4e5dc68-a4aa-4357-840d-20a1b11fe0fc)
-  )
-  (wire (pts (xy 170.18 99.06) (xy 180.975 99.06))
-    (stroke (width 0) (type default))
-    (uuid b5019148-2f84-4d09-99e2-8a3861857546)
-  )
-  (wire (pts (xy 170.18 56.515) (xy 180.975 56.515))
-    (stroke (width 0) (type default))
-    (uuid b6d9fd4c-f306-486b-94e6-284b8435a7db)
-  )
-  (wire (pts (xy 66.675 64.135) (xy 71.12 64.135))
-    (stroke (width 0) (type default))
-    (uuid b78905cd-cfb2-40e7-8bd6-56e7151cfd82)
-  )
-  (wire (pts (xy 121.285 47.625) (xy 174.625 47.625))
-    (stroke (width 0) (type default))
-    (uuid ba49efba-af4b-477e-89b2-20316f720ac7)
-  )
-  (wire (pts (xy 114.935 38.1) (xy 137.795 38.1))
-    (stroke (width 0) (type default))
-    (uuid bbc2107f-7059-4517-a77b-5e48f9d1b025)
-  )
-  (wire (pts (xy 114.3 145.415) (xy 124.46 145.415))
-    (stroke (width 0) (type default))
-    (uuid be4501a4-49b6-4727-acd6-12aa07f212da)
-  )
-  (wire (pts (xy 170.18 91.44) (xy 180.975 91.44))
-    (stroke (width 0) (type default))
-    (uuid c05db56f-3265-4e46-8bed-bb5e832415b6)
-  )
-  (wire (pts (xy 113.03 59.055) (xy 113.03 35.56))
-    (stroke (width 0) (type default))
-    (uuid c07fd251-e3cd-4c16-a4e3-8ce1e3554406)
-  )
-  (wire (pts (xy 114.3 137.795) (xy 124.46 137.795))
-    (stroke (width 0) (type default))
-    (uuid c0f8e925-b3d5-4996-8c38-162725c1b471)
-  )
-  (wire (pts (xy 102.87 64.135) (xy 102.87 65.405))
-    (stroke (width 0) (type default))
-    (uuid c3b8630d-8127-47ee-b240-0af7be5d4128)
-  )
-  (wire (pts (xy 170.18 74.93) (xy 180.975 74.93))
-    (stroke (width 0) (type default))
-    (uuid c72279ae-b7b6-4607-8455-042ea6628670)
-  )
-  (wire (pts (xy 119.38 45.72) (xy 176.53 45.72))
-    (stroke (width 0) (type default))
-    (uuid c8e79e83-7206-4c5e-a250-a5fc7dcd499a)
-  )
-  (wire (pts (xy 121.285 59.055) (xy 124.46 59.055))
-    (stroke (width 0) (type default))
-    (uuid c948733d-c77e-4a1c-9af6-5a922c1fb816)
-  )
-  (wire (pts (xy 113.03 59.055) (xy 121.285 59.055))
-    (stroke (width 0) (type default))
-    (uuid c968107b-9bd1-41cc-b983-31f19ee89c91)
-  )
-  (wire (pts (xy 229.235 96.52) (xy 229.235 38.1))
-    (stroke (width 0) (type default))
-    (uuid ca8a7b42-83f0-40b6-b2af-10d849effb19)
-  )
-  (wire (pts (xy 114.3 118.11) (xy 124.46 118.11))
-    (stroke (width 0) (type default))
-    (uuid cbabc6c3-acc8-4b4d-adae-3e4f6f702ed5)
-  )
-  (wire (pts (xy 158.115 35.56) (xy 231.775 35.56))
-    (stroke (width 0) (type default))
-    (uuid cd963b88-f9d9-48f0-bf64-9d444f40c682)
-  )
-  (wire (pts (xy 176.53 45.72) (xy 176.53 130.175))
-    (stroke (width 0) (type default))
-    (uuid d05a3bce-c405-4034-ab30-22f90713b323)
-  )
-  (wire (pts (xy 213.995 96.52) (xy 229.235 96.52))
-    (stroke (width 0) (type default))
-    (uuid d80e3315-9497-4fca-87de-1c69bd14ddf9)
-  )
-  (wire (pts (xy 231.775 99.06) (xy 231.775 35.56))
-    (stroke (width 0) (type default))
-    (uuid ddeb8c41-6f8a-4e32-a2af-fe534d9a220f)
-  )
-  (wire (pts (xy 116.84 64.135) (xy 124.46 64.135))
-    (stroke (width 0) (type default))
-    (uuid e8a3dda5-d6b6-4143-b01d-2d14b4e8c430)
-  )
-  (wire (pts (xy 158.115 40.64) (xy 226.695 40.64))
-    (stroke (width 0) (type default))
-    (uuid ea83593d-ca09-45d5-906b-42aea9eabb83)
-  )
-  (wire (pts (xy 114.3 107.95) (xy 124.46 107.95))
-    (stroke (width 0) (type default))
-    (uuid efd56462-d170-45cd-812b-e577b683338e)
-  )
-  (wire (pts (xy 170.18 137.795) (xy 180.975 137.795))
-    (stroke (width 0) (type default))
-    (uuid f003bedf-871b-450d-a195-835c502224fc)
-  )
-  (wire (pts (xy 105.41 56.515) (xy 111.125 56.515))
-    (stroke (width 0) (type default))
-    (uuid f172159b-1693-4eb7-8a74-ba4295e50b47)
-  )
-  (wire (pts (xy 114.935 61.595) (xy 124.46 61.595))
-    (stroke (width 0) (type default))
-    (uuid f2f0b0d8-5b67-4998-86bd-77dcee19d73b)
-  )
-  (wire (pts (xy 213.995 101.6) (xy 234.315 101.6))
-    (stroke (width 0) (type default))
-    (uuid ff742753-2cc4-45a9-980b-9f05e1480727)
-  )
-
-  (text "SPI1 = ETH1 = SYSETH\nSPI2 = ETH2 = EXTETH\nSPI3 = OLED\nUART7 = BOARD SERIAL\nUSART2 = SYS SERIAL (TO RS232 CIRCUIT)\n\nTOP = SIGNAL\n+1  = GND\n-1  = VDD\nBOT = SIGNAL"
-    (at 27.305 146.685 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 3c640dba-fa52-4fbc-b48a-7d17584c9cc7)
-  )
-
-  (symbol (lib_id "Mechanical:MountingHole") (at 245.745 137.795 0) (unit 1)
-    (in_bom no) (on_board yes) (dnp no)
-    (uuid 0ab99149-4c96-48f3-9c24-64cfff9a7bdb)
-    (property "Reference" "H5" (at 248.285 137.795 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole_Pad" (at 248.285 137.8023 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (at 245.745 137.795 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 245.745 137.795 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Sim.Enable" "0" (at 245.745 137.795 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (instances
-      (project "Oro Testbed v2"
-        (path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
-          (reference "H5") (unit 1)
-        )
-      )
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "H3") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "H3") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Oro:ESDS302DBVR_tied") (at 71.12 56.515 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 2572ff69-8133-444c-bc70-9ecd93aa7426)
-    (property "Reference" "D2" (at 85.09 53.324 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "ESDS302DBVR" (at 85.09 55.245 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "SOT95P280X145-5N" (at 111.76 52.705 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Datasheet" "http://www.ti.com/lit/gpn/esds302" (at 111.76 55.245 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Description" "3.6V Data-Line Surge and 30kV ESD Protection Diode Array" (at 111.76 57.785 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Height" "1.45" (at 111.76 78.105 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Name" "Texas Instruments" (at 111.76 62.865 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Part_Number" "ESDS302DBVR" (at 111.76 65.405 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Part Number" "595-ESDS302DBVR" (at 111.76 67.945 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESDS302DBVR?qs=qSfuJ%252Bfl%2Fd4NxvvS2bbWLw%3D%3D" (at 111.76 70.485 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Part Number" "ESDS302DBVR" (at 111.76 73.025 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/esds302dbvr/texas-instruments" (at 111.76 75.565 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (pin "1" (uuid 2f97dec0-df0a-495d-9b90-1c7d28d8bedf))
-    (pin "2" (uuid 658b3409-9514-4d1c-af4c-e6448dea7fe7))
-    (pin "3" (uuid e3aba5a2-d80e-453d-9d3b-460967d38ba1))
-    (pin "4" (uuid 3f89b190-a6af-4b67-8c71-6bde7661de7f))
-    (pin "5" (uuid 9ed71205-686c-4a37-a92e-928df7f6d355))
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "D2") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:GND") (at 66.675 68.58 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 555e58ac-57b4-4f92-9fa4-ad2cbc40af0e)
-    (property "Reference" "#PWR01" (at 66.675 74.93 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (at 66.675 72.7155 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 66.675 68.58 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 66.675 68.58 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 91aeefc1-ccee-4e97-ad0b-27df248dddee))
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "#PWR01") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Mechanical:MountingHole") (at 245.745 132.715 0) (unit 1)
-    (in_bom no) (on_board yes) (dnp no)
-    (uuid 751be5ab-577e-4925-9098-8bf2a60ce414)
-    (property "Reference" "H5" (at 248.285 132.715 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole_Pad" (at 248.285 132.7223 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (at 245.745 132.715 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 245.745 132.715 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Sim.Enable" "0" (at 245.745 132.715 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (instances
-      (project "Oro Testbed v2"
-        (path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
-          (reference "H5") (unit 1)
-        )
-      )
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "H2") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "H2") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Oro:ESDS302DBVR_tied") (at 71.12 51.435 0) (mirror x) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 8c98d064-a1d8-4cb5-9f3f-5cba9d4d2cd1)
-    (property "Reference" "D1" (at 85.09 34.29 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "ESDS302DBVR" (at 85.09 36.195 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "SOT95P280X145-5N" (at 111.76 55.245 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Datasheet" "http://www.ti.com/lit/gpn/esds302" (at 111.76 52.705 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Description" "3.6V Data-Line Surge and 30kV ESD Protection Diode Array" (at 111.76 50.165 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Height" "1.45" (at 111.76 29.845 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Name" "Texas Instruments" (at 111.76 45.085 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Part_Number" "ESDS302DBVR" (at 111.76 42.545 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Part Number" "595-ESDS302DBVR" (at 111.76 40.005 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESDS302DBVR?qs=qSfuJ%252Bfl%2Fd4NxvvS2bbWLw%3D%3D" (at 111.76 37.465 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Part Number" "ESDS302DBVR" (at 111.76 34.925 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/esds302dbvr/texas-instruments" (at 111.76 32.385 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (pin "1" (uuid 73d454e8-6569-4d3a-b97e-56979f4ce3fc))
-    (pin "2" (uuid c586548a-9d60-4bb6-acf3-23558f44e2dd))
-    (pin "3" (uuid 4faa7015-e64b-4c61-8860-aae3907b813c))
-    (pin "4" (uuid 6091afae-1fe2-4838-9839-7b8a218d5da4))
-    (pin "5" (uuid d1b2f388-fb3a-48e1-84d7-32b4d77149ce))
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "D1") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Mechanical:MountingHole") (at 245.745 127.635 0) (unit 1)
-    (in_bom no) (on_board yes) (dnp no)
-    (uuid 9dd13a92-b82c-4ebc-91a3-88130551705d)
-    (property "Reference" "H5" (at 248.285 127.635 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole_Pad" (at 248.285 127.6423 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (at 245.745 127.635 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 245.745 127.635 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Sim.Enable" "0" (at 245.745 127.635 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (instances
-      (project "Oro Testbed v2"
-        (path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
-          (reference "H5") (unit 1)
-        )
-      )
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "H1") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "H1") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Mechanical:MountingHole") (at 245.745 142.875 0) (unit 1)
-    (in_bom no) (on_board yes) (dnp no)
-    (uuid d2d4de64-8d15-49c9-8a35-55aa8d3466de)
-    (property "Reference" "H2" (at 248.285 142.8837 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole_Pad" (at 248.285 142.8823 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (at 245.745 142.875 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 245.745 142.875 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Sim.Enable" "0" (at 245.745 142.875 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (instances
-      (project "Oro Testbed v2"
-        (path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
-          (reference "H2") (unit 1)
-        )
-      )
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "H4") (unit 1)
-        )
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
-          (reference "H6") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "SamacSys_Parts:67996-408HLF") (at 137.795 33.02 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid f1b868e3-d970-40c4-a87d-e75bedaaca03)
-    (property "Reference" "J1" (at 147.955 27.5209 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "67996-408HLF" (at 147.955 29.4419 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "HDRV8W89P254_2X4_1016X483X858P" (at 154.305 30.48 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/67996.pdf" (at 154.305 33.02 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Description" "BergStik, Board to Board connector, Unshrouded vertical header, Through Hole, Double Row, 8 Positions, 2.54 mm (0.100in) Pitch" (at 154.305 35.56 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Height" "8.58" (at 154.305 38.1 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Name" "Amphenol Communications Solutions" (at 154.305 40.64 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Manufacturer_Part_Number" "67996-408HLF" (at 154.305 43.18 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Part Number" "649-67996-408HLF" (at 154.305 45.72 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Amphenol-FCI/67996-408HLF?qs=zh4O8xspOux8A5Dq3mcAKw%3D%3D" (at 154.305 48.26 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Part Number" "67996-408HLF" (at 154.305 50.8 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/67996-408hlf/amphenol-fci" (at 154.305 53.34 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-    (pin "1" (uuid 886049b4-c18c-40d1-84ce-c7b065ac17dc))
-    (pin "2" (uuid 3330fd7c-8ffb-4e39-858f-44c8abbee2b0))
-    (pin "3" (uuid 46c6b992-9091-4d81-a87b-a66632141420))
-    (pin "4" (uuid eae6c07f-8683-40c4-a63e-0a4e0057eb8e))
-    (pin "5" (uuid de5c261f-c807-488f-ac0c-d2a5d003afe4))
-    (pin "6" (uuid 4f14ad94-d704-4fd2-8077-30bb324cb408))
-    (pin "7" (uuid 4df4eea4-bec0-450b-b867-66b03d81216e))
-    (pin "8" (uuid f3e30c4b-e822-4a30-acb4-9fa67bafb753))
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
-          (reference "J1") (unit 1)
-        )
-      )
-    )
-  )
-
-  (sheet (at 81.28 130.81) (size 33.02 17.145)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 1b3eede1-74b0-4c0b-b4f1-7ec1bfc1f54f)
-    (property "Sheetname" "OLED Socket" (at 81.28 130.0984 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "oled-socket.kicad_sch" (at 81.28 148.59 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "SPI_SCK" input (at 114.3 142.875 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 6889326c-cb12-4e0b-a1ee-9de146f3a761)
-    )
-    (pin "~{RST}" input (at 114.3 140.335 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 4674fb04-0afd-4812-9ae0-9b91933807cd)
-    )
-    (pin "SPI_SDI" input (at 114.3 145.415 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 3b7b7f93-2c48-4a8d-bdbd-a67b90e5f51c)
-    )
-    (pin "CS" input (at 114.3 137.795 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 7eed2597-4e50-434e-9862-fa512f52e949)
-    )
-    (pin "DC" input (at 114.3 135.255 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid f3046b39-4fea-4f3a-aa8b-3d22bca9a9a8)
-    )
-    (pin "EN" input (at 114.3 132.715 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 5f1e2446-a5f5-4d5e-a8e7-3801ce246ef4)
-    )
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d" (page "5"))
-      )
-    )
-  )
-
-  (sheet (at 180.975 127.635) (size 33.02 20.32)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 259c9346-7ad9-40c3-9e14-9b19afc78ddf)
-    (property "Sheetname" "SWD Pad" (at 180.975 126.9234 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "swd-pad.kicad_sch" (at 180.975 148.59 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "SWO" input (at 180.975 140.335 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 327ef97f-09c4-48c9-872f-c2c07001e78c)
-    )
-    (pin "SWCLK" output (at 180.975 142.875 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 26f18fd8-a114-4087-ac74-0c1c942f4566)
-    )
-    (pin "SWDIO" bidirectional (at 180.975 145.415 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 9344931a-00e6-43e3-a5b2-37ace63422fd)
-    )
-    (pin "BOOT1" output (at 180.975 137.795 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid ab068c07-1870-4b2e-b8c7-7193821fbc05)
-    )
-    (pin "BOOT0" output (at 180.975 135.255 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid eb672cda-6ef8-45a9-8beb-c88df0c62abd)
-    )
-    (pin "UART_MCU_RX" output (at 180.975 132.715 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 8d061e4b-0c1f-4851-b90e-62f5c6076b10)
-    )
-    (pin "UART_MCU_TX" input (at 180.975 130.175 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid be4f6543-4b20-445c-adab-183bc07a4041)
-    )
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d" (page "8"))
-      )
-    )
-  )
-
-  (sheet (at 180.975 110.49) (size 33.02 10.16) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 49c51f54-e113-47ff-b1ad-86c9ad73cafa)
-    (property "Sheetname" "Indicator Lights" (at 180.975 109.7784 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "indicator-lights.kicad_sch" (at 180.975 121.2346 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "SDA" bidirectional (at 180.975 115.57 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 67255031-ec14-4707-aaae-824b71018785)
-    )
-    (pin "SCL" bidirectional (at 180.975 118.11 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 46e1871e-9a87-4e51-ac50-7ebb731c5466)
-    )
-    (pin "EN" input (at 180.975 113.03 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 243f3a4f-9f8f-48b6-8628-0a7da2eaaf11)
-    )
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d" (page "10"))
-      )
-    )
-  )
-
-  (sheet (at 81.28 103.505) (size 33.02 21.59) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 52771c01-2e58-4900-abe5-411f688d020f)
-    (property "Sheetname" "System Ethernet" (at 81.28 102.7934 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "ethernet.kicad_sch" (at 81.28 125.6796 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "SDI" input (at 114.3 113.03 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid fd79fc2d-b736-44c6-8626-577eac166fa7)
-    )
-    (pin "~{INT}" output (at 114.3 118.11 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 6f14d1da-5051-47e1-97d9-4eb83509c64f)
-    )
-    (pin "SDO" output (at 114.3 110.49 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 2ad7054e-3c50-4cf4-80ac-db9094a7c9cc)
-    )
-    (pin "SCK" passive (at 114.3 107.95 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid af808566-ff4d-4e61-8d76-d54dc8bc7797)
-    )
-    (pin "~{RST}" input (at 114.3 115.57 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 028f7442-b066-49e9-8e83-07300321ace9)
-    )
-    (pin "CS" input (at 114.3 120.65 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 6ca48087-cb92-4213-a5e2-7a235a79babb)
-    )
-    (pin "XFRM_EN" input (at 114.3 123.19 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 65d9b964-5628-4ff9-ae07-d886f6feb677)
-    )
-    (pin "EN" input (at 114.3 105.41 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid bb756568-aecb-4684-9dcd-88d93202842b)
-    )
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d" (page "6"))
-      )
-    )
-  )
-
-  (sheet (at 180.975 72.39) (size 33.02 7.62) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 6eeb4496-d532-42b5-95b8-3d397c9a21d1)
-    (property "Sheetname" "Front Panel Client" (at 180.975 71.6784 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "front-panel-client.kicad_sch" (at 180.975 80.5946 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "PWR_ON" input (at 180.975 74.93 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid f552ed35-030c-4fc2-8e69-4dc30f43cd1b)
-    )
-    (pin "RESET" input (at 180.975 77.47 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 048704ee-1e03-47ae-86b2-d7a73db3a9c2)
-    )
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d" (page "4"))
-      )
-    )
-  )
-
-  (sheet (at 81.28 74.295) (size 33.02 22.86) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 7cebe953-3148-4b67-a6c9-1f2594261687)
-    (property "Sheetname" "External Ethernet" (at 81.28 73.5834 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "ethernet.kicad_sch" (at 81.28 97.7396 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "SDI" input (at 114.3 84.455 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 1bef8916-55a6-48f3-bc6d-b332423d077e)
-    )
-    (pin "~{INT}" output (at 114.3 89.535 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 2dca2eea-91b1-4949-b0b4-91d92d54a48e)
-    )
-    (pin "SDO" output (at 114.3 81.915 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 0bf99ae8-86de-402b-bdd8-087f0ee92439)
-    )
-    (pin "SCK" passive (at 114.3 79.375 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 8612819c-656b-4a35-bc26-d09af9b63af4)
-    )
-    (pin "~{RST}" input (at 114.3 86.995 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 083f3e58-c8d8-45e9-9253-8b6a10af552f)
-    )
-    (pin "CS" input (at 114.3 92.075 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 88815e22-7476-4b3e-aa6e-74e51b454f99)
-    )
-    (pin "XFRM_EN" input (at 114.3 94.615 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 6e81c5c3-5fa3-48fd-9c16-5a030657d996)
-    )
-    (pin "EN" input (at 114.3 76.835 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid b1193e4a-8be2-4b72-b485-719506e291f3)
-    )
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d" (page "7"))
-      )
-    )
-  )
-
-  (sheet (at 180.975 89.535) (size 33.02 13.97) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid a5104146-06a0-496e-bda0-1e4731a261c3)
-    (property "Sheetname" "COM Bus Header" (at 180.975 88.8234 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "com-bus-header.kicad_sch" (at 180.975 104.0896 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "RTS" input (at 180.975 93.98 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 98dbad4e-11fd-4359-8d4b-98449cb39c09)
-    )
-    (pin "RX" output (at 180.975 101.6 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 856aa328-eaff-47c7-912c-6dacfac467e9)
-    )
-    (pin "TX" input (at 180.975 99.06 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 633e0161-0c58-4aa5-bad2-4d1873f101fa)
-    )
-    (pin "CTS" output (at 180.975 96.52 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 53e6d490-1837-4092-8d28-a81832a3c381)
-    )
-    (pin "RS232_RX" output (at 213.995 99.06 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 385d6102-e079-4ef6-a858-2dabdfbf0518)
-    )
-    (pin "RS232_TX" output (at 213.995 101.6 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid bfd7c7a4-cd73-4266-9667-0969b156cd83)
-    )
-    (pin "RS232_CTS" output (at 213.995 96.52 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 9cb7b67f-9dcb-4756-82b5-7bfc2edcabf8)
-    )
-    (pin "RS232_RTS" output (at 213.995 93.98 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 2e1aa90c-63e9-48fe-9f59-f9e66a195627)
-    )
-    (pin "EN" input (at 180.975 91.44 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 95ea1b29-376d-43b5-bcf4-430249786eb2)
-    )
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d" (page "9"))
-      )
-    )
-  )
-
-  (sheet (at 124.46 53.975) (size 45.72 93.98)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid dd173832-34f8-47c0-be66-f527d6e2d134)
-    (property "Sheetname" "Microcontroller" (at 124.46 53.2634 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "microcontroller.kicad_sch" (at 124.46 148.59 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "EXTETH_~{RST}" output (at 124.46 86.995 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 0094df2e-097e-4b11-a22e-ab598f5c51e7)
-    )
-    (pin "SYSUART_RTS" output (at 170.18 93.98 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid bde15cbf-8418-42a1-83c2-f36583ada219)
-    )
-    (pin "SYSUART_TX" output (at 170.18 99.06 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 264650f0-fc4e-4fde-b3a3-cd807e0cedc1)
-    )
-    (pin "SYSUART_RX" input (at 170.18 101.6 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 55e38968-8091-43a7-ba69-d64b6336e9df)
-    )
-    (pin "EXTETH_MOSI" output (at 124.46 84.455 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid c80983dd-6be4-4d08-96dd-c757ef18e702)
-    )
-    (pin "EXTETH_MISO" input (at 124.46 81.915 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 04f681fe-2b34-435d-8e55-75443a5d7650)
-    )
-    (pin "EXTETH_SCK" bidirectional (at 124.46 79.375 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 01dbb53b-27a8-4e9f-ab78-f4430de71ae1)
-    )
-    (pin "DBGUART_TX" output (at 124.46 56.515 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid f2d9c6da-d185-4a41-a085-d0e7619c103f)
-    )
-    (pin "SYSTEH_~{RST}" output (at 124.46 115.57 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 051c9201-2499-4d26-97a6-c7547aa543f4)
-    )
-    (pin "SYSTEH_~{INT}" input (at 124.46 118.11 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 94c6b319-7e86-4617-954c-170128b835f8)
-    )
-    (pin "DBGUART_RX" input (at 124.46 59.055 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 6b4bbab1-0282-49cc-933d-e290e2d731fb)
-    )
-    (pin "SYSETH_MISO" input (at 124.46 110.49 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 7bb89380-540c-4afd-9ee1-a866d77c730c)
-    )
-    (pin "SYSETH_SCK" bidirectional (at 124.46 107.95 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 5036234e-22ed-4093-9d10-960ac47978be)
-    )
-    (pin "SYSTEH_MOSI" output (at 124.46 113.03 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid c5994749-bc0a-4297-95fc-00b5170521ff)
-    )
-    (pin "PSU_ON" output (at 170.18 59.055 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 5e12121f-c559-4d8a-8cde-8ad3dde5de67)
-    )
-    (pin "SYS_RESET" output (at 170.18 77.47 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 299ec1f4-ad5e-4835-bab4-19eaf154cb9a)
-    )
-    (pin "PSU_OK" input (at 170.18 56.515 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid d6769141-3990-4594-bf9c-513cd029bc61)
-    )
-    (pin "SYS_POWER" output (at 170.18 74.93 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 138405da-8841-4586-8dbd-0f93a17f022a)
-    )
-    (pin "EXTETH_~{INT}" input (at 124.46 89.535 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 299e9929-c0d1-43ec-8c60-b6efaec9bc5a)
-    )
-    (pin "I2C_SDA" bidirectional (at 170.18 115.57 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 45bebfae-2683-4c0d-b897-c42d0f4699e1)
-    )
-    (pin "I2C_SCL" output (at 170.18 118.11 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid ac2da590-951d-4eae-9c72-173bc1b19628)
-    )
-    (pin "OLED_MOSI" output (at 124.46 145.415 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid e5413b7c-3699-4026-bcb5-a20571cde875)
-    )
-    (pin "SWCLK" input (at 170.18 142.875 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 9439a85e-75b5-4d71-91a2-02fade720ae0)
-    )
-    (pin "OLED_SCK" input (at 124.46 142.875 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 17b00402-c949-47a6-a27b-a9d1769c6b82)
-    )
-    (pin "SYSUART_CTS" input (at 170.18 96.52 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 2ceca16c-2fcf-4659-8be4-943f777270e5)
-    )
-    (pin "OLED_~{RST}" output (at 124.46 140.335 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid bd3bc880-35ae-40f8-8351-f24cfae2cabd)
-    )
-    (pin "SWO" output (at 170.18 140.335 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 4497cede-9bf0-423d-9c57-7900eaf0e3e0)
-    )
-    (pin "USB_D+" output (at 124.46 64.135 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 34cc8a55-a51a-422b-9897-63cb1af19a4e)
-    )
-    (pin "SWDIO" bidirectional (at 170.18 145.415 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid a79fb434-f004-4655-9242-7e4634fd394f)
-    )
-    (pin "USB_D-" output (at 124.46 61.595 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 9a31f311-592d-4d59-816e-d8f23236c211)
-    )
-    (pin "OLED_CS" output (at 124.46 137.795 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 1a64a059-a172-4acb-8543-0cf09496c043)
-    )
-    (pin "OLED_DC" output (at 124.46 135.255 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 142c90ea-59b7-4694-becd-9f278e0bdb27)
-    )
-    (pin "EXTETH_CS" output (at 124.46 92.075 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 6aae622b-953e-452f-be11-7002d399254f)
-    )
-    (pin "SYSETH_CS" output (at 124.46 120.65 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 7bfb3dd9-dc46-4e6f-b417-2201664fe5f3)
-    )
-    (pin "SYSETH_XFRM_EN" output (at 124.46 123.19 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid f6742153-6aa2-4748-a74a-7e5303571a66)
-    )
-    (pin "EXTETH_XFRM_EN" output (at 124.46 94.615 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid daa06e36-ff23-4dc8-a705-2c14b82e2f56)
-    )
-    (pin "BOOT0" input (at 170.18 135.255 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid be603de3-6e80-4d3f-9b06-92b00b5c6464)
-    )
-    (pin "BOOT1" input (at 170.18 137.795 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid f9775a32-8e9a-44a7-937c-fef8b0f27054)
-    )
-    (pin "SYSUART_EN" output (at 170.18 91.44 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid f36270e0-a44b-4e90-aa22-4ee5d2093e40)
-    )
-    (pin "OLED_EN" output (at 124.46 132.715 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid a3219835-99b6-4e48-b7e3-882915141499)
-    )
-    (pin "INDLIGHTS_EN" output (at 170.18 113.03 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 532978d9-df8e-49cf-8ae9-5c29b4a5ec8d)
-    )
-    (pin "EXTETH_EN" output (at 124.46 76.835 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 4ac4bded-1fba-4925-a200-a1aba39c17dc)
-    )
-    (pin "SYSETH_EN" output (at 124.46 105.41 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 0e4aea69-3d86-47ed-a2b3-587a516bc255)
-    )
-    (pin "PSU_SB" output (at 170.18 61.595 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 116839fa-08d0-401e-b968-6b852ed9c239)
-    )
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d" (page "2"))
-      )
-    )
-  )
-
-  (sheet (at 180.975 53.975) (size 33.02 9.525) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid f955395e-bf1a-4ef3-9cfe-ec9d49f66988)
-    (property "Sheetname" "Power Supply" (at 180.975 53.2634 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "power-supply.kicad_sch" (at 180.975 64.0846 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "PWR_OK" output (at 180.975 56.515 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 5bca749f-a498-468d-a347-47d0e7490193)
-    )
-    (pin "SYS_PWR_ON" input (at 180.975 59.055 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid bfb70c7b-bcbf-4bee-9451-61e7e29415b8)
-    )
-    (pin "SYS_PWR_SB" input (at 180.975 61.595 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 05405dcf-83c0-4cb7-9912-103cbbe5fecd)
-    )
-    (instances
-      (project "OroLink"
-        (path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d" (page "3"))
-      )
-    )
-  )
-
-  (sheet_instances
-    (path "/" (page "1"))
-  )
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "e89dcd22-1250-4a5b-b778-1c95a0dd623d")
+	(paper "A4")
+	(title_block
+		(title "Oro Link")
+		(date "2023-07-15")
+		(rev "6")
+		(company "Oro Operating System")
+		(comment 1 "://oro.sh")
+		(comment 2 "Joshua Lee Junon")
+	)
+	(lib_symbols
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
+		(symbol "Oro:ESDS302DBVR_tied"
+			(pin_names
+				(offset 0.762)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 13.97 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "ESDS302DBVR"
+				(at 13.97 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "SOT95P280X145-5N"
+				(at 40.64 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/gpn/esds302"
+				(at 40.64 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "3.6V Data-Line Surge and 30kV ESD Protection Diode Array"
+				(at 40.64 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Height" "1.45"
+				(at 40.64 -21.59 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Texas Instruments"
+				(at 40.64 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "ESDS302DBVR"
+				(at 40.64 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "595-ESDS302DBVR"
+				(at 40.64 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESDS302DBVR?qs=qSfuJ%252Bfl%2Fd4NxvvS2bbWLw%3D%3D"
+				(at 40.64 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" "ESDS302DBVR"
+				(at 40.64 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/esds302dbvr/texas-instruments"
+				(at 40.64 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(symbol "ESDS302DBVR_tied_0_0"
+				(pin passive line
+					(at 27.94 -11.43 180)
+					(length 5.08)
+					(name "NC_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 27.94 -5.08 180)
+					(length 5.08)
+					(name "NC_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 27.94 -2.54 180)
+					(length 5.08)
+					(name "I/O1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 27.94 -8.89 180)
+					(length 5.08)
+					(name "I/O2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ESDS302DBVR_tied_0_1"
+				(polyline
+					(pts
+						(xy 16.51 -8.89) (xy 15.24 -8.89) (xy 15.24 -11.43) (xy 16.51 -11.43)
+					)
+					(stroke
+						(width 0)
+						(type dot)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 16.51 -5.08) (xy 15.24 -5.08) (xy 15.24 -2.54) (xy 16.51 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type dot)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 22.86 0) (xy 22.86 -13.97) (xy 5.08 -13.97) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
+		(symbol "SamacSys_Parts:67996-408HLF"
+			(pin_names
+				(offset 0.762)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 16.51 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "67996-408HLF"
+				(at 16.51 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "HDRV8W89P254_2X4_1016X483X858P"
+				(at 16.51 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/67996.pdf"
+				(at 16.51 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "BergStik, Board to Board connector, Unshrouded vertical header, Through Hole, Double Row, 8 Positions, 2.54 mm (0.100in) Pitch"
+				(at 16.51 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Height" "8.58"
+				(at 16.51 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Amphenol Communications Solutions"
+				(at 16.51 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "67996-408HLF"
+				(at 16.51 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "649-67996-408HLF"
+				(at 16.51 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Amphenol-FCI/67996-408HLF?qs=zh4O8xspOux8A5Dq3mcAKw%3D%3D"
+				(at 16.51 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" "67996-408HLF"
+				(at 16.51 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/67996-408hlf/amphenol-fci"
+				(at 16.51 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(symbol "67996-408HLF_0_0"
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 0 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 -2.54 180)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 -5.08 180)
+					(length 5.08)
+					(name "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 0)
+					(length 5.08)
+					(name "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 -7.62 180)
+					(length 5.08)
+					(name "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "67996-408HLF_0_1"
+				(polyline
+					(pts
+						(xy 5.08 2.54) (xy 15.24 2.54) (xy 15.24 -10.16) (xy 5.08 -10.16) (xy 5.08 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0) hide
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 119.38 56.515)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "29b18527-6dbf-49d3-ba0f-0ea16865cbe8")
+	)
+	(junction
+		(at 99.06 61.595)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4ca1c7c8-4632-48f5-87fd-c911eacb0d9d")
+	)
+	(junction
+		(at 111.125 56.515)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5787083e-1b0b-46b5-9cf5-dbd8f4481593")
+	)
+	(junction
+		(at 99.06 65.405)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7874a394-225e-4876-acac-0799cc43b688")
+	)
+	(junction
+		(at 99.06 46.355)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7f1224a3-b8fa-4fd2-aee9-84070693d98a")
+	)
+	(junction
+		(at 116.84 64.135)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "99bc7eea-3b0a-4d15-8793-817cc66589ff")
+	)
+	(junction
+		(at 114.935 61.595)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bd6fe481-d59b-4626-9e23-cd3fbc600ec2")
+	)
+	(junction
+		(at 66.675 64.135)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d7469f64-9197-4c07-8214-357cf3ee6e9f")
+	)
+	(junction
+		(at 121.285 59.055)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e1bd5765-82eb-4f20-8fd8-cf7d0808027d")
+	)
+	(junction
+		(at 113.03 59.055)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e760638a-21e0-4458-a079-5aedeff01bbf")
+	)
+	(junction
+		(at 99.06 40.005)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ea16ac5a-411e-4c7c-98fc-ad4d44a588f8")
+	)
+	(wire
+		(pts
+			(xy 114.3 132.715) (xy 124.46 132.715)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0168c806-d34c-4238-bc07-a6d7b739af64")
+	)
+	(wire
+		(pts
+			(xy 114.3 113.03) (xy 124.46 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01db7def-863f-4460-a802-2ec51dfb9367")
+	)
+	(wire
+		(pts
+			(xy 111.125 33.02) (xy 137.795 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "036d3013-9595-4cc0-bea0-90d90156a23c")
+	)
+	(wire
+		(pts
+			(xy 170.18 113.03) (xy 180.975 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03a98f7f-d665-48ca-82cb-8419fcc843fd")
+	)
+	(wire
+		(pts
+			(xy 102.87 59.055) (xy 102.87 40.005)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04f6c70f-3735-4e4b-b285-32a03e7c6123")
+	)
+	(wire
+		(pts
+			(xy 176.53 130.175) (xy 180.975 130.175)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07de3d07-6e0c-475b-a80a-819fc538aa02")
+	)
+	(wire
+		(pts
+			(xy 99.06 65.405) (xy 99.06 67.945)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ffdaf8e-7e48-4a89-a80c-25714ea2b762")
+	)
+	(wire
+		(pts
+			(xy 114.3 92.075) (xy 124.46 92.075)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10ca1b8d-b487-4903-8905-351b7f5e2867")
+	)
+	(wire
+		(pts
+			(xy 170.18 61.595) (xy 180.975 61.595)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "152bd8d4-ae66-44fe-b3dd-3e9e69f46ce3")
+	)
+	(wire
+		(pts
+			(xy 99.06 40.005) (xy 99.06 42.545)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "160737cb-82e3-467f-bebf-23aac6480744")
+	)
+	(wire
+		(pts
+			(xy 226.695 93.98) (xy 226.695 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a783963-0101-49c2-b6fb-ae61bfb14778")
+	)
+	(wire
+		(pts
+			(xy 114.3 79.375) (xy 124.46 79.375)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ab50632-c857-41a9-8a63-55b3d8566a6a")
+	)
+	(wire
+		(pts
+			(xy 111.125 56.515) (xy 111.125 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25205aec-de05-41e6-83cf-cca130b6193f")
+	)
+	(wire
+		(pts
+			(xy 119.38 56.515) (xy 119.38 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26be1d0e-50cb-48e4-9ad6-1101576f3f80")
+	)
+	(wire
+		(pts
+			(xy 170.18 101.6) (xy 180.975 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28118b36-6637-4bcb-b125-ceab1d16aaca")
+	)
+	(wire
+		(pts
+			(xy 174.625 132.715) (xy 180.975 132.715)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bf1b1f3-dd96-4c6f-968f-fbd71c9585e3")
+	)
+	(wire
+		(pts
+			(xy 116.84 40.64) (xy 137.795 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d8cc211-894a-43ce-80f7-6bb0cb112226")
+	)
+	(wire
+		(pts
+			(xy 114.3 115.57) (xy 124.46 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3001de68-d355-4341-b3ae-afe7b3089673")
+	)
+	(wire
+		(pts
+			(xy 116.84 64.135) (xy 116.84 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "353e7f56-5f7e-4cda-b7d4-59ab77b055a6")
+	)
+	(wire
+		(pts
+			(xy 119.38 56.515) (xy 124.46 56.515)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37b75ee8-1328-496e-a306-99234f09c444")
+	)
+	(wire
+		(pts
+			(xy 114.3 105.41) (xy 124.46 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ae45b58-093b-4770-af1d-0954498e28fb")
+	)
+	(wire
+		(pts
+			(xy 114.3 142.875) (xy 124.46 142.875)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4072240e-cfa3-47f8-837f-e2d9c720eb6b")
+	)
+	(wire
+		(pts
+			(xy 116.84 64.135) (xy 102.87 64.135)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "409aa5bf-c527-49bd-89ea-47c045537ba9")
+	)
+	(wire
+		(pts
+			(xy 213.995 99.06) (xy 231.775 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42bdfc22-5b82-457e-a3d2-3ef5d96d01c2")
+	)
+	(wire
+		(pts
+			(xy 114.3 84.455) (xy 124.46 84.455)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47418031-dcdc-4b38-bff9-ed373f689568")
+	)
+	(wire
+		(pts
+			(xy 114.935 61.595) (xy 114.935 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47fd6688-0cc3-4037-9b27-bfc48643a096")
+	)
+	(wire
+		(pts
+			(xy 105.41 46.355) (xy 99.06 46.355)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49fb8455-2a82-4128-a549-4706cc589046")
+	)
+	(wire
+		(pts
+			(xy 111.125 56.515) (xy 119.38 56.515)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d9a922b-8b1a-44a2-8a0f-6bf2d33d2713")
+	)
+	(wire
+		(pts
+			(xy 114.3 135.255) (xy 124.46 135.255)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4db8af70-dc43-4e8d-a7a2-42222cf9f24b")
+	)
+	(wire
+		(pts
+			(xy 99.06 61.595) (xy 114.935 61.595)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4dd8d431-430d-483e-85b2-d89c439b7743")
+	)
+	(wire
+		(pts
+			(xy 170.18 59.055) (xy 180.975 59.055)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4fe290a5-c5f4-426d-95a6-8df60097a32f")
+	)
+	(wire
+		(pts
+			(xy 114.3 81.915) (xy 124.46 81.915)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52ff3c14-b567-41c9-abbf-a2ef3f189d43")
+	)
+	(wire
+		(pts
+			(xy 174.625 47.625) (xy 174.625 132.715)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54677c02-149b-4b23-83f7-34f549036e73")
+	)
+	(wire
+		(pts
+			(xy 105.41 56.515) (xy 105.41 46.355)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54704a0c-804a-41be-b2d4-b12285383855")
+	)
+	(wire
+		(pts
+			(xy 213.995 93.98) (xy 226.695 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57148e95-decf-4d21-a416-44c321855822")
+	)
+	(wire
+		(pts
+			(xy 114.3 123.19) (xy 124.46 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e5f2025-7d36-4e7e-bccd-f14075d0d92e")
+	)
+	(wire
+		(pts
+			(xy 102.87 40.005) (xy 99.06 40.005)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66fc3c4a-a2a7-4c23-a789-bc8435e5e047")
+	)
+	(wire
+		(pts
+			(xy 99.06 59.055) (xy 99.06 61.595)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "672cb193-4d89-4eec-89df-5f9b1e52fd23")
+	)
+	(wire
+		(pts
+			(xy 71.12 43.815) (xy 66.675 43.815)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "690f768e-efff-4453-8ef4-ae3d6b879c1c")
+	)
+	(wire
+		(pts
+			(xy 158.115 33.02) (xy 234.315 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69b46502-60d4-4154-9fe2-9edf26197a11")
+	)
+	(wire
+		(pts
+			(xy 114.3 140.335) (xy 124.46 140.335)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d5f7412-4a81-4c1d-a3ae-7c347d93f5bd")
+	)
+	(wire
+		(pts
+			(xy 234.315 101.6) (xy 234.315 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7028f7fa-ceba-41c1-a743-5e979a45f948")
+	)
+	(wire
+		(pts
+			(xy 102.87 65.405) (xy 99.06 65.405)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "762a0d21-d547-4cc9-ad0d-2ed9bb6c2c20")
+	)
+	(wire
+		(pts
+			(xy 114.3 76.835) (xy 124.46 76.835)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76b99586-ad18-4eeb-8010-5f8e662b39fd")
+	)
+	(wire
+		(pts
+			(xy 170.18 118.11) (xy 180.975 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b54ad0b-f4a9-44b5-a886-f5769a1496e0")
+	)
+	(wire
+		(pts
+			(xy 66.675 64.135) (xy 66.675 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80f00e60-541b-4a72-b665-5495ffaaefbc")
+	)
+	(wire
+		(pts
+			(xy 114.3 89.535) (xy 124.46 89.535)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83ed30c9-f060-4b12-84ef-26d3fb55fc99")
+	)
+	(wire
+		(pts
+			(xy 114.3 94.615) (xy 124.46 94.615)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87c6b790-475b-4aca-beda-91c6d1a75dd0")
+	)
+	(wire
+		(pts
+			(xy 170.18 77.47) (xy 180.975 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "897a3fbf-a458-4dd6-8eb8-a567a8388310")
+	)
+	(wire
+		(pts
+			(xy 170.18 115.57) (xy 180.975 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a1495ed-2378-4ca1-8b57-dbe9ae54dd91")
+	)
+	(wire
+		(pts
+			(xy 170.18 96.52) (xy 180.975 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b7c7054-f565-4b9d-a7d0-1832ae3f140f")
+	)
+	(wire
+		(pts
+			(xy 170.18 135.255) (xy 180.975 135.255)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8bf7584f-fd6c-4af2-bf73-64cb37c3446b")
+	)
+	(wire
+		(pts
+			(xy 99.06 46.355) (xy 99.06 48.895)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c020e15-2a89-47e2-b677-c295758ceb47")
+	)
+	(wire
+		(pts
+			(xy 121.285 59.055) (xy 121.285 47.625)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cbe5762-39c1-465d-bf72-a77c77c781bd")
+	)
+	(wire
+		(pts
+			(xy 170.18 145.415) (xy 180.975 145.415)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "924d4866-1d30-4676-90a2-f2a3e1da2929")
+	)
+	(wire
+		(pts
+			(xy 170.18 142.875) (xy 180.975 142.875)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "977abf6e-1aa6-4ed6-90f5-464ab8571b5d")
+	)
+	(wire
+		(pts
+			(xy 66.675 43.815) (xy 66.675 64.135)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98baadb6-e09e-4910-a2c8-8e1a51ccc1a6")
+	)
+	(wire
+		(pts
+			(xy 114.3 120.65) (xy 124.46 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d00d30f-68a1-42eb-b2ea-fd2a7042acc2")
+	)
+	(wire
+		(pts
+			(xy 170.18 140.335) (xy 180.975 140.335)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fbe0aba-7154-4c92-af5d-890c437ce2bd")
+	)
+	(wire
+		(pts
+			(xy 170.18 93.98) (xy 180.975 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1bce170-0825-4f27-8518-b3f29d266197")
+	)
+	(wire
+		(pts
+			(xy 114.3 86.995) (xy 124.46 86.995)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a41945d4-39a5-492e-9154-6006ae4870df")
+	)
+	(wire
+		(pts
+			(xy 102.87 59.055) (xy 113.03 59.055)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a89c211e-b284-4609-83c2-5093e0ad8e40")
+	)
+	(wire
+		(pts
+			(xy 114.3 110.49) (xy 124.46 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1afb864-391d-47ed-a95c-23001178e082")
+	)
+	(wire
+		(pts
+			(xy 158.115 38.1) (xy 229.235 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2fda4d0-b392-4799-9784-03c87961238d")
+	)
+	(wire
+		(pts
+			(xy 113.03 35.56) (xy 137.795 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b4e5dc68-a4aa-4357-840d-20a1b11fe0fc")
+	)
+	(wire
+		(pts
+			(xy 170.18 99.06) (xy 180.975 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5019148-2f84-4d09-99e2-8a3861857546")
+	)
+	(wire
+		(pts
+			(xy 170.18 56.515) (xy 180.975 56.515)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6d9fd4c-f306-486b-94e6-284b8435a7db")
+	)
+	(wire
+		(pts
+			(xy 66.675 64.135) (xy 71.12 64.135)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b78905cd-cfb2-40e7-8bd6-56e7151cfd82")
+	)
+	(wire
+		(pts
+			(xy 121.285 47.625) (xy 174.625 47.625)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba49efba-af4b-477e-89b2-20316f720ac7")
+	)
+	(wire
+		(pts
+			(xy 114.935 38.1) (xy 137.795 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bbc2107f-7059-4517-a77b-5e48f9d1b025")
+	)
+	(wire
+		(pts
+			(xy 114.3 145.415) (xy 124.46 145.415)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be4501a4-49b6-4727-acd6-12aa07f212da")
+	)
+	(wire
+		(pts
+			(xy 170.18 91.44) (xy 180.975 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c05db56f-3265-4e46-8bed-bb5e832415b6")
+	)
+	(wire
+		(pts
+			(xy 113.03 59.055) (xy 113.03 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c07fd251-e3cd-4c16-a4e3-8ce1e3554406")
+	)
+	(wire
+		(pts
+			(xy 114.3 137.795) (xy 124.46 137.795)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0f8e925-b3d5-4996-8c38-162725c1b471")
+	)
+	(wire
+		(pts
+			(xy 102.87 64.135) (xy 102.87 65.405)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3b8630d-8127-47ee-b240-0af7be5d4128")
+	)
+	(wire
+		(pts
+			(xy 170.18 74.93) (xy 180.975 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c72279ae-b7b6-4607-8455-042ea6628670")
+	)
+	(wire
+		(pts
+			(xy 119.38 45.72) (xy 176.53 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8e79e83-7206-4c5e-a250-a5fc7dcd499a")
+	)
+	(wire
+		(pts
+			(xy 121.285 59.055) (xy 124.46 59.055)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c948733d-c77e-4a1c-9af6-5a922c1fb816")
+	)
+	(wire
+		(pts
+			(xy 113.03 59.055) (xy 121.285 59.055)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c968107b-9bd1-41cc-b983-31f19ee89c91")
+	)
+	(wire
+		(pts
+			(xy 229.235 96.52) (xy 229.235 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca8a7b42-83f0-40b6-b2af-10d849effb19")
+	)
+	(wire
+		(pts
+			(xy 114.3 118.11) (xy 124.46 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cbabc6c3-acc8-4b4d-adae-3e4f6f702ed5")
+	)
+	(wire
+		(pts
+			(xy 158.115 35.56) (xy 231.775 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd963b88-f9d9-48f0-bf64-9d444f40c682")
+	)
+	(wire
+		(pts
+			(xy 176.53 45.72) (xy 176.53 130.175)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d05a3bce-c405-4034-ab30-22f90713b323")
+	)
+	(wire
+		(pts
+			(xy 213.995 96.52) (xy 229.235 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d80e3315-9497-4fca-87de-1c69bd14ddf9")
+	)
+	(wire
+		(pts
+			(xy 231.775 99.06) (xy 231.775 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddeb8c41-6f8a-4e32-a2af-fe534d9a220f")
+	)
+	(wire
+		(pts
+			(xy 116.84 64.135) (xy 124.46 64.135)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8a3dda5-d6b6-4143-b01d-2d14b4e8c430")
+	)
+	(wire
+		(pts
+			(xy 158.115 40.64) (xy 226.695 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea83593d-ca09-45d5-906b-42aea9eabb83")
+	)
+	(wire
+		(pts
+			(xy 114.3 107.95) (xy 124.46 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efd56462-d170-45cd-812b-e577b683338e")
+	)
+	(wire
+		(pts
+			(xy 170.18 137.795) (xy 180.975 137.795)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f003bedf-871b-450d-a195-835c502224fc")
+	)
+	(wire
+		(pts
+			(xy 105.41 56.515) (xy 111.125 56.515)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f172159b-1693-4eb7-8a74-ba4295e50b47")
+	)
+	(wire
+		(pts
+			(xy 114.935 61.595) (xy 124.46 61.595)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2f0b0d8-5b67-4998-86bd-77dcee19d73b")
+	)
+	(wire
+		(pts
+			(xy 213.995 101.6) (xy 234.315 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff742753-2cc4-45a9-980b-9f05e1480727")
+	)
+	(text "SPI1 = ETH1 = SYSETH\nSPI2 = ETH2 = EXTETH\nSPI3 = OLED\nUART7 = BOARD SERIAL\nUSART2 = SYS SERIAL (TO RS232 CIRCUIT)\n\nTOP = SIGNAL\n+1  = GND\n-1  = VDD\nBOT = SIGNAL"
+		(exclude_from_sim no)
+		(at 27.305 146.685 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3c640dba-fa52-4fbc-b48a-7d17584c9cc7")
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 245.745 137.795 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "0ab99149-4c96-48f3-9c24-64cfff9a7bdb")
+		(property "Reference" "H5"
+			(at 248.285 137.795 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 248.285 137.8023 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
+			(at 245.745 137.795 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 245.745 137.795 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 245.745 137.795 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Oro Testbed v2"
+				(path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
+					(reference "H5")
+					(unit 1)
+				)
+			)
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:ESDS302DBVR_tied")
+		(at 71.12 56.515 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2572ff69-8133-444c-bc70-9ecd93aa7426")
+		(property "Reference" "D2"
+			(at 85.09 53.324 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ESDS302DBVR"
+			(at 85.09 55.245 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "SOT95P280X145-5N"
+			(at 111.76 52.705 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/gpn/esds302"
+			(at 111.76 55.245 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "3.6V Data-Line Surge and 30kV ESD Protection Diode Array"
+			(at 111.76 57.785 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.45"
+			(at 111.76 78.105 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Texas Instruments"
+			(at 111.76 62.865 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "ESDS302DBVR"
+			(at 111.76 65.405 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "595-ESDS302DBVR"
+			(at 111.76 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESDS302DBVR?qs=qSfuJ%252Bfl%2Fd4NxvvS2bbWLw%3D%3D"
+			(at 111.76 70.485 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "ESDS302DBVR"
+			(at 111.76 73.025 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/esds302dbvr/texas-instruments"
+			(at 111.76 75.565 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2f97dec0-df0a-495d-9b90-1c7d28d8bedf")
+		)
+		(pin "2"
+			(uuid "658b3409-9514-4d1c-af4c-e6448dea7fe7")
+		)
+		(pin "3"
+			(uuid "e3aba5a2-d80e-453d-9d3b-460967d38ba1")
+		)
+		(pin "4"
+			(uuid "3f89b190-a6af-4b67-8c71-6bde7661de7f")
+		)
+		(pin "5"
+			(uuid "9ed71205-686c-4a37-a92e-928df7f6d355")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 66.675 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "555e58ac-57b4-4f92-9fa4-ad2cbc40af0e")
+		(property "Reference" "#PWR01"
+			(at 66.675 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 66.675 72.7155 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.675 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.675 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 66.675 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "91aeefc1-ccee-4e97-ad0b-27df248dddee")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 245.745 132.715 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "751be5ab-577e-4925-9098-8bf2a60ce414")
+		(property "Reference" "H5"
+			(at 248.285 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 248.285 132.7223 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
+			(at 245.745 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 245.745 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 245.745 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Oro Testbed v2"
+				(path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
+					(reference "H5")
+					(unit 1)
+				)
+			)
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:ESDS302DBVR_tied")
+		(at 71.12 51.435 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8c98d064-a1d8-4cb5-9f3f-5cba9d4d2cd1")
+		(property "Reference" "D1"
+			(at 85.09 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ESDS302DBVR"
+			(at 85.09 36.195 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "SOT95P280X145-5N"
+			(at 111.76 55.245 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/gpn/esds302"
+			(at 111.76 52.705 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "3.6V Data-Line Surge and 30kV ESD Protection Diode Array"
+			(at 111.76 50.165 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.45"
+			(at 111.76 29.845 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Texas Instruments"
+			(at 111.76 45.085 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "ESDS302DBVR"
+			(at 111.76 42.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "595-ESDS302DBVR"
+			(at 111.76 40.005 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESDS302DBVR?qs=qSfuJ%252Bfl%2Fd4NxvvS2bbWLw%3D%3D"
+			(at 111.76 37.465 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "ESDS302DBVR"
+			(at 111.76 34.925 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/esds302dbvr/texas-instruments"
+			(at 111.76 32.385 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "73d454e8-6569-4d3a-b97e-56979f4ce3fc")
+		)
+		(pin "2"
+			(uuid "c586548a-9d60-4bb6-acf3-23558f44e2dd")
+		)
+		(pin "3"
+			(uuid "4faa7015-e64b-4c61-8860-aae3907b813c")
+		)
+		(pin "4"
+			(uuid "6091afae-1fe2-4838-9839-7b8a218d5da4")
+		)
+		(pin "5"
+			(uuid "d1b2f388-fb3a-48e1-84d7-32b4d77149ce")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 245.745 127.635 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "9dd13a92-b82c-4ebc-91a3-88130551705d")
+		(property "Reference" "H5"
+			(at 248.285 127.635 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 248.285 127.6423 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
+			(at 245.745 127.635 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 245.745 127.635 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 245.745 127.635 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Oro Testbed v2"
+				(path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
+					(reference "H5")
+					(unit 1)
+				)
+			)
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 245.745 142.875 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "d2d4de64-8d15-49c9-8a35-55aa8d3466de")
+		(property "Reference" "H2"
+			(at 248.285 142.8837 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 248.285 142.8823 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
+			(at 245.745 142.875 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 245.745 142.875 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 245.745 142.875 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Oro Testbed v2"
+				(path "/3d0fc623-63eb-45e5-a304-e470d9b3a173"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SamacSys_Parts:67996-408HLF")
+		(at 137.795 33.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f1b868e3-d970-40c4-a87d-e75bedaaca03")
+		(property "Reference" "J1"
+			(at 147.955 27.5209 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "67996-408HLF"
+			(at 147.955 29.4419 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "HDRV8W89P254_2X4_1016X483X858P"
+			(at 154.305 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/67996.pdf"
+			(at 154.305 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "BergStik, Board to Board connector, Unshrouded vertical header, Through Hole, Double Row, 8 Positions, 2.54 mm (0.100in) Pitch"
+			(at 154.305 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "8.58"
+			(at 154.305 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Amphenol Communications Solutions"
+			(at 154.305 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "67996-408HLF"
+			(at 154.305 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "649-67996-408HLF"
+			(at 154.305 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Amphenol-FCI/67996-408HLF?qs=zh4O8xspOux8A5Dq3mcAKw%3D%3D"
+			(at 154.305 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "67996-408HLF"
+			(at 154.305 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/67996-408hlf/amphenol-fci"
+			(at 154.305 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "886049b4-c18c-40d1-84ce-c7b065ac17dc")
+		)
+		(pin "2"
+			(uuid "3330fd7c-8ffb-4e39-858f-44c8abbee2b0")
+		)
+		(pin "3"
+			(uuid "46c6b992-9091-4d81-a87b-a66632141420")
+		)
+		(pin "4"
+			(uuid "eae6c07f-8683-40c4-a63e-0a4e0057eb8e")
+		)
+		(pin "5"
+			(uuid "de5c261f-c807-488f-ac0c-d2a5d003afe4")
+		)
+		(pin "6"
+			(uuid "4f14ad94-d704-4fd2-8077-30bb324cb408")
+		)
+		(pin "7"
+			(uuid "4df4eea4-bec0-450b-b867-66b03d81216e")
+		)
+		(pin "8"
+			(uuid "f3e30c4b-e822-4a30-acb4-9fa67bafb753")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 81.28 130.81)
+		(size 33.02 17.145)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "1b3eede1-74b0-4c0b-b4f1-7ec1bfc1f54f")
+		(property "Sheetname" "OLED Socket"
+			(at 81.28 130.0984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "oled-socket.kicad_sch"
+			(at 81.28 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SPI_SCK" input
+			(at 114.3 142.875 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "6889326c-cb12-4e0b-a1ee-9de146f3a761")
+		)
+		(pin "~{RST}" input
+			(at 114.3 140.335 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "4674fb04-0afd-4812-9ae0-9b91933807cd")
+		)
+		(pin "SPI_SDI" input
+			(at 114.3 145.415 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "3b7b7f93-2c48-4a8d-bdbd-a67b90e5f51c")
+		)
+		(pin "CS" input
+			(at 114.3 137.795 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "7eed2597-4e50-434e-9862-fa512f52e949")
+		)
+		(pin "DC" input
+			(at 114.3 135.255 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "f3046b39-4fea-4f3a-aa8b-3d22bca9a9a8")
+		)
+		(pin "EN" input
+			(at 114.3 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "5f1e2446-a5f5-4d5e-a8e7-3801ce246ef4")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 180.975 127.635)
+		(size 33.02 20.32)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "259c9346-7ad9-40c3-9e14-9b19afc78ddf")
+		(property "Sheetname" "SWD Pad"
+			(at 180.975 126.9234 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "swd-pad.kicad_sch"
+			(at 180.975 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SWO" input
+			(at 180.975 140.335 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "327ef97f-09c4-48c9-872f-c2c07001e78c")
+		)
+		(pin "SWCLK" output
+			(at 180.975 142.875 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "26f18fd8-a114-4087-ac74-0c1c942f4566")
+		)
+		(pin "SWDIO" bidirectional
+			(at 180.975 145.415 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "9344931a-00e6-43e3-a5b2-37ace63422fd")
+		)
+		(pin "BOOT1" output
+			(at 180.975 137.795 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "ab068c07-1870-4b2e-b8c7-7193821fbc05")
+		)
+		(pin "BOOT0" output
+			(at 180.975 135.255 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "eb672cda-6ef8-45a9-8beb-c88df0c62abd")
+		)
+		(pin "UART_MCU_RX" output
+			(at 180.975 132.715 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "8d061e4b-0c1f-4851-b90e-62f5c6076b10")
+		)
+		(pin "UART_MCU_TX" input
+			(at 180.975 130.175 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "be4f6543-4b20-445c-adab-183bc07a4041")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 180.975 110.49)
+		(size 33.02 10.16)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "49c51f54-e113-47ff-b1ad-86c9ad73cafa")
+		(property "Sheetname" "Indicator Lights"
+			(at 180.975 109.7784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "indicator-lights.kicad_sch"
+			(at 180.975 121.2346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SDA" bidirectional
+			(at 180.975 115.57 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "67255031-ec14-4707-aaae-824b71018785")
+		)
+		(pin "SCL" bidirectional
+			(at 180.975 118.11 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "46e1871e-9a87-4e51-ac50-7ebb731c5466")
+		)
+		(pin "EN" input
+			(at 180.975 113.03 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "243f3a4f-9f8f-48b6-8628-0a7da2eaaf11")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 81.28 103.505)
+		(size 33.02 21.59)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "52771c01-2e58-4900-abe5-411f688d020f")
+		(property "Sheetname" "System Ethernet"
+			(at 81.28 102.7934 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ethernet.kicad_sch"
+			(at 81.28 125.6796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SDI" input
+			(at 114.3 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "fd79fc2d-b736-44c6-8626-577eac166fa7")
+		)
+		(pin "~{INT}" output
+			(at 114.3 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "6f14d1da-5051-47e1-97d9-4eb83509c64f")
+		)
+		(pin "SDO" output
+			(at 114.3 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2ad7054e-3c50-4cf4-80ac-db9094a7c9cc")
+		)
+		(pin "SCK" passive
+			(at 114.3 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "af808566-ff4d-4e61-8d76-d54dc8bc7797")
+		)
+		(pin "~{RST}" input
+			(at 114.3 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "028f7442-b066-49e9-8e83-07300321ace9")
+		)
+		(pin "CS" input
+			(at 114.3 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "6ca48087-cb92-4213-a5e2-7a235a79babb")
+		)
+		(pin "XFRM_EN" input
+			(at 114.3 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "65d9b964-5628-4ff9-ae07-d886f6feb677")
+		)
+		(pin "EN" input
+			(at 114.3 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "bb756568-aecb-4684-9dcd-88d93202842b")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 180.975 72.39)
+		(size 33.02 7.62)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "6eeb4496-d532-42b5-95b8-3d397c9a21d1")
+		(property "Sheetname" "Front Panel Client"
+			(at 180.975 71.6784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "front-panel-client.kicad_sch"
+			(at 180.975 80.5946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "PWR_ON" input
+			(at 180.975 74.93 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f552ed35-030c-4fc2-8e69-4dc30f43cd1b")
+		)
+		(pin "RESET" input
+			(at 180.975 77.47 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "048704ee-1e03-47ae-86b2-d7a73db3a9c2")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 81.28 74.295)
+		(size 33.02 22.86)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "7cebe953-3148-4b67-a6c9-1f2594261687")
+		(property "Sheetname" "External Ethernet"
+			(at 81.28 73.5834 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ethernet.kicad_sch"
+			(at 81.28 97.7396 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SDI" input
+			(at 114.3 84.455 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "1bef8916-55a6-48f3-bc6d-b332423d077e")
+		)
+		(pin "~{INT}" output
+			(at 114.3 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2dca2eea-91b1-4949-b0b4-91d92d54a48e")
+		)
+		(pin "SDO" output
+			(at 114.3 81.915 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "0bf99ae8-86de-402b-bdd8-087f0ee92439")
+		)
+		(pin "SCK" passive
+			(at 114.3 79.375 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "8612819c-656b-4a35-bc26-d09af9b63af4")
+		)
+		(pin "~{RST}" input
+			(at 114.3 86.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "083f3e58-c8d8-45e9-9253-8b6a10af552f")
+		)
+		(pin "CS" input
+			(at 114.3 92.075 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "88815e22-7476-4b3e-aa6e-74e51b454f99")
+		)
+		(pin "XFRM_EN" input
+			(at 114.3 94.615 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "6e81c5c3-5fa3-48fd-9c16-5a030657d996")
+		)
+		(pin "EN" input
+			(at 114.3 76.835 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "b1193e4a-8be2-4b72-b485-719506e291f3")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 180.975 89.535)
+		(size 33.02 13.97)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "a5104146-06a0-496e-bda0-1e4731a261c3")
+		(property "Sheetname" "COM Bus Header"
+			(at 180.975 88.8234 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "com-bus-header.kicad_sch"
+			(at 180.975 104.0896 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "RTS" input
+			(at 180.975 93.98 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "98dbad4e-11fd-4359-8d4b-98449cb39c09")
+		)
+		(pin "RX" output
+			(at 180.975 101.6 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "856aa328-eaff-47c7-912c-6dacfac467e9")
+		)
+		(pin "TX" input
+			(at 180.975 99.06 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "633e0161-0c58-4aa5-bad2-4d1873f101fa")
+		)
+		(pin "CTS" output
+			(at 180.975 96.52 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "53e6d490-1837-4092-8d28-a81832a3c381")
+		)
+		(pin "RS232_RX" output
+			(at 213.995 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "385d6102-e079-4ef6-a858-2dabdfbf0518")
+		)
+		(pin "RS232_TX" output
+			(at 213.995 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "bfd7c7a4-cd73-4266-9667-0969b156cd83")
+		)
+		(pin "RS232_CTS" output
+			(at 213.995 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "9cb7b67f-9dcb-4756-82b5-7bfc2edcabf8")
+		)
+		(pin "RS232_RTS" output
+			(at 213.995 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2e1aa90c-63e9-48fe-9f59-f9e66a195627")
+		)
+		(pin "EN" input
+			(at 180.975 91.44 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "95ea1b29-376d-43b5-bcf4-430249786eb2")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 124.46 53.975)
+		(size 45.72 93.98)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "dd173832-34f8-47c0-be66-f527d6e2d134")
+		(property "Sheetname" "Microcontroller"
+			(at 124.46 53.2634 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "microcontroller.kicad_sch"
+			(at 124.46 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "EXTETH_~{RST}" output
+			(at 124.46 86.995 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "0094df2e-097e-4b11-a22e-ab598f5c51e7")
+		)
+		(pin "SYSUART_RTS" output
+			(at 170.18 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "bde15cbf-8418-42a1-83c2-f36583ada219")
+		)
+		(pin "SYSUART_TX" output
+			(at 170.18 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "264650f0-fc4e-4fde-b3a3-cd807e0cedc1")
+		)
+		(pin "SYSUART_RX" input
+			(at 170.18 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "55e38968-8091-43a7-ba69-d64b6336e9df")
+		)
+		(pin "EXTETH_MOSI" output
+			(at 124.46 84.455 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "c80983dd-6be4-4d08-96dd-c757ef18e702")
+		)
+		(pin "EXTETH_MISO" input
+			(at 124.46 81.915 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "04f681fe-2b34-435d-8e55-75443a5d7650")
+		)
+		(pin "EXTETH_SCK" bidirectional
+			(at 124.46 79.375 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "01dbb53b-27a8-4e9f-ab78-f4430de71ae1")
+		)
+		(pin "DBGUART_TX" output
+			(at 124.46 56.515 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f2d9c6da-d185-4a41-a085-d0e7619c103f")
+		)
+		(pin "SYSTEH_~{RST}" output
+			(at 124.46 115.57 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "051c9201-2499-4d26-97a6-c7547aa543f4")
+		)
+		(pin "SYSTEH_~{INT}" input
+			(at 124.46 118.11 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "94c6b319-7e86-4617-954c-170128b835f8")
+		)
+		(pin "DBGUART_RX" input
+			(at 124.46 59.055 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "6b4bbab1-0282-49cc-933d-e290e2d731fb")
+		)
+		(pin "SYSETH_MISO" input
+			(at 124.46 110.49 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7bb89380-540c-4afd-9ee1-a866d77c730c")
+		)
+		(pin "SYSETH_SCK" bidirectional
+			(at 124.46 107.95 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "5036234e-22ed-4093-9d10-960ac47978be")
+		)
+		(pin "SYSTEH_MOSI" output
+			(at 124.46 113.03 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "c5994749-bc0a-4297-95fc-00b5170521ff")
+		)
+		(pin "PSU_ON" output
+			(at 170.18 59.055 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "5e12121f-c559-4d8a-8cde-8ad3dde5de67")
+		)
+		(pin "SYS_RESET" output
+			(at 170.18 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "299ec1f4-ad5e-4835-bab4-19eaf154cb9a")
+		)
+		(pin "PSU_OK" input
+			(at 170.18 56.515 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "d6769141-3990-4594-bf9c-513cd029bc61")
+		)
+		(pin "SYS_POWER" output
+			(at 170.18 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "138405da-8841-4586-8dbd-0f93a17f022a")
+		)
+		(pin "EXTETH_~{INT}" input
+			(at 124.46 89.535 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "299e9929-c0d1-43ec-8c60-b6efaec9bc5a")
+		)
+		(pin "I2C_SDA" bidirectional
+			(at 170.18 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "45bebfae-2683-4c0d-b897-c42d0f4699e1")
+		)
+		(pin "I2C_SCL" output
+			(at 170.18 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ac2da590-951d-4eae-9c72-173bc1b19628")
+		)
+		(pin "OLED_MOSI" output
+			(at 124.46 145.415 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "e5413b7c-3699-4026-bcb5-a20571cde875")
+		)
+		(pin "SWCLK" input
+			(at 170.18 142.875 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "9439a85e-75b5-4d71-91a2-02fade720ae0")
+		)
+		(pin "OLED_SCK" input
+			(at 124.46 142.875 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "17b00402-c949-47a6-a27b-a9d1769c6b82")
+		)
+		(pin "SYSUART_CTS" input
+			(at 170.18 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2ceca16c-2fcf-4659-8be4-943f777270e5")
+		)
+		(pin "OLED_~{RST}" output
+			(at 124.46 140.335 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "bd3bc880-35ae-40f8-8351-f24cfae2cabd")
+		)
+		(pin "SWO" output
+			(at 170.18 140.335 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "4497cede-9bf0-423d-9c57-7900eaf0e3e0")
+		)
+		(pin "USB_D+" output
+			(at 124.46 64.135 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "34cc8a55-a51a-422b-9897-63cb1af19a4e")
+		)
+		(pin "SWDIO" bidirectional
+			(at 170.18 145.415 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "a79fb434-f004-4655-9242-7e4634fd394f")
+		)
+		(pin "USB_D-" output
+			(at 124.46 61.595 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "9a31f311-592d-4d59-816e-d8f23236c211")
+		)
+		(pin "OLED_CS" output
+			(at 124.46 137.795 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "1a64a059-a172-4acb-8543-0cf09496c043")
+		)
+		(pin "OLED_DC" output
+			(at 124.46 135.255 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "142c90ea-59b7-4694-becd-9f278e0bdb27")
+		)
+		(pin "EXTETH_CS" output
+			(at 124.46 92.075 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "6aae622b-953e-452f-be11-7002d399254f")
+		)
+		(pin "SYSETH_CS" output
+			(at 124.46 120.65 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7bfb3dd9-dc46-4e6f-b417-2201664fe5f3")
+		)
+		(pin "SYSETH_XFRM_EN" output
+			(at 124.46 123.19 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f6742153-6aa2-4748-a74a-7e5303571a66")
+		)
+		(pin "EXTETH_XFRM_EN" output
+			(at 124.46 94.615 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "daa06e36-ff23-4dc8-a705-2c14b82e2f56")
+		)
+		(pin "BOOT0" input
+			(at 170.18 135.255 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "be603de3-6e80-4d3f-9b06-92b00b5c6464")
+		)
+		(pin "BOOT1" input
+			(at 170.18 137.795 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "f9775a32-8e9a-44a7-937c-fef8b0f27054")
+		)
+		(pin "SYSUART_EN" output
+			(at 170.18 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "f36270e0-a44b-4e90-aa22-4ee5d2093e40")
+		)
+		(pin "OLED_EN" output
+			(at 124.46 132.715 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "a3219835-99b6-4e48-b7e3-882915141499")
+		)
+		(pin "INDLIGHTS_EN" output
+			(at 170.18 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "532978d9-df8e-49cf-8ae9-5c29b4a5ec8d")
+		)
+		(pin "EXTETH_EN" output
+			(at 124.46 76.835 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "4ac4bded-1fba-4925-a200-a1aba39c17dc")
+		)
+		(pin "SYSETH_EN" output
+			(at 124.46 105.41 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "0e4aea69-3d86-47ed-a2b3-587a516bc255")
+		)
+		(pin "PSU_SB" output
+			(at 170.18 61.595 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "116839fa-08d0-401e-b968-6b852ed9c239")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 180.975 53.975)
+		(size 33.02 9.525)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "f955395e-bf1a-4ef3-9cfe-ec9d49f66988")
+		(property "Sheetname" "Power Supply"
+			(at 180.975 53.2634 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power-supply.kicad_sch"
+			(at 180.975 64.0846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "PWR_OK" output
+			(at 180.975 56.515 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "5bca749f-a498-468d-a347-47d0e7490193")
+		)
+		(pin "SYS_PWR_ON" input
+			(at 180.975 59.055 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "bfb70c7b-bcbf-4bee-9451-61e7e29415b8")
+		)
+		(pin "SYS_PWR_SB" input
+			(at 180.975 61.595 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "05405dcf-83c0-4cb7-9912-103cbbe5fecd")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
 )
