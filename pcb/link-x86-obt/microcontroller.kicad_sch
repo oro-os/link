@@ -4469,10 +4469,6 @@
 		(uuid "01456de6-f8f5-404b-a2dc-6edb6205f05b")
 	)
 	(no_connect
-		(at 162.56 78.74)
-		(uuid "08e4036d-e3d9-4abf-8c06-2cb71e7242a2")
-	)
-	(no_connect
 		(at 119.38 147.32)
 		(uuid "0cfd4960-ccdc-4a06-9510-bc010144f0d8")
 	)
@@ -5609,6 +5605,16 @@
 			(type default)
 		)
 		(uuid "9f8abc48-111d-4794-83bc-b1fb46674266")
+	)
+	(wire
+		(pts
+			(xy 162.56 78.74) (xy 173.99 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0594abf-9b68-4c30-b58e-9835aa460cc0")
 	)
 	(wire
 		(pts
@@ -6982,6 +6988,18 @@
 			(justify left)
 		)
 		(uuid "5d1c5c19-625a-4c21-bf77-e7bbe1b4ee54")
+	)
+	(hierarchical_label "USB_VBUS"
+		(shape output)
+		(at 173.99 78.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5ed67a31-8cc4-48ad-a250-2327eb989984")
 	)
 	(hierarchical_label "OLED_CS"
 		(shape output)

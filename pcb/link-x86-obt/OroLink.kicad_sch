@@ -95,6 +95,184 @@
 				)
 			)
 		)
+		(symbol "Oro (Legacy):67996-408HLF (2P Cut)"
+			(pin_names
+				(offset 0.762)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 16.51 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "67996-408HLF (2P CUT)"
+				(at 16.51 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Oro Footprints:HDRV8W89P254_2X4_1016X483X858P_2P"
+				(at 43.688 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/67996.pdf"
+				(at 43.688 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "BergStik, Board to Board connector, Unshrouded vertical header, Through Hole, Double Row, 8 Positions, 2.54 mm (0.100in) Pitch"
+				(at 43.688 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Height" "8.58"
+				(at 43.688 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Amphenol Communications Solutions"
+				(at 43.688 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "67996-408HLF"
+				(at 43.688 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "649-67996-408HLF"
+				(at 43.688 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Amphenol-FCI/67996-408HLF?qs=zh4O8xspOux8A5Dq3mcAKw%3D%3D"
+				(at 43.688 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" "67996-408HLF"
+				(at 43.688 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/67996-408hlf/amphenol-fci"
+				(at 43.688 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(symbol "67996-408HLF (2P Cut)_0_0"
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 0 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "67996-408HLF (2P Cut)_0_1"
+				(polyline
+					(pts
+						(xy 5.08 2.54) (xy 15.24 2.54) (xy 15.24 -2.54) (xy 5.08 -2.54) (xy 5.08 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
 		(symbol "Oro:ESDS302DBVR_tied"
 			(pin_names
 				(offset 0.762)
@@ -635,6 +813,264 @@
 				)
 			)
 		)
+		(symbol "SamacSys_Parts:SS12"
+			(pin_names
+				(offset 0.762)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 12.7 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SS12"
+				(at 12.7 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "DIOM5227X250N"
+				(at 12.7 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://datasheet.datasheetarchive.com/originals/distributors/Datasheets-24/DSA-463612.pdf"
+				(at 12.7 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "ON Semi SS12 SMT Schottky Diode, 20V 1A, 2-Pin DO-214AC"
+				(at 12.7 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Height" "2.5"
+				(at 12.7 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "onsemi"
+				(at 12.7 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "SS12"
+				(at 12.7 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "512-SS12"
+				(at 12.7 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ON-Semiconductor-Fairchild/SS12?qs=mVVXn4M53U9WoaEpU1CO0A%3D%3D"
+				(at 12.7 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" "SS12"
+				(at 12.7 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ss12/on-semiconductor?region=nac"
+				(at 12.7 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Testing Part Number" ""
+				(at 12.7 -21.59 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Testing Price/Stock" ""
+				(at 12.7 -24.13 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(symbol "SS12_0_0"
+				(pin passive line
+					(at 2.54 0 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 17.78 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "SS12_0_1"
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 7.62 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 2.54) (xy 7.62 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12.7 0) (xy 15.24 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -2.54) (xy 6.604 -2.54) (xy 6.604 -1.524)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 2.54) (xy 8.636 2.54) (xy 8.636 1.524)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 0) (xy 12.7 2.54) (xy 12.7 -2.54) (xy 7.62 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_names
@@ -733,74 +1169,80 @@
 		)
 	)
 	(junction
-		(at 119.38 56.515)
+		(at 119.38 64.77)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "29b18527-6dbf-49d3-ba0f-0ea16865cbe8")
 	)
 	(junction
-		(at 99.06 61.595)
+		(at 99.06 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4ca1c7c8-4632-48f5-87fd-c911eacb0d9d")
 	)
 	(junction
-		(at 111.125 56.515)
+		(at 111.125 64.77)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5787083e-1b0b-46b5-9cf5-dbd8f4481593")
 	)
 	(junction
-		(at 99.06 65.405)
+		(at 99.06 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7874a394-225e-4876-acac-0799cc43b688")
 	)
 	(junction
-		(at 99.06 46.355)
+		(at 99.06 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7f1224a3-b8fa-4fd2-aee9-84070693d98a")
 	)
 	(junction
-		(at 116.84 64.135)
+		(at 116.84 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "99bc7eea-3b0a-4d15-8793-817cc66589ff")
 	)
 	(junction
-		(at 114.935 61.595)
+		(at 114.935 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bd6fe481-d59b-4626-9e23-cd3fbc600ec2")
 	)
 	(junction
-		(at 66.675 64.135)
+		(at 109.22 29.845)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d3d9760a-a4ef-48c0-8616-9ddaed551aff")
+	)
+	(junction
+		(at 66.675 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d7469f64-9197-4c07-8214-357cf3ee6e9f")
 	)
 	(junction
-		(at 121.285 59.055)
+		(at 121.285 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e1bd5765-82eb-4f20-8fd8-cf7d0808027d")
 	)
 	(junction
-		(at 113.03 59.055)
+		(at 113.03 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e760638a-21e0-4458-a079-5aedeff01bbf")
 	)
 	(junction
-		(at 99.06 40.005)
+		(at 99.06 48.26)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ea16ac5a-411e-4c7c-98fc-ad4d44a588f8")
 	)
 	(wire
 		(pts
-			(xy 114.3 132.715) (xy 124.46 132.715)
+			(xy 114.3 140.97) (xy 124.46 140.97)
 		)
 		(stroke
 			(width 0)
@@ -810,7 +1252,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 113.03) (xy 124.46 113.03)
+			(xy 114.3 121.285) (xy 124.46 121.285)
 		)
 		(stroke
 			(width 0)
@@ -820,7 +1262,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.125 33.02) (xy 137.795 33.02)
+			(xy 111.125 41.275) (xy 138.43 41.275)
 		)
 		(stroke
 			(width 0)
@@ -830,7 +1272,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 113.03) (xy 180.975 113.03)
+			(xy 170.18 121.285) (xy 180.975 121.285)
 		)
 		(stroke
 			(width 0)
@@ -840,7 +1282,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 59.055) (xy 102.87 40.005)
+			(xy 102.87 67.31) (xy 102.87 48.26)
 		)
 		(stroke
 			(width 0)
@@ -850,7 +1292,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 130.175) (xy 180.975 130.175)
+			(xy 176.53 138.43) (xy 180.975 138.43)
 		)
 		(stroke
 			(width 0)
@@ -860,7 +1302,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 65.405) (xy 99.06 67.945)
+			(xy 99.06 73.66) (xy 99.06 76.2)
 		)
 		(stroke
 			(width 0)
@@ -870,7 +1312,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 92.075) (xy 124.46 92.075)
+			(xy 114.3 100.33) (xy 124.46 100.33)
 		)
 		(stroke
 			(width 0)
@@ -880,7 +1322,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 61.595) (xy 180.975 61.595)
+			(xy 170.18 69.85) (xy 180.975 69.85)
 		)
 		(stroke
 			(width 0)
@@ -890,7 +1332,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 40.005) (xy 99.06 42.545)
+			(xy 99.06 48.26) (xy 99.06 50.8)
 		)
 		(stroke
 			(width 0)
@@ -900,7 +1342,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.695 93.98) (xy 226.695 40.64)
+			(xy 226.695 102.235) (xy 226.695 48.895)
 		)
 		(stroke
 			(width 0)
@@ -910,7 +1352,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 79.375) (xy 124.46 79.375)
+			(xy 114.3 87.63) (xy 124.46 87.63)
 		)
 		(stroke
 			(width 0)
@@ -920,7 +1362,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.125 56.515) (xy 111.125 33.02)
+			(xy 111.125 64.77) (xy 111.125 41.275)
 		)
 		(stroke
 			(width 0)
@@ -930,7 +1372,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 56.515) (xy 119.38 45.72)
+			(xy 119.38 64.77) (xy 119.38 53.975)
 		)
 		(stroke
 			(width 0)
@@ -940,7 +1382,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 101.6) (xy 180.975 101.6)
+			(xy 170.18 109.855) (xy 180.975 109.855)
 		)
 		(stroke
 			(width 0)
@@ -950,7 +1392,7 @@
 	)
 	(wire
 		(pts
-			(xy 174.625 132.715) (xy 180.975 132.715)
+			(xy 174.625 140.97) (xy 180.975 140.97)
 		)
 		(stroke
 			(width 0)
@@ -960,7 +1402,17 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 40.64) (xy 137.795 40.64)
+			(xy 109.22 75.565) (xy 109.22 29.845)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c06c0fd-9b7f-4b27-a6df-9df90df071db")
+	)
+	(wire
+		(pts
+			(xy 116.84 48.895) (xy 138.43 48.895)
 		)
 		(stroke
 			(width 0)
@@ -970,7 +1422,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 115.57) (xy 124.46 115.57)
+			(xy 114.3 123.825) (xy 124.46 123.825)
 		)
 		(stroke
 			(width 0)
@@ -980,7 +1432,17 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 64.135) (xy 116.84 40.64)
+			(xy 168.91 29.845) (xy 168.91 33.655)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34f4b1fd-79f9-4a21-a844-af2de54ede14")
+	)
+	(wire
+		(pts
+			(xy 116.84 72.39) (xy 116.84 48.895)
 		)
 		(stroke
 			(width 0)
@@ -990,7 +1452,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 56.515) (xy 124.46 56.515)
+			(xy 119.38 64.77) (xy 124.46 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1000,7 +1462,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 142.875) (xy 124.46 142.875)
+			(xy 114.3 151.13) (xy 124.46 151.13)
 		)
 		(stroke
 			(width 0)
@@ -1010,7 +1472,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 64.135) (xy 102.87 64.135)
+			(xy 116.84 72.39) (xy 102.87 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1020,7 +1482,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.995 99.06) (xy 231.775 99.06)
+			(xy 213.995 107.315) (xy 231.775 107.315)
 		)
 		(stroke
 			(width 0)
@@ -1030,7 +1492,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 84.455) (xy 124.46 84.455)
+			(xy 114.3 92.71) (xy 124.46 92.71)
 		)
 		(stroke
 			(width 0)
@@ -1040,7 +1502,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.935 61.595) (xy 114.935 38.1)
+			(xy 114.935 69.85) (xy 114.935 46.355)
 		)
 		(stroke
 			(width 0)
@@ -1050,7 +1512,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 46.355) (xy 99.06 46.355)
+			(xy 105.41 54.61) (xy 99.06 54.61)
 		)
 		(stroke
 			(width 0)
@@ -1060,7 +1522,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.125 56.515) (xy 119.38 56.515)
+			(xy 111.125 64.77) (xy 119.38 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1070,7 +1532,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 135.255) (xy 124.46 135.255)
+			(xy 114.3 143.51) (xy 124.46 143.51)
 		)
 		(stroke
 			(width 0)
@@ -1080,7 +1542,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 61.595) (xy 114.935 61.595)
+			(xy 99.06 69.85) (xy 114.935 69.85)
 		)
 		(stroke
 			(width 0)
@@ -1090,7 +1552,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 59.055) (xy 180.975 59.055)
+			(xy 170.18 67.31) (xy 180.975 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1100,7 +1562,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 81.915) (xy 124.46 81.915)
+			(xy 114.3 90.17) (xy 124.46 90.17)
 		)
 		(stroke
 			(width 0)
@@ -1110,7 +1572,7 @@
 	)
 	(wire
 		(pts
-			(xy 174.625 47.625) (xy 174.625 132.715)
+			(xy 174.625 55.88) (xy 174.625 140.97)
 		)
 		(stroke
 			(width 0)
@@ -1120,7 +1582,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 56.515) (xy 105.41 46.355)
+			(xy 105.41 64.77) (xy 105.41 54.61)
 		)
 		(stroke
 			(width 0)
@@ -1130,7 +1592,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.995 93.98) (xy 226.695 93.98)
+			(xy 213.995 102.235) (xy 226.695 102.235)
 		)
 		(stroke
 			(width 0)
@@ -1140,7 +1602,17 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 123.19) (xy 124.46 123.19)
+			(xy 158.75 29.845) (xy 168.91 29.845)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57ef30bc-701f-466a-aedb-38118448d8c3")
+	)
+	(wire
+		(pts
+			(xy 114.3 131.445) (xy 124.46 131.445)
 		)
 		(stroke
 			(width 0)
@@ -1150,7 +1622,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 40.005) (xy 99.06 40.005)
+			(xy 102.87 48.26) (xy 99.06 48.26)
 		)
 		(stroke
 			(width 0)
@@ -1160,7 +1632,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 59.055) (xy 99.06 61.595)
+			(xy 99.06 67.31) (xy 99.06 69.85)
 		)
 		(stroke
 			(width 0)
@@ -1170,7 +1642,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 43.815) (xy 66.675 43.815)
+			(xy 71.12 52.07) (xy 66.675 52.07)
 		)
 		(stroke
 			(width 0)
@@ -1180,7 +1652,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.115 33.02) (xy 234.315 33.02)
+			(xy 158.75 41.275) (xy 234.315 41.275)
 		)
 		(stroke
 			(width 0)
@@ -1190,7 +1662,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 140.335) (xy 124.46 140.335)
+			(xy 114.3 148.59) (xy 124.46 148.59)
 		)
 		(stroke
 			(width 0)
@@ -1200,7 +1672,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.315 101.6) (xy 234.315 33.02)
+			(xy 234.315 109.855) (xy 234.315 41.275)
 		)
 		(stroke
 			(width 0)
@@ -1210,7 +1682,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 65.405) (xy 99.06 65.405)
+			(xy 102.87 73.66) (xy 99.06 73.66)
 		)
 		(stroke
 			(width 0)
@@ -1220,7 +1692,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 118.11) (xy 180.975 118.11)
+			(xy 170.18 126.365) (xy 180.975 126.365)
 		)
 		(stroke
 			(width 0)
@@ -1230,7 +1702,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.675 64.135) (xy 66.675 68.58)
+			(xy 66.675 72.39) (xy 66.675 76.835)
 		)
 		(stroke
 			(width 0)
@@ -1240,7 +1712,17 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 89.535) (xy 124.46 89.535)
+			(xy 86.36 29.845) (xy 91.44 29.845)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82eefc56-948c-4914-8f9d-776e200e51f8")
+	)
+	(wire
+		(pts
+			(xy 114.3 97.79) (xy 124.46 97.79)
 		)
 		(stroke
 			(width 0)
@@ -1250,7 +1732,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 94.615) (xy 124.46 94.615)
+			(xy 114.3 102.87) (xy 124.46 102.87)
 		)
 		(stroke
 			(width 0)
@@ -1260,7 +1742,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 77.47) (xy 180.975 77.47)
+			(xy 170.18 85.725) (xy 180.975 85.725)
 		)
 		(stroke
 			(width 0)
@@ -1270,7 +1752,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 115.57) (xy 180.975 115.57)
+			(xy 170.18 123.825) (xy 180.975 123.825)
 		)
 		(stroke
 			(width 0)
@@ -1280,7 +1762,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 96.52) (xy 180.975 96.52)
+			(xy 170.18 104.775) (xy 180.975 104.775)
 		)
 		(stroke
 			(width 0)
@@ -1290,7 +1772,17 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 135.255) (xy 180.975 135.255)
+			(xy 124.46 75.565) (xy 109.22 75.565)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8bd90b2f-4868-4825-9e52-5dc873d2d388")
+	)
+	(wire
+		(pts
+			(xy 170.18 143.51) (xy 180.975 143.51)
 		)
 		(stroke
 			(width 0)
@@ -1300,7 +1792,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 46.355) (xy 99.06 48.895)
+			(xy 99.06 54.61) (xy 99.06 57.15)
 		)
 		(stroke
 			(width 0)
@@ -1310,7 +1802,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.285 59.055) (xy 121.285 47.625)
+			(xy 121.285 67.31) (xy 121.285 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1320,7 +1812,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 145.415) (xy 180.975 145.415)
+			(xy 170.18 153.67) (xy 180.975 153.67)
 		)
 		(stroke
 			(width 0)
@@ -1330,7 +1822,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 142.875) (xy 180.975 142.875)
+			(xy 170.18 151.13) (xy 180.975 151.13)
 		)
 		(stroke
 			(width 0)
@@ -1340,7 +1832,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.675 43.815) (xy 66.675 64.135)
+			(xy 66.675 52.07) (xy 66.675 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1350,7 +1842,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 120.65) (xy 124.46 120.65)
+			(xy 114.3 128.905) (xy 124.46 128.905)
 		)
 		(stroke
 			(width 0)
@@ -1360,7 +1852,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 140.335) (xy 180.975 140.335)
+			(xy 170.18 148.59) (xy 180.975 148.59)
 		)
 		(stroke
 			(width 0)
@@ -1370,7 +1862,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 93.98) (xy 180.975 93.98)
+			(xy 170.18 102.235) (xy 180.975 102.235)
 		)
 		(stroke
 			(width 0)
@@ -1380,7 +1872,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 86.995) (xy 124.46 86.995)
+			(xy 114.3 95.25) (xy 124.46 95.25)
 		)
 		(stroke
 			(width 0)
@@ -1390,7 +1882,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 59.055) (xy 113.03 59.055)
+			(xy 102.87 67.31) (xy 113.03 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1400,7 +1892,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 110.49) (xy 124.46 110.49)
+			(xy 114.3 118.745) (xy 124.46 118.745)
 		)
 		(stroke
 			(width 0)
@@ -1410,7 +1902,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.115 38.1) (xy 229.235 38.1)
+			(xy 158.75 46.355) (xy 229.235 46.355)
 		)
 		(stroke
 			(width 0)
@@ -1420,7 +1912,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 35.56) (xy 137.795 35.56)
+			(xy 113.03 43.815) (xy 138.43 43.815)
 		)
 		(stroke
 			(width 0)
@@ -1430,7 +1922,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 99.06) (xy 180.975 99.06)
+			(xy 170.18 107.315) (xy 180.975 107.315)
 		)
 		(stroke
 			(width 0)
@@ -1440,7 +1932,17 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 56.515) (xy 180.975 56.515)
+			(xy 109.22 29.845) (xy 138.43 29.845)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b63216c4-8d9d-4db2-8012-d9782132983c")
+	)
+	(wire
+		(pts
+			(xy 170.18 64.77) (xy 180.975 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1450,7 +1952,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.675 64.135) (xy 71.12 64.135)
+			(xy 66.675 72.39) (xy 71.12 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1460,7 +1962,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.285 47.625) (xy 174.625 47.625)
+			(xy 121.285 55.88) (xy 174.625 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1470,7 +1972,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.935 38.1) (xy 137.795 38.1)
+			(xy 114.935 46.355) (xy 138.43 46.355)
 		)
 		(stroke
 			(width 0)
@@ -1480,7 +1982,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 145.415) (xy 124.46 145.415)
+			(xy 114.3 153.67) (xy 124.46 153.67)
 		)
 		(stroke
 			(width 0)
@@ -1490,7 +1992,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 91.44) (xy 180.975 91.44)
+			(xy 170.18 99.695) (xy 180.975 99.695)
 		)
 		(stroke
 			(width 0)
@@ -1500,7 +2002,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 59.055) (xy 113.03 35.56)
+			(xy 113.03 67.31) (xy 113.03 43.815)
 		)
 		(stroke
 			(width 0)
@@ -1510,7 +2012,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 137.795) (xy 124.46 137.795)
+			(xy 114.3 146.05) (xy 124.46 146.05)
 		)
 		(stroke
 			(width 0)
@@ -1520,7 +2022,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 64.135) (xy 102.87 65.405)
+			(xy 102.87 72.39) (xy 102.87 73.66)
 		)
 		(stroke
 			(width 0)
@@ -1530,7 +2032,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 74.93) (xy 180.975 74.93)
+			(xy 170.18 83.185) (xy 180.975 83.185)
 		)
 		(stroke
 			(width 0)
@@ -1540,7 +2042,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 45.72) (xy 176.53 45.72)
+			(xy 119.38 53.975) (xy 176.53 53.975)
 		)
 		(stroke
 			(width 0)
@@ -1550,7 +2052,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.285 59.055) (xy 124.46 59.055)
+			(xy 121.285 67.31) (xy 124.46 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1560,7 +2062,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 59.055) (xy 121.285 59.055)
+			(xy 113.03 67.31) (xy 121.285 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1570,7 +2072,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.235 96.52) (xy 229.235 38.1)
+			(xy 229.235 104.775) (xy 229.235 46.355)
 		)
 		(stroke
 			(width 0)
@@ -1580,7 +2082,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 118.11) (xy 124.46 118.11)
+			(xy 114.3 126.365) (xy 124.46 126.365)
 		)
 		(stroke
 			(width 0)
@@ -1590,7 +2092,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.115 35.56) (xy 231.775 35.56)
+			(xy 158.75 43.815) (xy 231.775 43.815)
 		)
 		(stroke
 			(width 0)
@@ -1600,7 +2102,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 45.72) (xy 176.53 130.175)
+			(xy 176.53 53.975) (xy 176.53 138.43)
 		)
 		(stroke
 			(width 0)
@@ -1610,7 +2112,17 @@
 	)
 	(wire
 		(pts
-			(xy 213.995 96.52) (xy 229.235 96.52)
+			(xy 106.68 29.845) (xy 109.22 29.845)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1c19d40-5bda-4eeb-8f50-2ab47b74fae1")
+	)
+	(wire
+		(pts
+			(xy 213.995 104.775) (xy 229.235 104.775)
 		)
 		(stroke
 			(width 0)
@@ -1620,7 +2132,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.775 99.06) (xy 231.775 35.56)
+			(xy 231.775 107.315) (xy 231.775 43.815)
 		)
 		(stroke
 			(width 0)
@@ -1630,7 +2142,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 64.135) (xy 124.46 64.135)
+			(xy 116.84 72.39) (xy 124.46 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1640,7 +2152,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.115 40.64) (xy 226.695 40.64)
+			(xy 158.75 48.895) (xy 226.695 48.895)
 		)
 		(stroke
 			(width 0)
@@ -1650,7 +2162,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 107.95) (xy 124.46 107.95)
+			(xy 114.3 116.205) (xy 124.46 116.205)
 		)
 		(stroke
 			(width 0)
@@ -1660,7 +2172,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 137.795) (xy 180.975 137.795)
+			(xy 170.18 146.05) (xy 180.975 146.05)
 		)
 		(stroke
 			(width 0)
@@ -1670,7 +2182,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 56.515) (xy 111.125 56.515)
+			(xy 105.41 64.77) (xy 111.125 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1680,7 +2192,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.935 61.595) (xy 124.46 61.595)
+			(xy 114.935 69.85) (xy 124.46 69.85)
 		)
 		(stroke
 			(width 0)
@@ -1690,7 +2202,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.995 101.6) (xy 234.315 101.6)
+			(xy 213.995 109.855) (xy 234.315 109.855)
 		)
 		(stroke
 			(width 0)
@@ -1700,7 +2212,7 @@
 	)
 	(text "SPI1 = ETH1 = SYSETH\nSPI2 = ETH2 = EXTETH\nSPI3 = OLED\nUART7 = BOARD SERIAL\nUSART2 = SYS SERIAL (TO RS232 CIRCUIT)\n\nTOP = SIGNAL\n+1  = GND\n-1  = VDD\nBOT = SIGNAL"
 		(exclude_from_sim no)
-		(at 27.305 146.685 0)
+		(at 27.305 154.94 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1710,8 +2222,149 @@
 		(uuid "3c640dba-fa52-4fbc-b48a-7d17584c9cc7")
 	)
 	(symbol
+		(lib_id "Oro (Legacy):67996-408HLF (2P Cut)")
+		(at 138.43 29.845 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "02cb5306-448a-400f-bc28-54c4352e1c58")
+		(property "Reference" "J9"
+			(at 148.59 23.2113 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "67996-408HLF (2P CUT)"
+			(at 148.59 25.6356 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Oro Footprints:HDRV8W89P254_2X4_1016X483X858P_2P"
+			(at 182.118 27.305 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/67996.pdf"
+			(at 182.118 29.845 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "BergStik, Board to Board connector, Unshrouded vertical header, Through Hole, Double Row, 8 Positions, 2.54 mm (0.100in) Pitch"
+			(at 182.118 32.385 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "8.58"
+			(at 182.118 34.925 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Amphenol Communications Solutions"
+			(at 182.118 37.465 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "67996-408HLF"
+			(at 182.118 40.005 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "649-67996-408HLF"
+			(at 182.118 42.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Amphenol-FCI/67996-408HLF?qs=zh4O8xspOux8A5Dq3mcAKw%3D%3D"
+			(at 182.118 45.085 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "67996-408HLF"
+			(at 182.118 47.625 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/67996-408hlf/amphenol-fci"
+			(at 182.118 50.165 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4dae21b3-c430-4156-8984-0e67f3024269")
+		)
+		(pin "1"
+			(uuid "ed6a2fda-62a3-4bbe-842b-e9cd61f5119d")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 245.745 137.795 0)
+		(at 245.745 146.05 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1719,7 +2372,7 @@
 		(dnp no)
 		(uuid "0ab99149-4c96-48f3-9c24-64cfff9a7bdb")
 		(property "Reference" "H5"
-			(at 248.285 137.795 0)
+			(at 248.285 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1728,7 +2381,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 248.285 137.8023 0)
+			(at 248.285 146.0573 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1738,7 +2391,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
-			(at 245.745 137.795 0)
+			(at 245.745 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1747,7 +2400,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 245.745 137.795 0)
+			(at 245.745 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1756,7 +2409,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 245.745 137.795 0)
+			(at 245.745 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1781,7 +2434,7 @@
 	)
 	(symbol
 		(lib_id "Oro:ESDS302DBVR_tied")
-		(at 71.12 56.515 0)
+		(at 71.12 64.77 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1789,7 +2442,7 @@
 		(dnp no)
 		(uuid "2572ff69-8133-444c-bc70-9ecd93aa7426")
 		(property "Reference" "D2"
-			(at 85.09 53.324 0)
+			(at 85.09 61.579 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1797,7 +2450,7 @@
 			)
 		)
 		(property "Value" "ESDS302DBVR"
-			(at 85.09 55.245 0)
+			(at 85.09 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1805,7 +2458,7 @@
 			)
 		)
 		(property "Footprint" "SOT95P280X145-5N"
-			(at 111.76 52.705 0)
+			(at 111.76 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1815,7 +2468,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/gpn/esds302"
-			(at 111.76 55.245 0)
+			(at 111.76 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1825,7 +2478,7 @@
 			)
 		)
 		(property "Description" "3.6V Data-Line Surge and 30kV ESD Protection Diode Array"
-			(at 111.76 57.785 0)
+			(at 111.76 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1835,7 +2488,7 @@
 			)
 		)
 		(property "Height" "1.45"
-			(at 111.76 78.105 0)
+			(at 111.76 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1845,7 +2498,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Texas Instruments"
-			(at 111.76 62.865 0)
+			(at 111.76 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1855,7 +2508,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "ESDS302DBVR"
-			(at 111.76 65.405 0)
+			(at 111.76 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1865,7 +2518,7 @@
 			)
 		)
 		(property "Mouser Part Number" "595-ESDS302DBVR"
-			(at 111.76 67.945 0)
+			(at 111.76 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1875,7 +2528,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESDS302DBVR?qs=qSfuJ%252Bfl%2Fd4NxvvS2bbWLw%3D%3D"
-			(at 111.76 70.485 0)
+			(at 111.76 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1885,7 +2538,7 @@
 			)
 		)
 		(property "Arrow Part Number" "ESDS302DBVR"
-			(at 111.76 73.025 0)
+			(at 111.76 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1895,7 +2548,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/esds302dbvr/texas-instruments"
-			(at 111.76 75.565 0)
+			(at 111.76 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1930,16 +2583,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 66.675 68.58 0)
+		(at 168.91 33.655 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "555e58ac-57b4-4f92-9fa4-ad2cbc40af0e")
-		(property "Reference" "#PWR01"
-			(at 66.675 74.93 0)
+		(uuid "48462c63-527a-4272-bbf8-d87b5445469e")
+		(property "Reference" "#PWR056"
+			(at 168.91 40.005 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1948,7 +2601,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 66.675 72.7155 0)
+			(at 168.91 37.7905 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1956,7 +2609,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 66.675 68.58 0)
+			(at 168.91 33.655 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1965,7 +2618,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 66.675 68.58 0)
+			(at 168.91 33.655 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1974,7 +2627,73 @@
 			)
 		)
 		(property "Description" ""
-			(at 66.675 68.58 0)
+			(at 168.91 33.655 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2a09017c-dbf3-407a-b7c7-353ef0b0523c")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(reference "#PWR056")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 66.675 76.835 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "555e58ac-57b4-4f92-9fa4-ad2cbc40af0e")
+		(property "Reference" "#PWR01"
+			(at 66.675 83.185 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 66.675 80.9705 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.675 76.835 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.675 76.835 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 66.675 76.835 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1996,7 +2715,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 245.745 132.715 0)
+		(at 245.745 140.97 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -2004,7 +2723,7 @@
 		(dnp no)
 		(uuid "751be5ab-577e-4925-9098-8bf2a60ce414")
 		(property "Reference" "H5"
-			(at 248.285 132.715 0)
+			(at 248.285 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2013,7 +2732,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 248.285 132.7223 0)
+			(at 248.285 140.9773 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2023,7 +2742,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
-			(at 245.745 132.715 0)
+			(at 245.745 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2032,7 +2751,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 245.745 132.715 0)
+			(at 245.745 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2041,7 +2760,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 245.745 132.715 0)
+			(at 245.745 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2065,8 +2784,169 @@
 		)
 	)
 	(symbol
+		(lib_id "SamacSys_Parts:SS12")
+		(at 109.22 29.845 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "75b1bcf2-8de9-4393-aec0-575426345e47")
+		(property "Reference" "D5"
+			(at 99.06 23.6052 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SS12"
+			(at 99.06 26.1421 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Oro Footprints:DIOM5227X250N"
+			(at 96.52 33.655 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://datasheet.datasheetarchive.com/originals/distributors/Datasheets-24/DSA-463612.pdf"
+			(at 96.52 31.115 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "ON Semi SS12 SMT Schottky Diode, 20V 1A, 2-Pin DO-214AC"
+			(at 96.52 28.575 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "2.5"
+			(at 96.52 26.035 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "onsemi"
+			(at 96.52 23.495 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "821-SS12"
+			(at 96.52 20.955 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "821-SS12"
+			(at 96.52 18.415 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ON-Semiconductor-Fairchild/SS12?qs=mVVXn4M53U9WoaEpU1CO0A%3D%3D"
+			(at 96.52 15.875 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "SS12"
+			(at 96.52 13.335 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ss12/on-semiconductor?region=nac"
+			(at 96.52 10.795 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Testing Part Number" ""
+			(at 96.52 8.255 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Testing Price/Stock" ""
+			(at 96.52 5.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8e221a3d-ba2d-485d-9dce-94769ac4f7bd")
+		)
+		(pin "2"
+			(uuid "5f13f8cf-671e-4ff8-a614-084995ebc544")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Oro:ESDS302DBVR_tied")
-		(at 71.12 51.435 0)
+		(at 71.12 59.69 0)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2075,7 +2955,7 @@
 		(dnp no)
 		(uuid "8c98d064-a1d8-4cb5-9f3f-5cba9d4d2cd1")
 		(property "Reference" "D1"
-			(at 85.09 34.29 0)
+			(at 85.09 42.545 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2083,7 +2963,7 @@
 			)
 		)
 		(property "Value" "ESDS302DBVR"
-			(at 85.09 36.195 0)
+			(at 85.09 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2091,7 +2971,7 @@
 			)
 		)
 		(property "Footprint" "SOT95P280X145-5N"
-			(at 111.76 55.245 0)
+			(at 111.76 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2101,7 +2981,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/gpn/esds302"
-			(at 111.76 52.705 0)
+			(at 111.76 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2111,7 +2991,7 @@
 			)
 		)
 		(property "Description" "3.6V Data-Line Surge and 30kV ESD Protection Diode Array"
-			(at 111.76 50.165 0)
+			(at 111.76 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2121,7 +3001,7 @@
 			)
 		)
 		(property "Height" "1.45"
-			(at 111.76 29.845 0)
+			(at 111.76 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2131,7 +3011,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Texas Instruments"
-			(at 111.76 45.085 0)
+			(at 111.76 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2141,7 +3021,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "ESDS302DBVR"
-			(at 111.76 42.545 0)
+			(at 111.76 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2151,7 +3031,7 @@
 			)
 		)
 		(property "Mouser Part Number" "595-ESDS302DBVR"
-			(at 111.76 40.005 0)
+			(at 111.76 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2161,7 +3041,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESDS302DBVR?qs=qSfuJ%252Bfl%2Fd4NxvvS2bbWLw%3D%3D"
-			(at 111.76 37.465 0)
+			(at 111.76 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2171,7 +3051,7 @@
 			)
 		)
 		(property "Arrow Part Number" "ESDS302DBVR"
-			(at 111.76 34.925 0)
+			(at 111.76 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2181,7 +3061,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/esds302dbvr/texas-instruments"
-			(at 111.76 32.385 0)
+			(at 111.76 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2216,7 +3096,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 245.745 127.635 0)
+		(at 245.745 135.89 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -2224,7 +3104,7 @@
 		(dnp no)
 		(uuid "9dd13a92-b82c-4ebc-91a3-88130551705d")
 		(property "Reference" "H5"
-			(at 248.285 127.635 0)
+			(at 248.285 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2233,7 +3113,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 248.285 127.6423 0)
+			(at 248.285 135.8973 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2243,7 +3123,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
-			(at 245.745 127.635 0)
+			(at 245.745 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2252,7 +3132,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 245.745 127.635 0)
+			(at 245.745 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2261,7 +3141,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 245.745 127.635 0)
+			(at 245.745 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2285,8 +3165,74 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 86.36 29.845 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ca722a22-c2b8-4dfb-90e8-81c959ff6f1e")
+		(property "Reference" "#PWR060"
+			(at 86.36 36.195 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 86.36 33.9805 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 86.36 29.845 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 29.845 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 29.845 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7c2142a3-8950-4bc2-9d6c-02454ba9e878")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d"
+					(reference "#PWR060")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 245.745 142.875 0)
+		(at 245.745 151.13 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -2294,7 +3240,7 @@
 		(dnp no)
 		(uuid "d2d4de64-8d15-49c9-8a35-55aa8d3466de")
 		(property "Reference" "H2"
-			(at 248.285 142.8837 0)
+			(at 248.285 151.1387 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2303,7 +3249,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 248.285 142.8823 0)
+			(at 248.285 151.1373 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2313,7 +3259,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
-			(at 245.745 142.875 0)
+			(at 245.745 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2322,7 +3268,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 245.745 142.875 0)
+			(at 245.745 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2331,7 +3277,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 245.745 142.875 0)
+			(at 245.745 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2356,7 +3302,7 @@
 	)
 	(symbol
 		(lib_id "SamacSys_Parts:67996-408HLF")
-		(at 137.795 33.02 0)
+		(at 138.43 41.275 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2365,7 +3311,7 @@
 		(fields_autoplaced yes)
 		(uuid "f1b868e3-d970-40c4-a87d-e75bedaaca03")
 		(property "Reference" "J1"
-			(at 147.955 27.5209 0)
+			(at 148.59 35.7759 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2373,7 +3319,7 @@
 			)
 		)
 		(property "Value" "67996-408HLF"
-			(at 147.955 29.4419 0)
+			(at 148.59 37.6969 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2381,7 +3327,7 @@
 			)
 		)
 		(property "Footprint" "HDRV8W89P254_2X4_1016X483X858P"
-			(at 154.305 30.48 0)
+			(at 154.94 38.735 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2391,7 +3337,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/67996.pdf"
-			(at 154.305 33.02 0)
+			(at 154.94 41.275 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2401,7 +3347,7 @@
 			)
 		)
 		(property "Description" "BergStik, Board to Board connector, Unshrouded vertical header, Through Hole, Double Row, 8 Positions, 2.54 mm (0.100in) Pitch"
-			(at 154.305 35.56 0)
+			(at 154.94 43.815 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2411,7 +3357,7 @@
 			)
 		)
 		(property "Height" "8.58"
-			(at 154.305 38.1 0)
+			(at 154.94 46.355 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2421,7 +3367,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Amphenol Communications Solutions"
-			(at 154.305 40.64 0)
+			(at 154.94 48.895 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2431,7 +3377,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "67996-408HLF"
-			(at 154.305 43.18 0)
+			(at 154.94 51.435 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2441,7 +3387,7 @@
 			)
 		)
 		(property "Mouser Part Number" "649-67996-408HLF"
-			(at 154.305 45.72 0)
+			(at 154.94 53.975 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2451,7 +3397,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Amphenol-FCI/67996-408HLF?qs=zh4O8xspOux8A5Dq3mcAKw%3D%3D"
-			(at 154.305 48.26 0)
+			(at 154.94 56.515 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2461,7 +3407,7 @@
 			)
 		)
 		(property "Arrow Part Number" "67996-408HLF"
-			(at 154.305 50.8 0)
+			(at 154.94 59.055 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2471,7 +3417,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/67996-408hlf/amphenol-fci"
-			(at 154.305 53.34 0)
+			(at 154.94 61.595 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2514,7 +3460,7 @@
 		)
 	)
 	(sheet
-		(at 81.28 130.81)
+		(at 81.28 139.065)
 		(size 33.02 17.145)
 		(stroke
 			(width 0.1524)
@@ -2525,7 +3471,7 @@
 		)
 		(uuid "1b3eede1-74b0-4c0b-b4f1-7ec1bfc1f54f")
 		(property "Sheetname" "OLED Socket"
-			(at 81.28 130.0984 0)
+			(at 81.28 138.3534 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2534,7 +3480,7 @@
 			)
 		)
 		(property "Sheetfile" "oled-socket.kicad_sch"
-			(at 81.28 148.59 0)
+			(at 81.28 156.845 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2543,7 +3489,7 @@
 			)
 		)
 		(pin "SPI_SCK" input
-			(at 114.3 142.875 0)
+			(at 114.3 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2553,7 +3499,7 @@
 			(uuid "6889326c-cb12-4e0b-a1ee-9de146f3a761")
 		)
 		(pin "~{RST}" input
-			(at 114.3 140.335 0)
+			(at 114.3 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2563,7 +3509,7 @@
 			(uuid "4674fb04-0afd-4812-9ae0-9b91933807cd")
 		)
 		(pin "SPI_SDI" input
-			(at 114.3 145.415 0)
+			(at 114.3 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2573,7 +3519,7 @@
 			(uuid "3b7b7f93-2c48-4a8d-bdbd-a67b90e5f51c")
 		)
 		(pin "CS" input
-			(at 114.3 137.795 0)
+			(at 114.3 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2583,7 +3529,7 @@
 			(uuid "7eed2597-4e50-434e-9862-fa512f52e949")
 		)
 		(pin "DC" input
-			(at 114.3 135.255 0)
+			(at 114.3 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2593,7 +3539,7 @@
 			(uuid "f3046b39-4fea-4f3a-aa8b-3d22bca9a9a8")
 		)
 		(pin "EN" input
-			(at 114.3 132.715 0)
+			(at 114.3 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2611,7 +3557,7 @@
 		)
 	)
 	(sheet
-		(at 180.975 127.635)
+		(at 180.975 135.89)
 		(size 33.02 20.32)
 		(stroke
 			(width 0.1524)
@@ -2622,7 +3568,7 @@
 		)
 		(uuid "259c9346-7ad9-40c3-9e14-9b19afc78ddf")
 		(property "Sheetname" "SWD Pad"
-			(at 180.975 126.9234 0)
+			(at 180.975 135.1784 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2631,7 +3577,7 @@
 			)
 		)
 		(property "Sheetfile" "swd-pad.kicad_sch"
-			(at 180.975 148.59 0)
+			(at 180.975 156.845 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2640,7 +3586,7 @@
 			)
 		)
 		(pin "SWO" input
-			(at 180.975 140.335 180)
+			(at 180.975 148.59 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2650,7 +3596,7 @@
 			(uuid "327ef97f-09c4-48c9-872f-c2c07001e78c")
 		)
 		(pin "SWCLK" output
-			(at 180.975 142.875 180)
+			(at 180.975 151.13 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2660,7 +3606,7 @@
 			(uuid "26f18fd8-a114-4087-ac74-0c1c942f4566")
 		)
 		(pin "SWDIO" bidirectional
-			(at 180.975 145.415 180)
+			(at 180.975 153.67 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2670,7 +3616,7 @@
 			(uuid "9344931a-00e6-43e3-a5b2-37ace63422fd")
 		)
 		(pin "BOOT1" output
-			(at 180.975 137.795 180)
+			(at 180.975 146.05 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2680,7 +3626,7 @@
 			(uuid "ab068c07-1870-4b2e-b8c7-7193821fbc05")
 		)
 		(pin "BOOT0" output
-			(at 180.975 135.255 180)
+			(at 180.975 143.51 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2690,7 +3636,7 @@
 			(uuid "eb672cda-6ef8-45a9-8beb-c88df0c62abd")
 		)
 		(pin "UART_MCU_RX" output
-			(at 180.975 132.715 180)
+			(at 180.975 140.97 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2700,7 +3646,7 @@
 			(uuid "8d061e4b-0c1f-4851-b90e-62f5c6076b10")
 		)
 		(pin "UART_MCU_TX" input
-			(at 180.975 130.175 180)
+			(at 180.975 138.43 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2718,7 +3664,7 @@
 		)
 	)
 	(sheet
-		(at 180.975 110.49)
+		(at 180.975 118.745)
 		(size 33.02 10.16)
 		(fields_autoplaced yes)
 		(stroke
@@ -2730,7 +3676,7 @@
 		)
 		(uuid "49c51f54-e113-47ff-b1ad-86c9ad73cafa")
 		(property "Sheetname" "Indicator Lights"
-			(at 180.975 109.7784 0)
+			(at 180.975 118.0334 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2739,7 +3685,7 @@
 			)
 		)
 		(property "Sheetfile" "indicator-lights.kicad_sch"
-			(at 180.975 121.2346 0)
+			(at 180.975 129.4896 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2748,7 +3694,7 @@
 			)
 		)
 		(pin "SDA" bidirectional
-			(at 180.975 115.57 180)
+			(at 180.975 123.825 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2758,7 +3704,7 @@
 			(uuid "67255031-ec14-4707-aaae-824b71018785")
 		)
 		(pin "SCL" bidirectional
-			(at 180.975 118.11 180)
+			(at 180.975 126.365 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2768,7 +3714,7 @@
 			(uuid "46e1871e-9a87-4e51-ac50-7ebb731c5466")
 		)
 		(pin "EN" input
-			(at 180.975 113.03 180)
+			(at 180.975 121.285 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2786,7 +3732,7 @@
 		)
 	)
 	(sheet
-		(at 81.28 106.172)
+		(at 81.28 114.427)
 		(size 33.02 18.923)
 		(fields_autoplaced yes)
 		(stroke
@@ -2798,7 +3744,7 @@
 		)
 		(uuid "52771c01-2e58-4900-abe5-411f688d020f")
 		(property "Sheetname" "System Ethernet"
-			(at 81.28 105.4604 0)
+			(at 81.28 113.7154 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2807,7 +3753,7 @@
 			)
 		)
 		(property "Sheetfile" "ethernet.kicad_sch"
-			(at 81.28 125.6796 0)
+			(at 81.28 133.9346 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2816,7 +3762,7 @@
 			)
 		)
 		(pin "SDI" input
-			(at 114.3 113.03 0)
+			(at 114.3 121.285 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2826,7 +3772,7 @@
 			(uuid "fd79fc2d-b736-44c6-8626-577eac166fa7")
 		)
 		(pin "~{INT}" output
-			(at 114.3 118.11 0)
+			(at 114.3 126.365 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2836,7 +3782,7 @@
 			(uuid "6f14d1da-5051-47e1-97d9-4eb83509c64f")
 		)
 		(pin "SDO" output
-			(at 114.3 110.49 0)
+			(at 114.3 118.745 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2846,7 +3792,7 @@
 			(uuid "2ad7054e-3c50-4cf4-80ac-db9094a7c9cc")
 		)
 		(pin "SCK" passive
-			(at 114.3 107.95 0)
+			(at 114.3 116.205 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2856,7 +3802,7 @@
 			(uuid "af808566-ff4d-4e61-8d76-d54dc8bc7797")
 		)
 		(pin "~{RST}" input
-			(at 114.3 115.57 0)
+			(at 114.3 123.825 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2866,7 +3812,7 @@
 			(uuid "028f7442-b066-49e9-8e83-07300321ace9")
 		)
 		(pin "CS" input
-			(at 114.3 120.65 0)
+			(at 114.3 128.905 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2876,7 +3822,7 @@
 			(uuid "6ca48087-cb92-4213-a5e2-7a235a79babb")
 		)
 		(pin "XFRM_EN" input
-			(at 114.3 123.19 0)
+			(at 114.3 131.445 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2894,7 +3840,7 @@
 		)
 	)
 	(sheet
-		(at 180.975 72.39)
+		(at 180.975 80.645)
 		(size 33.02 7.62)
 		(fields_autoplaced yes)
 		(stroke
@@ -2906,7 +3852,7 @@
 		)
 		(uuid "6eeb4496-d532-42b5-95b8-3d397c9a21d1")
 		(property "Sheetname" "Front Panel Client"
-			(at 180.975 71.6784 0)
+			(at 180.975 79.9334 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2915,7 +3861,7 @@
 			)
 		)
 		(property "Sheetfile" "front-panel-client.kicad_sch"
-			(at 180.975 80.5946 0)
+			(at 180.975 88.8496 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2924,7 +3870,7 @@
 			)
 		)
 		(pin "PWR_ON" input
-			(at 180.975 74.93 180)
+			(at 180.975 83.185 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2934,7 +3880,7 @@
 			(uuid "f552ed35-030c-4fc2-8e69-4dc30f43cd1b")
 		)
 		(pin "RESET" input
-			(at 180.975 77.47 180)
+			(at 180.975 85.725 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2952,7 +3898,7 @@
 		)
 	)
 	(sheet
-		(at 81.28 77.47)
+		(at 81.28 85.725)
 		(size 33.02 19.685)
 		(fields_autoplaced yes)
 		(stroke
@@ -2964,7 +3910,7 @@
 		)
 		(uuid "7cebe953-3148-4b67-a6c9-1f2594261687")
 		(property "Sheetname" "External Ethernet"
-			(at 81.28 76.7584 0)
+			(at 81.28 85.0134 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2973,7 +3919,7 @@
 			)
 		)
 		(property "Sheetfile" "ethernet.kicad_sch"
-			(at 81.28 97.7396 0)
+			(at 81.28 105.9946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2982,7 +3928,7 @@
 			)
 		)
 		(pin "SDI" input
-			(at 114.3 84.455 0)
+			(at 114.3 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2992,7 +3938,7 @@
 			(uuid "1bef8916-55a6-48f3-bc6d-b332423d077e")
 		)
 		(pin "~{INT}" output
-			(at 114.3 89.535 0)
+			(at 114.3 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3002,7 +3948,7 @@
 			(uuid "2dca2eea-91b1-4949-b0b4-91d92d54a48e")
 		)
 		(pin "SDO" output
-			(at 114.3 81.915 0)
+			(at 114.3 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3012,7 +3958,7 @@
 			(uuid "0bf99ae8-86de-402b-bdd8-087f0ee92439")
 		)
 		(pin "SCK" passive
-			(at 114.3 79.375 0)
+			(at 114.3 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3022,7 +3968,7 @@
 			(uuid "8612819c-656b-4a35-bc26-d09af9b63af4")
 		)
 		(pin "~{RST}" input
-			(at 114.3 86.995 0)
+			(at 114.3 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3032,7 +3978,7 @@
 			(uuid "083f3e58-c8d8-45e9-9253-8b6a10af552f")
 		)
 		(pin "CS" input
-			(at 114.3 92.075 0)
+			(at 114.3 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3042,7 +3988,7 @@
 			(uuid "88815e22-7476-4b3e-aa6e-74e51b454f99")
 		)
 		(pin "XFRM_EN" input
-			(at 114.3 94.615 0)
+			(at 114.3 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3060,7 +4006,7 @@
 		)
 	)
 	(sheet
-		(at 180.975 89.535)
+		(at 180.975 97.79)
 		(size 33.02 13.97)
 		(fields_autoplaced yes)
 		(stroke
@@ -3072,7 +4018,7 @@
 		)
 		(uuid "a5104146-06a0-496e-bda0-1e4731a261c3")
 		(property "Sheetname" "COM Bus Header"
-			(at 180.975 88.8234 0)
+			(at 180.975 97.0784 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3081,7 +4027,7 @@
 			)
 		)
 		(property "Sheetfile" "com-bus-header.kicad_sch"
-			(at 180.975 104.0896 0)
+			(at 180.975 112.3446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3090,7 +4036,7 @@
 			)
 		)
 		(pin "RTS" input
-			(at 180.975 93.98 180)
+			(at 180.975 102.235 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3100,7 +4046,7 @@
 			(uuid "98dbad4e-11fd-4359-8d4b-98449cb39c09")
 		)
 		(pin "RX" output
-			(at 180.975 101.6 180)
+			(at 180.975 109.855 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3110,7 +4056,7 @@
 			(uuid "856aa328-eaff-47c7-912c-6dacfac467e9")
 		)
 		(pin "TX" input
-			(at 180.975 99.06 180)
+			(at 180.975 107.315 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3120,7 +4066,7 @@
 			(uuid "633e0161-0c58-4aa5-bad2-4d1873f101fa")
 		)
 		(pin "CTS" output
-			(at 180.975 96.52 180)
+			(at 180.975 104.775 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3130,7 +4076,7 @@
 			(uuid "53e6d490-1837-4092-8d28-a81832a3c381")
 		)
 		(pin "RS232_RX" output
-			(at 213.995 99.06 0)
+			(at 213.995 107.315 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3140,7 +4086,7 @@
 			(uuid "385d6102-e079-4ef6-a858-2dabdfbf0518")
 		)
 		(pin "RS232_TX" output
-			(at 213.995 101.6 0)
+			(at 213.995 109.855 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3150,7 +4096,7 @@
 			(uuid "bfd7c7a4-cd73-4266-9667-0969b156cd83")
 		)
 		(pin "RS232_CTS" output
-			(at 213.995 96.52 0)
+			(at 213.995 104.775 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3160,7 +4106,7 @@
 			(uuid "9cb7b67f-9dcb-4756-82b5-7bfc2edcabf8")
 		)
 		(pin "RS232_RTS" output
-			(at 213.995 93.98 0)
+			(at 213.995 102.235 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3170,7 +4116,7 @@
 			(uuid "2e1aa90c-63e9-48fe-9f59-f9e66a195627")
 		)
 		(pin "EN" input
-			(at 180.975 91.44 180)
+			(at 180.975 99.695 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3188,7 +4134,7 @@
 		)
 	)
 	(sheet
-		(at 124.46 53.975)
+		(at 124.46 62.23)
 		(size 45.72 93.98)
 		(stroke
 			(width 0.1524)
@@ -3199,7 +4145,7 @@
 		)
 		(uuid "dd173832-34f8-47c0-be66-f527d6e2d134")
 		(property "Sheetname" "Microcontroller"
-			(at 124.46 53.2634 0)
+			(at 124.46 61.5184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3208,7 +4154,7 @@
 			)
 		)
 		(property "Sheetfile" "microcontroller.kicad_sch"
-			(at 124.46 148.59 0)
+			(at 124.46 156.845 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3217,7 +4163,7 @@
 			)
 		)
 		(pin "EXTETH_~{RST}" output
-			(at 124.46 86.995 180)
+			(at 124.46 95.25 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3227,7 +4173,7 @@
 			(uuid "0094df2e-097e-4b11-a22e-ab598f5c51e7")
 		)
 		(pin "SYSUART_RTS" output
-			(at 170.18 93.98 0)
+			(at 170.18 102.235 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3237,7 +4183,7 @@
 			(uuid "bde15cbf-8418-42a1-83c2-f36583ada219")
 		)
 		(pin "SYSUART_TX" output
-			(at 170.18 99.06 0)
+			(at 170.18 107.315 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3247,7 +4193,7 @@
 			(uuid "264650f0-fc4e-4fde-b3a3-cd807e0cedc1")
 		)
 		(pin "SYSUART_RX" input
-			(at 170.18 101.6 0)
+			(at 170.18 109.855 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3257,7 +4203,7 @@
 			(uuid "55e38968-8091-43a7-ba69-d64b6336e9df")
 		)
 		(pin "EXTETH_MOSI" output
-			(at 124.46 84.455 180)
+			(at 124.46 92.71 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3267,7 +4213,7 @@
 			(uuid "c80983dd-6be4-4d08-96dd-c757ef18e702")
 		)
 		(pin "EXTETH_MISO" input
-			(at 124.46 81.915 180)
+			(at 124.46 90.17 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3277,7 +4223,7 @@
 			(uuid "04f681fe-2b34-435d-8e55-75443a5d7650")
 		)
 		(pin "EXTETH_SCK" bidirectional
-			(at 124.46 79.375 180)
+			(at 124.46 87.63 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3287,7 +4233,7 @@
 			(uuid "01dbb53b-27a8-4e9f-ab78-f4430de71ae1")
 		)
 		(pin "DBGUART_TX" output
-			(at 124.46 56.515 180)
+			(at 124.46 64.77 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3297,7 +4243,7 @@
 			(uuid "f2d9c6da-d185-4a41-a085-d0e7619c103f")
 		)
 		(pin "SYSTEH_~{RST}" output
-			(at 124.46 115.57 180)
+			(at 124.46 123.825 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3307,7 +4253,7 @@
 			(uuid "051c9201-2499-4d26-97a6-c7547aa543f4")
 		)
 		(pin "SYSTEH_~{INT}" input
-			(at 124.46 118.11 180)
+			(at 124.46 126.365 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3317,7 +4263,7 @@
 			(uuid "94c6b319-7e86-4617-954c-170128b835f8")
 		)
 		(pin "DBGUART_RX" input
-			(at 124.46 59.055 180)
+			(at 124.46 67.31 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3327,7 +4273,7 @@
 			(uuid "6b4bbab1-0282-49cc-933d-e290e2d731fb")
 		)
 		(pin "SYSETH_MISO" input
-			(at 124.46 110.49 180)
+			(at 124.46 118.745 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3337,7 +4283,7 @@
 			(uuid "7bb89380-540c-4afd-9ee1-a866d77c730c")
 		)
 		(pin "SYSETH_SCK" bidirectional
-			(at 124.46 107.95 180)
+			(at 124.46 116.205 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3347,7 +4293,7 @@
 			(uuid "5036234e-22ed-4093-9d10-960ac47978be")
 		)
 		(pin "SYSTEH_MOSI" output
-			(at 124.46 113.03 180)
+			(at 124.46 121.285 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3357,7 +4303,7 @@
 			(uuid "c5994749-bc0a-4297-95fc-00b5170521ff")
 		)
 		(pin "PSU_ON" output
-			(at 170.18 59.055 0)
+			(at 170.18 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3367,7 +4313,7 @@
 			(uuid "5e12121f-c559-4d8a-8cde-8ad3dde5de67")
 		)
 		(pin "SYS_RESET" output
-			(at 170.18 77.47 0)
+			(at 170.18 85.725 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3377,7 +4323,7 @@
 			(uuid "299ec1f4-ad5e-4835-bab4-19eaf154cb9a")
 		)
 		(pin "PSU_OK" input
-			(at 170.18 56.515 0)
+			(at 170.18 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3387,7 +4333,7 @@
 			(uuid "d6769141-3990-4594-bf9c-513cd029bc61")
 		)
 		(pin "SYS_POWER" output
-			(at 170.18 74.93 0)
+			(at 170.18 83.185 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3397,7 +4343,7 @@
 			(uuid "138405da-8841-4586-8dbd-0f93a17f022a")
 		)
 		(pin "EXTETH_~{INT}" input
-			(at 124.46 89.535 180)
+			(at 124.46 97.79 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3407,7 +4353,7 @@
 			(uuid "299e9929-c0d1-43ec-8c60-b6efaec9bc5a")
 		)
 		(pin "I2C_SDA" bidirectional
-			(at 170.18 115.57 0)
+			(at 170.18 123.825 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3417,7 +4363,7 @@
 			(uuid "45bebfae-2683-4c0d-b897-c42d0f4699e1")
 		)
 		(pin "I2C_SCL" output
-			(at 170.18 118.11 0)
+			(at 170.18 126.365 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3427,7 +4373,7 @@
 			(uuid "ac2da590-951d-4eae-9c72-173bc1b19628")
 		)
 		(pin "OLED_MOSI" output
-			(at 124.46 145.415 180)
+			(at 124.46 153.67 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3437,7 +4383,7 @@
 			(uuid "e5413b7c-3699-4026-bcb5-a20571cde875")
 		)
 		(pin "SWCLK" input
-			(at 170.18 142.875 0)
+			(at 170.18 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3447,7 +4393,7 @@
 			(uuid "9439a85e-75b5-4d71-91a2-02fade720ae0")
 		)
 		(pin "OLED_SCK" input
-			(at 124.46 142.875 180)
+			(at 124.46 151.13 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3457,7 +4403,7 @@
 			(uuid "17b00402-c949-47a6-a27b-a9d1769c6b82")
 		)
 		(pin "SYSUART_CTS" input
-			(at 170.18 96.52 0)
+			(at 170.18 104.775 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3467,7 +4413,7 @@
 			(uuid "2ceca16c-2fcf-4659-8be4-943f777270e5")
 		)
 		(pin "OLED_~{RST}" output
-			(at 124.46 140.335 180)
+			(at 124.46 148.59 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3477,7 +4423,7 @@
 			(uuid "bd3bc880-35ae-40f8-8351-f24cfae2cabd")
 		)
 		(pin "SWO" output
-			(at 170.18 140.335 0)
+			(at 170.18 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3487,7 +4433,7 @@
 			(uuid "4497cede-9bf0-423d-9c57-7900eaf0e3e0")
 		)
 		(pin "USB_D+" output
-			(at 124.46 64.135 180)
+			(at 124.46 72.39 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3497,7 +4443,7 @@
 			(uuid "34cc8a55-a51a-422b-9897-63cb1af19a4e")
 		)
 		(pin "SWDIO" bidirectional
-			(at 170.18 145.415 0)
+			(at 170.18 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3507,7 +4453,7 @@
 			(uuid "a79fb434-f004-4655-9242-7e4634fd394f")
 		)
 		(pin "USB_D-" output
-			(at 124.46 61.595 180)
+			(at 124.46 69.85 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3517,7 +4463,7 @@
 			(uuid "9a31f311-592d-4d59-816e-d8f23236c211")
 		)
 		(pin "OLED_CS" output
-			(at 124.46 137.795 180)
+			(at 124.46 146.05 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3527,7 +4473,7 @@
 			(uuid "1a64a059-a172-4acb-8543-0cf09496c043")
 		)
 		(pin "OLED_DC" output
-			(at 124.46 135.255 180)
+			(at 124.46 143.51 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3537,7 +4483,7 @@
 			(uuid "142c90ea-59b7-4694-becd-9f278e0bdb27")
 		)
 		(pin "EXTETH_CS" output
-			(at 124.46 92.075 180)
+			(at 124.46 100.33 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3547,7 +4493,7 @@
 			(uuid "6aae622b-953e-452f-be11-7002d399254f")
 		)
 		(pin "SYSETH_CS" output
-			(at 124.46 120.65 180)
+			(at 124.46 128.905 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3557,7 +4503,7 @@
 			(uuid "7bfb3dd9-dc46-4e6f-b417-2201664fe5f3")
 		)
 		(pin "SYSETH_XFRM_EN" output
-			(at 124.46 123.19 180)
+			(at 124.46 131.445 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3567,7 +4513,7 @@
 			(uuid "f6742153-6aa2-4748-a74a-7e5303571a66")
 		)
 		(pin "EXTETH_XFRM_EN" output
-			(at 124.46 94.615 180)
+			(at 124.46 102.87 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3577,7 +4523,7 @@
 			(uuid "daa06e36-ff23-4dc8-a705-2c14b82e2f56")
 		)
 		(pin "BOOT0" input
-			(at 170.18 135.255 0)
+			(at 170.18 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3587,7 +4533,7 @@
 			(uuid "be603de3-6e80-4d3f-9b06-92b00b5c6464")
 		)
 		(pin "BOOT1" input
-			(at 170.18 137.795 0)
+			(at 170.18 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3597,7 +4543,7 @@
 			(uuid "f9775a32-8e9a-44a7-937c-fef8b0f27054")
 		)
 		(pin "SYSUART_EN" output
-			(at 170.18 91.44 0)
+			(at 170.18 99.695 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3607,7 +4553,7 @@
 			(uuid "f36270e0-a44b-4e90-aa22-4ee5d2093e40")
 		)
 		(pin "OLED_EN" output
-			(at 124.46 132.715 180)
+			(at 124.46 140.97 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3617,7 +4563,7 @@
 			(uuid "a3219835-99b6-4e48-b7e3-882915141499")
 		)
 		(pin "INDLIGHTS_EN" output
-			(at 170.18 113.03 0)
+			(at 170.18 121.285 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3627,7 +4573,7 @@
 			(uuid "532978d9-df8e-49cf-8ae9-5c29b4a5ec8d")
 		)
 		(pin "PSU_SB" output
-			(at 170.18 61.595 0)
+			(at 170.18 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3635,6 +4581,16 @@
 				(justify right)
 			)
 			(uuid "116839fa-08d0-401e-b968-6b852ed9c239")
+		)
+		(pin "USB_VBUS" output
+			(at 124.46 75.565 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "3dbec054-a452-41d8-8d79-018fbd3dc3db")
 		)
 		(instances
 			(project "OroLink"
@@ -3645,7 +4601,7 @@
 		)
 	)
 	(sheet
-		(at 180.975 53.975)
+		(at 180.975 62.23)
 		(size 33.02 9.525)
 		(fields_autoplaced yes)
 		(stroke
@@ -3657,7 +4613,7 @@
 		)
 		(uuid "f955395e-bf1a-4ef3-9cfe-ec9d49f66988")
 		(property "Sheetname" "Power Supply"
-			(at 180.975 53.2634 0)
+			(at 180.975 61.5184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3666,7 +4622,7 @@
 			)
 		)
 		(property "Sheetfile" "power-supply.kicad_sch"
-			(at 180.975 64.0846 0)
+			(at 180.975 72.3396 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3675,7 +4631,7 @@
 			)
 		)
 		(pin "PWR_OK" output
-			(at 180.975 56.515 180)
+			(at 180.975 64.77 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3685,7 +4641,7 @@
 			(uuid "5bca749f-a498-468d-a347-47d0e7490193")
 		)
 		(pin "SYS_PWR_ON" input
-			(at 180.975 59.055 180)
+			(at 180.975 67.31 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3695,7 +4651,7 @@
 			(uuid "bfb70c7b-bcbf-4bee-9451-61e7e29415b8")
 		)
 		(pin "SYS_PWR_SB" input
-			(at 180.975 61.595 180)
+			(at 180.975 69.85 180)
 			(effects
 				(font
 					(size 1.27 1.27)
