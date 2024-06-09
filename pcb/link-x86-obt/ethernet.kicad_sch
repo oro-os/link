@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Oro Link")
-		(date "2023-07-15")
-		(rev "6")
+		(date "2024-06-09")
+		(rev "7")
 		(company "Oro Operating System")
 		(comment 1 "://oro.sh")
 		(comment 2 "Joshua Lee Junon")
@@ -7279,9 +7279,9 @@
 		)
 		(uuid "6ace05ab-a4ab-4fcd-b3cf-d3f1d6967eb5")
 	)
-	(text "NOTE: POLARITY SWAPPED FOR\n        PCB LAYOUT PURPOSES"
+	(text "NOTE: RX/TX SWAPPED FOR\n       PCB LAYOUT PURPOSES"
 		(exclude_from_sim no)
-		(at 133.35 83.312 0)
+		(at 125.222 83.566 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7335,7 +7335,7 @@
 		(uuid "1771067b-4a01-4ffd-8150-9814994b7cc0")
 	)
 	(label "ETH_TPOUT-"
-		(at 154.94 50.8 0)
+		(at 154.94 88.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7401,7 +7401,7 @@
 		(uuid "91d4a4bd-82f3-47f9-9b69-e5d304ea3dc3")
 	)
 	(label "ETH_TPIN-"
-		(at 154.94 73.66 0)
+		(at 154.94 66.04 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7412,7 +7412,7 @@
 		(uuid "993c1931-8d79-4459-8ba4-46f4f3041c23")
 	)
 	(label "ETH_TPIN+"
-		(at 154.94 88.9 0)
+		(at 154.94 50.8 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7456,7 +7456,7 @@
 		(uuid "d98d4bb5-9211-40f0-8834-3bfe68d5c812")
 	)
 	(label "ETH_TPOUT+"
-		(at 154.94 66.04 0)
+		(at 154.94 73.66 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
