@@ -240,7 +240,31 @@ fn make_repl(outgoing: PacketSender<BufWriter<TcpStream>>) -> Repl {
 					CommandArgType::I32,
 					"keycode",
 				)],
-				Box::new(KeyPressDebugCommand(outgoing)),
+				Box::new(KeyPressDebugCommand(outgoing.clone())),
+			),
+		)
+		.add(
+			"start_suite",
+			Command::new(
+				"starts a new test suite",
+				vec![
+					CommandArgInfo::new_with_name(CommandArgType::I32, "total_tests"),
+					CommandArgInfo::new_with_name(CommandArgType::String, "author"),
+					CommandArgInfo::new_with_name(CommandArgType::String, "title"),
+					CommandArgInfo::new_with_name(CommandArgType::String, "ref_id"),
+				],
+				Box::new(SuiteCommand(outgoing.clone())),
+			),
+		)
+		.add(
+			"test",
+			Command::new(
+				"starts a new test",
+				vec![CommandArgInfo::new_with_name(
+					CommandArgType::String,
+					"name",
+				)],
+				Box::new(TestCommand(outgoing)),
 			),
 		)
 		.build()
@@ -513,6 +537,71 @@ impl ExecuteCommand for KeyPressDebugCommand {
 					.parse()
 					.map_err(|_| mini_async_repl::anyhow::anyhow!("invalid keycode"))?,
 			);
+			sender.send(packet).await?;
+			Ok(CommandStatus::Done)
+		})
+	}
+}
+
+struct SuiteCommand(Arc<Mutex<PacketSender<BufWriter<TcpStream>>>>);
+
+impl ExecuteCommand for SuiteCommand {
+	fn execute(
+		&mut self,
+		args: Vec<String>,
+		_args_info: Vec<mini_async_repl::command::CommandArgInfo>,
+	) -> std::pin::Pin<
+		Box<
+			dyn Future<Output = mini_async_repl::anyhow::Result<mini_async_repl::CommandStatus>>
+				+ '_,
+		>,
+	> {
+		Box::pin(async move {
+			let mut sender = self.0.lock().await;
+			let packet = Packet::StartTestSession {
+				total_tests: args[0]
+					.parse()
+					.map_err(|_| mini_async_repl::anyhow::anyhow!("invalid total_tests"))?,
+				author: args[1]
+					.as_str()
+					.try_into()
+					.map_err(|_| mini_async_repl::anyhow::anyhow!("author too long"))?,
+				title: args[2]
+					.as_str()
+					.try_into()
+					.map_err(|_| mini_async_repl::anyhow::anyhow!("title too long"))?,
+				ref_id: args[3]
+					.as_str()
+					.try_into()
+					.map_err(|_| mini_async_repl::anyhow::anyhow!("ref_id too long"))?,
+			};
+			sender.send(packet).await?;
+			Ok(CommandStatus::Done)
+		})
+	}
+}
+
+struct TestCommand(Arc<Mutex<PacketSender<BufWriter<TcpStream>>>>);
+
+impl ExecuteCommand for TestCommand {
+	fn execute(
+		&mut self,
+		args: Vec<String>,
+		_args_info: Vec<mini_async_repl::command::CommandArgInfo>,
+	) -> std::pin::Pin<
+		Box<
+			dyn Future<Output = mini_async_repl::anyhow::Result<mini_async_repl::CommandStatus>>
+				+ '_,
+		>,
+	> {
+		Box::pin(async move {
+			let mut sender = self.0.lock().await;
+			let packet = Packet::StartTest {
+				name: args[0]
+					.as_str()
+					.try_into()
+					.map_err(|_| mini_async_repl::anyhow::anyhow!("name too long"))?,
+			};
 			sender.send(packet).await?;
 			Ok(CommandStatus::Done)
 		})

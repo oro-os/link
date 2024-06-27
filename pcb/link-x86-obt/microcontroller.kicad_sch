@@ -6278,6 +6278,19 @@
 		)
 		(uuid c4449357-f0ce-420b-8db1-bf9f5d60bd25)
 	)
+	(arc
+		(start 198.374 58.674)
+		(mid 196.2542 71.1577)
+		(end 185.928 78.486)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid f7b5e772-8765-4ab9-95c1-a0bded680f4c)
+	)
 	(text "0.1u"
 		(exclude_from_sim no)
 		(at 250.19 58.42 0)
@@ -6288,6 +6301,17 @@
 			(justify left bottom)
 		)
 		(uuid "0f8814fc-8197-4748-a008-c5c7309a7e36")
+	)
+	(text "NOTE: ASSUMES FT (5V TOLERANT) PIN, THUS\n       NO VOLTAGE DIV. IF CHIP IS SWITCHED,\n       CONSULT THE DOCUMENTATION AND ADD\n       VD IF NEEDED."
+		(exclude_from_sim no)
+		(at 159.766 53.086 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9d622145-1119-42ca-8211-591f76788477")
 	)
 	(label "VSSDSI"
 		(at 265.43 105.41 180)
