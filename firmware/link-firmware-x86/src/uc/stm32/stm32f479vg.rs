@@ -3,8 +3,10 @@ use core::ptr::addr_of_mut;
 use crate::uc;
 use defmt::{debug, info};
 use embassy_executor::Spawner;
+use embassy_stm32::mode::Async;
 use embassy_stm32::{
 	bind_interrupts,
+	exti::ExtiInput,
 	gpio::{Input, Level, Output, OutputOpenDrain, Pull, Speed},
 	i2c::{self, I2c},
 	peripherals, rcc, rng, rtc,
@@ -24,8 +26,36 @@ bind_interrupts!(struct Irqs {
 	OTG_FS => stm32_usb::InterruptHandler<peripherals::USB_OTG_FS>;
 });
 
+type EthernetSPI = ExclusiveDevice<Spi<'static, Async>, Output<'static>, Delay>;
+
+#[embassy_executor::task]
+async fn syseth_runner_task(
+	runner: embassy_net_wiznet::Runner<
+		'static,
+		embassy_net_wiznet::chip::W5500,
+		EthernetSPI,
+		ExtiInput<'static>,
+		Output<'static>,
+	>,
+) -> ! {
+	runner.run().await
+}
+
+#[embassy_executor::task]
+async fn exteth_runner_task(
+	runner: embassy_net_wiznet::Runner<
+		'static,
+		embassy_net_wiznet::chip::W5500,
+		EthernetSPI,
+		ExtiInput<'static>,
+		Output<'static>,
+	>,
+) -> ! {
+	runner.run().await
+}
+
 pub async fn init<'usb>(
-	_spawner: &Spawner,
+	spawner: &Spawner,
 ) -> (
 	impl uc::DebugLed,
 	impl uc::SystemUnderTest,
@@ -121,9 +151,10 @@ pub async fn init<'usb>(
 	let mut oled = crate::chip::ssd1362::SSD1362::new(
 		ExclusiveDevice::new(
 			Spi::new_txonly(p.SPI2, p.PD3, p.PC3, p.DMA1_CH4, oledconf),
-			OutputOpenDrain::new(p.PB9, Level::High, Speed::VeryHigh, Pull::None),
+			OutputOpenDrain::new(p.PB9, Level::High, Speed::VeryHigh),
 			Delay,
-		),
+		)
+		.unwrap(),
 		Output::new(p.PC14, Level::High, Speed::VeryHigh),
 		true, // do a flip
 		137,  // gamma value
@@ -165,9 +196,10 @@ pub async fn init<'usb>(
 
 	let extdev = ExclusiveDevice::new(
 		extspi,
-		OutputOpenDrain::new(p.PA15, Level::High, Speed::VeryHigh, Pull::None),
+		Output::new(p.PA15, Level::High, Speed::VeryHigh),
 		Delay,
-	);
+	)
+	.unwrap();
 
 	info!("... external ethernet dev INIT");
 
@@ -175,11 +207,15 @@ pub async fn init<'usb>(
 
 	debug!("... external MAC: {:?}", extmac);
 
-	let exteth = crate::chip::enc28j60::Enc28j60::new(
-		extdev,
-		Some(Output::new(p.PD0, Level::High, Speed::VeryHigh)),
-		extmac,
-	);
+	static EXT_STATE: static_cell::StaticCell<embassy_net_wiznet::State<2, 2>> =
+		static_cell::StaticCell::new();
+	let ext_state = EXT_STATE.init(embassy_net_wiznet::State::<2, 2>::new());
+	let ext_intpin = ExtiInput::new(p.PD1, p.EXTI1, Pull::Up);
+	let ext_rstpin = Output::new(p.PD0, Level::High, Speed::VeryHigh);
+	let (exteth, ext_runner) =
+		embassy_net_wiznet::new(extmac, ext_state, extdev, ext_intpin, ext_rstpin).await;
+
+	spawner.must_spawn(exteth_runner_task(ext_runner));
 
 	info!("... external ethernet INIT");
 
@@ -204,28 +240,30 @@ pub async fn init<'usb>(
 
 	let sysdev = ExclusiveDevice::new(
 		sysspi,
-		OutputOpenDrain::new(p.PA4, Level::High, Speed::VeryHigh, Pull::None),
+		Output::new(p.PA4, Level::High, Speed::VeryHigh),
 		Delay,
-	);
+	)
+	.unwrap();
 
 	info!("... system ethernet dev INIT");
 
-	let mut syseth = crate::chip::enc28j60::Enc28j60::new(
-		sysdev,
-		Some(Output::new(p.PB1, Level::High, Speed::VeryHigh)),
-		[b'.', b'o', b'O', b'D', b'E', b'V'],
-	);
+	let syseth_mac_addr = [b'.', b'o', b'O', b'D', b'E', b'V'];
+
+	let syseth = {
+		static STATE: static_cell::StaticCell<embassy_net_wiznet::State<2, 2>> =
+			static_cell::StaticCell::new();
+		let state = STATE.init(embassy_net_wiznet::State::<2, 2>::new());
+		let intpin = ExtiInput::new(p.PB0, p.EXTI0, Pull::Up);
+		let rstpin = Output::new(p.PB1, Level::High, Speed::VeryHigh);
+		let (syseth, runner) =
+			embassy_net_wiznet::new(syseth_mac_addr, state, sysdev, intpin, rstpin).await;
+
+		spawner.must_spawn(syseth_runner_task(runner));
+
+		syseth
+	};
 
 	info!("... system ethernet INIT");
-
-	// Tell the chip we want to accept ALL packets from the system
-	syseth.accept(&[
-		embassy_net_enc28j60::Packet::Broadcast,
-		embassy_net_enc28j60::Packet::Multicast,
-		embassy_net_enc28j60::Packet::Unicast,
-	]);
-
-	info!("... system ethernet config INIT");
 
 	let system = super::SystemUnderTest::new(
 		Output::new(p.PC9, Level::Low, Speed::Low),

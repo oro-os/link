@@ -4,9 +4,6 @@ pub mod is31fl3218;
 #[cfg(feature = "ssd1362")]
 pub mod ssd1362;
 
-#[cfg(feature = "enc28j60")]
-pub mod enc28j60;
-
 use core::fmt::Debug;
 
 /// I2C proxy abstraction; since each of the archs
