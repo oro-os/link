@@ -25,6 +25,6 @@ aes = { version = "0.8.3", optional = true }
 rand_core = { version = "0.6.4", optional = true }
 defmt = { version = "0.3.5", default-features = false, optional = true }
 log = { version = "0.4.20", optional = true }
-curve25519 = { git = "https://github.com/oro-os/curve25519-rs", optional = true }
+curve25519 = { git = "https://github.com/oro-os/dep.curve25519-rs", optional = true }
 thiserror = { version = "1.0.50", optional = true }
-embassy-sync = { git = "https://github.com/oro-os/embassy.git", optional = true }
+embassy-sync = { git = "https://github.com/oro-os/dep.embassy.git", optional = true }

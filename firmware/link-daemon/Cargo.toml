@@ -18,7 +18,7 @@ link-protocol = { path = "../link-protocol", features = ["log", "async-std", "th
 aes = "0.8.3"
 async-io = "1.13.0"
 async-std = { version = "1.12.0", features = ["attributes"] }
-curve25519 = { git = "https://github.com/oro-os/curve25519-rs", version = "0.1.0" }
+curve25519 = { git = "https://github.com/oro-os/dep.curve25519-rs", version = "0.1.0" }
 envconfig = "0.10.0"
 log = "0.4.20"
 rand = "0.8.5"
