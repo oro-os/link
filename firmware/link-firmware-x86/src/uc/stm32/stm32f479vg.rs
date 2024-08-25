@@ -101,6 +101,7 @@ pub async fn init<'usb>(
 	let p = embassy_stm32::init(config);
 
 	info!("initializing STM32f479vg...");
+	Timer::after(Duration::from_millis(100)).await;
 
 	let mut ind_on = Output::new(p.PB4, Level::Low, Speed::Low);
 	ind_on.set_high();
@@ -173,6 +174,54 @@ pub async fn init<'usb>(
 
 	info!("... monitor INIT");
 
+	let mut syseth_en = Output::new(p.PA2, Level::Low, Speed::Low);
+	let mut syseth_xfrm_en = Output::new(p.PA3, Level::Low, Speed::Low);
+	syseth_en.set_high();
+	syseth_xfrm_en.set_high();
+	// Keep them high even after we return.
+	::core::mem::forget(syseth_en);
+	::core::mem::forget(syseth_xfrm_en);
+
+	info!("... system ethernet transformer INIT");
+
+	let mut sysconf = spi::Config::default();
+	//sysconf.mode = spi::MODE_0;
+	//sysconf.bit_order = spi::BitOrder::MsbFirst;
+	sysconf.frequency = Hertz(50_000_000);
+
+	let sysspi = Spi::new(p.SPI1, p.PA5, p.PA7, p.PA6, p.DMA2_CH3, p.DMA2_CH0, sysconf);
+
+	info!("... system ethernet comms INIT");
+
+	let sysdev = ExclusiveDevice::new(
+		sysspi,
+		Output::new(p.PA4, Level::High, Speed::VeryHigh),
+		Delay,
+	)
+	.unwrap();
+
+	info!("... system ethernet dev INIT");
+
+	let syseth_mac_addr = [b'.', b'o', b'O', b'D', b'E', b'V'];
+
+	let syseth = {
+		static STATE: static_cell::StaticCell<embassy_net_wiznet::State<2, 2>> =
+			static_cell::StaticCell::new();
+		let state = STATE.init(embassy_net_wiznet::State::<2, 2>::new());
+		let intpin = ExtiInput::new(p.PB0, p.EXTI0, Pull::Up);
+		let rstpin = Output::new(p.PB1, Level::High, Speed::VeryHigh);
+		let (syseth, runner) =
+			embassy_net_wiznet::new(syseth_mac_addr, state, sysdev, intpin, rstpin)
+				.await
+				.unwrap();
+
+		spawner.must_spawn(syseth_runner_task(runner));
+
+		syseth
+	};
+
+	info!("... system ethernet INIT");
+
 	let mut exteth_en = Output::new(p.PD7, Level::Low, Speed::Low);
 	let mut exteth_xfrm_en = Output::new(p.PD2, Level::Low, Speed::Low);
 	exteth_en.set_high();
@@ -184,9 +233,9 @@ pub async fn init<'usb>(
 	info!("... external ethernet transformer INIT");
 
 	let mut extconf = spi::Config::default();
-	extconf.mode = spi::MODE_0;
-	extconf.bit_order = spi::BitOrder::MsbFirst;
-	extconf.frequency = Hertz(8_000_000);
+	//extconf.mode = spi::MODE_0;
+	//extconf.bit_order = spi::BitOrder::MsbFirst;
+	extconf.frequency = Hertz(25_000_000);
 
 	let extspi = Spi::new(
 		p.SPI3, p.PC10, p.PC12, p.PC11, p.DMA1_CH7, p.DMA1_CH2, extconf,
@@ -213,57 +262,13 @@ pub async fn init<'usb>(
 	let ext_intpin = ExtiInput::new(p.PD1, p.EXTI1, Pull::Up);
 	let ext_rstpin = Output::new(p.PD0, Level::High, Speed::VeryHigh);
 	let (exteth, ext_runner) =
-		embassy_net_wiznet::new(extmac, ext_state, extdev, ext_intpin, ext_rstpin).await;
+		embassy_net_wiznet::new(extmac, ext_state, extdev, ext_intpin, ext_rstpin)
+			.await
+			.unwrap();
 
 	spawner.must_spawn(exteth_runner_task(ext_runner));
 
 	info!("... external ethernet INIT");
-
-	let mut syseth_en = Output::new(p.PA2, Level::Low, Speed::Low);
-	let mut syseth_xfrm_en = Output::new(p.PA3, Level::Low, Speed::Low);
-	syseth_en.set_high();
-	syseth_xfrm_en.set_high();
-	// Keep them high even after we return.
-	::core::mem::forget(syseth_en);
-	::core::mem::forget(syseth_xfrm_en);
-
-	info!("... system ethernet transformer INIT");
-
-	let mut sysconf = spi::Config::default();
-	sysconf.mode = spi::MODE_0;
-	sysconf.bit_order = spi::BitOrder::MsbFirst;
-	sysconf.frequency = Hertz(8_000_000);
-
-	let sysspi = Spi::new(p.SPI1, p.PA5, p.PA7, p.PA6, p.DMA2_CH3, p.DMA2_CH0, sysconf);
-
-	info!("... system ethernet comms INIT");
-
-	let sysdev = ExclusiveDevice::new(
-		sysspi,
-		Output::new(p.PA4, Level::High, Speed::VeryHigh),
-		Delay,
-	)
-	.unwrap();
-
-	info!("... system ethernet dev INIT");
-
-	let syseth_mac_addr = [b'.', b'o', b'O', b'D', b'E', b'V'];
-
-	let syseth = {
-		static STATE: static_cell::StaticCell<embassy_net_wiznet::State<2, 2>> =
-			static_cell::StaticCell::new();
-		let state = STATE.init(embassy_net_wiznet::State::<2, 2>::new());
-		let intpin = ExtiInput::new(p.PB0, p.EXTI0, Pull::Up);
-		let rstpin = Output::new(p.PB1, Level::High, Speed::VeryHigh);
-		let (syseth, runner) =
-			embassy_net_wiznet::new(syseth_mac_addr, state, sysdev, intpin, rstpin).await;
-
-		spawner.must_spawn(syseth_runner_task(runner));
-
-		syseth
-	};
-
-	info!("... system ethernet INIT");
 
 	let system = super::SystemUnderTest::new(
 		Output::new(p.PC9, Level::Low, Speed::Low),
