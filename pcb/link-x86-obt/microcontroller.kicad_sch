@@ -4489,6 +4489,10 @@
 		(uuid "1d37ec13-c4b9-4cc5-907c-fdd1fe0507a2")
 	)
 	(no_connect
+		(at 129.54 50.8)
+		(uuid "25b0d2f1-c2c7-47aa-a234-ba991207d934")
+	)
+	(no_connect
 		(at 162.56 129.54)
 		(uuid "27dcb304-160c-4e80-8e90-d72d61fcbcb2")
 	)
@@ -4539,6 +4543,10 @@
 	(no_connect
 		(at 162.56 76.2)
 		(uuid "953e5b45-d501-4af0-984c-d9db47f223b0")
+	)
+	(no_connect
+		(at 86.36 121.92)
+		(uuid "9e3aa78d-86ba-41d8-b642-3af84fe2c111")
 	)
 	(no_connect
 		(at 109.22 50.8)
@@ -5218,16 +5226,6 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 121.92) (xy 74.93 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "686bd1b6-cf28-4430-b8c0-ea8f0cef53e5")
-	)
-	(wire
-		(pts
 			(xy 76.2 124.46) (xy 86.36 124.46)
 		)
 		(stroke
@@ -5595,16 +5593,6 @@
 			(type default)
 		)
 		(uuid "9f030b06-2b12-40a7-9b2f-c5a853045489")
-	)
-	(wire
-		(pts
-			(xy 129.54 39.37) (xy 129.54 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9f8abc48-111d-4794-83bc-b1fb46674266")
 	)
 	(wire
 		(pts
@@ -6809,18 +6797,6 @@
 		)
 		(uuid "01291b48-6488-446b-a020-367ab316a89e")
 	)
-	(hierarchical_label "SYSETH_XFRM_EN"
-		(shape output)
-		(at 74.93 121.92 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "0d42aec7-69b8-4112-9ba7-fc46d6a393d5")
-	)
 	(hierarchical_label "OLED_MOSI"
 		(shape output)
 		(at 74.93 104.14 180)
@@ -6868,18 +6844,6 @@
 			(justify right)
 		)
 		(uuid "23a6c596-6fc9-4c19-b88f-2d25b84f7686")
-	)
-	(hierarchical_label "EXTETH_XFRM_EN"
-		(shape output)
-		(at 129.54 39.37 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "245641ea-6b5a-482e-8c8f-d79d50de7799")
 	)
 	(hierarchical_label "EXTETH_MOSI"
 		(shape output)
