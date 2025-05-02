@@ -1,0 +1,41 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "70040227-f1e7-431e-a104-125d93937795")
+	(paper "A4")
+	(title_block
+		(title "Oro Link")
+		(date "2025-03-22")
+		(rev "8")
+		(company "Oro Operating System")
+		(comment 1 "oro.sh")
+		(comment 2 "Copyright 2023-2025, MPL 2.0")
+		(comment 3 "Joshua Lee Junon")
+	)
+	(lib_symbols)
+	(hierarchical_label "PWR_BTN"
+		(shape input)
+		(at 116.84 62.23 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5a950546-bb33-4264-96e4-0495dd995c48")
+	)
+	(hierarchical_label "RST_BTN"
+		(shape input)
+		(at 116.84 66.04 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f93d2497-a4e0-4b01-ab8e-cec1b76d03bf")
+	)
+)

@@ -1,0 +1,204 @@
+(footprint "AA3528VRVFSA"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "AA3528VRVFS/A-2")
+	(tags "LED")
+	(property "Reference" "LED**"
+		(at -0.25 0 0)
+		(layer "F.SilkS")
+		(uuid "fc6784d0-2b62-48a4-a297-8add4efcfcb2")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "AA3528VRVFSA"
+		(at -0.25 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "d18e6ddd-7b3e-44de-b84f-e335cd13a73e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2acea3ef-9499-4dec-a823-e2b99318c97c")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "00fb7bf1-ea4d-4960-9481-a6cdf39151ef")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "210a645f-363c-4955-ad81-57de4ee1454f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -1.55 -1.4)
+		(end 1.55 -1.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "703b28bf-e43e-4a22-828b-72f1694c6e30")
+	)
+	(fp_line
+		(start -1.55 1.4)
+		(end 1.55 1.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "47352c32-f17f-4974-a8db-140bc786287a")
+	)
+	(fp_circle
+		(center -1.6 -1.8)
+		(end -1.542885 -1.8)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill solid)
+		(layer "F.SilkS")
+		(uuid "bf93911c-acf0-4717-8b8b-b263c6eda141")
+	)
+	(fp_line
+		(start -3.8 -2.4)
+		(end 3.3 -2.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "f6c7a66c-42f6-4dcb-b404-86713af4a2c0")
+	)
+	(fp_line
+		(start -3.8 2.4)
+		(end -3.8 -2.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "a4a02ae5-2a2c-4348-8eab-c942e2e0a5da")
+	)
+	(fp_line
+		(start -1.6 -1.4)
+		(end 1.6 -1.4)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "6835db80-2479-47e8-af50-3229d3e2f865")
+	)
+	(fp_line
+		(start -1.6 1.4)
+		(end -1.6 -1.4)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "fa8fff1e-c173-4c33-83dd-6a22f352ce46")
+	)
+	(fp_line
+		(start 1.6 -1.4)
+		(end 1.6 1.4)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "71a4e643-9cb5-4c6e-a6bc-5af10d28ef5c")
+	)
+	(fp_line
+		(start 1.6 1.4)
+		(end -1.6 1.4)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "e6fee800-632f-46d1-bf34-b78aa3e02782")
+	)
+	(fp_line
+		(start 3.3 -2.4)
+		(end 3.3 2.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "5c3082d9-8bd2-4289-8896-9b69d35efc3d")
+	)
+	(fp_line
+		(start 3.3 2.4)
+		(end -3.8 2.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "bcae4d88-f633-4362-8491-d6a5c9d1e42b")
+	)
+	(pad "1" smd rect
+		(at -1.55 0)
+		(size 1.5 2.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(thermal_bridge_angle 45)
+		(uuid "07d7d9f4-eb1b-42a1-a886-88413e8396a5")
+	)
+	(pad "2" smd rect
+		(at 1.55 0)
+		(size 1.5 2.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(thermal_bridge_angle 45)
+		(uuid "25d84650-24ab-4806-b4a8-5144013a01ac")
+	)
+	(model "../step/AA3528VRVFS_A.stp"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 0 180)
+		)
+	)
+)
