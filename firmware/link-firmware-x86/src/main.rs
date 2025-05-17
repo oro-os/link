@@ -119,7 +119,7 @@ pub async fn main(spawner: Spawner) -> ! {
 		mut system,
 		monitor,
 		exteth,
-		syseth,
+		//syseth,
 		wall_clock,
 		mut rng,
 		syscom_tx,
@@ -179,27 +179,32 @@ pub async fn main(spawner: Spawner) -> ! {
 		))
 	};
 
+	//loop {
+	//	info!("link state: {:?}", extnet.is_link_up());
+	//	Timer::after_millis(500).await;
+	//}
+
 	spawner.must_spawn(net_ext_stack_task(extnet));
 
-	let sysnet = {
-		let seed = rng.next_u64();
-		let config = embassy_net::Config::ipv4_static(StaticConfigV4 {
-			address: Ipv4Cidr::new(Ipv4Address([10, 0, 0, 1]), 24),
-			gateway: None,
-			dns_servers: Vec::new(),
-		});
+	//let sysnet = {
+	//	let seed = rng.next_u64();
+	//	let config = embassy_net::Config::ipv4_static(StaticConfigV4 {
+	//		address: Ipv4Cidr::new(Ipv4Address([10, 0, 0, 1]), 24),
+	//		gateway: None,
+	//		dns_servers: Vec::new(),
+	//	});
 
-		let syseth = EthernetCaptureDriver(syseth, RefCell::new(packet_tracer));
+	//	let syseth = EthernetCaptureDriver(syseth, RefCell::new(packet_tracer));
 
-		&*make_static!(Stack::new(
-			syseth,
-			config,
-			make_static!(embassy_net::StackResources::<16>::new()),
-			seed,
-		))
-	};
+	//	&*make_static!(Stack::new(
+	//		syseth,
+	//		config,
+	//		make_static!(embassy_net::StackResources::<16>::new()),
+	//		seed,
+	//	))
+	//};
 
-	spawner.must_spawn(net_sys_stack_task(sysnet));
+	//spawner.must_spawn(net_sys_stack_task(sysnet));
 
 	spawner.must_spawn(usb_task(usb_builder, broker_sender, usb_receiver));
 

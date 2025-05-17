@@ -13,6 +13,108 @@
 		(comment 2 "Joshua Lee Junon")
 	)
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.762) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Oro:BOM Part"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2920,6 +3022,12 @@
 		)
 	)
 	(junction
+		(at 251.46 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1011c534-0b65-42cc-92f4-eeff15aa3096")
+	)
+	(junction
 		(at 156.21 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2960,6 +3068,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "970f554f-ffae-4f80-b555-4a301b959146")
+	)
+	(junction
+		(at 102.87 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9c7e9f00-0f9f-4f5d-9e0f-db627ac494e4")
 	)
 	(junction
 		(at 133.35 135.89)
@@ -3087,6 +3201,16 @@
 	)
 	(wire
 		(pts
+			(xy 251.46 78.74) (xy 238.76 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e40f0fd-782a-4b91-99d1-93e1a4c346fe")
+	)
+	(wire
+		(pts
 			(xy 238.76 76.2) (xy 238.76 78.74)
 		)
 		(stroke
@@ -3147,6 +3271,16 @@
 	)
 	(wire
 		(pts
+			(xy 251.46 82.55) (xy 251.46 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "669284e6-a498-4d84-9cdd-75446e18356d")
+	)
+	(wire
+		(pts
 			(xy 120.65 121.92) (xy 123.19 121.92)
 		)
 		(stroke
@@ -3164,6 +3298,16 @@
 			(type default)
 		)
 		(uuid "6e549e44-cc5c-4e4a-924b-9ed3ac5f7d30")
+	)
+	(wire
+		(pts
+			(xy 156.21 114.3) (xy 160.02 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71af1295-f825-4884-a453-073f9dc5cdd0")
 	)
 	(wire
 		(pts
@@ -3813,7 +3957,7 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
-		(at 238.76 78.74 270)
+		(at 251.46 82.55 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3822,7 +3966,7 @@
 		)
 		(uuid "c885f2ff-8b5d-4e27-86f8-cc26370ca547")
 		(property "Netclass" "3V3"
-			(at 245.745 78.74 0)
+			(at 258.445 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5265,6 +5409,72 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 160.02 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "593e04de-5f3e-442d-8fdf-43ee183f5778")
+		(property "Reference" "TP4"
+			(at 161.417 109.7858 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5V PW_ON"
+			(at 161.417 112.2101 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 165.1 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 165.1 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 160.02 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "81503183-4243-4200-9447-d500917efe3b")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
+					(reference "TP4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 238.76 76.2 0)
 		(unit 1)
@@ -6306,6 +6516,72 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 251.46 78.74 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e6276b68-c6d0-4bc0-96d0-b8859e0b18f4")
+		(property "Reference" "TP5"
+			(at 252.857 74.2258 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "3V3"
+			(at 252.857 76.6501 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 256.54 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 256.54 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 251.46 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7a70e3a8-22de-4b78-bc72-021608f14601")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
+					(reference "TP5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 138.43 87.63 0)
 		(unit 1)
@@ -6608,6 +6884,72 @@
 			(project "OroLink"
 				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
 					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 102.87 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f80f17e7-2670-430d-bdff-b1e8cb49272f")
+		(property "Reference" "TP3"
+			(at 104.267 109.7858 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5V"
+			(at 104.267 112.2101 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 107.95 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 107.95 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 102.87 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "92e8b753-207c-477b-90a8-baa0b56d3e32")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/f955395e-bf1a-4ef3-9cfe-ec9d49f66988"
+					(reference "TP3")
 					(unit 1)
 				)
 			)

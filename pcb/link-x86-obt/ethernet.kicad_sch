@@ -5858,6 +5858,12 @@
 		(uuid "1e46b7fb-c6c1-4323-996b-afc03c13fa78")
 	)
 	(junction
+		(at 160.02 158.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "242f6fda-3f21-43b2-a6aa-6275d4352597")
+	)
+	(junction
 		(at 50.8 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5924,6 +5930,12 @@
 		(uuid "4a4ab223-6454-405e-a7bb-ab25d50925a1")
 	)
 	(junction
+		(at 157.48 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4b55e33a-066b-4b4a-863b-546659dfb8b1")
+	)
+	(junction
 		(at 50.8 35.56)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5940,6 +5952,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5eace797-65e7-4697-a994-811828dd7177")
+	)
+	(junction
+		(at 162.56 156.21)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6cb05f4f-abeb-4df5-9666-fbcbd91d1e34")
 	)
 	(junction
 		(at 63.5 48.26)
@@ -5964,6 +5982,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7cbc66a8-79b4-42f3-9a05-ccd1adf49ee5")
+	)
+	(junction
+		(at 154.94 163.83)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8f9fb9bc-4ce4-4812-80b0-65ce7bdcfcfb")
 	)
 	(junction
 		(at 63.5 73.66)
@@ -6062,10 +6086,22 @@
 		(uuid "e58ad824-aabe-4b2e-b38f-24ad20d0772e")
 	)
 	(junction
+		(at 168.91 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f0b18aaf-e6e4-4d5f-9204-72c9b54731c8")
+	)
+	(junction
 		(at 209.55 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f10aae71-04d6-4ddc-b7b3-75f5cac5c0e7")
+	)
+	(junction
+		(at 166.37 153.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f7e9ea32-9554-4ced-bb6c-f159dffeb6e4")
 	)
 	(junction
 		(at 132.08 156.21)
@@ -6128,6 +6164,16 @@
 	(no_connect
 		(at 110.49 133.35)
 		(uuid "ba955c48-e6c0-4aa7-a371-cb2a34589d22")
+	)
+	(wire
+		(pts
+			(xy 160.02 158.75) (xy 172.72 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07ece9e1-f7ff-451d-bd67-88b822166893")
 	)
 	(wire
 		(pts
@@ -6291,7 +6337,7 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 153.67) (xy 149.86 153.67)
+			(xy 144.78 153.67) (xy 166.37 153.67)
 		)
 		(stroke
 			(width 0)
@@ -6491,6 +6537,16 @@
 	)
 	(wire
 		(pts
+			(xy 162.56 156.21) (xy 172.72 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4479b8a1-14ad-4fa3-b0fa-6d8ca65bc8f5")
+	)
+	(wire
+		(pts
 			(xy 50.8 67.31) (xy 50.8 73.66)
 		)
 		(stroke
@@ -6601,7 +6657,7 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 161.29) (xy 149.86 161.29)
+			(xy 144.78 161.29) (xy 157.48 161.29)
 		)
 		(stroke
 			(width 0)
@@ -6678,6 +6734,26 @@
 			(type default)
 		)
 		(uuid "5d7a740b-0f94-45d0-8ea9-cda00c972efa")
+	)
+	(wire
+		(pts
+			(xy 160.02 148.59) (xy 160.02 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e915b17-9539-407e-96ba-afef8a6583f6")
+	)
+	(wire
+		(pts
+			(xy 168.91 151.13) (xy 168.91 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f17fec9-ee02-4dc7-bbe9-9d5b1be5f2c3")
 	)
 	(wire
 		(pts
@@ -6781,6 +6857,16 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 161.29) (xy 172.72 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ecad3eb-dd11-46e2-91e0-61b1fe981be1")
+	)
+	(wire
+		(pts
 			(xy 182.88 73.66) (xy 182.88 68.58)
 		)
 		(stroke
@@ -6861,7 +6947,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 156.21) (xy 149.86 156.21)
+			(xy 132.08 156.21) (xy 162.56 156.21)
 		)
 		(stroke
 			(width 0)
@@ -6941,7 +7027,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 158.75) (xy 149.86 158.75)
+			(xy 110.49 158.75) (xy 160.02 158.75)
 		)
 		(stroke
 			(width 0)
@@ -6978,6 +7064,16 @@
 			(type default)
 		)
 		(uuid "907ac80e-81ad-44f3-88a2-00138225fdcf")
+	)
+	(wire
+		(pts
+			(xy 154.94 148.59) (xy 154.94 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "908e40a9-f4db-48ce-bad2-d361b2f81a4a")
 	)
 	(wire
 		(pts
@@ -7181,6 +7277,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 166.37) (xy 172.72 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ada2e225-599e-44da-b9ea-2cae0cb79658")
+	)
+	(wire
+		(pts
 			(xy 55.88 130.81) (xy 55.88 146.05)
 		)
 		(stroke
@@ -7231,6 +7337,16 @@
 	)
 	(wire
 		(pts
+			(xy 166.37 148.59) (xy 166.37 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5f61079-3c14-48ea-a0c5-1bccce44d09b")
+	)
+	(wire
+		(pts
 			(xy 26.67 180.34) (xy 33.02 180.34)
 		)
 		(stroke
@@ -7248,6 +7364,16 @@
 			(type default)
 		)
 		(uuid "b92c9b54-9ae8-49ff-b697-7689f3235cba")
+	)
+	(wire
+		(pts
+			(xy 154.94 163.83) (xy 172.72 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bab4f3ba-983f-42a8-96fd-1460d0637778")
 	)
 	(wire
 		(pts
@@ -7281,7 +7407,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 163.83) (xy 149.86 163.83)
+			(xy 110.49 163.83) (xy 154.94 163.83)
 		)
 		(stroke
 			(width 0)
@@ -7421,6 +7547,16 @@
 	)
 	(wire
 		(pts
+			(xy 166.37 153.67) (xy 172.72 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ccd12e40-fe73-4b2d-a2d2-d95ca0d2b27a")
+	)
+	(wire
+		(pts
 			(xy 167.64 48.26) (xy 167.64 49.53)
 		)
 		(stroke
@@ -7428,6 +7564,16 @@
 			(type default)
 		)
 		(uuid "cec03298-80d9-4dd0-9dd7-66814dfed582")
+	)
+	(wire
+		(pts
+			(xy 162.56 151.13) (xy 162.56 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cec696de-d166-480c-b2f0-42f1eb3b1743")
 	)
 	(wire
 		(pts
@@ -7491,6 +7637,16 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 151.13) (xy 157.48 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e08ebbf5-26ad-4edc-8173-54ed59dffda7")
+	)
+	(wire
+		(pts
 			(xy 213.36 63.5) (xy 200.66 63.5)
 		)
 		(stroke
@@ -7521,7 +7677,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 166.37) (xy 149.86 166.37)
+			(xy 135.89 166.37) (xy 168.91 166.37)
 		)
 		(stroke
 			(width 0)
@@ -8023,7 +8179,7 @@
 	)
 	(hierarchical_label "CS"
 		(shape input)
-		(at 149.86 166.37 0)
+		(at 172.72 166.37 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8035,7 +8191,7 @@
 	)
 	(hierarchical_label "SCK"
 		(shape passive)
-		(at 149.86 163.83 0)
+		(at 172.72 163.83 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8047,7 +8203,7 @@
 	)
 	(hierarchical_label "~{INT}"
 		(shape output)
-		(at 149.86 156.21 0)
+		(at 172.72 156.21 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8059,7 +8215,7 @@
 	)
 	(hierarchical_label "SDI"
 		(shape input)
-		(at 149.86 158.75 0)
+		(at 172.72 158.75 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8071,7 +8227,7 @@
 	)
 	(hierarchical_label "~{RST}"
 		(shape input)
-		(at 149.86 153.67 0)
+		(at 172.72 153.67 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8083,7 +8239,7 @@
 	)
 	(hierarchical_label "SDO"
 		(shape output)
-		(at 149.86 161.29 0)
+		(at 172.72 161.29 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9552,7 +9708,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 43.18 168.91 0)
 			(effects
 				(font
@@ -9744,6 +9900,76 @@
 				)
 				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
 					(reference "C44")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 154.94 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "51a8f23f-08fd-4257-868e-efe7df2181ee")
+		(property "Reference" "TP6"
+			(at 153.162 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "~"
+			(at 156.337 146.5001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Oro Footprints:TestPoint_0.25mm"
+			(at 160.02 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 160.02 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 154.94 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b439e973-55fd-46f3-bc21-e2d2e0acc463")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
+					(reference "TP6")
+					(unit 1)
+				)
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
+					(reference "TP7")
 					(unit 1)
 				)
 			)
@@ -11578,6 +11804,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 160.02 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7f8ac386-0ddd-4246-b6a1-bfc745d0baca")
+		(property "Reference" "TP10"
+			(at 158.242 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "~"
+			(at 161.417 146.5001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Oro Footprints:TestPoint_0.25mm"
+			(at 165.1 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 165.1 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 160.02 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "60db2736-2572-499c-9100-2c8984e40291")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
+					(reference "TP10")
+					(unit 1)
+				)
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
+					(reference "TP11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 133.35 175.26 0)
 		(unit 1)
@@ -11642,6 +11938,76 @@
 				)
 				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
 					(reference "#PWR096")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 157.48 151.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8035ee16-4649-46a6-8c24-7512de3a8eac")
+		(property "Reference" "TP8"
+			(at 155.702 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "~"
+			(at 158.877 149.0401 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Oro Footprints:TestPoint_0.25mm"
+			(at 162.56 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 162.56 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 157.48 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9fec28e3-8984-4a8f-a6b2-b60cb815ec8c")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
+					(reference "TP8")
+					(unit 1)
+				)
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
+					(reference "TP9")
 					(unit 1)
 				)
 			)
@@ -12665,6 +13031,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 162.56 151.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "94f63aca-b3a5-4b39-86e6-23d6861bc9e0")
+		(property "Reference" "TP12"
+			(at 160.782 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "~"
+			(at 163.957 149.0401 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Oro Footprints:TestPoint_0.25mm"
+			(at 167.64 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 167.64 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 162.56 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f218c023-44a7-420a-a315-83cf33bc639d")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
+					(reference "TP12")
+					(unit 1)
+				)
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
+					(reference "TP13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Oro:MSAST1L3YB5104KFNA01")
 		(at 50.8 67.31 0)
 		(mirror x)
@@ -13326,6 +13762,76 @@
 				)
 				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
 					(reference "FB3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 166.37 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a6cfa6ac-dd6b-4e48-8e2c-a629ab9228df")
+		(property "Reference" "TP14"
+			(at 164.592 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "~"
+			(at 167.767 146.5001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Oro Footprints:TestPoint_0.25mm"
+			(at 171.45 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 171.45 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 166.37 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5cb3f5b3-bb8f-4868-9c78-1f4d94f5131e")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
+					(reference "TP14")
+					(unit 1)
+				)
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
+					(reference "TP15")
 					(unit 1)
 				)
 			)
@@ -14289,6 +14795,76 @@
 				)
 				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
 					(reference "#PWR048")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 168.91 151.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c2217daf-ea70-41ff-ba73-6a649abf6ebe")
+		(property "Reference" "TP16"
+			(at 167.132 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "~"
+			(at 170.307 149.0401 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Oro Footprints:TestPoint_0.25mm"
+			(at 173.99 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 173.99 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 168.91 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ee9a5475-4a49-420e-81cf-a95e6cb1823a")
+		)
+		(instances
+			(project "OroLink"
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/52771c01-2e58-4900-abe5-411f688d020f"
+					(reference "TP16")
+					(unit 1)
+				)
+				(path "/e89dcd22-1250-4a5b-b778-1c95a0dd623d/7cebe953-3148-4b67-a6c9-1f2594261687"
+					(reference "TP17")
 					(unit 1)
 				)
 			)

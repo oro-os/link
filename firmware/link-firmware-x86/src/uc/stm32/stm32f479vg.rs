@@ -1,8 +1,10 @@
 use core::ptr::addr_of_mut;
 
+use crate::chip::Transact;
 use crate::uc;
 use defmt::{debug, info};
 use embassy_executor::Spawner;
+use embassy_net::driver::Driver;
 use embassy_stm32::mode::Async;
 use embassy_stm32::{
 	bind_interrupts,
@@ -61,7 +63,7 @@ pub async fn init<'usb>(
 	impl uc::SystemUnderTest,
 	impl uc::Monitor,
 	impl uc::EthernetDriver,
-	impl uc::EthernetDriver,
+	//impl uc::EthernetDriver,
 	impl uc::WallClock,
 	impl uc::Rng,
 	impl uc::UartTx,
@@ -74,17 +76,17 @@ pub async fn init<'usb>(
 	let mut config = Config::default();
 	config.rcc.ls.rtc = rcc::RtcClockSource::LSI;
 	config.rcc.hse = Some(rcc::Hse {
-		freq: Hertz::mhz(26),
+		freq: Hertz::mhz(24),
 		mode: rcc::HseMode::Oscillator,
 	});
 	config.rcc.pll_src = rcc::PllSource::HSE;
 	config.rcc.ahb_pre = rcc::AHBPrescaler::DIV1;
 	config.rcc.sys = rcc::Sysclk::PLL1_P;
 	config.rcc.pll = Some(rcc::Pll {
-		prediv: rcc::PllPreDiv::DIV22,
-		mul: rcc::PllMul::MUL285,
+		prediv: rcc::PllPreDiv::DIV24,
+		mul: rcc::PllMul::MUL360,
 		divp: Some(rcc::PllPDiv::DIV2),
-		divq: Some(rcc::PllQDiv::DIV7),
+		divq: Some(rcc::PllQDiv::DIV2),
 		divr: Some(rcc::PllRDiv::DIV2),
 	});
 
@@ -102,6 +104,17 @@ pub async fn init<'usb>(
 
 	info!("initializing STM32f479vg...");
 	Timer::after(Duration::from_millis(100)).await;
+
+	// Blink
+	{
+		let mut pd2 = Output::new(p.PD2, Level::Low, Speed::Low);
+		loop {
+			pd2.set_high();
+			Timer::after(Duration::from_millis(300)).await;
+			pd2.set_low();
+			Timer::after(Duration::from_millis(300)).await;
+		}
+	}
 
 	let mut ind_on = Output::new(p.PB4, Level::Low, Speed::Low);
 	ind_on.set_high();
@@ -174,53 +187,53 @@ pub async fn init<'usb>(
 
 	info!("... monitor INIT");
 
-	let mut syseth_en = Output::new(p.PA2, Level::Low, Speed::Low);
-	let mut syseth_xfrm_en = Output::new(p.PA3, Level::Low, Speed::Low);
-	syseth_en.set_high();
-	syseth_xfrm_en.set_high();
-	// Keep them high even after we return.
-	::core::mem::forget(syseth_en);
-	::core::mem::forget(syseth_xfrm_en);
+	//let mut syseth_en = Output::new(p.PA2, Level::Low, Speed::Low);
+	//let mut syseth_xfrm_en = Output::new(p.PA3, Level::Low, Speed::Low);
+	//syseth_en.set_high();
+	//syseth_xfrm_en.set_high();
+	//// Keep them high even after we return.
+	//::core::mem::forget(syseth_en);
+	//::core::mem::forget(syseth_xfrm_en);
 
-	info!("... system ethernet transformer INIT");
+	//info!("... system ethernet transformer INIT");
 
-	let mut sysconf = spi::Config::default();
-	//sysconf.mode = spi::MODE_0;
-	//sysconf.bit_order = spi::BitOrder::MsbFirst;
-	sysconf.frequency = Hertz(50_000_000);
+	//let mut sysconf = spi::Config::default();
+	////sysconf.mode = spi::MODE_0;
+	////sysconf.bit_order = spi::BitOrder::MsbFirst;
+	//sysconf.frequency = Hertz(50_000_000);
 
-	let sysspi = Spi::new(p.SPI1, p.PA5, p.PA7, p.PA6, p.DMA2_CH3, p.DMA2_CH0, sysconf);
+	//let sysspi = Spi::new(p.SPI1, p.PA5, p.PA7, p.PA6, p.DMA2_CH3, p.DMA2_CH0, sysconf);
 
-	info!("... system ethernet comms INIT");
+	//info!("... system ethernet comms INIT");
 
-	let sysdev = ExclusiveDevice::new(
-		sysspi,
-		Output::new(p.PA4, Level::High, Speed::VeryHigh),
-		Delay,
-	)
-	.unwrap();
+	//let sysdev = ExclusiveDevice::new(
+	//	sysspi,
+	//	Output::new(p.PA4, Level::High, Speed::VeryHigh),
+	//	Delay,
+	//)
+	//.unwrap();
 
-	info!("... system ethernet dev INIT");
+	//info!("... system ethernet dev INIT");
 
-	let syseth_mac_addr = [b'.', b'o', b'O', b'D', b'E', b'V'];
+	//let syseth_mac_addr = [b'.', b'o', b'O', b'D', b'E', b'V'];
 
-	let syseth = {
-		static STATE: static_cell::StaticCell<embassy_net_wiznet::State<2, 2>> =
-			static_cell::StaticCell::new();
-		let state = STATE.init(embassy_net_wiznet::State::<2, 2>::new());
-		let intpin = ExtiInput::new(p.PB0, p.EXTI0, Pull::Up);
-		let rstpin = Output::new(p.PB1, Level::High, Speed::VeryHigh);
-		let (syseth, runner) =
-			embassy_net_wiznet::new(syseth_mac_addr, state, sysdev, intpin, rstpin)
-				.await
-				.unwrap();
+	//let syseth = {
+	//	static STATE: static_cell::StaticCell<embassy_net_wiznet::State<2, 2>> =
+	//		static_cell::StaticCell::new();
+	//	let state = STATE.init(embassy_net_wiznet::State::<2, 2>::new());
+	//	let intpin = ExtiInput::new(p.PB0, p.EXTI0, Pull::Up);
+	//	let rstpin = Output::new(p.PB1, Level::High, Speed::VeryHigh);
+	//	let (syseth, runner) =
+	//		embassy_net_wiznet::new(syseth_mac_addr, state, sysdev, intpin, rstpin)
+	//			.await
+	//			.unwrap();
 
-		spawner.must_spawn(syseth_runner_task(runner));
+	//	spawner.must_spawn(syseth_runner_task(runner));
 
-		syseth
-	};
+	//	syseth
+	//};
 
-	info!("... system ethernet INIT");
+	//info!("... system ethernet INIT");
 
 	let mut exteth_en = Output::new(p.PD7, Level::Low, Speed::Low);
 	let mut exteth_xfrm_en = Output::new(p.PD2, Level::Low, Speed::Low);
@@ -233,9 +246,9 @@ pub async fn init<'usb>(
 	info!("... external ethernet transformer INIT");
 
 	let mut extconf = spi::Config::default();
-	//extconf.mode = spi::MODE_0;
-	//extconf.bit_order = spi::BitOrder::MsbFirst;
-	extconf.frequency = Hertz(25_000_000);
+	extconf.mode = spi::MODE_0;
+	extconf.bit_order = spi::BitOrder::MsbFirst;
+	extconf.frequency = Hertz(40_000_000);
 
 	let extspi = Spi::new(
 		p.SPI3, p.PC10, p.PC12, p.PC11, p.DMA1_CH7, p.DMA1_CH2, extconf,
@@ -243,7 +256,7 @@ pub async fn init<'usb>(
 
 	info!("... external ethernet comms INIT");
 
-	let extdev = ExclusiveDevice::new(
+	let mut extdev = ExclusiveDevice::new(
 		extspi,
 		Output::new(p.PA15, Level::High, Speed::VeryHigh),
 		Delay,
@@ -260,9 +273,35 @@ pub async fn init<'usb>(
 		static_cell::StaticCell::new();
 	let ext_state = EXT_STATE.init(embassy_net_wiznet::State::<2, 2>::new());
 	let ext_intpin = ExtiInput::new(p.PD1, p.EXTI1, Pull::Up);
-	let ext_rstpin = Output::new(p.PD0, Level::High, Speed::VeryHigh);
+	let mut ext_rstpin = Output::new(p.PD0, Level::High, Speed::VeryHigh);
+	let ext_rstpin_fake = Output::new(p.PD9, Level::Low, Speed::VeryHigh);
+
+	Timer::after_millis(100).await;
+	ext_rstpin.set_low();
+	Timer::after_millis(100).await;
+	ext_rstpin.set_high();
+	Timer::after_millis(100).await;
+
+	// let out_buf = [0, 0x1cu8, 0, 0];
+	// let mut in_buf = [0u8; 4];
+
+	// loop {
+	// 	let r = extdev.transact(&out_buf, &mut in_buf);
+	// 	debug!("transaction on: {:?} {:?}", r.is_ok(), in_buf);
+	// 	in_buf = [0, 0, 0, 0];
+	// 	Timer::after_millis(500).await;
+	// 	ext_rstpin.set_low();
+	// 	Timer::after_millis(10).await;
+	// 	let r = extdev.transact(&out_buf, &mut in_buf);
+	// 	debug!("transaction off: {:?} {:?}", r.is_ok(), in_buf);
+	// 	in_buf = [0, 0, 0, 0];
+	// 	Timer::after_millis(10).await;
+	// 	ext_rstpin.set_high();
+	// 	Timer::after_millis(500).await;
+	// }
+
 	let (exteth, ext_runner) =
-		embassy_net_wiznet::new(extmac, ext_state, extdev, ext_intpin, ext_rstpin)
+		embassy_net_wiznet::new(extmac, ext_state, extdev, ext_intpin, ext_rstpin_fake)
 			.await
 			.unwrap();
 
@@ -391,7 +430,7 @@ pub async fn init<'usb>(
 		system,
 		monitor,
 		exteth,
-		syseth,
+		//syseth,
 		wall_clock,
 		rng_gen,
 		syscom_tx,
