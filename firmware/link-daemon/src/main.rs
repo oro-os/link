@@ -7,7 +7,7 @@ use self::docker::Docker;
 use async_std::{io, net::TcpListener, prelude::*, task};
 use envconfig::Envconfig;
 
-use link_protocol::{channel::RWError, Error as ProtoError};
+use link_protocol::{Error as ProtoError, channel::RWError};
 use log::{debug, error, info, warn};
 
 use std::str::FromStr;

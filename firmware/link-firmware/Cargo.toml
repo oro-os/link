@@ -1,6 +1,6 @@
 [package]
-name = "link-firmware-x86"
-description = "Oro Link x86 firmware (deprecated)"
+name = "link-firmware"
+description = "Oro Link firmware"
 publish = false
 edition = { workspace = true }
 authors = { workspace = true }
@@ -56,7 +56,7 @@ stm32 = [
 	"embassy-stm32",
 	"embedded-hal",
 	"embedded-hal-bus",
-	"stm32-metapac"
+	"stm32-metapac",
 ]
 
 # Helpers
@@ -79,7 +79,7 @@ oro-logo-32 = ["oro-logo-rle/oro-logo-32"]
 link-protocol = { path = "../link-protocol", features = ["defmt", "embedded-io", "embassy"] }
 cortex-m-rt = { version = "0.7.3", optional = true }
 defmt = { version = "0.3.5", default-features = false }
-embassy-net-wiznet = { version = "0.1.0", optional = true, git = "https://github.com/oro-os/dep.embassy.git", features = ["defmt"] }
+embassy-net-wiznet = { version = "0.2.0", optional = true, git = "https://github.com/oro-os/dep.embassy.git", features = ["defmt"] }
 embedded-graphics = { version = "0.8.0", optional = true }
 embedded-graphics-core = { version = "0.4.0", optional = true }
 embedded-graphics-framebuf = { version = "0.5.0", optional = true }
@@ -97,8 +97,7 @@ rand_core = "0.6.4"
 embedded-io-async = "0.6.1"
 embassy-sync = { git = "https://github.com/oro-os/dep.embassy.git" }
 embassy-futures = { git = "https://github.com/oro-os/dep.embassy.git" }
-# XXX DEBUG: This is just to test USB connectivity.
-usbd-hid = "0.7.0"
+panic-probe = "1.0.0"
 
 [dependencies.cortex-m]
 version = "0.7.7"
@@ -111,9 +110,7 @@ features = [
 [dependencies.embassy-executor]
 git = "https://github.com/oro-os/dep.embassy.git"
 features = [
-	"integrated-timers",
 	"executor-thread",
-	"task-arena-size-98304",
 ]
 
 [dependencies.embassy-time]
@@ -129,7 +126,8 @@ features = [
 	"defmt",
 	"unstable-pac",
 	"time-driver-any",
-	"exti"
+	"exti",
+	"single-bank"
 ]
 
 [dependencies.embassy-net]
@@ -138,7 +136,6 @@ features = [
 	"defmt",
 	"tcp",
 	"udp",
-	"igmp",
 	"dns",
 	"dhcpv4",
 	"proto-ipv4",

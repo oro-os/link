@@ -1,7 +1,7 @@
 [workspace.package]
 version = "1.0.0"
 authors = [ "Joshua Lee Junon <junon@oro.sh> (https://github.com/qix-)" ]
-edition = "2021"
+edition = "2024"
 repository = "https://github.com/oro-os/link"
 license = "MIT"
 
@@ -9,7 +9,7 @@ license = "MIT"
 resolver = "2"
 
 members = [
-	"link-firmware-x86",
+	"link-firmware",
 	"link-rpcapd",
 	"link-daemon",
 	"link-repl",

@@ -9,7 +9,7 @@
 //! NETWORK OR ENVIRONMENT.**
 mod rpcap;
 
-use async_broadcast::{broadcast as make_broadcast, InactiveReceiver as InactiveBroadcastReceiver};
+use async_broadcast::{InactiveReceiver as InactiveBroadcastReceiver, broadcast as make_broadcast};
 use async_std::{
 	channel::{self, Sender},
 	io::{self, ReadExt},

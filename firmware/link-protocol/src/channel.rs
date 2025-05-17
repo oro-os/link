@@ -1,10 +1,10 @@
 use crate::{
-	macros::{debug, error, trace},
 	Deserialize, Error, Packet, Read, Serialize, Write,
+	macros::{debug, error, trace},
 };
 use aes::{
-	cipher::{BlockDecrypt, BlockEncrypt, KeyInit},
 	Aes256Dec, Aes256Enc,
+	cipher::{BlockDecrypt, BlockEncrypt, KeyInit},
 };
 #[cfg(feature = "async-std")]
 use async_std::sync::Mutex;
@@ -228,9 +228,7 @@ impl<R: Read> Read for BlockReceiver<R> {
 		while remaining > 0 {
 			trace!(
 				"link-proto: read(): remaining={} off={} cursor={}",
-				remaining,
-				off,
-				self.cursor
+				remaining, off, self.cursor
 			);
 
 			if self.cursor >= self.block.len() {

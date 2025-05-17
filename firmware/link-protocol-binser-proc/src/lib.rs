@@ -1,14 +1,14 @@
 extern crate proc_macro;
 
 use proc_macro2::{Span, TokenStream};
-use quote::{quote, TokenStreamExt};
+use quote::{TokenStreamExt, quote};
 use std::collections::HashMap;
 use syn::{
+	Error, Fields, Ident, ItemEnum, LitInt, Meta,
 	parse::{Parse, ParseStream},
 	parse_macro_input,
 	punctuated::Punctuated,
 	token::{Comma, Eq},
-	Error, Fields, Ident, ItemEnum, LitInt, Meta,
 };
 
 #[derive(Default)]

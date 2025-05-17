@@ -1,6 +1,6 @@
-use crate::{docker::Docker, Config, Error};
+use crate::{Config, Error, docker::Docker};
 use async_std::{
-	channel::{bounded as make_bounded_channel, Receiver, Sender},
+	channel::{Receiver, Sender, bounded as make_bounded_channel},
 	fs,
 	io::{BufReader, BufWriter, ErrorKind},
 	net::TcpStream,
@@ -8,7 +8,7 @@ use async_std::{
 	task::{self, JoinHandle},
 };
 use futures::{prelude::*, select};
-use link_protocol::{channel, Packet, PowerState, Scene};
+use link_protocol::{Packet, PowerState, Scene, channel};
 use log::{debug, error, info, trace, warn};
 use rand::rngs::OsRng;
 use std::{os::unix::fs::PermissionsExt, time::Duration};

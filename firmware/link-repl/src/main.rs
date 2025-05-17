@@ -4,12 +4,12 @@ use async_std::{io, net::TcpListener, prelude::*, sync::Mutex, task};
 use envconfig::Envconfig;
 
 use link_protocol::{
-	channel::{PacketSender, RWError},
 	Error as ProtoError, LogEntry, PowerState,
+	channel::{PacketSender, RWError},
 };
 use mini_async_repl::{
-	command::{Command, CommandArgInfo, CommandArgType, ExecuteCommand},
 	CommandStatus, Repl,
+	command::{Command, CommandArgInfo, CommandArgType, ExecuteCommand},
 };
 
 use std::{str::FromStr, sync::Arc};
@@ -19,7 +19,7 @@ use async_std::{
 	net::TcpStream,
 };
 use futures::{prelude::*, select};
-use link_protocol::{channel, Packet, Scene};
+use link_protocol::{Packet, Scene, channel};
 use log::{error, info, warn};
 use rand::rngs::OsRng;
 

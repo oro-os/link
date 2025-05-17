@@ -1,10 +1,5 @@
 # x86 Oro Link
 
-> [!IMPORTANT]
-> This version of the firmware is no longer maintained and will
-> ultimately be removed from the codebase. See `link-firmware` for
-> current development.
-
 This folder houses the firmware for the x86 version of the Oro Link,
 meant for testing x86 and x86_64 machines.
 

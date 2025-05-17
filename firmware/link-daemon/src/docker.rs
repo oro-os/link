@@ -15,7 +15,7 @@
 //! Word of the wise: If you're doing async HTTP in 2023, use Tokio. Even if you
 //! really dislike Tokio, save yourself the headache.
 use log::warn;
-use serde::{ser::SerializeSeq, Deserialize, Serialize, Serializer};
+use serde::{Deserialize, Serialize, Serializer, ser::SerializeSeq};
 use std::collections::HashMap;
 use url::Url;
 
