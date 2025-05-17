@@ -91,6 +91,10 @@ pub async fn main(spawner: Spawner) -> ! {
 	spawner.must_spawn(service::led_controller(i2c, enable_lighting_controller));
 	info!("started led controller");
 
+	// Power Monitor
+	spawner.must_spawn(service::power_monitor(i2c));
+	info!("started power monitor");
+
 	loop {
 		Timer::after(Duration::from_millis(1000)).await;
 	}

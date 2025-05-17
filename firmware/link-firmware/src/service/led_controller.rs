@@ -24,7 +24,30 @@ pub async fn led_controller(
 	led.present_pwm().await;
 
 	loop {
-		Timer::after(Duration::from_millis(1000)).await;
+		for i in 1..=36 {
+			led.set_pwm(i, 0xFF);
+			led.set_ch_state(
+				i,
+				ChannelState::new()
+					.with_on()
+					.with_max_current(MaxCurrent::Imax),
+			);
+		}
+		led.present_state().await;
+		led.present_pwm().await;
+		Timer::after(Duration::from_millis(5000)).await;
+		for i in 1..=36 {
+			led.set_pwm(i, 0x00);
+			led.set_ch_state(
+				i,
+				ChannelState::new()
+					.with_off()
+					.with_max_current(MaxCurrent::Imax),
+			);
+		}
+		led.present_state().await;
+		led.present_pwm().await;
+		Timer::after(Duration::from_millis(5000)).await;
 	}
 }
 
@@ -34,6 +57,7 @@ struct IS31FL3236A {
 	ch_state: [u8; 37],  // 36 + 1 for cursor
 }
 
+#[expect(dead_code)]
 impl IS31FL3236A {
 	fn new(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Async>>) -> Self {
 		let mut this = Self {
@@ -100,6 +124,7 @@ impl IS31FL3236A {
 #[repr(transparent)]
 pub struct ChannelState(u8);
 
+#[expect(dead_code)]
 impl ChannelState {
 	pub const fn new() -> Self {
 		Self(0)
@@ -134,6 +159,7 @@ impl From<ChannelState> for u8 {
 
 #[derive(Clone, Copy)]
 #[repr(u8)]
+#[expect(dead_code)]
 enum MaxCurrent {
 	Imax = 0b00,
 	ImaxDiv2 = 0b01,
@@ -143,6 +169,7 @@ enum MaxCurrent {
 
 #[derive(Clone, Copy)]
 #[repr(u8)]
+#[expect(dead_code)]
 enum OutputFrequency {
 	Khz3 = 0b0,
 	Khz22 = 0b1,
