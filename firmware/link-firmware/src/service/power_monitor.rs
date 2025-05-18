@@ -1,4 +1,4 @@
-use defmt::{error, info};
+use defmt::{error, info, trace};
 use embassy_stm32::{i2c::I2c, mode::Async};
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, channel::Channel, mutex::Mutex};
 use embassy_time::{Duration, Timer};
@@ -23,7 +23,6 @@ pub async fn power_monitor(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Async>
 	macro_rules! get {
 		($reg: expr) => {{
 			let mut i2c = i2c.lock().await;
-			info!("got lock");
 			let mut buf = [0; 2];
 			if let Err(err) = i2c.blocking_write_read(ADDR, &[$reg], &mut buf) {
 				error!("failed to read from power monitor chip: {:?}", err);
@@ -69,7 +68,7 @@ pub async fn power_monitor(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Async>
 	loop {
 		Timer::after(Duration::from_millis(1000)).await;
 		let current = get!(0x04);
-		info!("powermon: current: {}mA", current);
+		trace!("powermon: current: {}mA", current);
 	}
 }
 
