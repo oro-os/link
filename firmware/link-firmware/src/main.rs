@@ -61,6 +61,10 @@ pub async fn main(spawner: Spawner) -> ! {
 	info!("initializing oro link...");
 	Timer::after(Duration::from_millis(100)).await;
 
+	// XXX only needed to work around the EN line pulled down erroneously.
+	info!("turning off power-only VBUS");
+	let enable_usrpwronly_vbus = Output::new(p.PD10, Level::High, Speed::Low);
+
 	// Debug LED blink
 	let pd2 = OutputOpenDrain::new(p.PD2, Level::Low, Speed::High);
 	spawner.must_spawn(service::blinken_light(pd2));
@@ -95,7 +99,9 @@ pub async fn main(spawner: Spawner) -> ! {
 	spawner.must_spawn(service::power_monitor(i2c));
 	info!("started power monitor");
 
+	Timer::after(Duration::from_millis(100)).await;
+
 	loop {
-		Timer::after(Duration::from_millis(1000)).await;
+		Timer::after(Duration::from_millis(3000)).await;
 	}
 }
