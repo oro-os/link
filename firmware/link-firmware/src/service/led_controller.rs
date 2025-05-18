@@ -24,29 +24,6 @@ pub async fn led_controller(
 	led.present_pwm().await;
 
 	loop {
-		for i in 1..=36 {
-			led.set_pwm(i, 0xFF);
-			led.set_ch_state(
-				i,
-				ChannelState::new()
-					.with_on()
-					.with_max_current(MaxCurrent::Imax),
-			);
-		}
-		led.present_state().await;
-		led.present_pwm().await;
-		Timer::after(Duration::from_millis(5000)).await;
-		for i in 1..=36 {
-			led.set_pwm(i, 0x00);
-			led.set_ch_state(
-				i,
-				ChannelState::new()
-					.with_off()
-					.with_max_current(MaxCurrent::Imax),
-			);
-		}
-		led.present_state().await;
-		led.present_pwm().await;
 		Timer::after(Duration::from_millis(5000)).await;
 	}
 }
