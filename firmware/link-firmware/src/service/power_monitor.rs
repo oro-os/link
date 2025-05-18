@@ -47,6 +47,7 @@ pub async fn power_monitor(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Async>
 	info!("power monitor chip manufacturer ID: {:04X}", manuid);
 	let dieid = get!(0xFF);
 	info!("power monitor chip die ID: {:04X}", dieid);
+	Timer::after(Duration::from_millis(10)).await;
 
 	// Set the configuration value
 	set!(
@@ -57,6 +58,9 @@ pub async fn power_monitor(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Async>
 			.with_shunt_conversion_time(ConverstionTime::Us140)
 			.with_mode(Mode::ShuntAndBusContinuous)
 	);
+
+	info!("configured power monitor chip");
+	Timer::after(Duration::from_millis(10)).await;
 
 	// Set the calibration register. The board uses a 2mOhm shunt resistor.
 	set!(0x05, 0x0A00u16);
