@@ -8746,6 +8746,12 @@
 		(uuid "28492650-d04d-4cda-9eae-1742d5a6a69c")
 	)
 	(junction
+		(at 259.08 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "28f3cc29-bb72-476d-b653-2e6d5b50e527")
+	)
+	(junction
 		(at 102.87 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8950,6 +8956,12 @@
 		(uuid "a94e91c2-0ca1-43f6-a530-58d7bcc1ef89")
 	)
 	(junction
+		(at 259.08 69.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b9409586-7a34-4a7e-8c94-450a52dac9ac")
+	)
+	(junction
 		(at 245.11 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9078,20 +9090,12 @@
 		(uuid "32ec43f8-3035-49f2-b0ca-abec095fecfe")
 	)
 	(no_connect
-		(at 270.51 87.63)
-		(uuid "33320dc2-5f63-480d-a242-3400a35d1a8e")
-	)
-	(no_connect
 		(at 99.06 52.07)
 		(uuid "39edd0b5-e6a7-4f71-8a28-e4f1339f4307")
 	)
 	(no_connect
 		(at 261.62 67.31)
 		(uuid "558efd20-1ef9-4847-be2d-985c8750abd5")
-	)
-	(no_connect
-		(at 270.51 44.45)
-		(uuid "5fbd5d51-ec11-4d12-acec-ded417c2ebac")
 	)
 	(no_connect
 		(at 99.06 44.45)
@@ -10025,7 +10029,7 @@
 	)
 	(wire
 		(pts
-			(xy 273.05 99.06) (xy 273.05 100.33)
+			(xy 259.08 102.87) (xy 259.08 104.14)
 		)
 		(stroke
 			(width 0)
@@ -10142,16 +10146,6 @@
 			(type default)
 		)
 		(uuid "66a0c4cc-7870-4a47-92b6-c0f90f16992a")
-	)
-	(wire
-		(pts
-			(xy 247.65 96.52) (xy 247.65 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "67e0eb56-0bf8-429b-9f50-af85557aeb88")
 	)
 	(wire
 		(pts
@@ -10442,6 +10436,16 @@
 			(type default)
 		)
 		(uuid "823d5c96-0540-4b71-8174-4db387aa1123")
+	)
+	(wire
+		(pts
+			(xy 270.51 44.45) (xy 259.08 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82b7d632-b977-4559-b607-17a0860cc8ac")
 	)
 	(wire
 		(pts
@@ -10875,16 +10879,6 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 99.06) (xy 260.35 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b13cc4e7-2394-492a-baeb-6cbba0cfbbe5")
-	)
-	(wire
-		(pts
 			(xy 173.99 57.15) (xy 261.62 57.15)
 		)
 		(stroke
@@ -11075,6 +11069,16 @@
 	)
 	(wire
 		(pts
+			(xy 270.51 87.63) (xy 270.51 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c32f428b-810a-4f9f-aeb0-7f6e2a460a47")
+	)
+	(wire
+		(pts
 			(xy 186.69 92.71) (xy 196.85 92.71)
 		)
 		(stroke
@@ -11092,6 +11096,16 @@
 			(type default)
 		)
 		(uuid "c53833f4-2830-484d-b8a4-31808fe74475")
+	)
+	(wire
+		(pts
+			(xy 259.08 44.45) (xy 259.08 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c66e597c-0689-44a9-9441-76cdba4c77ff")
 	)
 	(wire
 		(pts
@@ -11235,7 +11249,7 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 69.85) (xy 259.08 99.06)
+			(xy 259.08 69.85) (xy 259.08 88.9)
 		)
 		(stroke
 			(width 0)
@@ -11272,6 +11286,16 @@
 			(type default)
 		)
 		(uuid "d6cd518c-07a9-42d0-97b9-10937d22fcb4")
+	)
+	(wire
+		(pts
+			(xy 270.51 88.9) (xy 259.08 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7bce2ff-3e75-4494-ae52-b8561b5e4c48")
 	)
 	(wire
 		(pts
@@ -11312,6 +11336,16 @@
 			(type default)
 		)
 		(uuid "db8a42af-b2bb-4f78-b874-793ae8e39001")
+	)
+	(wire
+		(pts
+			(xy 259.08 88.9) (xy 259.08 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dbaa89ae-18e5-40cc-b329-a539ad398b3d")
 	)
 	(wire
 		(pts
@@ -11615,6 +11649,16 @@
 	)
 	(wire
 		(pts
+			(xy 247.65 96.52) (xy 247.65 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f91442b6-1ad7-44e4-9b0b-6d14d8966ecb")
+	)
+	(wire
+		(pts
 			(xy 106.68 53.34) (xy 106.68 80.01)
 		)
 		(stroke
@@ -11753,7 +11797,7 @@
 		(uuid "b61c6c7c-c480-4b51-b6b2-600c39a8c1a9")
 	)
 	(label "ETH_TX2-"
-		(at 251.46 57.15 0)
+		(at 242.57 57.15 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11874,7 +11918,7 @@
 		(uuid "6d96dd53-3993-4fb1-b4f3-aac1a7f42b2e")
 	)
 	(label "ETH_RX2-"
-		(at 251.46 64.77 0)
+		(at 242.57 64.77 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11918,7 +11962,7 @@
 		(uuid "83acc9c3-ce9b-4c3f-9fd8-6b1815a0fdee")
 	)
 	(label "ETH_TX2+"
-		(at 251.46 52.07 0)
+		(at 242.57 52.07 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11995,7 +12039,7 @@
 		(uuid "b532e75a-61d5-4569-8dee-642a802be71b")
 	)
 	(label "ETH_RX2+"
-		(at 251.46 59.69 0)
+		(at 242.57 59.69 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12715,7 +12759,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:885342210004")
-		(at 260.35 99.06 0)
+		(at 259.08 90.17 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12724,23 +12768,25 @@
 		(fields_autoplaced yes)
 		(uuid "1220ee3b-48a5-4189-8fd9-e05e9eb44815")
 		(property "Reference" "C129"
-			(at 266.7 92.3755 0)
+			(at 262.382 95.3078 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Value" "1nF >=3kV"
-			(at 266.7 94.7998 0)
+			(at 262.382 97.7321 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "OroLink:CAPC4620X220N"
-			(at 269.24 195.25 0)
+			(at 162.89 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12750,7 +12796,7 @@
 			)
 		)
 		(property "Datasheet" "https://katalog.we-online.com/pbs/datasheet/885342210004.pdf"
-			(at 269.24 295.25 0)
+			(at 62.89 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12760,7 +12806,7 @@
 			)
 		)
 		(property "Description" "Multilayer Ceramic Chip Capacitor WCAP-CSMH Series 1808 1000pF X7R1808102KC00DFCT10000"
-			(at 260.35 99.06 0)
+			(at 259.08 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12769,7 +12815,7 @@
 			)
 		)
 		(property "Height" "2.2"
-			(at 269.24 495.25 0)
+			(at -137.11 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12779,7 +12825,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Wurth Elektronik"
-			(at 269.24 595.25 0)
+			(at -237.11 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12789,7 +12835,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "885342210004"
-			(at 269.24 695.25 0)
+			(at -337.11 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12799,7 +12845,7 @@
 			)
 		)
 		(property "Mouser Part Number" "710-885342210004"
-			(at 269.24 795.25 0)
+			(at -437.11 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12809,7 +12855,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/885342210004?qs=MLItCLRbWsya%2F3qdX09FHQ%3D%3D"
-			(at 269.24 895.25 0)
+			(at -537.11 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12819,7 +12865,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 269.24 995.25 0)
+			(at -637.11 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12829,7 +12875,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 269.24 1095.25 0)
+			(at -737.11 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14136,7 +14182,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 273.05 100.33 0)
+		(at 259.08 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14144,7 +14190,7 @@
 		(dnp no)
 		(uuid "40fdcc53-91ca-4dc8-91ac-61d7e698bad7")
 		(property "Reference" "#PWR0164"
-			(at 273.05 106.68 0)
+			(at 259.08 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14153,7 +14199,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 273.05 104.4631 0)
+			(at 259.08 108.2731 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14161,7 +14207,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 273.05 100.33 0)
+			(at 259.08 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14170,7 +14216,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 273.05 100.33 0)
+			(at 259.08 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14179,7 +14225,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 273.05 100.33 0)
+			(at 259.08 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
