@@ -116,112 +116,6 @@
 				)
 			)
 		)
-		(symbol "Oro:BOM Part"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board no)
-			(property "Reference" "B"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "BOM Part"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Enable" "0"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "BOM Part_0_1"
-				(arc
-					(start -2.54 0)
-					(mid -2.54 0)
-					(end -2.54 0)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -2.54 0)
-					(mid -0.7439 0.7439)
-					(end 0 2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 1.7961)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 2.54)
-					(mid 0.7439 0.7439)
-					(end 2.54 0)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-		)
 		(symbol "OroLink:0402B103J160CT"
 			(pin_names
 				(offset 0.254)
@@ -807,231 +701,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "OroLink:1689310"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 21.59 12.7 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Value" "1689310"
-				(at 21.59 10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Footprint" "OroLink:1689310"
-				(at 21.59 -89.84 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.phoenixcontact.com/product/1689310"
-				(at 21.59 -189.84 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Description" "Contact insert, degree of protection: IP20, number of positions: 3, connection method: PCB connection, connection cross section: AWG 28- 16, housing size: 3"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "13.7"
-				(at 21.59 -389.84 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Name" "Phoenix Contact"
-				(at 21.59 -489.84 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "1689310"
-				(at 21.59 -589.84 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "651-1689310"
-				(at 21.59 -689.84 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.com/Search/Refine.aspx?Keyword=651-1689310"
-				(at 21.59 -789.84 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" ""
-				(at 21.59 -889.84 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" ""
-				(at 21.59 -989.84 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(symbol "1689310_1_1"
-				(rectangle
-					(start 5.08 7.62)
-					(end 20.32 -7.62)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at 10.16 12.7 270)
-					(length 5.08)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 12.7 -12.7 90)
-					(length 5.08)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 12.7 12.7 270)
-					(length 5.08)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 0 0)
-					(length 5.08)
-					(name "MH1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "MH1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 25.4 0 180)
-					(length 5.08)
-					(name "MH2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "MH2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4408,6 +4077,341 @@
 				)
 			)
 		)
+		(symbol "OroLink:SACC-DSIV-M12MS-5CON-L180"
+			(pin_names hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SACC-DSIV-M12MS-5CON-L180"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "OroLink:SACC-DSIV-M12MS-5CON-L180"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://product-download.phoenixcontact.com/2302737?response-content-disposition=inline;%20filename%3D%221694211.pdf%22&Expires=1748571141&Signature=aLQOEfemDSICohIQJCUsHd8dlTjrmq79IHGhXqrIt1LBaeGxehiL~KVbHh8UkZSt6TxuoDcXmjS28TF4smO07tHgZkUgLjyCRb4dFDnZ80VXdBgNO3AC~op2LosUpMdhcYoSDcwM2CwD8G9atGODO9FQO7lV8DofDDVkudFs83KptcuI5n9J6pvfwBvojM0Axv98qwtHqBe6grw5ZdNJsQABX31vBsCQ4NRpc84XDvu945XlALanO2mxfLT6WZUTAsEoMPPjajiW-~EbO5ZxE1JRrOBOTGBj7rN7ciOuxJf9GBVlsz~p8gbXrSVSCaR98dPId8v7n9crOx2~QpAUkA__&Key-Pair-Id=K1I2N54A7B0GD"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Sensor/actuator flush-type plug, 5-pos., M12, A-coded, rear/screw mounting with M12 thread, with polarity protection, with straight solder connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser ID" "651-1694211"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser Stock URL" "https://www.mouser.de/ProductDetail/651-1694211"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SACC-DSIV-M12MS-5CON-L180_1_0"
+				(circle
+					(center -1.7678 -1.7678)
+					(radius 0.65)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -1.7678 1.7678)
+					(radius 0.65)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.556 -2.54) (xy -5.1862 -2.54)
+					)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.556 2.54) (xy -5.156 2.54)
+					)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.7678 -1.7678) (xy -3.556 -2.54)
+					)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.7678 1.7678) (xy -3.556 2.54)
+					)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 5.0478 0)
+					)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.7678 -1.7678) (xy 3.556 -2.54)
+					)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.7678 1.7678) (xy 3.556 2.54)
+					)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.556 -2.54) (xy 5.156 -2.54)
+					)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.556 2.54) (xy 5.156 2.54)
+					)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.65)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 4.01)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.7678 -1.7678)
+					(radius 0.65)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.7678 1.7678)
+					(radius 0.65)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SACC-DSIV-M12MS-5CON-L180_1_1"
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "OroLink:SG73P2ATTD102J"
 			(pin_names
 				(offset 0.254)
@@ -6950,10 +6954,10 @@
 		)
 	)
 	(junction
-		(at 129.54 34.29)
+		(at 121.92 35.56)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "06250473-2079-48f6-bb17-37c4bb8d65c7")
+		(uuid "02c56969-e734-40a0-8f31-fe228c062934")
 	)
 	(junction
 		(at 246.38 27.94)
@@ -6966,6 +6970,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "10a8ea0a-4cec-43b8-b698-e7089f86d4a6")
+	)
+	(junction
+		(at 134.62 69.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1dc8ce5d-6b78-4385-8f56-f3aa6014ecd7")
 	)
 	(junction
 		(at 203.2 81.28)
@@ -7028,22 +7038,10 @@
 		(uuid "5773eb1b-a21f-4039-a4cd-855fbeb2880a")
 	)
 	(junction
-		(at 124.46 34.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5bb8d851-2382-4667-9538-e0b20e0dd79f")
-	)
-	(junction
 		(at 101.6 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5fa5990b-a8af-405d-8452-6b5072869a69")
-	)
-	(junction
-		(at 152.4 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "63ea0d6a-9b31-4c49-8920-6c712b10fbfe")
 	)
 	(junction
 		(at 243.84 86.36)
@@ -7074,12 +7072,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "88259199-9212-4585-a79f-eb78840b096d")
-	)
-	(junction
-		(at 132.08 68.58)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8dc86dc7-acfe-4afc-a264-ed808fd10fb4")
 	)
 	(junction
 		(at 256.54 27.94)
@@ -7202,16 +7194,16 @@
 		(uuid "3f421644-d32a-4b7e-887a-9984582e90d1")
 	)
 	(no_connect
-		(at 144.78 53.34)
-		(uuid "5e79fd96-1f94-40c3-aeea-f45941c9f387")
-	)
-	(no_connect
 		(at 207.01 101.6)
 		(uuid "626a3eba-d7be-4942-9a96-b07858e5ef09")
 	)
 	(no_connect
 		(at 207.01 91.44)
 		(uuid "6ab7ad6d-8ca8-4aa0-ae5c-3e4d1ea85025")
+	)
+	(no_connect
+		(at 134.62 55.88)
+		(uuid "768c250b-3fcb-4d93-91e1-864a9bdf4212")
 	)
 	(no_connect
 		(at 240.03 83.82)
@@ -7232,10 +7224,6 @@
 	(no_connect
 		(at 207.01 104.14)
 		(uuid "8d3f49ea-c1c3-4a03-9287-49c67937efce")
-	)
-	(no_connect
-		(at 119.38 53.34)
-		(uuid "8f737426-b86b-4de4-8868-ba5e3537d99f")
 	)
 	(no_connect
 		(at 207.01 96.52)
@@ -7262,6 +7250,10 @@
 		(uuid "c1d0c724-a71e-4397-8fe0-ad8fafa8d683")
 	)
 	(no_connect
+		(at 119.38 60.96)
+		(uuid "c26d6b9a-9598-476e-b232-3dae3a29d090")
+	)
+	(no_connect
 		(at 207.01 86.36)
 		(uuid "e7e4719d-3ccf-4aa4-b153-3d2ae170e46f")
 	)
@@ -7277,16 +7269,6 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 40.64) (xy 132.08 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "04bbbbee-bb0d-4890-a30d-d0b1f2ad91da")
-	)
-	(wire
-		(pts
 			(xy 99.06 158.75) (xy 107.95 158.75)
 		)
 		(stroke
@@ -7294,16 +7276,6 @@
 			(type default)
 		)
 		(uuid "059952fc-341e-431b-8999-ac9b81a5f4f7")
-	)
-	(wire
-		(pts
-			(xy 152.4 34.29) (xy 152.4 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "05d51f5c-4a6a-4032-910d-788bd641efac")
 	)
 	(wire
 		(pts
@@ -7367,23 +7339,13 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 34.29) (xy 152.4 34.29)
+			(xy 143.51 35.56) (xy 147.32 35.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "0f892abc-cabd-46c2-ad7a-f39728f60951")
-	)
-	(wire
-		(pts
-			(xy 132.08 68.58) (xy 132.08 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "108d094a-8e5e-4a27-b8fe-f1da2e294fe6")
 	)
 	(wire
 		(pts
@@ -7517,6 +7479,16 @@
 	)
 	(wire
 		(pts
+			(xy 134.62 69.85) (xy 147.32 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24823f26-25c1-4ac3-9c32-400e4ef96873")
+	)
+	(wire
+		(pts
 			(xy 204.47 54.61) (xy 204.47 57.15)
 		)
 		(stroke
@@ -7547,6 +7519,16 @@
 	)
 	(wire
 		(pts
+			(xy 104.14 55.88) (xy 119.38 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31cc776b-d006-4890-904d-b0be5895dcef")
+	)
+	(wire
+		(pts
 			(xy 240.03 96.52) (xy 251.46 96.52)
 		)
 		(stroke
@@ -7554,6 +7536,16 @@
 			(type default)
 		)
 		(uuid "32c4be79-1e25-4fb1-96e5-1aa4446b501d")
+	)
+	(wire
+		(pts
+			(xy 134.62 60.96) (xy 134.62 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3410a44f-5d8b-4f88-bf5a-085d859d9b8f")
 	)
 	(wire
 		(pts
@@ -7567,7 +7559,27 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 34.29) (xy 124.46 34.29)
+			(xy 121.92 35.56) (xy 133.35 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3586858e-c190-4ca4-b2d9-cd8ae318d080")
+	)
+	(wire
+		(pts
+			(xy 147.32 35.56) (xy 147.32 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b5506ab-c5e4-4aa6-9231-b9453978686c")
+	)
+	(wire
+		(pts
+			(xy 119.38 35.56) (xy 121.92 35.56)
 		)
 		(stroke
 			(width 0)
@@ -7624,16 +7636,6 @@
 			(type default)
 		)
 		(uuid "3ffd86a7-e3b8-4643-b311-9dc5535d415a")
-	)
-	(wire
-		(pts
-			(xy 129.54 34.29) (xy 129.54 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "41709db0-c6c1-40c6-936c-b2c98315e062")
 	)
 	(wire
 		(pts
@@ -7727,7 +7729,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 68.58) (xy 132.08 68.58)
+			(xy 132.08 69.85) (xy 134.62 69.85)
 		)
 		(stroke
 			(width 0)
@@ -7774,16 +7776,6 @@
 			(type dot)
 		)
 		(uuid "559c67cf-263f-43ff-b7df-ff0fe16a61a3")
-	)
-	(wire
-		(pts
-			(xy 132.08 38.1) (xy 152.4 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "55e8dfd7-46a8-4fa3-bd8f-16dce9d14203")
 	)
 	(wire
 		(pts
@@ -7834,16 +7826,6 @@
 			(type default)
 		)
 		(uuid "5cb23c72-87eb-4a48-ba7d-158d25948f49")
-	)
-	(wire
-		(pts
-			(xy 132.08 68.58) (xy 143.51 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5cdae99a-ae3a-4523-a503-28d781b578db")
 	)
 	(wire
 		(pts
@@ -7917,7 +7899,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 68.58) (xy 157.48 68.58)
+			(xy 157.48 69.85) (xy 161.29 69.85)
 		)
 		(stroke
 			(width 0)
@@ -8017,13 +7999,13 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 34.29) (xy 129.54 34.29)
+			(xy 134.62 58.42) (xy 139.7 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "81e29c07-2776-4210-8c75-4c4801f56209")
+		(uuid "84ec8964-242d-4951-8513-a8a5d4bd6ffc")
 	)
 	(wire
 		(pts
@@ -8237,7 +8219,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 27.94) (xy 124.46 34.29)
+			(xy 121.92 38.1) (xy 121.92 35.56)
 		)
 		(stroke
 			(width 0)
@@ -8577,7 +8559,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 34.29) (xy 113.03 34.29)
+			(xy 99.06 35.56) (xy 109.22 35.56)
 		)
 		(stroke
 			(width 0)
@@ -8604,16 +8586,6 @@
 			(type default)
 		)
 		(uuid "df3c38c7-4385-461c-9b23-eb93c42de6e0")
-	)
-	(wire
-		(pts
-			(xy 129.54 34.29) (xy 139.7 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e0213d01-e293-454f-99e5-2f6fee043677")
 	)
 	(wire
 		(pts
@@ -8796,6 +8768,17 @@
 		)
 		(uuid "00d2f005-5759-422e-b15c-78380340f34c")
 	)
+	(label "5V_IN"
+		(at 104.14 55.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "04dcf492-e72d-4915-9a21-a61a9c71c9cf")
+	)
 	(label "VBUS_5V"
 		(at 259.08 52.07 180)
 		(fields_autoplaced yes)
@@ -8863,7 +8846,7 @@
 		(uuid "3ae9999f-22e8-48d3-b25c-f1d69e369fc5")
 	)
 	(label "5V_SENSE"
-		(at 102.87 34.29 0)
+		(at 99.06 35.56 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8907,7 +8890,7 @@
 		(uuid "6aea7af1-db52-49f6-b7f3-fac7567a34cd")
 	)
 	(label "5V_IN"
-		(at 129.54 34.29 0)
+		(at 121.92 35.56 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8985,7 +8968,7 @@
 	)
 	(hierarchical_label "~{POWER_ON}"
 		(shape input)
-		(at 128.27 68.58 180)
+		(at 132.08 69.85 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9553,16 +9536,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 152.4 38.1 0)
+		(at 139.7 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "0f5e3714-8058-4da3-8fe6-862b875acd87")
-		(property "Reference" "#PWR064"
-			(at 152.4 44.45 0)
+		(uuid "0ec838da-8ce2-440d-8480-87ae0f7650d3")
+		(property "Reference" "#PWR0139"
+			(at 139.7 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9571,7 +9554,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 152.4 42.2331 0)
+			(at 139.7 62.5531 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9579,7 +9562,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 152.4 38.1 0)
+			(at 139.7 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9588,7 +9571,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 38.1 0)
+			(at 139.7 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9597,7 +9580,73 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 152.4 38.1 0)
+			(at 139.7 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dfe12b76-6422-4758-a3fb-a2d88cda99bf")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
+					(reference "#PWR0139")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 36.83 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0f5e3714-8058-4da3-8fe6-862b875acd87")
+		(property "Reference" "#PWR064"
+			(at 147.32 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 147.32 40.9631 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 147.32 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9619,7 +9668,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:SMF6V0A-M3-08")
-		(at 149.86 34.29 180)
+		(at 143.51 35.56 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9628,7 +9677,7 @@
 		(fields_autoplaced yes)
 		(uuid "1d01dfaf-24af-421e-9297-362818096a76")
 		(property "Reference" "CR3"
-			(at 144.78 27.653 0)
+			(at 138.43 28.923 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9636,7 +9685,7 @@
 			)
 		)
 		(property "Value" "SMF6V0A-M3-08"
-			(at 144.78 30.4859 0)
+			(at 138.43 31.7559 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9644,7 +9693,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:ZDO_SMF_DO-219AB_VIS"
-			(at 149.86 34.29 0)
+			(at 143.51 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9654,7 +9703,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/doc?85881"
-			(at 149.86 34.29 0)
+			(at 143.51 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9664,7 +9713,7 @@
 			)
 		)
 		(property "Description" "ESD PROTECTION DIODE SMF DO219AB"
-			(at 149.86 34.29 0)
+			(at 143.51 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9673,7 +9722,7 @@
 			)
 		)
 		(property "Mfr. Number" "SMF6V0A-M3-08"
-			(at 149.86 31.29 0)
+			(at 143.51 32.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9683,7 +9732,7 @@
 			)
 		)
 		(property "Mouser ID" "78-SMF6V0A-M3-08"
-			(at 149.86 31.29 0)
+			(at 143.51 32.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9693,7 +9742,7 @@
 			)
 		)
 		(property "Description_1" "ESD PROTECTION DIODE SMF DO219AB"
-			(at 149.86 31.29 0)
+			(at 143.51 32.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9703,7 +9752,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Vishay-General-Semiconductor/SMF6V0A-M3-08?qs=liFJyUJTUDEpN6KM4i%2FVgg%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=78-SMF6V0A-M3-08&utm_content=Vishay"
-			(at 149.86 31.29 0)
+			(at 143.51 32.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9713,7 +9762,7 @@
 			)
 		)
 		(property "DigiKey ID" "112-SMF6V0A-M3-08DKR-ND"
-			(at 149.86 31.29 0)
+			(at 143.51 32.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9723,7 +9772,7 @@
 			)
 		)
 		(property "Arrow ID" "null"
-			(at 149.86 31.29 0)
+			(at 143.51 32.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9733,7 +9782,7 @@
 			)
 		)
 		(property "Mfr. Name" "Vishay"
-			(at 149.86 31.29 0)
+			(at 143.51 32.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9752,6 +9801,101 @@
 			(project ""
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
 					(reference "CR3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:SACC-DSIV-M12MS-5CON-L180")
+		(at 127 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1e5c2faf-a98b-4fe8-bb57-63420cc2e692")
+		(property "Reference" "J3"
+			(at 126.9849 50.3425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SACC-DSIV-M12MS-5CON-L180"
+			(at 126.9849 52.7668 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:SACC-DSIV-M12MS-5CON-L180"
+			(at 127 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://product-download.phoenixcontact.com/2302737?response-content-disposition=inline;%20filename%3D%221694211.pdf%22&Expires=1748571141&Signature=aLQOEfemDSICohIQJCUsHd8dlTjrmq79IHGhXqrIt1LBaeGxehiL~KVbHh8UkZSt6TxuoDcXmjS28TF4smO07tHgZkUgLjyCRb4dFDnZ80VXdBgNO3AC~op2LosUpMdhcYoSDcwM2CwD8G9atGODO9FQO7lV8DofDDVkudFs83KptcuI5n9J6pvfwBvojM0Axv98qwtHqBe6grw5ZdNJsQABX31vBsCQ4NRpc84XDvu945XlALanO2mxfLT6WZUTAsEoMPPjajiW-~EbO5ZxE1JRrOBOTGBj7rN7ciOuxJf9GBVlsz~p8gbXrSVSCaR98dPId8v7n9crOx2~QpAUkA__&Key-Pair-Id=K1I2N54A7B0GD"
+			(at 127 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Sensor/actuator flush-type plug, 5-pos., M12, A-coded, rear/screw mounting with M12 thread, with polarity protection, with straight solder connection"
+			(at 127 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "651-1694211"
+			(at 127 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Stock URL" "https://www.mouser.de/ProductDetail/651-1694211"
+			(at 127 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c6758c7b-e448-4564-ba10-ee1d9d784578")
+		)
+		(pin "1"
+			(uuid "ccb38c45-2bf0-4ed3-ab10-73d0bdb51fbc")
+		)
+		(pin "3"
+			(uuid "e096f7d2-8383-44c1-972d-2f38e75d1d43")
+		)
+		(pin "5"
+			(uuid "e7b4f1e2-2e44-482b-9e9d-241b5d638849")
+		)
+		(pin "4"
+			(uuid "b1fc69a9-968b-4987-9523-d6646b1c59e6")
+		)
+		(instances
+			(project ""
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -10168,155 +10312,6 @@
 		)
 	)
 	(symbol
-		(lib_id "OroLink:1689310")
-		(at 119.38 53.34 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "28cf4a1b-9c1c-4d1d-84d0-e3bc79ee1519")
-		(property "Reference" "J3"
-			(at 144.8064 47.195 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1689310"
-			(at 144.8064 49.6193 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "OroLink:1689310"
-			(at 140.97 143.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.phoenixcontact.com/product/1689310"
-			(at 140.97 243.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "Contact insert, degree of protection: IP20, number of positions: 3, connection method: PCB connection, connection cross section: AWG 28- 16, housing size: 3"
-			(at 119.38 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" "13.7"
-			(at 140.97 443.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Phoenix Contact"
-			(at 140.97 543.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "1689310"
-			(at 140.97 643.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "651-1689310"
-			(at 140.97 743.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.com/Search/Refine.aspx?Keyword=651-1689310"
-			(at 140.97 843.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 140.97 943.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 140.97 1043.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "53df9034-1b00-46c4-891f-3cde1f1aa2b0")
-		)
-		(pin "2"
-			(uuid "0bae11df-9887-4700-b9b8-6e023ac92951")
-		)
-		(pin "1"
-			(uuid "edc3416c-d314-4cca-8972-169a56174487")
-		)
-		(pin "MH1"
-			(uuid "72da61cc-a982-44b5-8ec2-520284aa325c")
-		)
-		(pin "MH2"
-			(uuid "5f5c4394-8c04-4e60-a862-52f80fe44dac")
-		)
-		(instances
-			(project ""
-				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
-					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "OroLink:SG73P2ATTD102J")
 		(at 59.69 74.93 0)
 		(unit 1)
@@ -10458,7 +10453,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:SMF6V0A-M3-08")
-		(at 153.67 68.58 180)
+		(at 157.48 69.85 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10467,7 +10462,7 @@
 		(fields_autoplaced yes)
 		(uuid "31ca6e6b-eda5-430f-84ed-b6afb5416ce0")
 		(property "Reference" "CR4"
-			(at 148.59 61.943 0)
+			(at 152.4 63.213 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10475,7 +10470,7 @@
 			)
 		)
 		(property "Value" "SMF6V0A-M3-08"
-			(at 148.59 64.7759 0)
+			(at 152.4 66.0459 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10483,7 +10478,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:ZDO_SMF_DO-219AB_VIS"
-			(at 153.67 68.58 0)
+			(at 157.48 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10493,7 +10488,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/doc?85881"
-			(at 153.67 68.58 0)
+			(at 157.48 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10503,7 +10498,7 @@
 			)
 		)
 		(property "Description" "ESD PROTECTION DIODE SMF DO219AB"
-			(at 153.67 68.58 0)
+			(at 157.48 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10512,7 +10507,7 @@
 			)
 		)
 		(property "Mfr. Number" "SMF6V0A-M3-08"
-			(at 153.67 65.58 0)
+			(at 157.48 66.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10522,7 +10517,7 @@
 			)
 		)
 		(property "Mouser ID" "78-SMF6V0A-M3-08"
-			(at 153.67 65.58 0)
+			(at 157.48 66.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10532,7 +10527,7 @@
 			)
 		)
 		(property "Description_1" "ESD PROTECTION DIODE SMF DO219AB"
-			(at 153.67 65.58 0)
+			(at 157.48 66.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10542,7 +10537,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Vishay-General-Semiconductor/SMF6V0A-M3-08?qs=liFJyUJTUDEpN6KM4i%2FVgg%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=78-SMF6V0A-M3-08&utm_content=Vishay"
-			(at 153.67 65.58 0)
+			(at 157.48 66.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10552,7 +10547,7 @@
 			)
 		)
 		(property "DigiKey ID" "112-SMF6V0A-M3-08DKR-ND"
-			(at 153.67 65.58 0)
+			(at 157.48 66.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10562,7 +10557,7 @@
 			)
 		)
 		(property "Arrow ID" "null"
-			(at 153.67 65.58 0)
+			(at 157.48 66.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10572,7 +10567,7 @@
 			)
 		)
 		(property "Mfr. Name" "Vishay"
-			(at 153.67 65.58 0)
+			(at 157.48 66.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11073,7 +11068,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 124.46 27.94 0)
+		(at 121.92 38.1 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11081,7 +11076,7 @@
 		(dnp no)
 		(uuid "3e845854-1964-40b1-bbe2-760bdbdf44d4")
 		(property "Reference" "TP31"
-			(at 125.857 23.4258 0)
+			(at 120.523 42.6142 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11090,7 +11085,7 @@
 			)
 		)
 		(property "Value" "5V PRE-FUSE"
-			(at 125.857 25.8501 0)
+			(at 120.523 40.1899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11099,7 +11094,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
-			(at 129.54 27.94 0)
+			(at 116.84 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11108,7 +11103,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 129.54 27.94 0)
+			(at 116.84 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11117,7 +11112,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 124.46 27.94 0)
+			(at 121.92 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11739,97 +11734,6 @@
 			(project ""
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
 					(reference "LED13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Oro:BOM Part")
-		(at 102.87 40.64 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board no)
-		(dnp no)
-		(uuid "66f82d9e-d688-4d7a-8cca-ee5992e8c422")
-		(property "Reference" "B2"
-			(at 104.775 39.9963 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Value" "1841909"
-			(at 105.41 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 102.87 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.phoenixcontact.com/us/products/1841909/pdf"
-			(at 102.87 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 102.87 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "1841909"
-			(at 102.87 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "651-1841909"
-			(at 102.87 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Note" "CABLE TERMINATOR"
-			(at 105.41 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(instances
-			(project "link"
-				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
-					(reference "B2")
 					(unit 1)
 				)
 			)
@@ -14630,7 +14534,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:0697H2000-02")
-		(at 113.03 34.29 0)
+		(at 109.22 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14639,7 +14543,7 @@
 		(fields_autoplaced yes)
 		(uuid "cb152657-9da4-4c9d-9486-8099932444ec")
 		(property "Reference" "F1"
-			(at 118.11 28.2626 0)
+			(at 114.3 29.5326 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -14647,7 +14551,7 @@
 			)
 		)
 		(property "Value" "2A"
-			(at 118.11 31.0955 0)
+			(at 114.3 32.3655 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -14655,7 +14559,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:0697_BEL"
-			(at 113.03 34.29 0)
+			(at 109.22 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14665,7 +14569,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/643/ds_cp_0697h_series-1291245.pdf"
-			(at 113.03 34.29 0)
+			(at 109.22 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14675,7 +14579,7 @@
 			)
 		)
 		(property "Description" "Fuse Subminiature Slow Blow Acting 2A 350V Radial 8.35 X 4 X 7.8mm Thermoplastic Ammo Automotive"
-			(at 113.03 34.29 0)
+			(at 109.22 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14684,7 +14588,7 @@
 			)
 		)
 		(property "Mfr. Name" "Belfuse"
-			(at 113.03 37.29 0)
+			(at 109.22 38.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14694,7 +14598,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Bel-Fuse/0697H2000-02?qs=GtFly9OVs88U1%252BnJrlf0lA%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=530-0697H2000-02&utm_content=Bel&_gl=1*dybjck*_ga*MjAyMTY4NDMxNi4xNjkyMzE5NjE5*_ga_15W4STQT4T*MTc0MzQ1ODM2OS4xOC4wLjE3NDM0NTgzNzIuNTcuMC4w"
-			(at 113.03 37.29 0)
+			(at 109.22 38.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14704,7 +14608,7 @@
 			)
 		)
 		(property "Mouser ID" "530-0697H2000-02"
-			(at 113.03 37.29 0)
+			(at 109.22 38.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14714,7 +14618,7 @@
 			)
 		)
 		(property "Mfr. Number" "0697H2000-02"
-			(at 113.03 37.29 0)
+			(at 109.22 38.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14724,7 +14628,7 @@
 			)
 		)
 		(property "Description_1" "Fuse Subminiature Slow Blow Acting 2A 350V Radial 8.35 X 4 X 7.8mm Thermoplastic Ammo Automotive"
-			(at 113.03 37.29 0)
+			(at 109.22 38.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14734,7 +14638,7 @@
 			)
 		)
 		(property "DigiKey ID" "5923-0697H2000-02CT-ND"
-			(at 113.03 37.29 0)
+			(at 109.22 38.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14744,7 +14648,7 @@
 			)
 		)
 		(property "Arrow ID" "0697H2000-02"
-			(at 113.03 37.29 0)
+			(at 109.22 38.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15622,7 +15526,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 157.48 68.58 0)
+		(at 161.29 69.85 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15631,7 +15535,7 @@
 		(fields_autoplaced yes)
 		(uuid "f4c99db4-9277-4ad0-8d3a-8fe0e6756991")
 		(property "Reference" "#PWR066"
-			(at 157.48 74.93 0)
+			(at 161.29 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15640,7 +15544,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 157.48 72.7131 0)
+			(at 161.29 73.9831 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15648,7 +15552,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 157.48 68.58 0)
+			(at 161.29 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15657,7 +15561,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 157.48 68.58 0)
+			(at 161.29 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15666,7 +15570,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 157.48 68.58 0)
+			(at 161.29 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)

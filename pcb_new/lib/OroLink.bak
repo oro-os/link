@@ -20577,7 +20577,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(property "Reference" "U"
-			(at 35.56 10.16 0)
+			(at 21.59 9.652 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -20585,7 +20585,7 @@
 			)
 		)
 		(property "Value" "LM1085ISX-3.3/NOPB"
-			(at 35.56 7.62 0)
+			(at 21.844 6.604 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -20720,7 +20720,7 @@
 		(symbol "LM1085ISX-3.3_NOPB_0_1"
 			(polyline
 				(pts
-					(xy 7.62 -7.62) (xy 63.5 -7.62)
+					(xy 7.62 -7.62) (xy 35.306 -7.62)
 				)
 				(stroke
 					(width 0.127)
@@ -20744,7 +20744,7 @@
 			)
 			(polyline
 				(pts
-					(xy 63.5 -7.62) (xy 63.5 5.08)
+					(xy 35.306 5.08) (xy 7.62 5.08)
 				)
 				(stroke
 					(width 0.127)
@@ -20756,7 +20756,7 @@
 			)
 			(polyline
 				(pts
-					(xy 63.5 5.08) (xy 7.62 5.08)
+					(xy 35.56 -7.62) (xy 35.56 5.08)
 				)
 				(stroke
 					(width 0.127)
@@ -20785,7 +20785,7 @@
 				)
 			)
 			(pin unspecified line
-				(at 71.12 0 180)
+				(at 43.18 0 180)
 				(length 7.62)
 				(name "EPAD"
 					(effects
@@ -20805,7 +20805,7 @@
 		)
 		(symbol "LM1085ISX-3.3_NOPB_1_1"
 			(pin unspecified line
-				(at 71.12 -2.54 180)
+				(at 43.18 -2.54 180)
 				(length 7.62)
 				(name "ADJ/GND"
 					(effects
@@ -22333,6 +22333,341 @@
 					)
 				)
 				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+	)
+	(symbol "SACC-DSIV-M12MS-5CON-L180"
+		(pin_names hide)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "J"
+			(at 0 4.826 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SACC-DSIV-M12MS-5CON-L180"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:SACC-DSIV-M12MS-5CON-L180"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://product-download.phoenixcontact.com/2302737?response-content-disposition=inline;%20filename%3D%221694211.pdf%22&Expires=1748571141&Signature=aLQOEfemDSICohIQJCUsHd8dlTjrmq79IHGhXqrIt1LBaeGxehiL~KVbHh8UkZSt6TxuoDcXmjS28TF4smO07tHgZkUgLjyCRb4dFDnZ80VXdBgNO3AC~op2LosUpMdhcYoSDcwM2CwD8G9atGODO9FQO7lV8DofDDVkudFs83KptcuI5n9J6pvfwBvojM0Axv98qwtHqBe6grw5ZdNJsQABX31vBsCQ4NRpc84XDvu945XlALanO2mxfLT6WZUTAsEoMPPjajiW-~EbO5ZxE1JRrOBOTGBj7rN7ciOuxJf9GBVlsz~p8gbXrSVSCaR98dPId8v7n9crOx2~QpAUkA__&Key-Pair-Id=K1I2N54A7B0GD"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Sensor/actuator flush-type plug, 5-pos., M12, A-coded, rear/screw mounting with M12 thread, with polarity protection, with straight solder connection"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "651-1694211"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Stock URL" "https://www.mouser.de/ProductDetail/651-1694211"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(symbol "SACC-DSIV-M12MS-5CON-L180_1_0"
+			(circle
+				(center -1.7678 -1.7678)
+				(radius 0.65)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center -1.7678 1.7678)
+				(radius 0.65)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -3.556 -2.54) (xy -5.1862 -2.54)
+				)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -3.556 2.54) (xy -5.156 2.54)
+				)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.7678 -1.7678) (xy -3.556 -2.54)
+				)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.7678 1.7678) (xy -3.556 2.54)
+				)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 0) (xy 5.0478 0)
+				)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.7678 -1.7678) (xy 3.556 -2.54)
+				)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.7678 1.7678) (xy 3.556 2.54)
+				)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 3.556 -2.54) (xy 5.156 -2.54)
+				)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 3.556 2.54) (xy 5.156 2.54)
+				)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 0 0)
+				(radius 0.65)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 0 0)
+				(radius 4.01)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 1.7678 -1.7678)
+				(radius 0.65)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 1.7678 1.7678)
+				(radius 0.65)
+				(stroke
+					(width 0.1)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "SACC-DSIV-M12MS-5CON-L180_1_1"
+			(pin passive line
+				(at 7.62 2.54 180)
+				(length 2.54)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -7.62 2.54 0)
+				(length 2.54)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -7.62 -2.54 0)
+				(length 2.54)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 7.62 -2.54 180)
+				(length 2.54)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 7.62 0 180)
+				(length 2.54)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
 					(effects
 						(font
 							(size 1.27 1.27)
