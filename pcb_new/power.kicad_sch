@@ -3428,8 +3428,8 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U12"
-				(at 22.352 9.9449 0)
+			(property "Reference" "U"
+				(at 21.59 9.652 0)
 				(effects
 					(font
 						(size 1.524 1.524)
@@ -3437,7 +3437,7 @@
 				)
 			)
 			(property "Value" "LM1085ISX-3.3/NOPB"
-				(at 22.352 7.112 0)
+				(at 21.844 6.604 0)
 				(effects
 					(font
 						(size 1.524 1.524)
@@ -3445,7 +3445,7 @@
 				)
 			)
 			(property "Footprint" "OroLink:KTT3"
-				(at 0.254 12.7 0)
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3455,7 +3455,7 @@
 				)
 			)
 			(property "Datasheet" "https://www.ti.com/lit/gpn/lm1085"
-				(at 1.27 17.986 0)
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3465,7 +3465,7 @@
 				)
 			)
 			(property "Description" "3-A, 29-V, linear voltage regulator 3-DDPAK/TO-263 -40 to 125"
-				(at 1.27 17.986 0)
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3474,7 +3474,7 @@
 				)
 			)
 			(property "DigiKey ID" "LM1085ISX-3.3/NOPBCT-ND"
-				(at 1.27 14.986 0)
+				(at 0 -3 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3484,7 +3484,7 @@
 				)
 			)
 			(property "Description_1" "3-A, 29-V, linear voltage regulator 3-DDPAK/TO-263 -40 to 125"
-				(at 1.27 14.986 0)
+				(at 0 -3 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3494,7 +3494,7 @@
 				)
 			)
 			(property "Mouser URL" "https://www.mouser.de/ProductDetail/Texas-Instruments/LM1085ISX-3.3-NOPB?qs=X1J7HmVL2ZFSdu4d0lbNZg%3D%3D"
-				(at 1.27 14.986 0)
+				(at 0 -3 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3504,7 +3504,7 @@
 				)
 			)
 			(property "Mfr. Name" "Texas Instruments"
-				(at 1.27 14.986 0)
+				(at 0 -3 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3514,7 +3514,7 @@
 				)
 			)
 			(property "Arrow ID" "LM1085ISX-3.3/NOPB"
-				(at 1.27 14.986 0)
+				(at 0 -3 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3524,7 +3524,7 @@
 				)
 			)
 			(property "Mfr. Number" "LM1085ISX-3.3/NOPB"
-				(at 1.27 14.986 0)
+				(at 0 -3 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3534,7 +3534,7 @@
 				)
 			)
 			(property "Mouser ID" "926-LM1085ISX3.3NOPB"
-				(at 1.27 14.986 0)
+				(at 0 -3 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3572,7 +3572,7 @@
 			(symbol "LM1085ISX-3.3_NOPB_0_1"
 				(polyline
 					(pts
-						(xy 7.62 -7.62) (xy 36.83 -7.62)
+						(xy 7.62 -7.62) (xy 35.306 -7.62)
 					)
 					(stroke
 						(width 0.127)
@@ -3596,7 +3596,7 @@
 				)
 				(polyline
 					(pts
-						(xy 36.83 -7.62) (xy 36.83 5.08)
+						(xy 35.306 5.08) (xy 7.62 5.08)
 					)
 					(stroke
 						(width 0.127)
@@ -3608,7 +3608,7 @@
 				)
 				(polyline
 					(pts
-						(xy 36.83 5.08) (xy 7.62 5.08)
+						(xy 35.56 -7.62) (xy 35.56 5.08)
 					)
 					(stroke
 						(width 0.127)
@@ -3616,24 +3616,6 @@
 					)
 					(fill
 						(type none)
-					)
-				)
-				(pin input line
-					(at 0 0 0)
-					(length 7.62)
-					(name "INPUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
 					)
 				)
 				(pin output line
@@ -3655,25 +3637,7 @@
 					)
 				)
 				(pin unspecified line
-					(at 44.45 -2.54 180)
-					(length 7.62)
-					(name "ADJ/GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 44.45 0 180)
+					(at 43.18 0 180)
 					(length 7.62)
 					(name "EPAD"
 						(effects
@@ -3683,6 +3647,44 @@
 						)
 					)
 					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LM1085ISX-3.3_NOPB_1_1"
+				(pin unspecified line
+					(at 43.18 -2.54 180)
+					(length 7.62)
+					(name "ADJ/GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 0 0 0)
+					(length 7.62)
+					(name "INPUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -7032,7 +7034,7 @@
 		(uuid "5bb8d851-2382-4667-9538-e0b20e0dd79f")
 	)
 	(junction
-		(at 102.87 171.45)
+		(at 101.6 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5fa5990b-a8af-405d-8452-6b5072869a69")
@@ -7282,6 +7284,16 @@
 			(type default)
 		)
 		(uuid "04bbbbee-bb0d-4890-a30d-d0b1f2ad91da")
+	)
+	(wire
+		(pts
+			(xy 99.06 158.75) (xy 107.95 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "059952fc-341e-431b-8999-ac9b81a5f4f7")
 	)
 	(wire
 		(pts
@@ -7565,7 +7577,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 161.29) (xy 100.33 161.29)
+			(xy 101.6 161.29) (xy 99.06 161.29)
 		)
 		(stroke
 			(width 0)
@@ -7795,7 +7807,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 161.29) (xy 102.87 171.45)
+			(xy 101.6 161.29) (xy 101.6 171.45)
 		)
 		(stroke
 			(width 0)
@@ -8275,16 +8287,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 158.75) (xy 107.95 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a8dbbc3b-1aba-4898-91a7-3c78ce30e73b")
-	)
-	(wire
-		(pts
 			(xy 262.89 76.2) (xy 262.89 81.28)
 		)
 		(stroke
@@ -8615,7 +8617,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 171.45) (xy 102.87 176.53)
+			(xy 101.6 171.45) (xy 101.6 176.53)
 		)
 		(stroke
 			(width 0)
@@ -11137,7 +11139,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 102.87 171.45 90)
+		(at 101.6 171.45 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11146,7 +11148,7 @@
 		(fields_autoplaced yes)
 		(uuid "4d0456fa-20c2-424b-aa92-9d6eb1994f5e")
 		(property "Reference" "TP4"
-			(at 99.568 166.6705 90)
+			(at 98.298 166.6705 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11154,7 +11156,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 99.568 169.0948 90)
+			(at 98.298 169.0948 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11162,7 +11164,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
-			(at 102.87 166.37 0)
+			(at 101.6 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11171,7 +11173,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 102.87 166.37 0)
+			(at 101.6 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11180,7 +11182,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 102.87 171.45 0)
+			(at 101.6 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14976,7 +14978,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 102.87 176.53 0)
+		(at 101.6 176.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14985,7 +14987,7 @@
 		(fields_autoplaced yes)
 		(uuid "eab132f3-0f07-4d68-9b44-1396249f3786")
 		(property "Reference" "#PWR054"
-			(at 102.87 182.88 0)
+			(at 101.6 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14994,7 +14996,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 102.87 179.7049 90)
+			(at 101.6 179.7049 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15003,7 +15005,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 102.87 176.53 0)
+			(at 101.6 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15012,7 +15014,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 102.87 176.53 0)
+			(at 101.6 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15021,7 +15023,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 102.87 176.53 0)
+			(at 101.6 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
