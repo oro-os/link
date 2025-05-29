@@ -1,5 +1,0 @@
-[hooks]
-pre-commit = "cd firmware && make lint clippy DEBUG=1 && make lint clippy"
-
-[logging]
-verbose = true
