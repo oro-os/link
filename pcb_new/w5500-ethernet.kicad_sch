@@ -8341,13 +8341,19 @@
 		(uuid "2625a2eb-1896-459e-947b-7e4c648f094f")
 	)
 	(junction
+		(at 220.98 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "266984de-8104-4063-87da-9799d3b969e9")
+	)
+	(junction
 		(at 213.36 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "271ed01e-0bee-4d9e-85a4-586a08573548")
 	)
 	(junction
-		(at 194.31 44.45)
+		(at 194.31 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "28492650-d04d-4cda-9eae-1742d5a6a69c")
@@ -8527,12 +8533,6 @@
 		(uuid "91b8a176-75f5-494f-89fe-73872914ce25")
 	)
 	(junction
-		(at 220.98 54.61)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9f8fd5ec-e70f-42cf-a2d5-f5d7be096369")
-	)
-	(junction
 		(at 232.41 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8611,7 +8611,7 @@
 		(uuid "cfdf8bd4-b7c5-44c9-aad7-88c917f21290")
 	)
 	(junction
-		(at 173.99 35.56)
+		(at 173.99 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d13d4437-4ae0-4d30-b4d8-f83fa10c1546")
@@ -8659,7 +8659,7 @@
 		(uuid "f2170db4-4fe8-4fda-b18a-f4c2361133fd")
 	)
 	(junction
-		(at 173.99 57.15)
+		(at 173.99 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f7a2fad1-0a0a-4c27-80b0-c9ba64612796")
@@ -8726,7 +8726,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 57.15) (xy 160.02 57.15)
+			(xy 147.32 54.61) (xy 160.02 54.61)
 		)
 		(stroke
 			(width 0)
@@ -8753,16 +8753,6 @@
 			(type default)
 		)
 		(uuid "04dec0fc-e59e-4838-8a51-37939fe92649")
-	)
-	(wire
-		(pts
-			(xy 200.66 52.07) (xy 200.66 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "05155223-7fad-4fff-9fdf-4c4019cd431f")
 	)
 	(wire
 		(pts
@@ -8856,7 +8846,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 35.56) (xy 173.99 35.56)
+			(xy 172.72 33.02) (xy 173.99 33.02)
 		)
 		(stroke
 			(width 0)
@@ -8976,6 +8966,16 @@
 	)
 	(wire
 		(pts
+			(xy 238.76 71.12) (xy 238.76 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1793954f-f9ad-4b28-a2bc-bb549f9c1dce")
+	)
+	(wire
+		(pts
 			(xy 232.41 133.35) (xy 234.95 133.35)
 		)
 		(stroke
@@ -9016,7 +9016,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 35.56) (xy 160.02 35.56)
+			(xy 147.32 33.02) (xy 160.02 33.02)
 		)
 		(stroke
 			(width 0)
@@ -9346,7 +9346,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 57.15) (xy 173.99 57.15)
+			(xy 172.72 54.61) (xy 173.99 54.61)
 		)
 		(stroke
 			(width 0)
@@ -9436,7 +9436,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 48.26) (xy 194.31 48.26)
+			(xy 189.23 45.72) (xy 194.31 45.72)
 		)
 		(stroke
 			(width 0)
@@ -9496,7 +9496,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 44.45) (xy 176.53 44.45)
+			(xy 173.99 41.91) (xy 176.53 41.91)
 		)
 		(stroke
 			(width 0)
@@ -9696,7 +9696,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 48.26) (xy 176.53 48.26)
+			(xy 173.99 45.72) (xy 176.53 45.72)
 		)
 		(stroke
 			(width 0)
@@ -9723,16 +9723,6 @@
 			(type default)
 		)
 		(uuid "5fc10422-ee5c-43d8-b333-33539ae62411")
-	)
-	(wire
-		(pts
-			(xy 212.09 44.45) (xy 212.09 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "64a92271-3d63-4b1f-b5b5-f5d18154b7e6")
 	)
 	(wire
 		(pts
@@ -9886,7 +9876,7 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 54.61) (xy 220.98 69.85)
+			(xy 220.98 49.53) (xy 220.98 59.69)
 		)
 		(stroke
 			(width 0)
@@ -10116,7 +10106,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 44.45) (xy 194.31 44.45)
+			(xy 189.23 41.91) (xy 194.31 41.91)
 		)
 		(stroke
 			(width 0)
@@ -10276,6 +10266,16 @@
 	)
 	(wire
 		(pts
+			(xy 200.66 33.02) (xy 200.66 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ea77272-c0f2-46ba-8de6-011bc265d682")
+	)
+	(wire
+		(pts
 			(xy 54.61 139.7) (xy 50.8 139.7)
 		)
 		(stroke
@@ -10426,7 +10426,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 59.69) (xy 261.62 59.69)
+			(xy 191.77 57.15) (xy 261.62 57.15)
 		)
 		(stroke
 			(width 0)
@@ -10486,17 +10486,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 57.15) (xy 261.62 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b19cba5b-3911-4ec1-b38d-016a5b9bb3ca")
-	)
-	(wire
-		(pts
-			(xy 194.31 44.45) (xy 194.31 48.26)
+			(xy 194.31 41.91) (xy 194.31 45.72)
 		)
 		(stroke
 			(width 0)
@@ -10566,6 +10556,16 @@
 	)
 	(wire
 		(pts
+			(xy 220.98 59.69) (xy 261.62 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba1e6b48-a3aa-49c6-8cb7-4bcb9d215c20")
+	)
+	(wire
+		(pts
 			(xy 213.36 143.51) (xy 210.82 143.51)
 		)
 		(stroke
@@ -10606,7 +10606,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 35.56) (xy 200.66 35.56)
+			(xy 173.99 33.02) (xy 200.66 33.02)
 		)
 		(stroke
 			(width 0)
@@ -10693,6 +10693,16 @@
 			(type default)
 		)
 		(uuid "c3403f0a-0d2c-46d0-be88-500e444b7100")
+	)
+	(wire
+		(pts
+			(xy 173.99 54.61) (xy 261.62 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4a88550-8bf3-4ee0-b73c-f5b65db5edca")
 	)
 	(wire
 		(pts
@@ -10786,7 +10796,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 44.45) (xy 212.09 44.45)
+			(xy 194.31 41.91) (xy 212.09 41.91)
 		)
 		(stroke
 			(width 0)
@@ -10846,7 +10856,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 35.56) (xy 173.99 44.45)
+			(xy 173.99 33.02) (xy 173.99 41.91)
 		)
 		(stroke
 			(width 0)
@@ -10926,6 +10936,16 @@
 	)
 	(wire
 		(pts
+			(xy 220.98 59.69) (xy 220.98 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9d0790a-7528-48a3-b7b2-cfdd5498da5f")
+	)
+	(wire
+		(pts
 			(xy 200.66 143.51) (xy 200.66 148.59)
 		)
 		(stroke
@@ -10956,7 +10976,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 57.15) (xy 173.99 48.26)
+			(xy 173.99 54.61) (xy 173.99 45.72)
 		)
 		(stroke
 			(width 0)
@@ -11066,16 +11086,6 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 49.53) (xy 220.98 54.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e48cc7ac-4484-4fb3-969a-ca7475ce79d5")
-	)
-	(wire
-		(pts
 			(xy 158.75 167.64) (xy 161.29 167.64)
 		)
 		(stroke
@@ -11166,7 +11176,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 68.58) (xy 191.77 59.69)
+			(xy 191.77 68.58) (xy 191.77 57.15)
 		)
 		(stroke
 			(width 0)
@@ -11193,6 +11203,16 @@
 			(type default)
 		)
 		(uuid "f42dec49-3b91-46d4-bcec-308ffb07d238")
+	)
+	(wire
+		(pts
+			(xy 212.09 41.91) (xy 212.09 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f44908b2-8256-42f8-8d9a-beac4eb78a40")
 	)
 	(wire
 		(pts
@@ -11314,16 +11334,6 @@
 		)
 		(uuid "fe744c72-1771-4c77-9797-237cb00555e3")
 	)
-	(wire
-		(pts
-			(xy 220.98 54.61) (xy 261.62 54.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ff761454-16c5-4136-b6bf-7dc875056ff7")
-	)
 	(rectangle
 		(start 92.075 109.855)
 		(end 132.08 141.605)
@@ -11404,7 +11414,7 @@
 		(uuid "b61c6c7c-c480-4b51-b6b2-600c39a8c1a9")
 	)
 	(label "ETH_TX2-"
-		(at 242.57 57.15 0)
+		(at 242.57 54.61 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11558,7 +11568,7 @@
 		(uuid "7f7cd3ff-fdfa-4cbe-9197-cdf8d3456a9c")
 	)
 	(label "ETH_TX-"
-		(at 147.32 57.15 0)
+		(at 147.32 54.61 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11646,7 +11656,7 @@
 		(uuid "b532e75a-61d5-4569-8dee-642a802be71b")
 	)
 	(label "ETH_RX2+"
-		(at 242.57 59.69 0)
+		(at 242.57 57.15 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11668,7 +11678,7 @@
 		(uuid "ba62d23f-57b6-4448-b89c-6def877cc20d")
 	)
 	(label "ETH_TX+"
-		(at 147.32 35.56 0)
+		(at 147.32 33.02 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12582,7 +12592,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:RT0402FRE0749R9L")
-		(at 176.53 48.26 0)
+		(at 176.53 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12591,7 +12601,7 @@
 		(fields_autoplaced yes)
 		(uuid "17a7ad48-e283-4429-9c0c-12e9c172355d")
 		(property "Reference" "R62"
-			(at 182.88 51.429 0)
+			(at 182.88 48.889 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -12599,7 +12609,7 @@
 			)
 		)
 		(property "Value" "49.9R <=1%"
-			(at 182.88 54.2619 0)
+			(at 182.88 51.7219 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -12607,7 +12617,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:RC0402N_YAG"
-			(at 176.53 48.26 0)
+			(at 176.53 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12617,7 +12627,7 @@
 			)
 		)
 		(property "Datasheet" "null"
-			(at 176.53 48.26 0)
+			(at 176.53 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12627,7 +12637,7 @@
 			)
 		)
 		(property "Description" "Res Thin Film 0402 49.9 Ohm 1% 0.063W(1/16W) ±50ppm/C Pad SMD T/R"
-			(at 176.53 48.26 0)
+			(at 176.53 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12636,7 +12646,7 @@
 			)
 		)
 		(property "Mfr. Number" "RT0402FRE0749R9L"
-			(at 176.53 51.26 0)
+			(at 176.53 48.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12646,7 +12656,7 @@
 			)
 		)
 		(property "Mouser URL" "null"
-			(at 176.53 51.26 0)
+			(at 176.53 48.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12656,7 +12666,7 @@
 			)
 		)
 		(property "Description_1" "Res Thin Film 0402 49.9 Ohm 1% 0.063W(1/16W) ±50ppm/C Pad SMD T/R"
-			(at 176.53 51.26 0)
+			(at 176.53 48.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12666,7 +12676,7 @@
 			)
 		)
 		(property "DigiKey ID" "YAG3346CT-ND"
-			(at 176.53 51.26 0)
+			(at 176.53 48.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12676,7 +12686,7 @@
 			)
 		)
 		(property "Mouser ID" "603-RT0402FRE0749R9L"
-			(at 176.53 51.26 0)
+			(at 176.53 48.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12686,7 +12696,7 @@
 			)
 		)
 		(property "Arrow ID" "RT0402FRE0749R9L"
-			(at 176.53 51.26 0)
+			(at 176.53 48.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12696,7 +12706,7 @@
 			)
 		)
 		(property "Mfr. Name" "Yageo"
-			(at 176.53 51.26 0)
+			(at 176.53 48.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16598,7 +16608,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:RT0402FRE0749R9L")
-		(at 176.53 44.45 0)
+		(at 176.53 41.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16607,7 +16617,7 @@
 		(fields_autoplaced yes)
 		(uuid "885f30f2-7ebf-4671-abf9-f902de353bf9")
 		(property "Reference" "R60"
-			(at 182.88 38.448 0)
+			(at 182.88 35.908 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -16615,7 +16625,7 @@
 			)
 		)
 		(property "Value" "49.9R <=1%"
-			(at 182.88 41.2809 0)
+			(at 182.88 38.7409 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -16623,7 +16633,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:RC0402N_YAG"
-			(at 176.53 44.45 0)
+			(at 176.53 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16633,7 +16643,7 @@
 			)
 		)
 		(property "Datasheet" "null"
-			(at 176.53 44.45 0)
+			(at 176.53 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16643,7 +16653,7 @@
 			)
 		)
 		(property "Description" "Res Thin Film 0402 49.9 Ohm 1% 0.063W(1/16W) ±50ppm/C Pad SMD T/R"
-			(at 176.53 44.45 0)
+			(at 176.53 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16652,7 +16662,7 @@
 			)
 		)
 		(property "Mfr. Number" "RT0402FRE0749R9L"
-			(at 176.53 47.45 0)
+			(at 176.53 44.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16662,7 +16672,7 @@
 			)
 		)
 		(property "Mouser URL" "null"
-			(at 176.53 47.45 0)
+			(at 176.53 44.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16672,7 +16682,7 @@
 			)
 		)
 		(property "Description_1" "Res Thin Film 0402 49.9 Ohm 1% 0.063W(1/16W) ±50ppm/C Pad SMD T/R"
-			(at 176.53 47.45 0)
+			(at 176.53 44.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16682,7 +16692,7 @@
 			)
 		)
 		(property "DigiKey ID" "YAG3346CT-ND"
-			(at 176.53 47.45 0)
+			(at 176.53 44.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16692,7 +16702,7 @@
 			)
 		)
 		(property "Mouser ID" "603-RT0402FRE0749R9L"
-			(at 176.53 47.45 0)
+			(at 176.53 44.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16702,7 +16712,7 @@
 			)
 		)
 		(property "Arrow ID" "RT0402FRE0749R9L"
-			(at 176.53 47.45 0)
+			(at 176.53 44.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16712,7 +16722,7 @@
 			)
 		)
 		(property "Mfr. Name" "Yageo"
-			(at 176.53 47.45 0)
+			(at 176.53 44.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17241,7 +17251,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:RR0510R-330-D")
-		(at 160.02 57.15 0)
+		(at 160.02 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17250,7 +17260,7 @@
 		(fields_autoplaced yes)
 		(uuid "8dc09dc3-d41d-4210-a9e2-ddfca9933726")
 		(property "Reference" "R68"
-			(at 166.37 51.148 0)
+			(at 166.37 48.608 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -17258,7 +17268,7 @@
 			)
 		)
 		(property "Value" "33R <=1%"
-			(at 166.37 53.9809 0)
+			(at 166.37 51.4409 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -17266,7 +17276,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:RES_0510_SUS"
-			(at 160.02 57.15 0)
+			(at 160.02 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17276,7 +17286,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/392/susumu_RR_Data_Sheet-1206438.pdf"
-			(at 160.02 57.15 0)
+			(at 160.02 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17286,7 +17296,7 @@
 			)
 		)
 		(property "Description" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
-			(at 160.02 57.15 0)
+			(at 160.02 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17295,7 +17305,7 @@
 			)
 		)
 		(property "DigiKey ID" "RR05R33DCT-ND"
-			(at 160.02 60.15 0)
+			(at 160.02 57.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17305,7 +17315,7 @@
 			)
 		)
 		(property "Description_1" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
-			(at 160.02 60.15 0)
+			(at 160.02 57.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17315,7 +17325,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Susumu/RR0510R-330-D?qs=nCAm%252BcMdy9zhk2wQ%252Bovhdw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=754-RR0510R-330D&utm_content=Susumu"
-			(at 160.02 60.15 0)
+			(at 160.02 57.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17325,7 +17335,7 @@
 			)
 		)
 		(property "Mfr. Name" "Susumu"
-			(at 160.02 60.15 0)
+			(at 160.02 57.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17335,7 +17345,7 @@
 			)
 		)
 		(property "Mouser ID" "754-RR0510R-330D"
-			(at 160.02 60.15 0)
+			(at 160.02 57.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17345,7 +17355,7 @@
 			)
 		)
 		(property "Mfr. Number" "RR0510R-330-D"
-			(at 160.02 60.15 0)
+			(at 160.02 57.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17355,7 +17365,7 @@
 			)
 		)
 		(property "Arrow ID" "null"
-			(at 160.02 60.15 0)
+			(at 160.02 57.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18599,7 +18609,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:RR0510R-330-D")
-		(at 160.02 35.56 0)
+		(at 160.02 33.02 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -18608,7 +18618,7 @@
 		(fields_autoplaced yes)
 		(uuid "a9a9c205-f2a4-4b72-aa3f-9d2b127d1881")
 		(property "Reference" "R66"
-			(at 166.37 38.729 0)
+			(at 166.37 36.189 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -18616,7 +18626,7 @@
 			)
 		)
 		(property "Value" "33R <=1%"
-			(at 166.37 41.5619 0)
+			(at 166.37 39.0219 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -18624,7 +18634,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:RES_0510_SUS"
-			(at 160.02 35.56 0)
+			(at 160.02 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18634,7 +18644,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/392/susumu_RR_Data_Sheet-1206438.pdf"
-			(at 160.02 35.56 0)
+			(at 160.02 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18644,7 +18654,7 @@
 			)
 		)
 		(property "Description" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
-			(at 160.02 35.56 0)
+			(at 160.02 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18653,7 +18663,7 @@
 			)
 		)
 		(property "DigiKey ID" "RR05R33DCT-ND"
-			(at 160.02 38.56 0)
+			(at 160.02 36.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18663,7 +18673,7 @@
 			)
 		)
 		(property "Description_1" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
-			(at 160.02 38.56 0)
+			(at 160.02 36.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18673,7 +18683,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Susumu/RR0510R-330-D?qs=nCAm%252BcMdy9zhk2wQ%252Bovhdw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=754-RR0510R-330D&utm_content=Susumu"
-			(at 160.02 38.56 0)
+			(at 160.02 36.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18683,7 +18693,7 @@
 			)
 		)
 		(property "Mfr. Name" "Susumu"
-			(at 160.02 38.56 0)
+			(at 160.02 36.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18693,7 +18703,7 @@
 			)
 		)
 		(property "Mouser ID" "754-RR0510R-330D"
-			(at 160.02 38.56 0)
+			(at 160.02 36.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18703,7 +18713,7 @@
 			)
 		)
 		(property "Mfr. Number" "RR0510R-330-D"
-			(at 160.02 38.56 0)
+			(at 160.02 36.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18713,7 +18723,7 @@
 			)
 		)
 		(property "Arrow ID" "null"
-			(at 160.02 38.56 0)
+			(at 160.02 36.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21801,7 +21811,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 238.76 72.39 0)
+		(at 238.76 71.12 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21810,7 +21820,7 @@
 		(fields_autoplaced yes)
 		(uuid "f1433ce4-f3df-45b9-9d8f-ad1239ed1a4e")
 		(property "Reference" "#PWR0162"
-			(at 238.76 76.2 0)
+			(at 238.76 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21819,7 +21829,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 238.76 68.2569 0)
+			(at 238.76 66.9869 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21827,7 +21837,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 238.76 72.39 0)
+			(at 238.76 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21836,7 +21846,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.76 72.39 0)
+			(at 238.76 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21845,7 +21855,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 238.76 72.39 0)
+			(at 238.76 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
