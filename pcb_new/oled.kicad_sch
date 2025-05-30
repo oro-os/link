@@ -5294,327 +5294,6 @@
 				)
 			)
 		)
-		(symbol "OroLink:GCM155L81H472KA37D"
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "C"
-				(at 3.81 3.81 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "GCM155L81H472KA37D"
-				(at 3.81 -3.81 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" "OroLink:CAP_GCM155_MUR"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.mouser.de/datasheet/2/281/1/GCM155L81H472KA37_01A-3142077.pdf"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "CERAMIC CAPACITOR 0402 ceramic capacitor -40/+15% ppm/C 10% 4.7nF"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mfr. Name" "Murata"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow ID" "GCM155L81H472KA37D"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser ID" "81-GCM155L81H472KA7D"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "DigiKey ID" "490-GCM155L81H472KA37DCT-ND"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "CERAMIC CAPACITOR 0402 ceramic capacitor -40/+15% ppm/C 10% 4.7nF"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mfr. Number" "GCM155L81H472KA37D"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser URL" "https://www.mouser.de/ProductDetail/Murata-Electronics/GCM155L81H472KA37D?qs=ui%252B2d9lVEI75WI3HYc0yTw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=81-GCM155L81H472KA7D&utm_content=Murata"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "GCM155L81H472KA37D"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "CAP_GCM155_MUR CAP_GCM155_MUR-M CAP_GCM155_MUR-L"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "GCM155L81H472KA37D_1_1"
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 3.4798 0)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.4798 -1.905) (xy 3.4798 1.905)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.1148 -1.905) (xy 4.1148 1.905)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.1148 0) (xy 5.08 0)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at 0 0 0)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "GCM155L81H472KA37D_1_2"
-				(polyline
-					(pts
-						(xy -1.905 -4.1148) (xy 1.905 -4.1148)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.905 -3.4798) (xy 1.905 -3.4798)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -4.1148) (xy 0 -5.08)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.54) (xy 0 -3.4798)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at 0 0 270)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "OroLink:GRM155C61E475ME15J"
 			(pin_names hide)
 			(exclude_from_sim no)
@@ -10341,6 +10020,148 @@
 		)
 	)
 	(symbol
+		(lib_id "OroLink:MSAST1L3YB5104KFNA01")
+		(at 44.45 121.92 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1bd133ab-adca-4eeb-9f6c-91878283fa67")
+		(property "Reference" "C73"
+			(at 47.0916 116.6935 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 47.0916 119.5264 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "OroLink:CAP_MSAS1L-3_TAY"
+			(at 44.45 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/Tayio_Yuden_1102023_MS_mlcc_all_e-3081579.pdf"
+			(at 44.45 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
+			(at 44.45 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Taiyo Yuden"
+			(at 47.45 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "MSAST1L3YB5104KFNA01"
+			(at 47.45 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/MSAST1L3YB5104KFNA01?qs=tlsG%2FOw5FFhBwK%252BMwEZpCA%3D%3D"
+			(at 47.45 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
+			(at 47.45 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "MSAST1L3YB5104KFNA01"
+			(at 47.45 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "587-MSAST1L3YB5104KFNA01CT-ND"
+			(at 47.45 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "963-MSAST1L3YB5104KF"
+			(at 47.45 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8a0916e4-31f9-48af-96a3-ed7e5448d852")
+		)
+		(pin "2"
+			(uuid "736b63ec-6682-4a67-8ea0-f74e6c3957b2")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/222205f2-0600-4315-a593-542b8c55a37e"
+					(reference "C73")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "OroLink:RMCF0402FT10K0")
 		(at 55.88 96.52 0)
 		(mirror y)
@@ -10957,148 +10778,6 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/222205f2-0600-4315-a593-542b8c55a37e"
 					(reference "C109")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "OroLink:GCM155L81H472KA37D")
-		(at 44.45 121.92 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "417f6f6d-e371-442e-b3b5-1fbd323aa3cf")
-		(property "Reference" "C73"
-			(at 47.0916 116.6935 90)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0.0047u"
-			(at 47.0916 119.5264 90)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "OroLink:CAP_GCM155_MUR"
-			(at 44.45 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.de/datasheet/2/281/1/GCM155L81H472KA37_01A-3142077.pdf"
-			(at 44.45 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "CERAMIC CAPACITOR 0402 ceramic capacitor -40/+15% ppm/C 10% 4.7nF"
-			(at 44.45 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mfr. Name" "Murata"
-			(at 47.45 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow ID" "GCM155L81H472KA37D"
-			(at 47.45 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser ID" "81-GCM155L81H472KA7D"
-			(at 47.45 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey ID" "490-GCM155L81H472KA37DCT-ND"
-			(at 47.45 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "CERAMIC CAPACITOR 0402 ceramic capacitor -40/+15% ppm/C 10% 4.7nF"
-			(at 47.45 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mfr. Number" "GCM155L81H472KA37D"
-			(at 47.45 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Murata-Electronics/GCM155L81H472KA37D?qs=ui%252B2d9lVEI75WI3HYc0yTw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=81-GCM155L81H472KA7D&utm_content=Murata"
-			(at 47.45 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "608a8341-0ce5-4e2b-89b1-d71c8f5ee8fe")
-		)
-		(pin "1"
-			(uuid "f3767fcc-6d17-4c34-8326-456af7fa6eac")
-		)
-		(instances
-			(project ""
-				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/222205f2-0600-4315-a593-542b8c55a37e"
-					(reference "C73")
 					(unit 1)
 				)
 			)
