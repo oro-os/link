@@ -3562,6 +3562,213 @@
 				)
 			)
 		)
+		(symbol "OroLink:ECS-TXO-2520MV-250-AN-TR"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Y"
+				(at 3.048 7.874 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "ECS-TXO-2520MV-250-AN-TR"
+				(at 3.048 5.334 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "OroLink:ECSTXO2520MV250ANTR"
+				(at 34.29 -94.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://ecsxtal.com/store/pdf/ECS-TXO-2520MV.pdf"
+				(at 34.29 -194.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "TCXO Oscillators MultiVolt OSC TCXO 25.000MHZ CMOS SMD ECS-TXO-2520MV 25MHz CMOS +1.7V +3.6V +/-2.5ppm -40 C 85 C - Surface Mount 0.098\" L x 0.079\" W (2.50mm x 2.00mm) 0.035\" (0.90mm) 4-SMD, No Lead (DFN, LCC)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "1"
+				(at 34.29 -394.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "ECS"
+				(at 34.29 -494.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "ECS-TXO-2520MV-250-AN-TR"
+				(at 34.29 -594.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "520-TXO2520MV250ANTR"
+				(at 34.29 -694.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ECS/ECS-TXO-2520MV-250-AN-TR?qs=bAKSY%2FctAC5H3IQDMebudw%3D%3D"
+				(at 34.29 -794.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" "ECS-TXO-2520MV-250-AN-TR"
+				(at 34.29 -894.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ecs-txo-2520mv-250-an-tr/ecs-international?utm_currency=USD&region=nac"
+				(at 34.29 -994.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(symbol "ECS-TXO-2520MV-250-AN-TR_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 33.02 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "TRI-STATE"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 38.1 -2.54 180)
+					(length 5.08)
+					(name "GROUND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 38.1 0 180)
+					(length 5.08)
+					(name "OUTPUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "OroLink:ERA-2AKD100X"
 			(pin_names
 				(offset 0.254)
@@ -4797,277 +5004,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "OroLink:KC2520Z25.0000C1KX00"
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "XTAL"
-				(at 33.02 10.16 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "KC2520Z25.0000C1KX00"
-				(at 33.02 7.62 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" "OroLink:KC2520Z25_KAV"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.mouser.de/datasheet/2/40/clock_z_x_e-3044365.pdf"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Crystal ROHS3Compliant Standby (Power Down) Active Oscillator -40C~85C 3.3mA 0.031 0.80mm 25MHz"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser URL" "https://www.mouser.de/ProductDetail/KYOCERA-AVX/KC2520Z25.0000C1KX00?qs=rrS6PyfT74drQ1v0Ri2jSw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=581-KC2520Z250C1KX00&utm_content=KYOCERA%20AVX"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow ID" "KC2520Z25.0000C1KX00"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser ID" "581-KC2520Z250C1KX00"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mfr. Name" "KYOCERA AVX"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "Crystal ROHS3Compliant Standby (Power Down) Active Oscillator -40C~85C 3.3mA 0.031 0.80mm 25MHz"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "DigiKey ID" "478-KC2520Z25.0000C1KX00CT-ND"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mfr. Number" "KC2520Z25.0000C1KX00"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "KC2520Z25.0000C1KX00"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "KC2520Z25_KAV"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "KC2520Z25.0000C1KX00_0_1"
-				(polyline
-					(pts
-						(xy 7.62 -7.62) (xy 58.42 -7.62)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.62 5.08) (xy 7.62 -7.62)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 58.42 -7.62) (xy 58.42 5.08)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 58.42 5.08) (xy 7.62 5.08)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at 0 0 0)
-					(length 7.62)
-					(name "ENABLE/DISABLE"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 0 -2.54 0)
-					(length 7.62)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 66.04 -2.54 180)
-					(length 7.62)
-					(name "OUTPUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 66.04 0 180)
-					(length 7.62)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -8323,7 +8259,7 @@
 		(uuid "15c9625c-ec8c-4cf9-809a-3bdd0b995e17")
 	)
 	(junction
-		(at 148.59 162.56)
+		(at 127 165.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "261624fa-a290-4d70-951e-ba15542af0cf")
@@ -8377,7 +8313,7 @@
 		(uuid "3ab8438a-ca77-4e30-9943-0cfce6b48cde")
 	)
 	(junction
-		(at 161.29 172.72)
+		(at 139.7 175.26)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3bb5933c-c2a4-40f8-b07e-fc82ca8dc3b2")
@@ -8455,7 +8391,7 @@
 		(uuid "71c428d5-6d4f-4411-8a50-0728d3f3b847")
 	)
 	(junction
-		(at 148.59 167.64)
+		(at 127 170.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "75bf7cfc-369c-49b6-ac4f-9144f21ef687")
@@ -8509,7 +8445,7 @@
 		(uuid "8dc2ddf8-2b29-4da5-8ecf-aa7640c43178")
 	)
 	(junction
-		(at 161.29 177.8)
+		(at 139.7 180.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8e6d4465-bf80-4216-af03-e56d3b68efbc")
@@ -8545,7 +8481,7 @@
 		(uuid "a64162ae-0603-4b19-89db-f680ce5d8dfa")
 	)
 	(junction
-		(at 161.29 167.64)
+		(at 139.7 170.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a7a0dc95-8ee5-4b64-9d54-dc461598f047")
@@ -8611,7 +8547,7 @@
 		(uuid "d13d4437-4ae0-4d30-b4d8-f83fa10c1546")
 	)
 	(junction
-		(at 148.59 172.72)
+		(at 127 175.26)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d66ff8fa-e55f-4776-afc1-290ec48da8a7")
@@ -8930,7 +8866,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 162.56) (xy 148.59 167.64)
+			(xy 127 165.1) (xy 127 170.18)
 		)
 		(stroke
 			(width 0)
@@ -8940,7 +8876,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 162.56) (xy 161.29 167.64)
+			(xy 139.7 165.1) (xy 139.7 170.18)
 		)
 		(stroke
 			(width 0)
@@ -9160,7 +9096,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 177.8) (xy 148.59 177.8)
+			(xy 129.54 180.34) (xy 127 180.34)
 		)
 		(stroke
 			(width 0)
@@ -9210,7 +9146,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 177.8) (xy 161.29 180.34)
+			(xy 139.7 180.34) (xy 139.7 182.88)
 		)
 		(stroke
 			(width 0)
@@ -9300,7 +9236,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 172.72) (xy 39.37 173.99)
+			(xy 99.06 172.72) (xy 99.06 173.99)
 		)
 		(stroke
 			(width 0)
@@ -9600,7 +9536,7 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 170.18) (xy 43.18 170.18)
+			(xy 46.99 172.72) (xy 57.15 172.72)
 		)
 		(stroke
 			(width 0)
@@ -9820,7 +9756,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 160.02) (xy 148.59 162.56)
+			(xy 127 162.56) (xy 127 165.1)
 		)
 		(stroke
 			(width 0)
@@ -9830,7 +9766,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 170.18) (xy 115.57 170.18)
+			(xy 57.15 170.18) (xy 50.8 170.18)
 		)
 		(stroke
 			(width 0)
@@ -10180,7 +10116,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 172.72) (xy 148.59 177.8)
+			(xy 127 175.26) (xy 127 180.34)
 		)
 		(stroke
 			(width 0)
@@ -10220,7 +10156,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 162.56) (xy 161.29 162.56)
+			(xy 137.16 165.1) (xy 139.7 165.1)
 		)
 		(stroke
 			(width 0)
@@ -10370,7 +10306,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 172.72) (xy 161.29 172.72)
+			(xy 137.16 175.26) (xy 139.7 175.26)
 		)
 		(stroke
 			(width 0)
@@ -10380,7 +10316,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 177.8) (xy 161.29 177.8)
+			(xy 137.16 180.34) (xy 139.7 180.34)
 		)
 		(stroke
 			(width 0)
@@ -10390,7 +10326,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 172.72) (xy 161.29 177.8)
+			(xy 139.7 175.26) (xy 139.7 180.34)
 		)
 		(stroke
 			(width 0)
@@ -10510,7 +10446,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 167.64) (xy 161.29 172.72)
+			(xy 139.7 170.18) (xy 139.7 175.26)
 		)
 		(stroke
 			(width 0)
@@ -10560,7 +10496,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 162.56) (xy 148.59 162.56)
+			(xy 129.54 165.1) (xy 127 165.1)
 		)
 		(stroke
 			(width 0)
@@ -10790,7 +10726,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 172.72) (xy 148.59 172.72)
+			(xy 129.54 175.26) (xy 127 175.26)
 		)
 		(stroke
 			(width 0)
@@ -10840,7 +10776,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 167.64) (xy 148.59 172.72)
+			(xy 127 170.18) (xy 127 175.26)
 		)
 		(stroke
 			(width 0)
@@ -10990,7 +10926,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 172.72) (xy 115.57 172.72)
+			(xy 95.25 170.18) (xy 101.6 170.18)
 		)
 		(stroke
 			(width 0)
@@ -11020,7 +10956,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 172.72) (xy 39.37 172.72)
+			(xy 95.25 172.72) (xy 99.06 172.72)
 		)
 		(stroke
 			(width 0)
@@ -11050,7 +10986,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 167.64) (xy 161.29 167.64)
+			(xy 137.16 170.18) (xy 139.7 170.18)
 		)
 		(stroke
 			(width 0)
@@ -11090,7 +11026,7 @@
 	)
 	(wire
 		(pts
-			(xy 24.13 170.18) (xy 27.94 170.18)
+			(xy 30.48 172.72) (xy 34.29 172.72)
 		)
 		(stroke
 			(width 0)
@@ -11220,7 +11156,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 167.64) (xy 148.59 167.64)
+			(xy 129.54 170.18) (xy 127 170.18)
 		)
 		(stroke
 			(width 0)
@@ -11311,8 +11247,8 @@
 		(uuid 50f872ea-6321-4623-8af5-ec5e839627f8)
 	)
 	(rectangle
-		(start 132.08 151.13)
-		(end 165.1 186.69)
+		(start 110.49 153.67)
+		(end 143.51 189.23)
 		(stroke
 			(width 0)
 			(type dash)
@@ -11379,7 +11315,7 @@
 	)
 	(text "CLOCK CAPS"
 		(exclude_from_sim no)
-		(at 132.842 152.654 0)
+		(at 111.252 155.194 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11411,7 +11347,7 @@
 		(uuid "13350d17-3a84-4e25-b3e6-0612f1ad395e")
 	)
 	(label "XTAL"
-		(at 115.57 172.72 180)
+		(at 101.6 170.18 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12711,7 +12647,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 148.59 160.02 0)
+		(at 127 162.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12720,7 +12656,7 @@
 		(fields_autoplaced yes)
 		(uuid "29f7a3e9-d110-4780-9347-473a15c85b15")
 		(property "Reference" "#PWR088"
-			(at 148.59 163.83 0)
+			(at 127 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12729,7 +12665,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 148.59 155.8869 0)
+			(at 127 158.4269 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12737,7 +12673,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 148.59 160.02 0)
+			(at 127 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12746,7 +12682,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 148.59 160.02 0)
+			(at 127 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12755,7 +12691,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 148.59 160.02 0)
+			(at 127 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14134,7 +14070,8 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 39.37 173.99 0)
+		(at 99.06 173.99 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14143,7 +14080,7 @@
 		(fields_autoplaced yes)
 		(uuid "51906f49-4bc1-4531-9c25-05104bd5c146")
 		(property "Reference" "#PWR084"
-			(at 39.37 180.34 0)
+			(at 99.06 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14152,7 +14089,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 39.37 178.1231 0)
+			(at 99.06 178.1231 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14160,7 +14097,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 39.37 173.99 0)
+			(at 99.06 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14169,7 +14106,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 39.37 173.99 0)
+			(at 99.06 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14178,7 +14115,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 39.37 173.99 0)
+			(at 99.06 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14852,7 +14789,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:MSAST1L3YB5104KFNA01")
-		(at 151.13 162.56 0)
+		(at 129.54 165.1 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14860,7 +14797,7 @@
 		(dnp no)
 		(uuid "6a028734-310a-4e75-bb3e-bacb5426fea3")
 		(property "Reference" "C43"
-			(at 136.398 162.56 0)
+			(at 114.808 165.1 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -14868,7 +14805,7 @@
 			)
 		)
 		(property "Value" "0.1u"
-			(at 144.272 162.56 0)
+			(at 122.682 165.1 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -14876,7 +14813,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:CAP_MSAS1L-3_TAY"
-			(at 151.13 162.56 0)
+			(at 129.54 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14886,7 +14823,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/Tayio_Yuden_1102023_MS_mlcc_all_e-3081579.pdf"
-			(at 151.13 162.56 0)
+			(at 129.54 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14896,7 +14833,7 @@
 			)
 		)
 		(property "Description" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
-			(at 151.13 162.56 0)
+			(at 129.54 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14905,7 +14842,7 @@
 			)
 		)
 		(property "Mfr. Name" "Taiyo Yuden"
-			(at 151.13 165.56 0)
+			(at 129.54 168.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14915,7 +14852,7 @@
 			)
 		)
 		(property "Mfr. Number" "MSAST1L3YB5104KFNA01"
-			(at 151.13 165.56 0)
+			(at 129.54 168.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14925,7 +14862,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/MSAST1L3YB5104KFNA01?qs=tlsG%2FOw5FFhBwK%252BMwEZpCA%3D%3D"
-			(at 151.13 165.56 0)
+			(at 129.54 168.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14935,7 +14872,7 @@
 			)
 		)
 		(property "Description_1" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
-			(at 151.13 165.56 0)
+			(at 129.54 168.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14945,7 +14882,7 @@
 			)
 		)
 		(property "Arrow ID" "MSAST1L3YB5104KFNA01"
-			(at 151.13 165.56 0)
+			(at 129.54 168.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14955,7 +14892,7 @@
 			)
 		)
 		(property "DigiKey ID" "587-MSAST1L3YB5104KFNA01CT-ND"
-			(at 151.13 165.56 0)
+			(at 129.54 168.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14965,7 +14902,7 @@
 			)
 		)
 		(property "Mouser ID" "963-MSAST1L3YB5104KF"
-			(at 151.13 165.56 0)
+			(at 129.54 168.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14995,7 +14932,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:0402B103J160CT")
-		(at 151.13 167.64 0)
+		(at 129.54 170.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15003,7 +14940,7 @@
 		(dnp no)
 		(uuid "6c81d2e6-e826-403e-a04a-cef945ca3df4")
 		(property "Reference" "C45"
-			(at 136.398 167.386 0)
+			(at 114.808 169.926 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -15011,7 +14948,7 @@
 			)
 		)
 		(property "Value" "0.01u"
-			(at 143.51 167.386 0)
+			(at 121.92 169.926 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -15019,7 +14956,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:CAP_0402_N_WAL"
-			(at 151.13 167.64 0)
+			(at 129.54 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15029,7 +14966,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/210/WTC_MLCC_General_Purpose-1534899.pdf"
-			(at 151.13 167.64 0)
+			(at 129.54 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15039,7 +14976,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, Multilayer, Ceramic, 16V, 5% +Tol, 5% -Tol, X7R, 15% TC, 0.01uF, Surface Mount, 0402"
-			(at 151.13 167.64 0)
+			(at 129.54 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15048,7 +14985,7 @@
 			)
 		)
 		(property "Mfr. Name" "Walsin"
-			(at 151.13 170.64 0)
+			(at 129.54 173.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15058,7 +14995,7 @@
 			)
 		)
 		(property "Mouser ID" "791-0402B103J160CT"
-			(at 151.13 170.64 0)
+			(at 129.54 173.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15068,7 +15005,7 @@
 			)
 		)
 		(property "DigiKey ID" "1292-0402B103J160CT-ND"
-			(at 151.13 170.64 0)
+			(at 129.54 173.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15078,7 +15015,7 @@
 			)
 		)
 		(property "Arrow ID" "null"
-			(at 151.13 170.64 0)
+			(at 129.54 173.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15088,7 +15025,7 @@
 			)
 		)
 		(property "Description_1" "Ceramic Capacitor, Multilayer, Ceramic, 16V, 5% +Tol, 5% -Tol, X7R, 15% TC, 0.01uF, Surface Mount, 0402"
-			(at 151.13 170.64 0)
+			(at 129.54 173.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15098,7 +15035,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Walsin/0402B103J160CT?qs=fIkAfuXiAQJQ%252BjA7a5Mepg%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=791-0402B103J160CT&utm_content=Walsin"
-			(at 151.13 170.64 0)
+			(at 129.54 173.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15108,7 +15045,7 @@
 			)
 		)
 		(property "Mfr. Number" "0402B103J160CT"
-			(at 151.13 170.64 0)
+			(at 129.54 173.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17370,7 +17307,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 161.29 180.34 0)
+		(at 139.7 182.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17379,7 +17316,7 @@
 		(fields_autoplaced yes)
 		(uuid "8f38ebaf-db0b-4241-b43e-468a723076a4")
 		(property "Reference" "#PWR090"
-			(at 161.29 186.69 0)
+			(at 139.7 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17388,7 +17325,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 161.29 184.4731 0)
+			(at 139.7 187.0131 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17396,7 +17333,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 161.29 180.34 0)
+			(at 139.7 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17405,7 +17342,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 161.29 180.34 0)
+			(at 139.7 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17414,7 +17351,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 161.29 180.34 0)
+			(at 139.7 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18012,7 +17949,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 24.13 170.18 0)
+		(at 30.48 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -18021,7 +17958,7 @@
 		(fields_autoplaced yes)
 		(uuid "9df138f1-a5c7-4810-8e87-6c6de6e08ef5")
 		(property "Reference" "#PWR082"
-			(at 24.13 173.99 0)
+			(at 30.48 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18030,7 +17967,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 24.13 166.0469 0)
+			(at 30.48 168.5869 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18038,7 +17975,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 24.13 170.18 0)
+			(at 30.48 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18047,7 +17984,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 24.13 170.18 0)
+			(at 30.48 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18056,7 +17993,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 24.13 170.18 0)
+			(at 30.48 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19166,7 +19103,8 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 115.57 170.18 0)
+		(at 50.8 170.18 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -19175,7 +19113,7 @@
 		(fields_autoplaced yes)
 		(uuid "b8284068-1961-47f0-87d3-d7b9f09f2b8b")
 		(property "Reference" "#PWR086"
-			(at 115.57 173.99 0)
+			(at 50.8 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19184,7 +19122,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 115.57 166.0469 0)
+			(at 50.8 166.0469 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19192,7 +19130,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 115.57 170.18 0)
+			(at 50.8 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19201,7 +19139,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 170.18 0)
+			(at 50.8 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19210,7 +19148,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 115.57 170.18 0)
+			(at 50.8 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19382,7 +19320,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:RMCF0402FT10K0")
-		(at 27.94 170.18 0)
+		(at 34.29 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -19391,7 +19329,7 @@
 		(fields_autoplaced yes)
 		(uuid "bf75cb72-873b-4bcf-8aa0-74873983422d")
 		(property "Reference" "R24"
-			(at 34.29 164.178 0)
+			(at 40.64 166.718 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -19399,7 +19337,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 34.29 167.0109 0)
+			(at 40.64 169.5509 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -19407,7 +19345,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:STA_RMCF0402_STP"
-			(at 27.94 170.18 0)
+			(at 34.29 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19417,7 +19355,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/385/SEI_RMCF_RMCP-3077565.pdf"
-			(at 27.94 170.18 0)
+			(at 34.29 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19427,7 +19365,7 @@
 			)
 		)
 		(property "Description" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
-			(at 27.94 170.18 0)
+			(at 34.29 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19436,7 +19374,7 @@
 			)
 		)
 		(property "Description_1" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
-			(at 27.94 173.18 0)
+			(at 34.29 175.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19446,7 +19384,7 @@
 			)
 		)
 		(property "Mfr. Name" "Stackpole International"
-			(at 27.94 173.18 0)
+			(at 34.29 175.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19456,7 +19394,7 @@
 			)
 		)
 		(property "DigiKey ID" "RMCF0402FT10K0CT-ND"
-			(at 27.94 173.18 0)
+			(at 34.29 175.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19466,7 +19404,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/SEI-Stackpole/RMCF0402FT10K0?qs=FESYatJ8odLDpjm%252BwxiA1Q%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=708-RMCF0402FT10K0&utm_content=SEI%20Stackpole"
-			(at 27.94 173.18 0)
+			(at 34.29 175.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19476,7 +19414,7 @@
 			)
 		)
 		(property "Arrow ID" "RMCF0402FT10K0"
-			(at 27.94 173.18 0)
+			(at 34.29 175.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19486,7 +19424,7 @@
 			)
 		)
 		(property "Mfr. Number" "RMCF0402FT10K0"
-			(at 27.94 173.18 0)
+			(at 34.29 175.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19496,7 +19434,7 @@
 			)
 		)
 		(property "Mouser ID" "708-RMCF0402FT10K0"
-			(at 27.94 173.18 0)
+			(at 34.29 175.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19953,7 +19891,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:GRM155C61E475ME15J")
-		(at 151.13 177.8 0)
+		(at 129.54 180.34 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -19961,7 +19899,7 @@
 		(dnp no)
 		(uuid "c988e6fa-8fdc-458f-9a67-1bfaeedc85d3")
 		(property "Reference" "C49"
-			(at 136.398 177.8 0)
+			(at 114.808 180.34 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -19969,7 +19907,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 144.272 177.546 0)
+			(at 122.682 180.086 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -19977,7 +19915,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:GRM15x"
-			(at 160.02 273.99 0)
+			(at 138.43 276.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19987,7 +19925,7 @@
 			)
 		)
 		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155C61E475ME15-01A.pdf"
-			(at 160.02 373.99 0)
+			(at 138.43 376.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19997,7 +19935,7 @@
 			)
 		)
 		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 25VDC 4.7F 20% X5S"
-			(at 171.958 167.132 0)
+			(at 150.368 169.672 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20006,7 +19944,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Samsung-Electro-Mechanics/CL05A475KP5NRNC?qs=YzdFMwBfadZHDm1%2FDIRDnw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=187-CL05A475KP5NRNC&utm_content=Samsung%20Electro-Mechanics"
-			(at 151.13 180.8 0)
+			(at 129.54 183.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20016,7 +19954,7 @@
 			)
 		)
 		(property "Arrow ID" "CL05A475KP5NRNC"
-			(at 151.13 180.8 0)
+			(at 129.54 183.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20026,7 +19964,7 @@
 			)
 		)
 		(property "DigiKey ID" "1276-1480-6-ND"
-			(at 151.13 180.8 0)
+			(at 129.54 183.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20036,7 +19974,7 @@
 			)
 		)
 		(property "Description_1" "Cap Ceramic 4.7uF 10V X5R 10% SMD 0402 85°C Cardboard T/R"
-			(at 151.13 180.8 0)
+			(at 129.54 183.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20046,7 +19984,7 @@
 			)
 		)
 		(property "Mfr. Number" "CL05A475KP5NRNC"
-			(at 151.13 180.8 0)
+			(at 129.54 183.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20056,7 +19994,7 @@
 			)
 		)
 		(property "Mouser ID" "187-CL05A475KP5NRNC"
-			(at 151.13 180.8 0)
+			(at 129.54 183.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20066,7 +20004,7 @@
 			)
 		)
 		(property "Mfr. Name" "Samsung"
-			(at 151.13 180.8 0)
+			(at 129.54 183.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20076,7 +20014,7 @@
 			)
 		)
 		(property "Height" "0.33"
-			(at 160.02 573.99 0)
+			(at 138.43 576.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20086,7 +20024,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Murata Electronics"
-			(at 160.02 673.99 0)
+			(at 138.43 676.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20096,7 +20034,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "GRM155C61E475ME15J"
-			(at 160.02 773.99 0)
+			(at 138.43 776.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20106,7 +20044,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at 160.02 873.99 0)
+			(at 138.43 876.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20116,7 +20054,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM155C61E475ME15J?qs=By6Nw2ByBD02p8xq06vhEQ%3D%3D"
-			(at 160.02 973.99 0)
+			(at 138.43 976.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20126,7 +20064,7 @@
 			)
 		)
 		(property "Arrow Part Number" "GRM155C61E475ME15J"
-			(at 160.02 1073.99 0)
+			(at 138.43 1076.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20136,7 +20074,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/grm155c61e475me15j/murata-manufacturing?region=nac"
-			(at 160.02 1173.99 0)
+			(at 138.43 1176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20159,156 +20097,6 @@
 				)
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/b601c821-5b60-4675-81ed-5ef7836e5121"
 					(reference "C50")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "OroLink:KC2520Z25.0000C1KX00")
-		(at 43.18 170.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cb68748f-37be-4cf8-8b96-8dd9a868c140")
-		(property "Reference" "XTAL1"
-			(at 76.2 160.4061 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "KC2520Z25.0000C1KX00"
-			(at 76.2 163.239 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "OroLink:KC2520Z25_KAV"
-			(at 43.18 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.de/datasheet/2/40/clock_z_x_e-3044365.pdf"
-			(at 43.18 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Crystal ROHS3Compliant Standby (Power Down) Active Oscillator -40C~85C 3.3mA 0.031 0.80mm 25MHz"
-			(at 43.18 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser URL" "https://www.mouser.de/ProductDetail/KYOCERA-AVX/KC2520Z25.0000C1KX00?qs=rrS6PyfT74drQ1v0Ri2jSw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=581-KC2520Z250C1KX00&utm_content=KYOCERA%20AVX"
-			(at 43.18 173.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow ID" "KC2520Z25.0000C1KX00"
-			(at 43.18 173.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser ID" "581-KC2520Z250C1KX00"
-			(at 43.18 173.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mfr. Name" "KYOCERA AVX"
-			(at 43.18 173.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "Crystal ROHS3Compliant Standby (Power Down) Active Oscillator -40C~85C 3.3mA 0.031 0.80mm 25MHz"
-			(at 43.18 173.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey ID" "478-KC2520Z25.0000C1KX00CT-ND"
-			(at 43.18 173.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mfr. Number" "KC2520Z25.0000C1KX00"
-			(at 43.18 173.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "20b5ad6b-ed47-4866-9fc9-c7195f353838")
-		)
-		(pin "2"
-			(uuid "64ca2adf-3bce-4fe6-a598-eda8ab58c41f")
-		)
-		(pin "3"
-			(uuid "fe95e67b-c1c9-4ed1-ae07-64e14df3db06")
-		)
-		(pin "4"
-			(uuid "550af564-bfe1-4908-bdbf-feb6d316167e")
-		)
-		(instances
-			(project ""
-				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/a5311b03-40b7-4478-89f9-699512d56926"
-					(reference "XTAL1")
-					(unit 1)
-				)
-				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/b601c821-5b60-4675-81ed-5ef7836e5121"
-					(reference "XTAL2")
 					(unit 1)
 				)
 			)
@@ -21141,7 +20929,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:JMK105BJ105KVHF")
-		(at 151.13 172.72 0)
+		(at 129.54 175.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21149,7 +20937,7 @@
 		(dnp no)
 		(uuid "eb29e171-871b-4bcc-978c-c3c279bfc9d7")
 		(property "Reference" "C47"
-			(at 136.398 172.72 0)
+			(at 114.808 175.26 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -21157,7 +20945,7 @@
 			)
 		)
 		(property "Value" "1u"
-			(at 145.288 172.72 0)
+			(at 123.698 175.26 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -21165,7 +20953,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:cap_UMK105 CG080CV-F_TAY"
-			(at 151.13 172.72 0)
+			(at 129.54 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21175,7 +20963,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/taiyo_yuden_12132018_mlcc11_hq_e-1510082.pdf"
-			(at 151.13 172.72 0)
+			(at 129.54 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21185,7 +20973,7 @@
 			)
 		)
 		(property "Description" "Capacitor, ceramic, 0402, 6.3V, x5R, 1 F, ±10% Rohs Compliant: Yes |Taiyo Yuden JMK105BJ105KVHF"
-			(at 151.13 172.72 0)
+			(at 129.54 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21194,7 +20982,7 @@
 			)
 		)
 		(property "DigiKey ID" "587-3766-1-ND"
-			(at 151.13 175.72 0)
+			(at 129.54 178.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21204,7 +20992,7 @@
 			)
 		)
 		(property "Arrow ID" "JMK105BJ105KVHF"
-			(at 151.13 175.72 0)
+			(at 129.54 178.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21214,7 +21002,7 @@
 			)
 		)
 		(property "Mfr. Name" "Taiyo Yuden"
-			(at 151.13 175.72 0)
+			(at 129.54 178.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21224,7 +21012,7 @@
 			)
 		)
 		(property "Description_1" "Capacitor, ceramic, 0402, 6.3V, x5R, 1 F, ±10% Rohs Compliant: Yes |Taiyo Yuden JMK105BJ105KVHF"
-			(at 151.13 175.72 0)
+			(at 129.54 178.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21234,7 +21022,7 @@
 			)
 		)
 		(property "Mouser ID" "963-JMK105BJ105KVHF"
-			(at 151.13 175.72 0)
+			(at 129.54 178.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21244,7 +21032,7 @@
 			)
 		)
 		(property "Mfr. Number" "JMK105BJ105KVHF"
-			(at 151.13 175.72 0)
+			(at 129.54 178.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21254,7 +21042,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/JMK105BJ105KVHF?qs=qPaGMJUC%252BSupRtwk0yj9HQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=963-JMK105BJ105KVHF&utm_content=TAIYO%20YUDEN"
-			(at 151.13 175.72 0)
+			(at 129.54 178.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21843,6 +21631,156 @@
 				)
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/b601c821-5b60-4675-81ed-5ef7836e5121"
 					(reference "#PWR0105")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:ECS-TXO-2520MV-250-AN-TR")
+		(at 57.15 170.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fa780d6e-2d69-4e88-97fd-1da764a31ff7")
+		(property "Reference" "Y4"
+			(at 76.2 163.4955 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ECS-TXO-2520MV-250-AN-TR"
+			(at 76.2 165.9198 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:ECSTXO2520MV250ANTR"
+			(at 91.44 265.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://ecsxtal.com/store/pdf/ECS-TXO-2520MV.pdf"
+			(at 91.44 365.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "TCXO Oscillators MultiVolt OSC TCXO 25.000MHZ CMOS SMD ECS-TXO-2520MV 25MHz CMOS +1.7V +3.6V +/-2.5ppm -40 C 85 C - Surface Mount 0.098\" L x 0.079\" W (2.50mm x 2.00mm) 0.035\" (0.90mm) 4-SMD, No Lead (DFN, LCC)"
+			(at 57.15 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1"
+			(at 91.44 565.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "ECS"
+			(at 91.44 665.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "ECS-TXO-2520MV-250-AN-TR"
+			(at 91.44 765.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "520-TXO2520MV250ANTR"
+			(at 91.44 865.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ECS/ECS-TXO-2520MV-250-AN-TR?qs=bAKSY%2FctAC5H3IQDMebudw%3D%3D"
+			(at 91.44 965.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "ECS-TXO-2520MV-250-AN-TR"
+			(at 91.44 1065.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ecs-txo-2520mv-250-an-tr/ecs-international?utm_currency=USD&region=nac"
+			(at 91.44 1165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "d5161de2-49db-4b2e-b183-7f76c437fb94")
+		)
+		(pin "3"
+			(uuid "45f6f2af-05dc-45da-b896-e21641779ed6")
+		)
+		(pin "2"
+			(uuid "3ec312fb-96f6-4d89-ba73-172d9f0fb4d4")
+		)
+		(pin "1"
+			(uuid "8811633a-e42b-4553-b95b-b6c0bc3d2532")
+		)
+		(instances
+			(project ""
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/a5311b03-40b7-4478-89f9-699512d56926"
+					(reference "Y3")
+					(unit 1)
+				)
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/b601c821-5b60-4675-81ed-5ef7836e5121"
+					(reference "Y4")
 					(unit 1)
 				)
 			)
