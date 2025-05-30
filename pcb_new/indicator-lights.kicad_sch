@@ -4574,10 +4574,22 @@
 		(uuid "75e35acc-8c27-4f33-86c2-74589d3737a9")
 	)
 	(junction
+		(at 157.48 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a294cefb-38e3-40ed-91ea-721a2dde9978")
+	)
+	(junction
 		(at 63.5 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a7433068-f5a4-428b-ae03-029d3a7fc24d")
+	)
+	(junction
+		(at 157.48 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b20b57ff-c3c7-4c8d-82e2-3c1229a60784")
 	)
 	(junction
 		(at 63.5 166.37)
@@ -4705,6 +4717,16 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 180.34) (xy 147.32 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19e1710b-8019-48cb-9ad0-4ff18a5af873")
+	)
+	(wire
+		(pts
 			(xy 161.29 53.34) (xy 166.37 53.34)
 		)
 		(stroke
@@ -4732,6 +4754,16 @@
 			(type default)
 		)
 		(uuid "1dc8768f-3d01-474d-b327-702d28f155c2")
+	)
+	(wire
+		(pts
+			(xy 157.48 151.13) (xy 157.48 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e8ff01f-920c-4c13-8943-9b8a5702c52d")
 	)
 	(wire
 		(pts
@@ -4815,7 +4847,7 @@
 	)
 	(wire
 		(pts
-			(xy 237.49 60.96) (xy 243.84 60.96)
+			(xy 125.73 152.4) (xy 132.08 152.4)
 		)
 		(stroke
 			(width 0)
@@ -5095,7 +5127,7 @@
 	)
 	(wire
 		(pts
-			(xy 275.59 60.96) (xy 269.24 60.96)
+			(xy 125.73 166.37) (xy 132.08 166.37)
 		)
 		(stroke
 			(width 0)
@@ -5105,7 +5137,7 @@
 	)
 	(wire
 		(pts
-			(xy 275.59 63.5) (xy 269.24 63.5)
+			(xy 125.73 180.34) (xy 132.08 180.34)
 		)
 		(stroke
 			(width 0)
@@ -5435,6 +5467,16 @@
 	)
 	(wire
 		(pts
+			(xy 147.32 152.4) (xy 157.48 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab3b7efe-2684-453a-ab39-0f98583067c4")
+	)
+	(wire
+		(pts
 			(xy 207.01 120.65) (xy 170.18 120.65)
 		)
 		(stroke
@@ -5532,6 +5574,16 @@
 			(type default)
 		)
 		(uuid "c81f002b-3103-4c20-9b7e-fe15daf168e1")
+	)
+	(wire
+		(pts
+			(xy 157.48 166.37) (xy 157.48 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c85e891d-fbe9-44b9-8a76-c7adb4b17bab")
 	)
 	(wire
 		(pts
@@ -5652,6 +5704,16 @@
 			(type default)
 		)
 		(uuid "da4b4787-b41a-46cb-9925-8dce897cf33b")
+	)
+	(wire
+		(pts
+			(xy 157.48 166.37) (xy 147.32 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dbd521ba-dc59-4cea-b39e-9577ad88ab02")
 	)
 	(wire
 		(pts
@@ -5805,6 +5867,16 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 152.4) (xy 157.48 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f51c4bd9-3f1f-4bc0-80ed-9d83f2a512c7")
+	)
+	(wire
+		(pts
 			(xy 100.33 96.52) (xy 88.9 96.52)
 		)
 		(stroke
@@ -5888,6 +5960,18 @@
 		(uuid 61c958f3-f151-43fd-95cf-be2215131050)
 	)
 	(rectangle
+		(start 121.539 143.129)
+		(end 161.163 189.865)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 65303687-1dc2-4d05-ba66-5ec34337cb84)
+	)
+	(rectangle
 		(start 115.57 29.845)
 		(end 176.53 79.375)
 		(stroke
@@ -5933,6 +6017,17 @@
 		)
 		(uuid "3deebf2c-0d5e-4847-a011-16c074f4a373")
 	)
+	(text "BACKLIGHTS (WHITE)"
+		(exclude_from_sim no)
+		(at 122.428 144.78 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "60f64531-c861-4076-8c47-649a6a9c277e")
+	)
 	(text "SESSION INDICATORS"
 		(exclude_from_sim no)
 		(at 220.472 99.568 0)
@@ -5956,13 +6051,13 @@
 		(uuid "9acd05dc-4eb6-4073-a983-db0df2951d3a")
 	)
 	(label "O3"
-		(at 275.59 63.5 180)
+		(at 125.73 180.34 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "0414d899-972f-4097-b1d3-3e89bc757872")
 	)
@@ -6022,13 +6117,13 @@
 		(uuid "25b70462-0486-4411-8155-ca3d1b44e014")
 	)
 	(label "O8"
-		(at 275.59 60.96 180)
+		(at 125.73 166.37 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "2848202f-8d8c-468b-917d-132fc6edfca1")
 	)
@@ -6506,7 +6601,7 @@
 		(uuid "b94f02a7-4da2-426e-a085-46d69a34715a")
 	)
 	(label "O7"
-		(at 237.49 60.96 0)
+		(at 125.73 152.4 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7447,6 +7542,146 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
 					(reference "#PWR038")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:CLM3C-WKW-CXAYA453")
+		(at 132.08 180.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2cac4d4b-ad54-4bd7-8ec4-17217955da73")
+		(property "Reference" "LED8"
+			(at 139.7 187.0245 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CLM3C-WKW-CXAYA453"
+			(at 139.7 184.6002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:CLM3CWKWCXAYA453"
+			(at 144.78 273.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://componentsearchengine.com/Datasheets/2/CLM3C-WKW-CWBYA453.pdf"
+			(at 144.78 373.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cree CLM3C-WKW-CXAYA453, CLM3 Series White LED, 5500K, PLCC 2, Rectangle Lens SMD Package"
+			(at 132.08 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.4"
+			(at 144.78 573.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "CREE LED"
+			(at 144.78 673.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CLM3C-WKW-CXAYA453"
+			(at 144.78 773.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "941-CLM3CWKWCXAYA453"
+			(at 144.78 873.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Cree-Inc/CLM3C-WKW-CXaYa453?qs=3AcK5DacLbr3ewaPKwAgNg%3D%3D"
+			(at 144.78 973.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "CLM3C-WKW-CXAYA453"
+			(at 144.78 1073.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/clm3c-wkw-cxaya453/cree"
+			(at 144.78 1173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c8a4b6c6-9228-456b-a824-4c573bc61602")
+		)
+		(pin "2"
+			(uuid "8ed2db77-e0b9-480b-a237-5ec83e255f93")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
+					(reference "LED8")
 					(unit 1)
 				)
 			)
@@ -8626,181 +8861,6 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
 					(reference "LED10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "OroLink:150120M173000")
-		(at 243.84 60.96 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4e743ebd-debe-4970-b01d-d8550e8afd98")
-		(property "Reference" "LED8"
-			(at 256.54 54.2177 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "150120M173000"
-			(at 256.54 56.642 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "OroLink:150120M173000"
-			(at 265.43 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.we-online.com/catalog/datasheet/150120M173000.pdf"
-			(at 265.43 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Standard LEDs - SMD WL-SFCW SMT Full-color Chip LED waterclear 1206 RGB"
-			(at 265.43 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Height" "0.85"
-			(at 265.43 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Wurth Elektronik"
-			(at 265.43 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "150120M173000"
-			(at 265.43 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "710-150120M173000"
-			(at 265.43 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/150120M173000?qs=GedFDFLaBXG2uqjQCP7dEg%3D%3D"
-			(at 265.43 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 265.43 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 265.43 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Testing Part Number" ""
-			(at 265.43 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Testing Price/Stock" ""
-			(at 265.43 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Note" "BACK1"
-			(at 256.54 56.7507 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "55e35fb7-3617-4ab9-b230-177c15e1fa23")
-		)
-		(pin "1"
-			(uuid "84d52fc5-dffa-44b9-87fb-72a56ea72b3d")
-		)
-		(pin "3"
-			(uuid "90f6d30b-d8ac-443b-b8e7-d291d26a1036")
-		)
-		(pin "4"
-			(uuid "4e5924d8-cb5a-4090-9ddf-0686d293e045")
-		)
-		(instances
-			(project "link"
-				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
-					(reference "LED8")
 					(unit 1)
 				)
 			)
@@ -10434,6 +10494,146 @@
 		)
 	)
 	(symbol
+		(lib_id "OroLink:CLM3C-WKW-CXAYA453")
+		(at 132.08 166.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b2f8870f-1a4e-417a-a395-c9a7a263b7c7")
+		(property "Reference" "LED22"
+			(at 139.7 173.0545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CLM3C-WKW-CXAYA453"
+			(at 139.7 170.6302 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:CLM3CWKWCXAYA453"
+			(at 144.78 260.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://componentsearchengine.com/Datasheets/2/CLM3C-WKW-CWBYA453.pdf"
+			(at 144.78 360.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cree CLM3C-WKW-CXAYA453, CLM3 Series White LED, 5500K, PLCC 2, Rectangle Lens SMD Package"
+			(at 132.08 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.4"
+			(at 144.78 560.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "CREE LED"
+			(at 144.78 660.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CLM3C-WKW-CXAYA453"
+			(at 144.78 760.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "941-CLM3CWKWCXAYA453"
+			(at 144.78 860.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Cree-Inc/CLM3C-WKW-CXaYa453?qs=3AcK5DacLbr3ewaPKwAgNg%3D%3D"
+			(at 144.78 960.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "CLM3C-WKW-CXAYA453"
+			(at 144.78 1060.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/clm3c-wkw-cxaya453/cree"
+			(at 144.78 1160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "586921ac-2221-41d4-b821-d6321f5b80a6")
+		)
+		(pin "2"
+			(uuid "d2ac3bce-57bf-4b38-90d2-7b170ee84e6a")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
+					(reference "LED22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "OroLink:AA3528VRVFS_A")
 		(at 118.11 127 0)
 		(unit 1)
@@ -10774,6 +10974,146 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
 					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:CLM3C-WKW-CXAYA453")
+		(at 132.08 152.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c0557221-fecb-4571-b527-80a930c23d3f")
+		(property "Reference" "LED25"
+			(at 139.7 159.0845 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CLM3C-WKW-CXAYA453"
+			(at 139.7 156.6602 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:CLM3CWKWCXAYA453"
+			(at 144.78 246.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://componentsearchengine.com/Datasheets/2/CLM3C-WKW-CWBYA453.pdf"
+			(at 144.78 346.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cree CLM3C-WKW-CXAYA453, CLM3 Series White LED, 5500K, PLCC 2, Rectangle Lens SMD Package"
+			(at 132.08 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.4"
+			(at 144.78 546.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "CREE LED"
+			(at 144.78 646.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CLM3C-WKW-CXAYA453"
+			(at 144.78 746.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "941-CLM3CWKWCXAYA453"
+			(at 144.78 846.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Cree-Inc/CLM3C-WKW-CXaYa453?qs=3AcK5DacLbr3ewaPKwAgNg%3D%3D"
+			(at 144.78 946.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "CLM3C-WKW-CXAYA453"
+			(at 144.78 1046.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/clm3c-wkw-cxaya453/cree"
+			(at 144.78 1146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6d9c0b8b-86df-4057-9208-ed72bc52452a")
+		)
+		(pin "2"
+			(uuid "f7f22696-279e-4214-b916-5ae66f22bec7")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
+					(reference "LED25")
 					(unit 1)
 				)
 			)
@@ -11841,73 +12181,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 243.84 63.5 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e4caf046-ff70-44f7-972d-121aa7e39055")
-		(property "Reference" "#PWR035"
-			(at 247.65 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 240.665 63.5 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 243.84 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 243.84 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 243.84 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "76b537c6-aa12-4dbb-8691-b8bd81356826")
-		)
-		(instances
-			(project "link"
-				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
-					(reference "#PWR035")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "OroLink:JMK105BJ105KVHF")
 		(at 66.04 161.29 0)
 		(unit 1)
@@ -12041,6 +12314,72 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
 					(reference "C35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 157.48 151.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e5bff448-2db1-4021-a2c0-e8111404621f")
+		(property "Reference" "#PWR035"
+			(at 157.48 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 157.48 146.9969 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 157.48 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 157.48 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "30f664e7-716b-4345-b3d1-71ea2dfc1f7f")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
