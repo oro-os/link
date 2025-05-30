@@ -2826,6 +2826,295 @@
 				)
 			)
 		)
+		(symbol "OroLink:NC7SZ86P5X"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U14"
+				(at 13.462 9.6909 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "NC7SZ86P5X"
+				(at 13.462 6.858 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "OroLink:SC-88A-5_1P35X2P2_ONS"
+				(at -21.59 11.128 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.onsemi.com/PowerSolutions/product.do?id=NC7SZ86P5X"
+				(at 4.318 14.176 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "XOR 7SZ86 EAR99 7SZ logic gate circuit 5.4ns @ 5V 50pF 1mm 32mA 32mA 3.3V"
+				(at 4.318 14.176 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser ID" "512-NC7SZ86P5X"
+				(at -25.654 9.652 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser URL" "https://www.mouser.de/ProductDetail/onsemi-Fairchild/NC7SZ86P5X?qs=rFoKx6q3%2F92KKnFeg6gQbg%3D%3D"
+				(at 4.318 11.176 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "XOR 7SZ86 EAR99 7SZ logic gate circuit 5.4ns @ 5V 50pF 1mm 32mA 32mA 3.3V"
+				(at 4.318 11.176 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "DigiKey ID" "NC7SZ86P5XCT-ND"
+				(at -25.654 9.652 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Number" "NC7SZ86P5X"
+				(at -25.654 9.652 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Name" "onsemi / Fairchild Semiconductor"
+				(at -21.59 8.128 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Arrow ID" "NC7SZ86P5X"
+				(at -25.654 9.652 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "NC7SZ86P5X"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SC-88A-5_1P35X2P2_ONS SC-88A-5_1P35X2P2_ONS-M SC-88A-5_1P35X2P2_ONS-L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "NC7SZ86P5X_0_1"
+				(polyline
+					(pts
+						(xy 7.62 -3.048) (xy 19.05 -3.048)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 5.08) (xy 7.62 -3.048)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 19.05 -3.048) (xy 19.05 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 19.05 5.08) (xy 7.62 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 2.54 0)
+					(length 7.62)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 7.62)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 26.67 -1.27 180)
+					(length 7.62)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 26.67 1.27 180)
+					(length 7.62)
+					(name "Y"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 26.67 3.81 180)
+					(length 7.62)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "OroLink:RMCF0402FT10K0"
 			(pin_names
 				(offset 0.254)
@@ -3603,319 +3892,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "OroLink:SN74LVC1G08DBVR"
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "SN74LVC1G08DBVR"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" "OroLink:DBV0005A_N"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.ti.com/lit/gpn/sn74lvc1g08"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "1-ch, 2-input 1.65-V to 5.5-V 32 mA drive strength AND gate 5-SOT-23 -40 to 125"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mfr. Number" "SN74LVC1G08DBVR"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "DigiKey ID" "296-11601-1-ND"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mfr. Name" "Texas Instruments"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow ID" "SN74LVC1G08DBVR"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser ID" "595-SN74LVC1G08DBVR"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser URL" "https://www.mouser.de/ProductDetail/Texas-Instruments/SN74LVC1G08DBVR?qs=8yeEWhuAOtNjtL049wSCoQ%3D%3D"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "1-ch, 2-input 1.65-V to 5.5-V 32 mA drive strength AND gate 5-SOT-23 -40 to 125"
-				(at 0 -3 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "SN74LVC1G08DBVR"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "DBV0005A_N DBV0005A_M DBV0005A_L"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SN74LVC1G08DBVR_0_1"
-				(polyline
-					(pts
-						(xy -7.62 -5.08) (xy -7.62 5.08)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -7.62 5.08) (xy -6.35 5.08)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -6.35 -5.08) (xy -7.62 -5.08)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -6.35 -5.08) (xy 2.54 -5.08)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -6.35 5.08) (xy 2.54 5.08)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 2.54 -5.08)
-					(mid 7.62 0)
-					(end 2.54 5.08)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin input line
-					(at -12.7 2.54 0)
-					(length 5.08)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 -2.54 0)
-					(length 5.08)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -10.16 90)
-					(length 5.08)
-					(name "V-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 12.7 0 180)
-					(length 5.08)
-					(name "Y"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 10.16 270)
-					(length 5.08)
-					(name "V+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -11806,7 +11782,7 @@
 		(uuid "8554d999-2d0e-4115-8fec-142b5490ad20")
 	)
 	(junction
-		(at 311.15 224.79)
+		(at 314.96 227.33)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "85bd19de-7d96-4711-b400-37c3aa2201b1")
@@ -12415,7 +12391,7 @@
 	)
 	(wire
 		(pts
-			(xy 312.42 229.87) (xy 290.83 229.87)
+			(xy 316.23 229.87) (xy 294.64 229.87)
 		)
 		(stroke
 			(width 0)
@@ -12525,7 +12501,7 @@
 	)
 	(wire
 		(pts
-			(xy 290.83 224.79) (xy 311.15 224.79)
+			(xy 294.64 227.33) (xy 314.96 227.33)
 		)
 		(stroke
 			(width 0)
@@ -13315,16 +13291,6 @@
 	)
 	(wire
 		(pts
-			(xy 325.12 215.9) (xy 325.12 217.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4d5a87fb-79ed-410a-8cef-6666e9997b1a")
-	)
-	(wire
-		(pts
 			(xy 54.61 233.68) (xy 74.93 233.68)
 		)
 		(stroke
@@ -13462,6 +13428,16 @@
 			(type default)
 		)
 		(uuid "54d15b80-e96b-4d89-8b7d-fa40bddbb18f")
+	)
+	(wire
+		(pts
+			(xy 342.9 231.14) (xy 347.98 231.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55277bdf-47af-41a3-b59a-71f590a8eee2")
 	)
 	(wire
 		(pts
@@ -14225,7 +14201,7 @@
 	)
 	(wire
 		(pts
-			(xy 337.82 227.33) (xy 359.41 227.33)
+			(xy 342.9 228.6) (xy 364.49 228.6)
 		)
 		(stroke
 			(width 0)
@@ -15035,7 +15011,7 @@
 	)
 	(wire
 		(pts
-			(xy 295.91 217.17) (xy 293.37 217.17)
+			(xy 299.72 219.71) (xy 297.18 219.71)
 		)
 		(stroke
 			(width 0)
@@ -15405,7 +15381,7 @@
 	)
 	(wire
 		(pts
-			(xy 311.15 217.17) (xy 311.15 224.79)
+			(xy 314.96 219.71) (xy 314.96 227.33)
 		)
 		(stroke
 			(width 0)
@@ -15435,7 +15411,7 @@
 	)
 	(wire
 		(pts
-			(xy 311.15 217.17) (xy 308.61 217.17)
+			(xy 314.96 219.71) (xy 312.42 219.71)
 		)
 		(stroke
 			(width 0)
@@ -15535,7 +15511,7 @@
 	)
 	(wire
 		(pts
-			(xy 311.15 224.79) (xy 312.42 224.79)
+			(xy 314.96 227.33) (xy 316.23 227.33)
 		)
 		(stroke
 			(width 0)
@@ -15622,6 +15598,16 @@
 			(type default)
 		)
 		(uuid "d22bce61-c5c1-40aa-8dd1-7f1a625cccc3")
+	)
+	(wire
+		(pts
+			(xy 342.9 226.06) (xy 347.98 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d300f460-14ff-4da8-8f7c-d7ad3ecaaaae")
 	)
 	(wire
 		(pts
@@ -17307,7 +17293,7 @@
 		(uuid "3e83e396-a45a-42d7-9971-db37c1e3bea5")
 	)
 	(label "WKUP_INT_POLARITY"
-		(at 290.83 224.79 0)
+		(at 294.64 227.33 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18396,7 +18382,7 @@
 		(uuid "b370d9a2-12b9-4c63-a078-6749632c7833")
 	)
 	(label "EXTETH_~{INT}_OR_WKUP"
-		(at 359.41 227.33 180)
+		(at 364.49 228.6 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18869,7 +18855,7 @@
 		(uuid "f421debf-7fd4-463d-b76a-51a420bbae7d")
 	)
 	(label "EXTETH_~{INT}"
-		(at 290.83 229.87 0)
+		(at 294.64 229.87 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20436,7 +20422,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 325.12 215.9 0)
+		(at 347.98 226.06 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20445,7 +20431,7 @@
 		(fields_autoplaced yes)
 		(uuid "171580a0-f5cb-49b2-ab81-950ddae16368")
 		(property "Reference" "#PWR080"
-			(at 325.12 219.71 0)
+			(at 347.98 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20454,7 +20440,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 325.12 211.7669 0)
+			(at 347.98 221.9269 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20462,7 +20448,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 325.12 215.9 0)
+			(at 347.98 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20471,7 +20457,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 325.12 215.9 0)
+			(at 347.98 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20480,7 +20466,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 325.12 215.9 0)
+			(at 347.98 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22518,7 +22504,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 325.12 237.49 0)
+		(at 347.98 231.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22527,7 +22513,7 @@
 		(fields_autoplaced yes)
 		(uuid "30b1987a-d275-496f-819e-57ac4ba75a03")
 		(property "Reference" "#PWR081"
-			(at 325.12 243.84 0)
+			(at 347.98 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22536,7 +22522,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 325.12 241.6231 0)
+			(at 347.98 235.2731 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22544,7 +22530,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 325.12 237.49 0)
+			(at 347.98 231.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22553,7 +22539,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 325.12 237.49 0)
+			(at 347.98 231.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22562,7 +22548,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 325.12 237.49 0)
+			(at 347.98 231.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23719,7 +23705,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 293.37 217.17 0)
+		(at 297.18 219.71 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -23728,7 +23714,7 @@
 		(fields_autoplaced yes)
 		(uuid "47d9b831-2935-4c81-842f-9f39fd64d593")
 		(property "Reference" "#PWR0191"
-			(at 293.37 220.98 0)
+			(at 297.18 223.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23737,7 +23723,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 293.37 213.0369 0)
+			(at 297.18 215.5769 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23745,7 +23731,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 293.37 217.17 0)
+			(at 297.18 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23754,7 +23740,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 293.37 217.17 0)
+			(at 297.18 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23763,7 +23749,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 293.37 217.17 0)
+			(at 297.18 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25983,6 +25969,155 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
 					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:NC7SZ86P5X")
+		(at 316.23 229.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "67c1f16a-7eb7-4f5c-8049-b8c08e8a23e8")
+		(property "Reference" "U14"
+			(at 329.692 220.1791 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "NC7SZ86P5X"
+			(at 329.692 223.012 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:SC-88A-5_1P35X2P2_ONS"
+			(at 294.64 218.742 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/PowerSolutions/product.do?id=NC7SZ86P5X"
+			(at 320.548 215.694 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "XOR 7SZ86 EAR99 7SZ logic gate circuit 5.4ns @ 5V 50pF 1mm 32mA 32mA 3.3V"
+			(at 320.548 215.694 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "512-NC7SZ86P5X"
+			(at 290.576 220.218 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/onsemi-Fairchild/NC7SZ86P5X?qs=rFoKx6q3%2F92KKnFeg6gQbg%3D%3D"
+			(at 320.548 218.694 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "XOR 7SZ86 EAR99 7SZ logic gate circuit 5.4ns @ 5V 50pF 1mm 32mA 32mA 3.3V"
+			(at 320.548 218.694 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "NC7SZ86P5XCT-ND"
+			(at 290.576 220.218 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "NC7SZ86P5X"
+			(at 290.576 220.218 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "onsemi / Fairchild Semiconductor"
+			(at 294.64 221.742 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "NC7SZ86P5X"
+			(at 290.576 220.218 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9cbf2fe0-c6fd-4670-b794-e81f2842e2fa")
+		)
+		(pin "2"
+			(uuid "596a8afa-d7fc-4040-ae57-4282a67dc01b")
+		)
+		(pin "4"
+			(uuid "b35702de-ede5-4711-a4c0-849dae0e9782")
+		)
+		(pin "3"
+			(uuid "6a78d069-b7d1-4aa5-97c4-e9dde41f5ed0")
+		)
+		(pin "5"
+			(uuid "a814435b-cb15-40f2-811c-0cff960fb06e")
+		)
+		(instances
+			(project ""
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
+					(reference "U14")
 					(unit 1)
 				)
 			)
@@ -30873,7 +31008,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:RMCF0402FT10K0")
-		(at 308.61 217.17 0)
+		(at 312.42 219.71 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -30883,7 +31018,7 @@
 		(fields_autoplaced yes)
 		(uuid "c9370304-c84c-43bc-98bf-1f6ecd98de13")
 		(property "Reference" "R72"
-			(at 302.26 211.168 0)
+			(at 306.07 213.708 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -30891,7 +31026,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 302.26 214.0009 0)
+			(at 306.07 216.5409 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -30899,7 +31034,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:STA_RMCF0402_STP"
-			(at 308.61 217.17 0)
+			(at 312.42 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30909,7 +31044,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/385/SEI_RMCF_RMCP-3077565.pdf"
-			(at 308.61 217.17 0)
+			(at 312.42 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30919,7 +31054,7 @@
 			)
 		)
 		(property "Description" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
-			(at 308.61 217.17 0)
+			(at 312.42 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30928,7 +31063,7 @@
 			)
 		)
 		(property "Description_1" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
-			(at 308.61 220.17 0)
+			(at 312.42 222.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30938,7 +31073,7 @@
 			)
 		)
 		(property "Mfr. Name" "Stackpole International"
-			(at 308.61 220.17 0)
+			(at 312.42 222.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30948,7 +31083,7 @@
 			)
 		)
 		(property "DigiKey ID" "RMCF0402FT10K0CT-ND"
-			(at 308.61 220.17 0)
+			(at 312.42 222.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30958,7 +31093,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/SEI-Stackpole/RMCF0402FT10K0?qs=FESYatJ8odLDpjm%252BwxiA1Q%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=708-RMCF0402FT10K0&utm_content=SEI%20Stackpole"
-			(at 308.61 220.17 0)
+			(at 312.42 222.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30968,7 +31103,7 @@
 			)
 		)
 		(property "Arrow ID" "RMCF0402FT10K0"
-			(at 308.61 220.17 0)
+			(at 312.42 222.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30978,7 +31113,7 @@
 			)
 		)
 		(property "Mfr. Number" "RMCF0402FT10K0"
-			(at 308.61 220.17 0)
+			(at 312.42 222.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30988,7 +31123,7 @@
 			)
 		)
 		(property "Mouser ID" "708-RMCF0402FT10K0"
-			(at 308.61 220.17 0)
+			(at 312.42 222.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32160,155 +32295,6 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
 					(reference "J13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "OroLink:SN74LVC1G08DBVR")
-		(at 325.12 227.33 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dd521eb2-3ec4-4b68-8f72-1b92e98678dc")
-		(property "Reference" "U9"
-			(at 344.4956 220.5721 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "SN74LVC1G08DBVR"
-			(at 344.4956 223.405 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "OroLink:DBV0005A_N"
-			(at 325.12 227.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/gpn/sn74lvc1g08"
-			(at 325.12 227.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "1-ch, 2-input 1.65-V to 5.5-V 32 mA drive strength AND gate 5-SOT-23 -40 to 125"
-			(at 325.12 227.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mfr. Number" "SN74LVC1G08DBVR"
-			(at 325.12 230.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey ID" "296-11601-1-ND"
-			(at 325.12 230.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mfr. Name" "Texas Instruments"
-			(at 325.12 230.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow ID" "SN74LVC1G08DBVR"
-			(at 325.12 230.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser ID" "595-SN74LVC1G08DBVR"
-			(at 325.12 230.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Texas-Instruments/SN74LVC1G08DBVR?qs=8yeEWhuAOtNjtL049wSCoQ%3D%3D"
-			(at 325.12 230.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "1-ch, 2-input 1.65-V to 5.5-V 32 mA drive strength AND gate 5-SOT-23 -40 to 125"
-			(at 325.12 230.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "70dcce50-cb5c-439c-8c70-79ec8d1831a5")
-		)
-		(pin "5"
-			(uuid "c7bf8e49-65a1-4637-9cb6-d649b5bd2d76")
-		)
-		(pin "4"
-			(uuid "06cc87f2-15cf-4fb6-8e76-dd71318a5e5d")
-		)
-		(pin "1"
-			(uuid "590e8fcc-784a-480f-b53d-275a2f1ae4ba")
-		)
-		(pin "2"
-			(uuid "7cf7f2d3-7af9-424d-8765-1c40c17a6203")
-		)
-		(instances
-			(project ""
-				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
-					(reference "U9")
 					(unit 1)
 				)
 			)
