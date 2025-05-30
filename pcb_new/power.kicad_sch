@@ -1997,6 +1997,399 @@
 				)
 			)
 		)
+		(symbol "OroLink:CRCW04024K70FKEDHP"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 5.715 3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "CRCW04024K70FKEDHP"
+				(at 6.35 -3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "OroLink:RES_CRCW_0402_VIS"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.vishay.com/doc?20043"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "CRCW0402-HP 100 4K7 1% ET7 E3"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser ID" "71-CRCW04024K70FKEDH"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser URL" "https://www.mouser.de/ProductDetail/Vishay-Dale/CRCW04024K70FKEDHP?qs=k2%2FDWSARqgH3ASlI4vM3KQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=71-CRCW04024K70FKEDH&utm_content=Vishay"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Number" "CRCW04024K70FKEDHP"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "DigiKey ID" "541-4.70KYCT-ND"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Name" "Vishay"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "CRCW0402-HP 100 4K7 1% ET7 E3"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Arrow ID" "CRCW04024K70FKEDHP"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "CRCW04024K70FKEDHP"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "RES_CRCW_0402_VIS RES_CRCW_0402_VIS-M RES_CRCW_0402_VIS-L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CRCW04024K70FKEDHP_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.175 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 1.27) (xy 4.445 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 -1.27) (xy 5.715 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 1.27) (xy 6.985 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.985 -1.27) (xy 8.255 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.255 1.27) (xy 9.525 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 9.525 -1.27) (xy 10.16 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 12.7 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "CRCW04024K70FKEDHP_1_2"
+				(polyline
+					(pts
+						(xy -1.27 3.175) (xy 1.27 4.445)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 5.715) (xy 1.27 6.985)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 8.255) (xy 1.27 9.525)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy -1.27 3.175)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 4.445) (xy -1.27 5.715)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 6.985) (xy -1.27 8.255)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 9.525) (xy 0 10.16)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 12.7 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "OroLink:ERJ-3GEYJ563V"
 			(pin_names
 				(offset 0.254)
@@ -10302,15 +10695,15 @@
 		)
 	)
 	(symbol
-		(lib_id "OroLink:SG73P2ATTD102J")
-		(at 59.69 74.93 0)
+		(lib_id "OroLink:CRCW04024K70FKEDHP")
+		(at 72.39 74.93 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "2c6460ab-dfe0-452b-a2ef-34eed355afbb")
+		(uuid "2d4851fb-a934-4cf9-b0e7-5832e1cf4c07")
 		(property "Reference" "R12"
 			(at 66.04 68.928 0)
 			(effects
@@ -10319,7 +10712,7 @@
 				)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "4.7K"
 			(at 66.04 71.7609 0)
 			(effects
 				(font
@@ -10327,8 +10720,8 @@
 				)
 			)
 		)
-		(property "Footprint" "OroLink:RES_SG73P_2A_KOA"
-			(at 59.69 74.93 0)
+		(property "Footprint" "OroLink:RES_CRCW_0402_VIS-L"
+			(at 72.39 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10337,8 +10730,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "null"
-			(at 59.69 74.93 0)
+		(property "Datasheet" "https://www.vishay.com/doc?20043"
+			(at 72.39 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10347,8 +10740,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Res Thick Film 0805 1K Ohm 5% 0.5W(1/2W) ±100ppm/C Pad SMD Automotive T/R"
-			(at 59.69 74.93 0)
+		(property "Description" "CRCW0402-HP 100 4K7 1% ET7 E3"
+			(at 72.39 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10356,18 +10749,8 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser URL" "null"
-			(at 59.69 77.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow ID" "SG73P2ATTD102J"
-			(at 59.69 77.93 0)
+		(property "Mouser ID" "71-CRCW04024K70FKEDH"
+			(at 72.39 71.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10376,8 +10759,8 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser ID" "660-SG73P2ATTD102J"
-			(at 59.69 77.93 0)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Vishay-Dale/CRCW04024K70FKEDHP?qs=k2%2FDWSARqgH3ASlI4vM3KQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=71-CRCW04024K70FKEDH&utm_content=Vishay"
+			(at 72.39 71.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10386,8 +10769,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description_1" "Res Thick Film 0805 1K Ohm 5% 0.5W(1/2W) ±100ppm/C Pad SMD Automotive T/R"
-			(at 59.69 77.93 0)
+		(property "Mfr. Number" "CRCW04024K70FKEDHP"
+			(at 72.39 71.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10396,8 +10779,8 @@
 				(hide yes)
 			)
 		)
-		(property "DigiKey ID" "2019-SG73P2ATTD102JCT-ND"
-			(at 59.69 77.93 0)
+		(property "DigiKey ID" "541-4.70KYCT-ND"
+			(at 72.39 71.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10406,8 +10789,8 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr. Number" "SG73P2ATTD102J"
-			(at 59.69 77.93 0)
+		(property "Mfr. Name" "Vishay"
+			(at 72.39 71.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10416,8 +10799,18 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr. Name" "KOA Speer"
-			(at 59.69 77.93 0)
+		(property "Description_1" "CRCW0402-HP 100 4K7 1% ET7 E3"
+			(at 72.39 71.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "CRCW04024K70FKEDHP"
+			(at 72.39 71.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10427,13 +10820,13 @@
 			)
 		)
 		(pin "2"
-			(uuid "0caefa68-1698-443b-a3d7-201b119bc994")
+			(uuid "b8437f94-5531-4b80-9daa-3b518331d559")
 		)
 		(pin "1"
-			(uuid "66b7f3ba-c50b-4f6f-86b4-4264da755e57")
+			(uuid "b026f656-1384-4736-89a5-273df5f06cae")
 		)
 		(instances
-			(project ""
+			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
 					(reference "R12")
 					(unit 1)
