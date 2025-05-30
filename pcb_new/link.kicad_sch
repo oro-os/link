@@ -13271,6 +13271,16 @@
 	)
 	(wire
 		(pts
+			(xy 349.25 218.44) (xy 351.79 218.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b2b4c00-ae20-4ada-8cfc-ffef9eea3cb4")
+	)
+	(wire
+		(pts
 			(xy 382.27 222.25) (xy 384.81 222.25)
 		)
 		(stroke
@@ -14131,6 +14141,16 @@
 	)
 	(wire
 		(pts
+			(xy 365.76 228.6) (xy 365.76 218.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d0e3d90-89c9-4423-a04a-a245d7bab338")
+	)
+	(wire
+		(pts
 			(xy 33.02 99.06) (xy 54.61 99.06)
 		)
 		(stroke
@@ -14201,7 +14221,7 @@
 	)
 	(wire
 		(pts
-			(xy 342.9 228.6) (xy 364.49 228.6)
+			(xy 342.9 228.6) (xy 365.76 228.6)
 		)
 		(stroke
 			(width 0)
@@ -14961,6 +14981,16 @@
 	)
 	(wire
 		(pts
+			(xy 365.76 218.44) (xy 364.49 218.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2b1464f-964c-4928-8319-7c50bcdc7211")
+	)
+	(wire
+		(pts
 			(xy 328.93 110.49) (xy 326.39 110.49)
 		)
 		(stroke
@@ -15011,7 +15041,7 @@
 	)
 	(wire
 		(pts
-			(xy 299.72 219.71) (xy 297.18 219.71)
+			(xy 299.72 218.44) (xy 297.18 218.44)
 		)
 		(stroke
 			(width 0)
@@ -15381,7 +15411,7 @@
 	)
 	(wire
 		(pts
-			(xy 314.96 219.71) (xy 314.96 227.33)
+			(xy 314.96 218.44) (xy 314.96 227.33)
 		)
 		(stroke
 			(width 0)
@@ -15411,7 +15441,7 @@
 	)
 	(wire
 		(pts
-			(xy 314.96 219.71) (xy 312.42 219.71)
+			(xy 314.96 218.44) (xy 312.42 218.44)
 		)
 		(stroke
 			(width 0)
@@ -23705,7 +23735,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 297.18 219.71 0)
+		(at 297.18 218.44 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -23714,7 +23744,7 @@
 		(fields_autoplaced yes)
 		(uuid "47d9b831-2935-4c81-842f-9f39fd64d593")
 		(property "Reference" "#PWR0191"
-			(at 297.18 223.52 0)
+			(at 297.18 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23723,7 +23753,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 297.18 215.5769 0)
+			(at 297.18 214.3069 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23731,7 +23761,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 297.18 219.71 0)
+			(at 297.18 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23740,7 +23770,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 297.18 219.71 0)
+			(at 297.18 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23749,7 +23779,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 297.18 219.71 0)
+			(at 297.18 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30039,6 +30069,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 349.25 218.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bbd9261f-2b65-4c8d-82a7-43b33c3bfc8c")
+		(property "Reference" "#PWR024"
+			(at 349.25 222.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 349.25 214.3069 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 349.25 218.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 349.25 218.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 349.25 218.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7822403e-cfe7-49e6-948a-8e4699cf2b09")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "OroLink:0402B103J160CT")
 		(at 318.77 100.33 0)
 		(unit 1)
@@ -30729,6 +30825,147 @@
 	)
 	(symbol
 		(lib_id "OroLink:RMCF0402FT10K0")
+		(at 364.49 218.44 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c149d7c5-fffa-4a9e-b03c-c6fd673e930a")
+		(property "Reference" "R82"
+			(at 358.14 212.438 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 358.14 215.2709 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:STA_RMCF0402_STP"
+			(at 364.49 218.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/385/SEI_RMCF_RMCP-3077565.pdf"
+			(at 364.49 218.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
+			(at 364.49 218.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
+			(at 364.49 221.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Stackpole International"
+			(at 364.49 221.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "RMCF0402FT10K0CT-ND"
+			(at 364.49 221.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/SEI-Stackpole/RMCF0402FT10K0?qs=FESYatJ8odLDpjm%252BwxiA1Q%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=708-RMCF0402FT10K0&utm_content=SEI%20Stackpole"
+			(at 364.49 221.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "RMCF0402FT10K0"
+			(at 364.49 221.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "RMCF0402FT10K0"
+			(at 364.49 221.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "708-RMCF0402FT10K0"
+			(at 364.49 221.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "38e97aa0-816c-4a29-816c-a653008cb5a9")
+		)
+		(pin "2"
+			(uuid "e9b9b25f-7eac-4908-a8ee-6e7113143b67")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
+					(reference "R82")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:RMCF0402FT10K0")
 		(at 355.6 191.77 0)
 		(mirror y)
 		(unit 1)
@@ -31008,7 +31245,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:RMCF0402FT10K0")
-		(at 312.42 219.71 0)
+		(at 312.42 218.44 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -31018,7 +31255,7 @@
 		(fields_autoplaced yes)
 		(uuid "c9370304-c84c-43bc-98bf-1f6ecd98de13")
 		(property "Reference" "R72"
-			(at 306.07 213.708 0)
+			(at 306.07 212.438 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -31026,7 +31263,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 306.07 216.5409 0)
+			(at 306.07 215.2709 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -31034,7 +31271,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:STA_RMCF0402_STP"
-			(at 312.42 219.71 0)
+			(at 312.42 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31044,7 +31281,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/385/SEI_RMCF_RMCP-3077565.pdf"
-			(at 312.42 219.71 0)
+			(at 312.42 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31054,7 +31291,7 @@
 			)
 		)
 		(property "Description" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
-			(at 312.42 219.71 0)
+			(at 312.42 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31063,7 +31300,7 @@
 			)
 		)
 		(property "Description_1" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
-			(at 312.42 222.71 0)
+			(at 312.42 221.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31073,7 +31310,7 @@
 			)
 		)
 		(property "Mfr. Name" "Stackpole International"
-			(at 312.42 222.71 0)
+			(at 312.42 221.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31083,7 +31320,7 @@
 			)
 		)
 		(property "DigiKey ID" "RMCF0402FT10K0CT-ND"
-			(at 312.42 222.71 0)
+			(at 312.42 221.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31093,7 +31330,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/SEI-Stackpole/RMCF0402FT10K0?qs=FESYatJ8odLDpjm%252BwxiA1Q%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=708-RMCF0402FT10K0&utm_content=SEI%20Stackpole"
-			(at 312.42 222.71 0)
+			(at 312.42 221.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31103,7 +31340,7 @@
 			)
 		)
 		(property "Arrow ID" "RMCF0402FT10K0"
-			(at 312.42 222.71 0)
+			(at 312.42 221.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31113,7 +31350,7 @@
 			)
 		)
 		(property "Mfr. Number" "RMCF0402FT10K0"
-			(at 312.42 222.71 0)
+			(at 312.42 221.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31123,7 +31360,7 @@
 			)
 		)
 		(property "Mouser ID" "708-RMCF0402FT10K0"
-			(at 312.42 222.71 0)
+			(at 312.42 221.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
