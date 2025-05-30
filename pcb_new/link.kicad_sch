@@ -11950,6 +11950,12 @@
 		(uuid "bcdaa179-4321-41ac-83c8-f2a599ae5e05")
 	)
 	(junction
+		(at 163.83 270.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c1f4a2da-25e7-4582-9e7c-823f356ca936")
+	)
+	(junction
 		(at 316.23 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -12639,7 +12645,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 270.51) (xy 198.12 270.51)
+			(xy 199.39 270.51) (xy 209.55 270.51)
 		)
 		(stroke
 			(width 0)
@@ -12869,7 +12875,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 273.05) (xy 222.25 273.05)
+			(xy 246.38 273.05) (xy 233.68 273.05)
 		)
 		(stroke
 			(width 0)
@@ -13009,7 +13015,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 273.05) (xy 198.12 273.05)
+			(xy 199.39 273.05) (xy 209.55 273.05)
 		)
 		(stroke
 			(width 0)
@@ -13336,6 +13342,16 @@
 			(type default)
 		)
 		(uuid "4f5b151f-91e2-4a6d-b488-8574a7a13d0e")
+	)
+	(wire
+		(pts
+			(xy 163.83 270.51) (xy 168.91 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f5b96d2-4612-4884-bb40-1784e9de439b")
 	)
 	(wire
 		(pts
@@ -13819,7 +13835,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 273.05) (xy 205.74 273.05)
+			(xy 228.6 273.05) (xy 217.17 273.05)
 		)
 		(stroke
 			(width 0)
@@ -14329,7 +14345,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 270.51) (xy 222.25 270.51)
+			(xy 246.38 270.51) (xy 233.68 270.51)
 		)
 		(stroke
 			(width 0)
@@ -14579,6 +14595,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 273.05) (xy 163.83 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9438d6fa-5251-4da6-a8bd-2b257ff22523")
+	)
+	(wire
+		(pts
 			(xy 260.35 196.85) (xy 267.97 196.85)
 		)
 		(stroke
@@ -14716,6 +14742,16 @@
 			(type default)
 		)
 		(uuid "a14cada2-51d7-4e2d-b982-6277454434c3")
+	)
+	(wire
+		(pts
+			(xy 181.61 270.51) (xy 194.31 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2564ae6-caa3-48d5-99af-ee74cd2f38a2")
 	)
 	(wire
 		(pts
@@ -14886,6 +14922,16 @@
 			(type default)
 		)
 		(uuid "b0f06eff-fc62-45af-b0f7-d70ac498086c")
+	)
+	(wire
+		(pts
+			(xy 163.83 269.24) (xy 163.83 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b253478d-04c3-4ef7-a7a4-84b15dc3ea40")
 	)
 	(wire
 		(pts
@@ -15159,7 +15205,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 270.51) (xy 205.74 270.51)
+			(xy 228.6 270.51) (xy 217.17 270.51)
 		)
 		(stroke
 			(width 0)
@@ -15759,6 +15805,16 @@
 	)
 	(wire
 		(pts
+			(xy 181.61 273.05) (xy 194.31 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de86e69e-b267-44a9-870c-4f2b46968363")
+	)
+	(wire
+		(pts
 			(xy 33.02 81.28) (xy 54.61 81.28)
 		)
 		(stroke
@@ -15859,7 +15915,7 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 270.51) (xy 255.27 270.51)
+			(xy 254 270.51) (xy 266.7 270.51)
 		)
 		(stroke
 			(width 0)
@@ -16429,6 +16485,16 @@
 	)
 	(wire
 		(pts
+			(xy 163.83 270.51) (xy 163.83 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb9a0b30-c21d-40be-b1cd-1f7660ca04cb")
+	)
+	(wire
+		(pts
 			(xy 209.55 207.01) (xy 210.82 207.01)
 		)
 		(stroke
@@ -16539,7 +16605,7 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 273.05) (xy 255.27 273.05)
+			(xy 254 273.05) (xy 266.7 273.05)
 		)
 		(stroke
 			(width 0)
@@ -16655,7 +16721,7 @@
 	)
 	(rectangle
 		(start 151.638 217.424)
-		(end 275.59 278.13)
+		(end 275.59 279.146)
 		(stroke
 			(width 0)
 			(type dash)
@@ -16989,6 +17055,17 @@
 		)
 		(uuid "12f45ea9-6317-4a8b-9f1a-35a43a0b22c8")
 	)
+	(label "USART2_TX"
+		(at 194.31 273.05 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "12fa1b40-becd-4086-b225-435c3bb1d03c")
+	)
 	(label "WKUP_INT_POLARITY"
 		(at 162.56 167.64 0)
 		(fields_autoplaced yes)
@@ -17133,7 +17210,7 @@
 		(uuid "280e7b09-5315-48f6-9a58-80fb723fee23")
 	)
 	(label "RS232_TX"
-		(at 187.96 273.05 0)
+		(at 199.39 273.05 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17142,6 +17219,17 @@
 			(justify left bottom)
 		)
 		(uuid "2fb78d60-a78d-4bbd-acf0-725935dd0a25")
+	)
+	(label "USART2_CTS"
+		(at 194.31 270.51 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2ffd6635-5a02-4cf2-a98a-ceb421c5e143")
 	)
 	(label "SPI3_MISO"
 		(at 74.93 233.68 180)
@@ -17298,7 +17386,7 @@
 		(uuid "4ec00771-6aea-4767-81b1-df003b860d94")
 	)
 	(label "USART2_CTS"
-		(at 255.27 273.05 180)
+		(at 266.7 273.05 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17529,7 +17617,7 @@
 		(uuid "5fd4f9fc-d025-4849-8569-6d25067af5e2")
 	)
 	(label "RS232_RX"
-		(at 187.96 270.51 0)
+		(at 199.39 270.51 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17551,7 +17639,7 @@
 		(uuid "63c385d4-86f1-4d2d-8b9c-cdca97549d53")
 	)
 	(label "USART2_RX"
-		(at 222.25 273.05 0)
+		(at 233.68 273.05 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17936,7 +18024,7 @@
 		(uuid "92d6d9cb-df95-47d1-8228-8f2b754099e0")
 	)
 	(label "RS232_RTS"
-		(at 217.17 270.51 180)
+		(at 228.6 270.51 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17947,7 +18035,7 @@
 		(uuid "9754069b-68ff-4583-a212-73b40a10cce1")
 	)
 	(label "USART2_TX"
-		(at 222.25 270.51 0)
+		(at 233.68 270.51 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18244,7 +18332,7 @@
 		(uuid "afaa7309-c3af-4e06-a165-c9f70a207ceb")
 	)
 	(label "USART2_RTS"
-		(at 255.27 270.51 180)
+		(at 266.7 270.51 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18695,7 +18783,7 @@
 		(uuid "eb530c73-452d-44dd-99f9-4c47b8305a75")
 	)
 	(label "RS232_CTS"
-		(at 217.17 273.05 180)
+		(at 228.6 273.05 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -27023,6 +27111,146 @@
 		)
 	)
 	(symbol
+		(lib_id "OroLink:RMCF0402FT10K0")
+		(at 181.61 270.51 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "82c76ea7-9594-460c-885d-aa41185e471d")
+		(property "Reference" "R80"
+			(at 170.942 267.716 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 179.832 267.7549 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:STA_RMCF0402_STP"
+			(at 181.61 270.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/385/SEI_RMCF_RMCP-3077565.pdf"
+			(at 181.61 270.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
+			(at 181.61 270.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
+			(at 181.61 273.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Stackpole International"
+			(at 181.61 273.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "RMCF0402FT10K0CT-ND"
+			(at 181.61 273.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/SEI-Stackpole/RMCF0402FT10K0?qs=FESYatJ8odLDpjm%252BwxiA1Q%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=708-RMCF0402FT10K0&utm_content=SEI%20Stackpole"
+			(at 181.61 273.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "RMCF0402FT10K0"
+			(at 181.61 273.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "RMCF0402FT10K0"
+			(at 181.61 273.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "708-RMCF0402FT10K0"
+			(at 181.61 273.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7fbe330b-24b5-4058-97e9-6576810a15ee")
+		)
+		(pin "2"
+			(uuid "7b15dd53-9b63-40be-8196-51a3a26e500f")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
+					(reference "R80")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 209.55 156.21 270)
 		(unit 1)
@@ -28116,6 +28344,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 163.83 269.24 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a12e69da-d3d9-48cf-a5e4-95ea186c7982")
+		(property "Reference" "#PWR0181"
+			(at 163.83 273.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 163.83 265.1069 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 163.83 269.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 163.83 269.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 163.83 269.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1e26be33-ec2a-4fc2-a860-4701e0414179")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
+					(reference "#PWR0181")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 287.02 83.82 0)
 		(unit 1)
@@ -28183,7 +28477,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:68021-204HLF")
-		(at 234.95 267.97 0)
+		(at 246.38 267.97 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -28191,7 +28485,7 @@
 		(dnp no)
 		(uuid "adf146f1-efae-4b58-a19c-ab1dc3cd65d3")
 		(property "Reference" "J11"
-			(at 238.76 262.2437 0)
+			(at 250.19 262.2437 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28199,7 +28493,7 @@
 			)
 		)
 		(property "Value" "68021-204HLF"
-			(at 238.76 264.668 0)
+			(at 250.19 264.668 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28207,7 +28501,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:2x2 4p 2.54 pitch"
-			(at 234.95 267.97 0)
+			(at 246.38 267.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28216,7 +28510,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/boardwiretoboard/bwb_bergstik.pdf"
-			(at 234.95 267.97 0)
+			(at 246.38 267.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28225,7 +28519,7 @@
 			)
 		)
 		(property "Description" " Headers & Wire Housings 4P SR UNSHRD HRD .38 GOLD OVER NI"
-			(at 234.95 267.97 0)
+			(at 246.38 267.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28234,7 +28528,7 @@
 			)
 		)
 		(property "Mouser ID Number" "649-68021-204HLF"
-			(at 234.95 267.97 0)
+			(at 246.38 267.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28243,7 +28537,7 @@
 			)
 		)
 		(property "Mouser Stock URL" "https://www.mouser.de/ProductDetail/Amphenol-FCI/68021-204HLF?qs=QKvFUfBIyQLYRGZzFGyTzg%3D%3D"
-			(at 234.95 267.97 0)
+			(at 246.38 267.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28252,7 +28546,7 @@
 			)
 		)
 		(property "Note" "UART HEADER"
-			(at 238.76 267.0923 0)
+			(at 250.19 267.0923 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30763,6 +31057,146 @@
 		)
 	)
 	(symbol
+		(lib_id "OroLink:RMCF0402FT10K0")
+		(at 181.61 273.05 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d4a1a61c-aa86-4087-b53c-dd05a337eb0e")
+		(property "Reference" "R81"
+			(at 170.688 276.5671 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 179.578 276.606 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:STA_RMCF0402_STP"
+			(at 181.61 273.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/385/SEI_RMCF_RMCP-3077565.pdf"
+			(at 181.61 273.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
+			(at 181.61 273.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
+			(at 181.61 276.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Stackpole International"
+			(at 181.61 276.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "RMCF0402FT10K0CT-ND"
+			(at 181.61 276.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/SEI-Stackpole/RMCF0402FT10K0?qs=FESYatJ8odLDpjm%252BwxiA1Q%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=708-RMCF0402FT10K0&utm_content=SEI%20Stackpole"
+			(at 181.61 276.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "RMCF0402FT10K0"
+			(at 181.61 276.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "RMCF0402FT10K0"
+			(at 181.61 276.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "708-RMCF0402FT10K0"
+			(at 181.61 276.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7ee65459-2d5d-40e4-96c0-9db8e5c98bcf")
+		)
+		(pin "2"
+			(uuid "4e5d4ddf-032b-42c3-a36c-0656e4989ba4")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
+					(reference "R81")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "OroLink:STM32F479VGT6")
 		(at 148.59 48.26 0)
 		(unit 2)
@@ -32961,7 +33395,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:68021-204HLF")
-		(at 198.12 267.97 0)
+		(at 209.55 267.97 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -32969,7 +33403,7 @@
 		(dnp no)
 		(uuid "f7cae89e-539c-42b7-9e9d-570963a701a1")
 		(property "Reference" "J12"
-			(at 201.93 262.2437 0)
+			(at 213.36 262.2437 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32977,7 +33411,7 @@
 			)
 		)
 		(property "Value" "68021-204HLF"
-			(at 201.93 264.668 0)
+			(at 213.36 264.668 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32985,7 +33419,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:2x2 4p 2.54 pitch"
-			(at 198.12 267.97 0)
+			(at 209.55 267.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32994,7 +33428,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/boardwiretoboard/bwb_bergstik.pdf"
-			(at 198.12 267.97 0)
+			(at 209.55 267.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33003,7 +33437,7 @@
 			)
 		)
 		(property "Description" " Headers & Wire Housings 4P SR UNSHRD HRD .38 GOLD OVER NI"
-			(at 198.12 267.97 0)
+			(at 209.55 267.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33012,7 +33446,7 @@
 			)
 		)
 		(property "Mouser ID Number" "649-68021-204HLF"
-			(at 198.12 267.97 0)
+			(at 209.55 267.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33021,7 +33455,7 @@
 			)
 		)
 		(property "Mouser Stock URL" "https://www.mouser.de/ProductDetail/Amphenol-FCI/68021-204HLF?qs=QKvFUfBIyQLYRGZzFGyTzg%3D%3D"
-			(at 198.12 267.97 0)
+			(at 209.55 267.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33030,7 +33464,7 @@
 			)
 		)
 		(property "Note" "RS-232 HEADER"
-			(at 201.93 267.0923 0)
+			(at 213.36 267.0923 0)
 			(effects
 				(font
 					(size 1.27 1.27)
