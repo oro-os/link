@@ -5889,6 +5889,10 @@
 		(at 254 80.01)
 		(uuid "a4376430-1e05-4b81-96a8-a1483034d7fb")
 	)
+	(no_connect
+		(at 171.45 77.47)
+		(uuid "d45a868c-5521-4a2c-bef4-1c27d080272e")
+	)
 	(wire
 		(pts
 			(xy 177.8 157.48) (xy 184.15 157.48)
@@ -6401,6 +6405,16 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 74.93) (xy 121.92 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4eca2f2b-4c03-49e7-866a-34160e1254a2")
+	)
+	(wire
+		(pts
 			(xy 31.75 48.26) (xy 31.75 40.64)
 		)
 		(stroke
@@ -6478,6 +6492,16 @@
 			(type default)
 		)
 		(uuid "5c77f511-0032-455a-930f-6366f53cc840")
+	)
+	(wire
+		(pts
+			(xy 130.81 77.47) (xy 116.84 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5dc45761-1eb1-4c66-b1d6-386a5f533beb")
 	)
 	(wire
 		(pts
@@ -6598,6 +6622,16 @@
 			(type default)
 		)
 		(uuid "67484629-89f2-4bda-8b20-3f64fcaab4d2")
+	)
+	(wire
+		(pts
+			(xy 121.92 80.01) (xy 130.81 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67539a97-9bf2-4136-a393-685e0b843839")
 	)
 	(wire
 		(pts
@@ -7071,6 +7105,16 @@
 	)
 	(wire
 		(pts
+			(xy 171.45 74.93) (xy 182.88 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af54d0d4-e7a0-447b-b6a1-c7e6a3e059f3")
+	)
+	(wire
+		(pts
 			(xy 161.29 110.49) (xy 161.29 115.57)
 		)
 		(stroke
@@ -7188,6 +7232,16 @@
 			(type default)
 		)
 		(uuid "c9552bfd-4e08-4026-8b79-f98b760faa89")
+	)
+	(wire
+		(pts
+			(xy 171.45 80.01) (xy 182.88 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca609caa-67cd-4259-8860-2168a6b9ac3b")
 	)
 	(wire
 		(pts
@@ -7431,6 +7485,16 @@
 	)
 	(wire
 		(pts
+			(xy 116.84 77.47) (xy 116.84 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7326d46-0882-495c-8ae1-4009818c9d75")
+	)
+	(wire
+		(pts
 			(xy 73.66 73.66) (xy 73.66 78.74)
 		)
 		(stroke
@@ -7579,6 +7643,16 @@
 		)
 		(uuid "ff5fd3e6-6471-49f7-b07c-23fb21280930")
 	)
+	(text "500mA USB2 RATING = 56K -> +5V"
+		(exclude_from_sim no)
+		(at 212.598 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0891bf3a-1853-4a8a-b34e-b0bf5644b897")
+	)
 	(text "NOTE: SHOULD BE PHYSICALLY CLOSE TO CPEN_AL @ MOSFET"
 		(exclude_from_sim no)
 		(at 50.546 94.996 0)
@@ -7697,6 +7771,17 @@
 			(justify right bottom)
 		)
 		(uuid "3b101b22-e37e-4a87-a742-6c7965ea2f37")
+	)
+	(label "HS_CC2"
+		(at 182.88 74.93 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3ebe9b0c-26fc-4621-b13b-2e1537569b65")
 	)
 	(label "HS_D-"
 		(at 182.88 49.53 180)
@@ -7819,6 +7904,17 @@
 		)
 		(uuid "89d50ecf-76a5-4f78-9f0d-ca8d63392532")
 	)
+	(label "HS_CC1"
+		(at 121.92 80.01 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "984c8d4e-ad15-41a0-b6e7-af5222b423af")
+	)
 	(label "CPEN_AH"
 		(at 138.43 167.64 180)
 		(fields_autoplaced yes)
@@ -7851,6 +7947,17 @@
 			(justify right bottom)
 		)
 		(uuid "e612c0e5-0456-4549-a3a3-d5ebdad4ccec")
+	)
+	(label "HS_CC2"
+		(at 121.92 74.93 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e7bf56d0-33dd-4e21-a7af-c9deaccbe3ee")
 	)
 	(label "HS_CC2"
 		(at 210.82 30.48 0)
@@ -7895,6 +8002,17 @@
 			(justify right bottom)
 		)
 		(uuid "f3c0cb90-5931-4c38-abc7-d0e9f89530b0")
+	)
+	(label "HS_CC1"
+		(at 182.88 80.01 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f8836750-868d-4e60-80a5-906201aada6a")
 	)
 	(label "HS_D+"
 		(at 121.92 54.61 0)
@@ -13475,6 +13593,158 @@
 		)
 	)
 	(symbol
+		(lib_id "OroLink:USBLC6-2P6")
+		(at 130.81 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d28ad287-da42-4c87-9353-8c6c5dd905c4")
+		(property "Reference" "CR10"
+			(at 151.13 65.1561 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "USBLC6-2P6"
+			(at 151.13 67.989 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:SOT-666_STM"
+			(at 130.81 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/389/usblc6_2-1852789.pdf"
+			(at 130.81 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ESD Protection for USB 2.0 High Speed"
+			(at 130.81 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "USBLC6-2P6"
+			(at 130.81 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "USBLC6-2P6"
+			(at 130.81 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "ESD Protection for USB 2.0 High Speed"
+			(at 130.81 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "STMicroelectronics"
+			(at 130.81 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "511-USBLC6-2P6"
+			(at 130.81 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/STMicroelectronics/USBLC6-2P6?qs=6ARB0lp6jlViGcbUSvj1Mw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=511-USBLC6-2P6&utm_content=STMicroelectronics"
+			(at 130.81 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "497-5026-1-ND"
+			(at 130.81 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ca9c7086-e0ea-44b7-b37d-e0927ec7e94a")
+		)
+		(pin "2"
+			(uuid "d9449ae0-26bf-4ffa-a944-87956367577a")
+		)
+		(pin "3"
+			(uuid "ae386312-77e4-4e00-9bce-1e92048a24c0")
+		)
+		(pin "5"
+			(uuid "64f23939-f70a-4c0f-a61a-4a89b530f090")
+		)
+		(pin "4"
+			(uuid "9d14fb03-9069-4e79-9de6-18bb32802b42")
+		)
+		(pin "6"
+			(uuid "b8466405-f81b-49ca-a364-cdcff4e89e44")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/96a85769-3dbc-4fdc-a9f7-f5e880a87ae8"
+					(reference "CR10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "OroLink:CAHCT1G14QDBVRQ1")
 		(at 29.21 82.55 0)
 		(unit 1)
@@ -14478,6 +14748,72 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/96a85769-3dbc-4fdc-a9f7-f5e880a87ae8"
 					(reference "#PWR0135")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 116.84 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f510db92-0e98-4967-9d23-21f282447a31")
+		(property "Reference" "#PWR051"
+			(at 116.84 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 116.84 86.6831 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 116.84 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 116.84 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c650faac-ca40-43e8-bf90-bfb6115a86eb")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/96a85769-3dbc-4fdc-a9f7-f5e880a87ae8"
+					(reference "#PWR051")
 					(unit 1)
 				)
 			)

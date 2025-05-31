@@ -240,6 +240,18 @@
 			)
 		)
 	)
+	(pad "" smd oval
+		(at -4.320002 -2.9108)
+		(size 0.9906 2.1082)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "fdd9fbe9-8f06-4ac3-a6bf-9c3c0402da30")
+	)
+	(pad "" smd oval
+		(at -4.320002 1.2692)
+		(size 0.9906 1.8034)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "2c023df8-8d92-4b5a-aa75-24d5f41851cd")
+	)
 	(pad "" np_thru_hole circle
 		(at -2.889999 -2.410801)
 		(size 0.6604 0.6604)
@@ -254,29 +266,17 @@
 		(layers "*.Cu" "*.Mask")
 		(uuid "5d59f48e-9613-4dd6-91a9-01ab6a0896cd")
 	)
-	(pad "13" smd oval
-		(at -4.320002 1.2692)
-		(size 0.9906 1.8034)
-		(layers "F.Cu" "F.Paste" "F.Mask")
-		(uuid "2c023df8-8d92-4b5a-aa75-24d5f41851cd")
-	)
-	(pad "14" smd oval
-		(at 4.320002 1.2692)
-		(size 0.9906 1.8034)
-		(layers "F.Cu" "F.Paste" "F.Mask")
-		(uuid "f63d1cc8-9fd5-4465-8e6f-896c7ce36660")
-	)
-	(pad "15" smd oval
-		(at -4.320002 -2.9108)
-		(size 0.9906 2.1082)
-		(layers "F.Cu" "F.Paste" "F.Mask")
-		(uuid "fdd9fbe9-8f06-4ac3-a6bf-9c3c0402da30")
-	)
-	(pad "16" smd oval
+	(pad "" smd oval
 		(at 4.320002 -2.9108)
 		(size 0.9906 2.1082)
 		(layers "F.Cu" "F.Paste" "F.Mask")
 		(uuid "1ea65af5-9b4e-464d-8bb1-86ad87c0b19a")
+	)
+	(pad "" smd oval
+		(at 4.320002 1.2692)
+		(size 0.9906 1.8034)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "f63d1cc8-9fd5-4465-8e6f-896c7ce36660")
 	)
 	(pad "A1-B12" smd rect
 		(at -3.2 -3.4858)

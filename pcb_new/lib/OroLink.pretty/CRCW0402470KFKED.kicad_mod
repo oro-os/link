@@ -1,0 +1,173 @@
+(footprint "CRCW0402470KFKED"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "CRCW0402")
+	(tags "Resistor")
+	(property "Reference" "R**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "07b74dd3-a70c-4d7d-983b-e524bf0e4ddb")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "CRCW0402470KFKED"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "25d40385-9568-424d-8a4e-73e700f266c8")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "751555f3-557d-4c62-93a3-fc729fa9df25")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "61f78124-b401-4cbb-8026-d4393587215c")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4152354f-945f-41f6-b790-e99ffe585ca0")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -1.175 -0.55)
+		(end 1.175 -0.55)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "ee8a199c-6532-410c-b464-ac8960c04ad2")
+	)
+	(fp_line
+		(start -1.175 0.55)
+		(end -1.175 -0.55)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "322757b2-05a1-438c-b75a-400a31a78a99")
+	)
+	(fp_line
+		(start -0.5 -0.25)
+		(end 0.5 -0.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "88cfd3db-191d-46ae-ad97-958f3ac7f017")
+	)
+	(fp_line
+		(start -0.5 0.25)
+		(end -0.5 -0.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "efaeaee1-14e1-4d4e-b053-bdaeebe2c81b")
+	)
+	(fp_line
+		(start 0.5 -0.25)
+		(end 0.5 0.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "0cc150ab-848a-466c-9dec-6d7db6c62b5a")
+	)
+	(fp_line
+		(start 0.5 0.25)
+		(end -0.5 0.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "a384f003-e4ca-4611-88f1-bc85362f0ac3")
+	)
+	(fp_line
+		(start 1.175 -0.55)
+		(end 1.175 0.55)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "f8c588bd-9216-4069-bb94-00927aee11af")
+	)
+	(fp_line
+		(start 1.175 0.55)
+		(end -1.175 0.55)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "98780755-b818-4f83-9a79-a14a734d27ff")
+	)
+	(pad "1" smd rect
+		(at -0.55 0 90)
+		(size 0.6 0.75)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(thermal_bridge_angle 45)
+		(uuid "28a593e8-3a6e-4591-9b68-4e9b1ef021c5")
+	)
+	(pad "2" smd rect
+		(at 0.55 0 90)
+		(size 0.6 0.75)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(thermal_bridge_angle 45)
+		(uuid "a2bfb1fd-9ee8-4618-9f13-2f353cdb9e91")
+	)
+	(model "../step/CRCW0402470KFKED.stp"
+		(offset
+			(xyz 0.5 0.25 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 0 0)
+		)
+	)
+)
