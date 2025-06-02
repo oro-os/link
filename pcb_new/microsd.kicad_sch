@@ -3066,6 +3066,349 @@
 				)
 			)
 		)
+		(symbol "OroLink:TPS2021D"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U2"
+				(at 15.748 9.4369 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "TPS2021D"
+				(at 15.748 6.604 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "OroLink:D8"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/gpn/tps2021"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "0.6A loading, 2.7-5.5V, 33mΩ USB power switch, active-low 8-SOIC -40 to 85"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "0.6A loading, 2.7-5.5V, 33mΩ USB power switch, active-low 8-SOIC -40 to 85"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser URL" "https://www.mouser.de/ProductDetail/Texas-Instruments/TPS2021D?qs=ojKcPFmCWSUPv7ekuPgZQA%3D%3D"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser ID" "595-TPS2021D"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "DigiKey ID" "296-2561-5-ND"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Name" "Texas Instruments"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Number" "TPS2021D"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Arrow ID" "TPS2021D"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "TPS2021D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "D8 D8-M D8-L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TPS2021D_0_1"
+				(polyline
+					(pts
+						(xy 7.62 -12.7) (xy 24.13 -12.7)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 5.08) (xy 7.62 -12.7)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 24.13 -12.7) (xy 24.13 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 24.13 5.08) (xy 7.62 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin input line
+					(at 0 0 0)
+					(length 7.62)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 0 -2.54 0)
+					(length 7.62)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 0 -5.08 0)
+					(length 7.62)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 0 -7.62 0)
+					(length 7.62)
+					(name "*EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 31.75 -7.62 180)
+					(length 7.62)
+					(name "*OC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 31.75 -5.08 180)
+					(length 7.62)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 31.75 -2.54 180)
+					(length 7.62)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 31.75 0 180)
+					(length 7.62)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "OroLink:TS3DV416DGGR"
 			(pin_names
 				(offset 0.254)
@@ -4431,6 +4774,12 @@
 		(uuid "2928a830-9d2c-4341-ae9e-e3c9fec09c80")
 	)
 	(junction
+		(at 22.86 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "32db197c-b50b-4dbf-8925-fd7c43b60194")
+	)
+	(junction
 		(at 143.51 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4491,6 +4840,12 @@
 		(uuid "6b7da270-5b5b-499b-acec-eac516ab0faa")
 	)
 	(junction
+		(at 80.01 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6e5b989f-e654-430d-ab44-dbd7ed498cbd")
+	)
+	(junction
 		(at 204.47 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4507,6 +4862,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "99276717-c6f2-4240-bec3-ee0d0b09a6e0")
+	)
+	(junction
+		(at 60.96 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9af4beeb-28fa-4bfe-9dc1-4b4b364a2cb4")
 	)
 	(junction
 		(at 143.51 110.49)
@@ -4765,6 +5126,16 @@
 			(type default)
 		)
 		(uuid "17471253-b050-48c3-8691-79172e56437d")
+	)
+	(wire
+		(pts
+			(xy 25.4 185.42) (xy 22.86 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1cb5c0b3-08c8-43fc-b4e8-95fc2d3d5f71")
 	)
 	(wire
 		(pts
@@ -5028,6 +5399,16 @@
 	)
 	(wire
 		(pts
+			(xy 60.96 180.34) (xy 60.96 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bf164ce-42c7-45da-9faa-47e7a19d6f21")
+	)
+	(wire
+		(pts
 			(xy 143.51 82.55) (xy 143.51 87.63)
 		)
 		(stroke
@@ -5148,6 +5529,26 @@
 	)
 	(wire
 		(pts
+			(xy 86.36 187.96) (xy 80.01 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4aa1e3b9-d158-43bc-b858-af0b8ef31fef")
+	)
+	(wire
+		(pts
+			(xy 60.96 182.88) (xy 74.93 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b815fad-4bc2-4b6d-a492-e47ad91f9f66")
+	)
+	(wire
+		(pts
 			(xy 144.78 160.02) (xy 139.7 160.02)
 		)
 		(stroke
@@ -5208,7 +5609,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 85.09) (xy 49.53 85.09)
+			(xy 83.82 85.09) (xy 66.04 85.09)
 		)
 		(stroke
 			(width 0)
@@ -5358,6 +5759,26 @@
 	)
 	(wire
 		(pts
+			(xy 22.86 182.88) (xy 25.4 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6243d48e-fc37-4d46-bc40-26b8399d44d7")
+	)
+	(wire
+		(pts
+			(xy 80.01 187.96) (xy 57.15 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "638f94ce-de70-483b-ad15-e9043226f48e")
+	)
+	(wire
+		(pts
 			(xy 100.33 40.64) (xy 102.87 40.64)
 		)
 		(stroke
@@ -5365,6 +5786,16 @@
 			(type default)
 		)
 		(uuid "69a9715f-f953-4b62-81ec-2b75bd352079")
+	)
+	(wire
+		(pts
+			(xy 57.15 180.34) (xy 60.96 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c2c6038-f8e0-405f-b655-49f3274b33fb")
 	)
 	(wire
 		(pts
@@ -5488,6 +5919,16 @@
 	)
 	(wire
 		(pts
+			(xy 57.15 182.88) (xy 60.96 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7dcb1892-c5f9-48fa-ad58-a37d0ec18918")
+	)
+	(wire
+		(pts
 			(xy 107.95 182.88) (xy 110.49 182.88)
 		)
 		(stroke
@@ -5585,6 +6026,16 @@
 			(type default)
 		)
 		(uuid "88dcda08-68f0-4b5a-9f84-fe606ad3c869")
+	)
+	(wire
+		(pts
+			(xy 25.4 180.34) (xy 15.24 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "898cf7cc-00b6-4b55-b340-946aa595ce14")
 	)
 	(wire
 		(pts
@@ -5888,6 +6339,16 @@
 	)
 	(wire
 		(pts
+			(xy 80.01 186.69) (xy 80.01 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b4f954a2-695a-4375-aea1-d9f33552610d")
+	)
+	(wire
+		(pts
 			(xy 207.01 62.23) (xy 204.47 62.23)
 		)
 		(stroke
@@ -5938,6 +6399,16 @@
 	)
 	(wire
 		(pts
+			(xy 17.78 187.96) (xy 25.4 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7288cb5-7322-4467-a492-b1a58ddd51a1")
+	)
+	(wire
+		(pts
 			(xy 59.69 151.13) (xy 57.15 151.13)
 		)
 		(stroke
@@ -5965,6 +6436,26 @@
 			(type default)
 		)
 		(uuid "b9ed3208-f3bd-473f-b9ce-be225b72c4bf")
+	)
+	(wire
+		(pts
+			(xy 22.86 185.42) (xy 22.86 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb4e922f-97b0-4ee0-a3e9-37f163b2335c")
+	)
+	(wire
+		(pts
+			(xy 57.15 185.42) (xy 60.96 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc48b14d-8f33-41bb-a705-ad4278e8e096")
 	)
 	(wire
 		(pts
@@ -6118,6 +6609,16 @@
 	)
 	(wire
 		(pts
+			(xy 22.86 182.88) (xy 22.86 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0ab41d9-75e4-4a7e-a13a-dbbe81ff968a")
+	)
+	(wire
+		(pts
 			(xy 83.82 120.65) (xy 80.01 120.65)
 		)
 		(stroke
@@ -6205,6 +6706,16 @@
 			(type default)
 		)
 		(uuid "dcdbebf4-9343-481c-b2ef-f7eff170a1bf")
+	)
+	(wire
+		(pts
+			(xy 60.96 185.42) (xy 60.96 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddde44c8-8246-4ef4-b59a-f03770cadb96")
 	)
 	(wire
 		(pts
@@ -6544,6 +7055,17 @@
 		)
 		(uuid "7b5664e4-a856-4dcf-bc9d-e8492b58c1cb")
 	)
+	(label "SD_VCC"
+		(at 74.93 182.88 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7e1ead07-bbaf-41b1-8e56-02ecb560a7bc")
+	)
 	(label "SUT_DAT3"
 		(at 123.19 165.1 180)
 		(fields_autoplaced yes)
@@ -6621,6 +7143,17 @@
 		)
 		(uuid "c268ae5c-1eb6-4504-80bf-139e5a7fbc9f")
 	)
+	(label "SD_VCC"
+		(at 66.04 85.09 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ca073294-8581-4dbc-b014-8e35f11f88a1")
+	)
 	(label "LED-"
 		(at 123.19 170.18 180)
 		(fields_autoplaced yes)
@@ -6688,6 +7221,18 @@
 		)
 		(uuid "2408184b-a97f-42a5-bd41-c63f13e820d2")
 	)
+	(hierarchical_label "~{OC}"
+		(shape input)
+		(at 86.36 187.96 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "57881320-8ba5-4d89-ab7f-e3c78c83f4d9")
+	)
 	(hierarchical_label "MISO"
 		(shape input)
 		(at 49.53 115.57 180)
@@ -6711,6 +7256,18 @@
 			(justify left)
 		)
 		(uuid "68200123-a42e-4bb9-8bd5-c50a4375aaad")
+	)
+	(hierarchical_label "~{EN}"
+		(shape input)
+		(at 17.78 187.96 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7a448028-4aa8-4154-8cfc-3f08b5635958")
 	)
 	(hierarchical_label "~{SENSE_CARD}"
 		(shape output)
@@ -6747,18 +7304,6 @@
 			(justify right)
 		)
 		(uuid "c404bbcd-e87a-4dce-9afc-805a02ad0777")
-	)
-	(hierarchical_label "VDD{slash}EN"
-		(shape input)
-		(at 49.53 85.09 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "c73a2c60-ecbd-4c58-b203-2b3449569ae3")
 	)
 	(hierarchical_label "MOSI"
 		(shape output)
@@ -9167,6 +9712,72 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 15.24 180.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8544b055-4c41-4c27-862a-1ce752678fe9")
+		(property "Reference" "#PWR0207"
+			(at 15.24 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 15.24 184.4731 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 15.24 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 15.24 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 15.24 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3901047f-6ba9-49e9-ab1f-3b0040e2ecbd")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1"
+					(reference "#PWR0207")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 69.85 41.91 0)
 		(mirror y)
 		(unit 1)
@@ -9294,6 +9905,72 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1"
 					(reference "#PWR072")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 22.86 175.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8f97ca7a-5b6b-4a71-8d20-97349694d80f")
+		(property "Reference" "#PWR0208"
+			(at 22.86 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 22.86 171.1269 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 22.86 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 22.86 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 22.86 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c141bd3c-8fbb-4594-bcbb-572a1485474d")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1"
+					(reference "#PWR0208")
 					(unit 1)
 				)
 			)
@@ -10364,6 +11041,149 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1"
 					(reference "C172")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:RMCF0402FT10K0")
+		(at 80.01 186.69 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b1843ff6-b301-4948-bba2-4ef043d95489")
+		(property "Reference" "R89"
+			(at 82.0166 178.9235 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10K"
+			(at 82.0166 181.7564 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "OroLink:STA_RMCF0402_STP"
+			(at 80.01 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/385/SEI_RMCF_RMCP-3077565.pdf"
+			(at 80.01 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
+			(at 80.01 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
+			(at 77.01 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Stackpole International"
+			(at 77.01 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "RMCF0402FT10K0CT-ND"
+			(at 77.01 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/SEI-Stackpole/RMCF0402FT10K0?qs=FESYatJ8odLDpjm%252BwxiA1Q%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=708-RMCF0402FT10K0&utm_content=SEI%20Stackpole"
+			(at 77.01 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "RMCF0402FT10K0"
+			(at 77.01 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "RMCF0402FT10K0"
+			(at 77.01 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "708-RMCF0402FT10K0"
+			(at 77.01 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f9f816c4-5aa7-4e9f-a003-12adcd21c12e")
+		)
+		(pin "2"
+			(uuid "25b1eac0-0528-4b47-844e-9b73d875c06b")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1"
+					(reference "R89")
 					(unit 1)
 				)
 			)
@@ -11560,6 +12380,164 @@
 		)
 	)
 	(symbol
+		(lib_id "OroLink:TPS2021D")
+		(at 25.4 180.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "da2e6f08-3aa1-4c73-90d0-cb00909938d7")
+		(property "Reference" "U11"
+			(at 41.275 170.5661 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "TPS2021D"
+			(at 41.275 173.399 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:D8"
+			(at 25.4 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/gpn/tps2021"
+			(at 25.4 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.6A loading, 2.7-5.5V, 33mΩ USB power switch, active-low 8-SOIC -40 to 85"
+			(at 25.4 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "0.6A loading, 2.7-5.5V, 33mΩ USB power switch, active-low 8-SOIC -40 to 85"
+			(at 25.4 183.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Texas-Instruments/TPS2021D?qs=ojKcPFmCWSUPv7ekuPgZQA%3D%3D"
+			(at 25.4 183.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "595-TPS2021D"
+			(at 25.4 183.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "296-2561-5-ND"
+			(at 25.4 183.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Texas Instruments"
+			(at 25.4 183.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "TPS2021D"
+			(at 25.4 183.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "TPS2021D"
+			(at 25.4 183.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "330529dd-4d8b-4ff0-8934-3a8647765a07")
+		)
+		(pin "6"
+			(uuid "6b60ad77-8aa7-41b0-b818-9a6ac36c5a62")
+		)
+		(pin "7"
+			(uuid "db19295b-838c-4107-9c34-bde9b1c886e7")
+		)
+		(pin "3"
+			(uuid "834ad244-51b1-4d88-8bac-9788713d45a8")
+		)
+		(pin "2"
+			(uuid "dec5a5a8-a120-4ada-be55-bb8dcc60301b")
+		)
+		(pin "4"
+			(uuid "03f22882-bc82-4606-a3a9-63abed59ab13")
+		)
+		(pin "1"
+			(uuid "9dd2a9a6-8bff-4d4d-88e1-a66ba3531dac")
+		)
+		(pin "8"
+			(uuid "d3c9c559-5705-4561-83b7-30700310c212")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1"
+					(reference "U11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 59.69 95.25 0)
 		(mirror y)
@@ -12109,6 +13087,72 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1"
 					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 80.01 173.99 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f93d6720-39bb-4779-a221-d1e44ca80e75")
+		(property "Reference" "#PWR0209"
+			(at 80.01 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 80.01 169.8569 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 80.01 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 80.01 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 80.01 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e6571d64-640c-4322-8b44-75988e58d641")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1"
+					(reference "#PWR0209")
 					(unit 1)
 				)
 			)

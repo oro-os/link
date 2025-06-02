@@ -11950,6 +11950,12 @@
 		(uuid "c68f7755-0e71-4848-9663-08bc2a71922b")
 	)
 	(junction
+		(at 148.59 196.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c96a19ba-b8e1-4f20-a872-3ed9ce7dce4d")
+	)
+	(junction
 		(at 316.23 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -12963,7 +12969,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 194.31) (xy 167.64 194.31)
+			(xy 160.02 191.77) (xy 168.91 191.77)
 		)
 		(stroke
 			(width 0)
@@ -13053,7 +13059,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 194.31) (xy 148.59 199.39)
+			(xy 148.59 194.31) (xy 148.59 196.85)
 		)
 		(stroke
 			(width 0)
@@ -13393,6 +13399,16 @@
 	)
 	(wire
 		(pts
+			(xy 148.59 196.85) (xy 148.59 201.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e00876d-c5ba-430e-8663-001468b9f657")
+	)
+	(wire
+		(pts
 			(xy 243.84 161.29) (xy 243.84 162.56)
 		)
 		(stroke
@@ -13510,16 +13526,6 @@
 			(type default)
 		)
 		(uuid "5418678e-d10f-4ec4-8447-9fb9e5068196")
-	)
-	(wire
-		(pts
-			(xy 160.02 191.77) (xy 167.64 191.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5444340c-52dc-4909-ab4a-7f32498c1b48")
 	)
 	(wire
 		(pts
@@ -14180,6 +14186,16 @@
 			(type default)
 		)
 		(uuid "7a06aee2-f56d-4fa3-a19d-b608c0acd8eb")
+	)
+	(wire
+		(pts
+			(xy 54.61 246.38) (xy 74.93 246.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ac53a22-bd16-40d9-a861-58acace9a401")
 	)
 	(wire
 		(pts
@@ -15033,6 +15049,16 @@
 	)
 	(wire
 		(pts
+			(xy 161.29 196.85) (xy 161.29 194.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "afd0cfa7-2934-47d4-bfeb-6c000dea151d")
+	)
+	(wire
+		(pts
 			(xy 214.63 48.26) (xy 204.47 48.26)
 		)
 		(stroke
@@ -15763,6 +15789,16 @@
 	)
 	(wire
 		(pts
+			(xy 161.29 194.31) (xy 160.02 194.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d45fca71-1d88-45df-b41a-4a5de0e1b839")
+	)
+	(wire
+		(pts
 			(xy 377.19 105.41) (xy 377.19 110.49)
 		)
 		(stroke
@@ -15883,7 +15919,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 199.39) (xy 151.13 199.39)
+			(xy 148.59 201.93) (xy 151.13 201.93)
 		)
 		(stroke
 			(width 0)
@@ -16753,6 +16789,16 @@
 	)
 	(wire
 		(pts
+			(xy 148.59 196.85) (xy 161.29 196.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe69e07c-ed69-4602-bb41-03cd30388fc8")
+	)
+	(wire
+		(pts
 			(xy 345.44 100.33) (xy 345.44 105.41)
 		)
 		(stroke
@@ -17116,6 +17162,16 @@
 		)
 		(uuid "d037b38c-23e4-40a8-9e28-ff1d24b14edf")
 	)
+	(text "EXTI6"
+		(exclude_from_sim no)
+		(at 70.358 63.754 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "db6812b1-e1ee-4baa-be09-392068b865b5")
+	)
 	(text "SWD / ST-LINK"
 		(exclude_from_sim no)
 		(at 224.79 180.848 0)
@@ -17368,7 +17424,7 @@
 		)
 		(uuid "22c16b57-e513-439e-ad30-ce59c01e8dd7")
 	)
-	(label "SD_VDD{slash}EN"
+	(label "SD_EN"
 		(at 191.77 151.13 0)
 		(fields_autoplaced yes)
 		(effects
@@ -17511,7 +17567,7 @@
 		)
 		(uuid "39312d8d-e307-461f-a44e-43aefbff5caf")
 	)
-	(label "SD_VDD{slash}EN"
+	(label "SD_EN"
 		(at 74.93 241.3 180)
 		(fields_autoplaced yes)
 		(effects
@@ -17676,17 +17732,6 @@
 		)
 		(uuid "537f6498-3d2c-4263-8e52-99624faa8a26")
 	)
-	(label "GPIO1"
-		(at 167.64 191.77 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "53e37154-0919-483b-99bd-560d96ba7710")
-	)
 	(label "ULPI_D5"
 		(at 69.85 184.15 180)
 		(fields_autoplaced yes)
@@ -17709,7 +17754,7 @@
 		)
 		(uuid "55bcc3f9-a751-458a-9688-86153c503357")
 	)
-	(label "GPIO1"
+	(label "SD_~{OC}"
 		(at 33.02 63.5 0)
 		(fields_autoplaced yes)
 		(effects
@@ -17796,6 +17841,17 @@
 			(justify right bottom)
 		)
 		(uuid "5a78500c-d5e8-4e2f-8c6f-82eb3bf20d33")
+	)
+	(label "SD_~{OC}"
+		(at 74.93 246.38 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5d61bc42-579a-40ef-95ed-0e1db69c6bce")
 	)
 	(label "ULPI_D1"
 		(at 33.02 91.44 0)
@@ -18490,7 +18546,7 @@
 		)
 		(uuid "aa7bc6a4-b818-4529-a716-1b62c4a45f09")
 	)
-	(label "SD_VDD{slash}EN"
+	(label "SD_EN"
 		(at 113.03 78.74 180)
 		(fields_autoplaced yes)
 		(effects
@@ -18568,7 +18624,7 @@
 		(uuid "afd73e82-756e-42cc-bd29-956a712b007c")
 	)
 	(label "PWR_VBUS_5V"
-		(at 151.13 199.39 0)
+		(at 151.13 201.93 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19118,7 +19174,7 @@
 		(uuid "f4b9d322-7832-4e78-98a5-16b3ff731f6d")
 	)
 	(label "GPIO3"
-		(at 167.64 194.31 180)
+		(at 168.91 191.77 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -35410,7 +35466,7 @@
 	)
 	(sheet
 		(at 25.4 220.98)
-		(size 29.21 24.765)
+		(size 29.21 27.432)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -35430,7 +35486,7 @@
 			)
 		)
 		(property "Sheetfile" "microsd.kicad_sch"
-			(at 25.4 246.3296 0)
+			(at 25.4 248.9966 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35508,16 +35564,6 @@
 			)
 			(uuid "940c9572-a8ac-4c24-bbbb-31aa5254958a")
 		)
-		(pin "VDD{slash}EN" input
-			(at 54.61 241.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "90eae3f0-ed67-499c-bccb-5d8470581d5a")
-		)
 		(pin "~{SENSE_CARD}" output
 			(at 54.61 243.84 0)
 			(effects
@@ -35527,6 +35573,26 @@
 				(justify right)
 			)
 			(uuid "c79450b7-6492-494b-912f-dd9a6eb31d53")
+		)
+		(pin "~{OC}" input
+			(at 54.61 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "acabb31f-c675-4633-ba7a-b5ab979ac482")
+		)
+		(pin "~{EN}" input
+			(at 54.61 241.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "b39aeed7-91b0-475b-b62d-7a3f7cd633d5")
 		)
 		(instances
 			(project "link"
