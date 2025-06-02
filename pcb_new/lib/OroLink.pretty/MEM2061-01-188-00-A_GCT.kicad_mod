@@ -116,6 +116,16 @@
 		(uuid "a4be35c2-96d1-4110-a8ad-c3acf52ad17e")
 	)
 	(fp_line
+		(start 2.52 2.34)
+		(end 6.76 2.34)
+		(stroke
+			(width 0.12)
+			(type dot)
+		)
+		(layer "F.SilkS")
+		(uuid "1c601217-2c20-4b88-894b-cc6849086cc8")
+	)
+	(fp_line
 		(start 7.1247 -7.8486)
 		(end 1.984441 -7.8486)
 		(stroke
@@ -134,6 +144,17 @@
 		)
 		(layer "F.SilkS")
 		(uuid "6126a2aa-3a07-4694-a69a-a63099687da1")
+	)
+	(fp_circle
+		(center 7.6 2.35)
+		(end 7.63 2.32)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "01112c34-b39c-4a4f-97dd-2edcc5e1a7e4")
 	)
 	(fp_line
 		(start -7 8.75)
@@ -467,29 +488,6 @@
 		(layer "F.Fab")
 		(uuid "7c25f3d9-70cb-4fb7-bc33-4d6b4a48827c")
 	)
-	(fp_text user "*"
-		(at 3.048 3.302 0)
-		(unlocked yes)
-		(layer "F.SilkS")
-		(uuid "afa6d5dc-a729-4644-8241-add49a7e3dd5")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(fp_text user "*"
-		(at 3.048 3.302 0)
-		(layer "F.SilkS")
-		(uuid "b9a294c5-2ebf-4543-99ec-604cdbc1c7e4")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
 	(fp_text user "microSD Card"
 		(at 0 9.5 0)
 		(unlocked yes)
@@ -508,29 +506,6 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "18d6963f-1c22-44ab-8dae-ace55da5eab8")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(fp_text user "*"
-		(at 3.048 3.302 0)
-		(layer "F.Fab")
-		(uuid "94c74d9f-3f35-42e3-a720-70fc06de6514")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(fp_text user "*"
-		(at 3.048 3.302 0)
-		(unlocked yes)
-		(layer "F.Fab")
-		(uuid "d2ebc6bd-1e43-4fea-a59d-2bd47e5b5ec8")
 		(effects
 			(font
 				(size 1 1)
