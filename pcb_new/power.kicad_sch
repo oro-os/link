@@ -7819,6 +7819,12 @@
 		(uuid "b544a38a-5ac9-423d-b411-b38c9f262710")
 	)
 	(junction
+		(at 254 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b9baca1e-55c8-4d47-b308-01cf21ae7d94")
+	)
+	(junction
 		(at 86.36 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9018,6 +9024,16 @@
 	)
 	(wire
 		(pts
+			(xy 254 124.46) (xy 265.43 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "afb7f143-2050-40dd-a3b4-3bceac203c32")
+	)
+	(wire
+		(pts
 			(xy 36.83 123.19) (xy 41.91 123.19)
 		)
 		(stroke
@@ -9805,6 +9821,18 @@
 			(justify right)
 		)
 		(uuid "88371833-9544-4606-bebd-0eacdb43fe63")
+	)
+	(hierarchical_label "PWR_VBUS_5V"
+		(shape output)
+		(at 265.43 124.46 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "beb5c050-26d3-4638-89df-fc7a6acb8b1f")
 	)
 	(hierarchical_label "SDA"
 		(shape bidirectional)
@@ -13147,7 +13175,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 254 124.46 270)
+		(at 254 124.46 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13156,25 +13184,25 @@
 		(fields_autoplaced yes)
 		(uuid "6ee9e9ce-1f6a-42e4-9273-b22480e2c5e6")
 		(property "Reference" "TP3"
-			(at 258.699 123.2478 90)
+			(at 255.397 126.5498 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "USB PWR 5V VBUS"
-			(at 258.699 125.6721 90)
+			(at 255.397 128.9741 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
-			(at 254 129.54 0)
+			(at 248.92 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13183,7 +13211,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 254 129.54 0)
+			(at 248.92 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)

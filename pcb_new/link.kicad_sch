@@ -11572,6 +11572,12 @@
 		(uuid "1476c851-2d4e-48af-86bf-023dc99fe1ee")
 	)
 	(junction
+		(at 148.59 194.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "14a9cb59-73f6-42c9-90d7-e06a098d159b")
+	)
+	(junction
 		(at 378.46 181.61)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -11620,7 +11626,7 @@
 		(uuid "28a0721b-b6e4-4827-8c6d-1994bcfe5ebe")
 	)
 	(junction
-		(at 203.2 205.74)
+		(at 177.8 205.74)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2eff1807-908b-4b99-8d06-f65836d34695")
@@ -11734,7 +11740,7 @@
 		(uuid "6ea3be5b-ec23-4be7-b1b8-0d75fc522642")
 	)
 	(junction
-		(at 213.36 205.74)
+		(at 187.96 205.74)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "718e68da-b368-4aaf-bbc8-bd5157acdccd")
@@ -11866,7 +11872,7 @@
 		(uuid "a94a3c79-8e03-495b-9724-463a3f4ed8b3")
 	)
 	(junction
-		(at 219.71 48.26)
+		(at 219.71 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "aa387458-cac4-4910-bd05-7f408239245e")
@@ -12010,7 +12016,7 @@
 		(uuid "de7dfeac-0c1c-4547-bad0-7fe3facfad7b")
 	)
 	(junction
-		(at 241.3 52.07)
+		(at 241.3 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e21525a0-1737-4be3-9d97-bcefaa758991")
@@ -12078,31 +12084,31 @@
 		(uuid "0b24a639-7563-4e75-ad1c-747820dae1b3")
 	)
 	(no_connect
-		(at 148.59 78.74)
+		(at 148.59 73.66)
 		(uuid "0d755b16-7d9e-463f-afab-2627d17c917e")
 	)
 	(no_connect
-		(at 204.47 76.2)
+		(at 204.47 71.12)
 		(uuid "14a174ce-d8eb-4044-b27e-50d2d70a7f17")
 	)
 	(no_connect
-		(at 204.47 68.58)
+		(at 204.47 63.5)
 		(uuid "17939963-810b-4487-89f7-2aa609f9d86a")
 	)
 	(no_connect
-		(at 204.47 58.42)
+		(at 204.47 53.34)
 		(uuid "1d99b9b0-1040-4255-b9cc-a6c7b8bc63ae")
 	)
 	(no_connect
-		(at 204.47 66.04)
+		(at 204.47 60.96)
 		(uuid "1df149af-7b1d-4ad3-b2ec-adbdfa9294ea")
 	)
 	(no_connect
-		(at 204.47 60.96)
+		(at 204.47 55.88)
 		(uuid "2b228db7-a23e-46b0-9ea4-d6460a398ab0")
 	)
 	(no_connect
-		(at 204.47 73.66)
+		(at 204.47 68.58)
 		(uuid "947bf504-2744-4aca-9d27-7c986c99328c")
 	)
 	(wire
@@ -12147,7 +12153,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 158.75) (xy 179.07 158.75)
+			(xy 161.29 163.83) (xy 177.8 163.83)
 		)
 		(stroke
 			(width 0)
@@ -12267,6 +12273,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 114.3) (xy 165.1 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0935de0e-8423-4422-aff2-ffcd910e8818")
+	)
+	(wire
+		(pts
 			(xy 45.72 265.43) (xy 58.42 265.43)
 		)
 		(stroke
@@ -12317,7 +12333,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 208.28) (xy 203.2 208.28)
+			(xy 179.07 208.28) (xy 177.8 208.28)
 		)
 		(stroke
 			(width 0)
@@ -12347,7 +12363,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 53.34) (xy 132.08 53.34)
+			(xy 148.59 48.26) (xy 132.08 48.26)
 		)
 		(stroke
 			(width 0)
@@ -12407,7 +12423,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 68.58) (xy 132.08 68.58)
+			(xy 148.59 63.5) (xy 132.08 63.5)
 		)
 		(stroke
 			(width 0)
@@ -12457,13 +12473,23 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 71.12) (xy 132.08 71.12)
+			(xy 148.59 66.04) (xy 132.08 66.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "162030c8-fd60-421f-b4c9-66704ab038fe")
+	)
+	(wire
+		(pts
+			(xy 181.61 114.3) (xy 185.42 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16c87754-534b-4467-9bea-37618260f985")
 	)
 	(wire
 		(pts
@@ -12577,7 +12603,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 63.5) (xy 132.08 63.5)
+			(xy 148.59 58.42) (xy 132.08 58.42)
 		)
 		(stroke
 			(width 0)
@@ -12617,7 +12643,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 60.96) (xy 132.08 60.96)
+			(xy 148.59 55.88) (xy 132.08 55.88)
 		)
 		(stroke
 			(width 0)
@@ -12667,7 +12693,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 52.07) (xy 241.3 52.07)
+			(xy 236.22 46.99) (xy 241.3 46.99)
 		)
 		(stroke
 			(width 0)
@@ -12697,7 +12723,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 151.13) (xy 209.55 151.13)
+			(xy 191.77 156.21) (xy 208.28 156.21)
 		)
 		(stroke
 			(width 0)
@@ -12714,6 +12740,16 @@
 			(type default)
 		)
 		(uuid "2a0963bb-f358-415a-b74e-afc304a6e89a")
+	)
+	(wire
+		(pts
+			(xy 148.59 191.77) (xy 152.4 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a3a252b-6de4-4d35-bede-85d5670a50a4")
 	)
 	(wire
 		(pts
@@ -12817,6 +12853,16 @@
 	)
 	(wire
 		(pts
+			(xy 148.59 191.77) (xy 148.59 194.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f324286-5c59-456b-b5a1-b44ecbdcb6a2")
+	)
+	(wire
+		(pts
 			(xy 297.18 110.49) (xy 297.18 105.41)
 		)
 		(stroke
@@ -12917,7 +12963,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 194.31) (xy 168.91 194.31)
+			(xy 160.02 194.31) (xy 167.64 194.31)
 		)
 		(stroke
 			(width 0)
@@ -12967,7 +13013,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 205.74) (xy 171.45 205.74)
+			(xy 177.8 191.77) (xy 170.18 191.77)
 		)
 		(stroke
 			(width 0)
@@ -13004,6 +13050,16 @@
 			(type default)
 		)
 		(uuid "3846a69b-7c40-4401-901d-fb6bb580e936")
+	)
+	(wire
+		(pts
+			(xy 148.59 194.31) (xy 148.59 199.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38b839ef-e72f-4f95-9a88-c5125c6299ed")
 	)
 	(wire
 		(pts
@@ -13087,7 +13143,7 @@
 	)
 	(wire
 		(pts
-			(xy 267.97 163.83) (xy 267.97 165.1)
+			(xy 165.1 99.06) (xy 165.1 100.33)
 		)
 		(stroke
 			(width 0)
@@ -13104,6 +13160,16 @@
 			(type default)
 		)
 		(uuid "3b4a6cb9-18a0-499f-a522-65838c38f66b")
+	)
+	(wire
+		(pts
+			(xy 113.03 236.22) (xy 132.08 236.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b8a26e8-a3ac-4ee6-917c-47b8fedfb993")
 	)
 	(wire
 		(pts
@@ -13227,7 +13293,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 166.37) (xy 209.55 166.37)
+			(xy 191.77 171.45) (xy 208.28 171.45)
 		)
 		(stroke
 			(width 0)
@@ -13247,7 +13313,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 140.97) (xy 209.55 140.97)
+			(xy 191.77 146.05) (xy 208.28 146.05)
 		)
 		(stroke
 			(width 0)
@@ -13447,7 +13513,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 191.77) (xy 168.91 191.77)
+			(xy 160.02 191.77) (xy 167.64 191.77)
 		)
 		(stroke
 			(width 0)
@@ -13527,7 +13593,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 55.88) (xy 148.59 55.88)
+			(xy 132.08 50.8) (xy 148.59 50.8)
 		)
 		(stroke
 			(width 0)
@@ -13557,7 +13623,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 156.21) (xy 179.07 156.21)
+			(xy 161.29 161.29) (xy 177.8 161.29)
 		)
 		(stroke
 			(width 0)
@@ -13604,16 +13670,6 @@
 			(type default)
 		)
 		(uuid "5b683065-8bc0-4d01-a396-40b0b21ffe01")
-	)
-	(wire
-		(pts
-			(xy 144.78 191.77) (xy 153.67 191.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c0d591f-79e9-4f36-bfa0-fefb4f0edd74")
 	)
 	(wire
 		(pts
@@ -13787,7 +13843,7 @@
 	)
 	(wire
 		(pts
-			(xy 303.53 165.1) (xy 312.42 165.1)
+			(xy 200.66 100.33) (xy 210.82 100.33)
 		)
 		(stroke
 			(width 0)
@@ -13797,7 +13853,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 143.51) (xy 162.56 143.51)
+			(xy 177.8 148.59) (xy 161.29 148.59)
 		)
 		(stroke
 			(width 0)
@@ -13887,7 +13943,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 161.29) (xy 179.07 161.29)
+			(xy 161.29 166.37) (xy 177.8 166.37)
 		)
 		(stroke
 			(width 0)
@@ -13977,7 +14033,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 163.83) (xy 209.55 163.83)
+			(xy 191.77 168.91) (xy 208.28 168.91)
 		)
 		(stroke
 			(width 0)
@@ -14057,7 +14113,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 52.07) (xy 241.3 53.34)
+			(xy 241.3 46.99) (xy 241.3 48.26)
 		)
 		(stroke
 			(width 0)
@@ -14067,7 +14123,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 58.42) (xy 132.08 58.42)
+			(xy 148.59 53.34) (xy 132.08 53.34)
 		)
 		(stroke
 			(width 0)
@@ -14087,7 +14143,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 153.67) (xy 209.55 153.67)
+			(xy 191.77 158.75) (xy 208.28 158.75)
 		)
 		(stroke
 			(width 0)
@@ -14177,7 +14233,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 48.26) (xy 219.71 48.26)
+			(xy 204.47 43.18) (xy 219.71 43.18)
 		)
 		(stroke
 			(width 0)
@@ -14187,7 +14243,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 48.26) (xy 219.71 52.07)
+			(xy 219.71 43.18) (xy 219.71 46.99)
 		)
 		(stroke
 			(width 0)
@@ -14197,7 +14253,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 143.51) (xy 209.55 143.51)
+			(xy 191.77 148.59) (xy 208.28 148.59)
 		)
 		(stroke
 			(width 0)
@@ -14207,7 +14263,7 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 165.1) (xy 267.97 165.1)
+			(xy 168.91 100.33) (xy 165.1 100.33)
 		)
 		(stroke
 			(width 0)
@@ -14227,7 +14283,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 156.21) (xy 209.55 156.21)
+			(xy 191.77 161.29) (xy 208.28 161.29)
 		)
 		(stroke
 			(width 0)
@@ -14477,7 +14533,17 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 66.04) (xy 132.08 66.04)
+			(xy 200.66 129.54) (xy 210.82 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b57afb7-3e51-4d5c-a09b-b7a318e566f3")
+	)
+	(wire
+		(pts
+			(xy 148.59 60.96) (xy 132.08 60.96)
 		)
 		(stroke
 			(width 0)
@@ -14537,16 +14603,6 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 194.31) (xy 153.67 194.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8d1bfb2b-9c20-4640-b02a-21a30965c578")
-	)
-	(wire
-		(pts
 			(xy 300.99 46.99) (xy 303.53 46.99)
 		)
 		(stroke
@@ -14567,7 +14623,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 151.13) (xy 179.07 151.13)
+			(xy 161.29 156.21) (xy 177.8 156.21)
 		)
 		(stroke
 			(width 0)
@@ -14677,7 +14733,7 @@
 	)
 	(wire
 		(pts
-			(xy 284.48 165.1) (xy 288.29 165.1)
+			(xy 181.61 100.33) (xy 185.42 100.33)
 		)
 		(stroke
 			(width 0)
@@ -14707,7 +14763,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 158.75) (xy 209.55 158.75)
+			(xy 191.77 163.83) (xy 208.28 163.83)
 		)
 		(stroke
 			(width 0)
@@ -14717,7 +14773,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 167.64) (xy 179.07 167.64)
+			(xy 161.29 172.72) (xy 177.8 172.72)
 		)
 		(stroke
 			(width 0)
@@ -14764,6 +14820,16 @@
 			(type default)
 		)
 		(uuid "9e616fd1-9f04-4589-b2e4-93298e596406")
+	)
+	(wire
+		(pts
+			(xy 165.1 113.03) (xy 165.1 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e71bbc8-09c4-4685-b178-e3b1b9c6a7ab")
 	)
 	(wire
 		(pts
@@ -14847,13 +14913,23 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 165.1) (xy 179.07 165.1)
+			(xy 161.29 170.18) (xy 177.8 170.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "a9d50df4-67f7-4b65-9116-99a2c3e13d59")
+	)
+	(wire
+		(pts
+			(xy 165.1 128.27) (xy 165.1 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aac46023-34d4-4ab7-b1d7-caeeb4d317d6")
 	)
 	(wire
 		(pts
@@ -14947,7 +15023,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 76.2) (xy 148.59 76.2)
+			(xy 132.08 71.12) (xy 148.59 71.12)
 		)
 		(stroke
 			(width 0)
@@ -14957,7 +15033,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 53.34) (xy 204.47 53.34)
+			(xy 214.63 48.26) (xy 204.47 48.26)
 		)
 		(stroke
 			(width 0)
@@ -15017,7 +15093,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 29.21) (xy 219.71 31.75)
+			(xy 219.71 24.13) (xy 219.71 26.67)
 		)
 		(stroke
 			(width 0)
@@ -15087,7 +15163,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 50.8) (xy 132.08 50.8)
+			(xy 148.59 45.72) (xy 132.08 45.72)
 		)
 		(stroke
 			(width 0)
@@ -15157,7 +15233,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 44.45) (xy 219.71 48.26)
+			(xy 219.71 39.37) (xy 219.71 43.18)
 		)
 		(stroke
 			(width 0)
@@ -15257,7 +15333,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 205.74) (xy 203.2 208.28)
+			(xy 177.8 205.74) (xy 177.8 208.28)
 		)
 		(stroke
 			(width 0)
@@ -15317,7 +15393,7 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 48.26) (xy 241.3 48.26)
+			(xy 240.03 43.18) (xy 241.3 43.18)
 		)
 		(stroke
 			(width 0)
@@ -15537,7 +15613,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 205.74) (xy 212.09 205.74)
+			(xy 187.96 205.74) (xy 186.69 205.74)
 		)
 		(stroke
 			(width 0)
@@ -15597,7 +15673,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 48.26) (xy 224.79 48.26)
+			(xy 219.71 43.18) (xy 224.79 43.18)
 		)
 		(stroke
 			(width 0)
@@ -15627,7 +15703,7 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 205.74) (xy 194.31 205.74)
+			(xy 185.42 191.77) (xy 193.04 191.77)
 		)
 		(stroke
 			(width 0)
@@ -15697,6 +15773,16 @@
 	)
 	(wire
 		(pts
+			(xy 200.66 114.3) (xy 210.82 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4944b54-3b53-4ffc-ae9b-1de396e544ec")
+	)
+	(wire
+		(pts
 			(xy 74.93 266.7) (xy 77.47 266.7)
 		)
 		(stroke
@@ -15757,6 +15843,16 @@
 	)
 	(wire
 		(pts
+			(xy 148.59 194.31) (xy 152.4 194.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d793e9ed-71f0-45cd-8872-8e1c5377dfe7")
+	)
+	(wire
+		(pts
 			(xy 54.61 228.6) (xy 74.93 228.6)
 		)
 		(stroke
@@ -15787,6 +15883,16 @@
 	)
 	(wire
 		(pts
+			(xy 148.59 199.39) (xy 151.13 199.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da269acc-e5af-41c0-b938-18fa9904c4fb")
+	)
+	(wire
+		(pts
 			(xy 300.99 44.45) (xy 303.53 44.45)
 		)
 		(stroke
@@ -15797,7 +15903,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 205.74) (xy 204.47 205.74)
+			(xy 177.8 205.74) (xy 179.07 205.74)
 		)
 		(stroke
 			(width 0)
@@ -15957,7 +16063,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 52.07) (xy 241.3 48.26)
+			(xy 241.3 46.99) (xy 241.3 43.18)
 		)
 		(stroke
 			(width 0)
@@ -15967,7 +16073,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 146.05) (xy 179.07 146.05)
+			(xy 161.29 151.13) (xy 177.8 151.13)
 		)
 		(stroke
 			(width 0)
@@ -16107,7 +16213,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 48.26) (xy 132.08 48.26)
+			(xy 148.59 43.18) (xy 132.08 43.18)
 		)
 		(stroke
 			(width 0)
@@ -16127,7 +16233,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 52.07) (xy 228.6 52.07)
+			(xy 219.71 46.99) (xy 228.6 46.99)
 		)
 		(stroke
 			(width 0)
@@ -16157,7 +16263,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 146.05) (xy 209.55 146.05)
+			(xy 191.77 151.13) (xy 208.28 151.13)
 		)
 		(stroke
 			(width 0)
@@ -16257,7 +16363,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 153.67) (xy 179.07 153.67)
+			(xy 161.29 158.75) (xy 177.8 158.75)
 		)
 		(stroke
 			(width 0)
@@ -16347,7 +16453,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 208.28) (xy 213.36 205.74)
+			(xy 187.96 208.28) (xy 187.96 205.74)
 		)
 		(stroke
 			(width 0)
@@ -16367,7 +16473,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 140.97) (xy 179.07 140.97)
+			(xy 161.29 146.05) (xy 177.8 146.05)
 		)
 		(stroke
 			(width 0)
@@ -16397,6 +16503,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 129.54) (xy 165.1 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f52d4a72-9f7c-4c00-86da-38d3a41ae448")
+	)
+	(wire
+		(pts
 			(xy 377.19 181.61) (xy 378.46 181.61)
 		)
 		(stroke
@@ -16404,6 +16520,16 @@
 			(type default)
 		)
 		(uuid "f5c85e58-473c-4ee3-82e9-be91f6863c13")
+	)
+	(wire
+		(pts
+			(xy 181.61 129.54) (xy 185.42 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f61f74ff-d97e-44bb-bc3c-a3f6a725dae2")
 	)
 	(wire
 		(pts
@@ -16547,7 +16673,7 @@
 	)
 	(wire
 		(pts
-			(xy 212.09 208.28) (xy 213.36 208.28)
+			(xy 186.69 208.28) (xy 187.96 208.28)
 		)
 		(stroke
 			(width 0)
@@ -16688,8 +16814,8 @@
 		(uuid 0adc03d3-451e-4f38-839e-2856737cdbad)
 	)
 	(rectangle
-		(start 161.29 135.255)
-		(end 220.345 170.18)
+		(start 160.02 140.335)
+		(end 219.075 175.26)
 		(stroke
 			(width 0)
 			(type dash)
@@ -16735,9 +16861,22 @@
 		)
 		(uuid 41a9a593-a031-49a6-b5c3-eedb2c0f50d9)
 	)
+	(circle
+		(center 210.058 106.68)
+		(radius 1.6264)
+		(stroke
+			(width 0)
+			(type default)
+			(color 239 255 0 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 61d6a418-067d-4dc2-90c9-556511be2d08)
+	)
 	(rectangle
-		(start 263.144 151.384)
-		(end 315.214 172.466)
+		(start 160.274 86.614)
+		(end 214.122 137.668)
 		(stroke
 			(width 0)
 			(type dash)
@@ -16759,6 +16898,19 @@
 		)
 		(uuid 8b696dfe-d431-40a7-8ddf-27a4d0fb909b)
 	)
+	(circle
+		(center 204.978 106.68)
+		(radius 1.6264)
+		(stroke
+			(width 0)
+			(type default)
+			(color 239 255 0 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 9caef074-ae61-477e-84cc-e5f9aaf92420)
+	)
 	(rectangle
 		(start 266.7 29.21)
 		(end 394.335 147.32)
@@ -16770,6 +16922,19 @@
 			(type none)
 		)
 		(uuid bde0e02c-8eea-4cb5-a6f6-bfd8b0ad0c0f)
+	)
+	(circle
+		(center 207.518 102.362)
+		(radius 1.6264)
+		(stroke
+			(width 0)
+			(type default)
+			(color 239 255 0 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid c01e6074-46b5-40fd-acb3-e66349b81691)
 	)
 	(rectangle
 		(start 151.638 217.424)
@@ -16858,7 +17023,7 @@
 	)
 	(text "TEST POINTS"
 		(exclude_from_sim no)
-		(at 162.052 137.16 0)
+		(at 160.782 142.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16898,9 +17063,20 @@
 		)
 		(uuid "79487a52-fc0c-423b-b7e7-13f191dc5fd8")
 	)
-	(text "DEBUG LED"
+	(text "TODO"
 		(exclude_from_sim no)
-		(at 263.906 154.178 0)
+		(at 202.438 103.886 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 239 255 0 1)
+			)
+		)
+		(uuid "811a6eb5-b6c2-4da4-b3c4-0920c05922ce")
+	)
+	(text "DEBUG LEDS"
+		(exclude_from_sim no)
+		(at 161.036 89.408 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16932,7 +17108,7 @@
 	)
 	(text "EXTI9"
 		(exclude_from_sim no)
-		(at 165.354 55.88 0)
+		(at 165.354 50.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16973,7 +17149,7 @@
 		(uuid "0036aaf2-fddf-4532-b208-47340aa340a9")
 	)
 	(label "SPI3_MOSI"
-		(at 162.56 156.21 0)
+		(at 161.29 161.29 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17039,7 +17215,7 @@
 		(uuid "0b1369b8-d81d-4f9b-9186-d3fc8f5153f1")
 	)
 	(label "SPI3_SCK"
-		(at 162.56 151.13 0)
+		(at 161.29 156.21 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17127,7 +17303,7 @@
 		(uuid "12fa1b40-becd-4086-b225-435c3bb1d03c")
 	)
 	(label "WKUP_INT_POLARITY"
-		(at 162.56 167.64 0)
+		(at 161.29 172.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17182,7 +17358,7 @@
 		(uuid "213cbea3-bc69-4b0b-86c2-5ebfc34240af")
 	)
 	(label "SPI4_MISO"
-		(at 132.08 66.04 0)
+		(at 132.08 60.96 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17193,7 +17369,7 @@
 		(uuid "22c16b57-e513-439e-ad30-ce59c01e8dd7")
 	)
 	(label "SD_VDD{slash}EN"
-		(at 193.04 146.05 0)
+		(at 191.77 151.13 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17248,7 +17424,7 @@
 		(uuid "2711ef83-ca5e-4c49-a876-93f65c327a56")
 	)
 	(label "OLED_CS"
-		(at 162.56 146.05 0)
+		(at 161.29 151.13 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17257,6 +17433,17 @@
 			(justify left bottom)
 		)
 		(uuid "280e7b09-5315-48f6-9a58-80fb723fee23")
+	)
+	(label "PWR_VBUS_5V"
+		(at 132.08 236.22 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2ce4a208-f198-439a-a464-0f66a6db9cab")
 	)
 	(label "RS232_TX"
 		(at 199.39 273.05 0)
@@ -17292,7 +17479,7 @@
 		(uuid "303d5b43-6023-4b96-b217-25221aeba01f")
 	)
 	(label "SPI4_SCK"
-		(at 193.04 151.13 0)
+		(at 191.77 156.21 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17303,7 +17490,7 @@
 		(uuid "31cc9478-f8fc-4bd6-9e94-0721e2abb51c")
 	)
 	(label "GPIO12"
-		(at 171.45 205.74 0)
+		(at 170.18 191.77 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17336,7 +17523,7 @@
 		(uuid "3d93de5b-21d3-400b-bd53-9d868e23e027")
 	)
 	(label "EXTETH_CS"
-		(at 193.04 158.75 0)
+		(at 191.77 163.83 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17424,7 +17611,7 @@
 		(uuid "4e932209-b5f6-482e-af09-95599287d1a3")
 	)
 	(label "SD_SENSE_CBL"
-		(at 193.04 143.51 0)
+		(at 191.77 148.59 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17479,7 +17666,7 @@
 		(uuid "53785b7f-f098-48d9-874f-dc8bdfe11c5c")
 	)
 	(label "SPI4_SCK"
-		(at 132.08 48.26 0)
+		(at 132.08 43.18 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17490,7 +17677,7 @@
 		(uuid "537f6498-3d2c-4263-8e52-99624faa8a26")
 	)
 	(label "GPIO1"
-		(at 168.91 191.77 180)
+		(at 167.64 191.77 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17512,7 +17699,7 @@
 		(uuid "558ab2fc-a403-4b9d-9604-24bea571b1a8")
 	)
 	(label "SPI2_SCK"
-		(at 162.56 140.97 0)
+		(at 161.29 146.05 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17534,7 +17721,7 @@
 		(uuid "56390fe2-55d4-40a1-a2cd-b4f3c37b6874")
 	)
 	(label "SPI3_MISO"
-		(at 162.56 153.67 0)
+		(at 161.29 158.75 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17556,7 +17743,7 @@
 		(uuid "583c101a-a212-42e0-9be9-6788589895d1")
 	)
 	(label "GPIO13"
-		(at 132.08 63.5 0)
+		(at 132.08 58.42 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17599,7 +17786,7 @@
 		)
 		(uuid "58e93087-b2e1-4120-a04e-00dd56fa986e")
 	)
-	(label "GPIO2"
+	(label "DBG_LED3"
 		(at 113.03 63.5 180)
 		(fields_autoplaced yes)
 		(effects
@@ -17633,7 +17820,7 @@
 		(uuid "5f4e9aa5-1e10-4331-8a65-54342a1a7b29")
 	)
 	(label "BOOT0"
-		(at 214.63 53.34 180)
+		(at 214.63 48.26 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17885,6 +18072,17 @@
 		)
 		(uuid "7b1091b1-308c-47f4-9706-f8b80743eb94")
 	)
+	(label "DBG_LED2"
+		(at 210.82 114.3 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7d0f100e-6d88-4e52-80cd-adcb8b1fcec9")
+	)
 	(label "SPI3_SCK"
 		(at 113.03 68.58 180)
 		(fields_autoplaced yes)
@@ -17897,7 +18095,7 @@
 		(uuid "7d628f1a-ce7e-4814-bf63-25c246279205")
 	)
 	(label "EXTETH_CS"
-		(at 132.08 60.96 0)
+		(at 132.08 55.88 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17908,7 +18106,7 @@
 		(uuid "8116880d-0f53-464a-9acf-f6dc60aa04e4")
 	)
 	(label "SPI4_MOSI"
-		(at 193.04 156.21 0)
+		(at 191.77 161.29 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17919,7 +18117,7 @@
 		(uuid "81b28b36-cd8b-4499-a074-8b7b631e52f2")
 	)
 	(label "SPI2_MOSI"
-		(at 162.56 143.51 0)
+		(at 161.29 148.59 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18105,17 +18303,6 @@
 		)
 		(uuid "9a00a233-d281-416b-838b-8154c48c9675")
 	)
-	(label "GPIO0"
-		(at 144.78 191.77 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9b968348-3207-40e0-917b-ba3ccb7dc6a1")
-	)
 	(label "~{VBUS_PWR_OC}"
 		(at 132.08 215.9 180)
 		(fields_autoplaced yes)
@@ -18205,7 +18392,7 @@
 		(uuid "a243cee8-753e-4620-b49d-f2edd3d08ddc")
 	)
 	(label "UART7_TX"
-		(at 132.08 53.34 0)
+		(at 132.08 48.26 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18227,7 +18414,7 @@
 		(uuid "a30a9d1d-ce36-412b-bd96-a704010f1656")
 	)
 	(label "SPI4_MOSI"
-		(at 132.08 68.58 0)
+		(at 132.08 63.5 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18237,7 +18424,7 @@
 		)
 		(uuid "a44910f7-661f-453b-9bfa-d1c6accf4e38")
 	)
-	(label "DBG_LED"
+	(label "DBG_LED1"
 		(at 113.03 93.98 180)
 		(fields_autoplaced yes)
 		(effects
@@ -18380,6 +18567,17 @@
 		)
 		(uuid "afd73e82-756e-42cc-bd29-956a712b007c")
 	)
+	(label "PWR_VBUS_5V"
+		(at 151.13 199.39 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b12b7b27-c840-42cd-bc3d-c0fdd49ba96b")
+	)
 	(label "~{AUX_VBUS_SENSE}"
 		(at 33.02 76.2 0)
 		(fields_autoplaced yes)
@@ -18434,17 +18632,6 @@
 			(justify right bottom)
 		)
 		(uuid "b5ef780c-7bdc-4b35-bc6d-ecd519587826")
-	)
-	(label "GPIO2"
-		(at 144.78 194.31 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b6354f8b-7f1f-4ab0-a124-abd9d0db1ccc")
 	)
 	(label "GPIO8"
 		(at 113.03 60.96 180)
@@ -18578,8 +18765,8 @@
 		)
 		(uuid "c3f9516a-784d-42bb-b1a2-0930e55bf645")
 	)
-	(label "DBG_LED"
-		(at 312.42 165.1 180)
+	(label "DBG_LED1"
+		(at 210.82 100.33 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18623,7 +18810,7 @@
 		(uuid "c7329974-3008-4bce-bc4c-728894f73fbd")
 	)
 	(label "SD_SENSE_CARD"
-		(at 193.04 140.97 0)
+		(at 191.77 146.05 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18645,7 +18832,7 @@
 		(uuid "c9d07aa9-c07f-47f9-b7e4-51611009e95a")
 	)
 	(label "GPIO12"
-		(at 132.08 58.42 0)
+		(at 132.08 53.34 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18656,7 +18843,7 @@
 		(uuid "ca0381f6-6a1e-42cb-8899-bbc4c0ed1b33")
 	)
 	(label "VBUS_EN"
-		(at 132.08 71.12 0)
+		(at 132.08 66.04 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18678,7 +18865,7 @@
 		(uuid "cbaac2b1-124f-436b-8f69-553ed2923318")
 	)
 	(label "UART7_RX"
-		(at 132.08 50.8 0)
+		(at 132.08 45.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18700,7 +18887,7 @@
 		(uuid "d4bfb594-6dea-4296-abf7-8c3fa9a6fae0")
 	)
 	(label "SYSETH_CS"
-		(at 162.56 158.75 0)
+		(at 161.29 163.83 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18722,7 +18909,7 @@
 		(uuid "d5a37e77-d476-493e-a62b-b186ba4233c8")
 	)
 	(label "~{POWER_ALERT}"
-		(at 132.08 55.88 0)
+		(at 132.08 50.8 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18755,7 +18942,7 @@
 		(uuid "e0705407-c210-4390-b3b0-77ee3d14e230")
 	)
 	(label "I2C3_SCL"
-		(at 193.04 163.83 0)
+		(at 191.77 168.91 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18764,6 +18951,17 @@
 			(justify left bottom)
 		)
 		(uuid "e08186ad-e7ca-4696-9885-2ca2262e6503")
+	)
+	(label "DBG_LED3"
+		(at 210.82 129.54 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e29e4ca1-303a-45b3-811b-fef734f25b0f")
 	)
 	(label "~{PSU_POWER_ON}"
 		(at 113.03 114.3 180)
@@ -18777,7 +18975,7 @@
 		(uuid "e323d93d-25df-458c-8039-634da778a172")
 	)
 	(label "XTAL"
-		(at 132.08 76.2 0)
+		(at 132.08 71.12 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18788,7 +18986,7 @@
 		(uuid "e3cfbcea-5b08-4d8b-8299-5774e122f1b4")
 	)
 	(label "SPI4_MISO"
-		(at 193.04 153.67 0)
+		(at 191.77 158.75 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18798,7 +18996,7 @@
 		)
 		(uuid "e6f6697b-cef4-49df-af91-771defff2aad")
 	)
-	(label "GPIO0"
+	(label "DBG_LED2"
 		(at 33.02 109.22 0)
 		(fields_autoplaced yes)
 		(effects
@@ -18832,7 +19030,7 @@
 		(uuid "e8f54099-d058-4c90-bd5a-685634f921e8")
 	)
 	(label "GPIO13"
-		(at 194.31 205.74 180)
+		(at 193.04 191.77 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18865,7 +19063,7 @@
 		(uuid "ed501443-3d5f-4452-9908-ba716a87457e")
 	)
 	(label "SD_CS"
-		(at 162.56 161.29 0)
+		(at 161.29 166.37 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18876,7 +19074,7 @@
 		(uuid "ee59ce50-2ed8-4794-bc55-ecc71c902565")
 	)
 	(label "SD_HOST_SUT_SEL"
-		(at 162.56 165.1 0)
+		(at 161.29 170.18 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18920,7 +19118,7 @@
 		(uuid "f4b9d322-7832-4e78-98a5-16b3ff731f6d")
 	)
 	(label "GPIO3"
-		(at 168.91 194.31 180)
+		(at 167.64 194.31 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18953,7 +19151,7 @@
 		(uuid "f797894f-3713-49d2-9b11-918272fbffbf")
 	)
 	(label "I2C3_SDA"
-		(at 193.04 166.37 0)
+		(at 191.77 171.45 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19348,8 +19546,148 @@
 		)
 	)
 	(symbol
+		(lib_id "OroLink:CLM3C-WKW-CXAYA453")
+		(at 200.66 129.54 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "026791a4-00d8-4995-91de-a4884e464473")
+		(property "Reference" "LED27"
+			(at 193.04 122.8555 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CLM3C-WKW-CXAYA453"
+			(at 193.04 125.2798 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:CLM3CWKWCXAYA453"
+			(at 187.96 35.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://componentsearchengine.com/Datasheets/2/CLM3C-WKW-CWBYA453.pdf"
+			(at 187.96 -64.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cree CLM3C-WKW-CXAYA453, CLM3 Series White LED, 5500K, PLCC 2, Rectangle Lens SMD Package"
+			(at 200.66 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.4"
+			(at 187.96 -264.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "CREE LED"
+			(at 187.96 -364.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CLM3C-WKW-CXAYA453"
+			(at 187.96 -464.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "941-CLM3CWKWCXAYA453"
+			(at 187.96 -564.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Cree-Inc/CLM3C-WKW-CXaYa453?qs=3AcK5DacLbr3ewaPKwAgNg%3D%3D"
+			(at 187.96 -664.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "CLM3C-WKW-CXAYA453"
+			(at 187.96 -764.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/clm3c-wkw-cxaya453/cree"
+			(at 187.96 -864.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "43d14cf4-5e78-46a5-b195-1bdc1831116c")
+		)
+		(pin "2"
+			(uuid "5b8030d2-517e-4c65-8f4c-998ee095f579")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
+					(reference "LED27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 209.55 151.13 270)
+		(at 208.28 156.21 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -19357,7 +19695,7 @@
 		(dnp no)
 		(uuid "05145bb1-7c46-4266-a672-f74e4dc8806b")
 		(property "Reference" "TP22"
-			(at 214.122 151.13 90)
+			(at 212.852 156.21 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19366,7 +19704,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 221.234 151.13 90)
+			(at 219.964 156.21 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19376,7 +19714,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 209.55 156.21 0)
+			(at 208.28 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19385,7 +19723,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 209.55 156.21 0)
+			(at 208.28 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19394,7 +19732,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 209.55 151.13 0)
+			(at 208.28 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19852,7 +20190,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 267.97 163.83 0)
+		(at 165.1 99.06 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -19861,7 +20199,7 @@
 		(fields_autoplaced yes)
 		(uuid "0ad570ac-91be-4d17-9dc6-1540878f8b81")
 		(property "Reference" "#PWR0140"
-			(at 267.97 167.64 0)
+			(at 165.1 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19870,7 +20208,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 267.97 159.6969 0)
+			(at 165.1 94.9269 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19878,7 +20216,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 267.97 163.83 0)
+			(at 165.1 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19887,7 +20225,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 267.97 163.83 0)
+			(at 165.1 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19896,7 +20234,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 267.97 163.83 0)
+			(at 165.1 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19918,7 +20256,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 179.07 208.28 90)
+		(at 177.8 194.31 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -19927,7 +20265,7 @@
 		(fields_autoplaced yes)
 		(uuid "11c25b42-5a97-4d24-9b0a-a619ff0814ea")
 		(property "Reference" "#PWR0174"
-			(at 182.88 208.28 0)
+			(at 181.61 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19936,7 +20274,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 175.8951 208.28 90)
+			(at 174.6251 194.31 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19945,7 +20283,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 179.07 208.28 0)
+			(at 177.8 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19954,7 +20292,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 179.07 208.28 0)
+			(at 177.8 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19963,7 +20301,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 179.07 208.28 0)
+			(at 177.8 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19985,7 +20323,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 209.55 166.37 270)
+		(at 208.28 171.45 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -19993,7 +20331,7 @@
 		(dnp no)
 		(uuid "121aa5dd-7c54-49a7-9c19-e0fdfa1c12f3")
 		(property "Reference" "TP27"
-			(at 214.122 166.37 90)
+			(at 212.852 171.45 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20002,7 +20340,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 221.234 166.37 90)
+			(at 219.964 171.45 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20012,7 +20350,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 209.55 171.45 0)
+			(at 208.28 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20021,7 +20359,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 209.55 171.45 0)
+			(at 208.28 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20030,7 +20368,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 209.55 166.37 0)
+			(at 208.28 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20619,7 +20957,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:CLM3C-WKW-CXAYA453")
-		(at 303.53 165.1 180)
+		(at 200.66 100.33 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20628,7 +20966,7 @@
 		(fields_autoplaced yes)
 		(uuid "17fe975f-3687-4211-9968-e2957e9fd335")
 		(property "Reference" "LED23"
-			(at 295.91 158.4155 0)
+			(at 193.04 93.6455 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20636,7 +20974,7 @@
 			)
 		)
 		(property "Value" "CLM3C-WKW-CXAYA453"
-			(at 295.91 160.8398 0)
+			(at 193.04 96.0698 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20644,7 +20982,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:CLM3CWKWCXAYA453"
-			(at 290.83 71.45 0)
+			(at 187.96 6.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20654,7 +20992,7 @@
 			)
 		)
 		(property "Datasheet" "https://componentsearchengine.com/Datasheets/2/CLM3C-WKW-CWBYA453.pdf"
-			(at 290.83 -28.55 0)
+			(at 187.96 -93.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20664,7 +21002,7 @@
 			)
 		)
 		(property "Description" "Cree CLM3C-WKW-CXAYA453, CLM3 Series White LED, 5500K, PLCC 2, Rectangle Lens SMD Package"
-			(at 303.53 165.1 0)
+			(at 200.66 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20673,7 +21011,7 @@
 			)
 		)
 		(property "Height" "1.4"
-			(at 290.83 -228.55 0)
+			(at 187.96 -293.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20683,7 +21021,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "CREE LED"
-			(at 290.83 -328.55 0)
+			(at 187.96 -393.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20693,7 +21031,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CLM3C-WKW-CXAYA453"
-			(at 290.83 -428.55 0)
+			(at 187.96 -493.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20703,7 +21041,7 @@
 			)
 		)
 		(property "Mouser Part Number" "941-CLM3CWKWCXAYA453"
-			(at 290.83 -528.55 0)
+			(at 187.96 -593.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20713,7 +21051,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Cree-Inc/CLM3C-WKW-CXaYa453?qs=3AcK5DacLbr3ewaPKwAgNg%3D%3D"
-			(at 290.83 -628.55 0)
+			(at 187.96 -693.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20723,7 +21061,7 @@
 			)
 		)
 		(property "Arrow Part Number" "CLM3C-WKW-CXAYA453"
-			(at 290.83 -728.55 0)
+			(at 187.96 -793.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20733,7 +21071,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/clm3c-wkw-cxaya453/cree"
-			(at 290.83 -828.55 0)
+			(at 187.96 -893.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20898,7 +21236,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 179.07 151.13 270)
+		(at 177.8 156.21 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20906,7 +21244,7 @@
 		(dnp no)
 		(uuid "1af4a277-329e-4baa-8d82-9baf9785ec72")
 		(property "Reference" "TP14"
-			(at 183.642 151.13 90)
+			(at 182.372 156.21 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20915,7 +21253,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 190.754 151.13 90)
+			(at 189.484 156.21 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20925,7 +21263,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 179.07 156.21 0)
+			(at 177.8 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20934,7 +21272,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 179.07 156.21 0)
+			(at 177.8 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20943,7 +21281,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 179.07 151.13 0)
+			(at 177.8 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21877,7 +22215,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:TL6400AF160QJ")
-		(at 224.79 48.26 0)
+		(at 224.79 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21886,7 +22224,7 @@
 		(fields_autoplaced yes)
 		(uuid "28a419fb-7fb6-4a13-92ea-b7cabb1e549a")
 		(property "Reference" "SW1"
-			(at 232.41 41.623 0)
+			(at 232.41 36.543 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -21894,7 +22232,7 @@
 			)
 		)
 		(property "Value" "TL6400AF160QJ"
-			(at 232.41 44.4559 0)
+			(at 232.41 39.3759 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -21902,7 +22240,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:SW_TL6400AF260QJ_EWI"
-			(at 224.79 48.26 0)
+			(at 224.79 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21912,7 +22250,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/140/TL6400AF160QJ-3459186.pdf"
-			(at 224.79 48.26 0)
+			(at 224.79 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21922,7 +22260,7 @@
 			)
 		)
 		(property "Description" "Tactile Switch, SPST-NO, OFF-(ON), 50 mA, 12V DC, J-Lead, IP67, TL6400 Series | E-Switch TL6400AF260QJ"
-			(at 224.79 48.26 0)
+			(at 224.79 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21931,7 +22269,7 @@
 			)
 		)
 		(property "DigiKey ID" "141-TL6400AF260QJCT-ND"
-			(at 224.79 51.26 0)
+			(at 224.79 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21941,7 +22279,7 @@
 			)
 		)
 		(property "Arrow ID" "null"
-			(at 224.79 51.26 0)
+			(at 224.79 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21951,7 +22289,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/E-Switch/TL6400AF260QJ?qs=t7xnP681wgUYgj2txd1NMw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=612-TL6400AF260QJ&utm_content=E-Switch"
-			(at 224.79 51.26 0)
+			(at 224.79 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21961,7 +22299,7 @@
 			)
 		)
 		(property "Mfr. Number" "TL6400AF160QJ"
-			(at 224.79 51.26 0)
+			(at 224.79 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21971,7 +22309,7 @@
 			)
 		)
 		(property "Mouser ID" "612-TL6400AF160QJ"
-			(at 224.79 51.26 0)
+			(at 224.79 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21981,7 +22319,7 @@
 			)
 		)
 		(property "Description_1" "Tactile Switch, SPST-NO, OFF-(ON), 50 mA, 12V DC, J-Lead, IP67, TL6400 Series | E-Switch TL6400AF260QJ"
-			(at 224.79 51.26 0)
+			(at 224.79 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21991,7 +22329,7 @@
 			)
 		)
 		(property "Mfr. Name" "E-Switch"
-			(at 224.79 51.26 0)
+			(at 224.79 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22017,7 +22355,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 179.07 146.05 270)
+		(at 177.8 151.13 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22025,7 +22363,7 @@
 		(dnp no)
 		(uuid "29c7d6b1-f08f-43c9-b5a8-7f1d8568af91")
 		(property "Reference" "TP13"
-			(at 183.642 146.05 90)
+			(at 182.372 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22034,7 +22372,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 190.754 146.05 90)
+			(at 189.484 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22044,7 +22382,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 179.07 151.13 0)
+			(at 177.8 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22053,7 +22391,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 179.07 151.13 0)
+			(at 177.8 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22062,7 +22400,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 179.07 146.05 0)
+			(at 177.8 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22777,7 +23115,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:68021-204HLF")
-		(at 204.47 203.2 0)
+		(at 179.07 203.2 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22785,7 +23123,7 @@
 		(dnp no)
 		(uuid "3378a1d4-7d01-4412-84fb-9e34f34422c4")
 		(property "Reference" "J18"
-			(at 208.28 197.4737 0)
+			(at 182.88 197.4737 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22793,7 +23131,7 @@
 			)
 		)
 		(property "Value" "68021-204HLF"
-			(at 208.28 199.898 0)
+			(at 182.88 199.898 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22801,7 +23139,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:2x2 4p 2.54 pitch"
-			(at 204.47 203.2 0)
+			(at 179.07 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22810,7 +23148,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/boardwiretoboard/bwb_bergstik.pdf"
-			(at 204.47 203.2 0)
+			(at 179.07 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22819,7 +23157,7 @@
 			)
 		)
 		(property "Description" " Headers & Wire Housings 4P SR UNSHRD HRD .38 GOLD OVER NI"
-			(at 204.47 203.2 0)
+			(at 179.07 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22828,7 +23166,7 @@
 			)
 		)
 		(property "Mouser ID Number" "649-68021-204HLF"
-			(at 204.47 203.2 0)
+			(at 179.07 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22837,7 +23175,7 @@
 			)
 		)
 		(property "Mouser Stock URL" "https://www.mouser.de/ProductDetail/Amphenol-FCI/68021-204HLF?qs=QKvFUfBIyQLYRGZzFGyTzg%3D%3D"
-			(at 204.47 203.2 0)
+			(at 179.07 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22845,8 +23183,8 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "GPIO_E"
-			(at 208.28 202.3223 0)
+		(property "Note" "GPIO_D"
+			(at 182.88 202.3223 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22876,7 +23214,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 179.07 140.97 270)
+		(at 177.8 146.05 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22884,7 +23222,7 @@
 		(dnp no)
 		(uuid "3405f6b4-d911-49e3-9e38-6362463f17b9")
 		(property "Reference" "TP11"
-			(at 183.642 140.97 90)
+			(at 182.372 146.05 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22893,7 +23231,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 190.754 140.97 90)
+			(at 189.484 146.05 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22903,7 +23241,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 179.07 146.05 0)
+			(at 177.8 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22912,7 +23250,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 179.07 146.05 0)
+			(at 177.8 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22921,7 +23259,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 179.07 140.97 0)
+			(at 177.8 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23425,6 +23763,146 @@
 		)
 	)
 	(symbol
+		(lib_id "OroLink:SG73P2ATTD102J")
+		(at 168.91 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3ff4f4aa-9c34-4234-9575-4d2ca6b24167")
+		(property "Reference" "R88"
+			(at 175.26 123.538 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1K"
+			(at 175.26 126.3709 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:RES_SG73P_2A_KOA"
+			(at 168.91 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "null"
+			(at 168.91 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Res Thick Film 0805 1K Ohm 5% 0.5W(1/2W) ±100ppm/C Pad SMD Automotive T/R"
+			(at 168.91 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "null"
+			(at 168.91 132.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "SG73P2ATTD102J"
+			(at 168.91 132.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "660-SG73P2ATTD102J"
+			(at 168.91 132.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Res Thick Film 0805 1K Ohm 5% 0.5W(1/2W) ±100ppm/C Pad SMD Automotive T/R"
+			(at 168.91 132.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "2019-SG73P2ATTD102JCT-ND"
+			(at 168.91 132.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "SG73P2ATTD102J"
+			(at 168.91 132.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "KOA Speer"
+			(at 168.91 132.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3a9a97cb-8441-4afa-97ea-bdc2e033f284")
+		)
+		(pin "1"
+			(uuid "6c79a392-eaa0-4684-b96e-e8cd8ca4a254")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
+					(reference "R88")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "OroLink:MSAST1L3YB5104KFNA01")
 		(at 384.81 227.33 0)
 		(unit 1)
@@ -23565,7 +24043,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 219.71 29.21 0)
+		(at 219.71 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -23574,7 +24052,7 @@
 		(fields_autoplaced yes)
 		(uuid "431ec6a4-1b5b-45ed-876c-50cedbc86c84")
 		(property "Reference" "#PWR02"
-			(at 219.71 33.02 0)
+			(at 219.71 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23583,7 +24061,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 219.71 25.0769 0)
+			(at 219.71 19.9969 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23591,7 +24069,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 219.71 29.21 0)
+			(at 219.71 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23600,7 +24078,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 219.71 29.21 0)
+			(at 219.71 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23609,7 +24087,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 219.71 29.21 0)
+			(at 219.71 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24453,7 +24931,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:SG73P2ATTD102J")
-		(at 271.78 165.1 0)
+		(at 168.91 100.33 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -24462,7 +24940,7 @@
 		(fields_autoplaced yes)
 		(uuid "51bda9cc-341e-4a66-9d93-a8e3716bf540")
 		(property "Reference" "R37"
-			(at 278.13 159.098 0)
+			(at 175.26 94.328 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -24470,7 +24948,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 278.13 161.9309 0)
+			(at 175.26 97.1609 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -24478,7 +24956,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:RES_SG73P_2A_KOA"
-			(at 271.78 165.1 0)
+			(at 168.91 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24488,7 +24966,7 @@
 			)
 		)
 		(property "Datasheet" "null"
-			(at 271.78 165.1 0)
+			(at 168.91 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24498,7 +24976,7 @@
 			)
 		)
 		(property "Description" "Res Thick Film 0805 1K Ohm 5% 0.5W(1/2W) ±100ppm/C Pad SMD Automotive T/R"
-			(at 271.78 165.1 0)
+			(at 168.91 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24507,7 +24985,7 @@
 			)
 		)
 		(property "Mouser URL" "null"
-			(at 271.78 168.1 0)
+			(at 168.91 103.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24517,7 +24995,7 @@
 			)
 		)
 		(property "Arrow ID" "SG73P2ATTD102J"
-			(at 271.78 168.1 0)
+			(at 168.91 103.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24527,7 +25005,7 @@
 			)
 		)
 		(property "Mouser ID" "660-SG73P2ATTD102J"
-			(at 271.78 168.1 0)
+			(at 168.91 103.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24537,7 +25015,7 @@
 			)
 		)
 		(property "Description_1" "Res Thick Film 0805 1K Ohm 5% 0.5W(1/2W) ±100ppm/C Pad SMD Automotive T/R"
-			(at 271.78 168.1 0)
+			(at 168.91 103.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24547,7 +25025,7 @@
 			)
 		)
 		(property "DigiKey ID" "2019-SG73P2ATTD102JCT-ND"
-			(at 271.78 168.1 0)
+			(at 168.91 103.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24557,7 +25035,7 @@
 			)
 		)
 		(property "Mfr. Number" "SG73P2ATTD102J"
-			(at 271.78 168.1 0)
+			(at 168.91 103.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24567,7 +25045,7 @@
 			)
 		)
 		(property "Mfr. Name" "KOA Speer"
-			(at 271.78 168.1 0)
+			(at 168.91 103.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24593,7 +25071,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 209.55 158.75 270)
+		(at 208.28 163.83 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -24601,7 +25079,7 @@
 		(dnp no)
 		(uuid "54455ed7-9d27-4540-a32f-f1899ff0991f")
 		(property "Reference" "TP25"
-			(at 214.122 158.75 90)
+			(at 212.852 163.83 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24610,7 +25088,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 221.234 158.75 90)
+			(at 219.964 163.83 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24620,7 +25098,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 209.55 163.83 0)
+			(at 208.28 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24629,7 +25107,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 209.55 163.83 0)
+			(at 208.28 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24638,7 +25116,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 209.55 158.75 0)
+			(at 208.28 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25285,7 +25763,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 179.07 143.51 270)
+		(at 177.8 148.59 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25293,7 +25771,7 @@
 		(dnp no)
 		(uuid "5c959c06-1709-409d-ab95-6c718442c468")
 		(property "Reference" "TP12"
-			(at 183.642 143.51 90)
+			(at 182.372 148.59 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25302,7 +25780,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 190.754 143.51 90)
+			(at 189.484 148.59 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25312,7 +25790,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 179.07 148.59 0)
+			(at 177.8 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25321,7 +25799,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 179.07 148.59 0)
+			(at 177.8 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25330,7 +25808,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 179.07 143.51 0)
+			(at 177.8 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26190,7 +26668,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:68021-204HLF")
-		(at 179.07 203.2 0)
+		(at 177.8 189.23 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -26198,7 +26676,7 @@
 		(dnp no)
 		(uuid "67c2bb73-9c21-445a-8cb3-bca1e80e867c")
 		(property "Reference" "J17"
-			(at 182.88 197.4737 0)
+			(at 181.61 183.5037 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26206,7 +26684,7 @@
 			)
 		)
 		(property "Value" "68021-204HLF"
-			(at 182.88 199.898 0)
+			(at 181.61 185.928 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26214,7 +26692,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:2x2 4p 2.54 pitch"
-			(at 179.07 203.2 0)
+			(at 177.8 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26223,7 +26701,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/boardwiretoboard/bwb_bergstik.pdf"
-			(at 179.07 203.2 0)
+			(at 177.8 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26232,7 +26710,7 @@
 			)
 		)
 		(property "Description" " Headers & Wire Housings 4P SR UNSHRD HRD .38 GOLD OVER NI"
-			(at 179.07 203.2 0)
+			(at 177.8 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26241,7 +26719,7 @@
 			)
 		)
 		(property "Mouser ID Number" "649-68021-204HLF"
-			(at 179.07 203.2 0)
+			(at 177.8 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26250,7 +26728,7 @@
 			)
 		)
 		(property "Mouser Stock URL" "https://www.mouser.de/ProductDetail/Amphenol-FCI/68021-204HLF?qs=QKvFUfBIyQLYRGZzFGyTzg%3D%3D"
-			(at 179.07 203.2 0)
+			(at 177.8 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26258,8 +26736,8 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "GPIO_D"
-			(at 182.88 202.3223 0)
+		(property "Note" "GPIO_B"
+			(at 181.61 188.3523 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26498,7 +26976,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 209.55 163.83 270)
+		(at 208.28 168.91 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -26506,7 +26984,7 @@
 		(dnp no)
 		(uuid "72404a5d-bbd1-4953-a7bb-89f9586ca052")
 		(property "Reference" "TP26"
-			(at 214.122 163.83 90)
+			(at 212.852 168.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26515,7 +26993,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 221.234 163.83 90)
+			(at 219.964 168.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26525,7 +27003,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 209.55 168.91 0)
+			(at 208.28 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26534,7 +27012,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 209.55 168.91 0)
+			(at 208.28 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26543,7 +27021,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 209.55 163.83 0)
+			(at 208.28 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26705,7 +27183,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:RMCF0402FT10K0")
-		(at 219.71 44.45 270)
+		(at 219.71 39.37 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -26714,7 +27192,7 @@
 		(dnp no)
 		(uuid "75c8cba6-716a-448b-b333-820d1c64d1f2")
 		(property "Reference" "R3"
-			(at 217.7034 36.6835 90)
+			(at 217.7034 31.6035 90)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -26723,7 +27201,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 217.7034 39.5164 90)
+			(at 217.7034 34.4364 90)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -26732,7 +27210,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:STA_RMCF0402_STP"
-			(at 219.71 44.45 0)
+			(at 219.71 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26742,7 +27220,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/385/SEI_RMCF_RMCP-3077565.pdf"
-			(at 219.71 44.45 0)
+			(at 219.71 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26752,7 +27230,7 @@
 			)
 		)
 		(property "Description" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
-			(at 219.71 44.45 0)
+			(at 219.71 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26761,7 +27239,7 @@
 			)
 		)
 		(property "Description_1" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
-			(at 216.71 44.45 0)
+			(at 216.71 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26771,7 +27249,7 @@
 			)
 		)
 		(property "Mfr. Name" "Stackpole International"
-			(at 216.71 44.45 0)
+			(at 216.71 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26781,7 +27259,7 @@
 			)
 		)
 		(property "DigiKey ID" "RMCF0402FT10K0CT-ND"
-			(at 216.71 44.45 0)
+			(at 216.71 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26791,7 +27269,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/SEI-Stackpole/RMCF0402FT10K0?qs=FESYatJ8odLDpjm%252BwxiA1Q%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=708-RMCF0402FT10K0&utm_content=SEI%20Stackpole"
-			(at 216.71 44.45 0)
+			(at 216.71 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26801,7 +27279,7 @@
 			)
 		)
 		(property "Arrow ID" "RMCF0402FT10K0"
-			(at 216.71 44.45 0)
+			(at 216.71 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26811,7 +27289,7 @@
 			)
 		)
 		(property "Mfr. Number" "RMCF0402FT10K0"
-			(at 216.71 44.45 0)
+			(at 216.71 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26821,7 +27299,7 @@
 			)
 		)
 		(property "Mouser ID" "708-RMCF0402FT10K0"
-			(at 216.71 44.45 0)
+			(at 216.71 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26847,7 +27325,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 209.55 146.05 270)
+		(at 208.28 151.13 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -26855,7 +27333,7 @@
 		(dnp no)
 		(uuid "786a3e35-9bd6-40a8-a3dc-1f3004d01fe9")
 		(property "Reference" "TP21"
-			(at 214.122 146.05 90)
+			(at 212.852 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26864,7 +27342,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 221.234 146.05 90)
+			(at 219.964 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26874,7 +27352,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 209.55 151.13 0)
+			(at 208.28 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26883,7 +27361,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 209.55 151.13 0)
+			(at 208.28 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26892,7 +27370,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 209.55 146.05 0)
+			(at 208.28 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27680,7 +28158,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 209.55 156.21 270)
+		(at 208.28 161.29 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -27688,7 +28166,7 @@
 		(dnp no)
 		(uuid "85744420-2dea-4f1b-a65d-402f22b73f0e")
 		(property "Reference" "TP24"
-			(at 214.122 156.21 90)
+			(at 212.852 161.29 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27697,7 +28175,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 221.234 156.21 90)
+			(at 219.964 161.29 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27707,7 +28185,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 209.55 161.29 0)
+			(at 208.28 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27716,7 +28194,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 209.55 161.29 0)
+			(at 208.28 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27725,7 +28203,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 209.55 156.21 0)
+			(at 208.28 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27955,7 +28433,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 179.07 153.67 270)
+		(at 177.8 158.75 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -27963,7 +28441,7 @@
 		(dnp no)
 		(uuid "92262a26-33df-4c11-b267-532ef37b87ac")
 		(property "Reference" "TP15"
-			(at 183.642 153.67 90)
+			(at 182.372 158.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27972,7 +28450,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 190.754 153.67 90)
+			(at 189.484 158.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27982,7 +28460,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 179.07 158.75 0)
+			(at 177.8 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27991,7 +28469,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 179.07 158.75 0)
+			(at 177.8 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28000,7 +28478,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 179.07 153.67 0)
+			(at 177.8 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28432,7 +28910,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 186.69 208.28 270)
+		(at 185.42 194.31 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -28441,7 +28919,7 @@
 		(fields_autoplaced yes)
 		(uuid "9f87e7d2-3e59-43d9-a1f5-5c6fefb17732")
 		(property "Reference" "#PWR0173"
-			(at 182.88 208.28 0)
+			(at 181.61 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28450,7 +28928,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 189.865 208.28 90)
+			(at 188.595 194.31 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28459,7 +28937,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 186.69 208.28 0)
+			(at 185.42 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28468,7 +28946,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 186.69 208.28 0)
+			(at 185.42 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28477,7 +28955,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 186.69 208.28 0)
+			(at 185.42 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29209,7 +29687,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 179.07 158.75 270)
+		(at 177.8 163.83 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -29217,7 +29695,7 @@
 		(dnp no)
 		(uuid "af7f8b08-f3e2-448d-a735-1cc40853f257")
 		(property "Reference" "TP17"
-			(at 183.642 158.75 90)
+			(at 182.372 163.83 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29226,7 +29704,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 190.754 158.75 90)
+			(at 189.484 163.83 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29236,7 +29714,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 179.07 163.83 0)
+			(at 177.8 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29245,7 +29723,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 179.07 163.83 0)
+			(at 177.8 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29254,7 +29732,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 179.07 158.75 0)
+			(at 177.8 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29408,7 +29886,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 203.2 205.74 270)
+		(at 177.8 205.74 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -29417,7 +29895,7 @@
 		(fields_autoplaced yes)
 		(uuid "b2822a71-a313-4605-8c81-13f7e9d9ab35")
 		(property "Reference" "#PWR0172"
-			(at 196.85 205.74 0)
+			(at 171.45 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29426,7 +29904,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 200.0251 205.74 90)
+			(at 174.6251 205.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29435,7 +29913,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 203.2 205.74 0)
+			(at 177.8 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29444,7 +29922,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.2 205.74 0)
+			(at 177.8 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29453,7 +29931,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 203.2 205.74 0)
+			(at 177.8 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29475,7 +29953,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:MSAST1L3YB5104KFNA01")
-		(at 228.6 52.07 0)
+		(at 228.6 46.99 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -29484,7 +29962,7 @@
 		(fields_autoplaced yes)
 		(uuid "b5298810-e0e1-4a57-bb92-4d31316c3582")
 		(property "Reference" "C1"
-			(at 232.41 55.874 0)
+			(at 232.41 50.794 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -29492,7 +29970,7 @@
 			)
 		)
 		(property "Value" "0.1u"
-			(at 232.41 58.7069 0)
+			(at 232.41 53.6269 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -29500,7 +29978,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:CAP_MSAS1L-3_TAY"
-			(at 228.6 52.07 0)
+			(at 228.6 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29510,7 +29988,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/Tayio_Yuden_1102023_MS_mlcc_all_e-3081579.pdf"
-			(at 228.6 52.07 0)
+			(at 228.6 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29520,7 +29998,7 @@
 			)
 		)
 		(property "Description" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
-			(at 228.6 52.07 0)
+			(at 228.6 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29529,7 +30007,7 @@
 			)
 		)
 		(property "Mfr. Name" "Taiyo Yuden"
-			(at 228.6 55.07 0)
+			(at 228.6 49.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29539,7 +30017,7 @@
 			)
 		)
 		(property "Mfr. Number" "MSAST1L3YB5104KFNA01"
-			(at 228.6 55.07 0)
+			(at 228.6 49.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29549,7 +30027,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/MSAST1L3YB5104KFNA01?qs=tlsG%2FOw5FFhBwK%252BMwEZpCA%3D%3D"
-			(at 228.6 55.07 0)
+			(at 228.6 49.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29559,7 +30037,7 @@
 			)
 		)
 		(property "Description_1" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
-			(at 228.6 55.07 0)
+			(at 228.6 49.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29569,7 +30047,7 @@
 			)
 		)
 		(property "Arrow ID" "MSAST1L3YB5104KFNA01"
-			(at 228.6 55.07 0)
+			(at 228.6 49.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29579,7 +30057,7 @@
 			)
 		)
 		(property "DigiKey ID" "587-MSAST1L3YB5104KFNA01CT-ND"
-			(at 228.6 55.07 0)
+			(at 228.6 49.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29589,7 +30067,7 @@
 			)
 		)
 		(property "Mouser ID" "963-MSAST1L3YB5104KF"
-			(at 228.6 55.07 0)
+			(at 228.6 49.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29754,7 +30232,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 213.36 205.74 90)
+		(at 187.96 205.74 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -29763,7 +30241,7 @@
 		(fields_autoplaced yes)
 		(uuid "b90c406e-b1bb-4762-a45d-d0ce6bb77760")
 		(property "Reference" "#PWR0175"
-			(at 219.71 205.74 0)
+			(at 194.31 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29772,7 +30250,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 216.535 205.74 90)
+			(at 191.135 205.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29781,7 +30259,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 213.36 205.74 0)
+			(at 187.96 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29790,7 +30268,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 213.36 205.74 0)
+			(at 187.96 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29799,7 +30277,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 213.36 205.74 0)
+			(at 187.96 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30164,6 +30642,286 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
 					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:SG73P2ATTD102J")
+		(at 168.91 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bc4731e6-6d1e-48bb-8acf-004b1cec8be7")
+		(property "Reference" "R87"
+			(at 175.26 108.298 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1K"
+			(at 175.26 111.1309 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:RES_SG73P_2A_KOA"
+			(at 168.91 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "null"
+			(at 168.91 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Res Thick Film 0805 1K Ohm 5% 0.5W(1/2W) ±100ppm/C Pad SMD Automotive T/R"
+			(at 168.91 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "null"
+			(at 168.91 117.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "SG73P2ATTD102J"
+			(at 168.91 117.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "660-SG73P2ATTD102J"
+			(at 168.91 117.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Res Thick Film 0805 1K Ohm 5% 0.5W(1/2W) ±100ppm/C Pad SMD Automotive T/R"
+			(at 168.91 117.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "2019-SG73P2ATTD102JCT-ND"
+			(at 168.91 117.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "SG73P2ATTD102J"
+			(at 168.91 117.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "KOA Speer"
+			(at 168.91 117.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a7229405-99bd-49b6-8ded-823b3802983f")
+		)
+		(pin "1"
+			(uuid "fdf06bc1-b82f-4f9e-b420-a893a89f8373")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
+					(reference "R87")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:CLM3C-WKW-CXAYA453")
+		(at 200.66 114.3 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bd2184e9-5252-452b-a826-d3dbaca355e2")
+		(property "Reference" "LED26"
+			(at 193.04 107.6155 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CLM3C-WKW-CXAYA453"
+			(at 193.04 110.0398 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:CLM3CWKWCXAYA453"
+			(at 187.96 20.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://componentsearchengine.com/Datasheets/2/CLM3C-WKW-CWBYA453.pdf"
+			(at 187.96 -79.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cree CLM3C-WKW-CXAYA453, CLM3 Series White LED, 5500K, PLCC 2, Rectangle Lens SMD Package"
+			(at 200.66 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.4"
+			(at 187.96 -279.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "CREE LED"
+			(at 187.96 -379.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CLM3C-WKW-CXAYA453"
+			(at 187.96 -479.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "941-CLM3CWKWCXAYA453"
+			(at 187.96 -579.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Cree-Inc/CLM3C-WKW-CXaYa453?qs=3AcK5DacLbr3ewaPKwAgNg%3D%3D"
+			(at 187.96 -679.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "CLM3C-WKW-CXAYA453"
+			(at 187.96 -779.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/clm3c-wkw-cxaya453/cree"
+			(at 187.96 -879.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e836111d-e8c9-4231-abea-5aaa3a8a0f77")
+		)
+		(pin "2"
+			(uuid "edcb3256-d7fa-4226-9e40-9b405f837f87")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
+					(reference "LED26")
 					(unit 1)
 				)
 			)
@@ -30654,7 +31412,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 179.07 165.1 270)
+		(at 177.8 170.18 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -30662,7 +31420,7 @@
 		(dnp no)
 		(uuid "c01c7ced-9574-4219-a8f6-3fc0815a9a82")
 		(property "Reference" "TP29"
-			(at 183.642 165.1 90)
+			(at 182.372 170.18 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30671,7 +31429,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 190.754 165.1 90)
+			(at 189.484 170.18 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30681,7 +31439,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 179.07 170.18 0)
+			(at 177.8 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30690,7 +31448,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 179.07 170.18 0)
+			(at 177.8 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30699,7 +31457,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 179.07 165.1 0)
+			(at 177.8 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31487,7 +32245,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 179.07 167.64 270)
+		(at 177.8 172.72 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -31495,7 +32253,7 @@
 		(dnp no)
 		(uuid "cba9914b-708f-4122-9b4f-1e4092081f56")
 		(property "Reference" "TP30"
-			(at 183.642 167.64 90)
+			(at 182.372 172.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31504,7 +32262,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 190.754 167.64 90)
+			(at 189.484 172.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31514,7 +32272,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 179.07 172.72 0)
+			(at 177.8 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31523,7 +32281,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 179.07 172.72 0)
+			(at 177.8 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31532,7 +32290,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 179.07 167.64 0)
+			(at 177.8 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32041,7 +32799,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:STM32F479VGT6")
-		(at 148.59 48.26 0)
+		(at 148.59 43.18 0)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -32050,7 +32808,7 @@
 		(fields_autoplaced yes)
 		(uuid "dc08ef29-c2a9-42d3-950c-b335a2e089b8")
 		(property "Reference" "U1"
-			(at 176.53 38.4861 0)
+			(at 176.53 33.4061 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -32058,7 +32816,7 @@
 			)
 		)
 		(property "Value" "STM32F479VGT6"
-			(at 176.53 41.319 0)
+			(at 176.53 36.239 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -32066,7 +32824,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:LQFP100_STM"
-			(at 148.59 48.26 0)
+			(at 148.59 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32076,7 +32834,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/389/stm32f479ai-1839304.pdf"
-			(at 148.59 48.26 0)
+			(at 148.59 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32086,7 +32844,7 @@
 			)
 		)
 		(property "Description" "High-performance advanced line, ARM Cortex-M4 core with DSP and FPU, 1 Mbyte Flash, 180 MHz CPU, ART Accelerator, Chrom-ART Accelerator, FMC with SDRAM, Dual QSPI, TFT, MIPI-DSI"
-			(at 148.59 48.26 0)
+			(at 148.59 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32095,7 +32853,7 @@
 			)
 		)
 		(property "Mfr. Name" "STMicroelectronics"
-			(at 148.59 51.26 0)
+			(at 148.59 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32105,7 +32863,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/STMicroelectronics/STM32F479VGT6?qs=o7IDWEFmXKADp8QFprcgSQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=511-STM32F479VGT6&utm_content=STMicroelectronics"
-			(at 148.59 51.26 0)
+			(at 148.59 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32115,7 +32873,7 @@
 			)
 		)
 		(property "Mouser ID" "511-STM32F479VGT6"
-			(at 148.59 51.26 0)
+			(at 148.59 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32125,7 +32883,7 @@
 			)
 		)
 		(property "Description_1" "High-performance advanced line, ARM Cortex-M4 core with DSP and FPU, 1 Mbyte Flash, 180 MHz CPU, ART Accelerator, Chrom-ART Accelerator, FMC with SDRAM, Dual QSPI, TFT, MIPI-DSI"
-			(at 148.59 51.26 0)
+			(at 148.59 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32135,7 +32893,7 @@
 			)
 		)
 		(property "DigiKey ID" "497-STM32F479VGT6-ND"
-			(at 148.59 51.26 0)
+			(at 148.59 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32145,7 +32903,7 @@
 			)
 		)
 		(property "Mfr. Number" "STM32F479VGT6"
-			(at 148.59 51.26 0)
+			(at 148.59 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32155,7 +32913,7 @@
 			)
 		)
 		(property "Arrow ID" "STM32F479VGT6"
-			(at 148.59 51.26 0)
+			(at 148.59 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32475,7 +33233,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:68021-204HLF")
-		(at 153.67 189.23 0)
+		(at 152.4 189.23 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -32483,7 +33241,7 @@
 		(dnp no)
 		(uuid "dc933609-04d8-40bb-a0e5-82ff4f1b7168")
 		(property "Reference" "J13"
-			(at 157.48 183.5037 0)
+			(at 156.21 183.5037 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32491,7 +33249,7 @@
 			)
 		)
 		(property "Value" "68021-204HLF"
-			(at 157.48 185.928 0)
+			(at 156.21 185.928 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32499,7 +33257,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:2x2 4p 2.54 pitch"
-			(at 153.67 189.23 0)
+			(at 152.4 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32508,7 +33266,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/boardwiretoboard/bwb_bergstik.pdf"
-			(at 153.67 189.23 0)
+			(at 152.4 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32517,7 +33275,7 @@
 			)
 		)
 		(property "Description" " Headers & Wire Housings 4P SR UNSHRD HRD .38 GOLD OVER NI"
-			(at 153.67 189.23 0)
+			(at 152.4 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32526,7 +33284,7 @@
 			)
 		)
 		(property "Mouser ID Number" "649-68021-204HLF"
-			(at 153.67 189.23 0)
+			(at 152.4 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32535,7 +33293,7 @@
 			)
 		)
 		(property "Mouser Stock URL" "https://www.mouser.de/ProductDetail/Amphenol-FCI/68021-204HLF?qs=QKvFUfBIyQLYRGZzFGyTzg%3D%3D"
-			(at 153.67 189.23 0)
+			(at 152.4 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32544,7 +33302,7 @@
 			)
 		)
 		(property "Note" "GPIO_A"
-			(at 157.48 188.3523 0)
+			(at 156.21 188.3523 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32574,7 +33332,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 209.55 140.97 270)
+		(at 208.28 146.05 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -32582,7 +33340,7 @@
 		(dnp no)
 		(uuid "de90cc98-a827-4140-be8a-c0bc4bf160cb")
 		(property "Reference" "TP19"
-			(at 214.122 140.97 90)
+			(at 212.852 146.05 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32591,7 +33349,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 221.234 140.97 90)
+			(at 219.964 146.05 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32601,7 +33359,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 209.55 146.05 0)
+			(at 208.28 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32610,7 +33368,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 209.55 146.05 0)
+			(at 208.28 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32619,7 +33377,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 209.55 140.97 0)
+			(at 208.28 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33055,8 +33813,74 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 165.1 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e405fa72-bdd7-4c39-a4ba-d35a032ad53c")
+		(property "Reference" "#PWR0198"
+			(at 165.1 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 165.1 124.1369 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 165.1 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 165.1 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 165.1 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a7028104-8eaf-4f12-a4fe-a463384086ec")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
+					(reference "#PWR0198")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 209.55 143.51 270)
+		(at 208.28 148.59 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -33064,7 +33888,7 @@
 		(dnp no)
 		(uuid "e45a232a-90dc-4bf5-a17e-95444c52cbe0")
 		(property "Reference" "TP20"
-			(at 214.122 143.51 90)
+			(at 212.852 148.59 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33073,7 +33897,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 221.234 143.51 90)
+			(at 219.964 148.59 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33083,7 +33907,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 209.55 148.59 0)
+			(at 208.28 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33092,7 +33916,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 209.55 148.59 0)
+			(at 208.28 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33101,7 +33925,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 209.55 143.51 0)
+			(at 208.28 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33116,6 +33940,72 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
 					(reference "TP20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 165.1 113.03 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e6df308f-63b3-4272-935a-a40a226f36fb")
+		(property "Reference" "#PWR053"
+			(at 165.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 165.1 108.8969 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 165.1 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 165.1 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 165.1 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3ee60756-2558-4280-8632-ffb4e214d790")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df"
+					(reference "#PWR053")
 					(unit 1)
 				)
 			)
@@ -33718,7 +34608,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 179.07 161.29 270)
+		(at 177.8 166.37 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -33726,7 +34616,7 @@
 		(dnp no)
 		(uuid "efd71342-aeeb-4e21-96f9-5a0e7336257f")
 		(property "Reference" "TP18"
-			(at 183.642 161.29 90)
+			(at 182.372 166.37 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33735,7 +34625,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 190.754 161.29 90)
+			(at 189.484 166.37 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33745,7 +34635,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 179.07 166.37 0)
+			(at 177.8 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33754,7 +34644,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 179.07 166.37 0)
+			(at 177.8 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33763,7 +34653,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 179.07 161.29 0)
+			(at 177.8 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34089,7 +34979,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 241.3 53.34 0)
+		(at 241.3 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -34098,7 +34988,7 @@
 		(fields_autoplaced yes)
 		(uuid "f7f0e976-be46-4d3f-845d-80bc9c6c3f88")
 		(property "Reference" "#PWR04"
-			(at 241.3 59.69 0)
+			(at 241.3 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34107,7 +34997,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 241.3 57.4731 0)
+			(at 241.3 52.3931 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34115,7 +35005,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 241.3 53.34 0)
+			(at 241.3 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34124,7 +35014,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 241.3 53.34 0)
+			(at 241.3 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34133,7 +35023,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 241.3 53.34 0)
+			(at 241.3 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34222,7 +35112,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 209.55 153.67 270)
+		(at 208.28 158.75 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -34230,7 +35120,7 @@
 		(dnp no)
 		(uuid "fae83b47-f7cf-4188-a113-dc87eb5cfcdd")
 		(property "Reference" "TP23"
-			(at 214.122 153.67 90)
+			(at 212.852 158.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34239,7 +35129,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 221.234 153.67 90)
+			(at 219.964 158.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34249,7 +35139,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 209.55 158.75 0)
+			(at 208.28 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34258,7 +35148,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 209.55 158.75 0)
+			(at 208.28 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34267,7 +35157,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 209.55 153.67 0)
+			(at 208.28 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34355,7 +35245,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 179.07 156.21 270)
+		(at 177.8 161.29 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -34363,7 +35253,7 @@
 		(dnp no)
 		(uuid "ff98e6e4-1fae-47fb-a611-1630b4129d13")
 		(property "Reference" "TP16"
-			(at 183.642 156.21 90)
+			(at 182.372 161.29 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34372,7 +35262,7 @@
 			)
 		)
 		(property "Value" "OLED_CS"
-			(at 190.754 156.21 90)
+			(at 189.484 161.29 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34382,7 +35272,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:TestPoint_Pad_0.25mm"
-			(at 179.07 161.29 0)
+			(at 177.8 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34391,7 +35281,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 179.07 161.29 0)
+			(at 177.8 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34400,7 +35290,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 179.07 156.21 0)
+			(at 177.8 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35100,7 +35990,7 @@
 	)
 	(sheet
 		(at 82.55 210.82)
-		(size 30.48 24.638)
+		(size 30.48 26.924)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -35120,7 +36010,7 @@
 			)
 		)
 		(property "Sheetfile" "power.kicad_sch"
-			(at 82.55 236.0426 0)
+			(at 82.55 238.3286 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35217,6 +36107,16 @@
 				(justify right)
 			)
 			(uuid "ea595908-91e8-4f5e-9cb8-4d30d935082c")
+		)
+		(pin "PWR_VBUS_5V" output
+			(at 113.03 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "39a15dda-bd5b-42f4-99fb-e42234da96ac")
 		)
 		(instances
 			(project "link"
