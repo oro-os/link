@@ -7065,7 +7065,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 31.75) (xy 140.97 31.75)
+			(xy 212.09 57.15) (xy 220.98 57.15)
 		)
 		(stroke
 			(width 0)
@@ -7265,7 +7265,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 31.75) (xy 148.59 31.75)
+			(xy 236.22 57.15) (xy 228.6 57.15)
 		)
 		(stroke
 			(width 0)
@@ -7415,7 +7415,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 29.21) (xy 132.08 29.21)
+			(xy 220.98 54.61) (xy 212.09 54.61)
 		)
 		(stroke
 			(width 0)
@@ -7575,7 +7575,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 29.21) (xy 157.48 29.21)
+			(xy 228.6 54.61) (xy 237.49 54.61)
 		)
 		(stroke
 			(width 0)
@@ -7706,7 +7706,7 @@
 		(uuid "0c7a31d8-0337-45f2-a771-e5a5b5ec0d39")
 	)
 	(label "HS_D+"
-		(at 157.48 29.21 180)
+		(at 237.49 54.61 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7816,7 +7816,7 @@
 		(uuid "54bd6c76-0c3e-4b23-8fa3-e2264f6edda5")
 	)
 	(label "HS_VBUS"
-		(at 132.08 31.75 0)
+		(at 212.09 57.15 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7904,7 +7904,7 @@
 		(uuid "867e92a2-f362-456b-a414-f3cc9000147f")
 	)
 	(label "HS_D-"
-		(at 132.08 29.21 0)
+		(at 212.09 54.61 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9594,7 +9594,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 156.21 31.75 0)
+		(at 236.22 57.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9603,7 +9603,7 @@
 		(fields_autoplaced yes)
 		(uuid "505024c0-9587-4584-8d14-6a25406801fe")
 		(property "Reference" "#PWR0110"
-			(at 156.21 38.1 0)
+			(at 236.22 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9612,7 +9612,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 156.21 35.8831 0)
+			(at 236.22 61.2831 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9620,7 +9620,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 156.21 31.75 0)
+			(at 236.22 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9629,7 +9629,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 156.21 31.75 0)
+			(at 236.22 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9638,7 +9638,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 156.21 31.75 0)
+			(at 236.22 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10012,7 +10012,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:68021-204HLF")
-		(at 140.97 26.67 0)
+		(at 220.98 52.07 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10020,7 +10020,7 @@
 		(dnp no)
 		(uuid "5f806527-1b49-4d68-822b-dc540d954812")
 		(property "Reference" "J14"
-			(at 144.78 23.7377 0)
+			(at 224.79 49.1377 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10028,7 +10028,7 @@
 			)
 		)
 		(property "Value" "68021-204HLF"
-			(at 144.78 26.162 0)
+			(at 224.79 51.562 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10036,7 +10036,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:2x2 4p 2.54 pitch"
-			(at 140.97 26.67 0)
+			(at 220.98 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10045,7 +10045,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/boardwiretoboard/bwb_bergstik.pdf"
-			(at 140.97 26.67 0)
+			(at 220.98 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10054,7 +10054,7 @@
 			)
 		)
 		(property "Description" " Headers & Wire Housings 4P SR UNSHRD HRD .38 GOLD OVER NI"
-			(at 140.97 26.67 0)
+			(at 220.98 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10063,7 +10063,7 @@
 			)
 		)
 		(property "Mouser ID Number" "649-68021-204HLF"
-			(at 140.97 26.67 0)
+			(at 220.98 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10072,7 +10072,7 @@
 			)
 		)
 		(property "Mouser Stock URL" "https://www.mouser.de/ProductDetail/Amphenol-FCI/68021-204HLF?qs=QKvFUfBIyQLYRGZzFGyTzg%3D%3D"
-			(at 140.97 26.67 0)
+			(at 220.98 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13610,7 +13610,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d28ad287-da42-4c87-9353-8c6c5dd905c4")
 		(property "Reference" "CR10"
 			(at 151.13 65.1561 0)

@@ -7893,10 +7893,6 @@
 		(uuid "925b6dd5-ccba-47aa-8cee-38ff8bcdfd64")
 	)
 	(no_connect
-		(at 201.93 148.59)
-		(uuid "b03e2b55-53ce-4083-af50-0977ffe9cbde")
-	)
-	(no_connect
 		(at 120.65 49.53)
 		(uuid "b2bdb4f5-a096-4af6-8d3b-382462f6a049")
 	)
@@ -8451,6 +8447,16 @@
 			(type default)
 		)
 		(uuid "53572b63-6c00-4195-b9b5-46a207177d8f")
+	)
+	(wire
+		(pts
+			(xy 201.93 148.59) (xy 193.04 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53bdf29f-9a00-420f-9d6c-5beffc0997e5")
 	)
 	(polyline
 		(pts
@@ -9693,6 +9699,17 @@
 			(justify left bottom)
 		)
 		(uuid "a9aa502d-0629-4459-a174-f97498e2ff2f")
+	)
+	(label "CC2"
+		(at 193.04 148.59 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bcafb683-eb3c-4dcc-b400-f8e78a973c81")
 	)
 	(label "VBUS_5V"
 		(at 186.69 116.84 0)
