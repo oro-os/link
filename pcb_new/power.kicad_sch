@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "8.0")
 	(uuid "b9f67f62-cc6a-4eff-9412-0ea11cb06bbe")
-	(paper "A3")
+	(paper "A4")
 	(title_block
 		(title "Oro Link")
 		(date "2025-06-02")
@@ -7729,13 +7729,19 @@
 		(uuid "28922f6f-8562-4efc-b8f4-6c2ef4699cd9")
 	)
 	(junction
-		(at 44.45 41.91)
+		(at 43.18 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3b4ce6d2-a4d5-4fd5-b518-a805ced4848b")
+	)
+	(junction
+		(at 66.04 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "47d3334f-4870-4d65-9fc3-ab7c307b0f42")
 	)
 	(junction
-		(at 127 46.99)
+		(at 148.59 48.26)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5253c8bd-7a03-4a9b-81fd-3b5d74d76ddd")
@@ -7753,7 +7759,7 @@
 		(uuid "5fa5990b-a8af-405d-8452-6b5072869a69")
 	)
 	(junction
-		(at 43.18 57.15)
+		(at 64.77 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6dc91d82-4f91-4226-9e31-1c93417ee944")
@@ -7765,13 +7771,13 @@
 		(uuid "741b0c0c-e019-45ae-8bd0-364d0a1357fc")
 	)
 	(junction
-		(at 86.36 80.01)
+		(at 107.95 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "75f95450-00e2-4a29-9476-b30a6204678c")
 	)
 	(junction
-		(at 135.89 54.61)
+		(at 157.48 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7adcc536-9275-4e97-9e48-e5de59c3df02")
@@ -7783,7 +7789,7 @@
 		(uuid "8821ec4b-7dd7-4ef2-9333-66550f496e35")
 	)
 	(junction
-		(at 207.01 40.64)
+		(at 224.79 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8e18622d-ef38-4b1d-b155-608eb472dc8f")
@@ -7813,7 +7819,7 @@
 		(uuid "b27e7349-c93d-4a41-acc9-5afdfe74c413")
 	)
 	(junction
-		(at 207.01 57.15)
+		(at 224.79 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b544a38a-5ac9-423d-b411-b38c9f262710")
@@ -7825,13 +7831,13 @@
 		(uuid "b9baca1e-55c8-4d47-b308-01cf21ae7d94")
 	)
 	(junction
-		(at 86.36 85.09)
+		(at 107.95 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b9f17d6a-b4ce-42f0-9ace-458e08c1c24b")
 	)
 	(junction
-		(at 127 44.45)
+		(at 148.59 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c84e63ac-5695-4652-a2a7-2e85b1bf7e38")
@@ -7843,13 +7849,13 @@
 		(uuid "c9be80c0-9e0d-42b4-80b9-5734910c1d3e")
 	)
 	(junction
-		(at 132.08 52.07)
+		(at 153.67 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d035796f-22c1-4f86-9f54-e03d074cdc0f")
 	)
 	(junction
-		(at 135.89 24.13)
+		(at 157.48 25.4)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d1d23d12-6837-4311-bc42-2b3cc7822736")
@@ -7861,7 +7867,13 @@
 		(uuid "da7b373a-022b-4898-96f5-799b0345e1b9")
 	)
 	(junction
-		(at 127 59.69)
+		(at 38.1 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eff9261b-c690-45f3-8759-6c1f406dcac4")
+	)
+	(junction
+		(at 148.59 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f0f53305-cb64-46c1-8523-7fa17bfa1488")
@@ -7877,7 +7889,7 @@
 		(uuid "25aab6c3-3b2b-4c43-8ee8-ae612a74c165")
 	)
 	(no_connect
-		(at 120.65 57.15)
+		(at 142.24 58.42)
 		(uuid "68ef8f3b-567f-44ee-b023-27a968b8b1f2")
 	)
 	(no_connect
@@ -7893,7 +7905,7 @@
 		(uuid "925b6dd5-ccba-47aa-8cee-38ff8bcdfd64")
 	)
 	(no_connect
-		(at 120.65 49.53)
+		(at 142.24 50.8)
 		(uuid "b2bdb4f5-a096-4af6-8d3b-382462f6a049")
 	)
 	(no_connect
@@ -7930,7 +7942,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 85.09) (xy 88.9 85.09)
+			(xy 107.95 86.36) (xy 110.49 86.36)
 		)
 		(stroke
 			(width 0)
@@ -7940,7 +7952,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 57.15) (xy 217.17 57.15)
+			(xy 224.79 57.15) (xy 234.95 57.15)
 		)
 		(stroke
 			(width 0)
@@ -7980,7 +7992,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 44.45) (xy 44.45 41.91)
+			(xy 66.04 45.72) (xy 66.04 43.18)
 		)
 		(stroke
 			(width 0)
@@ -8010,7 +8022,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 54.61) (xy 143.51 54.61)
+			(xy 157.48 55.88) (xy 165.1 55.88)
 		)
 		(stroke
 			(width 0)
@@ -8070,7 +8082,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 22.86) (xy 135.89 24.13)
+			(xy 157.48 24.13) (xy 157.48 25.4)
 		)
 		(stroke
 			(width 0)
@@ -8080,7 +8092,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 40.64) (xy 217.17 40.64)
+			(xy 224.79 40.64) (xy 234.95 40.64)
 		)
 		(stroke
 			(width 0)
@@ -8100,7 +8112,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 71.12) (xy 30.48 72.39)
+			(xy 52.07 76.2) (xy 52.07 77.47)
 		)
 		(stroke
 			(width 0)
@@ -8140,7 +8152,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 46.99) (xy 127 44.45)
+			(xy 148.59 48.26) (xy 148.59 45.72)
 		)
 		(stroke
 			(width 0)
@@ -8160,6 +8172,16 @@
 	)
 	(wire
 		(pts
+			(xy 38.1 76.2) (xy 38.1 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a2d1043-72ed-4c23-a585-c5633815036d")
+	)
+	(wire
+		(pts
 			(xy 265.43 101.6) (xy 265.43 99.06)
 		)
 		(stroke
@@ -8170,7 +8192,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 74.93) (xy 86.36 74.93)
+			(xy 110.49 76.2) (xy 107.95 76.2)
 		)
 		(stroke
 			(width 0)
@@ -8180,7 +8202,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 43.18) (xy 132.08 52.07)
+			(xy 153.67 44.45) (xy 153.67 53.34)
 		)
 		(stroke
 			(width 0)
@@ -8200,7 +8222,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 26.67) (xy 205.74 26.67)
+			(xy 208.28 26.67) (xy 223.52 26.67)
 		)
 		(stroke
 			(width 0)
@@ -8210,7 +8232,17 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 25.4) (xy 132.08 24.13)
+			(xy 38.1 48.26) (xy 38.1 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "324b77e7-8aca-4505-abae-89fc20e2bffd")
+	)
+	(wire
+		(pts
+			(xy 153.67 26.67) (xy 153.67 25.4)
 		)
 		(stroke
 			(width 0)
@@ -8230,7 +8262,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 57.15) (xy 254 57.15)
+			(xy 252.73 57.15) (xy 271.78 57.15)
 		)
 		(stroke
 			(width 0)
@@ -8270,7 +8302,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 59.69) (xy 43.18 57.15)
+			(xy 64.77 60.96) (xy 64.77 58.42)
 		)
 		(stroke
 			(width 0)
@@ -8290,7 +8322,17 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 62.23) (xy 127 62.23)
+			(xy 35.56 55.88) (xy 43.18 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3cd20050-7ad7-46fc-ae35-4b31ff0d9342")
+	)
+	(wire
+		(pts
+			(xy 142.24 63.5) (xy 148.59 63.5)
 		)
 		(stroke
 			(width 0)
@@ -8320,7 +8362,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 24.13) (xy 135.89 25.4)
+			(xy 157.48 25.4) (xy 157.48 26.67)
 		)
 		(stroke
 			(width 0)
@@ -8330,7 +8372,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 59.69) (xy 127 59.69)
+			(xy 142.24 60.96) (xy 148.59 60.96)
 		)
 		(stroke
 			(width 0)
@@ -8340,7 +8382,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 57.15) (xy 207.01 57.15)
+			(xy 213.36 57.15) (xy 224.79 57.15)
 		)
 		(stroke
 			(width 0)
@@ -8350,7 +8392,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 54.61) (xy 135.89 54.61)
+			(xy 142.24 55.88) (xy 157.48 55.88)
 		)
 		(stroke
 			(width 0)
@@ -8420,7 +8462,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 40.64) (xy 207.01 40.64)
+			(xy 213.36 40.64) (xy 224.79 40.64)
 		)
 		(stroke
 			(width 0)
@@ -8470,7 +8512,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 59.69) (xy 127 46.99)
+			(xy 148.59 60.96) (xy 148.59 48.26)
 		)
 		(stroke
 			(width 0)
@@ -8480,7 +8522,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 80.01) (xy 106.68 80.01)
+			(xy 118.11 81.28) (xy 128.27 81.28)
 		)
 		(stroke
 			(width 0)
@@ -8500,7 +8542,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 44.45) (xy 127 44.45)
+			(xy 142.24 45.72) (xy 148.59 45.72)
 		)
 		(stroke
 			(width 0)
@@ -8530,7 +8572,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 60.96) (xy 207.01 60.96)
+			(xy 226.06 60.96) (xy 224.79 60.96)
 		)
 		(stroke
 			(width 0)
@@ -8540,7 +8582,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 44.45) (xy 207.01 40.64)
+			(xy 224.79 44.45) (xy 224.79 40.64)
 		)
 		(stroke
 			(width 0)
@@ -8550,7 +8592,17 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 41.91) (xy 124.46 41.91)
+			(xy 46.99 50.8) (xy 46.99 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5fae4563-b022-4df4-a5e4-65da9b5bcfcc")
+	)
+	(wire
+		(pts
+			(xy 142.24 43.18) (xy 146.05 43.18)
 		)
 		(stroke
 			(width 0)
@@ -8580,7 +8632,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 40.64) (xy 254 40.64)
+			(xy 252.73 40.64) (xy 271.78 40.64)
 		)
 		(stroke
 			(width 0)
@@ -8590,7 +8642,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 31.75) (xy 205.74 31.75)
+			(xy 208.28 31.75) (xy 223.52 31.75)
 		)
 		(stroke
 			(width 0)
@@ -8600,7 +8652,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 54.61) (xy 135.89 43.18)
+			(xy 157.48 55.88) (xy 157.48 44.45)
 		)
 		(stroke
 			(width 0)
@@ -8620,7 +8672,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 41.91) (xy 54.61 41.91)
+			(xy 66.04 43.18) (xy 76.2 43.18)
 		)
 		(stroke
 			(width 0)
@@ -8630,7 +8682,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 85.09) (xy 106.68 85.09)
+			(xy 118.11 86.36) (xy 128.27 86.36)
 		)
 		(stroke
 			(width 0)
@@ -8640,7 +8692,7 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 31.75) (xy 241.3 31.75)
+			(xy 238.76 31.75) (xy 259.08 31.75)
 		)
 		(stroke
 			(width 0)
@@ -8650,7 +8702,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 49.53) (xy 24.13 49.53)
+			(xy 46.99 73.66) (xy 46.99 77.47)
 		)
 		(stroke
 			(width 0)
@@ -8720,7 +8772,7 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 26.67) (xy 241.3 26.67)
+			(xy 238.76 26.67) (xy 259.08 26.67)
 		)
 		(stroke
 			(width 0)
@@ -8730,7 +8782,7 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 29.21) (xy 247.65 29.21)
+			(xy 238.76 29.21) (xy 265.43 29.21)
 		)
 		(stroke
 			(width 0)
@@ -8750,7 +8802,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 60.96) (xy 207.01 57.15)
+			(xy 224.79 60.96) (xy 224.79 57.15)
 		)
 		(stroke
 			(width 0)
@@ -8780,7 +8832,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 52.07) (xy 30.48 52.07)
+			(xy 76.2 53.34) (xy 52.07 53.34)
 		)
 		(stroke
 			(width 0)
@@ -8830,23 +8882,13 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 44.45) (xy 207.01 44.45)
+			(xy 226.06 44.45) (xy 224.79 44.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "91a8d5a2-bda7-4486-9f2e-2d1b814a9770")
-	)
-	(wire
-		(pts
-			(xy 24.13 49.53) (xy 24.13 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9383dcb2-d803-4afa-a8ad-555ee5527990")
 	)
 	(wire
 		(pts
@@ -8860,7 +8902,17 @@
 	)
 	(wire
 		(pts
-			(xy 127 62.23) (xy 127 59.69)
+			(xy 38.1 48.26) (xy 76.2 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94f0e877-470e-46f3-98db-b2d4ab89e8b5")
+	)
+	(wire
+		(pts
+			(xy 148.59 63.5) (xy 148.59 60.96)
 		)
 		(stroke
 			(width 0)
@@ -8870,7 +8922,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 40.64) (xy 44.45 41.91)
+			(xy 66.04 41.91) (xy 66.04 43.18)
 		)
 		(stroke
 			(width 0)
@@ -8890,6 +8942,16 @@
 	)
 	(wire
 		(pts
+			(xy 46.99 50.8) (xy 76.2 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98faff7e-b6a6-48f8-8d59-df92da41fb24")
+	)
+	(wire
+		(pts
 			(xy 241.3 80.01) (xy 241.3 82.55)
 		)
 		(stroke
@@ -8900,7 +8962,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 85.09) (xy 86.36 88.9)
+			(xy 107.95 86.36) (xy 107.95 90.17)
 		)
 		(stroke
 			(width 0)
@@ -8910,7 +8972,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 44.45) (xy 149.86 44.45)
+			(xy 148.59 45.72) (xy 171.45 45.72)
 		)
 		(stroke
 			(width 0)
@@ -8960,7 +9022,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 46.99) (xy 127 46.99)
+			(xy 142.24 48.26) (xy 148.59 48.26)
 		)
 		(stroke
 			(width 0)
@@ -8970,17 +9032,7 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 49.53) (xy 54.61 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a4c29071-4eb3-4e9c-a310-bd3ed71b9775")
-	)
-	(wire
-		(pts
-			(xy 120.65 52.07) (xy 132.08 52.07)
+			(xy 142.24 53.34) (xy 153.67 53.34)
 		)
 		(stroke
 			(width 0)
@@ -9010,6 +9062,16 @@
 	)
 	(wire
 		(pts
+			(xy 43.18 24.13) (xy 43.18 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "abd0065e-8da9-48b7-85e3-a132fd85c945")
+	)
+	(wire
+		(pts
 			(xy 30.48 158.75) (xy 25.4 158.75)
 		)
 		(stroke
@@ -9020,7 +9082,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 57.15) (xy 54.61 57.15)
+			(xy 64.77 58.42) (xy 76.2 58.42)
 		)
 		(stroke
 			(width 0)
@@ -9050,7 +9112,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 52.07) (xy 30.48 53.34)
+			(xy 52.07 53.34) (xy 52.07 58.42)
 		)
 		(stroke
 			(width 0)
@@ -9080,7 +9142,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 59.69) (xy 43.18 59.69)
+			(xy 76.2 60.96) (xy 64.77 60.96)
 		)
 		(stroke
 			(width 0)
@@ -9110,13 +9172,23 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 52.07) (xy 143.51 52.07)
+			(xy 153.67 53.34) (xy 165.1 53.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c162dbc5-e394-4457-846f-2f0863970070")
+	)
+	(wire
+		(pts
+			(xy 43.18 55.88) (xy 76.2 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c21c2265-fe7b-477f-bbb8-d951937a9df0")
 	)
 	(wire
 		(pts
@@ -9210,7 +9282,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 80.01) (xy 86.36 85.09)
+			(xy 107.95 81.28) (xy 107.95 86.36)
 		)
 		(stroke
 			(width 0)
@@ -9220,7 +9292,7 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 44.45) (xy 224.79 44.45)
+			(xy 236.22 44.45) (xy 242.57 44.45)
 		)
 		(stroke
 			(width 0)
@@ -9260,7 +9332,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 74.93) (xy 101.6 74.93)
+			(xy 118.11 76.2) (xy 123.19 76.2)
 		)
 		(stroke
 			(width 0)
@@ -9310,7 +9382,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 41.91) (xy 124.46 68.58)
+			(xy 146.05 43.18) (xy 146.05 69.85)
 		)
 		(stroke
 			(width 0)
@@ -9320,7 +9392,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 24.13) (xy 135.89 24.13)
+			(xy 153.67 25.4) (xy 157.48 25.4)
 		)
 		(stroke
 			(width 0)
@@ -9350,7 +9422,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 74.93) (xy 86.36 80.01)
+			(xy 107.95 76.2) (xy 107.95 81.28)
 		)
 		(stroke
 			(width 0)
@@ -9370,7 +9442,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 44.45) (xy 44.45 44.45)
+			(xy 76.2 45.72) (xy 66.04 45.72)
 		)
 		(stroke
 			(width 0)
@@ -9380,7 +9452,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 80.01) (xy 88.9 80.01)
+			(xy 107.95 81.28) (xy 110.49 81.28)
 		)
 		(stroke
 			(width 0)
@@ -9390,13 +9462,33 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 60.96) (xy 224.79 60.96)
+			(xy 43.18 44.45) (xy 43.18 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f94602ae-d70f-48f2-aae6-34043a837696")
+	)
+	(wire
+		(pts
+			(xy 236.22 60.96) (xy 242.57 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "fc7c0af2-5310-460d-a6c9-f3d549e6f929")
+	)
+	(wire
+		(pts
+			(xy 35.56 48.26) (xy 38.1 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd1ee115-034f-4ddc-84b0-375b2ba38fb2")
 	)
 	(wire
 		(pts
@@ -9430,7 +9522,7 @@
 	)
 	(text "IN2 BYPASS"
 		(exclude_from_sim no)
-		(at 65.024 80.518 0)
+		(at 86.614 81.788 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9440,7 +9532,7 @@
 	)
 	(text "IN1 BYPASS"
 		(exclude_from_sim no)
-		(at 65.024 75.184 0)
+		(at 86.614 76.454 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9450,7 +9542,7 @@
 	)
 	(text "INPUT 1 RATING = 500mA\nINPUT 2 RATING = 3A\nRclim = 1000*(0V5/I_lim) (125R..=1K0R)"
 		(exclude_from_sim no)
-		(at 25.908 29.972 0)
+		(at 50.546 28.956 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9472,7 +9564,7 @@
 	)
 	(text "OUT BYPASS"
 		(exclude_from_sim no)
-		(at 65.024 85.344 0)
+		(at 86.614 86.614 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9492,7 +9584,7 @@
 		(uuid "00d2f005-5759-422e-b15c-78380340f34c")
 	)
 	(label "5V_IN"
-		(at 190.5 26.67 0)
+		(at 208.28 26.67 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9503,7 +9595,7 @@
 		(uuid "04dcf492-e72d-4915-9a21-a61a9c71c9cf")
 	)
 	(label "VBUS_5V"
-		(at 106.68 85.09 180)
+		(at 128.27 86.36 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9514,7 +9606,7 @@
 		(uuid "13763674-c3de-4a96-ba91-696cbc5a8cc0")
 	)
 	(label "AUX_SENSE_PREESD"
-		(at 254 57.15 180)
+		(at 271.78 57.15 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9536,7 +9628,7 @@
 		(uuid "29b6a2f6-4eb9-4c50-a742-89eaf1607cfd")
 	)
 	(label "PSU_ON_PREESD"
-		(at 241.3 31.75 180)
+		(at 259.08 31.75 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9613,7 +9705,7 @@
 		(uuid "4fa80fa5-adac-4a85-a9b3-fd48ca76af3e")
 	)
 	(label "VBUS_5V"
-		(at 149.86 44.45 180)
+		(at 171.45 45.72 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9646,7 +9738,7 @@
 		(uuid "7b66691b-3423-4d9b-913a-8d3e6ef7ed2b")
 	)
 	(label "PSU_ON_PREESD"
-		(at 254 40.64 180)
+		(at 271.78 40.64 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9690,7 +9782,7 @@
 		(uuid "a71b5155-0b9c-4309-8ddb-c09c2ff8eff6")
 	)
 	(label "5V_HICUR"
-		(at 190.5 31.75 0)
+		(at 208.28 31.75 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9734,7 +9826,7 @@
 		(uuid "d02a7574-b0fb-482e-ac2b-2357a46000a9")
 	)
 	(label "AUX_SENSE_PREESD"
-		(at 241.3 26.67 180)
+		(at 259.08 26.67 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9757,7 +9849,7 @@
 	)
 	(hierarchical_label "~{AUX_VBUS_ENABLE}"
 		(shape input)
-		(at 54.61 54.61 180)
+		(at 35.56 55.88 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9781,7 +9873,7 @@
 	)
 	(hierarchical_label "~{PSU_POWER_ON}"
 		(shape input)
-		(at 195.58 40.64 180)
+		(at 213.36 40.64 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9793,7 +9885,7 @@
 	)
 	(hierarchical_label "~{AUX_VBUS_OC_WARN}"
 		(shape output)
-		(at 143.51 54.61 0)
+		(at 165.1 55.88 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9805,7 +9897,7 @@
 	)
 	(hierarchical_label "~{VBUS_OC_WARN}"
 		(shape output)
-		(at 143.51 52.07 0)
+		(at 165.1 53.34 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9817,7 +9909,7 @@
 	)
 	(hierarchical_label "~{5V_HICUR_SENSE}"
 		(shape output)
-		(at 195.58 57.15 180)
+		(at 213.36 57.15 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9865,7 +9957,7 @@
 	)
 	(hierarchical_label "VBUS_ENABLE"
 		(shape input)
-		(at 54.61 46.99 180)
+		(at 35.56 48.26 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9877,7 +9969,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:SMF6V0A-M3-08")
-		(at 218.44 60.96 180)
+		(at 236.22 60.96 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9885,7 +9977,7 @@
 		(dnp no)
 		(uuid "00854c99-b72c-45bf-9af6-f275551faee9")
 		(property "Reference" "CR7"
-			(at 181.102 60.706 0)
+			(at 198.882 60.706 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9893,7 +9985,7 @@
 			)
 		)
 		(property "Value" "SMF6V0A-M3-08"
-			(at 195.834 60.706 0)
+			(at 213.614 60.706 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9901,7 +9993,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:ZDO_SMF_DO-219AB_VIS"
-			(at 218.44 60.96 0)
+			(at 236.22 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9911,7 +10003,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/doc?85881"
-			(at 218.44 60.96 0)
+			(at 236.22 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9921,7 +10013,7 @@
 			)
 		)
 		(property "Description" "ESD PROTECTION DIODE SMF DO219AB"
-			(at 218.44 60.96 0)
+			(at 236.22 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9930,7 +10022,7 @@
 			)
 		)
 		(property "Mfr. Number" "SMF6V0A-M3-08"
-			(at 218.44 57.96 0)
+			(at 236.22 57.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9940,7 +10032,7 @@
 			)
 		)
 		(property "Mouser ID" "78-SMF6V0A-M3-08"
-			(at 218.44 57.96 0)
+			(at 236.22 57.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9950,7 +10042,7 @@
 			)
 		)
 		(property "Description_1" "ESD PROTECTION DIODE SMF DO219AB"
-			(at 218.44 57.96 0)
+			(at 236.22 57.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9960,7 +10052,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Vishay-General-Semiconductor/SMF6V0A-M3-08?qs=liFJyUJTUDEpN6KM4i%2FVgg%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=78-SMF6V0A-M3-08&utm_content=Vishay"
-			(at 218.44 57.96 0)
+			(at 236.22 57.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9970,7 +10062,7 @@
 			)
 		)
 		(property "DigiKey ID" "112-SMF6V0A-M3-08DKR-ND"
-			(at 218.44 57.96 0)
+			(at 236.22 57.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9980,7 +10072,7 @@
 			)
 		)
 		(property "Arrow ID" "null"
-			(at 218.44 57.96 0)
+			(at 236.22 57.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9990,7 +10082,7 @@
 			)
 		)
 		(property "Mfr. Name" "Vishay"
-			(at 218.44 57.96 0)
+			(at 236.22 57.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10016,7 +10108,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:CR0402-FX-1650GLF")
-		(at 30.48 71.12 90)
+		(at 52.07 76.2 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10025,7 +10117,7 @@
 		(fields_autoplaced yes)
 		(uuid "00ece12c-0552-469f-8898-fe9e466203f9")
 		(property "Reference" "R84"
-			(at 32.512 61.0178 90)
+			(at 54.102 66.0978 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10034,7 +10126,7 @@
 			)
 		)
 		(property "Value" "165R-167R"
-			(at 32.512 63.4421 90)
+			(at 54.102 68.5221 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10043,7 +10135,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:RESC1005X40N"
-			(at 126.67 57.15 0)
+			(at 148.26 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10053,7 +10145,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.bourns.com/pdfs/CR0402.pdf"
-			(at 226.67 57.15 0)
+			(at 248.26 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10063,7 +10155,7 @@
 			)
 		)
 		(property "Description" "Thick Film Resistors - SMD 165OHM 1/16WATT 1%"
-			(at 30.48 71.12 0)
+			(at 52.07 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10072,7 +10164,7 @@
 			)
 		)
 		(property "Height" "0.4"
-			(at 426.67 57.15 0)
+			(at 448.26 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10082,7 +10174,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Bourns"
-			(at 526.67 57.15 0)
+			(at 548.26 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10092,7 +10184,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CR0402-FX-1650GLF"
-			(at 626.67 57.15 0)
+			(at 648.26 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10102,7 +10194,7 @@
 			)
 		)
 		(property "Mouser Part Number" "652-CR0402-FX1650GLF"
-			(at 726.67 57.15 0)
+			(at 748.26 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10112,7 +10204,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.com/Search/Refine.aspx?Keyword=652-CR0402-FX1650GLF"
-			(at 826.67 57.15 0)
+			(at 848.26 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10122,7 +10214,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 926.67 57.15 0)
+			(at 948.26 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10132,7 +10224,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 1026.67 57.15 0)
+			(at 1048.26 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10158,7 +10250,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:LTC4415EMSE-TRPBF")
-		(at 54.61 41.91 0)
+		(at 76.2 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10167,7 +10259,7 @@
 		(fields_autoplaced yes)
 		(uuid "03feb855-6963-47ec-bd9a-6d50fafcb75f")
 		(property "Reference" "U9"
-			(at 87.63 32.1361 0)
+			(at 109.22 33.4061 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10175,7 +10267,7 @@
 			)
 		)
 		(property "Value" "LTC4415EMSE#TRPBF"
-			(at 87.63 34.969 0)
+			(at 109.22 36.239 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10183,7 +10275,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:MSOP-16_MSE_LIT"
-			(at 54.61 41.91 0)
+			(at 76.2 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10193,7 +10285,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/609/4415fa-3126024.pdf"
-			(at 54.61 41.91 0)
+			(at 76.2 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10203,7 +10295,7 @@
 			)
 		)
 		(property "Description" "Dual 4A Ideal Diodes with Adjustable Current Limit"
-			(at 54.61 41.91 0)
+			(at 76.2 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10212,7 +10304,7 @@
 			)
 		)
 		(property "DigiKey ID" "LTC4415EMSE#TRPBFCT-ND"
-			(at 54.61 44.91 0)
+			(at 76.2 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10222,7 +10314,7 @@
 			)
 		)
 		(property "Description_1" "Dual 4A Ideal Diodes with Adjustable Current Limit"
-			(at 54.61 44.91 0)
+			(at 76.2 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10232,7 +10324,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Analog-Devices/LTC4415EMSETRPBF?qs=hVkxg5c3xu%2FZeo2U%2FVyBeA%3D%3D"
-			(at 54.61 44.91 0)
+			(at 76.2 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10242,7 +10334,7 @@
 			)
 		)
 		(property "Arrow ID" "LTC4415EMSE#TRPBF"
-			(at 54.61 44.91 0)
+			(at 76.2 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10252,7 +10344,7 @@
 			)
 		)
 		(property "Mfr. Number" "LTC4415EMSE#TRPBF"
-			(at 54.61 44.91 0)
+			(at 76.2 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10262,7 +10354,7 @@
 			)
 		)
 		(property "Mouser ID" "584-LTC4415EMSETRPBF"
-			(at 54.61 44.91 0)
+			(at 76.2 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10272,7 +10364,7 @@
 			)
 		)
 		(property "Mfr. Name" "Analog Devices Inc"
-			(at 54.61 44.91 0)
+			(at 76.2 46.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10342,8 +10434,150 @@
 		)
 	)
 	(symbol
+		(lib_id "OroLink:CRCW0402470KFKED")
+		(at 38.1 76.2 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0939358b-5a21-45cc-8f35-e6414dd151c1")
+		(property "Reference" "R90"
+			(at 36.068 66.0978 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "470K"
+			(at 36.068 68.5221 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "OroLink:CRCW0402470KFKED"
+			(at -58.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/20035/dcrcwe3.pdf"
+			(at -158.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Vishay CRCW Series Thick Film Surface Mount Resistor 402 Case 470k +/-1% 0.063W +/-100ppm/C"
+			(at 38.1 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "0.4"
+			(at -358.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Vishay"
+			(at -458.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CRCW0402470KFKED"
+			(at -558.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "71-CRCW0402470KFKED"
+			(at -658.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Dale/CRCW0402470KFKED?qs=iWCWVRvNViyekgQMR1mCgQ%3D%3D"
+			(at -758.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "CRCW0402470KFKED"
+			(at -858.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/crcw0402470kfked/vishay"
+			(at -958.09 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3a41ceda-b2f8-46e5-95ae-1a604d990013")
+		)
+		(pin "2"
+			(uuid "22d740e0-e0ae-4321-b8af-169978c98506")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
+					(reference "R90")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
-		(at 44.45 40.64 0)
+		(at 66.04 41.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10352,7 +10586,7 @@
 		(fields_autoplaced yes)
 		(uuid "0e59cf63-7f24-4f50-a8b6-40113ab97223")
 		(property "Reference" "#PWR049"
-			(at 44.45 44.45 0)
+			(at 66.04 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10361,7 +10595,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 44.45 36.5069 0)
+			(at 66.04 37.7769 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10369,7 +10603,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 44.45 40.64 0)
+			(at 66.04 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10378,7 +10612,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 44.45 40.64 0)
+			(at 66.04 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10387,7 +10621,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 44.45 40.64 0)
+			(at 66.04 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10409,7 +10643,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 247.65 29.21 0)
+		(at 265.43 29.21 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10418,7 +10652,7 @@
 		(fields_autoplaced yes)
 		(uuid "0ec838da-8ce2-440d-8480-87ae0f7650d3")
 		(property "Reference" "#PWR0139"
-			(at 247.65 35.56 0)
+			(at 265.43 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10427,7 +10661,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 247.65 33.3431 0)
+			(at 265.43 33.3431 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10435,7 +10669,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 247.65 29.21 0)
+			(at 265.43 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10444,7 +10678,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 247.65 29.21 0)
+			(at 265.43 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10453,7 +10687,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 247.65 29.21 0)
+			(at 265.43 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10541,7 +10775,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 101.6 74.93 0)
+		(at 123.19 76.2 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10550,7 +10784,7 @@
 		(fields_autoplaced yes)
 		(uuid "168c3577-7e90-4852-9843-68715e85a0f5")
 		(property "Reference" "#PWR0205"
-			(at 101.6 78.74 0)
+			(at 123.19 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10559,7 +10793,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 101.6 70.7969 0)
+			(at 123.19 72.0669 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10567,7 +10801,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 101.6 74.93 0)
+			(at 123.19 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10576,7 +10810,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 101.6 74.93 0)
+			(at 123.19 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10585,7 +10819,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 101.6 74.93 0)
+			(at 123.19 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10600,6 +10834,72 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
 					(reference "#PWR0205")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 43.18 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1918e8db-100b-43ba-9769-4be01a5a9f0b")
+		(property "Reference" "#PWR0210"
+			(at 43.18 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 43.18 19.9969 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 43.18 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "faf3ab79-1159-4a6e-8ebe-ebe9f3a5fd82")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
+					(reference "#PWR0210")
 					(unit 1)
 				)
 			)
@@ -10747,7 +11047,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:SACC-DSIV-M12MS-5CON-L180")
-		(at 213.36 29.21 0)
+		(at 231.14 29.21 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10756,7 +11056,7 @@
 		(fields_autoplaced yes)
 		(uuid "1e5c2faf-a98b-4fe8-bb57-63420cc2e692")
 		(property "Reference" "J3"
-			(at 213.3449 21.1325 0)
+			(at 231.1249 21.1325 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10764,7 +11064,7 @@
 			)
 		)
 		(property "Value" "SACC-DSIV-M12MS-5CON-L180"
-			(at 213.3449 23.5568 0)
+			(at 231.1249 23.5568 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10772,7 +11072,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:SACC-DSIV-M12MS-5CON-L180"
-			(at 213.36 29.21 0)
+			(at 231.14 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10781,7 +11081,7 @@
 			)
 		)
 		(property "Datasheet" "https://product-download.phoenixcontact.com/2302737?response-content-disposition=inline;%20filename%3D%221694211.pdf%22&Expires=1748571141&Signature=aLQOEfemDSICohIQJCUsHd8dlTjrmq79IHGhXqrIt1LBaeGxehiL~KVbHh8UkZSt6TxuoDcXmjS28TF4smO07tHgZkUgLjyCRb4dFDnZ80VXdBgNO3AC~op2LosUpMdhcYoSDcwM2CwD8G9atGODO9FQO7lV8DofDDVkudFs83KptcuI5n9J6pvfwBvojM0Axv98qwtHqBe6grw5ZdNJsQABX31vBsCQ4NRpc84XDvu945XlALanO2mxfLT6WZUTAsEoMPPjajiW-~EbO5ZxE1JRrOBOTGBj7rN7ciOuxJf9GBVlsz~p8gbXrSVSCaR98dPId8v7n9crOx2~QpAUkA__&Key-Pair-Id=K1I2N54A7B0GD"
-			(at 213.36 29.21 0)
+			(at 231.14 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10790,7 +11090,7 @@
 			)
 		)
 		(property "Description" "Sensor/actuator flush-type plug, 5-pos., M12, A-coded, rear/screw mounting with M12 thread, with polarity protection, with straight solder connection"
-			(at 213.36 29.21 0)
+			(at 231.14 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10799,7 +11099,7 @@
 			)
 		)
 		(property "Mouser ID" "651-1694211"
-			(at 213.36 29.21 0)
+			(at 231.14 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10808,7 +11108,7 @@
 			)
 		)
 		(property "Mouser Stock URL" "https://www.mouser.de/ProductDetail/651-1694211"
-			(at 213.36 29.21 0)
+			(at 231.14 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11253,7 +11553,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:SMF6V0A-M3-08")
-		(at 218.44 44.45 180)
+		(at 236.22 44.45 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11261,7 +11561,7 @@
 		(dnp no)
 		(uuid "31ca6e6b-eda5-430f-84ed-b6afb5416ce0")
 		(property "Reference" "CR4"
-			(at 181.102 44.196 0)
+			(at 198.882 44.196 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -11269,7 +11569,7 @@
 			)
 		)
 		(property "Value" "SMF6V0A-M3-08"
-			(at 195.834 44.196 0)
+			(at 213.614 44.196 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -11277,7 +11577,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:ZDO_SMF_DO-219AB_VIS"
-			(at 218.44 44.45 0)
+			(at 236.22 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11287,7 +11587,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/doc?85881"
-			(at 218.44 44.45 0)
+			(at 236.22 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11297,7 +11597,7 @@
 			)
 		)
 		(property "Description" "ESD PROTECTION DIODE SMF DO219AB"
-			(at 218.44 44.45 0)
+			(at 236.22 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11306,7 +11606,7 @@
 			)
 		)
 		(property "Mfr. Number" "SMF6V0A-M3-08"
-			(at 218.44 41.45 0)
+			(at 236.22 41.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11316,7 +11616,7 @@
 			)
 		)
 		(property "Mouser ID" "78-SMF6V0A-M3-08"
-			(at 218.44 41.45 0)
+			(at 236.22 41.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11326,7 +11626,7 @@
 			)
 		)
 		(property "Description_1" "ESD PROTECTION DIODE SMF DO219AB"
-			(at 218.44 41.45 0)
+			(at 236.22 41.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11336,7 +11636,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Vishay-General-Semiconductor/SMF6V0A-M3-08?qs=liFJyUJTUDEpN6KM4i%2FVgg%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=78-SMF6V0A-M3-08&utm_content=Vishay"
-			(at 218.44 41.45 0)
+			(at 236.22 41.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11346,7 +11646,7 @@
 			)
 		)
 		(property "DigiKey ID" "112-SMF6V0A-M3-08DKR-ND"
-			(at 218.44 41.45 0)
+			(at 236.22 41.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11356,7 +11656,7 @@
 			)
 		)
 		(property "Arrow ID" "null"
-			(at 218.44 41.45 0)
+			(at 236.22 41.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11366,7 +11666,7 @@
 			)
 		)
 		(property "Mfr. Name" "Vishay"
-			(at 218.44 41.45 0)
+			(at 236.22 41.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11899,7 +12199,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 224.79 60.96 0)
+		(at 242.57 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11908,7 +12208,7 @@
 		(fields_autoplaced yes)
 		(uuid "4469e91a-c6ad-4331-b2de-5bc1083c7cbb")
 		(property "Reference" "#PWR050"
-			(at 224.79 67.31 0)
+			(at 242.57 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11917,7 +12217,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 224.79 65.0931 0)
+			(at 242.57 65.0931 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11925,7 +12225,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 224.79 60.96 0)
+			(at 242.57 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11934,7 +12234,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 224.79 60.96 0)
+			(at 242.57 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11943,7 +12243,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 224.79 60.96 0)
+			(at 242.57 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12105,7 +12405,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:CR0402-FX-1650GLF")
-		(at 234.95 40.64 180)
+		(at 252.73 40.64 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12114,7 +12414,7 @@
 		(fields_autoplaced yes)
 		(uuid "48903f9f-8157-4ec4-8e9f-21ef348ccd73")
 		(property "Reference" "R8"
-			(at 226.06 35.2255 0)
+			(at 243.84 35.2255 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12122,7 +12422,7 @@
 			)
 		)
 		(property "Value" "100R-1K"
-			(at 226.06 37.6498 0)
+			(at 243.84 37.6498 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12130,7 +12430,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:RESC1005X40N"
-			(at 220.98 -55.55 0)
+			(at 238.76 -55.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12140,7 +12440,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.bourns.com/pdfs/CR0402.pdf"
-			(at 220.98 -155.55 0)
+			(at 238.76 -155.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12150,7 +12450,7 @@
 			)
 		)
 		(property "Description" "Thick Film Resistors - SMD 165OHM 1/16WATT 1%"
-			(at 234.95 40.64 0)
+			(at 252.73 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12159,7 +12459,7 @@
 			)
 		)
 		(property "Height" "0.4"
-			(at 220.98 -355.55 0)
+			(at 238.76 -355.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12169,7 +12469,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Bourns"
-			(at 220.98 -455.55 0)
+			(at 238.76 -455.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12179,7 +12479,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CR0402-FX-1650GLF"
-			(at 220.98 -555.55 0)
+			(at 238.76 -555.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12189,7 +12489,7 @@
 			)
 		)
 		(property "Mouser Part Number" "652-CR0402-FX1650GLF"
-			(at 220.98 -655.55 0)
+			(at 238.76 -655.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12199,7 +12499,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.com/Search/Refine.aspx?Keyword=652-CR0402-FX1650GLF"
-			(at 220.98 -755.55 0)
+			(at 238.76 -755.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12209,7 +12509,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 220.98 -855.55 0)
+			(at 238.76 -855.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12219,7 +12519,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 220.98 -955.55 0)
+			(at 238.76 -955.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12310,16 +12610,15 @@
 	)
 	(symbol
 		(lib_id "OroLink:SG73P2ATTD102J")
-		(at 27.94 49.53 0)
+		(at 46.99 73.66 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "4e127110-3855-4e5c-9ed3-5f4519c5cc10")
 		(property "Reference" "R83"
-			(at 34.29 43.528 0)
+			(at 42.418 65.88 90)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -12327,7 +12626,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 34.29 46.3609 0)
+			(at 42.418 68.7129 90)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -12335,7 +12634,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:RES_SG73P_2A_KOA"
-			(at 27.94 49.53 0)
+			(at 46.99 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12345,7 +12644,7 @@
 			)
 		)
 		(property "Datasheet" "null"
-			(at 27.94 49.53 0)
+			(at 46.99 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12355,7 +12654,7 @@
 			)
 		)
 		(property "Description" "Res Thick Film 0805 1K Ohm 5% 0.5W(1/2W) ±100ppm/C Pad SMD Automotive T/R"
-			(at 27.94 49.53 0)
+			(at 46.99 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12364,7 +12663,7 @@
 			)
 		)
 		(property "Mouser URL" "null"
-			(at 27.94 52.53 0)
+			(at 49.99 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12374,7 +12673,7 @@
 			)
 		)
 		(property "Arrow ID" "SG73P2ATTD102J"
-			(at 27.94 52.53 0)
+			(at 49.99 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12384,7 +12683,7 @@
 			)
 		)
 		(property "Mouser ID" "660-SG73P2ATTD102J"
-			(at 27.94 52.53 0)
+			(at 49.99 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12394,7 +12693,7 @@
 			)
 		)
 		(property "Description_1" "Res Thick Film 0805 1K Ohm 5% 0.5W(1/2W) ±100ppm/C Pad SMD Automotive T/R"
-			(at 27.94 52.53 0)
+			(at 49.99 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12404,7 +12703,7 @@
 			)
 		)
 		(property "DigiKey ID" "2019-SG73P2ATTD102JCT-ND"
-			(at 27.94 52.53 0)
+			(at 49.99 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12414,7 +12713,7 @@
 			)
 		)
 		(property "Mfr. Number" "SG73P2ATTD102J"
-			(at 27.94 52.53 0)
+			(at 49.99 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12424,7 +12723,7 @@
 			)
 		)
 		(property "Mfr. Name" "KOA Speer"
-			(at 27.94 52.53 0)
+			(at 49.99 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12450,7 +12749,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 24.13 52.07 0)
+		(at 46.99 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12458,7 +12757,7 @@
 		(dnp no)
 		(uuid "4f04fbb8-2e58-4c95-b4c9-c9c8e4acf916")
 		(property "Reference" "#PWR0201"
-			(at 24.13 58.42 0)
+			(at 46.99 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12467,7 +12766,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 24.13 56.2031 0)
+			(at 46.99 81.6031 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12475,7 +12774,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 24.13 52.07 0)
+			(at 46.99 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12484,7 +12783,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 24.13 52.07 0)
+			(at 46.99 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12493,7 +12792,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 24.13 52.07 0)
+			(at 46.99 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12515,7 +12814,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 135.89 22.86 0)
+		(at 157.48 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12524,7 +12823,7 @@
 		(fields_autoplaced yes)
 		(uuid "572ea391-0d84-41ca-b31c-6c30401d5882")
 		(property "Reference" "#PWR052"
-			(at 135.89 26.67 0)
+			(at 157.48 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12533,7 +12832,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 135.89 18.7269 0)
+			(at 157.48 19.9969 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12541,7 +12840,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 135.89 22.86 0)
+			(at 157.48 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12550,7 +12849,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 135.89 22.86 0)
+			(at 157.48 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12559,7 +12858,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 135.89 22.86 0)
+			(at 157.48 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12714,7 +13013,7 @@
 	)
 	(symbol
 		(lib_id "power:+5VP")
-		(at 106.68 80.01 0)
+		(at 128.27 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12723,7 +13022,7 @@
 		(fields_autoplaced yes)
 		(uuid "63f2c720-3616-4263-90c5-6d0f714f6233")
 		(property "Reference" "#PWR0206"
-			(at 106.68 83.82 0)
+			(at 128.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12732,7 +13031,7 @@
 			)
 		)
 		(property "Value" "+5VP"
-			(at 106.68 75.8769 0)
+			(at 128.27 77.1469 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12740,7 +13039,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 106.68 80.01 0)
+			(at 128.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12749,7 +13048,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 106.68 80.01 0)
+			(at 128.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12758,7 +13057,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5VP\""
-			(at 106.68 80.01 0)
+			(at 128.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12985,7 +13284,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 124.46 68.58 0)
+		(at 146.05 69.85 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12994,7 +13293,7 @@
 		(fields_autoplaced yes)
 		(uuid "69bae9cb-56b7-473d-8632-f88bb252309f")
 		(property "Reference" "#PWR0203"
-			(at 124.46 74.93 0)
+			(at 146.05 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13003,7 +13302,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 124.46 72.7131 0)
+			(at 146.05 73.9831 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13011,7 +13310,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 124.46 68.58 0)
+			(at 146.05 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13020,7 +13319,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 124.46 68.58 0)
+			(at 146.05 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13029,7 +13328,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 124.46 68.58 0)
+			(at 146.05 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13051,7 +13350,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:CRCW0402470KFKED")
-		(at 135.89 43.18 90)
+		(at 157.48 44.45 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13059,7 +13358,7 @@
 		(dnp no)
 		(uuid "6b599232-153a-42ec-993e-0b59622224fa")
 		(property "Reference" "R86"
-			(at 137.922 33.0778 90)
+			(at 159.512 34.3478 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13068,7 +13367,7 @@
 			)
 		)
 		(property "Value" "470K"
-			(at 137.922 35.5021 90)
+			(at 159.512 36.7721 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13077,7 +13376,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:CRCW0402470KFKED"
-			(at 232.08 29.21 0)
+			(at 253.67 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13087,7 +13386,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 332.08 29.21 0)
+			(at 353.67 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13097,7 +13396,7 @@
 			)
 		)
 		(property "Description" "Vishay CRCW Series Thick Film Surface Mount Resistor 402 Case 470k +/-1% 0.063W +/-100ppm/C"
-			(at 135.89 43.18 0)
+			(at 157.48 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13106,7 +13405,7 @@
 			)
 		)
 		(property "Height" "0.4"
-			(at 532.08 29.21 0)
+			(at 553.67 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13116,7 +13415,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Vishay"
-			(at 632.08 29.21 0)
+			(at 653.67 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13126,7 +13425,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CRCW0402470KFKED"
-			(at 732.08 29.21 0)
+			(at 753.67 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13136,7 +13435,7 @@
 			)
 		)
 		(property "Mouser Part Number" "71-CRCW0402470KFKED"
-			(at 832.08 29.21 0)
+			(at 853.67 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13146,7 +13445,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Dale/CRCW0402470KFKED?qs=iWCWVRvNViyekgQMR1mCgQ%3D%3D"
-			(at 932.08 29.21 0)
+			(at 953.67 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13156,7 +13455,7 @@
 			)
 		)
 		(property "Arrow Part Number" "CRCW0402470KFKED"
-			(at 1032.08 29.21 0)
+			(at 1053.67 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13166,7 +13465,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/crcw0402470kfked/vishay"
-			(at 1132.08 29.21 0)
+			(at 1153.67 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13930,7 +14229,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 30.48 72.39 0)
+		(at 52.07 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13938,7 +14237,7 @@
 		(dnp no)
 		(uuid "8f050f87-6988-4fc5-a69a-f9ec5ef867ff")
 		(property "Reference" "#PWR0202"
-			(at 30.48 78.74 0)
+			(at 52.07 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13947,7 +14246,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 30.48 76.5231 0)
+			(at 52.07 81.6031 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13955,7 +14254,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 30.48 72.39 0)
+			(at 52.07 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13964,7 +14263,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 30.48 72.39 0)
+			(at 52.07 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13973,7 +14272,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 30.48 72.39 0)
+			(at 52.07 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14262,6 +14561,71 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
 					(reference "#PWR020")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 38.1 77.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "94257548-1861-4656-9bd7-aeb5ea86b746")
+		(property "Reference" "#PWR074"
+			(at 38.1 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 38.1 81.6031 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 38.1 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 38.1 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 38.1 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6ea14250-3d82-43b7-9524-587fa05bac8a")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
+					(reference "#PWR074")
 					(unit 1)
 				)
 			)
@@ -14619,7 +14983,7 @@
 	)
 	(symbol
 		(lib_id "power:+5VP")
-		(at 43.18 57.15 90)
+		(at 64.77 58.42 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14628,7 +14992,7 @@
 		(fields_autoplaced yes)
 		(uuid "9e43596a-e02b-467b-8da3-d34096146340")
 		(property "Reference" "#PWR0197"
-			(at 46.99 57.15 0)
+			(at 68.58 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14637,7 +15001,7 @@
 			)
 		)
 		(property "Value" "+5VP"
-			(at 40.0051 57.15 90)
+			(at 61.5951 58.42 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14646,7 +15010,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 43.18 57.15 0)
+			(at 64.77 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14655,7 +15019,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 43.18 57.15 0)
+			(at 64.77 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14664,7 +15028,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5VP\""
-			(at 43.18 57.15 0)
+			(at 64.77 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14753,16 +15117,16 @@
 	)
 	(symbol
 		(lib_id "OroLink:CRCW0402470KFKED")
-		(at 132.08 43.18 270)
+		(at 43.18 44.45 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a6e5b76f-e9a0-4f89-91a3-02bbd27c1558")
-		(property "Reference" "R85"
-			(at 130.048 33.0778 90)
+		(uuid "a39556b8-eb44-4211-9806-86c8cb034929")
+		(property "Reference" "R91"
+			(at 41.148 34.3478 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14771,7 +15135,7 @@
 			)
 		)
 		(property "Value" "470K"
-			(at 130.048 35.5021 90)
+			(at 41.148 36.7721 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14780,7 +15144,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:CRCW0402470KFKED"
-			(at 35.89 29.21 0)
+			(at -53.01 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14790,7 +15154,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at -64.11 29.21 0)
+			(at -153.01 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14800,7 +15164,7 @@
 			)
 		)
 		(property "Description" "Vishay CRCW Series Thick Film Surface Mount Resistor 402 Case 470k +/-1% 0.063W +/-100ppm/C"
-			(at 132.08 43.18 0)
+			(at 43.18 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14809,7 +15173,7 @@
 			)
 		)
 		(property "Height" "0.4"
-			(at -264.11 29.21 0)
+			(at -353.01 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14819,7 +15183,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Vishay"
-			(at -364.11 29.21 0)
+			(at -453.01 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14829,7 +15193,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CRCW0402470KFKED"
-			(at -464.11 29.21 0)
+			(at -553.01 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14839,7 +15203,7 @@
 			)
 		)
 		(property "Mouser Part Number" "71-CRCW0402470KFKED"
-			(at -564.11 29.21 0)
+			(at -653.01 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14849,7 +15213,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Dale/CRCW0402470KFKED?qs=iWCWVRvNViyekgQMR1mCgQ%3D%3D"
-			(at -664.11 29.21 0)
+			(at -753.01 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14859,7 +15223,7 @@
 			)
 		)
 		(property "Arrow Part Number" "CRCW0402470KFKED"
-			(at -764.11 29.21 0)
+			(at -853.01 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14869,7 +15233,149 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/crcw0402470kfked/vishay"
-			(at -864.11 29.21 0)
+			(at -953.01 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ed44dcba-47eb-4853-9fb2-62ae69be9944")
+		)
+		(pin "2"
+			(uuid "23e72069-c714-431e-8a65-3709ff3046d1")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
+					(reference "R91")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:CRCW0402470KFKED")
+		(at 153.67 44.45 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a6e5b76f-e9a0-4f89-91a3-02bbd27c1558")
+		(property "Reference" "R85"
+			(at 151.638 34.3478 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "470K"
+			(at 151.638 36.7721 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "OroLink:CRCW0402470KFKED"
+			(at 57.48 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/20035/dcrcwe3.pdf"
+			(at -42.52 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Vishay CRCW Series Thick Film Surface Mount Resistor 402 Case 470k +/-1% 0.063W +/-100ppm/C"
+			(at 153.67 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "0.4"
+			(at -242.52 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Vishay"
+			(at -342.52 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CRCW0402470KFKED"
+			(at -442.52 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "71-CRCW0402470KFKED"
+			(at -542.52 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Dale/CRCW0402470KFKED?qs=iWCWVRvNViyekgQMR1mCgQ%3D%3D"
+			(at -642.52 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "CRCW0402470KFKED"
+			(at -742.52 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/crcw0402470kfked/vishay"
+			(at -842.52 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15584,7 +16090,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 86.36 88.9 0)
+		(at 107.95 90.17 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15593,7 +16099,7 @@
 		(fields_autoplaced yes)
 		(uuid "c00d7a6f-863b-40a1-828f-dc26a0a269c3")
 		(property "Reference" "#PWR0204"
-			(at 86.36 95.25 0)
+			(at 107.95 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15602,7 +16108,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 86.36 93.0331 0)
+			(at 107.95 94.3031 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15610,7 +16116,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 88.9 0)
+			(at 107.95 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15619,7 +16125,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 88.9 0)
+			(at 107.95 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15628,7 +16134,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 86.36 88.9 0)
+			(at 107.95 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16300,7 +16806,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:GRM155C61E475ME15J")
-		(at 88.9 80.01 0)
+		(at 110.49 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16308,7 +16814,7 @@
 		(dnp no)
 		(uuid "d277e192-7dbe-4db2-a35c-cdc5c8dd10ce")
 		(property "Reference" "C146"
-			(at 74.168 80.01 0)
+			(at 95.758 81.28 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -16316,7 +16822,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 82.042 79.756 0)
+			(at 103.632 81.026 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -16324,7 +16830,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:GRM15x"
-			(at 97.79 176.2 0)
+			(at 119.38 177.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16334,7 +16840,7 @@
 			)
 		)
 		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155C61E475ME15-01A.pdf"
-			(at 97.79 276.2 0)
+			(at 119.38 277.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16344,7 +16850,7 @@
 			)
 		)
 		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 25VDC 4.7F 20% X5S"
-			(at 109.728 69.342 0)
+			(at 131.318 70.612 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16353,7 +16859,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Samsung-Electro-Mechanics/CL05A475KP5NRNC?qs=YzdFMwBfadZHDm1%2FDIRDnw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=187-CL05A475KP5NRNC&utm_content=Samsung%20Electro-Mechanics"
-			(at 88.9 83.01 0)
+			(at 110.49 84.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16363,7 +16869,7 @@
 			)
 		)
 		(property "Arrow ID" "CL05A475KP5NRNC"
-			(at 88.9 83.01 0)
+			(at 110.49 84.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16373,7 +16879,7 @@
 			)
 		)
 		(property "DigiKey ID" "1276-1480-6-ND"
-			(at 88.9 83.01 0)
+			(at 110.49 84.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16383,7 +16889,7 @@
 			)
 		)
 		(property "Description_1" "Cap Ceramic 4.7uF 10V X5R 10% SMD 0402 85°C Cardboard T/R"
-			(at 88.9 83.01 0)
+			(at 110.49 84.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16393,7 +16899,7 @@
 			)
 		)
 		(property "Mfr. Number" "CL05A475KP5NRNC"
-			(at 88.9 83.01 0)
+			(at 110.49 84.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16403,7 +16909,7 @@
 			)
 		)
 		(property "Mouser ID" "187-CL05A475KP5NRNC"
-			(at 88.9 83.01 0)
+			(at 110.49 84.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16413,7 +16919,7 @@
 			)
 		)
 		(property "Mfr. Name" "Samsung"
-			(at 88.9 83.01 0)
+			(at 110.49 84.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16423,7 +16929,7 @@
 			)
 		)
 		(property "Height" "0.33"
-			(at 97.79 476.2 0)
+			(at 119.38 477.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16433,7 +16939,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Murata Electronics"
-			(at 97.79 576.2 0)
+			(at 119.38 577.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16443,7 +16949,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "GRM155C61E475ME15J"
-			(at 97.79 676.2 0)
+			(at 119.38 677.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16453,7 +16959,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at 97.79 776.2 0)
+			(at 119.38 777.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16463,7 +16969,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM155C61E475ME15J?qs=By6Nw2ByBD02p8xq06vhEQ%3D%3D"
-			(at 97.79 876.2 0)
+			(at 119.38 877.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16473,7 +16979,7 @@
 			)
 		)
 		(property "Arrow Part Number" "GRM155C61E475ME15J"
-			(at 97.79 976.2 0)
+			(at 119.38 977.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16483,7 +16989,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/grm155c61e475me15j/murata-manufacturing?region=nac"
-			(at 97.79 1076.2 0)
+			(at 119.38 1077.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16509,7 +17015,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:CR0402-FX-1650GLF")
-		(at 234.95 57.15 180)
+		(at 252.73 57.15 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16518,7 +17024,7 @@
 		(fields_autoplaced yes)
 		(uuid "d6730d32-fb37-4578-9b6e-935efecdbe0c")
 		(property "Reference" "R11"
-			(at 226.06 51.7355 0)
+			(at 243.84 51.7355 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16526,7 +17032,7 @@
 			)
 		)
 		(property "Value" "100R-1K"
-			(at 226.06 54.1598 0)
+			(at 243.84 54.1598 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16534,7 +17040,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:RESC1005X40N"
-			(at 220.98 -39.04 0)
+			(at 238.76 -39.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16544,7 +17050,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.bourns.com/pdfs/CR0402.pdf"
-			(at 220.98 -139.04 0)
+			(at 238.76 -139.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16554,7 +17060,7 @@
 			)
 		)
 		(property "Description" "Thick Film Resistors - SMD 165OHM 1/16WATT 1%"
-			(at 234.95 57.15 0)
+			(at 252.73 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16563,7 +17069,7 @@
 			)
 		)
 		(property "Height" "0.4"
-			(at 220.98 -339.04 0)
+			(at 238.76 -339.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16573,7 +17079,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Bourns"
-			(at 220.98 -439.04 0)
+			(at 238.76 -439.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16583,7 +17089,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CR0402-FX-1650GLF"
-			(at 220.98 -539.04 0)
+			(at 238.76 -539.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16593,7 +17099,7 @@
 			)
 		)
 		(property "Mouser Part Number" "652-CR0402-FX1650GLF"
-			(at 220.98 -639.04 0)
+			(at 238.76 -639.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16603,7 +17109,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.com/Search/Refine.aspx?Keyword=652-CR0402-FX1650GLF"
-			(at 220.98 -739.04 0)
+			(at 238.76 -739.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16613,7 +17119,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 220.98 -839.04 0)
+			(at 238.76 -839.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16623,7 +17129,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 220.98 -939.04 0)
+			(at 238.76 -939.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16649,7 +17155,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:GRM155C61E475ME15J")
-		(at 88.9 85.09 0)
+		(at 110.49 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16657,7 +17163,7 @@
 		(dnp no)
 		(uuid "dae475b1-1593-45b0-8da4-20d65b7aa581")
 		(property "Reference" "C147"
-			(at 74.168 85.09 0)
+			(at 95.758 86.36 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -16665,7 +17171,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 82.042 84.836 0)
+			(at 103.632 86.106 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -16673,7 +17179,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:GRM15x"
-			(at 97.79 181.28 0)
+			(at 119.38 182.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16683,7 +17189,7 @@
 			)
 		)
 		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155C61E475ME15-01A.pdf"
-			(at 97.79 281.28 0)
+			(at 119.38 282.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16693,7 +17199,7 @@
 			)
 		)
 		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 25VDC 4.7F 20% X5S"
-			(at 109.728 74.422 0)
+			(at 131.318 75.692 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16702,7 +17208,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Samsung-Electro-Mechanics/CL05A475KP5NRNC?qs=YzdFMwBfadZHDm1%2FDIRDnw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=187-CL05A475KP5NRNC&utm_content=Samsung%20Electro-Mechanics"
-			(at 88.9 88.09 0)
+			(at 110.49 89.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16712,7 +17218,7 @@
 			)
 		)
 		(property "Arrow ID" "CL05A475KP5NRNC"
-			(at 88.9 88.09 0)
+			(at 110.49 89.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16722,7 +17228,7 @@
 			)
 		)
 		(property "DigiKey ID" "1276-1480-6-ND"
-			(at 88.9 88.09 0)
+			(at 110.49 89.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16732,7 +17238,7 @@
 			)
 		)
 		(property "Description_1" "Cap Ceramic 4.7uF 10V X5R 10% SMD 0402 85°C Cardboard T/R"
-			(at 88.9 88.09 0)
+			(at 110.49 89.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16742,7 +17248,7 @@
 			)
 		)
 		(property "Mfr. Number" "CL05A475KP5NRNC"
-			(at 88.9 88.09 0)
+			(at 110.49 89.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16752,7 +17258,7 @@
 			)
 		)
 		(property "Mouser ID" "187-CL05A475KP5NRNC"
-			(at 88.9 88.09 0)
+			(at 110.49 89.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16762,7 +17268,7 @@
 			)
 		)
 		(property "Mfr. Name" "Samsung"
-			(at 88.9 88.09 0)
+			(at 110.49 89.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16772,7 +17278,7 @@
 			)
 		)
 		(property "Height" "0.33"
-			(at 97.79 481.28 0)
+			(at 119.38 482.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16782,7 +17288,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Murata Electronics"
-			(at 97.79 581.28 0)
+			(at 119.38 582.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16792,7 +17298,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "GRM155C61E475ME15J"
-			(at 97.79 681.28 0)
+			(at 119.38 682.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16802,7 +17308,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at 97.79 781.28 0)
+			(at 119.38 782.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16812,7 +17318,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM155C61E475ME15J?qs=By6Nw2ByBD02p8xq06vhEQ%3D%3D"
-			(at 97.79 881.28 0)
+			(at 119.38 882.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16822,7 +17328,7 @@
 			)
 		)
 		(property "Arrow Part Number" "GRM155C61E475ME15J"
-			(at 97.79 981.28 0)
+			(at 119.38 982.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16832,7 +17338,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/grm155c61e475me15j/murata-manufacturing?region=nac"
-			(at 97.79 1081.28 0)
+			(at 119.38 1082.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17202,7 +17708,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:GRM155C61E475ME15J")
-		(at 88.9 74.93 0)
+		(at 110.49 76.2 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17210,7 +17716,7 @@
 		(dnp no)
 		(uuid "f44e5e77-d1c4-4141-8251-e83ef616113f")
 		(property "Reference" "C145"
-			(at 74.168 74.93 0)
+			(at 95.758 76.2 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -17218,7 +17724,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 82.042 74.676 0)
+			(at 103.632 75.946 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -17226,7 +17732,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:GRM15x"
-			(at 97.79 171.12 0)
+			(at 119.38 172.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17236,7 +17742,7 @@
 			)
 		)
 		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155C61E475ME15-01A.pdf"
-			(at 97.79 271.12 0)
+			(at 119.38 272.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17246,7 +17752,7 @@
 			)
 		)
 		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 25VDC 4.7F 20% X5S"
-			(at 109.728 64.262 0)
+			(at 131.318 65.532 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17255,7 +17761,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Samsung-Electro-Mechanics/CL05A475KP5NRNC?qs=YzdFMwBfadZHDm1%2FDIRDnw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=187-CL05A475KP5NRNC&utm_content=Samsung%20Electro-Mechanics"
-			(at 88.9 77.93 0)
+			(at 110.49 79.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17265,7 +17771,7 @@
 			)
 		)
 		(property "Arrow ID" "CL05A475KP5NRNC"
-			(at 88.9 77.93 0)
+			(at 110.49 79.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17275,7 +17781,7 @@
 			)
 		)
 		(property "DigiKey ID" "1276-1480-6-ND"
-			(at 88.9 77.93 0)
+			(at 110.49 79.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17285,7 +17791,7 @@
 			)
 		)
 		(property "Description_1" "Cap Ceramic 4.7uF 10V X5R 10% SMD 0402 85°C Cardboard T/R"
-			(at 88.9 77.93 0)
+			(at 110.49 79.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17295,7 +17801,7 @@
 			)
 		)
 		(property "Mfr. Number" "CL05A475KP5NRNC"
-			(at 88.9 77.93 0)
+			(at 110.49 79.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17305,7 +17811,7 @@
 			)
 		)
 		(property "Mouser ID" "187-CL05A475KP5NRNC"
-			(at 88.9 77.93 0)
+			(at 110.49 79.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17315,7 +17821,7 @@
 			)
 		)
 		(property "Mfr. Name" "Samsung"
-			(at 88.9 77.93 0)
+			(at 110.49 79.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17325,7 +17831,7 @@
 			)
 		)
 		(property "Height" "0.33"
-			(at 97.79 471.12 0)
+			(at 119.38 472.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17335,7 +17841,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Murata Electronics"
-			(at 97.79 571.12 0)
+			(at 119.38 572.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17345,7 +17851,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "GRM155C61E475ME15J"
-			(at 97.79 671.12 0)
+			(at 119.38 672.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17355,7 +17861,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at 97.79 771.12 0)
+			(at 119.38 772.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17365,7 +17871,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM155C61E475ME15J?qs=By6Nw2ByBD02p8xq06vhEQ%3D%3D"
-			(at 97.79 871.12 0)
+			(at 119.38 872.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17375,7 +17881,7 @@
 			)
 		)
 		(property "Arrow Part Number" "GRM155C61E475ME15J"
-			(at 97.79 971.12 0)
+			(at 119.38 972.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17385,7 +17891,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/grm155c61e475me15j/murata-manufacturing?region=nac"
-			(at 97.79 1071.12 0)
+			(at 119.38 1072.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17411,7 +17917,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 224.79 44.45 0)
+		(at 242.57 44.45 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17420,7 +17926,7 @@
 		(fields_autoplaced yes)
 		(uuid "f4c99db4-9277-4ad0-8d3a-8fe0e6756991")
 		(property "Reference" "#PWR066"
-			(at 224.79 50.8 0)
+			(at 242.57 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17429,7 +17935,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 224.79 48.5831 0)
+			(at 242.57 48.5831 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17437,7 +17943,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 224.79 44.45 0)
+			(at 242.57 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17446,7 +17952,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 224.79 44.45 0)
+			(at 242.57 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17455,7 +17961,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 224.79 44.45 0)
+			(at 242.57 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
