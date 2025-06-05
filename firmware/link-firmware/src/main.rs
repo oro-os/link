@@ -187,7 +187,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	let aux_vbus_oc = ExtiInput::new(p.PA12, p.EXTI12, Pull::None);
 	let aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
 	let board_power_alert = ExtiInput::new(p.PE9, p.EXTI9, Pull::None);
-	let psu_on = OutputOpenDrain::new(p.PD10, Level::High, Speed::Low);
+	let psu_on = Output::new(p.PD10, Level::Low, Speed::Low);
 
 	loop {
 		Timer::after(Duration::from_millis(3000)).await;
