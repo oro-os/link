@@ -173,11 +173,11 @@ pub async fn main(spawner: Spawner) -> ! {
 		oledconf
 	});
 
-	let gpio3 = Output::new(p.PA7, Level::Low, Speed::Low);
-	let gpio8 = Output::new(p.PC7, Level::Low, Speed::Low);
-	let gpio9 = Output::new(p.PA10, Level::Low, Speed::Low);
-	let gpio10 = Output::new(p.PC6, Level::Low, Speed::Low);
-	let gpio11 = Output::new(p.PB4, Level::Low, Speed::Low);
+	let gpio1 = Output::new(p.PA7, Level::Low, Speed::Low);
+	let gpio2 = Output::new(p.PC7, Level::Low, Speed::Low);
+	let gpio3 = Output::new(p.PA10, Level::Low, Speed::Low);
+	let gpio4 = Output::new(p.PC6, Level::Low, Speed::Low);
+	let gpio5 = Output::new(p.PB4, Level::Low, Speed::Low);
 
 	let vbus_oc = ExtiInput::new(p.PD15, p.EXTI15, Pull::None);
 	let vbus_en = Output::new(p.PE15, Level::High, Speed::Low);
