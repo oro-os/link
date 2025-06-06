@@ -178,8 +178,6 @@ pub async fn main(spawner: Spawner) -> ! {
 	let gpio9 = Output::new(p.PA10, Level::Low, Speed::Low);
 	let gpio10 = Output::new(p.PC6, Level::Low, Speed::Low);
 	let gpio11 = Output::new(p.PB4, Level::Low, Speed::Low);
-	let gpio12 = Output::new(p.PE10, Level::Low, Speed::Low);
-	let gpio13 = Output::new(p.PE12, Level::Low, Speed::Low);
 
 	let vbus_oc = ExtiInput::new(p.PD15, p.EXTI15, Pull::None);
 	let vbus_en = Output::new(p.PE15, Level::High, Speed::Low);
@@ -188,6 +186,8 @@ pub async fn main(spawner: Spawner) -> ! {
 	let aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
 	let board_power_alert = ExtiInput::new(p.PE9, p.EXTI9, Pull::None);
 	let psu_on = Output::new(p.PD10, Level::Low, Speed::Low);
+	let sut_pwr_switch = Output::new(p.PE12, Level::Low, Speed::Low);
+	let sut_rst_switch = Output::new(p.PE10, Level::Low, Speed::Low);
 
 	loop {
 		Timer::after(Duration::from_millis(3000)).await;
