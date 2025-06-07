@@ -11615,6 +11615,12 @@
 		(uuid "3df20a26-dad8-466b-a65d-4d91dd5749bf")
 	)
 	(junction
+		(at 220.98 236.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "42988a63-735a-4de1-ab66-c5387e0b154a")
+	)
+	(junction
 		(at 328.93 135.89)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -12628,6 +12634,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 153.67) (xy 69.85 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ab0004c-1d31-4bf1-8862-933a3bb39c76")
+	)
+	(wire
+		(pts
 			(xy 54.61 236.22) (xy 74.93 236.22)
 		)
 		(stroke
@@ -12835,16 +12851,6 @@
 			(type default)
 		)
 		(uuid "32aa6157-1274-430c-97ef-56bbbc219338")
-	)
-	(wire
-		(pts
-			(xy 219.71 233.68) (xy 228.6 233.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "32e1f3ac-9943-420e-9868-57ad8ee6d0d9")
 	)
 	(wire
 		(pts
@@ -14448,6 +14454,16 @@
 	)
 	(wire
 		(pts
+			(xy 220.98 233.68) (xy 219.71 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9342ba61-1081-4316-b740-fa852225aa7f")
+	)
+	(wire
+		(pts
 			(xy 300.99 46.99) (xy 300.99 49.53)
 		)
 		(stroke
@@ -14655,6 +14671,16 @@
 			(type default)
 		)
 		(uuid "a5c45c7b-13b5-4599-aa1c-3ea91f4e6e37")
+	)
+	(wire
+		(pts
+			(xy 220.98 236.22) (xy 220.98 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a64aa0c8-5e79-4b1b-8cdb-13073669fa1b")
 	)
 	(wire
 		(pts
@@ -17100,6 +17126,17 @@
 		)
 		(uuid "303d5b43-6023-4b96-b217-25221aeba01f")
 	)
+	(label "USB_HDR_SEL"
+		(at 33.02 66.04 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "303fa611-816c-4246-87ef-f97161f3565f")
+	)
 	(label "SPI4_SCK"
 		(at 182.88 154.94 0)
 		(fields_autoplaced yes)
@@ -17176,17 +17213,6 @@
 			(justify right bottom)
 		)
 		(uuid "41fbd28b-4daf-47cd-b098-426b41812b11")
-	)
-	(label "GPIO1"
-		(at 33.02 66.04 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "45da447c-4db3-46bd-80bf-7954d22ccc4f")
 	)
 	(label "SPI4_SCK"
 		(at 129.54 250.19 180)
@@ -18585,6 +18611,17 @@
 		)
 		(uuid "ef92449a-778f-405b-b374-7ec439c838ae")
 	)
+	(label "USB_HDR_SEL"
+		(at 69.85 153.67 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f2daf5fe-3010-484c-8f12-f4f5e05a12f6")
+	)
 	(label "SYSETH_CS"
 		(at 113.03 106.68 180)
 		(fields_autoplaced yes)
@@ -18617,17 +18654,6 @@
 			(justify left bottom)
 		)
 		(uuid "f4b9d322-7832-4e78-98a5-16b3ff731f6d")
-	)
-	(label "GPIO1"
-		(at 228.6 233.68 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "f61282fc-a99c-48b1-97d5-a3c8f2a61452")
 	)
 	(label "ULPI_DIR"
 		(at 113.03 53.34 180)
@@ -33816,8 +33842,8 @@
 		)
 	)
 	(sheet
-		(at 25.4 153.67)
-		(size 29.21 39.37)
+		(at 25.4 150.876)
+		(size 29.21 42.164)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -33828,7 +33854,7 @@
 		)
 		(uuid "96a85769-3dbc-4fdc-a9f7-f5e880a87ae8")
 		(property "Sheetname" "USB"
-			(at 25.4 152.9584 0)
+			(at 25.4 150.1644 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33837,7 +33863,7 @@
 			)
 		)
 		(property "Sheetfile" "usb.kicad_sch"
-			(at 25.4 193.3706 0)
+			(at 25.4 193.6246 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33984,6 +34010,16 @@
 				(justify right)
 			)
 			(uuid "f9e93684-50f2-4c53-8e4a-407387a1772d")
+		)
+		(pin "USB_OUTPUT_SEL" input
+			(at 54.61 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "a92a2480-5cf5-49ac-b34d-ba6d1529b007")
 		)
 		(instances
 			(project "link"

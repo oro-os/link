@@ -98,6 +98,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	)
 	.unwrap();
 
+	let usb_output_selector = Output::new(p.PA7, Level::Low, Speed::Low);
 	let ulpi_oc = ExtiInput::new(p.PB14, p.EXTI14, Pull::None);
 	let ulpi_rst = OutputOpenDrain::new(p.PB15, Level::High, Speed::Low);
 	static EP_OUT_BUFFER: StaticCell<[u8; 256]> = StaticCell::new();
@@ -173,7 +174,6 @@ pub async fn main(spawner: Spawner) -> ! {
 		oledconf
 	});
 
-	let gpio1 = Output::new(p.PA7, Level::Low, Speed::Low);
 	let gpio2 = Output::new(p.PC7, Level::Low, Speed::Low);
 	let gpio3 = Output::new(p.PA10, Level::Low, Speed::Low);
 	let gpio4 = Output::new(p.PC6, Level::Low, Speed::Low);
