@@ -1,0 +1,9 @@
+(version 1)
+
+(rule ULPI_exact_length
+  (constraint length
+    (min 31.4mm)
+    (max 31.6mm)
+  )
+  (condition "A.NetClass == 'ULPI'")
+)
