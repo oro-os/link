@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.4
+          "min_clearance": 0.25
         }
       },
       "diff_pair_dimensions": [
@@ -179,7 +179,8 @@
       ],
       "track_widths": [
         0.0,
-        0.2
+        0.2,
+        0.5
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -230,7 +231,17 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      "label_dangling|330200|762000|33e55b7b-a7a5-47bc-96f0-d76bcc1949f8|00000000-0000-0000-0000-000000000000|/b8dafc19-6de0-4c8f-9903-23372e5103df||",
+      "multiple_net_names|1231900|1473200|13b046c5-808c-44cd-95bf-1dcd92c2fb36|afe2c7d4-4c53-4151-934d-a6a4671e5684|/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1|/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1|/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1",
+      "multiple_net_names|1231900|1473200|5310ac80-352d-461f-b079-5f1c1213921a|afe2c7d4-4c53-4151-934d-a6a4671e5684|/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1|/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1|/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1",
+      "multiple_net_names|1270000|1384300|efd3a56f-5ed3-4831-8632-11858c59c7b4|afe2c7d4-4c53-4151-934d-a6a4671e5684|/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1|/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1|/b8dafc19-6de0-4c8f-9903-23372e5103df/3fae04c0-e83c-4915-aa57-6868c96235c1",
+      "multiple_net_names|1371600|368300|383da9d6-b136-4c8e-bf40-287f1feabc12|c45d71ca-9de8-4cfd-9c22-5a28bfc2dc1b|/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1|/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1|/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1",
+      "multiple_net_names|1676400|406400|383da9d6-b136-4c8e-bf40-287f1feabc12|c45d71ca-9de8-4cfd-9c22-5a28bfc2dc1b|/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1|/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1|/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1",
+      "multiple_net_names|2159000|685800|f66f3d25-ffba-47d1-a3a0-473318eb9f5d|7e9cdfeb-541d-408d-9fdd-03f6e7ec0fc8|/b8dafc19-6de0-4c8f-9903-23372e5103df/222205f2-0600-4315-a593-542b8c55a37e|/b8dafc19-6de0-4c8f-9903-23372e5103df/222205f2-0600-4315-a593-542b8c55a37e|/b8dafc19-6de0-4c8f-9903-23372e5103df/222205f2-0600-4315-a593-542b8c55a37e",
+      "multiple_net_names|2654300|1244600|6aea7af1-db52-49f6-b7f3-fac7567a34cd|beb5c050-26d3-4638-89df-fc7a6acb8b1f|/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615|/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615|/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615",
+      "multiple_net_names|2654300|1244600|c2f284cf-d9b7-4449-9998-dd756bac8446|beb5c050-26d3-4638-89df-fc7a6acb8b1f|/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615|/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615|/b8dafc19-6de0-4c8f-9903-23372e5103df/efe900f0-e311-40d9-a69c-d0ffa18ab615"
+    ],
     "meta": {
       "version": 0
     },
@@ -479,8 +490,8 @@
         "name": "5V",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(255, 97, 0)",
-        "track_width": 1.0,
-        "via_diameter": 1.0,
+        "track_width": 0.2,
+        "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 10
       },
@@ -506,15 +517,15 @@
         "clearance": 0.3,
         "diff_pair_gap": 0.2032,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2146,
+        "diff_pair_width": 0.1339,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "Ethernet",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(57, 255, 39)",
-        "track_width": 0.2146,
-        "via_diameter": 0.6,
+        "track_width": 0.1339,
+        "via_diameter": 0.5,
         "via_drill": 0.3,
         "wire_width": 6
       },
@@ -547,25 +558,25 @@
         "name": "ULPI",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(255, 165, 0)",
-        "track_width": 0.3,
-        "via_diameter": 0.6,
+        "track_width": 0.1725,
+        "via_diameter": 0.5,
         "via_drill": 0.3,
         "wire_width": 6
       },
       {
         "bus_width": 12,
-        "clearance": 0.3,
+        "clearance": 0.2,
         "diff_pair_gap": 0.2032,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2784,
+        "diff_pair_width": 0.1707,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "USB",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(137, 12, 255)",
-        "track_width": 0.2784,
-        "via_diameter": 0.6,
+        "track_width": 0.1707,
+        "via_diameter": 0.5,
         "via_drill": 0.3,
         "wire_width": 6
       }
