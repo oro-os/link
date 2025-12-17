@@ -1,6 +1,6 @@
 use defmt::{error, info};
 use embassy_stm32::gpio::Output;
-use embassy_stm32::{i2c::I2c, mode::Async};
+use embassy_stm32::{i2c::I2c, mode::Blocking};
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, channel::Channel, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 
@@ -8,7 +8,7 @@ const ADDR: u8 = 0b01111000 >> 1;
 
 #[embassy_executor::task]
 pub async fn led_controller(
-	i2c: &'static Mutex<NoopRawMutex, I2c<'static, Async>>,
+	i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking>>,
 	mut enable_chip: Output<'static>,
 ) -> ! {
 	enable_chip.set_high();
@@ -18,25 +18,49 @@ pub async fn led_controller(
 	led.reset().await;
 	Timer::after(Duration::from_millis(1)).await;
 	led.set_is_shutdown(false).await;
+	led.enable_all_channels().await;
 	Timer::after(Duration::from_millis(1)).await;
 	led.set_frequency(OutputFrequency::Khz3).await;
+
+	for channel in 1..=36 {
+		led.set_ch_state(
+			channel,
+			ChannelState::new()
+				.with_max_current(MaxCurrent::ImaxDiv4)
+				.with_on(),
+		);
+		led.set_pwm(channel, 0);
+	}
 	led.present_state().await;
 	led.present_pwm().await;
 
 	loop {
-		Timer::after(Duration::from_millis(5000)).await;
+		for brightness in 0..=255 {
+			for channel in 1..=36 {
+				led.set_pwm(channel, brightness);
+			}
+			led.present_pwm().await;
+			Timer::after(Duration::from_millis(1)).await;
+		}
+		for brightness in (0..=255).rev() {
+			for channel in 1..=36 {
+				led.set_pwm(channel, brightness);
+			}
+			led.present_pwm().await;
+			Timer::after(Duration::from_millis(1)).await;
+		}
 	}
 }
 
 struct IS31FL3236A {
-	i2c: &'static Mutex<NoopRawMutex, I2c<'static, Async>>,
+	i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking>>,
 	pwm_state: [u8; 38], // 36 + 1 for cursor + 1 for update
 	ch_state: [u8; 37],  // 36 + 1 for cursor
 }
 
 #[expect(dead_code)]
 impl IS31FL3236A {
-	fn new(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Async>>) -> Self {
+	fn new(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking>>) -> Self {
 		let mut this = Self {
 			i2c,
 			pwm_state: [0; 38],
