@@ -10,19 +10,11 @@ version = { workspace = true }
 
 build = "build.rs"
 
-[features]
-default = [
-	"embassy-stm32/stm32f479vg",
-	"stm32-metapac/stm32f479vg",
-	"embassy-executor/arch-cortex-m",
-	"oro-logo-rle/oro-logo-64"
-]
-
 [dependencies]
 link-protocol = { path = "../link-protocol", features = ["defmt", "embedded-io", "embassy"] }
 cortex-m-rt = "0.7.3"
 defmt = { version = "1.0.1", default-features = false }
-embassy-net-wiznet = { version = "0.2.0", git = "https://github.com/oro-os/dep.embassy.git", features = ["defmt"] }
+
 embedded-graphics = { version = "0.8.0" }
 embedded-graphics-core = "0.4.0"
 embedded-graphics-framebuf = "0.5.0"
@@ -32,9 +24,9 @@ embedded-hal-async = "1.0.0"
 heapless = "0.8"
 micromath = "2.0.0"
 static_cell = { version = "2.0.0", features = ["nightly"] }
-oro-logo-rle = { git = "https://github.com/oro-os/oro-logo-rle", version = "0.1.0", default-features = false }
+
 defmt-rtt = "0.4.0"
-stm32-metapac = "14.0.0"
+stm32-metapac = { version = "14.0.0", features = ["stm32f479vg"] }
 sha2 = { version = "0.10.7", default-features = false, features = ["asm-aarch64"] }
 rand_core = "0.6.4"
 embedded-io-async = "0.6.1"
@@ -43,6 +35,16 @@ embassy-futures = { git = "https://github.com/oro-os/dep.embassy.git" }
 panic-probe = "1.0.0"
 # XXX DEBUG: This is just to test USB connectivity.
 usbd-hid = "0.8.2"
+
+[dependencies.oro-logo-rle]
+git = "https://github.com/oro-os/oro-logo-rle"
+default-features = false
+features = ["oro-logo-64"]
+
+[dependencies.embassy-net-wiznet]
+version = "0.2.0"
+git = "https://github.com/oro-os/dep.embassy.git"
+features = ["defmt"]
 
 [dependencies.cortex-m]
 version = "0.7.7"
@@ -54,6 +56,7 @@ features = [
 [dependencies.embassy-executor]
 git = "https://github.com/oro-os/dep.embassy.git"
 features = [
+	"arch-cortex-m",
 	"executor-thread",
 ]
 
@@ -66,6 +69,7 @@ features = [
 [dependencies.embassy-stm32]
 git = "https://github.com/oro-os/dep.embassy.git"
 features = [
+	"stm32f479vg",
 	"defmt",
 	"unstable-pac",
 	"time-driver-any",
