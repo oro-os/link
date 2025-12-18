@@ -11,7 +11,6 @@ use embassy_sync::blocking_mutex::raw::NoopRawMutex;
 use embassy_sync::mutex::Mutex;
 use embassy_time::{Delay, Duration, Timer};
 use embedded_hal_bus::spi::ExclusiveDevice;
-use static_cell::make_static;
 
 #[embassy_executor::task]
 pub async fn syseth_service(

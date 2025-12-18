@@ -14,7 +14,6 @@ use embassy_usb::{
 	types::InterfaceNumber,
 };
 use link_protocol::Packet;
-use static_cell::make_static;
 use usbd_hid::descriptor::{KeyboardReport, SerializedDescriptor};
 
 // Randomly generated UUID because Windows requires you provide one to use WinUSB.
@@ -66,10 +65,15 @@ pub async fn usb_service(
 		)
 	};
 
-	let request_handler = &mut *make_static!(MyRequestHandler {});
-	let device_handler = &mut *make_static!(MyDeviceHandler::new());
+	static REQUEST_HANDLER: static_cell::StaticCell<MyRequestHandler> =
+		static_cell::StaticCell::new();
+	static DEVICE_HANDLER: static_cell::StaticCell<MyDeviceHandler> =
+		static_cell::StaticCell::new();
+	let request_handler = REQUEST_HANDLER.init(MyRequestHandler {});
+	let device_handler = DEVICE_HANDLER.init(MyDeviceHandler::new());
 
-	let state = make_static!(State::<'static>::new());
+	static STATE: static_cell::StaticCell<State<'static>> = static_cell::StaticCell::new();
+	let state = STATE.init(State::<'static>::new());
 
 	builder.handler(device_handler);
 

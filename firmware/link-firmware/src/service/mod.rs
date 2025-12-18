@@ -5,6 +5,8 @@ mod oled;
 mod power_monitor;
 mod sdcard;
 mod syseth;
+mod uart;
+mod usart;
 mod usb;
 
 pub use blinken_light::blinken_light;
@@ -14,4 +16,6 @@ pub use oled::oled_service;
 pub use power_monitor::power_monitor;
 pub use sdcard::sdcard_service;
 pub use syseth::syseth_service;
+pub use uart::uart_service;
+pub use usart::usart_service;
 pub use usb::usb_service;

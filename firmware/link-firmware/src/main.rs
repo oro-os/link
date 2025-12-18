@@ -10,7 +10,7 @@ use embassy_embedded_hal::shared_bus::asynch::spi::SpiDevice;
 use embassy_executor::Spawner;
 use embassy_stm32::exti::ExtiInput;
 use embassy_stm32::gpio::Output;
-use embassy_stm32::mode::Async;
+use embassy_stm32::mode::{Async, Blocking};
 use embassy_stm32::{
 	Config, bind_interrupts,
 	gpio::{Input, Level, OutputOpenDrain, Pull, Speed},
@@ -76,7 +76,8 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	let ind_en = Output::new(p.PB8, Level::Low, Speed::Low);
 
-	let i2c = static_cell::make_static!(Mutex::<NoopRawMutex, _>::new(i2c::I2c::new_blocking(
+	static I2C: StaticCell<Mutex<NoopRawMutex, i2c::I2c<'static, Blocking>>> = StaticCell::new();
+	let i2c = I2C.init(Mutex::<NoopRawMutex, _>::new(i2c::I2c::new_blocking(
 		p.I2C3,
 		p.PA8,
 		p.PC9,
@@ -87,7 +88,7 @@ pub async fn main(spawner: Spawner) -> ! {
 			config.sda_pullup = false;
 			config.timeout = Duration::from_millis(10);
 			config
-		}
+		},
 	)));
 
 	let usart = usart::Uart::new_with_rtscts(
@@ -146,10 +147,12 @@ pub async fn main(spawner: Spawner) -> ! {
 		p.DMA1_CH0,
 		{
 			let mut config = spi::Config::default();
-			config.frequency = Hertz(22_500_000);
+			//config.frequency = Hertz(22_500_000);
+			config.frequency = Hertz(200_000);
 			config.bit_order = spi::BitOrder::MsbFirst;
-			config.rise_fall_speed = embassy_stm32::gpio::Speed::Low;
+			config.rise_fall_speed = embassy_stm32::gpio::Speed::VeryHigh;
 			config.mode = spi::MODE_0;
+			config.miso_pull = Pull::Up;
 			config
 		},
 	)));
@@ -159,10 +162,10 @@ pub async fn main(spawner: Spawner) -> ! {
 	let sd_sense_cable = ExtiInput::new(p.PD8, p.EXTI8, Pull::None);
 	// TODO(qix-): Switch back to open drain after pullup is added
 	//let sd_en = OutputOpenDrain::new(p.PC14, Level::High, Speed::Low);
-	let sd_en = Output::new(p.PC14, Level::High, Speed::Low);
-	let sd_cs = OutputOpenDrain::new(p.PD5, Level::High, Speed::VeryHigh);
+	let sd_en = OutputOpenDrain::new_pull(p.PC14, Level::High, Speed::Low, Pull::Up);
+	let sd_cs = OutputOpenDrain::new_pull(p.PD5, Level::High, Speed::VeryHigh, Pull::Up);
 	let sd_host_sut_sel = Output::new(p.PD14, Level::Low, Speed::Low);
-	let sd = SpiDevice::new(spi3, sd_cs);
+	let sd_spi: &'static _ = spi3;
 
 	let syseth_int = ExtiInput::new(p.PA4, p.EXTI4, Pull::None);
 	let syseth_rst = Output::new(p.PC15, Level::Low, Speed::VeryHigh);
@@ -222,43 +225,48 @@ pub async fn main(spawner: Spawner) -> ! {
 	spawner
 		.spawn(service::blinken_light(debug_led1, debug_led2, debug_led3))
 		.unwrap();
-	defmt::info!("service: led controller...");
-	spawner.spawn(service::led_controller(i2c, ind_en)).unwrap();
-	defmt::info!("service: power monitor...");
-	spawner.spawn(service::power_monitor(i2c)).unwrap();
-	defmt::info!("service: usb...");
-	spawner
-		.spawn(service::usb_service(ulpi, ulpi_rst, ulpi_oc))
-		.unwrap();
-	defmt::info!("service: external ethernet...");
-	spawner
-		.spawn(service::exteth_service(
-			exteth, exteth_cs, exteth_rst, exteth_int, 0, /* TODO */
-		))
-		.unwrap();
-	defmt::info!("service: system ethernet...");
-	spawner
-		.spawn(service::syseth_service(
-			syseth, syseth_rst, syseth_int, 0, /* TODO */
-		))
-		.unwrap();
-	defmt::info!("service: oled...");
-	spawner
-		.spawn(service::oled_service(
-			oled, oled_cs, oled_dc, oled_rst, oled_en,
-		))
-		.unwrap();
-	defmt::info!("service: sdcard...");
-	spawner
-		.spawn(service::sdcard_service(
-			sd,
-			sd_en,
-			sd_oc,
-			sd_sense,
-			sd_sense_cable,
-			sd_host_sut_sel,
-		))
-		.unwrap();
+	//defmt::info!("service: led controller...");
+	//spawner.spawn(service::led_controller(i2c, ind_en)).unwrap();
+	//defmt::info!("service: power monitor...");
+	//spawner.spawn(service::power_monitor(i2c)).unwrap();
+	//defmt::info!("service: usb...");
+	//spawner
+	//	.spawn(service::usb_service(ulpi, ulpi_rst, ulpi_oc))
+	//	.unwrap();
+	//defmt::info!("service: external ethernet...");
+	//spawner
+	//	.spawn(service::exteth_service(
+	//		exteth, exteth_cs, exteth_rst, exteth_int, 0, /* TODO */
+	//	))
+	//	.unwrap();
+	//defmt::info!("service: system ethernet...");
+	//spawner
+	//	.spawn(service::syseth_service(
+	//		syseth, syseth_rst, syseth_int, 0, /* TODO */
+	//	))
+	//	.unwrap();
+	//defmt::info!("service: oled...");
+	//spawner
+	//	.spawn(service::oled_service(
+	//		oled, oled_cs, oled_dc, oled_rst, oled_en,
+	//	))
+	//	.unwrap();
+	//defmt::info!("service: sdcard...");
+	//spawner
+	//	.spawn(service::sdcard_service(
+	//		sd_spi,
+	//		sd_cs,
+	//		sd_en,
+	//		sd_oc,
+	//		sd_sense,
+	//		sd_sense_cable,
+	//		sd_host_sut_sel,
+	//	))
+	//	.unwrap();
+	//defmt::info!("service: uart...");
+	//spawner.spawn(service::uart_service(uart)).unwrap();
+	defmt::info!("service: usart...");
+	spawner.spawn(service::usart_service(usart)).unwrap();
 
 	loop {
 		Timer::after(Duration::from_secs(60)).await;

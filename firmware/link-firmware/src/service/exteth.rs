@@ -8,7 +8,6 @@ use embassy_stm32::{
 };
 use embassy_time::{Delay, Duration, Timer};
 use embedded_hal_bus::spi::ExclusiveDevice;
-use static_cell::make_static;
 
 #[embassy_executor::task]
 pub async fn exteth_service(
@@ -39,12 +38,11 @@ pub async fn exteth_service(
 
 	let config = embassy_net::Config::dhcpv4(Default::default());
 
-	let (stack, mut runner) = embassy_net::new(
-		driver,
-		config,
-		make_static!(embassy_net::StackResources::<16>::new()),
-		seed,
-	);
+	static STACK: static_cell::StaticCell<embassy_net::StackResources<16>> =
+		static_cell::StaticCell::new();
+	let stack_resources = STACK.init(embassy_net::StackResources::<16>::new());
+
+	let (stack, mut runner) = embassy_net::new(driver, config, stack_resources, seed);
 
 	select3(
 		async move {
