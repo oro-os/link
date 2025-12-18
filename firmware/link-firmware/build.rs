@@ -194,6 +194,11 @@ fn render_font(id: &str, path: &str, charmap: &str) -> TokenStream {
 }
 
 pub fn main() {
+	#[cfg(debug_assertions)]
+	println!("cargo:rustc-env=DEFMT_LOG=trace,embassy_net=debug,embassy_hal_internal=warn");
+	#[cfg(not(debug_assertions))]
+	println!("cargo:rustc-env=DEFMT_LOG=warn");
+
 	let mut font_source = quote! { use super::FontData; };
 	font_source.extend(render_font(
 		"TermNormal",

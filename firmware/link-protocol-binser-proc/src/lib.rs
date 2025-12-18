@@ -81,14 +81,15 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 
 		let mut proto = None;
 		for attr in variant.attrs {
-			if let Meta::List(attr) = attr.meta {
-				if attr.path.segments.len() == 1 && attr.path.segments[0].ident == "proto" {
-					match attr.parse_args_with(ProtoMeta::parse) {
-						Ok(p) => {
-							proto = Some(p);
-						}
-						Err(err) => return err.into_compile_error().into(),
+			if let Meta::List(attr) = attr.meta
+				&& attr.path.segments.len() == 1
+				&& attr.path.segments[0].ident == "proto"
+			{
+				match attr.parse_args_with(ProtoMeta::parse) {
+					Ok(p) => {
+						proto = Some(p);
 					}
+					Err(err) => return err.into_compile_error().into(),
 				}
 			}
 		}

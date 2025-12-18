@@ -18,7 +18,14 @@ members = [
 	"link-protocol-binser-proc",
 ]
 
-default-members = []
+default-members = [
+	"link-rpcapd",
+	"link-daemon",
+	"link-repl",
+	"link-protocol",
+	"link-protocol-binser",
+	"link-protocol-binser-proc",
+]
 
 [profile.dev]
 opt-level = 1

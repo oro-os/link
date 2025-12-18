@@ -1,0 +1,7 @@
+[alias]
+build-firmware = ["build", "-p", "link-firmware", "--target", "variant/stm32f479vg/thumbv7em-none-eabihf.json", "-Zunstable-options", "-Zbuild-std=core,compiler_builtins", "-Zbuild-std-features=compiler-builtins-mem"]
+clippy-firmware = ["clippy", "-p", "link-firmware", "--target", "variant/stm32f479vg/thumbv7em-none-eabihf.json", "-Zunstable-options", "-Zbuild-std=core,compiler_builtins", "-Zbuild-std-features=compiler-builtins-mem"]
+run-firmware = ["run", "-p", "link-firmware", "--target", "variant/stm32f479vg/thumbv7em-none-eabihf.json", "-Zunstable-options", "-Zbuild-std=core,compiler_builtins", "-Zbuild-std-features=compiler-builtins-mem"]
+
+[target.thumbv7em-none-eabihf]
+runner = ["probe-rs", "run", "--speed", "3300", "--chip", "STM32F479VGTx", "--log-format", "<{f}:{l}> {L} {s}"]
