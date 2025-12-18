@@ -7,8 +7,9 @@
 //!
 //! NOTE: Friendly reminder that ALL messages must be padded to 32 bits!
 
-use async_std::io::{self, ReadExt, WriteExt};
 use std::time::{SystemTime, UNIX_EPOCH};
+
+use async_std::io::{self, ReadExt, WriteExt};
 
 #[derive(Clone, Debug)]
 pub enum AuthType {
@@ -26,7 +27,7 @@ pub enum AuthType {
 /// - PCAP_IF_CONNECTION_STATUS_CONNECTED (0x00000010)
 #[derive(Clone, Debug)]
 pub struct Interface {
-	pub name: String,
+	pub name:        String,
 	pub description: String,
 }
 
@@ -57,9 +58,9 @@ pub enum RPCAPMessage {
 	UpdateFilterRequest,
 	UpdateFilterResponse,
 	Packet {
-		data: Vec<u8>,
+		data:         Vec<u8>,
 		arrival_time: SystemTime,
-		number: usize,
+		number:       usize,
 	},
 }
 
@@ -110,8 +111,8 @@ impl RPCAPMessage {
 				let mut payload_length = 0;
 				for dev in devs {
 					payload_length += 12; // base structure length
-					payload_length += dev.name.as_bytes().len();
-					payload_length += dev.description.as_bytes().len();
+					payload_length += dev.name.len();
+					payload_length += dev.description.len();
 				}
 
 				s.encode_be(&(payload_length as u32)).await?;
@@ -248,10 +249,12 @@ impl RPCAPMessage {
 			}
 
 			// Unknown
-			_ => Err(io::Error::new(
-				io::ErrorKind::Unsupported,
-				format!("unsupported message code from client: {message_type:X}"),
-			)),
+			_ => {
+				Err(io::Error::new(
+					io::ErrorKind::Unsupported,
+					format!("unsupported message code from client: {message_type:X}"),
+				))
+			}
 		}
 	}
 }

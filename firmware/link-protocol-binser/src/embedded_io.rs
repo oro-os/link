@@ -1,5 +1,6 @@
-use crate::{Error, MaybeFormat, Read, Write};
 use embedded_io_async::{ErrorType, Read as AsyncRead, ReadExactError, Write as AsyncWrite};
+
+use crate::{Error, MaybeFormat, Read, Write};
 
 impl<T> Read for T
 where

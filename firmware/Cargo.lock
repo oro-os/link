@@ -2237,7 +2237,6 @@ dependencies = [
  "micromath",
  "oro-logo-rle",
  "panic-probe",
- "perlin2d",
  "pixglyph",
  "png",
  "proc-macro2",
@@ -2615,11 +2614,6 @@ name = "percent-encoding"
 version = "2.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
-
-[[package]]
-name = "perlin2d"
-version = "0.2.6"
-source = "git+https://github.com/oro-os/dep.perlin2d.git#6722293e219a837b6a290a3aa2f9433e730f6adc"
 
 [[package]]
 name = "pin-project"

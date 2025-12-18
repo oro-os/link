@@ -1,7 +1,5 @@
-use defmt::{error, info};
-use embassy_stm32::gpio::Output;
-use embassy_stm32::{i2c::I2c, mode::Blocking};
-use embassy_sync::{blocking_mutex::raw::NoopRawMutex, channel::Channel, mutex::Mutex};
+use embassy_stm32::{gpio::Output, i2c::I2c, mode::Blocking};
+use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 
 const ADDR: u8 = 0b01111000 >> 1;
@@ -53,9 +51,9 @@ pub async fn led_controller(
 }
 
 struct IS31FL3236A {
-	i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking>>,
+	i2c:       &'static Mutex<NoopRawMutex, I2c<'static, Blocking>>,
 	pwm_state: [u8; 38], // 36 + 1 for cursor + 1 for update
-	ch_state: [u8; 37],  // 36 + 1 for cursor
+	ch_state:  [u8; 37], // 36 + 1 for cursor
 }
 
 #[expect(dead_code)]
@@ -75,7 +73,7 @@ impl IS31FL3236A {
 	async fn write(&self, data: &[u8]) {
 		let mut i2c = self.i2c.lock().await;
 		if let Err(err) = i2c.blocking_write(ADDR, data) {
-			error!("failed to write to LED controller chip: {:?}", err);
+			defmt::error!("failed to write to LED controller chip: {:?}", err);
 		}
 	}
 
@@ -127,19 +125,19 @@ pub struct ChannelState(u8);
 
 #[expect(dead_code)]
 impl ChannelState {
-	pub const fn new() -> Self {
+	const fn new() -> Self {
 		Self(0)
 	}
 
-	pub const fn with_on(self) -> Self {
+	const fn with_on(self) -> Self {
 		Self(self.0 | 0x01)
 	}
 
-	pub const fn with_off(self) -> Self {
+	const fn with_off(self) -> Self {
 		Self(self.0 & !0x01)
 	}
 
-	pub const fn with_max_current(self, max_current: MaxCurrent) -> Self {
+	const fn with_max_current(self, max_current: MaxCurrent) -> Self {
 		Self((self.0 & !6) | ((max_current as u8) << 1))
 	}
 }
@@ -162,7 +160,7 @@ impl From<ChannelState> for u8 {
 #[repr(u8)]
 #[expect(dead_code)]
 enum MaxCurrent {
-	Imax = 0b00,
+	Imax     = 0b00,
 	ImaxDiv2 = 0b01,
 	ImaxDiv3 = 0b10,
 	ImaxDiv4 = 0b11,
@@ -172,6 +170,6 @@ enum MaxCurrent {
 #[repr(u8)]
 #[expect(dead_code)]
 enum OutputFrequency {
-	Khz3 = 0b0,
+	Khz3  = 0b0,
 	Khz22 = 0b1,
 }

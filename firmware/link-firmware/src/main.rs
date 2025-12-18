@@ -1,23 +1,24 @@
 #![no_std]
 #![no_main]
-#![feature(type_alias_impl_trait)]
+//#![feature(type_alias_impl_trait)]
 
+mod font;
 mod service;
 
 use defmt::info;
 use defmt_rtt as _;
 use embassy_embedded_hal::shared_bus::asynch::spi::SpiDevice;
 use embassy_executor::Spawner;
-use embassy_stm32::exti::ExtiInput;
-use embassy_stm32::gpio::Output;
-use embassy_stm32::mode::{Async, Blocking};
 use embassy_stm32::{
 	Config, bind_interrupts,
-	gpio::{Input, Level, OutputOpenDrain, Pull, Speed},
-	i2c, peripherals, rcc, spi,
+	exti::ExtiInput,
+	gpio::{Input, Level, Output, OutputOpenDrain, Pull, Speed},
+	i2c,
+	mode::{Async, Blocking},
+	peripherals, rcc, spi,
 	time::Hertz,
+	usart, usb,
 };
-use embassy_stm32::{usart, usb};
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 use panic_probe as _;
@@ -43,17 +44,17 @@ pub async fn main(spawner: Spawner) -> ! {
 	config.rcc.sys = rcc::Sysclk::PLL1_P;
 	config.rcc.pll = Some(rcc::Pll {
 		prediv: rcc::PllPreDiv::DIV24,
-		mul: rcc::PllMul::MUL360,
-		divp: Some(rcc::PllPDiv::DIV2),
-		divq: Some(rcc::PllQDiv::DIV2),
-		divr: None,
+		mul:    rcc::PllMul::MUL360,
+		divp:   Some(rcc::PllPDiv::DIV2),
+		divq:   Some(rcc::PllQDiv::DIV2),
+		divr:   None,
 	});
 	config.rcc.pllsai = Some(rcc::Pll {
 		prediv: rcc::PllPreDiv::DIV24,
-		mul: rcc::PllMul::MUL192,
-		divp: None,
-		divq: Some(rcc::PllQDiv::DIV4),
-		divr: None,
+		mul:    rcc::PllMul::MUL192,
+		divp:   None,
+		divq:   Some(rcc::PllQDiv::DIV4),
+		divr:   None,
 	});
 
 	let mut clock_mux = rcc::mux::ClockMux::default();
@@ -70,9 +71,9 @@ pub async fn main(spawner: Spawner) -> ! {
 	info!("initializing oro link...");
 	Timer::after(Duration::from_millis(100)).await;
 
-	let mut debug_led1 = OutputOpenDrain::new(p.PD2, Level::High, Speed::Low);
-	let mut debug_led2 = OutputOpenDrain::new(p.PB7, Level::High, Speed::Low);
-	let mut debug_led3 = OutputOpenDrain::new(p.PC8, Level::High, Speed::Low);
+	let debug_led1 = OutputOpenDrain::new(p.PD2, Level::High, Speed::Low);
+	let debug_led2 = OutputOpenDrain::new(p.PB7, Level::High, Speed::Low);
+	let debug_led3 = OutputOpenDrain::new(p.PC8, Level::High, Speed::Low);
 
 	let ind_en = Output::new(p.PB8, Level::Low, Speed::Low);
 
@@ -108,7 +109,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	)
 	.unwrap();
 
-	let usb_output_selector = Output::new(p.PA7, Level::Low, Speed::Low);
+	let _usb_output_selector = Output::new(p.PA7, Level::Low, Speed::Low);
 	let ulpi_oc = ExtiInput::new(p.PB14, p.EXTI14, Pull::None);
 	let ulpi_rst = Output::new(p.PB15, Level::Low, Speed::Low);
 	static EP_OUT_BUFFER: StaticCell<[u8; 256]> = StaticCell::new();
@@ -147,7 +148,7 @@ pub async fn main(spawner: Spawner) -> ! {
 		p.DMA1_CH0,
 		{
 			let mut config = spi::Config::default();
-			//config.frequency = Hertz(22_500_000);
+			// config.frequency = Hertz(22_500_000);
 			config.frequency = Hertz(200_000);
 			config.bit_order = spi::BitOrder::MsbFirst;
 			config.rise_fall_speed = embassy_stm32::gpio::Speed::VeryHigh;
@@ -161,7 +162,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	let sd_sense = ExtiInput::new(p.PC13, p.EXTI13, Pull::None);
 	let sd_sense_cable = ExtiInput::new(p.PD8, p.EXTI8, Pull::None);
 	// TODO(qix-): Switch back to open drain after pullup is added
-	//let sd_en = OutputOpenDrain::new(p.PC14, Level::High, Speed::Low);
+	// let sd_en = OutputOpenDrain::new(p.PC14, Level::High, Speed::Low);
 	let sd_en = OutputOpenDrain::new_pull(p.PC14, Level::High, Speed::Low, Pull::Up);
 	let sd_cs = OutputOpenDrain::new_pull(p.PD5, Level::High, Speed::VeryHigh, Pull::Up);
 	let sd_host_sut_sel = Output::new(p.PD14, Level::Low, Speed::Low);
@@ -204,20 +205,20 @@ pub async fn main(spawner: Spawner) -> ! {
 		oledconf
 	});
 
-	let gpio2 = Output::new(p.PC7, Level::Low, Speed::Low);
-	let gpio3 = Output::new(p.PA10, Level::Low, Speed::Low);
-	let gpio4 = Output::new(p.PC6, Level::Low, Speed::Low);
-	let gpio5 = Output::new(p.PB4, Level::Low, Speed::Low);
+	let _gpio2 = Output::new(p.PC7, Level::Low, Speed::Low);
+	let _gpio3 = Output::new(p.PA10, Level::Low, Speed::Low);
+	let _gpio4 = Output::new(p.PC6, Level::Low, Speed::Low);
+	let _gpio5 = Output::new(p.PB4, Level::Low, Speed::Low);
 
-	let vbus_oc = ExtiInput::new(p.PD15, p.EXTI15, Pull::None);
-	let vbus_en = Output::new(p.PE15, Level::High, Speed::Low);
-	let aux_vbus_sense = Input::new(p.PA11, Pull::None);
-	let aux_vbus_oc = ExtiInput::new(p.PA12, p.EXTI12, Pull::None);
-	let aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
-	let board_power_alert = ExtiInput::new(p.PE9, p.EXTI9, Pull::None);
-	let psu_on = Output::new(p.PD10, Level::Low, Speed::Low);
-	let sut_pwr_switch = Output::new(p.PE12, Level::Low, Speed::Low);
-	let sut_rst_switch = Output::new(p.PE10, Level::Low, Speed::Low);
+	let _vbus_oc = ExtiInput::new(p.PD15, p.EXTI15, Pull::None);
+	let _vbus_en = Output::new(p.PE15, Level::High, Speed::Low);
+	let _aux_vbus_sense = Input::new(p.PA11, Pull::None);
+	let _aux_vbus_oc = ExtiInput::new(p.PA12, p.EXTI12, Pull::None);
+	let _aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
+	let _board_power_alert = ExtiInput::new(p.PE9, p.EXTI9, Pull::None);
+	let _psu_on = Output::new(p.PD10, Level::Low, Speed::Low);
+	let _sut_pwr_switch = Output::new(p.PE12, Level::Low, Speed::Low);
+	let _sut_rst_switch = Output::new(p.PE10, Level::Low, Speed::Low);
 
 	defmt::info!("initialization complete");
 
@@ -225,46 +226,46 @@ pub async fn main(spawner: Spawner) -> ! {
 	spawner
 		.spawn(service::blinken_light(debug_led1, debug_led2, debug_led3))
 		.unwrap();
-	//defmt::info!("service: led controller...");
-	//spawner.spawn(service::led_controller(i2c, ind_en)).unwrap();
-	//defmt::info!("service: power monitor...");
-	//spawner.spawn(service::power_monitor(i2c)).unwrap();
-	//defmt::info!("service: usb...");
-	//spawner
-	//	.spawn(service::usb_service(ulpi, ulpi_rst, ulpi_oc))
-	//	.unwrap();
-	//defmt::info!("service: external ethernet...");
-	//spawner
-	//	.spawn(service::exteth_service(
-	//		exteth, exteth_cs, exteth_rst, exteth_int, 0, /* TODO */
-	//	))
-	//	.unwrap();
-	//defmt::info!("service: system ethernet...");
-	//spawner
-	//	.spawn(service::syseth_service(
-	//		syseth, syseth_rst, syseth_int, 0, /* TODO */
-	//	))
-	//	.unwrap();
-	//defmt::info!("service: oled...");
-	//spawner
-	//	.spawn(service::oled_service(
-	//		oled, oled_cs, oled_dc, oled_rst, oled_en,
-	//	))
-	//	.unwrap();
-	//defmt::info!("service: sdcard...");
-	//spawner
-	//	.spawn(service::sdcard_service(
-	//		sd_spi,
-	//		sd_cs,
-	//		sd_en,
-	//		sd_oc,
-	//		sd_sense,
-	//		sd_sense_cable,
-	//		sd_host_sut_sel,
-	//	))
-	//	.unwrap();
-	//defmt::info!("service: uart...");
-	//spawner.spawn(service::uart_service(uart)).unwrap();
+	defmt::info!("service: led controller...");
+	spawner.spawn(service::led_controller(i2c, ind_en)).unwrap();
+	defmt::info!("service: power monitor...");
+	spawner.spawn(service::power_monitor(i2c)).unwrap();
+	defmt::info!("service: usb...");
+	spawner
+		.spawn(service::usb_service(ulpi, ulpi_rst, ulpi_oc))
+		.unwrap();
+	defmt::info!("service: external ethernet...");
+	spawner
+		.spawn(service::exteth_service(
+			exteth, exteth_cs, exteth_rst, exteth_int, 0, // TODO
+		))
+		.unwrap();
+	defmt::info!("service: system ethernet...");
+	spawner
+		.spawn(service::syseth_service(
+			syseth, syseth_rst, syseth_int, 0, // TODO
+		))
+		.unwrap();
+	defmt::info!("service: oled...");
+	spawner
+		.spawn(service::oled_service(
+			oled, oled_cs, oled_dc, oled_rst, oled_en,
+		))
+		.unwrap();
+	defmt::info!("service: sdcard...");
+	spawner
+		.spawn(service::sdcard_service(
+			sd_spi,
+			sd_cs,
+			sd_en,
+			sd_oc,
+			sd_sense,
+			sd_sense_cable,
+			sd_host_sut_sel,
+		))
+		.unwrap();
+	defmt::info!("service: uart...");
+	spawner.spawn(service::uart_service(uart)).unwrap();
 	defmt::info!("service: usart...");
 	spawner.spawn(service::usart_service(usart)).unwrap();
 

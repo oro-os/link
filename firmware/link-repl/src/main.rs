@@ -1,26 +1,26 @@
-#![feature(never_type, async_closure)]
-
-use async_std::{io, net::TcpListener, prelude::*, sync::Mutex, task};
-use envconfig::Envconfig;
-
-use link_protocol::{
-	Error as ProtoError, LogEntry, PowerState,
-	channel::{PacketSender, RWError},
-};
-use mini_async_repl::{
-	CommandStatus, Repl,
-	command::{Command, CommandArgInfo, CommandArgType, ExecuteCommand},
-};
+#![feature(never_type)]
 
 use std::{str::FromStr, sync::Arc};
 
 use async_std::{
+	io,
 	io::{BufReader, BufWriter},
-	net::TcpStream,
+	net::{TcpListener, TcpStream},
+	prelude::*,
+	sync::Mutex,
+	task,
 };
+use envconfig::Envconfig;
 use futures::{prelude::*, select};
-use link_protocol::{Packet, Scene, channel};
+use link_protocol::{
+	Error as ProtoError, LogEntry, Packet, PowerState, Scene, channel,
+	channel::{PacketSender, RWError},
+};
 use log::{error, info, warn};
+use mini_async_repl::{
+	CommandStatus, Repl,
+	command::{Command, CommandArgInfo, CommandArgType, ExecuteCommand},
+};
 use rand::rngs::OsRng;
 
 #[derive(Envconfig, Clone)]
@@ -30,9 +30,9 @@ pub(crate) struct Config {
 	#[envconfig(from = "LINK_SERVER_BIND", default = "0.0.0.0")]
 	pub link_server_bind: String,
 	#[envconfig(from = "LEVEL", default = "trace")]
-	pub log_level: String,
+	pub log_level:        String,
 	#[envconfig(from = "VERBOSE", default = "0")]
-	pub verbose: u8,
+	pub verbose:          u8,
 }
 
 #[derive(thiserror::Error, Debug)]
@@ -562,15 +562,15 @@ impl ExecuteCommand for SuiteCommand {
 				total_tests: args[0]
 					.parse()
 					.map_err(|_| mini_async_repl::anyhow::anyhow!("invalid total_tests"))?,
-				author: args[1]
+				author:      args[1]
 					.as_str()
 					.try_into()
 					.map_err(|_| mini_async_repl::anyhow::anyhow!("author too long"))?,
-				title: args[2]
+				title:       args[2]
 					.as_str()
 					.try_into()
 					.map_err(|_| mini_async_repl::anyhow::anyhow!("title too long"))?,
-				ref_id: args[3]
+				ref_id:      args[3]
 					.as_str()
 					.try_into()
 					.map_err(|_| mini_async_repl::anyhow::anyhow!("ref_id too long"))?,

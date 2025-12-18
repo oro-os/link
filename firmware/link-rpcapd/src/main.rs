@@ -9,6 +9,8 @@
 //! NETWORK OR ENVIRONMENT.**
 mod rpcap;
 
+use std::time::SystemTime;
+
 use async_broadcast::{InactiveReceiver as InactiveBroadcastReceiver, broadcast as make_broadcast};
 use async_std::{
 	channel::{self, Sender},
@@ -19,7 +21,6 @@ use async_std::{
 };
 use clap::Parser;
 use futures_lite::future::FutureExt;
-use std::time::SystemTime;
 
 #[macro_use]
 extern crate log;
@@ -49,9 +50,9 @@ struct Options {
 #[allow(dead_code)]
 enum Event {
 	Frame {
-		data: Vec<u8>,
+		data:         Vec<u8>,
 		arrival_time: SystemTime,
-		number: usize,
+		number:       usize,
 	},
 	Control(rpcap::RPCAPMessage),
 }
@@ -74,9 +75,9 @@ async fn stdin_task(sender: Sender<Event>) {
 		debug!("received frame");
 		sender
 			.send(Event::Frame {
-				data: frame,
+				data:         frame,
 				arrival_time: SystemTime::now(),
-				number: count,
+				number:       count,
 			})
 			.await
 			.unwrap();
@@ -134,7 +135,8 @@ async fn peer_task(
 					}
 					_ => {
 						warn!(
-							"this daemon doesn't support this auth type; only Null auth is supported!"
+							"this daemon doesn't support this auth type; only Null auth is \
+							 supported!"
 						);
 						rpcap::RPCAPMessage::AuthNotSupError(
 							"only Null authentication is supported by Oro Link".to_string(),
@@ -162,7 +164,7 @@ async fn peer_task(
 			rpcap::RPCAPMessage::FindAllDevsRequest => {
 				debug!("client requested list of all devices");
 				rpcap::RPCAPMessage::FindAllDevsResponse(vec![rpcap::Interface {
-					name: "oro".to_string(),
+					name:        "oro".to_string(),
 					description: "Oro Link to SUT ethernet interface".to_string(),
 				}])
 				.encode(s)
@@ -284,11 +286,17 @@ async fn pmain() -> Result<(), io::Error> {
 	let config = Options::parse();
 
 	if std::env::var("LEVEL").is_err() {
-		std::env::set_var("LEVEL", "info");
+		// SAFETY: We read it immediately after in the same thread and never again.
+		unsafe {
+			std::env::set_var("LEVEL", "info");
+		}
 	}
 
 	if config.verbose {
-		std::env::set_var("LEVEL", "trace");
+		// SAFETY: We read it immediately after in the same thread and never again.
+		unsafe {
+			std::env::set_var("LEVEL", "trace");
+		}
 	}
 
 	pretty_env_logger::try_init_timed_custom_env("LEVEL").expect("failed to initialize logger");

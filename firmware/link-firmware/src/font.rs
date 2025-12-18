@@ -1,5 +1,6 @@
-use embedded_graphics::{draw_target::DrawTarget, pixelcolor::PixelColor, Pixel};
+use embedded_graphics::{Pixel, draw_target::DrawTarget, pixelcolor::PixelColor};
 
+#[allow(dead_code)]
 pub mod face {
 	include!(concat!(env!("OUT_DIR"), "/oro-link-fontdata.rs"));
 }
@@ -10,6 +11,7 @@ pub trait FontData {
 	fn data() -> &'static [u8];
 }
 
+#[expect(dead_code)]
 pub trait Font {
 	fn draw_char<PIX: PixelColor, TAR: DrawTarget<Color = PIX>>(
 		chr: char,
@@ -63,7 +65,7 @@ impl<T: FontData> Font for T {
 		let width = Self::data()[offset + 1] as usize;
 		let height = Self::data()[offset + 2] as usize;
 		let total_pixels = width * height;
-		let total_bytes = (total_pixels + 7) / 8;
+		let total_bytes = total_pixels.div_ceil(8);
 		let byte_base = offset + 3;
 		let bytes = &Self::data()[byte_base..byte_base + total_bytes];
 

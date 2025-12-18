@@ -1,8 +1,9 @@
 extern crate proc_macro;
 
+use std::collections::HashMap;
+
 use proc_macro2::{Span, TokenStream};
 use quote::{TokenStreamExt, quote};
-use std::collections::HashMap;
 use syn::{
 	Error, Fields, Ident, ItemEnum, LitInt, Meta,
 	parse::{Parse, ParseStream},
@@ -29,10 +30,12 @@ impl Parse for ProtoMetaKV {
 				let n: LitInt = input.parse()?;
 				Ok(ProtoMetaKV::Id(n.base10_parse::<u8>()?))
 			}
-			_ => Err(Error::new(
-				ident.span(),
-				"unknown link protocol `proto()` field",
-			)),
+			_ => {
+				Err(Error::new(
+					ident.span(),
+					"unknown link protocol `proto()` field",
+				))
+			}
 		}
 	}
 }
@@ -119,7 +122,8 @@ pub fn derive_link_protocol_message(item: proc_macro::TokenStream) -> proc_macro
 			return Error::new(
 				ident.span(),
 				format!(
-					"link protocol enum variant has identical `id` as another variant `{existing_ident}`"
+					"link protocol enum variant has identical `id` as another variant \
+					 `{existing_ident}`"
 				),
 			)
 			.into_compile_error()

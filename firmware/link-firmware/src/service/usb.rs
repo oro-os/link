@@ -1,31 +1,23 @@
-use core::ptr::addr_of_mut;
-use core::sync::atomic::{AtomicBool, Ordering};
-use embassy_futures::join::join;
-use embassy_stm32::exti::ExtiInput;
-use embassy_stm32::{gpio::Output, interrupt::InterruptExt, peripherals, usb::Driver};
-use embassy_time::{Duration, Timer};
-use embassy_usb as usb;
-use embassy_usb::class::hid::{HidReaderWriter, ReportId, RequestHandler, State};
-use embassy_usb::driver::EndpointError;
-use embassy_usb::{
-	Builder, Config, Handler, UsbDevice,
-	control::{InResponse, OutResponse, Recipient, Request, RequestType},
-	msos::{self, windows_version},
-	types::InterfaceNumber,
+use core::{
+	ptr::addr_of_mut,
+	sync::atomic::{AtomicBool, Ordering},
 };
-use link_protocol::Packet;
-use usbd_hid::descriptor::{KeyboardReport, SerializedDescriptor};
 
-// Randomly generated UUID because Windows requires you provide one to use WinUSB.
-// In principle WinUSB-using software could find this device (or a specific interface
-// on it) by its GUID instead of using the VID/PID, but in practice that seems unhelpful.
-const DEVICE_INTERFACE_GUIDS: &[&str] = &["{F828AF2A-5897-44C1-BA64-DE5D96A8825D}"];
+use embassy_futures::join::join;
+use embassy_stm32::{exti::ExtiInput, gpio::Output, peripherals, usb::Driver};
+use embassy_time::{Duration, Timer};
+use embassy_usb::{
+	Builder, Handler,
+	class::hid::{HidReaderWriter, ReportId, RequestHandler, State},
+	control::OutResponse,
+};
+use usbd_hid::descriptor::{KeyboardReport, SerializedDescriptor};
 
 #[embassy_executor::task]
 pub async fn usb_service(
 	driver: Driver<'static, peripherals::USB_OTG_HS>,
 	mut ulpi_rst: Output<'static>,
-	ulpi_oc: ExtiInput<'static>,
+	_ulpi_oc: ExtiInput<'static>,
 ) -> ! {
 	defmt::info!("resetting ULPI PHY");
 	ulpi_rst.set_low();
@@ -34,9 +26,9 @@ pub async fn usb_service(
 	Timer::after(Duration::from_millis(10)).await;
 	defmt::info!("ULPI reset; starting USB driver");
 
-	let mut state = State::new();
+	let _state = State::new();
 
-	let mut config = embassy_usb::Config::new(0xc0de, 0xcaff);
+	let mut config = embassy_usb::Config::new(0xC0DE, 0xCAFF);
 	config.manufacturer = Some("Oro Operating System");
 	config.product = Some("Oro Link");
 	config.serial_number = Some("OROOROOROOROOROORO");
@@ -80,9 +72,9 @@ pub async fn usb_service(
 	// Create classes on the builder.
 	let config = embassy_usb::class::hid::Config {
 		report_descriptor: KeyboardReport::desc(),
-		request_handler: None,
-		poll_ms: 60,
-		max_packet_size: 8,
+		request_handler:   None,
+		poll_ms:           60,
+		max_packet_size:   8,
 	};
 
 	let hid = HidReaderWriter::<_, 1, 8>::new(&mut builder, state, config);
@@ -105,7 +97,7 @@ pub async fn usb_service(
 			// Create a report with the A key pressed. (no shift modifier)
 			let report = KeyboardReport {
 				keycodes: [0x04, 0, 0, 0, 0, 0],
-				leds: 0,
+				leds:     0,
 				modifier: 0,
 				reserved: 0,
 			};
@@ -119,7 +111,7 @@ pub async fn usb_service(
 
 			let report = KeyboardReport {
 				keycodes: [0, 0, 0, 0, 0, 0],
-				leds: 0,
+				leds:     0,
 				modifier: 0,
 				reserved: 0,
 			};

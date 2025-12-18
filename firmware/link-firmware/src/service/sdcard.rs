@@ -1,4 +1,3 @@
-use embassy_embedded_hal::shared_bus::asynch::spi::SpiDevice;
 use embassy_stm32::{
 	exti::ExtiInput,
 	gpio::{Output, OutputOpenDrain},
@@ -13,9 +12,9 @@ pub async fn sdcard_service(
 	sd: &'static Mutex<NoopRawMutex, Spi<'static, Async>>,
 	mut sd_cs: OutputOpenDrain<'static>,
 	mut sd_en: OutputOpenDrain<'static>,
-	mut sd_oc: ExtiInput<'static>,
-	mut sd_sense: ExtiInput<'static>,
-	mut sd_sense_cable: ExtiInput<'static>,
+	_sd_oc: ExtiInput<'static>,
+	sd_sense: ExtiInput<'static>,
+	_sd_sense_cable: ExtiInput<'static>,
 	mut sd_host_sut_sel: Output<'static>,
 ) -> ! {
 	defmt::info!("switching SD card to Host mode...");
@@ -53,7 +52,7 @@ pub async fn sdcard_service(
 }
 
 struct SdCard<'a> {
-	sd: &'a Mutex<NoopRawMutex, Spi<'static, Async>>,
+	sd:    &'a Mutex<NoopRawMutex, Spi<'static, Async>>,
 	sd_cs: &'a mut OutputOpenDrain<'static>,
 }
 
@@ -66,9 +65,10 @@ enum SdCardError {
 
 #[derive(defmt::Format)]
 enum SdCardType {
-	SDv1,
-	SDv2,
-	SDHC,
+	Sdv1,
+	Sdv2,
+	#[expect(dead_code)]
+	Sdhc,
 }
 
 impl<'a> SdCard<'a> {
@@ -87,16 +87,16 @@ impl<'a> SdCard<'a> {
 
 	/// CMD8: SEND_IF_COND
 	///
-	/// **Note:** This command will NEVER return [`SdCardType::SDHC`] directly.
+	/// **Note:** This command will NEVER return [`SdCardType::Sdhc`] directly.
 	/// To determine if the card is SDHC, you need to send ACMD41 afterwards
 	/// and check the CCS bit in the OCR register.
 	async fn cmd8(&mut self) -> Result<SdCardType, SdCardError> {
 		let r7 = self.send_r7_command(8, 0x000001AA, 0x87).await?;
 
 		if r7.r1.is_illegal_command() {
-			// SDv1 or not SD card
-			defmt::trace!("CMD8: illegal command; assuming SDv1");
-			return Ok(SdCardType::SDv1);
+			// Sdv1 or not SD card
+			defmt::trace!("CMD8: illegal command; assuming Sdv1");
+			return Ok(SdCardType::Sdv1);
 		}
 
 		if !r7.r1.is_idle() {
@@ -109,12 +109,13 @@ impl<'a> SdCard<'a> {
 			return Err(SdCardError::NoResponse);
 		}
 
-		// SDv2
-		defmt::trace!("CMD8: SDv2+ card detected");
-		Ok(SdCardType::SDv2)
+		// Sdv2
+		defmt::trace!("CMD8: Sdv2+ card detected");
+		Ok(SdCardType::Sdv2)
 	}
 
 	/// Sends an R1 command and returns the R1 response.
+	#[expect(dead_code)]
 	async fn send_r1_command(&mut self, cmd: u8, arg: u32, crc: u8) -> Result<R1, SdCardError> {
 		let mut r = [0xFFu8; 6 + 16]; // Command + response + padding
 		debug_assert_eq!(cmd & 0xC0, 0, "invalid command index");
@@ -177,6 +178,7 @@ impl<'a> SdCard<'a> {
 		// Find the first response byte (MSB=0)
 		let mut found = false;
 		let mut i = 0;
+		#[expect(clippy::needless_range_loop)]
 		for j in 6..r.len() {
 			if r[j] & 0x80 == 0 {
 				found = true;
@@ -218,7 +220,7 @@ impl<'a> SdCard<'a> {
 		Timer::after(Duration::from_micros(10)).await;
 
 		let mut r = [0xFFu8; 24]; // 16 bytes in the response, just in case.
-		r[0] = 0x40 | 0x00; // Command index
+		r[0] = 0x40; // Command index
 		r[1] = 0x00; // Argument[31:24]
 		r[2] = 0x00; // Argument[23:16]
 		r[3] = 0x00; // Argument[15:8]
@@ -266,6 +268,7 @@ impl<'a> SdCard<'a> {
 
 		if found {
 			// Make sure all subsequent bytes are 0xFF
+			#[expect(clippy::needless_range_loop)]
 			for j in (i + 1)..r.len() {
 				if r[j] != 0xFF {
 					defmt::warn!("CMD0: invalid trailing byte: {:02X}", r[j]);
@@ -287,6 +290,7 @@ impl From<embassy_stm32::spi::Error> for SdCardError {
 
 trait HostSutSelect {
 	fn select_host(&mut self);
+	#[expect(dead_code)]
 	fn select_sut(&mut self);
 }
 
@@ -305,6 +309,7 @@ impl HostSutSelect for Output<'static> {
 #[derive(Copy, Clone)]
 struct R1(u8);
 
+#[expect(dead_code)]
 impl R1 {
 	const fn is_zero(&self) -> bool {
 		self.0 == 0
@@ -341,6 +346,6 @@ impl R1 {
 
 #[derive(defmt::Format)]
 struct R7 {
-	r1: R1,
+	r1:        R1,
 	echo_back: u32,
 }

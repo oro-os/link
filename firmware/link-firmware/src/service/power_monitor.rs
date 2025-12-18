@@ -1,6 +1,6 @@
 use defmt::{error, info, trace};
 use embassy_stm32::{i2c::I2c, mode::Blocking};
-use embassy_sync::{blocking_mutex::raw::NoopRawMutex, channel::Channel, mutex::Mutex};
+use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 
 const ADDR: u8 = 0x40;
@@ -8,20 +8,20 @@ const ADDR: u8 = 0x40;
 #[embassy_executor::task]
 pub async fn power_monitor(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking>>) -> ! {
 	macro_rules! set {
-		($reg: expr, [ $high:expr, $low:expr ]) => {{
+		($reg:expr,[$high:expr, $low:expr]) => {{
 			let mut i2c = i2c.lock().await;
 			if let Err(err) = i2c.blocking_write(ADDR, &[$reg, $high, $low]) {
 				error!("failed to write to power monitor chip: {:?}", err);
 			}
 		}};
-		($reg: expr, $value:expr) => {{
+		($reg:expr, $value:expr) => {{
 			let val = u16::from($value);
 			set!($reg, [(val >> 8) as u8, val as u8]);
 		}};
 	}
 
 	macro_rules! get {
-		($reg: expr) => {{
+		($reg:expr) => {{
 			let mut i2c = i2c.lock().await;
 			let mut buf = [0; 2];
 			if let Err(err) = i2c.blocking_write_read(ADDR, &[$reg], &mut buf) {
@@ -127,13 +127,13 @@ impl From<Configuration> for u16 {
 #[repr(u16)]
 #[allow(dead_code)]
 enum AverageSamples {
-	Avg1 = 0b000,
-	Avg4 = 0b001,
-	Avg16 = 0b010,
-	Avg64 = 0b011,
-	Avg128 = 0b100,
-	Avg256 = 0b101,
-	Avg512 = 0b110,
+	Avg1    = 0b000,
+	Avg4    = 0b001,
+	Avg16   = 0b010,
+	Avg64   = 0b011,
+	Avg128  = 0b100,
+	Avg256  = 0b101,
+	Avg512  = 0b110,
 	Avg1024 = 0b111,
 }
 
@@ -141,11 +141,11 @@ enum AverageSamples {
 #[repr(u16)]
 #[allow(dead_code)]
 enum ConverstionTime {
-	Us140 = 0b000,
-	Us204 = 0b001,
-	Us332 = 0b010,
-	Us588 = 0b011,
-	Ms1p1 = 0b100,
+	Us140   = 0b000,
+	Us204   = 0b001,
+	Us332   = 0b010,
+	Us588   = 0b011,
+	Ms1p1   = 0b100,
 	Ms2p116 = 0b101,
 	Ms4p156 = 0b110,
 	Ms8p244 = 0b111,
@@ -155,13 +155,13 @@ enum ConverstionTime {
 #[repr(u16)]
 #[allow(dead_code)]
 enum Mode {
-	PowerDown = 0b000,
-	ShuntVoltageTriggered = 0b001,
-	BusVoltageTriggered = 0b010,
-	ShuntAndBusTriggered = 0b011,
+	PowerDown              = 0b000,
+	ShuntVoltageTriggered  = 0b001,
+	BusVoltageTriggered    = 0b010,
+	ShuntAndBusTriggered   = 0b011,
 	#[deprecated(note = "duplicate value; use PowerDown instead")]
-	PowerDown2 = 0b100,
+	PowerDown2             = 0b100,
 	ShuntVoltageContinuous = 0b101,
-	BusVoltageContinuous = 0b110,
-	ShuntAndBusContinuous = 0b111,
+	BusVoltageContinuous   = 0b110,
+	ShuntAndBusContinuous  = 0b111,
 }

@@ -1,4 +1,4 @@
-use embassy_stm32::gpio::{Output, OutputOpenDrain};
+use embassy_stm32::gpio::OutputOpenDrain;
 use embassy_time::{Duration, Timer};
 
 #[embassy_executor::task]

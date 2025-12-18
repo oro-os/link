@@ -1,17 +1,19 @@
-use crate::{
-	Deserialize, Error, Packet, Read, Serialize, Write,
-	macros::{debug, error, trace},
-};
+use core::ops::DerefMut;
+
 use aes::{
 	Aes256Dec, Aes256Enc,
 	cipher::{BlockDecrypt, BlockEncrypt, KeyInit},
 };
 #[cfg(feature = "async-std")]
 use async_std::sync::Mutex;
-use core::ops::DerefMut;
 use curve25519::{curve25519, curve25519_pk, curve25519_sk};
 use link_protocol_binser::MaybeFormat;
 use rand_core::RngCore;
+
+use crate::{
+	Deserialize, Error, Packet, Read, Serialize, Write,
+	macros::{debug, error, trace},
+};
 #[cfg(feature = "embassy")]
 type Mutex<T> = ::embassy_sync::mutex::Mutex<::embassy_sync::blocking_mutex::raw::NoopRawMutex, T>;
 
@@ -124,9 +126,9 @@ impl<W: Write> PacketSender<W> {
 }
 
 struct BlockSender<W: Write> {
-	sock: W,
-	tls: Aes256Enc,
-	block: [u8; 16],
+	sock:   W,
+	tls:    Aes256Enc,
+	block:  [u8; 16],
 	cursor: usize,
 }
 
@@ -212,10 +214,10 @@ impl<R: Read> PacketReceiver<R> {
 }
 
 struct BlockReceiver<R: Read> {
-	sock: R,
-	tls: Aes256Dec,
+	sock:   R,
+	tls:    Aes256Dec,
 	cursor: usize,
-	block: [u8; 16],
+	block:  [u8; 16],
 }
 
 impl<R: Read> Read for BlockReceiver<R> {

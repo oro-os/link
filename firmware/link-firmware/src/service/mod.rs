@@ -9,13 +9,8 @@ mod uart;
 mod usart;
 mod usb;
 
-pub use blinken_light::blinken_light;
-pub use exteth::exteth_service;
-pub use led_controller::led_controller;
-pub use oled::oled_service;
-pub use power_monitor::power_monitor;
-pub use sdcard::sdcard_service;
-pub use syseth::syseth_service;
-pub use uart::uart_service;
-pub use usart::usart_service;
-pub use usb::usb_service;
+pub use self::{
+	blinken_light::blinken_light, exteth::exteth_service, led_controller::led_controller,
+	oled::oled_service, power_monitor::power_monitor, sdcard::sdcard_service,
+	syseth::syseth_service, uart::uart_service, usart::usart_service, usb::usb_service,
+};

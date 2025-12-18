@@ -1,15 +1,18 @@
-use pixglyph::Glyph;
-use proc_macro2::{Span, TokenStream};
-use quote::quote;
 use std::{
 	env,
 	fs::{self, File},
 	path::Path,
 };
+
+use pixglyph::Glyph;
+use proc_macro2::{Span, TokenStream};
+use quote::quote;
 use syn::{Ident, LitChar, LitInt, punctuated::Punctuated, token::Comma};
 use ttf_parser::Face;
 
-const TERM_CHARMAP: &str = "?abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()`,.<>/[]-_~'\"=+;:©µ¿{}ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
+const TERM_CHARMAP: &str = "?abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&\
+                            *()`,.<>/[]-_~'\"=+;:©µ¿\
+                            {}ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
 const HEIGHT: f32 = 16.0;
 const BASE_TOP: f32 = HEIGHT - 2.0;
 const BASE_LEFT: f32 = 1.0;
@@ -53,7 +56,7 @@ fn render_progress_font(base_path: &str) -> TokenStream {
 			"progress font frames should not be animations"
 		);
 
-		let total_bytes = (info.width * info.height + 7) / 8;
+		let total_bytes = (info.width * info.height).div_ceil(8);
 		let mut bytes = vec![0u8; total_bytes as usize];
 
 		for y in 0..info.height {
@@ -132,7 +135,7 @@ fn render_font(id: &str, path: &str, charmap: &str) -> TokenStream {
 		let glyph = Glyph::load(&face, glyph_normal).unwrap();
 		let bmp = glyph.rasterize(BASE_LEFT, BASE_TOP, HEIGHT);
 
-		let total_bytes = (((bmp.width * bmp.height) + 7) / 8) as usize;
+		let total_bytes = (bmp.width * bmp.height).div_ceil(8) as usize;
 		let mut bytes = vec![0u8; total_bytes];
 
 		for y in 0..bmp.height {

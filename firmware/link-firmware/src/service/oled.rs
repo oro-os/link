@@ -1,9 +1,8 @@
-use embassy_stm32::gpio::{Output, OutputOpenDrain};
-use embassy_stm32::spi::Error;
-use embassy_stm32::{mode::Async, spi::Spi};
-use embassy_sync::blocking_mutex::raw::NoopRawMutex;
-use embassy_sync::mutex::Mutex;
-use embassy_time::Delay;
+use embassy_stm32::{
+	gpio::{Output, OutputOpenDrain},
+	mode::Async,
+	spi::{Error, Spi},
+};
 use embassy_time::{Duration, Timer};
 use embedded_graphics::{
 	framebuffer::{Framebuffer, buffer_size},
@@ -16,14 +15,13 @@ use embedded_graphics_core::{
 	primitives::Rectangle,
 };
 use embedded_hal_async::spi::SpiBus;
-use embedded_hal_bus::spi::ExclusiveDevice;
 use micromath::F32Ext;
 
 #[embassy_executor::task]
 pub async fn oled_service(
-	mut spi: Spi<'static, Async>,
-	mut cs: OutputOpenDrain<'static>,
-	mut dc: Output<'static>,
+	spi: Spi<'static, Async>,
+	cs: OutputOpenDrain<'static>,
+	dc: Output<'static>,
 	mut rst: Output<'static>,
 	mut vreg_en: Output<'static>,
 ) -> ! {
@@ -52,7 +50,7 @@ pub async fn oled_service(
 			let v = ((x as f32 / 8.0).sin() + (y as f32 / 8.0).cos()) * 0.5 + 0.5;
 			let gray = (v * 15.0) as u8;
 			oled.framebuf.set_pixel(
-				Point::new(x as i32, y as i32),
+				Point::new(x, y),
 				embedded_graphics::pixelcolor::Gray4::new(gray),
 			);
 		}
@@ -73,12 +71,13 @@ type FrameBuf = Framebuffer<
 >;
 
 struct SSD1362 {
-	spi: Spi<'static, Async>,
-	dc: Output<'static>,
-	cs: OutputOpenDrain<'static>,
+	spi:      Spi<'static, Async>,
+	dc:       Output<'static>,
+	cs:       OutputOpenDrain<'static>,
 	framebuf: FrameBuf,
 }
 
+#[expect(dead_code)]
 impl SSD1362 {
 	fn new(spi: Spi<'static, Async>, dc: Output<'static>, cs: OutputOpenDrain<'static>) -> Self {
 		Self {
@@ -160,7 +159,7 @@ impl SSD1362 {
 		self.send_cmd(0x22).await?;
 
 		self.send_cmd(0xB3).await?; // Set display clock divide ratio/oscillator frequency
-		self.send_cmd(0xF0 | 0x00).await?; // Highest clock ratio (0x#_) / lowest divide ratio (0x_#)
+		self.send_cmd(0xF0).await?; // Highest clock ratio (0x#_) / lowest divide ratio (0x_#)
 
 		self.send_cmd(0xB6).await?; // Set second precharge period
 		self.send_cmd(0x04).await?;
@@ -247,9 +246,11 @@ impl DrawTarget for SSD1362 {
 	{
 		FrameBuf::fill_contiguous::<I>(&mut self.framebuf, area, colors)
 	}
+
 	fn fill_solid(&mut self, area: &Rectangle, color: Self::Color) -> Result<(), Self::Error> {
 		FrameBuf::fill_solid(&mut self.framebuf, area, color)
 	}
+
 	fn clear(&mut self, color: Self::Color) -> Result<(), Self::Error> {
 		FrameBuf::clear(&mut self.framebuf, color)
 	}

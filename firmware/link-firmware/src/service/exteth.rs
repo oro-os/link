@@ -1,11 +1,5 @@
 use embassy_futures::select::select3;
-use embassy_net::Stack;
-use embassy_stm32::{
-	exti::ExtiInput,
-	gpio::{Output, OutputOpenDrain},
-	mode::Async,
-	spi::Spi,
-};
+use embassy_stm32::{exti::ExtiInput, gpio::OutputOpenDrain, mode::Async, spi::Spi};
 use embassy_time::{Delay, Duration, Timer};
 use embedded_hal_bus::spi::ExclusiveDevice;
 
@@ -17,7 +11,7 @@ pub async fn exteth_service(
 	exti: ExtiInput<'static>,
 	seed: u64,
 ) {
-	let mut extdev = ExclusiveDevice::new(driver, cs, Delay).unwrap();
+	let extdev = ExclusiveDevice::new(driver, cs, Delay).unwrap();
 
 	Timer::after_millis(100).await;
 	rst.set_low();
@@ -42,7 +36,7 @@ pub async fn exteth_service(
 		static_cell::StaticCell::new();
 	let stack_resources = STACK.init(embassy_net::StackResources::<16>::new());
 
-	let (stack, mut runner) = embassy_net::new(driver, config, stack_resources, seed);
+	let (_stack, mut runner) = embassy_net::new(driver, config, stack_resources, seed);
 
 	select3(
 		async move {

@@ -1,16 +1,16 @@
-#![feature(never_type, async_closure)]
+#![feature(never_type)]
 
 mod docker;
 mod session;
 
-use self::docker::Docker;
+use std::str::FromStr;
+
 use async_std::{io, net::TcpListener, prelude::*, task};
 use envconfig::Envconfig;
-
 use link_protocol::{Error as ProtoError, channel::RWError};
 use log::{debug, error, info, warn};
 
-use std::str::FromStr;
+use self::docker::Docker;
 
 #[derive(Envconfig, Clone)]
 pub(crate) struct Config {
@@ -20,19 +20,19 @@ pub(crate) struct Config {
 	pub link_server_bind: String,
 	#[envconfig(from = "USE_JOURNALD", default = "0")]
 	#[allow(unused)]
-	pub use_journald: u8,
+	pub use_journald:     u8,
 	#[envconfig(from = "DOCKER_HOST")]
-	pub docker_host: String,
+	pub docker_host:      String,
 	#[envconfig(from = "DOCKER_REF")]
-	pub docker_ref: String,
+	pub docker_ref:       String,
 	#[envconfig(from = "GH_ACCESS_TOKEN")]
-	pub gh_access_token: String,
+	pub gh_access_token:  String,
 	#[envconfig(from = "GH_ORGANIZATION")]
-	pub gh_organization: String,
+	pub gh_organization:  String,
 	#[envconfig(from = "LEVEL", default = "trace")]
-	pub log_level: String,
+	pub log_level:        String,
 	#[envconfig(from = "VERBOSE", default = "0")]
-	pub verbose: u8,
+	pub verbose:          u8,
 }
 
 #[derive(thiserror::Error, Debug)]

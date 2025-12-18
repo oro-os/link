@@ -1,4 +1,5 @@
-use crate::{Config, Error, docker::Docker};
+use std::{os::unix::fs::PermissionsExt, time::Duration};
+
 use async_std::{
 	channel::{Receiver, Sender, bounded as make_bounded_channel},
 	fs,
@@ -11,7 +12,8 @@ use futures::{prelude::*, select};
 use link_protocol::{Packet, PowerState, Scene, channel};
 use log::{debug, error, info, trace, warn};
 use rand::rngs::OsRng;
-use std::{os::unix::fs::PermissionsExt, time::Duration};
+
+use crate::{Config, Error, docker::Docker};
 
 macro_rules! race_all_or_cancel {
 	($f1:expr) => {
@@ -365,7 +367,7 @@ async fn handle_docker(
 
 	let mut container_guard = ContainerGuard {
 		docker: &docker,
-		id: Some(id.clone()),
+		id:     Some(id.clone()),
 	};
 
 	debug!("created actions runner container; starting the container: {id}");
@@ -420,7 +422,7 @@ async fn handle_docker(
 
 struct ContainerGuard<'a> {
 	docker: &'a Docker,
-	id: Option<String>,
+	id:     Option<String>,
 }
 
 impl<'a> Drop for ContainerGuard<'a> {

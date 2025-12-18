@@ -30,7 +30,7 @@ pub enum Packet {
 	LinkOnline {
 		/// The link's 256 bit UID (should be a Sha256
 		/// of the PAC/etc. UID chip readout).
-		uid: [u8; 32],
+		uid:     [u8; 32],
 		/// The link's firmware version
 		version: String<16>,
 	},
@@ -57,9 +57,9 @@ pub enum Packet {
 	#[proto(id = 6)]
 	StartTestSession {
 		total_tests: u32,
-		author: String<255>,
-		title: String<255>,
-		ref_id: String<255>,
+		author:      String<255>,
+		title:       String<255>,
+		ref_id:      String<255>,
 	},
 
 	/// Starts a new test; no effect if a session isn't started.

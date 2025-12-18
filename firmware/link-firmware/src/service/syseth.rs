@@ -1,6 +1,5 @@
 use embassy_embedded_hal::shared_bus::asynch::spi::SpiDevice;
 use embassy_futures::select::select3;
-use embassy_net::Stack;
 use embassy_stm32::{
 	exti::ExtiInput,
 	gpio::{Output, OutputOpenDrain},
@@ -8,9 +7,7 @@ use embassy_stm32::{
 	spi::Spi,
 };
 use embassy_sync::blocking_mutex::raw::NoopRawMutex;
-use embassy_sync::mutex::Mutex;
-use embassy_time::{Delay, Duration, Timer};
-use embedded_hal_bus::spi::ExclusiveDevice;
+use embassy_time::{Duration, Timer};
 
 #[embassy_executor::task]
 pub async fn syseth_service(
@@ -41,7 +38,7 @@ pub async fn syseth_service(
 	let stack_resources = STACK.init(embassy_net::StackResources::<16>::new());
 
 	let config = embassy_net::Config::dhcpv4(Default::default());
-	let (stack, mut runner) = embassy_net::new(driver, config, stack_resources, seed);
+	let (_stack, mut runner) = embassy_net::new(driver, config, stack_resources, seed);
 
 	select3(
 		async move {

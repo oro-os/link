@@ -14,9 +14,10 @@
 //!
 //! Word of the wise: If you're doing async HTTP in 2023, use Tokio. Even if you
 //! really dislike Tokio, save yourself the headache.
+use std::collections::HashMap;
+
 use log::warn;
 use serde::{Deserialize, Serialize, Serializer, ser::SerializeSeq};
-use std::collections::HashMap;
 use url::Url;
 
 #[derive(thiserror::Error, Debug)]
@@ -144,7 +145,7 @@ struct RemoveContainerQuery {
 #[derive(Deserialize, Debug)]
 #[serde(rename_all = "PascalCase")]
 struct ContainerListing {
-	id: String,
+	id:    String,
 	state: String,
 }
 
@@ -240,10 +241,10 @@ impl Serialize for Binds {
 pub struct CreateContainer {
 	pub attach_stdout: Option<bool>,
 	pub attach_stderr: Option<bool>,
-	pub env: Option<Args>,
-	pub image: String,
-	pub labels: Option<Map>,
-	pub host_config: Option<HostConfig>,
+	pub env:           Option<Args>,
+	pub image:         String,
+	pub labels:        Option<Map>,
+	pub host_config:   Option<HostConfig>,
 }
 
 #[derive(Serialize, Debug, Default)]
@@ -255,7 +256,7 @@ pub struct HostConfig {
 #[derive(Deserialize, Debug, Default)]
 #[serde(rename_all = "PascalCase")]
 struct CreateContainerResponse {
-	id: String,
+	id:       String,
 	warnings: Vec<String>,
 }
 

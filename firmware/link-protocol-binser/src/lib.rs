@@ -10,7 +10,6 @@ use core::str::FromStr;
 
 #[cfg(feature = "defmt")]
 use defmt::Format;
-
 pub use link_protocol_binser_proc::LinkMessage;
 
 #[cfg(feature = "std")]

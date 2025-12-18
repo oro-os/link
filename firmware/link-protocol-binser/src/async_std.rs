@@ -1,5 +1,6 @@
-use crate::{Error, Read, Write};
 use async_std::io::{Error as AsyncError, ReadExt as AsyncRead, WriteExt as AsyncWrite};
+
+use crate::{Error, Read, Write};
 
 impl<T> Read for T
 where
