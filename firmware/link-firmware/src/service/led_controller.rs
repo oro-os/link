@@ -16,8 +16,8 @@ use crate::{
 const ADDR: u8 = 0b01111000 >> 1;
 const MAX_CURRENT: MaxCurrent = MaxCurrent::ImaxDiv4;
 const SHIFT_CHANNEL: usize = 0; // Channel 0 is a "special" channel that sets the brightness shift for all channels.
-const IDLE_SHIFT: u8 = 2; // Divide by 4.
-const IDLE_MIN: u8 = 5; // Minimum brightness in idle mode (for non-zero brightness).
+const IDLE_SHIFT: u8 = 4; // Divide by 16.
+const IDLE_MIN: u8 = 2; // Minimum brightness in idle mode (for non-zero brightness).
 
 pub type Channel = RawChannel<Message, 4>;
 
