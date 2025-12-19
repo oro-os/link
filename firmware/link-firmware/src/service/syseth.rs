@@ -57,28 +57,14 @@ pub async fn syseth_service(
 	panic!("syseth service ended unexpectedly");
 }
 
-fn unique_id() -> [u8; 32] {
-	use sha2::Digest;
-
-	let mut sha256 = sha2::Sha256::new();
-
-	for i in 0..3 {
-		sha256.update(stm32_metapac::UID.uid(i).read().to_be_bytes());
-	}
-
-	sha256.finalize().into()
-}
-
 pub fn get_exteth_mac() -> [u8; 6] {
-	let hash = unique_id();
-
 	let mut macaddr = [0u8; 6];
 	macaddr[0] = b'.';
 	macaddr[1] = b'o';
 	macaddr[2] = b'O';
-	macaddr[3] = hash[29];
-	macaddr[4] = hash[30];
-	macaddr[5] = hash[31];
+	macaddr[3] = 0;
+	macaddr[4] = 0;
+	macaddr[5] = 0;
 
 	macaddr
 }

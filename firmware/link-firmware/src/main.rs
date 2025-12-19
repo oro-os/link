@@ -1,9 +1,9 @@
 #![no_std]
 #![no_main]
-//#![feature(type_alias_impl_trait)]
 
 mod font;
 mod service;
+pub(crate) mod unique_id;
 
 use defmt::info;
 use defmt_rtt as _;
