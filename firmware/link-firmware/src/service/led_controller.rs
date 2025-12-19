@@ -1,4 +1,8 @@
-use embassy_stm32::{gpio::Output, i2c::I2c, mode::Blocking};
+use embassy_stm32::{
+	gpio::Output,
+	i2c::{I2c, mode::Master},
+	mode::Blocking,
+};
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 
@@ -6,7 +10,7 @@ const ADDR: u8 = 0b01111000 >> 1;
 
 #[embassy_executor::task]
 pub async fn led_controller(
-	i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking>>,
+	i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>,
 	mut enable_chip: Output<'static>,
 ) -> ! {
 	enable_chip.set_high();
@@ -51,14 +55,14 @@ pub async fn led_controller(
 }
 
 struct IS31FL3236A {
-	i2c:       &'static Mutex<NoopRawMutex, I2c<'static, Blocking>>,
+	i2c:       &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>,
 	pwm_state: [u8; 38], // 36 + 1 for cursor + 1 for update
 	ch_state:  [u8; 37], // 36 + 1 for cursor
 }
 
 #[expect(dead_code)]
 impl IS31FL3236A {
-	fn new(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking>>) -> Self {
+	fn new(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>) -> Self {
 		let mut this = Self {
 			i2c,
 			pwm_state: [0; 38],

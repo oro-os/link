@@ -1,12 +1,15 @@
 use defmt::{error, info, trace};
-use embassy_stm32::{i2c::I2c, mode::Blocking};
+use embassy_stm32::{
+	i2c::{I2c, mode::Master},
+	mode::Blocking,
+};
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 
 const ADDR: u8 = 0x40;
 
 #[embassy_executor::task]
-pub async fn power_monitor(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking>>) -> ! {
+pub async fn power_monitor(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>) -> ! {
 	macro_rules! set {
 		($reg:expr,[$high:expr, $low:expr]) => {{
 			let mut i2c = i2c.lock().await;

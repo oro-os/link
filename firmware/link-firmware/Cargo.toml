@@ -21,18 +21,25 @@ embedded-graphics-framebuf = "0.5.0"
 embedded-hal = "1.0.0-alpha.11"
 embedded-hal-bus = { version = "0.2.0", features = ["async"] }
 embedded-hal-async = "1.0.0"
+embassy-net-wiznet = { version = "0.2.1", features = ["defmt"] }
+embassy-executor = { version = "0.9.1", features = [ "arch-cortex-m", "executor-thread" ] }
+embassy-time = { version = "0.5.0", features = ["tick-hz-32_768"] }
+embassy-sync = "0.7.2"
+embassy-futures = "0.1.2"
+embassy-stm32 = { version = "0.4.0", features = [ "stm32f479vg", "defmt", "unstable-pac", "time-driver-any", "exti", "single-bank" ] }
+embassy-net = { version = "0.7.1", features = [ "defmt", "tcp", "udp", "dns", "dhcpv4", "proto-ipv4", "proto-ipv6", "medium-ethernet" ] }
+embassy-usb = { version = "0.5.1", features = [ "defmt", "usbd-hid", "max-interface-count-2" ] }
+embassy-embedded-hal = { version = "0.5.0", features = ["defmt"] }
 heapless = "0.8"
 micromath = "2.0.0"
 static_cell = { version = "2.0.0", features = ["nightly"] }
-
 defmt-rtt = "0.4.0"
 stm32-metapac = { version = "14.0.0", features = ["stm32f479vg"] }
 sha2 = { version = "0.10.7", default-features = false, features = ["asm-aarch64"] }
 rand_core = "0.6.4"
 embedded-io-async = "0.6.1"
-embassy-sync = { git = "https://github.com/oro-os/dep.embassy.git" }
-embassy-futures = { git = "https://github.com/oro-os/dep.embassy.git" }
 panic-probe = "1.0.0"
+cortex-m = { version = "0.7.7", features = ["critical-section-single-core", "inline-asm"] }
 # XXX DEBUG: This is just to test USB connectivity.
 usbd-hid = "0.8.2"
 
@@ -41,79 +48,14 @@ git = "https://github.com/oro-os/oro-logo-rle"
 default-features = false
 features = ["oro-logo-64"]
 
-[dependencies.embassy-net-wiznet]
-version = "0.2.0"
-git = "https://github.com/oro-os/dep.embassy.git"
-features = ["defmt"]
-
-[dependencies.cortex-m]
-version = "0.7.7"
-features = [
-	"critical-section-single-core",
-	"inline-asm"
-]
-
-[dependencies.embassy-executor]
-git = "https://github.com/oro-os/dep.embassy.git"
-features = [
-	"arch-cortex-m",
-	"executor-thread",
-]
-
-[dependencies.embassy-time]
-git = "https://github.com/oro-os/dep.embassy.git"
-features = [
-	"tick-hz-32_768"
-]
-
-[dependencies.embassy-stm32]
-git = "https://github.com/oro-os/dep.embassy.git"
-features = [
-	"stm32f479vg",
-	"defmt",
-	"unstable-pac",
-	"time-driver-any",
-	"exti",
-	"single-bank"
-]
-
-[dependencies.embassy-net]
-git = "https://github.com/oro-os/dep.embassy.git"
-features = [
-	"defmt",
-	"tcp",
-	"udp",
-	"dns",
-	"dhcpv4",
-	"proto-ipv4",
-	"proto-ipv6",
-	"medium-ethernet"
-]
-
-[dependencies.embassy-usb]
-git = "https://github.com/oro-os/dep.embassy.git"
-features = [
-	"defmt",
-	"usbd-hid",
-	"max-interface-count-2",
-]
-
-[dependencies.embassy-embedded-hal]
-git = "https://github.com/oro-os/dep.embassy.git"
-features = [
-	"defmt",
-]
-
-
 [dependencies.smoltcp]
-version = "0.11.0"
+version = "0.12.0"
 default-features = false
 features = [
 	"medium-ethernet",
 	"defmt",
 	"packetmeta-id",
 	"async",
-	"proto-igmp",
 	"proto-dhcpv4",
 	"proto-ipv4-fragmentation",
 	"proto-dns",

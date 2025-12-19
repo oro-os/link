@@ -77,17 +77,18 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	let ind_en = Output::new(p.PB8, Level::Low, Speed::Low);
 
-	static I2C: StaticCell<Mutex<NoopRawMutex, i2c::I2c<'static, Blocking>>> = StaticCell::new();
+	static I2C: StaticCell<Mutex<NoopRawMutex, i2c::I2c<'static, Blocking, i2c::mode::Master>>> =
+		StaticCell::new();
 	let i2c = I2C.init(Mutex::<NoopRawMutex, _>::new(i2c::I2c::new_blocking(
 		p.I2C3,
 		p.PA8,
 		p.PC9,
-		Hertz(400_000),
 		{
 			let mut config = i2c::Config::default();
 			config.scl_pullup = false;
 			config.sda_pullup = false;
 			config.timeout = Duration::from_millis(10);
+			config.frequency = Hertz(400_000);
 			config
 		},
 	)));
@@ -151,7 +152,6 @@ pub async fn main(spawner: Spawner) -> ! {
 			// config.frequency = Hertz(22_500_000);
 			config.frequency = Hertz(200_000);
 			config.bit_order = spi::BitOrder::MsbFirst;
-			config.rise_fall_speed = embassy_stm32::gpio::Speed::VeryHigh;
 			config.mode = spi::MODE_0;
 			config.miso_pull = Pull::Up;
 			config
