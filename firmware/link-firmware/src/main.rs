@@ -1,5 +1,6 @@
 #![no_std]
 #![no_main]
+#![feature(never_type)]
 
 mod font;
 mod service;
@@ -220,41 +221,52 @@ pub async fn main(spawner: Spawner) -> ! {
 	let _sut_pwr_switch = Output::new(p.PE12, Level::Low, Speed::Low);
 	let _sut_rst_switch = Output::new(p.PE10, Level::Low, Speed::Low);
 
-	defmt::info!("initialization complete");
+	defmt::info!("initialization complete; starting services...");
+
+	let service_channels = service::services_channels();
 
 	defmt::info!("service: blinken lights...");
 	spawner
-		.spawn(service::blinken_light(debug_led1, debug_led2, debug_led3))
+		.spawn(service::blinken_light::blinken_light(
+			service_channels.blinken_light_rx,
+			debug_led1,
+			debug_led2,
+			debug_led3,
+		))
 		.unwrap();
 	defmt::info!("service: led controller...");
-	spawner.spawn(service::led_controller(i2c, ind_en)).unwrap();
+	spawner
+		.spawn(service::led_controller::led_controller(i2c, ind_en))
+		.unwrap();
 	defmt::info!("service: power monitor...");
-	spawner.spawn(service::power_monitor(i2c)).unwrap();
+	spawner
+		.spawn(service::power_monitor::power_monitor(i2c))
+		.unwrap();
 	defmt::info!("service: usb...");
 	spawner
-		.spawn(service::usb_service(ulpi, ulpi_rst, ulpi_oc))
+		.spawn(service::usb::usb_service(ulpi, ulpi_rst, ulpi_oc))
 		.unwrap();
 	defmt::info!("service: external ethernet...");
 	spawner
-		.spawn(service::exteth_service(
+		.spawn(service::exteth::exteth_service(
 			exteth, exteth_cs, exteth_rst, exteth_int, 0, // TODO
 		))
 		.unwrap();
 	defmt::info!("service: system ethernet...");
 	spawner
-		.spawn(service::syseth_service(
+		.spawn(service::syseth::syseth_service(
 			syseth, syseth_rst, syseth_int, 0, // TODO
 		))
 		.unwrap();
 	defmt::info!("service: oled...");
 	spawner
-		.spawn(service::oled_service(
+		.spawn(service::oled::oled_service(
 			oled, oled_cs, oled_dc, oled_rst, oled_en,
 		))
 		.unwrap();
 	defmt::info!("service: sdcard...");
 	spawner
-		.spawn(service::sdcard_service(
+		.spawn(service::sdcard::sdcard_service(
 			sd_spi,
 			sd_cs,
 			sd_en,
@@ -265,12 +277,16 @@ pub async fn main(spawner: Spawner) -> ! {
 		))
 		.unwrap();
 	defmt::info!("service: uart...");
-	spawner.spawn(service::uart_service(uart)).unwrap();
+	spawner.spawn(service::uart::uart_service(uart)).unwrap();
 	defmt::info!("service: usart...");
-	spawner.spawn(service::usart_service(usart)).unwrap();
+	spawner.spawn(service::usart::usart_service(usart)).unwrap();
+	defmt::info!("service: ci/cd...");
+	spawner
+		.spawn(service::cicd::cicd_service(
+			service_channels.master_bus.sender(),
+		))
+		.unwrap();
 
-	loop {
-		Timer::after(Duration::from_secs(60)).await;
-		info!("main loop heartbeat");
-	}
+	defmt::info!("link is now ready; beginning Oro Link CI/CD main routine - happy hacking!");
+	service_channels.master_bus.run_master_bus().await;
 }

@@ -55,7 +55,6 @@ pub async fn exteth_service(
 	panic!("exteth service ended unexpectedly");
 }
 
-
 pub fn get_exteth_mac() -> [u8; 6] {
 	let hash = crate::unique_id::unique_id_sha256();
 
