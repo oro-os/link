@@ -12,8 +12,8 @@ of supported computers, devices, and boards, and runs firmware to obtain builds 
 the Oro kernel and associated modules to send to the System Under Test (SUT)
 for automated testing and reporting.
 
-The Oro Link allows contributors to the Oro project direct access via
-GitHub Actions the ability to test changes directly on real hardware
+The Oro Link allows contributors to the Oro project direct access - via
+pull requests - to test changes directly on real hardware
 alongside emulated environments, allowing for changes to be tested
 against niche or problematic hardware configurations.
 
@@ -22,15 +22,6 @@ against niche or problematic hardware configurations.
 All PCBs are located in `pcb/`, where all of the server infrastructure and firmware for the PCBs
 is located in `firmware/` since it's a workspace with some local dependencies (e.g. the protocol
 spoken between the boards and the CI/CD daemon).
-
-Each of the PCBs included in the project are described in the [`pcb/` directory's readme](pcb/).
-
-## Supported Devices / Architectures
-
-The supported architectures are listed here. In the case that several revisions or variants
-of a single device/arch board exist, links go to the currently used/developed/supported version.
-
-- x86/x86_64 [[pcb (open bench table)]](pcb/link-x86-obt) [[firmware]](firmware/link-firmware-x86)
 
 # License
 
