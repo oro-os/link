@@ -1,7 +1,9 @@
 use embassy_stm32::gpio::OutputOpenDrain;
-use embassy_time::{Duration, Timer};
+use embassy_time::Duration;
 
-pub type Channel = super::Channel<Message, 2>;
+use crate::channel::{ChannelExt, ReceiveDelay};
+
+pub type Channel = crate::channel::Channel<Message, 2>;
 
 #[derive(defmt::Format)]
 #[allow(unused)]
@@ -38,7 +40,7 @@ async fn blink_cycle<T>(
 
 #[embassy_executor::task]
 pub async fn blinken_light(
-	mut recv: super::Receiver<Message, 2>,
+	mut recv: <Channel as ChannelExt>::Receiver,
 	debug_led1: OutputOpenDrain<'static>,
 	debug_led2: OutputOpenDrain<'static>,
 	debug_led3: OutputOpenDrain<'static>,
@@ -61,38 +63,6 @@ pub async fn blinken_light(
 				}
 				recv.receive().await
 			}
-		}
-	}
-}
-
-pub trait ReceiveDelay<T> {
-	async fn after_receive(&mut self, duration: Duration) -> Result<(), T>;
-}
-
-impl<M, T, const N: usize> ReceiveDelay<T> for embassy_sync::channel::Channel<M, T, N>
-where
-	M: embassy_sync::blocking_mutex::raw::RawMutex,
-{
-	async fn after_receive(&mut self, duration: Duration) -> Result<(), T> {
-		let r = embassy_futures::select::select(Timer::after(duration), self.receive()).await;
-
-		match r {
-			embassy_futures::select::Either::First(_) => Ok(()),
-			embassy_futures::select::Either::Second(msg) => Err(msg),
-		}
-	}
-}
-
-impl<'a, M, T, const N: usize> ReceiveDelay<T> for embassy_sync::channel::Receiver<'a, M, T, N>
-where
-	M: embassy_sync::blocking_mutex::raw::RawMutex,
-{
-	async fn after_receive(&mut self, duration: Duration) -> Result<(), T> {
-		let r = embassy_futures::select::select(Timer::after(duration), self.receive()).await;
-
-		match r {
-			embassy_futures::select::Either::First(_) => Ok(()),
-			embassy_futures::select::Either::Second(msg) => Err(msg),
 		}
 	}
 }

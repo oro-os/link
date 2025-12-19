@@ -1,3 +1,4 @@
+use embassy_executor::Spawner;
 use embassy_stm32::{
 	gpio::Output,
 	i2c::{I2c, mode::Master},
@@ -5,11 +6,66 @@ use embassy_stm32::{
 };
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
+use static_cell::StaticCell;
+
+use crate::{
+	channel::{Channel as RawChannel, ChannelExt, Receiver, Sender},
+	color::Rgb,
+};
 
 const ADDR: u8 = 0b01111000 >> 1;
+const MAX_CURRENT: MaxCurrent = MaxCurrent::ImaxDiv4;
+const SHIFT_CHANNEL: usize = 0; // Channel 0 is a "special" channel that sets the brightness shift for all channels.
+const IDLE_SHIFT: u8 = 2; // Divide by 4.
+const IDLE_MIN: u8 = 5; // Minimum brightness in idle mode (for non-zero brightness).
+
+pub type Channel = RawChannel<Message, 4>;
+
+type RgbReceiver = Receiver<Rgb, 2>;
+type LightSender = Sender<(usize, u8), 16>;
+type OnOffReceiver = Receiver<bool, 2>;
+type GreyReceiver = Receiver<u8, 2>;
+
+#[derive(defmt::Format)]
+#[allow(unused)]
+pub enum Message {
+	/// Turns off all lights
+	AllOff,
+	/// Performs a self-test sequence; no
+	/// commands will be processed until
+	/// the self-test is complete.
+	SelfTest,
+	/// Sets the controller to idle mode,
+	/// dimming all lights.
+	SetIdle(bool),
+	/// Sets the backlight color.
+	///
+	/// Specifying `None` turns off the backlight.
+	SetBacklight(Rgb),
+	/// Sets the system indicator color.
+	///
+	/// Specifying `None` turns off the system indicator.
+	SetSystemIndicator(Rgb),
+	/// Sets the remote indicator color.
+	///
+	/// Specifying `None` turns off the remote indicator.
+	SetRemoteIndicator(Rgb),
+	/// Sets the job indicator color.
+	///
+	/// Specifying `None` turns off the job indicator.
+	SetJobIndicator(Rgb),
+	/// Sets the SD ribbon cable (SUT) sense indicator on or off.
+	SetSdCableIndicator(bool),
+	/// Sets the SD card activity indicator on or off.
+	SetSdCardIndicator(bool),
+	/// Sets the SD card sense indicator on or off.
+	SetSdSenseIndicator(bool),
+}
 
 #[embassy_executor::task]
 pub async fn led_controller(
+	spawner: Spawner,
+	recv: <Channel as ChannelExt>::Receiver,
 	i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>,
 	mut enable_chip: Output<'static>,
 ) -> ! {
@@ -27,37 +83,257 @@ pub async fn led_controller(
 	for channel in 1..=36 {
 		led.set_ch_state(
 			channel,
-			ChannelState::new()
-				.with_max_current(MaxCurrent::ImaxDiv4)
-				.with_on(),
+			ChannelState::new().with_max_current(MAX_CURRENT).with_on(),
 		);
 		led.set_pwm(channel, 0);
 	}
 	led.present_state().await;
 	led.present_pwm().await;
 
+	static LIGHT_CHANNEL: static_cell::StaticCell<RawChannel<(usize, u8), 16>> =
+		static_cell::StaticCell::new();
+	let light_ch = LIGHT_CHANNEL.init(RawChannel::new());
+
+	macro_rules! setup_lights {
+		($(let $name:ident = $ty:tt($($tt:tt)+));+ $(;)?) => {
+			$(
+				let $name = setup_lights!(@task $ty($($tt)+));
+			)+
+		};
+		(@task Rgb($ch_r:expr, $ch_g:expr, $ch_b:expr)) => {
+			{
+				static CHANNEL: StaticCell<RawChannel<Rgb, 2>> = StaticCell::new();
+				let ch = CHANNEL.init(RawChannel::new());
+				let rx = ch.receiver();
+				spawner.spawn(rgb_light_task(rx, light_ch.sender(), $ch_r, $ch_g, $ch_b)).unwrap();
+				ch.sender()
+			}
+		};
+		(@task OnOff($ch_bool:expr)) => {
+			{
+				static CHANNEL: StaticCell<RawChannel<bool, 2>> = StaticCell::new();
+				let ch = CHANNEL.init(RawChannel::new());
+				let rx = ch.receiver();
+				spawner.spawn(on_off_light_task(rx, light_ch.sender(), $ch_bool)).unwrap();
+				ch.sender()
+			}
+		};
+		(@task MultiRgb($([$r:expr, $g:expr, $b:expr]),* $(,)?)) => {
+			{
+				static CH_R: &'static [usize] = &[$($r),*];
+				static CH_G: &'static [usize] = &[$($g),*];
+				static CH_B: &'static [usize] = &[$($b),*];
+				static CHANNEL: StaticCell<RawChannel<Rgb, 2>> = StaticCell::new();
+				let ch = CHANNEL.init(RawChannel::new());
+				let rx = ch.receiver();
+				spawner.spawn(multi_rgb_light_task(rx, light_ch.sender(), CH_R, CH_G, CH_B)).unwrap();
+				ch.sender()
+			}
+		};
+		(@task MultiGrey($($ch_grey:expr),* $(,)?)) => {
+			{
+				static CH_GREY: &'static [usize] = &[$($ch_grey),*];
+				static CHANNEL: StaticCell<RawChannel<u8, 2>> = StaticCell::new();
+				let ch = CHANNEL.init(RawChannel::new());
+				let rx = ch.receiver();
+				spawner.spawn(multi_grey_light_task(rx, light_ch.sender(), CH_GREY)).unwrap();
+				ch.sender()
+			}
+		};
+	}
+
+	setup_lights! {
+		// SD card lights
+		// These are subject to change - see
+		// https://github.com/oro-os/link/issues/109
+		let sd_cable_sense_led = OnOff(36);
+		let sd_card_activity_led = OnOff(2);
+		let sd_card_sense_led = OnOff(1);
+
+		// Status lights
+		let remote_link_led = Rgb(31, 30, 32);
+		let job_indicator_led = Rgb(28, 29, 27);
+		let system_indicator_led = Rgb(34, 33, 35);
+
+		// Backlight
+		let backlight_rgb_led = MultiRgb(
+			[19, 18, 20],
+			[10, 9, 11],
+			[5, 6, 4],
+			[15, 16, 17],
+			[13, 12, 14],
+			[25, 26, 24],
+			[21, 22, 23],
+		);
+
+		let backlight_white_led = MultiGrey(7, 8, 3);
+	}
+
+	spawner
+		.spawn(presenter_task(light_ch.receiver(), led))
+		.unwrap();
+
 	loop {
-		for brightness in 0..=255 {
-			for channel in 1..=36 {
-				led.set_pwm(channel, brightness);
+		let msg = recv.receive().await;
+		match msg {
+			Message::AllOff => {
+				for channel in 1..=36 {
+					light_ch.send((channel, 0)).await;
+				}
 			}
-			led.present_pwm().await;
-			Timer::after(Duration::from_millis(1)).await;
+			Message::SelfTest => {
+				for _ in 0..3 {
+					for channel in 1..=36 {
+						light_ch.send((channel, 255)).await;
+					}
+					Timer::after(Duration::from_millis(500)).await;
+					for channel in 1..=36 {
+						light_ch.send((channel, 0)).await;
+					}
+					Timer::after(Duration::from_millis(500)).await;
+				}
+			}
+			Message::SetIdle(is_idle) => {
+				light_ch
+					.send((SHIFT_CHANNEL, if is_idle { IDLE_SHIFT } else { 0 }))
+					.await;
+			}
+			Message::SetJobIndicator(rgb) => {
+				job_indicator_led.send(rgb).await;
+			}
+			Message::SetRemoteIndicator(rgb) => {
+				remote_link_led.send(rgb).await;
+			}
+			Message::SetSystemIndicator(rgb) => {
+				system_indicator_led.send(rgb).await;
+			}
+			Message::SetBacklight(rgb) => {
+				backlight_rgb_led.send(rgb.without_white_component()).await;
+				backlight_white_led.send(rgb.white_component()).await;
+			}
+			Message::SetSdCableIndicator(on) => {
+				sd_cable_sense_led.send(on).await;
+			}
+			Message::SetSdCardIndicator(on) => {
+				sd_card_activity_led.send(on).await;
+			}
+			Message::SetSdSenseIndicator(on) => {
+				sd_card_sense_led.send(on).await;
+			}
 		}
-		for brightness in (0..=255).rev() {
-			for channel in 1..=36 {
-				led.set_pwm(channel, brightness);
+	}
+}
+
+#[embassy_executor::task]
+async fn presenter_task(light_ch: Receiver<(usize, u8), 16>, mut led: IS31FL3236A) -> ! {
+	trait SetChannel {
+		fn update_channel(&mut self, ch: usize, brightness: u8);
+	}
+
+	impl SetChannel for IS31FL3236A {
+		fn update_channel(&mut self, ch: usize, brightness: u8) {
+			if ch == SHIFT_CHANNEL {
+				self.set_shift(brightness);
+			} else if brightness > 0 {
+				self.set_pwm(ch, brightness);
+				self.set_ch_state(
+					ch,
+					ChannelState::new().with_max_current(MAX_CURRENT).with_on(),
+				);
+			} else {
+				self.set_pwm(ch, 0);
+				self.set_ch_state(
+					ch,
+					ChannelState::new().with_max_current(MAX_CURRENT).with_off(),
+				);
 			}
-			led.present_pwm().await;
-			Timer::after(Duration::from_millis(1)).await;
+		}
+	}
+
+	loop {
+		let (ch, brightness) = light_ch.receive().await;
+
+		led.update_channel(ch, brightness);
+
+		// Update all others, if there are more pending events, instead
+		// of performing an I2C transaction for each small update.
+		while let Ok((ch, brightness)) = light_ch.try_receive() {
+			led.update_channel(ch, brightness);
+		}
+
+		led.present_pwm().await;
+	}
+}
+
+#[embassy_executor::task]
+async fn multi_rgb_light_task(
+	rx: RgbReceiver,
+	tx: LightSender,
+	ch_r: &'static [usize],
+	ch_g: &'static [usize],
+	ch_b: &'static [usize],
+) -> ! {
+	loop {
+		let color = rx.receive().await;
+
+		let (r, g, b) = color.into();
+		for &ch in ch_r {
+			tx.send((ch, r)).await;
+		}
+		for &ch in ch_g {
+			tx.send((ch, g)).await;
+		}
+		for &ch in ch_b {
+			tx.send((ch, b)).await;
+		}
+	}
+}
+
+#[embassy_executor::task(pool_size = 3)]
+async fn rgb_light_task(
+	rx: RgbReceiver,
+	tx: LightSender,
+	ch_r: usize,
+	ch_g: usize,
+	ch_b: usize,
+) -> ! {
+	loop {
+		let color = rx.receive().await;
+		let (r, g, b) = color.into();
+		tx.send((ch_r, r)).await;
+		tx.send((ch_g, g)).await;
+		tx.send((ch_b, b)).await;
+	}
+}
+
+#[embassy_executor::task]
+async fn multi_grey_light_task(rx: GreyReceiver, tx: LightSender, ch_grey: &'static [usize]) -> ! {
+	loop {
+		let color = rx.receive().await;
+		for &ch in ch_grey {
+			tx.send((ch, color)).await;
+		}
+	}
+}
+
+#[embassy_executor::task(pool_size = 3)]
+async fn on_off_light_task(rx: OnOffReceiver, tx: Sender<(usize, u8)>, ch: usize) -> ! {
+	let mut state = false;
+	loop {
+		let new_state = rx.receive().await;
+		if new_state != state {
+			state = new_state;
+			let brightness = if state { 255 } else { 0 };
+			tx.send((ch, brightness)).await;
 		}
 	}
 }
 
 struct IS31FL3236A {
-	i2c:       &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>,
-	pwm_state: [u8; 38], // 36 + 1 for cursor + 1 for update
-	ch_state:  [u8; 37], // 36 + 1 for cursor
+	i2c:          &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>,
+	pwm_state:    [u8; 38], // 36 + 1 for cursor + 1 for update
+	ch_state:     [u8; 37], // 36 + 1 for cursor
+	global_shift: u8,
 }
 
 #[expect(dead_code)]
@@ -67,6 +343,7 @@ impl IS31FL3236A {
 			i2c,
 			pwm_state: [0; 38],
 			ch_state: [0; 37],
+			global_shift: 0,
 		};
 
 		this.pwm_state[0] = 0x01;
@@ -79,6 +356,10 @@ impl IS31FL3236A {
 		if let Err(err) = i2c.blocking_write(ADDR, data) {
 			defmt::error!("failed to write to LED controller chip: {:?}", err);
 		}
+	}
+
+	fn set_shift(&mut self, shift: u8) {
+		self.global_shift = shift;
 	}
 
 	fn set_pwm(&mut self, channel: usize, value: u8) {
@@ -102,7 +383,20 @@ impl IS31FL3236A {
 	}
 
 	async fn present_pwm(&self) {
-		self.write(&self.pwm_state).await;
+		if self.global_shift > 0 {
+			let mut shifted_pwm = [0u8; 38];
+			shifted_pwm.copy_from_slice(&self.pwm_state);
+
+			for pwm in shifted_pwm.iter_mut().skip(1) {
+				if *pwm > 0 {
+					*pwm = (*pwm >> self.global_shift).max(IDLE_MIN);
+				}
+			}
+
+			self.write(&shifted_pwm).await;
+		} else {
+			self.write(&self.pwm_state).await;
+		}
 	}
 
 	async fn present_state(&self) {
@@ -127,7 +421,6 @@ impl IS31FL3236A {
 #[repr(transparent)]
 pub struct ChannelState(u8);
 
-#[expect(dead_code)]
 impl ChannelState {
 	const fn new() -> Self {
 		Self(0)

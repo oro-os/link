@@ -10,7 +10,7 @@ pub mod uart;
 pub mod usart;
 pub mod usb;
 
-use embassy_sync::blocking_mutex::raw::NoopRawMutex;
+use crate::channel::{Channel, ChannelExt};
 
 macro_rules! def_message {
 	($(#[$attr:meta])* $vis:vis enum $name:ident { $($v_name:ident($v_ty:ty)),* $(,)? }) => {
@@ -33,14 +33,9 @@ def_message! {
 	#[derive(defmt::Format)]
 	pub enum Message {
 		BlinkenLight(blinken_light::Message),
+		LedController(led_controller::Message),
 	}
 }
-
-pub type Channel<T, const N: usize = 16> = embassy_sync::channel::Channel<NoopRawMutex, T, N>;
-pub type Sender<T, const N: usize = 16> =
-	embassy_sync::channel::Sender<'static, NoopRawMutex, T, N>;
-pub type Receiver<T, const N: usize = 16> =
-	embassy_sync::channel::Receiver<'static, NoopRawMutex, T, N>;
 
 pub type MasterBus = Channel<Message, 64>;
 pub type Bus = <MasterBus as ChannelExt>::Sender;
@@ -55,24 +50,16 @@ impl Dispatch for Bus {
 	}
 }
 
-pub trait ChannelExt {
-	type Receiver;
-	type Sender;
-}
-
-impl<T: 'static, const N: usize> ChannelExt for Channel<T, N> {
-	type Receiver = Receiver<T, N>;
-	type Sender = Sender<T, N>;
-}
-
 pub struct MasterBusChannels {
-	master:        MasterBus,
-	blinken_light: blinken_light::Channel,
+	master:         MasterBus,
+	blinken_light:  blinken_light::Channel,
+	led_controller: led_controller::Channel,
 }
 
 pub struct ServiceChannels {
-	pub master_bus:       &'static MasterBusChannels,
-	pub blinken_light_rx: <blinken_light::Channel as ChannelExt>::Receiver,
+	pub master_bus:        &'static MasterBusChannels,
+	pub blinken_light_rx:  <blinken_light::Channel as ChannelExt>::Receiver,
+	pub led_controller_rx: <led_controller::Channel as ChannelExt>::Receiver,
 }
 
 /// # Panics
@@ -80,13 +67,15 @@ pub struct ServiceChannels {
 pub fn services_channels() -> ServiceChannels {
 	static MASTER_BUS: static_cell::StaticCell<MasterBusChannels> = static_cell::StaticCell::new();
 	let master_bus = MASTER_BUS.init(MasterBusChannels {
-		master:        MasterBus::new(),
-		blinken_light: blinken_light::Channel::new(),
+		master:         MasterBus::new(),
+		blinken_light:  blinken_light::Channel::new(),
+		led_controller: led_controller::Channel::new(),
 	});
 
 	ServiceChannels {
 		master_bus,
 		blinken_light_rx: master_bus.blinken_light.receiver(),
+		led_controller_rx: master_bus.led_controller.receiver(),
 	}
 }
 
@@ -101,6 +90,9 @@ impl MasterBusChannels {
 			match msg {
 				Message::BlinkenLight(m) => {
 					self.blinken_light.send(m).await;
+				}
+				Message::LedController(m) => {
+					self.led_controller.send(m).await;
 				}
 			}
 		}

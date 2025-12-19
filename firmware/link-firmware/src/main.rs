@@ -2,8 +2,10 @@
 #![no_main]
 #![feature(never_type)]
 
-mod font;
-mod service;
+pub(crate) mod channel;
+pub(crate) mod color;
+pub(crate) mod font;
+pub(crate) mod service;
 pub(crate) mod unique_id;
 
 use defmt::info;
@@ -236,7 +238,12 @@ pub async fn main(spawner: Spawner) -> ! {
 		.unwrap();
 	defmt::info!("service: led controller...");
 	spawner
-		.spawn(service::led_controller::led_controller(i2c, ind_en))
+		.spawn(service::led_controller::led_controller(
+			spawner,
+			service_channels.led_controller_rx,
+			i2c,
+			ind_en,
+		))
 		.unwrap();
 	defmt::info!("service: power monitor...");
 	spawner
