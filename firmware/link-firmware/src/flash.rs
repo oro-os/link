@@ -10,6 +10,8 @@ use embassy_stm32::{
 use embedded_storage::nor_flash::{NorFlash, ReadNorFlash};
 use static_cell::StaticCell;
 
+use crate::crc32::Crc32Ext;
+
 unsafe extern "C" {
 	static _persistent_flash_start: u8;
 	static _persistent_flash_end: u8;
@@ -249,6 +251,9 @@ fn get_pflash_bank_and_offset(
 		4,
 		"unexpected pointer size"
 	);
+
+	defmt::trace!("fetching pflash bank and offset");
+
 	// SAFETY: We just checked the pointer size and know that these linker symbols exist.
 	let (pflash_base, pflash_end) = unsafe {
 		(
@@ -257,8 +262,12 @@ fn get_pflash_bank_and_offset(
 		)
 	};
 
+	defmt::trace!("pflash base: {:08X}, end: {:08X}", pflash_base, pflash_end);
+
 	macro_rules! check_region {
 		($region:expr, $name:expr) => {
+			defmt::trace!("checking region {}", $name);
+
 			if $region.0.base <= pflash_base && $region.0.base + $region.0.size >= pflash_end {
 				let base = $region.0.base;
 				let offset = pflash_base - base;
@@ -287,15 +296,7 @@ impl PflashData {
 		crc_calc.update(&self.cookie.to_le_bytes());
 		crc_calc.update(&self.version.to_le_bytes());
 		match self.version {
-			0 => {
-				let data_bytes = unsafe {
-					core::slice::from_raw_parts(
-						&*self.data.v0 as *const PflashV0 as *const u8,
-						core::mem::size_of::<PflashV0>(),
-					)
-				};
-				crc_calc.update(data_bytes);
-			}
+			0 => unsafe { self.data.v0.crc32_into(&mut crc_calc) },
 			_ => return Err(Error::UnsupportedVersion(self.version)),
 		}
 
@@ -398,11 +399,14 @@ pub unsafe fn write_pflash(
 	defmt::debug!("writing pflash: {:?}", pflash);
 
 	let pflash = pflash.into();
+	defmt::trace!("converted flash data: {:?}", pflash);
 
 	// SAFETY: This function is blocking.
 	let flash = unsafe { get_flash() };
+	defmt::trace!("got flash handle");
 
 	let (region, offset) = get_pflash_bank_and_offset(flash);
+	defmt::trace!("got pflash region and offset: offset={:08X}", offset);
 
 	// Prepare raw data.
 	let mut data = PflashData {
@@ -419,11 +423,13 @@ pub unsafe fn write_pflash(
 			}
 		},
 	};
+	defmt::trace!("prepared raw pflash data");
 
 	// Calculate CRC.
 	// We can unwrap here since we just constructed the data
 	// and can guarantee the version is valid.
 	data.crc = data.calculate_crc().unwrap();
+	defmt::trace!("calculated pflash CRC: {:08X}", data.crc);
 
 	// Erase
 	let flash_size = pflash_size();

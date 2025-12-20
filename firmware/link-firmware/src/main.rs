@@ -4,8 +4,10 @@
 
 pub(crate) mod channel;
 pub(crate) mod color;
+pub(crate) mod crc32;
 pub(crate) mod flash;
 pub(crate) mod font;
+pub(crate) mod nvram;
 pub(crate) mod rand;
 pub(crate) mod service;
 pub(crate) mod unique_id;
@@ -76,9 +78,58 @@ pub async fn main(spawner: Spawner) -> ! {
 	defmt::info!("initializing oro link...");
 	Timer::after(Duration::from_millis(100)).await;
 
-	// Check for reset sequence
-	defmt::info!("initializing flash");
+	// MUST BE FIRST: initialize RNG
+	// Nvram and a few other things require this. Must be before anything else.
+	let rng_gen = rng::Rng::new(p.RNG, Irqs);
+	self::rand::init_rng(rng_gen);
+
+	// MUST BE SECOND: Initialize pflash subsystem
+	defmt::debug!("initializing flash");
 	flash::init_pflash(p.FLASH);
+
+	// Check for reset sequence
+	defmt::debug!("initializing nvram");
+	let nv_ram = nvram::init();
+	defmt::debug!("nvram contents: {:?}", nv_ram);
+
+	if nv_ram.reboot.in_progress.read() {
+		nv_ram
+			.reboot
+			.fast_count
+			.write(nv_ram.reboot.fast_count.read() + 1);
+
+		defmt::warn!(
+			"detected reboot in progress from nvram; fast_reboot_count={}",
+			nv_ram.reboot.fast_count.read()
+		);
+	}
+
+	defmt::debug!(
+		"current fast reboot count: {}",
+		nv_ram.reboot.fast_count.read()
+	);
+
+	if nv_ram.reboot.fast_count.read() >= 10 {
+		nv_ram.reset();
+
+		defmt::warn!(
+			"detected {} fast reboots; resetting Oro Link",
+			nv_ram.reboot.fast_count
+		);
+
+		if let Err(err) = unsafe { flash::write_pflash(flash::Pflash::default()) } {
+			defmt::error!(
+				"failed to reset pflash during fast reboot recovery; system is NOT reset: {:?}",
+				err
+			);
+		}
+
+		defmt::warn!("Oro Link reset complete; rebooting system");
+
+		// SAFETY: We're resetting the system.
+		unsafe { self::reset() }
+	}
+
 	let pflash = match flash::read_pflash() {
 		Ok(pflash) => pflash,
 		Err(e) => {
@@ -95,6 +146,9 @@ pub async fn main(spawner: Spawner) -> ! {
 		defmt::info!("system is initialized");
 	} else {
 		defmt::warn!("system is uninitialized; performing first-time setup");
+
+		nv_ram.reset();
+
 		pflash.initialized = true;
 		// SAFETY: We're initializing it.
 		if let Err(err) = unsafe { flash::write_pflash(pflash) } {
@@ -103,12 +157,17 @@ pub async fn main(spawner: Spawner) -> ! {
 			panic!("failed to initialize system");
 		}
 		defmt::info!("first-time setup complete");
+
+		Timer::after(Duration::from_millis(100)).await;
+
+		// SAFETY: We're resetting the system.
+		unsafe { self::reset() }
 	}
 
-	// Begin initialization
-	let rng_gen = rng::Rng::new(p.RNG, Irqs);
-	self::rand::init_rng(rng_gen);
+	// This gets cleared on a successful boot later
+	nv_ram.reboot.in_progress.write(true);
 
+	// Begin initialization
 	let debug_led1 = OutputOpenDrain::new(p.PD2, Level::High, Speed::Low);
 	let debug_led2 = OutputOpenDrain::new(p.PB7, Level::High, Speed::Low);
 	let debug_led3 = OutputOpenDrain::new(p.PC8, Level::High, Speed::Low);
@@ -293,7 +352,7 @@ pub async fn main(spawner: Spawner) -> ! {
 			exteth_cs,
 			exteth_rst,
 			exteth_int,
-			self::rand::next_u64().await,
+			self::rand::next_u64(),
 		))
 		.unwrap();
 	defmt::info!("service: system ethernet...");
@@ -302,7 +361,7 @@ pub async fn main(spawner: Spawner) -> ! {
 			syseth,
 			syseth_rst,
 			syseth_int,
-			self::rand::next_u64().await,
+			self::rand::next_u64(),
 		))
 		.unwrap();
 	defmt::info!("service: oled...");
@@ -335,7 +394,11 @@ pub async fn main(spawner: Spawner) -> ! {
 	spawner.spawn(service::dev_usart::run(usart)).unwrap();
 	defmt::info!("service: ci/cd...");
 	spawner
-		.spawn(service::cicd::run(service_channels.master_bus.sender()))
+		.spawn(service::svc_cicd::run(service_channels.master_bus.sender()))
+		.unwrap();
+	defmt::info!("service: successful boot...");
+	spawner
+		.spawn(service::svc_successful_boot::run(&mut nv_ram.reboot))
 		.unwrap();
 
 	defmt::info!("link is now ready; beginning Oro Link CI/CD main routine - happy hacking!");

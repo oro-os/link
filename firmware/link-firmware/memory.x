@@ -8,8 +8,10 @@ MEMORY
 	Erasure on NOR memory is only possible on entire segments at a time,
 	so the persistent flash settings need to be aligned to the last segment.
   */
+
   CCMRAM   (xrw)    : ORIGIN = 0x10000000,    LENGTH = 64K
   RAM      (xrw)    : ORIGIN = 0x20000000,    LENGTH = 320K
+  BKPSRAM  (xrw)    : ORIGIN = 0x40024000,    LENGTH = 4K
   FLASH    (rx)     : ORIGIN = 0x08000000,    LENGTH = (64K + 64K + (128K * 6))
 }
 
@@ -21,3 +23,11 @@ _persistent_flash_end = ORIGIN(FLASH) + 1024K;
 ASSERT((_persistent_flash_start % 0x20000) == 0, "Persistent flash start is not segment-aligned");
 /* ... and that it is 128K in size */
 ASSERT((_persistent_flash_end - _persistent_flash_start) % 0x20000 == 0, "Persistent flash size is not a multiple of segment size");
+
+SECTIONS
+{
+	.bkpsram (NOLOAD) :
+	{
+		KEEP(*(.bkpsram))
+	} > BKPSRAM
+}

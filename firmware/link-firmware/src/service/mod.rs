@@ -1,4 +1,3 @@
-pub mod cicd;
 pub mod dev_blinken_light;
 pub mod dev_exteth;
 pub mod dev_leds;
@@ -9,6 +8,8 @@ pub mod dev_syseth;
 pub mod dev_uart;
 pub mod dev_usart;
 pub mod dev_usb;
+pub mod svc_cicd;
+pub mod svc_successful_boot;
 
 use crate::channel::{Channel, ChannelExt};
 
