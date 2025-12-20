@@ -34,6 +34,7 @@ def_message! {
 	pub enum Message {
 		BlinkenLight(blinken_light::Message),
 		LedController(led_controller::Message),
+		Oled(oled::Message),
 	}
 }
 
@@ -54,12 +55,14 @@ pub struct MasterBusChannels {
 	master:         MasterBus,
 	blinken_light:  blinken_light::Channel,
 	led_controller: led_controller::Channel,
+	oled:           oled::Channel,
 }
 
 pub struct ServiceChannels {
 	pub master_bus:        &'static MasterBusChannels,
 	pub blinken_light_rx:  <blinken_light::Channel as ChannelExt>::Receiver,
 	pub led_controller_rx: <led_controller::Channel as ChannelExt>::Receiver,
+	pub oled_rx:           <oled::Channel as ChannelExt>::Receiver,
 }
 
 /// # Panics
@@ -70,12 +73,14 @@ pub fn services_channels() -> ServiceChannels {
 		master:         MasterBus::new(),
 		blinken_light:  blinken_light::Channel::new(),
 		led_controller: led_controller::Channel::new(),
+		oled:           oled::Channel::new(),
 	});
 
 	ServiceChannels {
 		master_bus,
 		blinken_light_rx: master_bus.blinken_light.receiver(),
 		led_controller_rx: master_bus.led_controller.receiver(),
+		oled_rx: master_bus.oled.receiver(),
 	}
 }
 
@@ -93,6 +98,9 @@ impl MasterBusChannels {
 				}
 				Message::LedController(m) => {
 					self.led_controller.send(m).await;
+				}
+				Message::Oled(m) => {
+					self.oled.send(m).await;
 				}
 			}
 		}

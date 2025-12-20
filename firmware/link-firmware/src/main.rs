@@ -268,7 +268,13 @@ pub async fn main(spawner: Spawner) -> ! {
 	defmt::info!("service: oled...");
 	spawner
 		.spawn(service::oled::oled_service(
-			oled, oled_cs, oled_dc, oled_rst, oled_en,
+			spawner,
+			service_channels.oled_rx,
+			oled,
+			oled_cs,
+			oled_dc,
+			oled_rst,
+			oled_en,
 		))
 		.unwrap();
 	defmt::info!("service: sdcard...");

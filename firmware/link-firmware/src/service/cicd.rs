@@ -1,10 +1,11 @@
 use embassy_time::{Duration, Timer};
 
-use super::{Bus, Dispatch, blinken_light};
-use crate::service::led_controller::{self};
+use super::{Bus, Dispatch, blinken_light, led_controller, oled};
 
 #[embassy_executor::task]
 pub async fn cicd_service(mut bus: Bus) -> ! {
+	bus.dispatch(oled::Message::SetState(oled::State::On)).await;
+
 	bus.dispatch(blinken_light::Message::On).await;
 	bus.dispatch(led_controller::Message::SelfTest).await;
 	Timer::after(Duration::from_secs(4)).await;
