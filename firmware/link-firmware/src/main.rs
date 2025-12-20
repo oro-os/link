@@ -340,7 +340,12 @@ pub async fn main(spawner: Spawner) -> ! {
 		))
 		.unwrap();
 	defmt::info!("service: power monitor...");
-	spawner.spawn(service::dev_power_monitor::run(i2c)).unwrap();
+	spawner
+		.spawn(service::dev_power_monitor::run(
+			service_channels.master_bus.sender(),
+			i2c,
+		))
+		.unwrap();
 	defmt::info!("service: usb...");
 	spawner
 		.spawn(service::dev_usb::run(ulpi, ulpi_rst, ulpi_oc))

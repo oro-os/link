@@ -6,10 +6,20 @@ use embassy_stm32::{
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 
+use super::Dispatch;
+
 const ADDR: u8 = 0x40;
 
+#[derive(defmt::Format)]
+pub enum Message {
+	PowerReading(u16),
+}
+
 #[embassy_executor::task]
-pub async fn run(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>) -> ! {
+pub async fn run(
+	mut bus: super::Bus,
+	i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>,
+) -> ! {
 	macro_rules! set {
 		($reg:expr,[$high:expr, $low:expr]) => {{
 			let mut i2c = i2c.lock().await;
@@ -69,9 +79,10 @@ pub async fn run(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master
 	info!("calibrated power monitor chip");
 
 	loop {
-		Timer::after(Duration::from_millis(1000)).await;
+		Timer::after(Duration::from_millis(250)).await;
 		let current = get!(0x04);
 		trace!("powermon: current: {}mA", current);
+		bus.dispatch(Message::PowerReading(current)).await;
 	}
 }
 

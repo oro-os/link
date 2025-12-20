@@ -38,6 +38,7 @@ def_message! {
 		Oled(dev_oled::Message),
 		Usart(dev_usart::Message),
 		Uart(dev_uart::Message),
+		PowerMonitor(dev_power_monitor::Message),
 	}
 }
 
@@ -124,6 +125,9 @@ impl MasterBusChannels {
 				}
 				Message::Uart(o) => {
 					defmt::debug!("UART message: {:?}", o);
+				}
+				Message::PowerMonitor(dev_power_monitor::Message::PowerReading(_current)) => {
+					// TODO
 				}
 			}
 		}
