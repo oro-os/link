@@ -5,6 +5,7 @@
 pub(crate) mod channel;
 pub(crate) mod color;
 pub(crate) mod font;
+pub(crate) mod rand;
 pub(crate) mod service;
 pub(crate) mod unique_id;
 
@@ -18,7 +19,7 @@ use embassy_stm32::{
 	gpio::{Input, Level, Output, OutputOpenDrain, Pull, Speed},
 	i2c,
 	mode::{Async, Blocking},
-	peripherals, rcc, spi,
+	peripherals, rcc, rng, spi,
 	time::Hertz,
 	usart, usb,
 };
@@ -31,6 +32,7 @@ bind_interrupts!(struct Irqs {
 	OTG_HS => usb::InterruptHandler<peripherals::USB_OTG_HS>;
 	USART2 => usart::InterruptHandler<peripherals::USART2>;
 	UART7 => usart::InterruptHandler<peripherals::UART7>;
+	HASH_RNG => rng::InterruptHandler<peripherals::RNG>;
 });
 
 #[embassy_executor::main]
@@ -73,6 +75,9 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	info!("initializing oro link...");
 	Timer::after(Duration::from_millis(100)).await;
+
+	let rng_gen = rng::Rng::new(p.RNG, Irqs);
+	self::rand::init_rng(rng_gen);
 
 	let debug_led1 = OutputOpenDrain::new(p.PD2, Level::High, Speed::Low);
 	let debug_led2 = OutputOpenDrain::new(p.PB7, Level::High, Speed::Low);
@@ -254,13 +259,20 @@ pub async fn main(spawner: Spawner) -> ! {
 	defmt::info!("service: external ethernet...");
 	spawner
 		.spawn(service::dev_exteth::run(
-			exteth, exteth_cs, exteth_rst, exteth_int, 0, // TODO
+			exteth,
+			exteth_cs,
+			exteth_rst,
+			exteth_int,
+			self::rand::next_u64().await,
 		))
 		.unwrap();
 	defmt::info!("service: system ethernet...");
 	spawner
 		.spawn(service::dev_syseth::run(
-			syseth, syseth_rst, syseth_int, 0, // TODO
+			syseth,
+			syseth_rst,
+			syseth_int,
+			self::rand::next_u64().await,
 		))
 		.unwrap();
 	defmt::info!("service: oled...");
