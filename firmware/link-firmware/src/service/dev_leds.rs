@@ -63,7 +63,7 @@ pub enum Message {
 }
 
 #[embassy_executor::task]
-pub async fn led_controller(
+pub async fn run(
 	spawner: Spawner,
 	recv: <Channel as ChannelExt>::Receiver,
 	i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>,

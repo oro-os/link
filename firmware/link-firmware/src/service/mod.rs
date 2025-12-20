@@ -1,14 +1,14 @@
-pub mod blinken_light;
 pub mod cicd;
-pub mod exteth;
-pub mod led_controller;
-pub mod oled;
-pub mod power_monitor;
-pub mod sdcard;
-pub mod syseth;
-pub mod uart;
-pub mod usart;
-pub mod usb;
+pub mod dev_blinken_light;
+pub mod dev_exteth;
+pub mod dev_leds;
+pub mod dev_oled;
+pub mod dev_power_monitor;
+pub mod dev_sdcard;
+pub mod dev_syseth;
+pub mod dev_uart;
+pub mod dev_usart;
+pub mod dev_usb;
 
 use crate::channel::{Channel, ChannelExt};
 
@@ -32,9 +32,9 @@ macro_rules! def_message {
 def_message! {
 	#[derive(defmt::Format)]
 	pub enum Message {
-		BlinkenLight(blinken_light::Message),
-		LedController(led_controller::Message),
-		Oled(oled::Message),
+		BlinkenLight(dev_blinken_light::Message),
+		LedController(dev_leds::Message),
+		Oled(dev_oled::Message),
 	}
 }
 
@@ -53,16 +53,16 @@ impl Dispatch for Bus {
 
 pub struct MasterBusChannels {
 	master:         MasterBus,
-	blinken_light:  blinken_light::Channel,
-	led_controller: led_controller::Channel,
-	oled:           oled::Channel,
+	blinken_light:  dev_blinken_light::Channel,
+	led_controller: dev_leds::Channel,
+	oled:           dev_oled::Channel,
 }
 
 pub struct ServiceChannels {
 	pub master_bus:        &'static MasterBusChannels,
-	pub blinken_light_rx:  <blinken_light::Channel as ChannelExt>::Receiver,
-	pub led_controller_rx: <led_controller::Channel as ChannelExt>::Receiver,
-	pub oled_rx:           <oled::Channel as ChannelExt>::Receiver,
+	pub blinken_light_rx:  <dev_blinken_light::Channel as ChannelExt>::Receiver,
+	pub led_controller_rx: <dev_leds::Channel as ChannelExt>::Receiver,
+	pub oled_rx:           <dev_oled::Channel as ChannelExt>::Receiver,
 }
 
 /// # Panics
@@ -71,9 +71,9 @@ pub fn services_channels() -> ServiceChannels {
 	static MASTER_BUS: static_cell::StaticCell<MasterBusChannels> = static_cell::StaticCell::new();
 	let master_bus = MASTER_BUS.init(MasterBusChannels {
 		master:         MasterBus::new(),
-		blinken_light:  blinken_light::Channel::new(),
-		led_controller: led_controller::Channel::new(),
-		oled:           oled::Channel::new(),
+		blinken_light:  dev_blinken_light::Channel::new(),
+		led_controller: dev_leds::Channel::new(),
+		oled:           dev_oled::Channel::new(),
 	});
 
 	ServiceChannels {

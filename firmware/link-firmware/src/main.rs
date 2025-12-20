@@ -229,7 +229,7 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	defmt::info!("service: blinken lights...");
 	spawner
-		.spawn(service::blinken_light::blinken_light(
+		.spawn(service::dev_blinken_light::run(
 			service_channels.blinken_light_rx,
 			debug_led1,
 			debug_led2,
@@ -238,7 +238,7 @@ pub async fn main(spawner: Spawner) -> ! {
 		.unwrap();
 	defmt::info!("service: led controller...");
 	spawner
-		.spawn(service::led_controller::led_controller(
+		.spawn(service::dev_leds::run(
 			spawner,
 			service_channels.led_controller_rx,
 			i2c,
@@ -246,28 +246,26 @@ pub async fn main(spawner: Spawner) -> ! {
 		))
 		.unwrap();
 	defmt::info!("service: power monitor...");
-	spawner
-		.spawn(service::power_monitor::power_monitor(i2c))
-		.unwrap();
+	spawner.spawn(service::dev_power_monitor::run(i2c)).unwrap();
 	defmt::info!("service: usb...");
 	spawner
-		.spawn(service::usb::usb_service(ulpi, ulpi_rst, ulpi_oc))
+		.spawn(service::dev_usb::run(ulpi, ulpi_rst, ulpi_oc))
 		.unwrap();
 	defmt::info!("service: external ethernet...");
 	spawner
-		.spawn(service::exteth::exteth_service(
+		.spawn(service::dev_exteth::run(
 			exteth, exteth_cs, exteth_rst, exteth_int, 0, // TODO
 		))
 		.unwrap();
 	defmt::info!("service: system ethernet...");
 	spawner
-		.spawn(service::syseth::syseth_service(
+		.spawn(service::dev_syseth::run(
 			syseth, syseth_rst, syseth_int, 0, // TODO
 		))
 		.unwrap();
 	defmt::info!("service: oled...");
 	spawner
-		.spawn(service::oled::oled_service(
+		.spawn(service::dev_oled::run(
 			spawner,
 			service_channels.oled_rx,
 			oled,
@@ -279,7 +277,7 @@ pub async fn main(spawner: Spawner) -> ! {
 		.unwrap();
 	defmt::info!("service: sdcard...");
 	spawner
-		.spawn(service::sdcard::sdcard_service(
+		.spawn(service::dev_sdcard::run(
 			sd_spi,
 			sd_cs,
 			sd_en,
@@ -290,14 +288,12 @@ pub async fn main(spawner: Spawner) -> ! {
 		))
 		.unwrap();
 	defmt::info!("service: uart...");
-	spawner.spawn(service::uart::uart_service(uart)).unwrap();
+	spawner.spawn(service::dev_uart::run(uart)).unwrap();
 	defmt::info!("service: usart...");
-	spawner.spawn(service::usart::usart_service(usart)).unwrap();
+	spawner.spawn(service::dev_usart::run(usart)).unwrap();
 	defmt::info!("service: ci/cd...");
 	spawner
-		.spawn(service::cicd::cicd_service(
-			service_channels.master_bus.sender(),
-		))
+		.spawn(service::cicd::run(service_channels.master_bus.sender()))
 		.unwrap();
 
 	defmt::info!("link is now ready; beginning Oro Link CI/CD main routine - happy hacking!");

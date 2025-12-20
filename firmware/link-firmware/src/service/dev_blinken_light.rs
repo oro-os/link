@@ -39,7 +39,7 @@ async fn blink_cycle<T>(
 }
 
 #[embassy_executor::task]
-pub async fn blinken_light(
+pub async fn run(
 	mut recv: <Channel as ChannelExt>::Receiver,
 	debug_led1: OutputOpenDrain<'static>,
 	debug_led2: OutputOpenDrain<'static>,

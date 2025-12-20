@@ -1,18 +1,21 @@
+use embassy_embedded_hal::shared_bus::asynch::spi::SpiDevice;
 use embassy_futures::select::select3;
-use embassy_stm32::{exti::ExtiInput, gpio::OutputOpenDrain, mode::Async, spi::Spi};
-use embassy_time::{Delay, Duration, Timer};
-use embedded_hal_bus::spi::ExclusiveDevice;
+use embassy_stm32::{
+	exti::ExtiInput,
+	gpio::{Output, OutputOpenDrain},
+	mode::Async,
+	spi::Spi,
+};
+use embassy_sync::blocking_mutex::raw::NoopRawMutex;
+use embassy_time::{Duration, Timer};
 
 #[embassy_executor::task]
-pub async fn exteth_service(
-	driver: Spi<'static, Async>,
-	cs: OutputOpenDrain<'static>,
-	mut rst: OutputOpenDrain<'static>,
+pub async fn run(
+	driver: SpiDevice<'static, NoopRawMutex, Spi<'static, Async>, OutputOpenDrain<'static>>,
+	mut rst: Output<'static>,
 	exti: ExtiInput<'static>,
 	seed: u64,
 ) {
-	let extdev = ExclusiveDevice::new(driver, cs, Delay).unwrap();
-
 	Timer::after_millis(100).await;
 	rst.set_low();
 	Timer::after_millis(100).await;
@@ -26,16 +29,15 @@ pub async fn exteth_service(
 	let (driver, ext_runner): (
 		_,
 		embassy_net_wiznet::Runner<'static, embassy_net_wiznet::chip::W5500, _, _, _>,
-	) = embassy_net_wiznet::new(get_exteth_mac(), ext_state, extdev, exti, rst)
+	) = embassy_net_wiznet::new(get_exteth_mac(), ext_state, driver, exti, rst)
 		.await
 		.unwrap();
-
-	let config = embassy_net::Config::dhcpv4(Default::default());
 
 	static STACK: static_cell::StaticCell<embassy_net::StackResources<16>> =
 		static_cell::StaticCell::new();
 	let stack_resources = STACK.init(embassy_net::StackResources::<16>::new());
 
+	let config = embassy_net::Config::dhcpv4(Default::default());
 	let (_stack, mut runner) = embassy_net::new(driver, config, stack_resources, seed);
 
 	select3(
@@ -52,19 +54,17 @@ pub async fn exteth_service(
 		},
 	)
 	.await;
-	panic!("exteth service ended unexpectedly");
+	panic!("syseth service ended unexpectedly");
 }
 
 pub fn get_exteth_mac() -> [u8; 6] {
-	let hash = crate::unique_id::unique_id_sha256();
-
 	let mut macaddr = [0u8; 6];
 	macaddr[0] = b'.';
 	macaddr[1] = b'o';
 	macaddr[2] = b'O';
-	macaddr[3] = hash[29];
-	macaddr[4] = hash[30];
-	macaddr[5] = hash[31];
+	macaddr[3] = 0;
+	macaddr[4] = 0;
+	macaddr[5] = 0;
 
 	macaddr
 }

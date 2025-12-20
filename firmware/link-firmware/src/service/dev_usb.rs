@@ -14,7 +14,7 @@ use embassy_usb::{
 use usbd_hid::descriptor::{KeyboardReport, SerializedDescriptor};
 
 #[embassy_executor::task]
-pub async fn usb_service(
+pub async fn run(
 	driver: Driver<'static, peripherals::USB_OTG_HS>,
 	mut ulpi_rst: Output<'static>,
 	_ulpi_oc: ExtiInput<'static>,

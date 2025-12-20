@@ -9,7 +9,7 @@ use embassy_time::{Duration, Timer};
 const ADDR: u8 = 0x40;
 
 #[embassy_executor::task]
-pub async fn power_monitor(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>) -> ! {
+pub async fn run(i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>) -> ! {
 	macro_rules! set {
 		($reg:expr,[$high:expr, $low:expr]) => {{
 			let mut i2c = i2c.lock().await;

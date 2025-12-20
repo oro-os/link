@@ -8,7 +8,7 @@ use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 
 #[embassy_executor::task]
-pub async fn sdcard_service(
+pub async fn run(
 	sd: &'static Mutex<NoopRawMutex, Spi<'static, Async>>,
 	mut sd_cs: OutputOpenDrain<'static>,
 	mut sd_en: OutputOpenDrain<'static>,

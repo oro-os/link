@@ -127,7 +127,7 @@ enum SceneInstance {
 }
 
 #[embassy_executor::task]
-pub async fn oled_service(
+pub async fn run(
 	spawner: Spawner,
 	recv: <Channel as ChannelExt>::Receiver,
 	spi: Spi<'static, Async>,
