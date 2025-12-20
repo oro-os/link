@@ -35,7 +35,7 @@ embassy-stm32 = { version = "0.4.0", features = [ "stm32f479vg", "defmt", "unsta
 embassy-net = { version = "0.7.1", features = [ "defmt", "tcp", "udp", "dns", "dhcpv4", "proto-ipv4", "proto-ipv6", "medium-ethernet" ] }
 embassy-usb = { version = "0.5.1", features = [ "defmt", "usbd-hid", "max-interface-count-2" ] }
 embassy-embedded-hal = { version = "0.5.0", features = ["defmt"] }
-heapless = "0.8"
+heapless = { version = "0.9.2", features = ["defmt"] }
 micromath = "2.0.0"
 static_cell = { version = "2.0.0", features = ["nightly"] }
 defmt-rtt = "0.4.0"

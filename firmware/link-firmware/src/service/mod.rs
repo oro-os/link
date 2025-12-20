@@ -36,6 +36,8 @@ def_message! {
 		BlinkenLight(dev_blinken_light::Message),
 		LedController(dev_leds::Message),
 		Oled(dev_oled::Message),
+		Usart(dev_usart::Message),
+		Uart(dev_uart::Message),
 	}
 }
 
@@ -57,6 +59,8 @@ pub struct MasterBusChannels {
 	blinken_light:  dev_blinken_light::Channel,
 	led_controller: dev_leds::Channel,
 	oled:           dev_oled::Channel,
+	usart:          dev_usart::Channel,
+	uart:           dev_uart::Channel,
 }
 
 pub struct ServiceChannels {
@@ -64,6 +68,8 @@ pub struct ServiceChannels {
 	pub blinken_light_rx:  <dev_blinken_light::Channel as ChannelExt>::Receiver,
 	pub led_controller_rx: <dev_leds::Channel as ChannelExt>::Receiver,
 	pub oled_rx:           <dev_oled::Channel as ChannelExt>::Receiver,
+	pub usart_rx:          <dev_usart::Channel as ChannelExt>::Receiver,
+	pub uart_rx:           <dev_uart::Channel as ChannelExt>::Receiver,
 }
 
 /// # Panics
@@ -75,6 +81,8 @@ pub fn services_channels() -> ServiceChannels {
 		blinken_light:  dev_blinken_light::Channel::new(),
 		led_controller: dev_leds::Channel::new(),
 		oled:           dev_oled::Channel::new(),
+		usart:          dev_usart::Channel::new(),
+		uart:           dev_uart::Channel::new(),
 	});
 
 	ServiceChannels {
@@ -82,6 +90,8 @@ pub fn services_channels() -> ServiceChannels {
 		blinken_light_rx: master_bus.blinken_light.receiver(),
 		led_controller_rx: master_bus.led_controller.receiver(),
 		oled_rx: master_bus.oled.receiver(),
+		usart_rx: master_bus.usart.receiver(),
+		uart_rx: master_bus.uart.receiver(),
 	}
 }
 
@@ -102,6 +112,18 @@ impl MasterBusChannels {
 				}
 				Message::Oled(m) => {
 					self.oled.send(m).await;
+				}
+				Message::Usart(dev_usart::Message::Send(m)) => {
+					self.usart.send(dev_usart::Message::Send(m)).await;
+				}
+				Message::Usart(o) => {
+					defmt::debug!("USART message: {:?}", o);
+				}
+				Message::Uart(dev_uart::Message::Send(m)) => {
+					self.uart.send(dev_uart::Message::Send(m)).await;
+				}
+				Message::Uart(o) => {
+					defmt::debug!("UART message: {:?}", o);
 				}
 			}
 		}

@@ -389,9 +389,21 @@ pub async fn main(spawner: Spawner) -> ! {
 		))
 		.unwrap();
 	defmt::info!("service: uart...");
-	spawner.spawn(service::dev_uart::run(uart)).unwrap();
+	spawner
+		.spawn(service::dev_uart::run(
+			service_channels.uart_rx,
+			service_channels.master_bus.sender(),
+			uart,
+		))
+		.unwrap();
 	defmt::info!("service: usart...");
-	spawner.spawn(service::dev_usart::run(usart)).unwrap();
+	spawner
+		.spawn(service::dev_usart::run(
+			service_channels.usart_rx,
+			service_channels.master_bus.sender(),
+			usart,
+		))
+		.unwrap();
 	defmt::info!("service: ci/cd...");
 	spawner
 		.spawn(service::svc_cicd::run(service_channels.master_bus.sender()))
