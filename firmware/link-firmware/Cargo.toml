@@ -10,6 +10,11 @@ version = { workspace = true }
 
 build = "build.rs"
 
+[features]
+default = []
+bank1 = []
+bank2 = []
+
 [dependencies]
 link-protocol = { path = "../link-protocol", features = ["defmt", "embedded-io", "embassy"] }
 cortex-m-rt = "0.7.3"
@@ -42,6 +47,8 @@ panic-probe = "1.0.0"
 cortex-m = { version = "0.7.7", features = ["critical-section-single-core", "inline-asm"] }
 # XXX DEBUG: This is just to test USB connectivity.
 usbd-hid = "0.8.2"
+embedded-storage = "0.3.1"
+crc32fast = { version = "1.5.0", default-features = false }
 
 [dependencies.oro-logo-rle]
 git = "https://github.com/oro-os/oro-logo-rle"

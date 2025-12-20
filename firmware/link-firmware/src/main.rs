@@ -4,12 +4,12 @@
 
 pub(crate) mod channel;
 pub(crate) mod color;
+pub(crate) mod flash;
 pub(crate) mod font;
 pub(crate) mod rand;
 pub(crate) mod service;
 pub(crate) mod unique_id;
 
-use defmt::info;
 use defmt_rtt as _;
 use embassy_embedded_hal::shared_bus::asynch::spi::SpiDevice;
 use embassy_executor::Spawner;
@@ -73,9 +73,39 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	let p = embassy_stm32::init(config);
 
-	info!("initializing oro link...");
+	defmt::info!("initializing oro link...");
 	Timer::after(Duration::from_millis(100)).await;
 
+	// Check for reset sequence
+	defmt::info!("initializing flash");
+	flash::init_pflash(p.FLASH);
+	let pflash = match flash::read_pflash() {
+		Ok(pflash) => pflash,
+		Err(e) => {
+			defmt::warn!("failed to read pflash; reinitializing: {:?}", e);
+			// SAFETY: We're initializing it.
+			unsafe { flash::write_pflash(flash::Pflash::default()) }
+				.expect("failed to write/read-back default pflash")
+		}
+	};
+	let mut pflash = pflash.into_latest();
+	defmt::debug!("pflash contents: {:?}", pflash);
+
+	if pflash.initialized {
+		defmt::info!("system is initialized");
+	} else {
+		defmt::warn!("system is uninitialized; performing first-time setup");
+		pflash.initialized = true;
+		// SAFETY: We're initializing it.
+		if let Err(err) = unsafe { flash::write_pflash(pflash) } {
+			defmt::error!("failed to write pflash during first-time setup: {:?}", err);
+			defmt::error!("halting system");
+			panic!("failed to initialize system");
+		}
+		defmt::info!("first-time setup complete");
+	}
+
+	// Begin initialization
 	let rng_gen = rng::Rng::new(p.RNG, Irqs);
 	self::rand::init_rng(rng_gen);
 
@@ -310,4 +340,15 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	defmt::info!("link is now ready; beginning Oro Link CI/CD main routine - happy hacking!");
 	service_channels.master_bus.run_master_bus().await;
+}
+
+/// # Safety
+/// This will immediately reset the system. Use with caution.
+pub unsafe fn reset() -> ! {
+	defmt::warn!("performing system reset!");
+	cortex_m::peripheral::SCB::sys_reset();
+	#[expect(unreachable_code)]
+	{
+		panic!("system reset failed");
+	}
 }

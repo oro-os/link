@@ -194,10 +194,28 @@ fn render_font(id: &str, path: &str, charmap: &str) -> TokenStream {
 }
 
 pub fn main() {
+	let out_dir_os = env::var_os("OUT_DIR").unwrap();
+	let out_dir = Path::new(&out_dir_os);
+
 	#[cfg(debug_assertions)]
 	println!("cargo:rustc-env=DEFMT_LOG=trace,embassy_net=debug,embassy_hal_internal=warn");
 	#[cfg(not(debug_assertions))]
 	println!("cargo:rustc-env=DEFMT_LOG=warn");
+
+	println!(
+		"cargo:rustc-link-arg=-L{}",
+		env::var("CARGO_MANIFEST_DIR").unwrap()
+	);
+	println!("cargo:rustc-link-arg=-Tlink.x");
+	println!("cargo:rustc-link-arg=-Tdefmt.x");
+	println!(
+		"cargo:rerun-if-changed={}/memory.x",
+		env::var("CARGO_MANIFEST_DIR").unwrap()
+	);
+	println!(
+		"cargo:rerun-if-changed={}/thumbv7-none-eabihf.json",
+		env::var("CARGO_MANIFEST_DIR").unwrap()
+	);
 
 	let mut font_source = quote! { use super::FontData; };
 	font_source.extend(render_font(
@@ -214,8 +232,7 @@ pub fn main() {
 
 	let source = font_source.to_string();
 
-	let out_dir = env::var_os("OUT_DIR").unwrap();
-	let dest_path = Path::new(&out_dir).join("oro-link-fontdata.rs");
+	let dest_path = out_dir.join("oro-link-fontdata.rs");
 	fs::write(dest_path, source).unwrap();
 
 	println!("cargo:rerun-if-changed=build.rs");
