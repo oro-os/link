@@ -1,0 +1,22 @@
+{
+	"name": "configurator",
+	"description": "Configurator for Links",
+	"version": "0.1.0",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"lint": "tsc && prettier -c .",
+		"format": "prettier -w .",
+		"build": "env NODE_ENV=production node esbuild.mjs",
+		"dev": "node esbuild.mjs"
+	},
+	"devDependencies": {
+		"@surplus/s": "^1.2.0",
+		"@surplus/esbuild": "^2.0.2",
+		"@surplus/css": "^0.1.0",
+		"@surplus/types": "^0.1.3",
+		"esbuild": "^0.27.2",
+		"prettier": "^3.7.4",
+		"tsc": "^2.0.4"
+	}
+}
