@@ -1,0 +1,615 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "b331a8a6-46c8-4f4f-b9cd-8dfcc8c5f0db")
+	(paper "A4")
+	(title_block
+		(title "Oro Link DUT Ribbon Cable")
+		(date "2026-02-16")
+		(rev "1")
+		(company "Oro Operating System")
+	)
+	(lib_symbols
+		(symbol "OroLink:SDCard10P"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SDCard10P_0_0"
+				(pin unspecified line
+					(at -2.54 -2.54 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -5.08 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -7.62 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -10.16 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -12.7 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -15.24 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -17.78 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -20.32 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -22.86 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -25.4 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "SDCard10P_0_1"
+				(rectangle
+					(start 0 -1.524)
+					(end 2.286 -26.162)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(wire
+		(pts
+			(xy 129.54 91.44) (xy 165.1 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "041066be-80c7-41c2-b8ed-c50d83450198")
+	)
+	(wire
+		(pts
+			(xy 129.54 101.6) (xy 165.1 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ecfc8b8-bf44-451a-a769-86c4ad9b9525")
+	)
+	(wire
+		(pts
+			(xy 129.54 111.76) (xy 165.1 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "843319d6-efca-42e2-a00c-d4d78a34dc70")
+	)
+	(wire
+		(pts
+			(xy 129.54 109.22) (xy 165.1 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9af3a1a0-c8fd-4238-8323-a7620080945c")
+	)
+	(wire
+		(pts
+			(xy 129.54 114.3) (xy 165.1 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8341743-73d9-4898-8c9c-b2298a4059df")
+	)
+	(wire
+		(pts
+			(xy 129.54 104.14) (xy 165.1 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b32b1ead-bc78-40e2-b0e3-f2499dc66fcb")
+	)
+	(wire
+		(pts
+			(xy 129.54 96.52) (xy 165.1 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b804468a-af97-4be2-8d6e-669d3d68e18d")
+	)
+	(wire
+		(pts
+			(xy 129.54 93.98) (xy 165.1 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df4f254c-949a-4e3f-9055-2daa399dba29")
+	)
+	(wire
+		(pts
+			(xy 129.54 106.68) (xy 165.1 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e131b17e-04cc-452b-afbd-653792609911")
+	)
+	(wire
+		(pts
+			(xy 129.54 99.06) (xy 165.1 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4563917-d832-4508-b4b7-31c1b3699fdc")
+	)
+	(symbol
+		(lib_id "OroLink:SDCard10P")
+		(at 127 88.9 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1cab6422-4e09-4646-a903-1c45a4f577a9")
+		(property "Reference" "J1"
+			(at 124.079 101.5308 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "~"
+			(at 124.079 103.9551 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "OroLink:OroSDCardCouplingPadRibbonSide"
+			(at 127 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 127 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ee859838-e3dd-43b8-ad56-a90ea5479828")
+		)
+		(pin "9"
+			(uuid "da638ab4-e144-4a9f-8130-2bbe2ef3cb1e")
+		)
+		(pin "3"
+			(uuid "67ca8c1d-3043-4917-8b75-0cd33690b3b7")
+		)
+		(pin "10"
+			(uuid "a0c10340-caca-413c-b86a-2da02431af39")
+		)
+		(pin "1"
+			(uuid "0d28926d-b27d-407c-9258-8c2e7535f87f")
+		)
+		(pin "8"
+			(uuid "745f8403-755f-4ac7-96b3-ddbca0df6e03")
+		)
+		(pin "6"
+			(uuid "2404e308-5eaa-4091-ac29-561c5fff3f72")
+		)
+		(pin "7"
+			(uuid "7b56296f-6a3c-423d-ac86-459fa42f60ee")
+		)
+		(pin "5"
+			(uuid "b1901b78-726d-4d14-bff8-e4b68ad39575")
+		)
+		(pin "4"
+			(uuid "c6713f79-1920-4ef4-aaa5-18e37cf04711")
+		)
+		(instances
+			(project ""
+				(path "/b331a8a6-46c8-4f4f-b9cd-8dfcc8c5f0db"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:SDCard10P")
+		(at 167.64 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "301f81c2-0897-4b91-b4f9-9f0ccf25038b")
+		(property "Reference" "J2"
+			(at 170.561 101.5308 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "~"
+			(at 170.561 103.9551 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "OroLink:LinkSDCardRibbonLanding"
+			(at 167.64 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 167.64 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 167.64 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ee859838-e3dd-43b8-ad56-a90ea5479828")
+		)
+		(pin "9"
+			(uuid "da638ab4-e144-4a9f-8130-2bbe2ef3cb1e")
+		)
+		(pin "3"
+			(uuid "67ca8c1d-3043-4917-8b75-0cd33690b3b7")
+		)
+		(pin "10"
+			(uuid "a0c10340-caca-413c-b86a-2da02431af39")
+		)
+		(pin "1"
+			(uuid "0d28926d-b27d-407c-9258-8c2e7535f87f")
+		)
+		(pin "8"
+			(uuid "745f8403-755f-4ac7-96b3-ddbca0df6e03")
+		)
+		(pin "6"
+			(uuid "2404e308-5eaa-4091-ac29-561c5fff3f72")
+		)
+		(pin "7"
+			(uuid "7b56296f-6a3c-423d-ac86-459fa42f60ee")
+		)
+		(pin "5"
+			(uuid "b1901b78-726d-4d14-bff8-e4b68ad39575")
+		)
+		(pin "4"
+			(uuid "c6713f79-1920-4ef4-aaa5-18e37cf04711")
+		)
+		(instances
+			(project ""
+				(path "/b331a8a6-46c8-4f4f-b9cd-8dfcc8c5f0db"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+	(embedded_files
+		(file
+			(name "Oro.kicad_wks")
+			(type worksheet)
+			(data |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|
+			)
+			(checksum "83F92B9985ECF6215984246F0C595A4D")
+		)
+	)
+)
