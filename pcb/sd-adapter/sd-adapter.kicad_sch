@@ -1,0 +1,6073 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "25c53965-120d-43d6-ab9a-d1852dd311a3")
+	(paper "A4")
+	(title_block
+		(title "Oro Link SD Card Adapter")
+		(date "2026-02-17")
+		(rev "1")
+		(company "Oro Operating System")
+	)
+	(lib_symbols
+		(symbol "OroLink:0402B103J160CT"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 3.81 3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "0402B103J160CT"
+				(at 3.81 -3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "OroLink:CAP_0402_N_WAL"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.mouser.de/datasheet/2/210/WTC_MLCC_General_Purpose-1534899.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Ceramic Capacitor, Multilayer, Ceramic, 16V, 5% +Tol, 5% -Tol, X7R, 15% TC, 0.01uF, Surface Mount, 0402"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Name" "Walsin"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser ID" "791-0402B103J160CT"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "DigiKey ID" "1292-0402B103J160CT-ND"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Arrow ID" "null"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "Ceramic Capacitor, Multilayer, Ceramic, 16V, 5% +Tol, 5% -Tol, X7R, 15% TC, 0.01uF, Surface Mount, 0402"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser URL" "https://www.mouser.de/ProductDetail/Walsin/0402B103J160CT?qs=fIkAfuXiAQJQ%252BjA7a5Mepg%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=791-0402B103J160CT&utm_content=Walsin"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Number" "0402B103J160CT"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "0402B103J160CT"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "CAP_0402_N_WAL CAP_0402_N_WAL-M CAP_0402_N_WAL-L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "0402B103J160CT_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.4798 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.4798 -1.905) (xy 3.4798 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 -1.905) (xy 4.1148 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "0402B103J160CT_1_2"
+				(polyline
+					(pts
+						(xy -1.905 -3.4798) (xy 1.905 -3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -4.1148) (xy 1.905 -4.1148)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -4.1148) (xy 0 -5.08)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "OroLink:BLM18PG221SN1D"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "L"
+				(at 6.985 5.08 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "BLM18PG221SN1D"
+				(at 6.985 -2.54 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "OroLink:IND_BLM18_0603_MUR"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.mouser.de/datasheet/2/281/ENFA0003-1915778.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Ferrite Beads Multi-Layer 220Ohm 25% 100MHz 1.4A 100mOhm DCR 0603 Paper T/R"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "DigiKey ID" "490-5221-1-ND"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Number" "BLM18PG221SN1D"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Name" "Murata"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Arrow ID" "BLM18PG221SN1D"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser ID" "81-BLM18PG221SN1D"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser URL" "https://www.mouser.de/ProductDetail/Murata-Electronics/BLM18PG221SN1D?qs=uSeJpk%2F8In3JS43lpC2ejg%3D%3D"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "Ferrite Beads Multi-Layer 220Ohm 25% 100MHz 1.4A 100mOhm DCR 0603 Paper T/R"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "BLM18PG221SN1D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "IND_BLM18_0603_MUR IND_BLM18_0603_MUR-M IND_BLM18_0603_MUR-L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "BLM18PG221SN1D_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 2.54 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.54 1.27)
+					(mid 3.81 2.54)
+					(end 5.08 1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 5.08 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.08 1.27)
+					(mid 6.35 2.54)
+					(end 7.62 1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 0) (xy 7.62 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 7.62 1.27)
+					(mid 8.89 2.54)
+					(end 10.16 1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 0) (xy 10.16 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 10.16 1.27)
+					(mid 11.43 2.54)
+					(end 12.7 1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12.7 0) (xy 12.7 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 15.24 0 180)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "BLM18PG221SN1D_1_2"
+				(arc
+					(start -1.27 10.16)
+					(mid -2.54 11.43)
+					(end -1.27 12.7)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.27 7.62)
+					(mid -2.54 8.89)
+					(end -1.27 10.16)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.27 5.08)
+					(mid -2.54 6.35)
+					(end -1.27 7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.27 2.54)
+					(mid -2.54 3.81)
+					(end -1.27 5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 12.7) (xy -1.27 12.7)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 10.16) (xy -1.27 10.16)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 7.62) (xy -1.27 7.62)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 5.08) (xy -1.27 5.08)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy -1.27 2.54)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 15.24 270)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 90)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "OroLink:CLM3C-WKW-CXAYA453"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "LED"
+				(at 5.588 8.382 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "CLM3C-WKW-CXAYA453"
+				(at -3.302 5.842 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "OroLink:CLM3CWKWCXAYA453"
+				(at 12.7 -93.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://componentsearchengine.com/Datasheets/2/CLM3C-WKW-CWBYA453.pdf"
+				(at 12.7 -193.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Description" "Cree CLM3C-WKW-CXAYA453, CLM3 Series White LED, 5500K, PLCC 2, Rectangle Lens SMD Package"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "1.4"
+				(at 12.7 -393.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "CREE LED"
+				(at 12.7 -493.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "CLM3C-WKW-CXAYA453"
+				(at 12.7 -593.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "941-CLM3CWKWCXAYA453"
+				(at 12.7 -693.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Cree-Inc/CLM3C-WKW-CXaYa453?qs=3AcK5DacLbr3ewaPKwAgNg%3D%3D"
+				(at 12.7 -793.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" "CLM3C-WKW-CXAYA453"
+				(at 12.7 -893.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/clm3c-wkw-cxaya453/cree"
+				(at 12.7 -993.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(symbol "CLM3C-WKW-CXAYA453_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 2.54) (xy 5.08 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 10.16 2.54) (xy 10.16 -2.54) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.334 4.318) (xy 4.572 3.556) (xy 3.81 5.08) (xy 5.334 4.318)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 2.54) (xy 3.81 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.874 4.318) (xy 7.112 3.556) (xy 6.35 5.08) (xy 7.874 4.318)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.89 2.54) (xy 6.35 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 0) (xy 12.7 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "OroLink:JMK105BJ105KVHF"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 3.81 3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "JMK105BJ105KVHF"
+				(at 3.81 -3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "OroLink:cap_UMK105 CG080CV-F_TAY"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.mouser.de/datasheet/2/396/taiyo_yuden_12132018_mlcc11_hq_e-1510082.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Capacitor, ceramic, 0402, 6.3V, x5R, 1 F, ±10% Rohs Compliant: Yes |Taiyo Yuden JMK105BJ105KVHF"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "DigiKey ID" "587-3766-1-ND"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Arrow ID" "JMK105BJ105KVHF"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Name" "Taiyo Yuden"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "Capacitor, ceramic, 0402, 6.3V, x5R, 1 F, ±10% Rohs Compliant: Yes |Taiyo Yuden JMK105BJ105KVHF"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser ID" "963-JMK105BJ105KVHF"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Number" "JMK105BJ105KVHF"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/JMK105BJ105KVHF?qs=qPaGMJUC%252BSupRtwk0yj9HQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=963-JMK105BJ105KVHF&utm_content=TAIYO%20YUDEN"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "JMK105BJ105KVHF"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "cap_UMK105 CG080CV-F_TAY cap_UMK105 CG080CV-F_TAY-M cap_UMK105 CG080CV-F_TAY-L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "JMK105BJ105KVHF_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.4798 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.4798 -1.905) (xy 3.4798 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 -1.905) (xy 4.1148 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "JMK105BJ105KVHF_1_2"
+				(polyline
+					(pts
+						(xy -1.905 -3.4798) (xy 1.905 -3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -4.1148) (xy 1.905 -4.1148)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -4.1148) (xy 0 -5.08)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "OroLink:MSAST1L3YB5104KFNA01"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 3.81 3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "MSAST1L3YB5104KFNA01"
+				(at 3.81 -3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "OroLink:CAP_MSAS1L-3_TAY"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.mouser.de/datasheet/2/396/Tayio_Yuden_1102023_MS_mlcc_all_e-3081579.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Name" "Taiyo Yuden"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Number" "MSAST1L3YB5104KFNA01"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/MSAST1L3YB5104KFNA01?qs=tlsG%2FOw5FFhBwK%252BMwEZpCA%3D%3D"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Arrow ID" "MSAST1L3YB5104KFNA01"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "DigiKey ID" "587-MSAST1L3YB5104KFNA01CT-ND"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser ID" "963-MSAST1L3YB5104KF"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "MSAST1L3YB5104KFNA01"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "CAP_MSAS1L-3_TAY CAP_MSAS1L-3_TAY-M CAP_MSAS1L-3_TAY-L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MSAST1L3YB5104KFNA01_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.4798 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.4798 -1.905) (xy 3.4798 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 -1.905) (xy 4.1148 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "MSAST1L3YB5104KFNA01_1_2"
+				(polyline
+					(pts
+						(xy -1.905 -3.4798) (xy 1.905 -3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -4.1148) (xy 1.905 -4.1148)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -4.1148) (xy 0 -5.08)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "OroLink:RR0510R-330-D"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 5.715 3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "RR0510R-330-D"
+				(at 6.35 -3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "OroLink:RES_0510_SUS"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.mouser.de/datasheet/2/392/susumu_RR_Data_Sheet-1206438.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "DigiKey ID" "RR05R33DCT-ND"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser URL" "https://www.mouser.de/ProductDetail/Susumu/RR0510R-330-D?qs=nCAm%252BcMdy9zhk2wQ%252Bovhdw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=754-RR0510R-330D&utm_content=Susumu"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Name" "Susumu"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser ID" "754-RR0510R-330D"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mfr. Number" "RR0510R-330-D"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Arrow ID" "null"
+				(at 0 -3 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "RR0510R-330-D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "RES_0510_SUS RES_0510_SUS-M RES_0510_SUS-L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "RR0510R-330-D_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.175 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 1.27) (xy 4.445 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 -1.27) (xy 5.715 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 1.27) (xy 6.985 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.985 -1.27) (xy 8.255 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.255 1.27) (xy 9.525 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 9.525 -1.27) (xy 10.16 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 12.7 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "RR0510R-330-D_1_2"
+				(polyline
+					(pts
+						(xy -1.27 8.255) (xy 1.27 9.525)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 5.715) (xy 1.27 6.985)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 3.175) (xy 1.27 4.445)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy -1.27 3.175)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 9.525) (xy 0 10.16)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 6.985) (xy -1.27 8.255)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 4.445) (xy -1.27 5.715)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 12.7 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "OroLink:SDCard10P"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SDCard10P_0_0"
+				(pin unspecified line
+					(at -2.54 -2.54 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -5.08 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -7.62 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -10.16 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -12.7 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -15.24 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -17.78 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -20.32 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -22.86 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 -25.4 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "SDCard10P_0_1"
+				(rectangle
+					(start 0 -1.524)
+					(end 2.286 -26.162)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "OroLink:SDCardHead"
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 24.638 -12.192 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MicroSDOutline"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "OroLink:SDCardOutlinePadsTop"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.slideshare.net/slideshow/microsd-card-spec/36990778#23"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SDCardHead_0_0"
+				(pin unspecified line
+					(at 0 -3.048 0)
+					(length 2.54)
+					(name "D2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -5.588 0)
+					(length 2.54)
+					(name "CD/D3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -8.128 0)
+					(length 2.54)
+					(name "CMD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -10.668 0)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -13.208 0)
+					(length 2.54)
+					(name "CLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -15.748 0)
+					(length 2.54)
+					(name "VSS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -18.288 0)
+					(length 2.54)
+					(name "D0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -20.828 0)
+					(length 2.54)
+					(name "D1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "SDCardHead_1_0"
+				(polyline
+					(pts
+						(xy 4.2145 -1.2482) (xy 3.2385 -0.3175)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 4.7802 -1.4825)
+					(mid 4.474 -1.4216)
+					(end 4.2145 -1.2482)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 6.6145 -1.0825)
+					(mid 6.4973 -1.3653)
+					(end 6.2145 -1.4825)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.2145 -1.4825) (xy 4.7802 -1.4825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.6145 -0.2825) (xy 6.6145 -1.0825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 6.6145 -0.2825)
+					(mid 6.6731 -0.1411)
+					(end 6.8145 -0.0825)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 9.6145 -0.0825)
+					(mid 9.9206 -0.1434)
+					(end 10.1802 -0.3168)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 9.6145 -0.0825) (xy 6.8145 -0.0825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12.3116 -2.4482) (xy 10.1802 -0.3168)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 12.8772 -2.6825)
+					(mid 12.5711 -2.6216)
+					(end 12.3116 -2.4482)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -3.8825) (xy 14.4145 -5.4825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -5.4825) (xy 20.2145 -5.4825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -6.0825) (xy 14.4145 -7.6825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -7.6825) (xy 20.2145 -7.6825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -8.2825) (xy 14.4145 -9.8825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -9.8825) (xy 20.2145 -9.8825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -10.4825) (xy 14.4145 -12.0825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -12.0825) (xy 20.8145 -12.0825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -12.6825) (xy 14.4145 -14.2825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -14.2825) (xy 20.2145 -14.2825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -14.8825) (xy 14.4145 -16.4825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -16.4825) (xy 20.8145 -16.4825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -17.0825) (xy 14.4145 -18.6825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -18.6825) (xy 20.2145 -18.6825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -19.2825) (xy 14.4145 -20.8825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.4145 -20.8825) (xy 20.2145 -20.8825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.2145 -3.8825) (xy 14.4145 -3.8825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.2145 -5.4825) (xy 20.2145 -3.8825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.2145 -6.0825) (xy 14.4145 -6.0825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.2145 -7.6825) (xy 20.2145 -6.0825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.2145 -8.2825) (xy 14.4145 -8.2825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.2145 -9.8825) (xy 20.2145 -8.2825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.2145 -12.6825) (xy 14.4145 -12.6825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.2145 -14.2825) (xy 20.2145 -12.6825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.2145 -17.0825) (xy 14.4145 -17.0825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.2145 -18.6825) (xy 20.2145 -17.0825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.2145 -19.2825) (xy 14.4145 -19.2825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.2145 -20.8825) (xy 20.2145 -19.2825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.8145 -2.6825) (xy 12.8772 -2.6825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.8145 -10.4825) (xy 14.4145 -10.4825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.8145 -12.0825) (xy 20.8145 -10.4825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.8145 -14.8825) (xy 14.4145 -14.8825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.8145 -16.4825) (xy 20.8145 -14.8825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 20.8145 -2.6825)
+					(mid 21.9459 -3.1511)
+					(end 22.4145 -4.2825)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 22.4145 -20.4825)
+					(mid 22.0116 -21.4841)
+					(end 21.0185 -21.9075)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 21.0185 -21.9075) (xy 3.2385 -21.9075)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 22.4145 -4.2825) (xy 22.4145 -20.4825)
+					)
+					(stroke
+						(width 0.2)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(junction
+		(at 156.21 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "11905573-4132-46d1-a5ff-d27cbcd799de")
+	)
+	(junction
+		(at 140.97 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "16598836-0032-4a18-a521-9dca61fea771")
+	)
+	(junction
+		(at 109.22 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2326fa28-a6f9-43d7-8c96-edb5154ddf7b")
+	)
+	(junction
+		(at 109.22 69.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "27741913-cc61-4154-9121-6f6b3c1fd3ed")
+	)
+	(junction
+		(at 121.92 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "72fdd83b-e6b5-470b-b37d-82a7c9ea2663")
+	)
+	(junction
+		(at 121.92 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b453c254-7edd-44cc-b0fc-9752e4b69259")
+	)
+	(wire
+		(pts
+			(xy 152.4 80.01) (xy 156.21 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "004564e9-b6b9-43c3-af7d-c113cc0b5112")
+	)
+	(wire
+		(pts
+			(xy 148.59 102.87) (xy 148.59 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "054af63f-79a2-49f0-bf08-770afb9053d2")
+	)
+	(wire
+		(pts
+			(xy 144.78 80.01) (xy 140.97 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "085e646b-657f-4d9e-90b8-07870eb31440")
+	)
+	(wire
+		(pts
+			(xy 101.6 105.41) (xy 100.33 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ab6ec5b-cf85-4fab-a25c-ada09524697f")
+	)
+	(wire
+		(pts
+			(xy 148.59 110.49) (xy 153.67 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10380dca-c40b-45ca-a19a-92179d566f13")
+	)
+	(wire
+		(pts
+			(xy 100.33 123.19) (xy 118.11 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "107426c2-707d-49f5-a93d-895e25e5a64d")
+	)
+	(wire
+		(pts
+			(xy 137.16 115.57) (xy 153.67 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "164b4eb1-267d-43e2-ad0f-69d8f06c18ea")
+	)
+	(wire
+		(pts
+			(xy 111.76 80.01) (xy 109.22 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b106682-357f-4f81-a2ff-9c20e02b45a4")
+	)
+	(wire
+		(pts
+			(xy 121.92 69.85) (xy 121.92 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c9f9684-d396-44aa-bd51-ac32df2dcc17")
+	)
+	(wire
+		(pts
+			(xy 109.22 80.01) (xy 109.22 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e8c2fa9-a800-4fdd-9ddb-39dbb7238b77")
+	)
+	(wire
+		(pts
+			(xy 156.21 72.39) (xy 163.83 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "227b3260-d702-46c2-b70b-ed31539dcd02")
+	)
+	(wire
+		(pts
+			(xy 104.14 107.95) (xy 104.14 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "252e6297-0a5f-4022-8917-85c7c853aa5c")
+	)
+	(wire
+		(pts
+			(xy 114.3 125.73) (xy 114.3 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a3080fb-d897-41e8-ad07-0730a846f321")
+	)
+	(wire
+		(pts
+			(xy 104.14 97.79) (xy 123.19 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c68eb92-2a41-4caa-a164-ed6f99e12b9e")
+	)
+	(wire
+		(pts
+			(xy 111.76 69.85) (xy 109.22 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "48436de5-86a8-4080-9630-30f76928c88e")
+	)
+	(wire
+		(pts
+			(xy 119.38 120.65) (xy 123.19 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a4b15a8-0add-4832-9e09-d3cf873bb7f1")
+	)
+	(wire
+		(pts
+			(xy 118.11 125.73) (xy 123.19 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d7e5387-d2d3-49d4-9935-f180bf7de448")
+	)
+	(wire
+		(pts
+			(xy 135.89 102.87) (xy 148.59 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5006269c-8dea-43ec-8a76-967ab6c79540")
+	)
+	(wire
+		(pts
+			(xy 146.05 113.03) (xy 153.67 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50353c43-ef65-43b1-84c1-1e0f4cd8b592")
+	)
+	(wire
+		(pts
+			(xy 143.51 123.19) (xy 153.67 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5612bbb9-7d49-4f5c-9293-df5193c2e747")
+	)
+	(wire
+		(pts
+			(xy 109.22 113.03) (xy 109.22 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56abb18b-9176-4505-a5e6-da2f54374c8f")
+	)
+	(wire
+		(pts
+			(xy 146.05 107.95) (xy 146.05 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5715defa-bca5-42d7-bf18-d9286689af5d")
+	)
+	(wire
+		(pts
+			(xy 156.21 80.01) (xy 156.21 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57891c0b-c9ff-44cc-9466-b7aa0c3e010b")
+	)
+	(wire
+		(pts
+			(xy 100.33 115.57) (xy 121.92 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61751def-443e-411d-91f7-0d932b0e7d7b")
+	)
+	(wire
+		(pts
+			(xy 135.89 130.81) (xy 146.05 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64755245-3ef8-471d-9155-b7d7c1964762")
+	)
+	(wire
+		(pts
+			(xy 100.33 118.11) (xy 119.38 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65d103aa-aca3-444f-b5a6-5563f1e1e616")
+	)
+	(wire
+		(pts
+			(xy 132.08 72.39) (xy 140.97 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ae6dd15-3f25-4d01-93ee-086f1c70c3cb")
+	)
+	(wire
+		(pts
+			(xy 101.6 100.33) (xy 101.6 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6dac8224-aa59-4cbf-af8e-589dd3e53052")
+	)
+	(wire
+		(pts
+			(xy 143.51 125.73) (xy 143.51 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f21c27a-86d9-430c-a98d-f3e8f4c416c7")
+	)
+	(wire
+		(pts
+			(xy 111.76 74.93) (xy 109.22 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7189d535-b5e5-4032-95a9-94d969e593e8")
+	)
+	(wire
+		(pts
+			(xy 119.38 69.85) (xy 121.92 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "784d298f-a2cc-4f43-80d7-e85b03964866")
+	)
+	(wire
+		(pts
+			(xy 135.89 107.95) (xy 146.05 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80ef7fa5-b12a-4eb3-93c7-c6c5341a226a")
+	)
+	(wire
+		(pts
+			(xy 100.33 113.03) (xy 109.22 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8125b488-24e2-479c-b5b1-6cc1c1d6be0c")
+	)
+	(wire
+		(pts
+			(xy 151.13 120.65) (xy 151.13 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8eef90db-0f66-437a-a2d9-9a56539e3ecd")
+	)
+	(wire
+		(pts
+			(xy 135.89 97.79) (xy 151.13 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9253c206-7d62-4f14-ad23-e339c8f9e30b")
+	)
+	(wire
+		(pts
+			(xy 106.68 120.65) (xy 106.68 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92e69522-706e-489b-b3f1-d14204e21c27")
+	)
+	(wire
+		(pts
+			(xy 151.13 97.79) (xy 151.13 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "947a9359-987b-475e-b403-7a6422f21e03")
+	)
+	(wire
+		(pts
+			(xy 100.33 120.65) (xy 106.68 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "997e937b-1c16-4e20-928f-b5143b6794b4")
+	)
+	(wire
+		(pts
+			(xy 114.3 130.81) (xy 123.19 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f2b8ac4-6d3e-4ba8-872e-0570b3885c19")
+	)
+	(wire
+		(pts
+			(xy 101.6 128.27) (xy 100.33 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2ddf27a-9af1-47f7-8cbf-7f32b9f5174d")
+	)
+	(wire
+		(pts
+			(xy 119.38 74.93) (xy 121.92 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6d9b8fe-bf04-41b7-9854-7ca4d929b346")
+	)
+	(wire
+		(pts
+			(xy 140.97 80.01) (xy 140.97 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae2d5c50-cc31-4177-a241-4d286f97f521")
+	)
+	(wire
+		(pts
+			(xy 135.89 120.65) (xy 138.43 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae8682bb-8a28-451b-8c35-0626924641a4")
+	)
+	(wire
+		(pts
+			(xy 100.33 110.49) (xy 106.68 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae8d553e-2731-4ba1-9e75-f934461c472a")
+	)
+	(wire
+		(pts
+			(xy 101.6 134.62) (xy 101.6 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b27582e2-a85b-4f9d-aa37-0b26e7c3730c")
+	)
+	(wire
+		(pts
+			(xy 151.13 107.95) (xy 153.67 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2800023-55a8-4899-a618-0ebbddd47ffb")
+	)
+	(wire
+		(pts
+			(xy 109.22 74.93) (xy 109.22 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3ef8bdd-99fa-4535-bce1-d15f9448e0c5")
+	)
+	(wire
+		(pts
+			(xy 101.6 100.33) (xy 96.52 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be8fb328-5553-4baf-9f32-1928cfccf7a8")
+	)
+	(wire
+		(pts
+			(xy 119.38 118.11) (xy 119.38 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfe6dd3d-1a74-4289-b8a9-0e8407dbc432")
+	)
+	(wire
+		(pts
+			(xy 101.6 67.31) (xy 109.22 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c008e3c7-86d0-4a25-babd-536f618c516c")
+	)
+	(wire
+		(pts
+			(xy 121.92 80.01) (xy 121.92 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c91a7cb1-c25a-4747-bab3-eb3e7a57f39e")
+	)
+	(wire
+		(pts
+			(xy 146.05 125.73) (xy 153.67 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9d350fb-7536-435c-9f3c-5a9e3a700a33")
+	)
+	(wire
+		(pts
+			(xy 100.33 107.95) (xy 104.14 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cca133a6-5439-4036-947f-3c00b94f55ec")
+	)
+	(wire
+		(pts
+			(xy 146.05 130.81) (xy 146.05 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0d8021f-17f0-4f1e-8127-55a9be804214")
+	)
+	(wire
+		(pts
+			(xy 106.68 110.49) (xy 106.68 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8541308-e059-44a2-9dbe-aca7780f1d57")
+	)
+	(wire
+		(pts
+			(xy 100.33 125.73) (xy 114.3 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df8eab2a-21b6-4208-ae0f-01c1580491b6")
+	)
+	(wire
+		(pts
+			(xy 101.6 134.62) (xy 96.52 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e26e04c7-419d-4904-8378-c31fc399effd")
+	)
+	(wire
+		(pts
+			(xy 106.68 102.87) (xy 123.19 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea50a8bc-be33-48b4-a5a6-4a9009426f30")
+	)
+	(wire
+		(pts
+			(xy 109.22 67.31) (xy 109.22 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eac139bd-5296-44be-aee0-db6954abd7c5")
+	)
+	(wire
+		(pts
+			(xy 119.38 80.01) (xy 121.92 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec9c3f09-5553-4fea-a06e-51aa1c9dd89c")
+	)
+	(wire
+		(pts
+			(xy 121.92 74.93) (xy 121.92 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef6c3282-c064-4877-8780-eace958da5cf")
+	)
+	(wire
+		(pts
+			(xy 118.11 123.19) (xy 118.11 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f31611f3-bccc-42c0-9977-49524c4c0c1c")
+	)
+	(wire
+		(pts
+			(xy 138.43 118.11) (xy 153.67 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f418d541-348d-4c2a-8c35-f9e4c93cfd7f")
+	)
+	(wire
+		(pts
+			(xy 153.67 120.65) (xy 151.13 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f42c0f8a-9c41-483b-b6a6-92458dfd0458")
+	)
+	(wire
+		(pts
+			(xy 135.89 125.73) (xy 143.51 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa68c91b-dee1-4df4-af9f-aa6eb15744e4")
+	)
+	(wire
+		(pts
+			(xy 109.22 107.95) (xy 123.19 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc97f432-29cc-454b-b123-fad84209f3a4")
+	)
+	(wire
+		(pts
+			(xy 138.43 120.65) (xy 138.43 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff51e1e0-8a2e-400f-a802-96513cf80b19")
+	)
+	(label "LED-"
+		(at 96.52 100.33 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "39bbebf2-747e-436d-a76c-89964ede1e85")
+	)
+	(label "LED+"
+		(at 96.52 134.62 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "57dca65b-1ffc-41fb-8db9-2c0bf2eea644")
+	)
+	(label "SD_VDD"
+		(at 101.6 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6401e807-f0e2-49ea-8656-ce929afcaf60")
+	)
+	(label "LED-"
+		(at 132.08 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "afebaeab-fbdc-4fa0-8971-c9e881deccd6")
+	)
+	(label "SD_VDD"
+		(at 146.05 115.57 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c5e62ed4-82ab-4614-9d91-b9a8dfc6a8b5")
+	)
+	(label "LED+"
+		(at 163.83 72.39 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fc227fc3-0abb-4024-9c34-b714ceb4a2ad")
+	)
+	(symbol
+		(lib_id "OroLink:SDCard10P")
+		(at 97.79 130.81 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "020ed042-78fe-42db-9cbd-cca869f14544")
+		(property "Reference" "J1"
+			(at 85.09 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Board Landing"
+			(at 85.09 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:OroSDCardCouplingPadBoardSide"
+			(at 97.79 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 97.79 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 97.79 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "10"
+			(uuid "6e685a03-a3d9-46bf-a19c-6ca1ef1da990")
+		)
+		(pin "6"
+			(uuid "0a109998-027c-4de7-bf41-2a1480ba19f1")
+		)
+		(pin "1"
+			(uuid "6ab7550c-b54a-4c27-a05d-01fb8090943e")
+		)
+		(pin "2"
+			(uuid "19d8c803-8829-424c-8cb5-fa04f749da8e")
+		)
+		(pin "7"
+			(uuid "c3f73693-71ac-471f-97c9-e98f46509ff3")
+		)
+		(pin "4"
+			(uuid "2040dc26-217b-40fa-bb57-752d7d35f71d")
+		)
+		(pin "9"
+			(uuid "bc749350-2744-4515-8289-2db62475e994")
+		)
+		(pin "5"
+			(uuid "9503af3c-5352-4030-95d6-3acdfda12311")
+		)
+		(pin "8"
+			(uuid "8da2cbe4-b8fe-4135-ab82-4e4eef4f943c")
+		)
+		(pin "3"
+			(uuid "17c503dc-33f9-4338-a00d-d4c602ff3d06")
+		)
+		(instances
+			(project ""
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:RR0510R-330-D")
+		(at 123.19 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "23be5af9-a51f-458f-92bb-07f91d3ff1bf")
+		(property "Reference" "R6"
+			(at 125.73 128.27 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "33R"
+			(at 133.35 128.27 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:RES_0510_SUS"
+			(at 123.19 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/392/susumu_RR_Data_Sheet-1206438.pdf"
+			(at 123.19 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+			(at 123.19 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "RR05R33DCT-ND"
+			(at 123.19 133.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+			(at 123.19 133.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Susumu/RR0510R-330-D?qs=nCAm%252BcMdy9zhk2wQ%252Bovhdw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=754-RR0510R-330D&utm_content=Susumu"
+			(at 123.19 133.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Susumu"
+			(at 123.19 133.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "754-RR0510R-330D"
+			(at 123.19 133.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "RR0510R-330-D"
+			(at 123.19 133.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "null"
+			(at 123.19 133.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6f0325d8-736d-4b31-a2bd-fca43bb47eba")
+		)
+		(pin "1"
+			(uuid "cab6612a-03e9-4cf9-a83e-b49f78d9f0ae")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:RR0510R-330-D")
+		(at 123.19 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "269fe727-fae6-4d94-95ea-c9284acc07f6")
+		(property "Reference" "R3"
+			(at 125.73 105.41 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "33R"
+			(at 133.35 105.41 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:RES_0510_SUS"
+			(at 123.19 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/392/susumu_RR_Data_Sheet-1206438.pdf"
+			(at 123.19 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+			(at 123.19 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "RR05R33DCT-ND"
+			(at 123.19 110.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+			(at 123.19 110.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Susumu/RR0510R-330-D?qs=nCAm%252BcMdy9zhk2wQ%252Bovhdw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=754-RR0510R-330D&utm_content=Susumu"
+			(at 123.19 110.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Susumu"
+			(at 123.19 110.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "754-RR0510R-330D"
+			(at 123.19 110.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "RR0510R-330-D"
+			(at 123.19 110.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "null"
+			(at 123.19 110.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "441d719e-a996-4348-893d-59143d6dde4c")
+		)
+		(pin "1"
+			(uuid "2d998179-c8b9-4139-9119-1a48942b003b")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 151.13 133.35 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "300ebfac-ff35-483c-b376-c6a5faa0d39e")
+		(property "Reference" "#PWR03"
+			(at 151.13 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 151.13 137.4831 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 151.13 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 151.13 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "784a97ee-bf3c-4787-8c44-ef81ce4ba374")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:BLM18PG221SN1D")
+		(at 121.92 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "488b6155-d0b4-4f09-ab0d-e3d90759fd99")
+		(property "Reference" "L1"
+			(at 115.57 111.76 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "BLM18PG221SN1D"
+			(at 129.54 111.76 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:IND_BLM18_0603_MUR"
+			(at 121.92 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/281/ENFA0003-1915778.pdf"
+			(at 121.92 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ferrite Beads Multi-Layer 220Ohm 25% 100MHz 1.4A 100mOhm DCR 0603 Paper T/R"
+			(at 121.92 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "490-5221-1-ND"
+			(at 121.92 118.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "BLM18PG221SN1D"
+			(at 121.92 118.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Murata"
+			(at 121.92 118.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "BLM18PG221SN1D"
+			(at 121.92 118.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "81-BLM18PG221SN1D"
+			(at 121.92 118.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Murata-Electronics/BLM18PG221SN1D?qs=uSeJpk%2F8In3JS43lpC2ejg%3D%3D"
+			(at 121.92 118.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Ferrite Beads Multi-Layer 220Ohm 25% 100MHz 1.4A 100mOhm DCR 0603 Paper T/R"
+			(at 121.92 118.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2b221f69-93f2-40a0-8ca0-c9169a50d095")
+		)
+		(pin "2"
+			(uuid "856f91de-df21-4dce-98a1-cf06d9f7212a")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:JMK105BJ105KVHF")
+		(at 144.78 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4f761f58-9d50-49fa-99a3-892d13eb18a8")
+		(property "Reference" "C4"
+			(at 148.59 83.82 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1u"
+			(at 148.59 86.36 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:cap_UMK105 CG080CV-F_TAY"
+			(at 144.78 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/taiyo_yuden_12132018_mlcc11_hq_e-1510082.pdf"
+			(at 144.78 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Capacitor, ceramic, 0402, 6.3V, x5R, 1 F, ±10% Rohs Compliant: Yes |Taiyo Yuden JMK105BJ105KVHF"
+			(at 144.78 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "587-3766-1-ND"
+			(at 144.78 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "JMK105BJ105KVHF"
+			(at 144.78 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Taiyo Yuden"
+			(at 144.78 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Capacitor, ceramic, 0402, 6.3V, x5R, 1 F, ±10% Rohs Compliant: Yes |Taiyo Yuden JMK105BJ105KVHF"
+			(at 144.78 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "963-JMK105BJ105KVHF"
+			(at 144.78 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "JMK105BJ105KVHF"
+			(at 144.78 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/JMK105BJ105KVHF?qs=qPaGMJUC%252BSupRtwk0yj9HQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=963-JMK105BJ105KVHF&utm_content=TAIYO%20YUDEN"
+			(at 144.78 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7f92395e-062e-4416-8f91-ada091d8afe9")
+		)
+		(pin "2"
+			(uuid "81b94f76-1639-4455-80d5-5f615011edea")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:RR0510R-330-D")
+		(at 123.19 97.79 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5261d839-b234-4613-b2b8-bd4aa1229889")
+		(property "Reference" "R1"
+			(at 125.73 95.25 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "33R"
+			(at 133.35 95.25 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:RES_0510_SUS"
+			(at 123.19 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/392/susumu_RR_Data_Sheet-1206438.pdf"
+			(at 123.19 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+			(at 123.19 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "RR05R33DCT-ND"
+			(at 123.19 100.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+			(at 123.19 100.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Susumu/RR0510R-330-D?qs=nCAm%252BcMdy9zhk2wQ%252Bovhdw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=754-RR0510R-330D&utm_content=Susumu"
+			(at 123.19 100.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Susumu"
+			(at 123.19 100.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "754-RR0510R-330D"
+			(at 123.19 100.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "RR0510R-330-D"
+			(at 123.19 100.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "null"
+			(at 123.19 100.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e1d4d7be-7ffe-45b5-be1d-ff41f918e66f")
+		)
+		(pin "1"
+			(uuid "76981a85-86d5-41a5-af97-0dd6d764c4e1")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 121.92 81.28 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "74423136-f5f0-4ab0-ab06-1901a0a9474a")
+		(property "Reference" "#PWR02"
+			(at 121.92 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 121.92 85.4131 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 121.92 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4abea909-ef8d-4b97-a540-1b5820801ab2")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:SDCardHead")
+		(at 153.67 104.902 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "80528d18-1115-4a77-a76d-880a4e15cc56")
+		(property "Reference" "J2"
+			(at 176.8196 114.6848 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MicroSD Header"
+			(at 176.8196 117.1091 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "OroLink:SDCardOutlinePadsTop"
+			(at 153.67 104.902 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.slideshare.net/slideshow/microsd-card-spec/36990778#23"
+			(at 153.67 104.902 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 153.67 104.902 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "b42ec566-2420-4243-ab0b-e8c1dea4455e")
+		)
+		(pin "3"
+			(uuid "d0cf79fc-6867-420f-95cf-4e42f54e69ed")
+		)
+		(pin "1"
+			(uuid "3192ab19-583a-4cdb-8268-e68a86e2c050")
+		)
+		(pin "7"
+			(uuid "aae7be29-8c99-43dc-ba61-3bad6f33f831")
+		)
+		(pin "5"
+			(uuid "4bcf0b2a-6e3e-4e8e-b0cf-4203226ee765")
+		)
+		(pin "8"
+			(uuid "4fe04f41-ea73-4394-9e03-e836a8d9504b")
+		)
+		(pin "2"
+			(uuid "69de0c3f-8c26-4739-bf88-90735b098994")
+		)
+		(pin "4"
+			(uuid "1ccc94c7-77b8-4696-829d-e6bf3c64c9da")
+		)
+		(instances
+			(project ""
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:RR0510R-330-D")
+		(at 123.19 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "845582fc-d68c-4c0f-a7f9-c536c82c0e4b")
+		(property "Reference" "R2"
+			(at 125.73 100.33 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "33R"
+			(at 133.35 100.33 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:RES_0510_SUS"
+			(at 123.19 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/392/susumu_RR_Data_Sheet-1206438.pdf"
+			(at 123.19 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+			(at 123.19 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "RR05R33DCT-ND"
+			(at 123.19 105.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+			(at 123.19 105.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Susumu/RR0510R-330-D?qs=nCAm%252BcMdy9zhk2wQ%252Bovhdw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=754-RR0510R-330D&utm_content=Susumu"
+			(at 123.19 105.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Susumu"
+			(at 123.19 105.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "754-RR0510R-330D"
+			(at 123.19 105.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "RR0510R-330-D"
+			(at 123.19 105.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "null"
+			(at 123.19 105.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "00282204-fa34-463f-8c1c-5ec231fad110")
+		)
+		(pin "1"
+			(uuid "2bb0e025-2137-4f76-a286-ed56ee16316e")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 106.68 133.35 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9356e17d-8aef-45a2-95ca-730bfed6b356")
+		(property "Reference" "#PWR01"
+			(at 106.68 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 106.68 137.4831 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 106.68 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "399050a1-94e0-4812-a69e-340478d23286")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:MSAST1L3YB5104KFNA01")
+		(at 111.76 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a2ee6c9b-c848-485c-8e34-a3d03ac55c8f")
+		(property "Reference" "C2"
+			(at 94.488 75.184 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 104.648 74.93 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:CAP_MSAS1L-3_TAY"
+			(at 111.76 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/Tayio_Yuden_1102023_MS_mlcc_all_e-3081579.pdf"
+			(at 111.76 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
+			(at 111.76 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Taiyo Yuden"
+			(at 111.76 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "MSAST1L3YB5104KFNA01"
+			(at 111.76 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/MSAST1L3YB5104KFNA01?qs=tlsG%2FOw5FFhBwK%252BMwEZpCA%3D%3D"
+			(at 111.76 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
+			(at 111.76 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "MSAST1L3YB5104KFNA01"
+			(at 111.76 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "587-MSAST1L3YB5104KFNA01CT-ND"
+			(at 111.76 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "963-MSAST1L3YB5104KF"
+			(at 111.76 77.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ba888180-e99c-450e-9768-561373dc62cd")
+		)
+		(pin "2"
+			(uuid "5591b627-d911-47cf-9606-9be7250a27c3")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:RR0510R-330-D")
+		(at 123.19 120.65 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a3e557c8-19bf-4591-bf3c-e05b232b42a9")
+		(property "Reference" "R4"
+			(at 125.73 118.11 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "33R"
+			(at 133.35 118.11 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:RES_0510_SUS"
+			(at 123.19 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/392/susumu_RR_Data_Sheet-1206438.pdf"
+			(at 123.19 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+			(at 123.19 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "RR05R33DCT-ND"
+			(at 123.19 123.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+			(at 123.19 123.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Susumu/RR0510R-330-D?qs=nCAm%252BcMdy9zhk2wQ%252Bovhdw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=754-RR0510R-330D&utm_content=Susumu"
+			(at 123.19 123.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Susumu"
+			(at 123.19 123.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "754-RR0510R-330D"
+			(at 123.19 123.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "RR0510R-330-D"
+			(at 123.19 123.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "null"
+			(at 123.19 123.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "29b09246-15b7-487b-8bb6-8e04e8083d92")
+		)
+		(pin "1"
+			(uuid "91d2703e-a11d-4982-bdf2-68b9025d6801")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:CLM3C-WKW-CXAYA453")
+		(at 140.97 72.39 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b42a8842-6795-4005-b450-7f49fb50802d")
+		(property "Reference" "LED1"
+			(at 148.59 60.7413 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CLM3C-WKW-CXAYA453"
+			(at 148.59 63.1656 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:CLM3CWKWCXAYA453"
+			(at 153.67 166.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://componentsearchengine.com/Datasheets/2/CLM3C-WKW-CWBYA453.pdf"
+			(at 153.67 266.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cree CLM3C-WKW-CXAYA453, CLM3 Series White LED, 5500K, PLCC 2, Rectangle Lens SMD Package"
+			(at 140.97 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.4"
+			(at 153.67 466.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "CREE LED"
+			(at 153.67 566.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CLM3C-WKW-CXAYA453"
+			(at 153.67 666.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "941-CLM3CWKWCXAYA453"
+			(at 153.67 766.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Cree-Inc/CLM3C-WKW-CXaYa453?qs=3AcK5DacLbr3ewaPKwAgNg%3D%3D"
+			(at 153.67 866.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "CLM3C-WKW-CXAYA453"
+			(at 153.67 966.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/clm3c-wkw-cxaya453/cree"
+			(at 153.67 1066.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Note" "ACTIVITY"
+			(at 148.59 65.5899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a76b55ad-41b0-4f0f-84e0-9adf466caeec")
+		)
+		(pin "2"
+			(uuid "9f62c849-4023-47ed-ae00-2b090816409c")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "LED1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:0402B103J160CT")
+		(at 111.76 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b99008d7-6459-4888-a19c-a48a6b53a3c1")
+		(property "Reference" "C3"
+			(at 94.488 79.756 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "0.01u"
+			(at 104.648 79.756 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:CAP_0402_N_WAL"
+			(at 111.76 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/210/WTC_MLCC_General_Purpose-1534899.pdf"
+			(at 111.76 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ceramic Capacitor, Multilayer, Ceramic, 16V, 5% +Tol, 5% -Tol, X7R, 15% TC, 0.01uF, Surface Mount, 0402"
+			(at 111.76 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Walsin"
+			(at 111.76 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "791-0402B103J160CT"
+			(at 111.76 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "1292-0402B103J160CT-ND"
+			(at 111.76 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "null"
+			(at 111.76 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Ceramic Capacitor, Multilayer, Ceramic, 16V, 5% +Tol, 5% -Tol, X7R, 15% TC, 0.01uF, Surface Mount, 0402"
+			(at 111.76 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Walsin/0402B103J160CT?qs=fIkAfuXiAQJQ%252BjA7a5Mepg%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=791-0402B103J160CT&utm_content=Walsin"
+			(at 111.76 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "0402B103J160CT"
+			(at 111.76 83.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e76486bb-fff5-46b3-ba69-ec00c0637d75")
+		)
+		(pin "1"
+			(uuid "732dac71-9195-45ee-a525-2564e3ab2092")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:JMK105BJ105KVHF")
+		(at 111.76 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ee709c04-593a-4ac3-ab28-cf32b9097927")
+		(property "Reference" "C1"
+			(at 94.488 70.104 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1u"
+			(at 104.14 69.85 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:cap_UMK105 CG080CV-F_TAY"
+			(at 111.76 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/taiyo_yuden_12132018_mlcc11_hq_e-1510082.pdf"
+			(at 111.76 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Capacitor, ceramic, 0402, 6.3V, x5R, 1 F, ±10% Rohs Compliant: Yes |Taiyo Yuden JMK105BJ105KVHF"
+			(at 111.76 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "587-3766-1-ND"
+			(at 111.76 72.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "JMK105BJ105KVHF"
+			(at 111.76 72.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Taiyo Yuden"
+			(at 111.76 72.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Capacitor, ceramic, 0402, 6.3V, x5R, 1 F, ±10% Rohs Compliant: Yes |Taiyo Yuden JMK105BJ105KVHF"
+			(at 111.76 72.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "963-JMK105BJ105KVHF"
+			(at 111.76 72.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "JMK105BJ105KVHF"
+			(at 111.76 72.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/JMK105BJ105KVHF?qs=qPaGMJUC%252BSupRtwk0yj9HQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=963-JMK105BJ105KVHF&utm_content=TAIYO%20YUDEN"
+			(at 111.76 72.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6b631f8e-a24b-4208-8c3a-5d478fc31938")
+		)
+		(pin "2"
+			(uuid "c660790a-5728-4e2a-b211-c4f1ddd9a0a4")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:RR0510R-330-D")
+		(at 123.19 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f4092eac-85b8-4592-9b9e-69cd4a0537da")
+		(property "Reference" "R5"
+			(at 125.73 123.19 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "33R"
+			(at 133.35 123.19 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:RES_0510_SUS"
+			(at 123.19 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/392/susumu_RR_Data_Sheet-1206438.pdf"
+			(at 123.19 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+			(at 123.19 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey ID" "RR05R33DCT-ND"
+			(at 123.19 128.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Res Thin Film 0402 33 Ohm 0.5% 0.063W(1/16W) ±100ppm/C Pad SMD T/R"
+			(at 123.19 128.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Susumu/RR0510R-330-D?qs=nCAm%252BcMdy9zhk2wQ%252Bovhdw%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=754-RR0510R-330D&utm_content=Susumu"
+			(at 123.19 128.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Name" "Susumu"
+			(at 123.19 128.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser ID" "754-RR0510R-330D"
+			(at 123.19 128.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mfr. Number" "RR0510R-330-D"
+			(at 123.19 128.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow ID" "null"
+			(at 123.19 128.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d6f1ad27-77d2-435a-b31e-810f73d951e2")
+		)
+		(pin "1"
+			(uuid "7c9f55f0-53dd-4c5e-afff-84300f489949")
+		)
+		(instances
+			(project "sd-adapter"
+				(path "/25c53965-120d-43d6-ab9a-d1852dd311a3"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+	(embedded_files
+		(file
+			(name "Oro.kicad_wks")
+			(type worksheet)
+			(data |KLUv/WBaKBVfAPqhBBcr8K4maQMIB0Kt2eO5vxfH8F5omatUZTz3n+2n7N7cMpPRejLTN5lIx2z0
+				Bf4BMwEtAUV0m/X3uyRnFs8UfIuW5V4mLF4hApCW5Y2nqCjbcnbM229neJ0s5eIcomlqTj06UmK5
+				leZua+HtelfMZrAQpLKGRqKaYkZZRy2Gs8oRgDipA4cHZEPSQRgurbDA0IHC4sLmTDKVk2oeKgUI
+				EA10qIi40GBxwDgCCA4iNODAAacABQcRKEBAKDABkUGlGnAAAYKBBwk4EpBwUEQkDuTKFIIBCg8o
+				UCQOCu6EA0kajQwTBCggAwEmHiBJhIaHxQXk0biIiCABIoKDCBc4JkxQWFgoP4AAQkIFDQmIyAIt
+				heQUggMPJkiAgKACAg4OeLAABgO8vDyLIYcZQFBwgEAFiAcmTHiAwQCIAY0kAoHH49Hh0UgqGhJI
+				hwuOZAMFEtxIHXTwkbFgwcKUQQ9IUmFxociNbLC4aNAGSMKhkVhIPnQj8w4cHhIVjiSicdF4PBoV
+				DwuJhAIZZBpMIGFBYQFpUCSOBGlkSJCJCgosHhENkKSioUGDhcQDwjBiZKKi8YAwipBpkeQRkWx4
+				QBgNGiANDREVD0gi0XhosEgSCwsXFkkGDI7HA2OKVDgwPCI0VEguNCgYbxkkQzLhsKBR4aB4YLwU
+				aVzg2JBwaCQPyAUFSWPDA4IAEADDMdGoQHGBPCySiEejooHhAWGgx0iFhWPDo1HBA7JhAgsqTERI
+				OCZ4CGVUOdMZdLGURjIbleicmCaTq5lEd3eLvRo6C2fMnFk+WrMMcjTlaOqziAnpPVrRqW9ZvtJq
+				VbdC95xEKoSVlScshdBVcbqWPfoR0epmeOwtY9NQ7yrEKl9lmdedSoTn+6gI89e0yqI9piytMZo6
+				YqWzqdpb6+9XRhdlS4U+/J3qM6o8LFSfPmNFRmvLzu7ZXqnrXZoVXZ0NvcYya1b2TC6re/56+2Ua
+				PCo9824Sa5tNwazL9B2Ws5m5ymLWicr1NEI7YxWjV/OozH7bOOWQmzPMaynEWqEb8k2hK/oVFZvV
+				R8fXVVmW8FimrTomUVbp2Q0jbcV3q6bLCrlkKvq57Odp2V1lKVsh9adCSMeZl1W7GCFbrRS5Mc1V
+				yhlsX0Ml9/VEf17XK1N1NmeeqmMZYl6TZgJ4mX3tNTIyKkx0hy7bwc59eVnLLFTXs8u71G2vpdG9
+				lqcypclK17was8Lz3C9EPtPUE+3X9XS0oTTKujXtnzGr3I3Ihi13aWk7muuYW4zKnGJXR3iUWIVV
+				bznikZDqrp6VhR4fs8qQEHuJh016W3ZT0cyEvbKfbdctrRCe1dCw/Lx7WXXpQlXUF7euTWiT9jL+
+				x9D0o8J5PUtZ51p/Rme9whaOFdPtkLL46sTJqq8S84VsStWN9yxFRjf58GU9uR8st5gR2Y11N6JW
+				sWKakOpT0a4Jey/WVOVNb34NbVtvn6fly4WlZ45N99oNEYt2L98p7zLTZza0nbKsaMrf1EgWawjN
+				9/01kyfr5Zlzm3JftRCvWc+jWd2PrOeswcObqpg/vgxRFjfJ7RTXgyBRAATAACAABqOyinWljn4z
+				UV6zjPLlyxOWCYde9GT9rrBke2dKDW+eK1NjyyTZp2k626nOdFXNuezQXlev4iMqjU2P5DlX4c8s
+				xw5psFM9qg8RlqrTppuuqkbKNGvl1T2znChtXL+j04tdGVpaXu14366M/mz69ZzstUhFddkO7Q6H
+				TOOay57KdzybHX0vr6qSi1P+36FZlaHN6r891UvnsahuZ+6tOonoutNbLuTJP3svmW2a1yfZmaxQ
+				/sZH+hX6DkvltHxuMt00m9OVe2Z+4ltz9iTL7GXSZTG7o2s52yqsIdpdb1gq2TgRqdzdKc8Qpd1u
+				tfcdvr8qR7JyzXdXiL7BorpQke7+mvNFt7e0RFj3nuzIlvbS7ZR35FdRy/EIK6sYsbIYz9A2wvZl
+				uzLz0GWDyqiysHxUgkRERJIkSXNCcwSBMu3cnQPimDyH4VBIjCHI1IiIiBSkJEnaDkHAAOVfoW5W
+				zLXbGHakM4GUqcr0mhYbwqdNJqThvMUS0mXQ1GADQAbQ7T3vrvsfykb4sFQk6qiT5TxLVhO3KEZW
+				VVkiRM0hOx9vAaMCBmk+wXsG+EB6gKfMt6MIUz2MUqvsb2f5EspongYg4bE+k+9fciaPSSMZVXGD
+				nZTqs8meD+M23LGXglCmoblG6uattruvG23LwMJWnHBkEk5ngVLHa4+0jjOyZ4dZBkcG4fXs4cqo
+				wjCC0GxzDqcHzX/lG6kmNJwdRXWdYMG5dk2ytAqrLSUhfPhtcxM2wita1a5w3aYaTe3g9LgU097m
+				/v3b7mHx8q/bg71VKB0qov7T2K3phzB2/r1eRiX83sjLtrDY7Z0gvdhrIPV0v2EtQO+RrKzQUJJn
+				n9Nsz1MSZH+9WFRTKQ1RXo29vbx8qxCXef5B/WhHeNAr9sYe+BUvdbhCpNw/edobtt8XEOw7eHH4
+				rCRNqrjrZiOICyXyXGN/D4xLBU13t2aE3pichJTCJgTEfqZ66+LvoGBlUEu4dK7gFApOTiwVq4wI
+				To0VyOOPoMVY43SFVJY4ZDIZcGlExqs8oqpNnAtfaVqwwhGDMMmgA1PQP4At41D9p9KkikerNBhS
+				Town/B5gvwBnHD27SMHAuA/607ZtyOeGMdit4SPkZ6QrX6oJPmtuTbcxQkR23oSqubP1ssGDFgh8
+				BRARSXt21duY3Y+nTcsZsf9nYj4hMglMKxET9ji3yXJA+N7dXanJWAL5y+v5f1RDd57eIryyiNZx
+				Sl67+VdLcnzQCUhS1f7hUuzpVn0V+Zn/KL5Qe2nzL/EdPTt6zFUfMeAogzrTStrZIebJ+E6+stQV
+				pbRQ1IgZu6toC5oiF2XDS2fTNsoRdQLXwnC4eo6D9f/mvvEGHGzJ1YubJ2AEmlrtveW6pd1B5p7i
+				7/wbjIfwhBGo4melABUn41Fp4LRrqb6sK8gdqAWD56/gD6cXvJzPemWscBAUKjmr4yT2iAOu91i2
+				y6VdcpdMCqviam3yqNrKnFIYlmDIRK7gnVn0hLPatDDceugAyMP6/wZKAQ4m+FhnVRU1rnuLbNm9
+				jRbwtujxebNHBm0pO8RKR/AT9QG1bVL7izZOmFFNe/xNKQKt12j2RFnF3BaGnxg5uw1VTg+MA10F
+				JqC1hSTOKmh65jskMWwi68rXiRtYB/hap+HjbgoXCowe3u1RV3XXr0v5tvuO2YHpxF4gHDGhrv/Q
+				i6bHJJtrhiX4ewr/bc34MRE+MRkS3yB90FerYhiofYLwn4Ge0icFc2Wn4MptrV+es7rgbZLQLzBe
+				jKvLkdNGF0B6Eu3U6O+D9dFfuU2/O+B9b5I8Nn/wMRWZOQ9+N1P1pNXKp1aPyE4hYj4eVxwv5Xxx
+				ipVHnPe15SD5a79sDI4y79Lrh3QrEgPSvj3eH1Wc/6sBPDzJHQBGpTrM/KtFNfGN/cax30WTs9kZ
+				O/wGgKE25ExdE59Zsouj+sjiySB2rLlRxLULtML8bmjYkkdmYFHmkX6Eqb8gbsdhNHfcrdcIifJA
+				tq+B6SL3ptzWCSbvPAJ17qiQBLqgT3d4+4XR7nuwuty9r7fH7aTc1qqxg6tX0hwHoS/jA7+j4dT6
+				oJ2bLDxKn2h0UYMVzGxpBA1U1krLKSQ7oCdAXhwDUJXfugM0nnhrPHroFH2BdeI9UkEVCvAUSCX8
+				om4BcqqOjjTplRsZ5yofXThgThXH9lj5tvDT/DdB32wCCUSBACXmpyfJtQ5niv5widgJikMP47S8
+				r74sLD4jGrQW/ikPo5Qo68ZVjQqat4Au1Ao6pqE/YrwWAyxThEVGGWeKpLQQbMlGiTEQuyKlyCBj
+				71/BcHs9hmnKULb3OTeeDXtQTS7A8yh9P6tlvLzLEzHvXwQtiBfwxpYWsUWhgFpFEUdoWdRxoaap
+				HM7hIuRaD1sYqGih/ybnne4BRVzJQRHPdo8NAZMh9WBEqm1sK44ibNyyGgxiu6pWhtQMAQBGLVrj
+				5xU5SF1uJWNA1SCeSWhMRCDuK7886GjgtDoprTDgIQ==|
+			)
+			(checksum "83F92B9985ECF6215984246F0C595A4D")
+		)
+	)
+)
