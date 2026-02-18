@@ -190,7 +190,7 @@ pub async fn main(spawner: Spawner) -> ! {
 		},
 	)));
 
-	let usart = usart::Uart::new_with_rtscts(
+	let _usart = usart::Uart::new_with_rtscts(
 		p.USART2,
 		p.PD6,
 		p.PA2,
@@ -208,7 +208,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	.unwrap();
 
 	let _usb_output_selector = Output::new(p.PA7, Level::Low, Speed::Low);
-	let ulpi_oc = ExtiInput::new(p.PB14, p.EXTI14, Pull::None);
+	let _ulpi_oc = ExtiInput::new(p.PB14, p.EXTI14, Pull::None);
 	let ulpi_rst = Output::new(p.PB15, Level::Low, Speed::Low);
 	static EP_OUT_BUFFER: StaticCell<[u8; 256]> = StaticCell::new();
 	let ep_out_buffer = EP_OUT_BUFFER.init([0; 256]);
@@ -255,9 +255,9 @@ pub async fn main(spawner: Spawner) -> ! {
 		},
 	)));
 
-	let sd_oc = ExtiInput::new(p.PA6, p.EXTI6, Pull::None);
+	let _sd_oc = ExtiInput::new(p.PA6, p.EXTI6, Pull::None);
 	let sd_sense = ExtiInput::new(p.PC13, p.EXTI13, Pull::None);
-	let sd_sense_cable = ExtiInput::new(p.PD8, p.EXTI8, Pull::None);
+	let _sd_sense_cable = ExtiInput::new(p.PD8, p.EXTI8, Pull::None);
 	// TODO(qix-): Switch back to open drain after pullup is added
 	// let sd_en = OutputOpenDrain::new(p.PC14, Level::High, Speed::Low);
 	let sd_en = OutputOpenDrain::new_pull(p.PC14, Level::High, Speed::Low, Pull::Up);
@@ -270,7 +270,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	let syseth_cs = OutputOpenDrain::new(p.PD7, Level::High, Speed::VeryHigh);
 	let syseth = SpiDevice::new(spi3, syseth_cs);
 
-	let uart = usart::Uart::new(p.UART7, p.PE7, p.PE8, Irqs, p.DMA1_CH1, p.DMA1_CH3, {
+	let _uart = usart::Uart::new(p.UART7, p.PE7, p.PE8, Irqs, p.DMA1_CH1, p.DMA1_CH3, {
 		let mut config = usart::Config::default();
 		config.baudrate = 115_200;
 		config.stop_bits = usart::StopBits::STOP1;
@@ -319,107 +319,63 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	defmt::info!("initialization complete; starting services...");
 
-	let service_channels = service::services_channels();
-
-	defmt::info!("service: blinken lights...");
-	spawner
-		.spawn(service::dev_blinken_light::run(
-			service_channels.blinken_light_rx,
+	service_config! {
+		dev_blinken_light {
 			debug_led1,
 			debug_led2,
 			debug_led3,
-		))
-		.unwrap();
-	defmt::info!("service: led controller...");
-	spawner
-		.spawn(service::dev_leds::run(
+		},
+		dev_exteth {
+			driver: exteth,
+			cs: exteth_cs,
+			rst: exteth_rst,
+			exti: exteth_int,
+			seed: self::rand::next_u64(),
+		},
+		dev_leds {
 			spawner,
-			service_channels.led_controller_rx,
 			i2c,
-			ind_en,
-		))
-		.unwrap();
-	defmt::info!("service: power monitor...");
-	spawner
-		.spawn(service::dev_power_monitor::run(
-			service_channels.master_bus.sender(),
-			i2c,
-		))
-		.unwrap();
-	defmt::info!("service: usb...");
-	spawner
-		.spawn(service::dev_usb::run(ulpi, ulpi_rst, ulpi_oc))
-		.unwrap();
-	defmt::info!("service: external ethernet...");
-	spawner
-		.spawn(service::dev_exteth::run(
-			exteth,
-			exteth_cs,
-			exteth_rst,
-			exteth_int,
-			self::rand::next_u64(),
-		))
-		.unwrap();
-	defmt::info!("service: system ethernet...");
-	spawner
-		.spawn(service::dev_syseth::run(
-			syseth,
-			syseth_rst,
-			syseth_int,
-			self::rand::next_u64(),
-		))
-		.unwrap();
-	defmt::info!("service: oled...");
-	spawner
-		.spawn(service::dev_oled::run(
+			enable_chip: ind_en,
+		},
+		dev_oled {
 			spawner,
-			service_channels.oled_rx,
-			oled,
-			oled_cs,
-			oled_dc,
-			oled_rst,
-			oled_en,
-		))
-		.unwrap();
-	defmt::info!("service: sdcard...");
-	spawner
-		.spawn(service::dev_sdcard::run(
-			sd_spi,
+			spi: oled,
+			cs: oled_cs,
+			dc: oled_dc,
+			rst: oled_rst,
+			vreg_en: oled_en,
+		},
+		dev_power_monitor {
+			i2c
+		},
+		dev_sdcard {
+			sd: sd_spi,
 			sd_cs,
 			sd_en,
-			sd_oc,
 			sd_sense,
-			sd_sense_cable,
 			sd_host_sut_sel,
-		))
-		.unwrap();
-	defmt::info!("service: uart...");
-	spawner
-		.spawn(service::dev_uart::run(
-			service_channels.uart_rx,
-			service_channels.master_bus.sender(),
-			uart,
-		))
-		.unwrap();
-	defmt::info!("service: usart...");
-	spawner
-		.spawn(service::dev_usart::run(
-			service_channels.usart_rx,
-			service_channels.master_bus.sender(),
-			usart,
-		))
-		.unwrap();
-	defmt::info!("service: ci/cd...");
-	spawner
-		.spawn(service::svc_cicd::run(service_channels.master_bus.sender()))
-		.unwrap();
-	defmt::info!("service: successful boot...");
-	spawner
-		.spawn(service::svc_successful_boot::run(&mut nv_ram.reboot))
-		.unwrap();
+		},
+		dev_syseth {
+			driver: syseth,
+			rst: syseth_rst,
+			exti: syseth_int,
+			seed: self::rand::next_u64(),
+		},
+		dev_usb {
+			driver: ulpi,
+			ulpi_rst,
+		},
+		svc_successful_boot {
+			reboot: &mut nv_ram.reboot,
+		},
+	}
+	.spawn_all(spawner);
 
-	defmt::info!("link is now ready; beginning Oro Link CI/CD main routine - happy hacking!");
-	service_channels.master_bus.run_master_bus().await;
+	defmt::info!("all services have been spawned");
+
+	loop {
+		Timer::after_secs(3600).await;
+	}
 }
 
 /// # Safety

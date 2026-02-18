@@ -3,14 +3,24 @@ use embassy_stm32::{exti::ExtiInput, gpio::OutputOpenDrain, mode::Async, spi::Sp
 use embassy_time::{Delay, Duration, Timer};
 use embedded_hal_bus::spi::ExclusiveDevice;
 
+pub struct Config {
+	pub driver: Spi<'static, Async>,
+	pub cs:     OutputOpenDrain<'static>,
+	pub rst:    OutputOpenDrain<'static>,
+	pub exti:   ExtiInput<'static>,
+	pub seed:   u64,
+}
+
 #[embassy_executor::task]
-pub async fn run(
-	driver: Spi<'static, Async>,
-	cs: OutputOpenDrain<'static>,
-	mut rst: OutputOpenDrain<'static>,
-	exti: ExtiInput<'static>,
-	seed: u64,
-) {
+pub async fn run(config: Config) -> ! {
+	let Config {
+		driver,
+		cs,
+		mut rst,
+		exti,
+		seed,
+	} = config;
+
 	let extdev = ExclusiveDevice::new(driver, cs, Delay).unwrap();
 
 	Timer::after_millis(100).await;

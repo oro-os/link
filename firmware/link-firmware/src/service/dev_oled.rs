@@ -17,7 +17,7 @@ use embedded_graphics_core::{
 };
 use embedded_hal_async::spi::SpiBus;
 
-use crate::channel::{Channel as RawChannel, ChannelExt, ReceiveDelay, Receiver, Sender};
+use crate::channel::{Channel as RawChannel, ReceiveDelay, Receiver, Sender};
 
 // const IDLE_WAIT_DURATION: Duration = Duration::from_secs(60 * 5); // 5 minutes
 const IDLE_WAIT_DURATION: Duration = Duration::from_secs(10);
@@ -41,7 +41,7 @@ const ORO_LOGO_COLORS: &[Gray4] = &[
 
 type OroLogo = oro_logo_rle::OroLogo<oro_logo_rle::OroLogo64x64>;
 
-pub type Channel = RawChannel<Message, 4>;
+pub type Channel = crate::channel::Channel<Cmd, 4>;
 
 #[derive(defmt::Format)]
 #[allow(unused)]
@@ -62,18 +62,18 @@ pub enum Scene {
 
 #[derive(defmt::Format)]
 #[allow(unused)]
-pub enum Message {
+pub enum Cmd {
 	SetState(State),
 	SetScene(Scene),
 }
 
 #[derive(defmt::Format)]
 #[allow(unused)]
-enum DriverMessage {
+enum DriverCmd {
 	SetPower(bool),
 	Render,
 	SetBrightness(u8),
-	Message(Message),
+	Cmd(Cmd),
 	ForceSetScene(Scene),
 }
 
@@ -126,17 +126,27 @@ enum SceneInstance {
 	Logo(LogoScene),
 }
 
+pub struct Config {
+	pub spawner: Spawner,
+	pub spi:     Spi<'static, Async>,
+	pub cs:      OutputOpenDrain<'static>,
+	pub dc:      Output<'static>,
+	pub rst:     Output<'static>,
+	pub vreg_en: Output<'static>,
+}
+
 #[embassy_executor::task]
-pub async fn run(
-	spawner: Spawner,
-	recv: <Channel as ChannelExt>::Receiver,
-	spi: Spi<'static, Async>,
-	cs: OutputOpenDrain<'static>,
-	dc: Output<'static>,
-	mut rst: Output<'static>,
-	mut vreg_en: Output<'static>,
-) -> ! {
-	static DRIVER_CHANNEL: static_cell::StaticCell<RawChannel<DriverMessage, 4>> =
+pub async fn run(recv: &'static Channel, config: Config) -> ! {
+	let Config {
+		spawner,
+		spi,
+		cs,
+		dc,
+		mut rst,
+		mut vreg_en,
+	} = config;
+
+	static DRIVER_CHANNEL: static_cell::StaticCell<RawChannel<DriverCmd, 4>> =
 		static_cell::StaticCell::new();
 	let driver_channel = DRIVER_CHANNEL.init(RawChannel::new());
 	spawner
@@ -148,7 +158,7 @@ pub async fn run(
 	let power_state_channel = POWER_STATE_CHANNEL.init(RawChannel::new());
 	spawner
 		.spawn(oled_power_state_task(
-			power_state_channel.receiver(),
+			power_state_channel,
 			driver_channel.sender(),
 		))
 		.unwrap();
@@ -171,7 +181,7 @@ pub async fn run(
 
 	loop {
 		match driver_channel.receive().await {
-			DriverMessage::SetPower(enabled) => {
+			DriverCmd::SetPower(enabled) => {
 				match (vbus_state, enabled) {
 					(false, true) => {
 						oled.set_comms_enabled(true);
@@ -193,7 +203,7 @@ pub async fn run(
 						oled.repaint().await.expect("OLED repaint failed");
 
 						driver_channel
-							.send(DriverMessage::ForceSetScene(current_scene_tag))
+							.send(DriverCmd::ForceSetScene(current_scene_tag))
 							.await;
 					}
 					(true, false) => {
@@ -208,21 +218,19 @@ pub async fn run(
 
 				vbus_state = enabled;
 			}
-			DriverMessage::Message(Message::SetState(state)) => {
+			DriverCmd::Cmd(Cmd::SetState(state)) => {
 				defmt::debug!("OLED state change requested: {:?}", state);
 				power_state_channel.send(state).await;
 			}
-			DriverMessage::SetBrightness(b) => {
+			DriverCmd::SetBrightness(b) => {
 				oled.set_contrast(b).await.unwrap();
 			}
-			DriverMessage::Message(Message::SetScene(scene)) => {
+			DriverCmd::Cmd(Cmd::SetScene(scene)) => {
 				if scene != current_scene_tag {
-					driver_channel
-						.send(DriverMessage::ForceSetScene(scene))
-						.await;
+					driver_channel.send(DriverCmd::ForceSetScene(scene)).await;
 				}
 			}
-			DriverMessage::ForceSetScene(scene) => {
+			DriverCmd::ForceSetScene(scene) => {
 				defmt::debug!("OLED scene change requested: {:?}", scene);
 				current_scene_tag = scene;
 
@@ -237,7 +245,7 @@ pub async fn run(
 					}
 				}
 			}
-			DriverMessage::Render => {
+			DriverCmd::Render => {
 				let frame_after = match &mut current_scene {
 					SceneInstance::Logo(scene) => scene.render(&mut oled.framebuf),
 				};
@@ -249,18 +257,18 @@ pub async fn run(
 }
 
 #[embassy_executor::task]
-async fn oled_driver_task(rx: Receiver<Message, 4>, tx: Sender<DriverMessage, 4>) -> ! {
-	// Just convert all incoming messages to DriverMessages and forward them
+async fn oled_driver_task(rx: &'static Channel, tx: Sender<DriverCmd, 4>) -> ! {
+	// Just convert all incoming messages to DriverCmds and forward them
 	loop {
 		let msg = rx.receive().await;
-		let driver_msg = DriverMessage::Message(msg);
+		let driver_msg = DriverCmd::Cmd(msg);
 		tx.send(driver_msg).await;
 	}
 }
 
 async fn perform_idle_cooloff(
-	rx: &mut Receiver<State, 2>,
-	tx: &mut Sender<DriverMessage, 4>,
+	rx: &RawChannel<State, 2>,
+	tx: &mut Sender<DriverCmd, 4>,
 ) -> Result<!, State> {
 	// Transition to On if we aren't
 	defmt::debug!("performing OLED idle cool-off; turning on display fully, first");
@@ -289,7 +297,7 @@ async fn perform_idle_cooloff(
 			brightness,
 			IDLE_COOL_OFF_STEP_DURATION
 		);
-		tx.send(DriverMessage::SetBrightness(brightness)).await;
+		tx.send(DriverCmd::SetBrightness(brightness)).await;
 		rx.after_receive(IDLE_COOL_OFF_STEP_DURATION).await?;
 	}
 
@@ -302,36 +310,36 @@ async fn perform_idle_cooloff(
 	rx.after_receive(IDLE_VREG_OFF_DELAY).await?;
 
 	defmt::debug!("OLED idle cooldown complete; shutting of OLED");
-	tx.send(DriverMessage::SetPower(false)).await;
+	tx.send(DriverCmd::SetPower(false)).await;
 
 	// Wait for next state change
 	Err(rx.receive().await)
 }
 
 async fn perform_shutoff(
-	rx: &mut Receiver<State, 2>,
-	tx: &mut Sender<DriverMessage, 4>,
+	rx: &RawChannel<State, 2>,
+	tx: &mut Sender<DriverCmd, 4>,
 ) -> Result<!, State> {
 	// Immediately turn off display
-	tx.send(DriverMessage::SetBrightness(0)).await;
+	tx.send(DriverCmd::SetBrightness(0)).await;
 
 	// Wait a bit before turning off power regulator
 	rx.after_receive(IDLE_VREG_OFF_DELAY).await?;
-	tx.send(DriverMessage::SetPower(false)).await;
+	tx.send(DriverCmd::SetPower(false)).await;
 
 	// Wait for next state change
 	Err(rx.receive().await)
 }
 
-async fn perform_turnon_once(tx: &mut Sender<DriverMessage, 4>) -> Result<(), State> {
-	tx.send(DriverMessage::SetPower(true)).await;
-	tx.send(DriverMessage::SetBrightness(255)).await;
+async fn perform_turnon_once(tx: &mut Sender<DriverCmd, 4>) -> Result<(), State> {
+	tx.send(DriverCmd::SetPower(true)).await;
+	tx.send(DriverCmd::SetBrightness(255)).await;
 	Ok(())
 }
 
 async fn perform_turnon(
-	rx: &mut Receiver<State, 2>,
-	tx: &mut Sender<DriverMessage, 4>,
+	rx: &RawChannel<State, 2>,
+	tx: &mut Sender<DriverCmd, 4>,
 ) -> Result<!, State> {
 	// Perform turn on and then halt, waiting for next state change
 	perform_turnon_once(tx).await?;
@@ -339,24 +347,27 @@ async fn perform_turnon(
 }
 
 #[embassy_executor::task]
-async fn oled_power_state_task(mut rx: Receiver<State, 2>, mut tx: Sender<DriverMessage, 4>) -> ! {
+async fn oled_power_state_task(
+	rx: &'static RawChannel<State, 2>,
+	mut tx: Sender<DriverCmd, 4>,
+) -> ! {
 	let mut current_state = State::Off;
 
 	loop {
 		current_state = match current_state {
-			State::On => perform_turnon(&mut rx, &mut tx).await.unwrap_err(),
-			State::Idle => perform_idle_cooloff(&mut rx, &mut tx).await.unwrap_err(),
-			State::Off => perform_shutoff(&mut rx, &mut tx).await.unwrap_err(),
+			State::On => perform_turnon(rx, &mut tx).await.unwrap_err(),
+			State::Idle => perform_idle_cooloff(rx, &mut tx).await.unwrap_err(),
+			State::Off => perform_shutoff(rx, &mut tx).await.unwrap_err(),
 		};
 	}
 }
 
 #[embassy_executor::task]
-async fn oled_frame_timing_task(rx: Receiver<Duration, 2>, tx: Sender<DriverMessage, 4>) -> ! {
+async fn oled_frame_timing_task(rx: Receiver<Duration, 2>, tx: Sender<DriverCmd, 4>) -> ! {
 	loop {
 		let wait_duration = rx.receive().await;
 		Timer::after(wait_duration).await;
-		tx.send(DriverMessage::Render).await;
+		tx.send(DriverCmd::Render).await;
 	}
 }
 

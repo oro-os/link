@@ -4,7 +4,7 @@ use core::{
 };
 
 use embassy_futures::join::join;
-use embassy_stm32::{exti::ExtiInput, gpio::Output, peripherals, usb::Driver};
+use embassy_stm32::{gpio::Output, peripherals, usb::Driver};
 use embassy_time::{Duration, Timer};
 use embassy_usb::{
 	Builder, Handler,
@@ -13,12 +13,18 @@ use embassy_usb::{
 };
 use usbd_hid::descriptor::{KeyboardReport, SerializedDescriptor};
 
+pub struct Config {
+	pub driver:   Driver<'static, peripherals::USB_OTG_HS>,
+	pub ulpi_rst: Output<'static>,
+}
+
 #[embassy_executor::task]
-pub async fn run(
-	driver: Driver<'static, peripherals::USB_OTG_HS>,
-	mut ulpi_rst: Output<'static>,
-	_ulpi_oc: ExtiInput<'static>,
-) -> ! {
+pub async fn run(config: Config) -> ! {
+	let Config {
+		driver,
+		mut ulpi_rst,
+	} = config;
+
 	defmt::info!("resetting ULPI PHY");
 	ulpi_rst.set_low();
 	Timer::after(Duration::from_millis(10)).await;

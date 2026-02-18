@@ -6,20 +6,18 @@ use embassy_stm32::{
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 
-use super::Dispatch;
+use crate::service;
 
 const ADDR: u8 = 0x40;
 
-#[derive(defmt::Format)]
-pub enum Message {
-	PowerReading(u16),
+pub struct Config {
+	pub i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>,
 }
 
 #[embassy_executor::task]
-pub async fn run(
-	mut bus: super::Bus,
-	i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>,
-) -> ! {
+pub async fn run(bus: super::Bus, config: Config) -> ! {
+	let Config { i2c } = config;
+
 	macro_rules! set {
 		($reg:expr,[$high:expr, $low:expr]) => {{
 			let mut i2c = i2c.lock().await;
@@ -82,7 +80,9 @@ pub async fn run(
 		Timer::after(Duration::from_millis(250)).await;
 		let current = get!(0x04);
 		trace!("powermon: current: {}mA", current);
-		bus.dispatch(Message::PowerReading(current)).await;
+		bus.svc_failsafe
+			.send(service::svc_failsafe::Cmd::PowerReading { ma: current })
+			.await;
 	}
 }
 

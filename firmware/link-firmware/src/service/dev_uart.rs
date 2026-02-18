@@ -5,17 +5,17 @@ use heapless::Vec;
 use super::Dispatch;
 use crate::channel::{Channel as RawChannel, ChannelExt};
 
-pub type Channel = RawChannel<Message, 16>;
+pub type Channel = RawChannel<Cmd, 16>;
 
 pub const PACKET_SIZE: usize = 256;
 pub type Packet = Vec<u8, PACKET_SIZE>;
 
 #[derive(defmt::Format)]
 #[allow(unused)]
-pub enum Message {
+pub enum Cmd {
 	Send(Packet),
-	Recv(Packet),
-	RecvErr,
+//	Recv(Packet),
+//	RecvErr,
 }
 
 #[embassy_executor::task]

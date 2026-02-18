@@ -9,7 +9,7 @@ use embassy_time::{Duration, Timer};
 use static_cell::StaticCell;
 
 use crate::{
-	channel::{Channel as RawChannel, ChannelExt, Receiver, Sender},
+	channel::{Channel as RawChannel, Receiver, Sender},
 	color::Rgb,
 };
 
@@ -19,7 +19,7 @@ const SHIFT_CHANNEL: usize = 0; // Channel 0 is a "special" channel that sets th
 const IDLE_SHIFT: u8 = 4; // Divide by 16.
 const IDLE_MIN: u8 = 2; // Minimum brightness in idle mode (for non-zero brightness).
 
-pub type Channel = RawChannel<Message, 4>;
+pub type Channel = crate::channel::Channel<Cmd, 4>;
 
 type RgbReceiver = Receiver<Rgb, 2>;
 type LightSender = Sender<(usize, u8), 16>;
@@ -28,7 +28,7 @@ type GreyReceiver = Receiver<u8, 2>;
 
 #[derive(defmt::Format)]
 #[allow(unused)]
-pub enum Message {
+pub enum Cmd {
 	/// Turns off all lights
 	AllOff,
 	/// Performs a self-test sequence; no
@@ -62,13 +62,20 @@ pub enum Message {
 	SetSdSenseIndicator(bool),
 }
 
+pub struct Config {
+	pub spawner:     Spawner,
+	pub i2c:         &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>,
+	pub enable_chip: Output<'static>,
+}
+
 #[embassy_executor::task]
-pub async fn run(
-	spawner: Spawner,
-	recv: <Channel as ChannelExt>::Receiver,
-	i2c: &'static Mutex<NoopRawMutex, I2c<'static, Blocking, Master>>,
-	mut enable_chip: Output<'static>,
-) -> ! {
+pub async fn run(recv: &'static Channel, config: Config) -> ! {
+	let Config {
+		spawner,
+		i2c,
+		mut enable_chip,
+	} = config;
+
 	enable_chip.set_high();
 	Timer::after(Duration::from_millis(100)).await;
 
@@ -176,12 +183,12 @@ pub async fn run(
 	loop {
 		let msg = recv.receive().await;
 		match msg {
-			Message::AllOff => {
+			Cmd::AllOff => {
 				for channel in 1..=36 {
 					light_ch.send((channel, 0)).await;
 				}
 			}
-			Message::SelfTest => {
+			Cmd::SelfTest => {
 				for _ in 0..3 {
 					for channel in 1..=36 {
 						light_ch.send((channel, 255)).await;
@@ -193,31 +200,31 @@ pub async fn run(
 					Timer::after(Duration::from_millis(500)).await;
 				}
 			}
-			Message::SetIdle(is_idle) => {
+			Cmd::SetIdle(is_idle) => {
 				light_ch
 					.send((SHIFT_CHANNEL, if is_idle { IDLE_SHIFT } else { 0 }))
 					.await;
 			}
-			Message::SetJobIndicator(rgb) => {
+			Cmd::SetJobIndicator(rgb) => {
 				job_indicator_led.send(rgb).await;
 			}
-			Message::SetRemoteIndicator(rgb) => {
+			Cmd::SetRemoteIndicator(rgb) => {
 				remote_link_led.send(rgb).await;
 			}
-			Message::SetSystemIndicator(rgb) => {
+			Cmd::SetSystemIndicator(rgb) => {
 				system_indicator_led.send(rgb).await;
 			}
-			Message::SetBacklight(rgb) => {
+			Cmd::SetBacklight(rgb) => {
 				backlight_rgb_led.send(rgb.without_white_component()).await;
 				backlight_white_led.send(rgb.white_component()).await;
 			}
-			Message::SetSdCableIndicator(on) => {
+			Cmd::SetSdCableIndicator(on) => {
 				sd_cable_sense_led.send(on).await;
 			}
-			Message::SetSdCardIndicator(on) => {
+			Cmd::SetSdCardIndicator(on) => {
 				sd_card_activity_led.send(on).await;
 			}
-			Message::SetSdSenseIndicator(on) => {
+			Cmd::SetSdSenseIndicator(on) => {
 				sd_card_sense_led.send(on).await;
 			}
 		}

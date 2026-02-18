@@ -9,13 +9,22 @@ use embassy_stm32::{
 use embassy_sync::blocking_mutex::raw::NoopRawMutex;
 use embassy_time::{Duration, Timer};
 
+pub struct Config {
+	pub driver: SpiDevice<'static, NoopRawMutex, Spi<'static, Async>, OutputOpenDrain<'static>>,
+	pub rst:    Output<'static>,
+	pub exti:   ExtiInput<'static>,
+	pub seed:   u64,
+}
+
 #[embassy_executor::task]
-pub async fn run(
-	driver: SpiDevice<'static, NoopRawMutex, Spi<'static, Async>, OutputOpenDrain<'static>>,
-	mut rst: Output<'static>,
-	exti: ExtiInput<'static>,
-	seed: u64,
-) {
+pub async fn run(config: Config) {
+	let Config {
+		driver,
+		mut rst,
+		exti,
+		seed,
+	} = config;
+
 	Timer::after_millis(100).await;
 	rst.set_low();
 	Timer::after_millis(100).await;

@@ -7,16 +7,24 @@ use embassy_stm32::{
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 
+pub struct Config {
+	pub sd: &'static Mutex<NoopRawMutex, Spi<'static, Async>>,
+	pub sd_cs: OutputOpenDrain<'static>,
+	pub sd_en: OutputOpenDrain<'static>,
+	pub sd_sense: ExtiInput<'static>,
+	pub sd_host_sut_sel: Output<'static>,
+}
+
 #[embassy_executor::task]
-pub async fn run(
-	sd: &'static Mutex<NoopRawMutex, Spi<'static, Async>>,
-	mut sd_cs: OutputOpenDrain<'static>,
-	mut sd_en: OutputOpenDrain<'static>,
-	_sd_oc: ExtiInput<'static>,
-	sd_sense: ExtiInput<'static>,
-	_sd_sense_cable: ExtiInput<'static>,
-	mut sd_host_sut_sel: Output<'static>,
-) -> ! {
+pub async fn run(config: Config) -> ! {
+	let Config {
+		sd,
+		mut sd_cs,
+		mut sd_en,
+		sd_sense,
+		mut sd_host_sut_sel,
+	} = config;
+
 	defmt::info!("switching SD card to Host mode...");
 	sd_host_sut_sel.select_host();
 	Timer::after(Duration::from_millis(10)).await;
