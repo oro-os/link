@@ -1,30 +1,16 @@
-use embassy_executor::Spawner;
 use embassy_stm32::{
 	gpio::{Output, OutputOpenDrain},
 	mode::Async,
 	spi::{Error, Spi},
 };
+use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 use embedded_graphics::{
 	framebuffer::{Framebuffer, buffer_size},
 	pixelcolor::{Gray4, PixelColor, raw::LittleEndian},
-	prelude::*,
 };
-use embedded_graphics_core::{
-	draw_target::DrawTarget,
-	geometry::{OriginDimensions, Size},
-	primitives::Rectangle,
-};
+use embedded_graphics_core::geometry::{OriginDimensions, Size};
 use embedded_hal_async::spi::SpiBus;
-
-use crate::channel::{Channel as RawChannel, ReceiveDelay, Receiver, Sender};
-
-// const IDLE_WAIT_DURATION: Duration = Duration::from_secs(60 * 5); // 5 minutes
-const IDLE_WAIT_DURATION: Duration = Duration::from_secs(10);
-const IDLE_COOL_OFF_STEP_DURATION: Duration = Duration::from_millis(100);
-const IDLE_COOL_OFF_STEP: u8 = 1; // Decrease brightness by 5 each step
-const IDLE_MIN_BRIGHTNESS: u8 = 80; // Minimum brightness before vreg shutoff
-const IDLE_VREG_OFF_DELAY: Duration = Duration::from_secs(10); // Time after turning off display to turn off VREG
 
 const BRIGHTNESS_CURVE: [u8; 64] = [
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 8, 8, 9, 10, 11, 12, 12, 13,
@@ -32,102 +18,28 @@ const BRIGHTNESS_CURVE: [u8; 64] = [
 	46, 48, 50, 52, 53, 55, 57, 59, 61, 63,
 ];
 
-const ORO_LOGO_COLORS: &[Gray4] = &[
-	Gray4::new(0x0),
-	Gray4::new(0x5),
-	Gray4::new(0xA),
-	Gray4::new(0xF),
-];
-
-type OroLogo = oro_logo_rle::OroLogo<oro_logo_rle::OroLogo64x64>;
-
 pub type Channel = crate::channel::Channel<Cmd, 4>;
 
-#[derive(defmt::Format)]
-#[allow(unused)]
-pub enum State {
-	/// OLED should remain fully on
-	On,
-	/// OLED will slowly turn off after idle period
-	Idle,
-	/// OLED should immediately turn off
-	Off,
-}
+pub type FrameBuf = Framebuffer<
+	Gray4,
+	<Gray4 as PixelColor>::Raw,
+	LittleEndian,
+	256,
+	64,
+	{ buffer_size::<Gray4>(256, 64) },
+>;
 
-#[derive(defmt::Format, Clone, Copy, PartialEq, Eq)]
-#[allow(unused)]
-pub enum Scene {
-	Logo,
-}
+pub static FRAME_BUFFER: Mutex<CriticalSectionRawMutex, FrameBuf> = Mutex::new(FrameBuf::new());
 
 #[derive(defmt::Format)]
 #[allow(unused)]
 pub enum Cmd {
-	SetState(State),
-	SetScene(Scene),
-}
-
-#[derive(defmt::Format)]
-#[allow(unused)]
-enum DriverCmd {
-	SetPower(bool),
+	SetPower { enabled: bool },
 	Render,
-	SetBrightness(u8),
-	Cmd(Cmd),
-	ForceSetScene(Scene),
-}
-
-struct LogoScene {
-	logo_iter: OroLogo,
-}
-
-impl LogoScene {
-	fn new() -> Self {
-		Self {
-			logo_iter: OroLogo::new(),
-		}
-	}
-
-	fn render(&mut self, fb: &mut FrameBuf) -> Duration {
-		use oro_logo_rle::{Command, OroLogoData};
-
-		let mut off = 0;
-
-		loop {
-			match self.logo_iter.next() {
-				None => panic!("Oro logo exhausted commands (shouldn't happen)"),
-
-				Some(Command::End) => break,
-
-				Some(Command::Draw(count, lightness)) => {
-					let color = ORO_LOGO_COLORS[usize::from(lightness)];
-
-					for i in 0..count {
-						let x = ((off + usize::from(i)) % OroLogo::WIDTH)
-							+ ((256 / 2) - (OroLogo::WIDTH / 2));
-						let y = (off + usize::from(i)) / OroLogo::WIDTH;
-						fb.set_pixel(Point::new(x as i32, y as i32), color);
-					}
-
-					off += usize::from(count);
-				}
-
-				Some(Command::Skip(count)) => {
-					off += usize::from(count);
-				}
-			}
-		}
-
-		Duration::from_millis(1000 / OroLogo::FPS as u64)
-	}
-}
-
-enum SceneInstance {
-	Logo(LogoScene),
+	SetBrightness { brightness: u8 },
 }
 
 pub struct Config {
-	pub spawner: Spawner,
 	pub spi:     Spi<'static, Async>,
 	pub cs:      OutputOpenDrain<'static>,
 	pub dc:      Output<'static>,
@@ -136,9 +48,8 @@ pub struct Config {
 }
 
 #[embassy_executor::task]
-pub async fn run(recv: &'static Channel, config: Config) -> ! {
+pub async fn run(rx: &'static Channel, config: Config) -> ! {
 	let Config {
-		spawner,
 		spi,
 		cs,
 		dc,
@@ -146,42 +57,13 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 		mut vreg_en,
 	} = config;
 
-	static DRIVER_CHANNEL: static_cell::StaticCell<RawChannel<DriverCmd, 4>> =
-		static_cell::StaticCell::new();
-	let driver_channel = DRIVER_CHANNEL.init(RawChannel::new());
-	spawner
-		.spawn(oled_driver_task(recv, driver_channel.sender()))
-		.unwrap();
-
-	static POWER_STATE_CHANNEL: static_cell::StaticCell<RawChannel<State, 2>> =
-		static_cell::StaticCell::new();
-	let power_state_channel = POWER_STATE_CHANNEL.init(RawChannel::new());
-	spawner
-		.spawn(oled_power_state_task(
-			power_state_channel,
-			driver_channel.sender(),
-		))
-		.unwrap();
-
-	static FRAME_AFTER_CHANNEL: static_cell::StaticCell<RawChannel<Duration, 2>> =
-		static_cell::StaticCell::new();
-	let frame_after_channel = FRAME_AFTER_CHANNEL.init(RawChannel::new());
-	spawner
-		.spawn(oled_frame_timing_task(
-			frame_after_channel.receiver(),
-			driver_channel.sender(),
-		))
-		.unwrap();
-
-	let mut oled = SSD1362::new(spi, dc, cs);
-
+	let mut oled = Ssd1362::new(spi, dc, cs);
 	let mut vbus_state = false;
-	let mut current_scene_tag: Scene = Scene::Logo;
-	let mut current_scene: SceneInstance = SceneInstance::Logo(LogoScene::new());
 
+	defmt::trace!("beginning main loop");
 	loop {
-		match driver_channel.receive().await {
-			DriverCmd::SetPower(enabled) => {
+		match rx.receive().await {
+			Cmd::SetPower { enabled } => {
 				match (vbus_state, enabled) {
 					(false, true) => {
 						oled.set_comms_enabled(true);
@@ -200,11 +82,9 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 						oled.init(true).await.expect("OLED re-init failed");
 
 						defmt::debug!("repainting OLED after VBUS enable");
-						oled.repaint().await.expect("OLED repaint failed");
-
-						driver_channel
-							.send(DriverCmd::ForceSetScene(current_scene_tag))
-							.await;
+						let fb = FRAME_BUFFER.lock().await;
+						oled.repaint(&fb).await.expect("OLED repaint failed");
+						drop(fb);
 					}
 					(true, false) => {
 						oled.set_comms_enabled(false);
@@ -218,184 +98,30 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 
 				vbus_state = enabled;
 			}
-			DriverCmd::Cmd(Cmd::SetState(state)) => {
-				defmt::debug!("OLED state change requested: {:?}", state);
-				power_state_channel.send(state).await;
+			Cmd::SetBrightness { brightness } => {
+				oled.set_contrast(brightness).await.unwrap();
 			}
-			DriverCmd::SetBrightness(b) => {
-				oled.set_contrast(b).await.unwrap();
-			}
-			DriverCmd::Cmd(Cmd::SetScene(scene)) => {
-				if scene != current_scene_tag {
-					driver_channel.send(DriverCmd::ForceSetScene(scene)).await;
-				}
-			}
-			DriverCmd::ForceSetScene(scene) => {
-				defmt::debug!("OLED scene change requested: {:?}", scene);
-				current_scene_tag = scene;
-
-				oled.clear(Gray4::BLACK).unwrap();
-
-				match scene {
-					Scene::Logo => {
-						let mut logo_scene = LogoScene::new();
-						let frame_after = logo_scene.render(&mut oled.framebuf);
-						frame_after_channel.send(frame_after).await;
-						oled.repaint().await.unwrap();
-					}
-				}
-			}
-			DriverCmd::Render => {
-				let frame_after = match &mut current_scene {
-					SceneInstance::Logo(scene) => scene.render(&mut oled.framebuf),
-				};
-				frame_after_channel.send(frame_after).await;
-				oled.repaint().await.unwrap();
+			Cmd::Render => {
+				oled.repaint(&*FRAME_BUFFER.lock().await).await.unwrap();
 			}
 		}
 	}
 }
 
-#[embassy_executor::task]
-async fn oled_driver_task(rx: &'static Channel, tx: Sender<DriverCmd, 4>) -> ! {
-	// Just convert all incoming messages to DriverCmds and forward them
-	loop {
-		let msg = rx.receive().await;
-		let driver_msg = DriverCmd::Cmd(msg);
-		tx.send(driver_msg).await;
-	}
-}
-
-async fn perform_idle_cooloff(
-	rx: &RawChannel<State, 2>,
-	tx: &mut Sender<DriverCmd, 4>,
-) -> Result<!, State> {
-	// Transition to On if we aren't
-	defmt::debug!("performing OLED idle cool-off; turning on display fully, first");
-	perform_turnon_once(tx).await?;
-
-	// Wait for a few minutes of idle before turning off the display
-	defmt::debug!(
-		"OLED will begin cooldown after idle period: {:?}",
-		IDLE_WAIT_DURATION
-	);
-	rx.after_receive(IDLE_WAIT_DURATION).await?;
-
-	// Gradually decrease brightness
-	defmt::debug!("OLED idle cooldown starting");
-	let mut brightness: u8 = 255;
-	loop {
-		if brightness <= IDLE_MIN_BRIGHTNESS {
-			break;
-		}
-
-		brightness = brightness
-			.saturating_sub(IDLE_COOL_OFF_STEP)
-			.max(IDLE_MIN_BRIGHTNESS);
-		defmt::debug!(
-			"OLED idle cooldown step; setting brightness to {} and waiting for {:?}",
-			brightness,
-			IDLE_COOL_OFF_STEP_DURATION
-		);
-		tx.send(DriverCmd::SetBrightness(brightness)).await;
-		rx.after_receive(IDLE_COOL_OFF_STEP_DURATION).await?;
-	}
-
-	// If we've reached here, it means there's no minimum brightness
-	// and we can turn off the regulator
-	defmt::debug!(
-		"OLED idle cooldown has reached minimum brightness; turning off power after {:?}",
-		IDLE_VREG_OFF_DELAY
-	);
-	rx.after_receive(IDLE_VREG_OFF_DELAY).await?;
-
-	defmt::debug!("OLED idle cooldown complete; shutting of OLED");
-	tx.send(DriverCmd::SetPower(false)).await;
-
-	// Wait for next state change
-	Err(rx.receive().await)
-}
-
-async fn perform_shutoff(
-	rx: &RawChannel<State, 2>,
-	tx: &mut Sender<DriverCmd, 4>,
-) -> Result<!, State> {
-	// Immediately turn off display
-	tx.send(DriverCmd::SetBrightness(0)).await;
-
-	// Wait a bit before turning off power regulator
-	rx.after_receive(IDLE_VREG_OFF_DELAY).await?;
-	tx.send(DriverCmd::SetPower(false)).await;
-
-	// Wait for next state change
-	Err(rx.receive().await)
-}
-
-async fn perform_turnon_once(tx: &mut Sender<DriverCmd, 4>) -> Result<(), State> {
-	tx.send(DriverCmd::SetPower(true)).await;
-	tx.send(DriverCmd::SetBrightness(255)).await;
-	Ok(())
-}
-
-async fn perform_turnon(
-	rx: &RawChannel<State, 2>,
-	tx: &mut Sender<DriverCmd, 4>,
-) -> Result<!, State> {
-	// Perform turn on and then halt, waiting for next state change
-	perform_turnon_once(tx).await?;
-	Err(rx.receive().await)
-}
-
-#[embassy_executor::task]
-async fn oled_power_state_task(
-	rx: &'static RawChannel<State, 2>,
-	mut tx: Sender<DriverCmd, 4>,
-) -> ! {
-	let mut current_state = State::Off;
-
-	loop {
-		current_state = match current_state {
-			State::On => perform_turnon(rx, &mut tx).await.unwrap_err(),
-			State::Idle => perform_idle_cooloff(rx, &mut tx).await.unwrap_err(),
-			State::Off => perform_shutoff(rx, &mut tx).await.unwrap_err(),
-		};
-	}
-}
-
-#[embassy_executor::task]
-async fn oled_frame_timing_task(rx: Receiver<Duration, 2>, tx: Sender<DriverCmd, 4>) -> ! {
-	loop {
-		let wait_duration = rx.receive().await;
-		Timer::after(wait_duration).await;
-		tx.send(DriverCmd::Render).await;
-	}
-}
-
-type FrameBuf = Framebuffer<
-	Gray4,
-	<Gray4 as PixelColor>::Raw,
-	LittleEndian,
-	256,
-	64,
-	{ buffer_size::<Gray4>(256, 64) },
->;
-
-struct SSD1362 {
+struct Ssd1362 {
 	spi: Spi<'static, Async>,
 	dc: Output<'static>,
 	cs: OutputOpenDrain<'static>,
-	framebuf: FrameBuf,
 	comms_enabled: bool,
 }
 
 #[expect(dead_code)]
-impl SSD1362 {
+impl Ssd1362 {
 	fn new(spi: Spi<'static, Async>, dc: Output<'static>, cs: OutputOpenDrain<'static>) -> Self {
 		Self {
 			spi,
 			dc,
 			cs,
-			framebuf: Framebuffer::new(),
 			comms_enabled: false,
 		}
 	}
@@ -547,7 +273,7 @@ impl SSD1362 {
 		Ok(())
 	}
 
-	async fn repaint(&mut self) -> Result<(), Error> {
+	async fn repaint(&mut self, framebuf: &FrameBuf) -> Result<(), Error> {
 		if !self.comms_enabled {
 			return Ok(());
 		}
@@ -556,7 +282,7 @@ impl SSD1362 {
 		// Due to the borrow checker we have to perform the write directly
 		self.dc.set_high(); // data
 		self.cs.set_low();
-		let data = self.framebuf.data();
+		let data = framebuf.data();
 		let r = self.spi.write(data).await;
 		// Always flush even if write fails
 		let fr = self.flush().await;
@@ -567,35 +293,8 @@ impl SSD1362 {
 	}
 }
 
-impl OriginDimensions for SSD1362 {
+impl OriginDimensions for Ssd1362 {
 	fn size(&self) -> Size {
 		(256, 64).into()
-	}
-}
-
-impl DrawTarget for SSD1362 {
-	type Color = <FrameBuf as DrawTarget>::Color;
-	type Error = <FrameBuf as DrawTarget>::Error;
-
-	fn draw_iter<I>(&mut self, pixels: I) -> Result<(), Self::Error>
-	where
-		I: IntoIterator<Item = Pixel<Self::Color>>,
-	{
-		FrameBuf::draw_iter::<I>(&mut self.framebuf, pixels)
-	}
-
-	fn fill_contiguous<I>(&mut self, area: &Rectangle, colors: I) -> Result<(), Self::Error>
-	where
-		I: IntoIterator<Item = Self::Color>,
-	{
-		FrameBuf::fill_contiguous::<I>(&mut self.framebuf, area, colors)
-	}
-
-	fn fill_solid(&mut self, area: &Rectangle, color: Self::Color) -> Result<(), Self::Error> {
-		FrameBuf::fill_solid(&mut self.framebuf, area, color)
-	}
-
-	fn clear(&mut self, color: Self::Color) -> Result<(), Self::Error> {
-		FrameBuf::clear(&mut self.framebuf, color)
 	}
 }

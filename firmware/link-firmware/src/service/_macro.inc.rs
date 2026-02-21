@@ -7,6 +7,7 @@ macro_rules! services {
 			$(#[config($config:tt)])?
 			$(#[bus($bus:tt)])?
 			$(#[rx($rx:tt)])?
+			$(#[skip($skip:tt)])?
 			$name:ident
 		),+
 		$(,)?
@@ -54,15 +55,22 @@ macro_rules! services {
 				};
 
 				$(
-					defmt::info!("spawning service: {}", ::core::stringify!($name));
-					spawner.must_spawn(services!(
-						@CALL
-						self::$name::run,
-						()
-						{$($bus)?} => {bus.clone()}
-						{$($rx)?} => {&owned_bus.$name}
-						{$($config)?} => {self.$name}
-					));
+					if cfg!(any(false, $($skip)?)) {
+						defmt::info!(
+							"skipping service (due to #[skip]): {}",
+							::core::stringify!($name)
+						);
+					} else {
+						defmt::info!("spawning service: {}", ::core::stringify!($name));
+						spawner.must_spawn(services!(
+							@CALL
+							self::$name::run,
+							()
+							{$($bus)?} => {bus.clone()}
+							{$($rx)?} => {&owned_bus.$name}
+							{$($config)?} => {self.$name}
+						));
+					}
 				)+
 			}
 		}

@@ -1,9 +1,12 @@
 //! Delta force blinking lights operation supreme, go.
 
+use embassy_futures::select::Either;
 use embassy_stm32::gpio::OutputOpenDrain;
-use embassy_time::Duration;
+use embassy_time::{Duration, Timer};
 
 use crate::channel::ReceiveDelay;
+
+const CONFIG_DUTY_PERIOD: u64 = 1000;
 
 pub type Channel = crate::channel::Channel<Cmd, 2>;
 
@@ -11,6 +14,7 @@ pub type Channel = crate::channel::Channel<Cmd, 2>;
 pub enum Cmd {
 	On,
 	Idle,
+	Config,
 	Off,
 }
 
@@ -22,11 +26,11 @@ pub struct Config {
 
 async fn blink_cycle(
 	rx: &Channel,
-	leds: &mut [OutputOpenDrain<'static>],
+	mut leds: [&mut OutputOpenDrain<'static>; 3],
 	cycle_delay: Option<Duration>,
 ) -> Result<!, Cmd> {
 	loop {
-		for led in leds.iter_mut() {
+		for led in &mut leds {
 			for _ in 0..2 {
 				led.set_low();
 				rx.after_receive(Duration::from_millis(10)).await?;
@@ -37,7 +41,7 @@ async fn blink_cycle(
 		}
 
 		if let Some(delay) = cycle_delay {
-			for led in leds.iter_mut() {
+			for led in &mut leds {
 				led.set_high();
 			}
 			rx.after_receive(delay).await?;
@@ -45,28 +49,102 @@ async fn blink_cycle(
 	}
 }
 
+async fn config_cycle(rx: &Channel, leds: [&mut OutputOpenDrain<'static>; 3]) -> Result<!, Cmd> {
+	let mut i1 = (0..CONFIG_DUTY_PERIOD)
+		.chain((0..CONFIG_DUTY_PERIOD).rev())
+		.chain((0..1).cycle().take(1000))
+		.cycle();
+	let mut i2 = (0..CONFIG_DUTY_PERIOD)
+		.chain((0..CONFIG_DUTY_PERIOD).rev())
+		.chain((0..1).cycle().take(1000))
+		.cycle()
+		.skip((CONFIG_DUTY_PERIOD / 3) as usize);
+	let mut i3 = (0..CONFIG_DUTY_PERIOD)
+		.chain((0..CONFIG_DUTY_PERIOD).rev())
+		.chain((0..1).cycle().take(1000))
+		.cycle()
+		.skip((CONFIG_DUTY_PERIOD / 3) as usize * 2);
+
+	let [l1, l2, l3] = leds;
+
+	loop {
+		let d1 = i1.next().unwrap_or(0);
+		let d2 = i2.next().unwrap_or(0);
+		let d3 = i3.next().unwrap_or(0);
+
+		let p1 = async {
+			if d1 > 0 {
+				l1.set_low();
+				Timer::after_micros(d1).await;
+			}
+			l1.set_high();
+			Timer::after_micros(CONFIG_DUTY_PERIOD - d1).await;
+		};
+		let p2 = async {
+			if d2 > 0 {
+				l2.set_low();
+				Timer::after_micros(d2).await;
+			}
+			l2.set_high();
+			Timer::after_micros(CONFIG_DUTY_PERIOD - d2).await;
+		};
+		let p3 = async {
+			if d3 > 0 {
+				l3.set_low();
+				Timer::after_micros(d3).await;
+			}
+			l3.set_high();
+			Timer::after_micros(CONFIG_DUTY_PERIOD - d3).await;
+		};
+
+		if let Either::First(ev) =
+			embassy_futures::select::select(rx.receive(), embassy_futures::join::join3(p1, p2, p3))
+				.await
+		{
+			return Err(ev);
+		}
+	}
+}
+
 #[embassy_executor::task]
 pub async fn run(rx: &'static Channel, config: Config) -> ! {
 	let Config {
-		debug_led1,
-		debug_led2,
-		debug_led3,
+		mut debug_led1,
+		mut debug_led2,
+		mut debug_led3,
 	} = config;
-	let mut leds = [debug_led1, debug_led2, debug_led3];
+
 	let mut mode = Cmd::On;
 
 	loop {
 		mode = match mode {
-			Cmd::On => blink_cycle(rx, &mut leds, None).await.unwrap_err(),
-			Cmd::Idle => {
-				blink_cycle(rx, &mut leds, Some(Duration::from_secs(10)))
+			Cmd::On => {
+				blink_cycle(
+					rx,
+					[&mut debug_led1, &mut debug_led2, &mut debug_led3],
+					None,
+				)
+				.await
+				.unwrap_err()
+			}
+			Cmd::Config => {
+				config_cycle(rx, [&mut debug_led1, &mut debug_led2, &mut debug_led3])
 					.await
 					.unwrap_err()
 			}
+			Cmd::Idle => {
+				blink_cycle(
+					rx,
+					[&mut debug_led1, &mut debug_led2, &mut debug_led3],
+					Some(Duration::from_secs(10)),
+				)
+				.await
+				.unwrap_err()
+			}
 			Cmd::Off => {
-				for led in leds.iter_mut() {
-					led.set_high();
-				}
+				debug_led1.set_high();
+				debug_led2.set_high();
+				debug_led3.set_high();
 				rx.receive().await
 			}
 		}

@@ -139,30 +139,18 @@ pub async fn main(spawner: Spawner) -> ! {
 				.expect("failed to write/read-back default pflash")
 		}
 	};
-	let mut pflash = pflash.into_latest();
+	let pflash = pflash.into_latest();
 	defmt::debug!("pflash contents: {:?}", pflash);
 
-	if pflash.initialized {
+	let initialized = if pflash.initialized {
 		defmt::info!("system is initialized");
+		true
 	} else {
 		defmt::warn!("system is uninitialized; performing first-time setup");
 
 		nv_ram.reset();
-
-		pflash.initialized = true;
-		// SAFETY: We're initializing it.
-		if let Err(err) = unsafe { flash::write_pflash(pflash) } {
-			defmt::error!("failed to write pflash during first-time setup: {:?}", err);
-			defmt::error!("halting system");
-			panic!("failed to initialize system");
-		}
-		defmt::info!("first-time setup complete");
-
-		Timer::after(Duration::from_millis(100)).await;
-
-		// SAFETY: We're resetting the system.
-		unsafe { self::reset() }
-	}
+		false
+	};
 
 	// This gets cleared on a successful boot later
 	nv_ram.reboot.in_progress.write(true);
@@ -338,7 +326,6 @@ pub async fn main(spawner: Spawner) -> ! {
 			enable_chip: ind_en,
 		},
 		dev_oled {
-			spawner,
 			spi: oled,
 			cs: oled_cs,
 			dc: oled_dc,
@@ -368,6 +355,12 @@ pub async fn main(spawner: Spawner) -> ! {
 		svc_successful_boot {
 			reboot: &mut nv_ram.reboot,
 		},
+		svc_main {
+			initialized
+		},
+		svc_init {
+			pflash
+		}
 	}
 	.spawn_all(spawner);
 
