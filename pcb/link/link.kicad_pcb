@@ -176,7 +176,7 @@
 		(allow_soldermask_bridges_in_footprints yes)
 		(tenting front back)
 		(pcbplotparams
-			(layerselection 0x00000000_00000000_555555d5_5755f5ff)
+			(layerselection 0x00000000_00000000_55555555_55550001)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
 			(disableapertmacros no)
 			(usegerberextensions yes)
@@ -208,11 +208,11 @@
 			(sketchdnponfab yes)
 			(crossoutdnponfab yes)
 			(subtractmaskfromsilk no)
-			(outputformat 1)
+			(outputformat 5)
 			(mirror no)
 			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "gerbers")
+			(outputdirectory "gerbers/svg")
 		)
 	)
 	(net 0 "")
@@ -215751,7 +215751,7 @@
 			(extension_offset 0.5)
 			(keep_text_aligned yes)
 		)
-		(gr_text "88.9000 mm"
+		(gr_text "3.5000 in"
 			(at 81.2984 102.235 90)
 			(layer "Cmts.User")
 			(uuid "8d194a38-05da-49c4-8d95-c73632860000")
@@ -215787,7 +215787,7 @@
 			(extension_offset 0.5)
 			(keep_text_aligned yes)
 		)
-		(gr_text "153.6700 mm"
+		(gr_text "6.0500 in"
 			(at 168.91 38.9312 0)
 			(layer "Cmts.User")
 			(uuid "d02e8a90-4aa2-4b32-8bd1-5a723bd5c11d")
