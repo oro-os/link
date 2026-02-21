@@ -11,6 +11,7 @@ pub(crate) mod nvram;
 pub(crate) mod rand;
 pub(crate) mod service;
 pub(crate) mod unique_id;
+pub(crate) mod version;
 
 use defmt_rtt as _;
 use embassy_embedded_hal::shared_bus::asynch::spi::SpiDevice;
@@ -109,15 +110,30 @@ pub async fn main(spawner: Spawner) -> ! {
 		nv_ram.reboot.fast_count.read()
 	);
 
+	let pflash = match flash::read_pflash() {
+		Ok(pflash) => pflash,
+		Err(e) => {
+			defmt::warn!("failed to read pflash; reinitializing: {:?}", e);
+			// SAFETY: We're initializing it.
+			unsafe { flash::write_pflash(flash::Pflash::default()) }
+				.expect("failed to write/read-back default pflash")
+		}
+	};
+
+	let mut pflash = pflash.into_latest();
+	defmt::debug!("pflash contents: {:?}", pflash);
+
 	if nv_ram.reboot.fast_count.read() >= 10 {
 		nv_ram.reset();
 
 		defmt::warn!(
-			"detected {} fast reboots; resetting Oro Link",
+			"detected {} fast reboots; starting Oro Link in initialization mode",
 			nv_ram.reboot.fast_count
 		);
 
-		if let Err(err) = unsafe { flash::write_pflash(flash::Pflash::default()) } {
+		pflash.initialized = false;
+
+		if let Err(err) = unsafe { flash::write_pflash(pflash) } {
 			defmt::error!(
 				"failed to reset pflash during fast reboot recovery; system is NOT reset: {:?}",
 				err
@@ -129,18 +145,6 @@ pub async fn main(spawner: Spawner) -> ! {
 		// SAFETY: We're resetting the system.
 		unsafe { self::reset() }
 	}
-
-	let pflash = match flash::read_pflash() {
-		Ok(pflash) => pflash,
-		Err(e) => {
-			defmt::warn!("failed to read pflash; reinitializing: {:?}", e);
-			// SAFETY: We're initializing it.
-			unsafe { flash::write_pflash(flash::Pflash::default()) }
-				.expect("failed to write/read-back default pflash")
-		}
-	};
-	let pflash = pflash.into_latest();
-	defmt::debug!("pflash contents: {:?}", pflash);
 
 	let initialized = if pflash.initialized {
 		defmt::info!("system is initialized");
@@ -258,7 +262,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	let syseth_cs = OutputOpenDrain::new(p.PD7, Level::High, Speed::VeryHigh);
 	let syseth = SpiDevice::new(spi3, syseth_cs);
 
-	let _uart = usart::Uart::new(p.UART7, p.PE7, p.PE8, Irqs, p.DMA1_CH1, p.DMA1_CH3, {
+	let uart = usart::Uart::new(p.UART7, p.PE7, p.PE8, Irqs, p.DMA1_CH1, p.DMA1_CH3, {
 		let mut config = usart::Config::default();
 		config.baudrate = 115_200;
 		config.stop_bits = usart::StopBits::STOP1;
@@ -360,7 +364,10 @@ pub async fn main(spawner: Spawner) -> ! {
 		},
 		svc_init {
 			pflash
-		}
+		},
+		dev_uart {
+			uart
+		},
 	}
 	.spawn_all(spawner);
 

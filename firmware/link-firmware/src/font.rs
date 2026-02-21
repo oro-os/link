@@ -11,7 +11,6 @@ pub trait FontData {
 	fn data() -> &'static [u8];
 }
 
-#[expect(dead_code)]
 pub trait Font {
 	fn draw_char<PIX: PixelColor, TAR: DrawTarget<Color = PIX>>(
 		chr: char,
@@ -23,6 +22,14 @@ pub trait Font {
 	) -> i32;
 
 	fn char_width(chr: char) -> i32;
+
+	fn str_width(str: impl Iterator<Item = char>) -> i32 {
+		let mut total = 0;
+		for c in str {
+			total += Self::char_width(c);
+		}
+		total
+	}
 
 	fn draw_chars<PIX: PixelColor, TAR: DrawTarget<Color = PIX>, I: IntoIterator<Item = char>>(
 		chrs: I,

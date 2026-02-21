@@ -2,9 +2,9 @@ import S from "@surplus/s";
 
 import "./global.css";
 
-import { device } from "./lib/usb-controller.mjs";
-
 import Root from "./views/Root.jsx";
+
+import { Device } from "./lib/device";
 
 // Mount the root component to the document body
 S.root(() => {
@@ -13,7 +13,7 @@ S.root(() => {
 		enableConfigurator: S.value(false),
 	});
 
-	state.usbDevice = device({ enable: state.enableConfigurator });
+	state.device = new Device();
 
 	window.addEventListener("error", (e) =>
 		state.fatalError(e.error ?? e ?? "(unknown error)"),

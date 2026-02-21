@@ -16,7 +16,8 @@ bank1 = []
 bank2 = []
 
 [dependencies]
-link-protocol = { path = "../link-protocol", features = ["defmt", "embedded-io", "embassy"] }
+link-protocol = { path = "../link-protocol", features = ["defmt"] }
+
 cortex-m-rt = "0.7.3"
 defmt = { version = "1.0.1", default-features = false }
 
@@ -80,7 +81,7 @@ features = [
 [build-dependencies]
 pixglyph = "0.1.0"
 png = "0.17.9"
-proc-macro2 = "1.0.66"
-quote = "1.0.32"
-syn = { version = "2.0.28", features = ["full"] }
+proc-macro2 = "1.0.106"
+quote = "1.0.44"
+syn = { version = "2.0.117", features = ["full"] }
 ttf-parser = "0.18.0"

@@ -9,6 +9,7 @@ await esbuild.build({
 	entryPoints: ["src/app.jsx"],
 	bundle: true,
 	minify: isProduction,
+	format: "esm",
 	sourcemap: !isProduction,
 	outfile: "pkg/app.js",
 	plugins: [surplus(), surplusCss()],
@@ -16,3 +17,4 @@ await esbuild.build({
 
 // Copy static files
 await fsp.copyFile("src/index.html", "pkg/index.html");
+await fsp.copyFile("wasm/linkproto_bg.wasm", "pkg/linkproto_bg.wasm");

@@ -1,29 +1,41 @@
 use embassy_futures::select::{Either, select};
 use embassy_time::{Duration, Timer};
+use embedded_graphics::{
+	pixelcolor::Gray4,
+	prelude::{DrawTarget, GrayColor},
+};
 
 use super::dev_oled::FrameBuf;
 
 mod logo;
+mod status;
 
 pub type Channel = crate::channel::Channel<Cmd, 4>;
 
-#[derive(defmt::Format, Clone, Copy, PartialEq, Eq, Default)]
+pub enum Line {
+	Normal(&'static str),
+	Bold(&'static str),
+}
+
+#[derive(Default)]
+pub struct Status {
+	pub line1: Option<Line>,
+	pub line2: Option<Line>,
+	pub line3: Option<Line>,
+	pub line4: Option<Line>,
+}
+
+#[derive(Default)]
 #[allow(unused)]
 pub enum Scene {
 	#[default]
 	Logo,
+	Status(Status),
 }
 
 enum SceneState {
 	Logo(logo::Scene),
-}
-
-impl SceneState {
-	fn from_tag(scene: Scene) -> Self {
-		match scene {
-			Scene::Logo => Self::Logo(logo::Scene::default()),
-		}
-	}
+	Status(status::Scene),
 }
 
 pub enum Cmd {
@@ -32,9 +44,16 @@ pub enum Cmd {
 
 #[embassy_executor::task]
 pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
-	let mut current_state = SceneState::from_tag(Scene::default());
+	let mut current_state = SceneState::Logo(logo::Scene::new());
 
 	loop {
+		{
+			super::dev_oled::FRAME_BUFFER
+				.lock()
+				.await
+				.clear(Gray4::BLACK);
+		}
+
 		let cmd = loop {
 			// Wait for a handle to the frame renderer
 			let mut frame_buffer =
@@ -48,27 +67,37 @@ pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 
 			bus.dev_oled.send(super::dev_oled::Cmd::Render).await;
 
-			if let Either::First(cmd) = select(rx.receive(), Timer::after(frame_delay)).await {
-				break cmd;
+			if let Some(frame_delay) = frame_delay {
+				if let Either::First(cmd) = select(rx.receive(), Timer::after(frame_delay)).await {
+					break cmd;
+				}
+			} else {
+				break rx.receive().await;
 			}
 		};
 
 		match cmd {
-			Cmd::SetScene { scene } => {
-				current_state = SceneState::from_tag(scene);
+			Cmd::SetScene { scene: Scene::Logo } => {
+				current_state = SceneState::Logo(logo::Scene::new());
+			}
+			Cmd::SetScene {
+				scene: Scene::Status(status),
+			} => {
+				current_state = SceneState::Status(status::Scene(status));
 			}
 		}
 	}
 }
 
 pub trait RenderScene {
-	fn render(&mut self, fb: &mut FrameBuf) -> Duration;
+	fn render(&mut self, fb: &mut FrameBuf) -> Option<Duration>;
 }
 
 impl RenderScene for SceneState {
-	fn render(&mut self, fb: &mut FrameBuf) -> Duration {
+	fn render(&mut self, fb: &mut FrameBuf) -> Option<Duration> {
 		match self {
 			SceneState::Logo(s) => s.render(fb),
+			SceneState::Status(s) => s.render(fb),
 		}
 	}
 }

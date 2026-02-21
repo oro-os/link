@@ -7,16 +7,21 @@
 	"scripts": {
 		"lint": "tsc && prettier -c .",
 		"format": "prettier -w .",
-		"build": "env NODE_ENV=production node esbuild.mjs",
-		"dev": "node esbuild.mjs"
+		"build": "tsc && env NODE_ENV=production node esbuild.mjs",
+		"dev": "tsc && node esbuild.mjs"
+	},
+	"dependencies": {
+		"link-protocol": "./wasm",
+		"p-limit": "^7.3.0"
 	},
 	"devDependencies": {
-		"@surplus/s": "^1.2.0",
-		"@surplus/esbuild": "^2.0.2",
 		"@surplus/css": "^0.1.0",
+		"@surplus/esbuild": "^2.0.2",
+		"@surplus/s": "^1.2.0",
 		"@surplus/types": "^0.1.3",
+		"@types/w3c-web-serial": "^1.0.8",
 		"esbuild": "^0.27.2",
 		"prettier": "^3.7.4",
-		"tsc": "^2.0.4"
+		"typescript": "^5.9.3"
 	}
 }

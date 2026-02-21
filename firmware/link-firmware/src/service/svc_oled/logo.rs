@@ -16,8 +16,8 @@ pub struct Scene {
 	logo_iter: OroLogo,
 }
 
-impl Default for Scene {
-	fn default() -> Self {
+impl Scene {
+	pub fn new() -> Self {
 		Self {
 			logo_iter: OroLogo::new(),
 		}
@@ -25,7 +25,7 @@ impl Default for Scene {
 }
 
 impl super::RenderScene for Scene {
-	fn render(&mut self, fb: &mut FrameBuf) -> Duration {
+	fn render(&mut self, fb: &mut FrameBuf) -> Option<Duration> {
 		use oro_logo_rle::{Command, OroLogoData};
 
 		let mut off = 0;
@@ -55,6 +55,6 @@ impl super::RenderScene for Scene {
 			}
 		}
 
-		Duration::from_millis(1000 / OroLogo::FPS as u64)
+		Some(Duration::from_millis(1000 / OroLogo::FPS as u64))
 	}
 }

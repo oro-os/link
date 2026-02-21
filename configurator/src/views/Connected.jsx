@@ -1,9 +1,15 @@
 import * as C from "./Connected.css";
 
 import SvgLinkUsbDiagram from "../components/SvgLinkUsbDiagram";
+import LinkVersion from "../components/LinkVersion";
 
-export default () => (
+export default ({ device }) => (
 	<div class={C.root}>
-		<SvgLinkUsbDiagram />
+		<div>
+			Link Version: <LinkVersion device={device} />
+		</div>
+		<div>
+			<SvgLinkUsbDiagram />
+		</div>
 	</div>
 );

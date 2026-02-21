@@ -10,6 +10,7 @@ pub mod svc_failsafe;
 pub mod svc_successful_boot;
 // pub mod dev_uart; // TODO
 // pub mod dev_usart; // TODO
+pub mod dev_uart;
 pub mod svc_cicd;
 pub mod svc_init;
 pub mod svc_main;
@@ -27,6 +28,7 @@ services! {
                                    #[rx(false)] #[skip(true)] dev_power_monitor,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_sdcard,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_syseth,
+                     #[bus(false)]              dev_uart,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_usb,
                      #[bus(false)] #[rx(false)] #[skip(true)] svc_successful_boot,
     #[config(false)] #[bus(false)]              #[skip(true)] svc_failsafe,

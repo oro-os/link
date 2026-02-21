@@ -1,59 +1,88 @@
-use embassy_futures::select::{Either, select};
 use embassy_stm32::{mode::Async, usart::Uart};
-use heapless::Vec;
+use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, signal::Signal};
+use embedded_io_async::Write;
+use link_protocol::minicbor::{self, encode::write::Cursor};
+use static_cell::StaticCell;
 
-use super::Dispatch;
-use crate::channel::{Channel as RawChannel, ChannelExt};
+pub type Channel = crate::channel::Channel<Cmd, 16>;
 
-pub type Channel = RawChannel<Cmd, 16>;
-
-pub const PACKET_SIZE: usize = 256;
-pub type Packet = Vec<u8, PACKET_SIZE>;
-
-#[derive(defmt::Format)]
-#[allow(unused)]
 pub enum Cmd {
-	Send(Packet),
-//	Recv(Packet),
-//	RecvErr,
+	Send(link_protocol::Response),
 }
 
-#[embassy_executor::task]
-pub async fn run(
-	recv: <Channel as ChannelExt>::Receiver,
-	mut bus: super::Bus,
-	mut uart: Uart<'static, Async>,
-) -> ! {
-	let mut buf = [0u8; PACKET_SIZE];
-	loop {
-		let r = select(uart.read_until_idle(&mut buf), recv.receive()).await;
+pub struct Config {
+	pub uart: Uart<'static, Async>,
+}
 
-		match r {
-			Either::First(n) => {
-				match n {
-					Ok(n) => {
-						let mut packet = Packet::new();
-						packet.extend_from_slice(&buf[..n]).unwrap();
-						defmt::trace!("uart recv {} bytes: {:?}", n, &packet);
-						bus.dispatch(Message::Recv(packet)).await;
-					}
-					Err(e) => {
-						defmt::error!("uart read error: {:?}", e);
-						bus.dispatch(Message::RecvErr).await;
-					}
-				}
+pub static PACKET: Signal<CriticalSectionRawMutex, link_protocol::Request> = Signal::new();
+
+#[embassy_executor::task]
+pub async fn run(rx: &'static Channel, config: Config) -> ! {
+	let Config { mut uart } = config;
+
+	static BUFFER: StaticCell<[u8; 4096]> = StaticCell::new();
+	let buf = BUFFER.init([0u8; 4096]);
+
+	loop {
+		let mut len = [0u8; 4];
+		uart.read(&mut len).await.unwrap();
+		let len = u32::from_be_bytes(len);
+		defmt::trace!("read length: {}", len);
+
+		let (len, len_is_valid) = if len > (buf.len() as u32) {
+			(0usize, false)
+		} else {
+			(len as usize, true)
+		};
+
+		if !len_is_valid {
+			defmt::error!("received invalid message: too long");
+			let mut to_read = len;
+			while to_read > 0 {
+				let n = to_read.min(buf.len());
+				uart.read(&mut buf[0..n]).await.unwrap();
+				to_read -= n;
 			}
-			Either::Second(msg) => {
-				match msg {
-					Message::Send(packet) => {
-						defmt::trace!("uart send {} bytes: {:?}", packet.len(), &packet);
-						uart.write(&packet).await.unwrap();
-					}
-					_ => {
-						panic!("unexpected message on uart service channel");
-					}
-				}
-			}
+
+			let mut cursor = Cursor::new(&mut buf[..]);
+			minicbor::encode(
+				link_protocol::Response::Err(link_protocol::Error::TooLong),
+				&mut cursor,
+			)
+			.unwrap();
+			let position = cursor.position();
+			uart.write(&buf[..position]).await.unwrap();
+			continue;
 		}
+
+		uart.read(&mut buf[..len]).await.unwrap();
+		defmt::trace!("read {} bytes: {:X}", len, &buf[..len]);
+
+		let Ok(request) = minicbor::decode(&buf[..len]) else {
+			defmt::error!("received invalid message: could not decode");
+			let mut cursor = Cursor::new(&mut buf[..]);
+			minicbor::encode(
+				link_protocol::Response::Err(link_protocol::Error::MalformedRequest),
+				&mut cursor,
+			)
+			.unwrap();
+			let position = cursor.position();
+			uart.write(&buf[..position]).await.unwrap();
+			continue;
+		};
+
+		defmt::debug!("received request: {:?}", request);
+
+		PACKET.signal(request);
+
+		let Cmd::Send(res) = rx.receive().await;
+		defmt::debug!("sending response: {:?}", res);
+
+		let mut cursor = Cursor::new(&mut buf[4..]);
+		minicbor::encode(res, &mut cursor).unwrap();
+		let position = cursor.position();
+		let length = (position as u32).to_be_bytes();
+		buf[..4].copy_from_slice(&length);
+		uart.write_all(&buf[..position+4]).await.unwrap();
 	}
 }

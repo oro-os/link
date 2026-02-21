@@ -235,5 +235,20 @@ pub fn main() {
 	let dest_path = out_dir.join("oro-link-fontdata.rs");
 	fs::write(dest_path, source).unwrap();
 
+	std::fs::write(
+		out_dir.join("version_info.rs"),
+		format!(
+			r#"
+		pub const VERSION_MAJOR: u64 = {};
+		pub const VERSION_MINOR: u64 = {};
+		pub const VERSION_PATCH: u64 = {};
+		"#,
+			env!("CARGO_PKG_VERSION_MAJOR"),
+			env!("CARGO_PKG_VERSION_MINOR"),
+			env!("CARGO_PKG_VERSION_PATCH"),
+		),
+	)
+	.unwrap();
+
 	println!("cargo:rerun-if-changed=build.rs");
 }

@@ -11,20 +11,12 @@ resolver = "2"
 members = [
 	"link-firmware",
 	"link-rpcapd",
-	"link-daemon",
-	"link-repl",
-	"link-protocol",
-	"link-protocol-binser",
-	"link-protocol-binser-proc",
+	"link-protocol"
 ]
 
 default-members = [
 	"link-rpcapd",
-	"link-daemon",
-	"link-repl",
-	"link-protocol",
-	"link-protocol-binser",
-	"link-protocol-binser-proc",
+	"link-protocol"
 ]
 
 [profile.dev]

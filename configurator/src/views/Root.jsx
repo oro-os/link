@@ -7,14 +7,14 @@ import FatalError from "./FatalError.jsx";
 import WaitForConnection from "./WaitForConnection.jsx";
 import Connected from "./Connected.jsx";
 
-export default ({ usbDevice, fatalError, ...state }) => {
+export default ({ device, fatalError, ...state }) => {
 	const currentView = S.value(WaitForConnection);
 	S(() =>
 		currentView(
 			(() => {
 				if (fatalError())
 					return () => <FatalError error={fatalError()} />;
-				if (usbDevice()) return Connected;
+				if (device.online()) return Connected;
 				return WaitForConnection;
 			})(),
 		),
@@ -39,7 +39,7 @@ export default ({ usbDevice, fatalError, ...state }) => {
 	return (
 		<div class={C.root}>
 			<div fn={css(C.content, switchingClass)}>
-				{visibleView()({ usbDevice, ...state })}
+				{visibleView()({ device, ...state })}
 			</div>
 		</div>
 	);
