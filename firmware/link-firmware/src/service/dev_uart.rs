@@ -3,13 +3,9 @@ use embassy_stm32::{
 	usart::{RingBufferedUartRx, UartTx},
 };
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, signal::Signal};
+use embassy_time::Timer;
 use embedded_io_async::Write;
-use link_protocol::minicbor::{self, encode::write::Cursor};
 use static_cell::StaticCell;
-
-const MAX_FRAME_LEN: usize = 4096;
-const RESET_REQ_WORD: u32 = 0xFFFF_FFFF;
-const RESET_ACK_WORD: u32 = 0xFFFF_FFFE;
 
 pub type Channel = crate::channel::Channel<Cmd, 16>;
 
@@ -17,6 +13,7 @@ pub enum Cmd {
 	Send(Response),
 }
 
+#[derive(defmt::Format)]
 pub enum Response {
 	Protocol(link_protocol::Response),
 	OledFrame,
@@ -54,78 +51,6 @@ pub struct Config {
 
 pub static PACKET: Signal<CriticalSectionRawMutex, link_protocol::Request> = Signal::new();
 
-fn crc32(data: &[u8]) -> u32 {
-	let mut crc = 0xFFFF_FFFFu32;
-	for &byte in data {
-		crc ^= byte as u32;
-		for _ in 0..8 {
-			let mask = (crc & 1).wrapping_neg();
-			crc = (crc >> 1) ^ (0xEDB8_8320u32 & mask);
-		}
-	}
-	!crc
-}
-
-async fn read_exact_rx(rx: &mut RingBufferedUartRx<'static>, dst: &mut [u8]) {
-	let mut offset = 0;
-	while offset < dst.len() {
-		let bytes_read = rx.read(&mut dst[offset..]).await.unwrap();
-		offset += bytes_read;
-	}
-}
-
-async fn read_word(rx: &mut RingBufferedUartRx<'static>) -> u32 {
-	let mut word = [0u8; 4];
-	read_exact_rx(rx, &mut word).await;
-	u32::from_be_bytes(word)
-}
-
-async fn write_word(tx: &mut UartTx<'static, Async>, word: u32) {
-	tx.write_all(&word.to_be_bytes()).await.unwrap();
-}
-
-async fn write_response_frame(
-	tx: &mut UartTx<'static, Async>,
-	buf: &mut [u8],
-	response: link_protocol::Response,
-) {
-	let mut cursor = Cursor::new(&mut buf[4..]);
-	minicbor::encode(response, &mut cursor).unwrap();
-	let payload_len = cursor.position();
-	let payload = &buf[4..4 + payload_len];
-	let payload_crc = crc32(payload).to_be_bytes();
-
-	buf[..4].copy_from_slice(&(payload_len as u32).to_be_bytes());
-	buf[4 + payload_len..8 + payload_len].copy_from_slice(&payload_crc);
-	tx.write_all(&buf[..payload_len + 8]).await.unwrap();
-}
-
-async fn recover_link(rx: &mut RingBufferedUartRx<'static>, tx: &mut UartTx<'static, Async>) {
-	write_word(tx, RESET_REQ_WORD).await;
-
-	let mut window = 0u32;
-	let mut filled = 0usize;
-	let mut byte = [0u8; 1];
-
-	loop {
-		read_exact_rx(rx, &mut byte).await;
-		window = (window << 8) | (byte[0] as u32);
-		if filled < 3 {
-			filled += 1;
-			continue;
-		}
-
-		if window == RESET_REQ_WORD {
-			write_word(tx, RESET_ACK_WORD).await;
-			continue;
-		}
-
-		if window == RESET_ACK_WORD {
-			return;
-		}
-	}
-}
-
 #[embassy_executor::task]
 pub async fn run(rx: &'static Channel, config: Config) -> ! {
 	let Config {
@@ -133,72 +58,115 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 		mut uart_rx,
 	} = config;
 
-	static BUFFER: StaticCell<[u8; 4096]> = StaticCell::new();
-	let buf = BUFFER.init([0u8; 4096]);
+	static BUFFER: StaticCell<[u8; link_protocol::stream::BUFFER_SIZE]> = StaticCell::new();
+	let buf = BUFFER.init([0; link_protocol::stream::BUFFER_SIZE]);
+	let mut decoder = link_protocol::stream::Decoder::new(buf);
 
-	loop {
-		let len_word = read_word(&mut uart_rx).await;
-		defmt::trace!("read length: {}", len_word);
+	let mut pending_response: Option<Response> = None;
 
-		if len_word == RESET_REQ_WORD {
-			defmt::warn!("received reset request");
-			write_word(&mut uart_tx, RESET_ACK_WORD).await;
-			continue;
+	let mut buf = [0u8; 64];
+
+	'recover: loop {
+		let mut bounds = None;
+
+		// Send a bunch of null bytes to reset the stream.
+		defmt::debug!("writing 128 sentinels");
+		uart_tx.write_all(&[0u8; 128]).await.unwrap();
+
+		// Wait until we've read 128 null bytes in a row.
+		defmt::debug!("waiting for 128 sentinels");
+		let mut count = 0;
+		'burn: for _ in 0..32 {
+			let n = uart_rx.read(&mut buf).await.unwrap();
+			for i in 0..n {
+				if buf[i] == 0 {
+					count += 1;
+					if count == 128 {
+						defmt::debug!("stream is reset; continuing");
+						bounds = Some((i + 1)..);
+						break 'burn;
+					}
+				} else {
+					count = 0;
+				}
+			}
 		}
 
-		if len_word == RESET_ACK_WORD {
-			defmt::trace!("received unsolicited reset ack");
-			continue;
+		if bounds.is_none() {
+			defmt::error!("failed to flush stream; waiting 1s and then restarting");
+			Timer::after_secs(1).await;
+			continue 'recover;
 		}
 
-		if len_word == 0 || len_word > (MAX_FRAME_LEN as u32) {
-			defmt::error!("received invalid frame length: {}", len_word);
-			recover_link(&mut uart_rx, &mut uart_tx).await;
-			continue;
-		}
+		defmt::trace!("got leftover bounds: {:?}", bounds);
 
-		let len = len_word as usize;
-		read_exact_rx(&mut uart_rx, &mut buf[..len]).await;
-		let received_crc = read_word(&mut uart_rx).await;
+		// Reset the decoder. This feeds a sentinel value to it,
+		// causing it to abort parsing. It'll reset the stream
+		// and probably return an error, but we swallow it.
+		decoder.feed(&[0]).ok();
+		defmt::trace!("reset cobs decoder");
 
-		let payload = &buf[..len];
-		let expected_crc = crc32(payload);
-		if received_crc != expected_crc {
-			defmt::error!(
-				"request CRC mismatch; expected {:X}, got {:X}",
-				expected_crc,
-				received_crc
+		loop {
+			if let Some(res) = &pending_response {
+				defmt::trace!("(re)trying response");
+				// Try to send it
+				pending_response.take();
+				// TODO
+				continue;
+			}
+
+			// Read the request
+			let incoming = if let Some(bounds) = bounds.take()
+				&& bounds.clone().count() > 0
+			{
+				defmt::trace!("took bounds; reading leftovers: {:?}", bounds);
+				&buf[bounds]
+			} else {
+				defmt::trace!("no leftovers; reading request bytes");
+				let n = uart_rx.read(&mut buf).await.unwrap();
+				&buf[..n]
+			};
+
+			defmt::trace!("feeding byte length: {}", incoming.len());
+
+			if incoming.len() == 0 {
+				defmt::warn!("read 0 bytes from uart");
+				continue;
+			}
+
+			let Some(report) = decoder.feed(incoming).unwrap() else {
+				defmt::trace!("decoding not finished");
+				continue;
+			};
+
+			defmt::trace!(
+				"decoding finished; {} decoded, {} leftover",
+				report.decoded_size,
+				report.leftover
 			);
-			recover_link(&mut uart_rx, &mut uart_tx).await;
+
+			bounds = Some((incoming.len() - report.leftover)..);
+
+			let req = match decoder.decode_request() {
+				Ok(r) => r,
+				Err(err) => {
+					defmt::warn!("invalid incoming request: {:?}", err);
+					continue 'recover;
+				}
+			};
+
+			defmt::trace!(
+				"decoded incoming request; signaling and waiting for response: {:?}",
+				req
+			);
+
+			PACKET.signal(req);
+
+			// Wait for a response
+			let Cmd::Send(res) = rx.receive().await;
+			defmt::trace!("got response: {:?}", res);
+			pending_response = Some(res);
 			continue;
-		}
-
-		defmt::trace!("read {} bytes: {:X}", len, &buf[..len]);
-
-		let Ok(request) = minicbor::decode(&buf[..len]) else {
-			defmt::error!("received invalid message: could not decode request");
-			recover_link(&mut uart_rx, &mut uart_tx).await;
-			continue;
-		};
-
-		defmt::debug!("received request: {:?}", request);
-
-		PACKET.signal(request);
-
-		let Cmd::Send(res) = rx.receive().await;
-		let (res, additional) = res.into_raw();
-		defmt::debug!("sending response: {:?}", res);
-
-		write_response_frame(&mut uart_tx, buf, res).await;
-
-		// Special handling; we have to do this for performance
-		// reasons, as sending it as part of the response frame
-		// is way too bulky for the protocol, and we don't have
-		// a heap to work with.
-		if matches!(additional, Some(AdditionalData::OledFrame)) {
-			let fb = super::dev_oled::FRAME_BUFFER.lock().await;
-			let data: &[u8; 256 * 64 / 2] = fb.data();
-			uart_tx.write_all(data).await.unwrap();
 		}
 	}
 }

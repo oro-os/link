@@ -26,9 +26,9 @@ pub async fn run(bus: super::Bus, rx: &'static Channel, config: Config) -> ! {
 	}
 	defmt::info!("running initialization service");
 
-	bus.svc_uart
-		.send(super::svc_uart::Cmd::SetInitMode { in_init_mode: true })
-		.await;
+	// 	bus.svc_uart
+	// 		.send(super::svc_uart::Cmd::SetInitMode { in_init_mode: true })
+	// 		.await;
 
 	bus.dev_blinken_light
 		.send(super::dev_blinken_light::Cmd::Config)
@@ -68,11 +68,13 @@ pub async fn run(bus: super::Bus, rx: &'static Channel, config: Config) -> ! {
 	}
 
 	defmt::warn!("init service is finished; writing the pflash and resetting");
-	bus.svc_uart
-		.send(super::svc_uart::Cmd::SetInitMode {
-			in_init_mode: false,
-		})
-		.await;
+
+	// 	bus.svc_uart
+	// 		.send(super::svc_uart::Cmd::SetInitMode {
+	// 			in_init_mode: false,
+	// 		})
+	// 		.await;
+
 	set_initialized_and_reset(pflash).await;
 }
 

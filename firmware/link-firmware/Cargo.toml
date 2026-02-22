@@ -16,7 +16,7 @@ bank1 = []
 bank2 = []
 
 [dependencies]
-link-protocol = { path = "../link-protocol", features = ["defmt"] }
+link-protocol = { path = "../link-protocol", default-features = false, features = ["defmt"] }
 
 cortex-m-rt = "0.7.3"
 defmt = { version = "1.0.1", default-features = false }

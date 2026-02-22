@@ -1,9 +1,8 @@
-#![cfg_attr(not(any(test, target_arch = "wasm32")), no_std)]
-
-#[cfg(target_arch = "wasm32")]
-mod wasm;
+#![cfg_attr(not(feature = "std"), no_std)]
+#![feature(const_cmp, const_trait_impl)]
 
 pub use minicbor;
+pub mod stream;
 
 #[derive(minicbor::Encode, minicbor::Decode)]
 #[cfg_attr(
@@ -13,6 +12,7 @@ pub use minicbor;
 #[cfg_attr(feature = "typescript", derive(tsify::Tsify))]
 #[cfg_attr(feature = "typescript", tsify(into_wasm_abi, from_wasm_abi))]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Debug, PartialEq, Eq)]
 pub enum Request {
 	/// Uint
 	#[n(0)]
@@ -66,6 +66,7 @@ pub enum Request {
 #[cfg_attr(feature = "typescript", derive(tsify::Tsify))]
 #[cfg_attr(feature = "typescript", tsify(into_wasm_abi, from_wasm_abi))]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Debug, PartialEq, Eq)]
 pub enum Response {
 	#[n(0)]
 	Ok,
@@ -83,7 +84,7 @@ pub enum Response {
 		debug_leds_max_duty: u16,
 		/// 36 u8's packed BE into 9 u32s
 		#[n(2)]
-		led_controller:      [u32; 9],
+		controller:          [u32; 9],
 	},
 }
 
@@ -95,6 +96,7 @@ pub enum Response {
 #[cfg_attr(feature = "typescript", derive(tsify::Tsify))]
 #[cfg_attr(feature = "typescript", tsify(into_wasm_abi, from_wasm_abi))]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Debug, PartialEq, Eq)]
 pub enum Error {
 	#[n(0)]
 	TooLong,

@@ -16,7 +16,7 @@ pub mod svc_init;
 pub mod svc_main;
 pub mod svc_oled;
 pub mod svc_oled_pwr;
-pub mod svc_uart;
+// pub mod svc_uart;
 
 include!("./_macro.inc.rs");
 
@@ -38,5 +38,5 @@ services! {
                                                 svc_init,
     #[config(false)]                            svc_oled_pwr,
     #[config(false)]                            svc_oled,
-    #[config(false)]                            svc_uart,
+//    #[config(false)]                            svc_uart,
 }
