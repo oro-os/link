@@ -8,7 +8,6 @@ pub mod dev_syseth;
 pub mod dev_usb;
 pub mod svc_failsafe;
 pub mod svc_successful_boot;
-// pub mod dev_uart; // TODO
 // pub mod dev_usart; // TODO
 pub mod dev_uart;
 pub mod svc_cicd;
@@ -16,7 +15,7 @@ pub mod svc_init;
 pub mod svc_main;
 pub mod svc_oled;
 pub mod svc_oled_pwr;
-// pub mod svc_uart;
+pub mod svc_uart;
 
 include!("./_macro.inc.rs");
 
@@ -38,5 +37,5 @@ services! {
                                                 svc_init,
     #[config(false)]                            svc_oled_pwr,
     #[config(false)]                            svc_oled,
-//    #[config(false)]                            svc_uart,
+    #[config(false)]                            svc_uart,
 }

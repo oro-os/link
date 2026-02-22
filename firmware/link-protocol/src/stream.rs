@@ -34,7 +34,7 @@ pub struct DecodeResult {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[cfg_attr(feature = "typescript", wasm_bindgen)]
 #[derive(Debug, Clone, Copy)]
-pub enum Error {
+pub enum StreamError {
 	Empty,
 	Invalid,
 	Incomplete,
@@ -42,7 +42,7 @@ pub enum Error {
 	TooMuchData,
 }
 
-impl From<cobs::DecodeError> for Error {
+impl From<cobs::DecodeError> for StreamError {
 	fn from(v: cobs::DecodeError) -> Self {
 		match v {
 			cobs::DecodeError::EmptyFrame => Self::Empty,
@@ -52,13 +52,13 @@ impl From<cobs::DecodeError> for Error {
 	}
 }
 
-impl From<minicbor::decode::Error> for Error {
+impl From<minicbor::decode::Error> for StreamError {
 	fn from(_: minicbor::decode::Error) -> Self {
 		Self::Invalid
 	}
 }
 
-impl<E> From<minicbor::encode::Error<E>> for Error {
+impl<E> From<minicbor::encode::Error<E>> for StreamError {
 	fn from(_: minicbor::encode::Error<E>) -> Self {
 		// We of take a guess here; there can really only be one thing
 		// that goes wrong here, as per our implementation.
@@ -66,7 +66,7 @@ impl<E> From<minicbor::encode::Error<E>> for Error {
 	}
 }
 
-impl From<cobs::DestBufTooSmallError> for Error {
+impl From<cobs::DestBufTooSmallError> for StreamError {
 	fn from(_: cobs::DestBufTooSmallError) -> Self {
 		Self::TooMuchData
 	}
@@ -80,7 +80,7 @@ impl Decoder {
 		Self::new(unsafe { &mut BUFFER[..] })
 	}
 
-	pub fn feed(&mut self, buffer: &[u8]) -> Result<Option<DecodeResult>, Error> {
+	pub fn feed(&mut self, buffer: &[u8]) -> Result<Option<DecodeResult>, StreamError> {
 		self.decoded_size = None;
 
 		let Some(report) = self.decoder.push(buffer)? else {
@@ -95,17 +95,17 @@ impl Decoder {
 		}))
 	}
 
-	pub fn decode_request(&self) -> Result<crate::Request, Error> {
+	pub fn decode_request(&self) -> Result<crate::Request, StreamError> {
 		let Some(decoded_size) = self.decoded_size else {
-			return Err(Error::Incomplete);
+			return Err(StreamError::Incomplete);
 		};
 
 		Ok(minicbor::decode(&self.decoder.dest()[..decoded_size])?)
 	}
 
-	pub fn decode_response(&self) -> Result<crate::Response, Error> {
+	pub fn decode_response(&self) -> Result<crate::Response, StreamError> {
 		let Some(decoded_size) = self.decoded_size else {
-			return Err(Error::Incomplete);
+			return Err(StreamError::Incomplete);
 		};
 
 		Ok(minicbor::decode(&self.decoder.dest()[..decoded_size])?)
@@ -136,9 +136,9 @@ impl OffsetLength {
 fn encode_raw<T: minicbor::Encode<()> + Sized>(
 	request: &T,
 	dest: &mut [u8],
-) -> Result<OffsetLength, Error> {
+) -> Result<OffsetLength, StreamError> {
 	if dest.len() < BUFFER_SIZE {
-		return Err(Error::TooMuchData);
+		return Err(StreamError::TooMuchData);
 	}
 
 	let mut cursor = minicbor::encode::write::Cursor::new(&mut dest[..]);
@@ -146,7 +146,7 @@ fn encode_raw<T: minicbor::Encode<()> + Sized>(
 	let position = cursor.position();
 	let frame_pos = BUFFER_SIZE >> 1;
 	if position >= frame_pos {
-		return Err(Error::TooMuchData);
+		return Err(StreamError::TooMuchData);
 	}
 
 	// SAFETY: This is safe, we just... have to do some naughty things to get there.
@@ -170,12 +170,18 @@ fn encode_raw<T: minicbor::Encode<()> + Sized>(
 }
 
 #[cfg_attr(feature = "typescript", wasm_bindgen)]
-pub fn encode_request(request: &crate::Request, dest: &mut [u8]) -> Result<OffsetLength, Error> {
+pub fn encode_request(
+	request: &crate::Request,
+	dest: &mut [u8],
+) -> Result<OffsetLength, StreamError> {
 	encode_raw(request, dest)
 }
 
 #[cfg_attr(feature = "typescript", wasm_bindgen)]
-pub fn encode_response(response: &crate::Response, dest: &mut [u8]) -> Result<OffsetLength, Error> {
+pub fn encode_response(
+	response: &crate::Response,
+	dest: &mut [u8],
+) -> Result<OffsetLength, StreamError> {
 	encode_raw(response, dest)
 }
 

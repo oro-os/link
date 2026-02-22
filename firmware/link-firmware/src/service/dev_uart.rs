@@ -40,6 +40,7 @@ impl From<link_protocol::Response> for Response {
 	}
 }
 
+#[derive(defmt::Format)]
 enum AdditionalData {
 	OledFrame,
 }
@@ -61,29 +62,31 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 	static BUFFER: StaticCell<[u8; link_protocol::stream::BUFFER_SIZE]> = StaticCell::new();
 	let buf = BUFFER.init([0; link_protocol::stream::BUFFER_SIZE]);
 	let mut decoder = link_protocol::stream::Decoder::new(buf);
-
-	let mut pending_response: Option<Response> = None;
+	static ENC_BUFFER: StaticCell<[u8; link_protocol::stream::BUFFER_SIZE]> = StaticCell::new();
+	let enc_buf = ENC_BUFFER.init([0; link_protocol::stream::BUFFER_SIZE]);
 
 	let mut buf = [0u8; 64];
 
 	'recover: loop {
-		let mut bounds = None;
+		let mut limit = None;
 
 		// Send a bunch of null bytes to reset the stream.
-		defmt::debug!("writing 128 sentinels");
+		defmt::debug!("writing 128 garbage bytes and 128 sentinels");
+		uart_tx.write_all(&[0xFFu8; 128]).await.unwrap();
 		uart_tx.write_all(&[0u8; 128]).await.unwrap();
 
 		// Wait until we've read 128 null bytes in a row.
 		defmt::debug!("waiting for 128 sentinels");
 		let mut count = 0;
-		'burn: for _ in 0..32 {
+		'burn: for _ in 0..512 {
 			let n = uart_rx.read(&mut buf).await.unwrap();
 			for i in 0..n {
 				if buf[i] == 0 {
 					count += 1;
 					if count == 128 {
 						defmt::debug!("stream is reset; continuing");
-						bounds = Some((i + 1)..);
+						buf.copy_within((i + 1)..n, 0);
+						limit = Some(n - (i + 1));
 						break 'burn;
 					}
 				} else {
@@ -92,13 +95,13 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 			}
 		}
 
-		if bounds.is_none() {
+		if limit.is_none() {
 			defmt::error!("failed to flush stream; waiting 1s and then restarting");
 			Timer::after_secs(1).await;
 			continue 'recover;
 		}
 
-		defmt::trace!("got leftover bounds: {:?}", bounds);
+		defmt::trace!("got leftover limit: {:?}", limit);
 
 		// Reset the decoder. This feeds a sentinel value to it,
 		// causing it to abort parsing. It'll reset the stream
@@ -107,34 +110,31 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 		defmt::trace!("reset cobs decoder");
 
 		loop {
-			if let Some(res) = &pending_response {
-				defmt::trace!("(re)trying response");
-				// Try to send it
-				pending_response.take();
-				// TODO
-				continue;
-			}
-
 			// Read the request
-			let incoming = if let Some(bounds) = bounds.take()
-				&& bounds.clone().count() > 0
-			{
-				defmt::trace!("took bounds; reading leftovers: {:?}", bounds);
-				&buf[bounds]
-			} else {
-				defmt::trace!("no leftovers; reading request bytes");
-				let n = uart_rx.read(&mut buf).await.unwrap();
-				&buf[..n]
+			let incoming = match limit.take() {
+				Some(0) | None => {
+					defmt::trace!("no leftovers; reading request bytes");
+					uart_rx.read(&mut buf).await.unwrap()
+				}
+				Some(incoming) => incoming,
 			};
 
-			defmt::trace!("feeding byte length: {}", incoming.len());
+			defmt::trace!("feeding byte length: {}", incoming);
 
-			if incoming.len() == 0 {
+			if incoming == 0 {
 				defmt::warn!("read 0 bytes from uart");
 				continue;
 			}
 
-			let Some(report) = decoder.feed(incoming).unwrap() else {
+			let report = match decoder.feed(&buf[..incoming]) {
+				Ok(r) => r,
+				Err(err) => {
+					defmt::error!("stream decoder error: {:?}", err);
+					continue 'recover;
+				}
+			};
+
+			let Some(report) = report else {
 				defmt::trace!("decoding not finished");
 				continue;
 			};
@@ -145,7 +145,8 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 				report.leftover
 			);
 
-			bounds = Some((incoming.len() - report.leftover)..);
+			buf.copy_within((incoming - report.leftover)..incoming, 0);
+			limit = Some(report.leftover);
 
 			let req = match decoder.decode_request() {
 				Ok(r) => r,
@@ -165,7 +166,27 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 			// Wait for a response
 			let Cmd::Send(res) = rx.receive().await;
 			defmt::trace!("got response: {:?}", res);
-			pending_response = Some(res);
+			let (res, additional) = res.into_raw();
+			let offlen = link_protocol::stream::encode_response(&res, enc_buf).unwrap();
+			uart_tx
+				.write_all(offlen.get_for_slice(enc_buf))
+				.await
+				.unwrap();
+			uart_tx.flush().await.unwrap();
+
+			if let Some(additional) = additional {
+				defmt::trace!("sending additional data: {:?}", additional);
+
+				match additional {
+					AdditionalData::OledFrame => {
+						let fb = super::dev_oled::FRAME_BUFFER.lock().await;
+						let data = fb.data();
+						uart_tx.write_all(data).await.unwrap();
+						uart_tx.flush().await.unwrap();
+					}
+				}
+			}
+
 			continue;
 		}
 	}

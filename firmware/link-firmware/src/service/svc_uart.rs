@@ -51,7 +51,7 @@ pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 							super::dev_blinken_light::DBG_LED2_DUTY.get(),
 							super::dev_blinken_light::DBG_LED3_DUTY.get(),
 						],
-						led_controller:      {
+						controller:          {
 							let mut r = [0u32; 9];
 
 							for i in (0..36).step_by(4) {

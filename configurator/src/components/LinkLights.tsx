@@ -16,8 +16,8 @@ type LightProgram = Extract<
 export default ({ device }: { device: Device }) => {
 	const deviceState: DataSignal<LightState> = S.data({
 		debug_leds: [0, 0, 0],
-		debug_leds_max_duty: 1,
-		led_controller: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+		debug_leds_max_duty: 1, // prevent a divide-by-zero before we get the first state update
+		controller: [0, 0, 0, 0, 0, 0, 0, 0, 0],
 	});
 
 	let timeout: undefined | number = undefined;
@@ -69,16 +69,16 @@ export default ({ device }: { device: Device }) => {
 	for (let i = 0; i < 18; i++) {
 		((i) => {
 			channels.push(
-				S(() => ((deviceState().led_controller[i] | 0) >> 24) & 0xff),
+				S(() => ((deviceState().controller[i] | 0) >> 24) & 0xff),
 			);
 			channels.push(
-				S(() => ((deviceState().led_controller[i] | 0) >> 16) & 0xff),
+				S(() => ((deviceState().controller[i] | 0) >> 16) & 0xff),
 			);
 			channels.push(
-				S(() => ((deviceState().led_controller[i] | 0) >> 8) & 0xff),
+				S(() => ((deviceState().controller[i] | 0) >> 8) & 0xff),
 			);
 			channels.push(
-				S(() => (deviceState().led_controller[i] | 0) & 0xff),
+				S(() => (deviceState().controller[i] | 0) & 0xff),
 			);
 		})(i);
 	}
