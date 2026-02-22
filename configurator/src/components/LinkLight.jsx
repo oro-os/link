@@ -7,7 +7,7 @@ let counter = 0;
 export default ({ r, g, b, x, y }) => {
 	const id = `link-light-${counter++}`;
 	const color = S(() => `rgb(${S.$(r)}, ${S.$(g)}, ${S.$(b)})`);
-	const lum = S(() => Math.max(S.$(r), Math.max(S.$(g), S.$(b))));
+	const lum = S(() => Math.max(S.$(r), Math.max(S.$(g), S.$(b))) / 255.0);
 	return (
 		<div class={C.root} style={`left: ${x}; top: ${y}`}>
 			<svg
