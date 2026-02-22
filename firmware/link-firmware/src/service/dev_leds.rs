@@ -189,6 +189,7 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 
 	loop {
 		let msg = recv.receive().await;
+		defmt::trace!("got command {:?}", msg);
 		match msg {
 			Cmd::AllOff => {
 				for channel in 1..=36 {
@@ -240,6 +241,7 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 				}
 			}
 		}
+		defmt::trace!("command processed");
 	}
 }
 
@@ -416,7 +418,7 @@ impl IS31FL3236A {
 			self.write(&shifted_pwm).await;
 		} else {
 			self.write(&self.pwm_state).await;
-			for (i, pwm) in self.pwm_state.iter().enumerate() {
+			for (i, pwm) in self.pwm_state.iter().skip(1).take(36).enumerate() {
 				DBG_LIGHT_VALUES[i].set(*pwm);
 			}
 		}

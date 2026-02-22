@@ -17,6 +17,7 @@ export default ({
 	const id = `link-light-${counter++}`;
 	const color = S(() => `rgb(${S.$(r)}, ${S.$(g)}, ${S.$(b)})`);
 	const lum = S(() => Math.max(S.$(r), Math.max(S.$(g), S.$(b))) / 255.0);
+	const over = S.value(false);
 	return (
 		<div class={C.root} style={`left: ${x}; top: ${y}`}>
 			<svg
@@ -49,15 +50,22 @@ export default ({
 						/>
 					</radialGradient>
 				</defs>
-				<circle cx="50" cy="50" r="42" fill={`url(#${id})`} />
 				<circle
 					cx="50"
 					cy="50"
 					r={mouseRadius}
-					fill="transparent"
-					on:mouseenter={onStartDebug}
-					on:mouseleave={onEndDebug}
+					fill={over() ? "#68D4D067" : "#68D4D030"}
+					class={C.handle}
+					on:mouseenter={() => {
+						over(true);
+						onStartDebug();
+					}}
+					on:mouseleave={() => {
+						over(false);
+						onEndDebug();
+					}}
 				/>
+				<circle cx="50" cy="50" r="42" fill={`url(#${id})`} />
 			</svg>
 		</div>
 	);

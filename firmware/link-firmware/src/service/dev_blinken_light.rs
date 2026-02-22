@@ -37,17 +37,29 @@ async fn blink_cycle(
 	cycle_delay: Option<Duration>,
 ) -> Result<!, Cmd> {
 	loop {
-		for led in &mut leds {
+		for (i, led) in leds.iter_mut().enumerate() {
+			let duty = match i {
+				0 => &DBG_LED1_DUTY,
+				1 => &DBG_LED2_DUTY,
+				2 => &DBG_LED3_DUTY,
+				_ => unreachable!(),
+			};
+
 			for _ in 0..2 {
 				led.set_low();
+				duty.set(CONFIG_DUTY_PERIOD);
 				rx.after_receive(Duration::from_millis(10)).await?;
 				led.set_high();
+				duty.set(0);
 				rx.after_receive(Duration::from_millis(20)).await?;
 			}
 			rx.after_receive(Duration::from_millis(30)).await?;
 		}
 
 		if let Some(delay) = cycle_delay {
+			DBG_LED1_DUTY.set(0);
+			DBG_LED2_DUTY.set(0);
+			DBG_LED3_DUTY.set(0);
 			for led in &mut leds {
 				led.set_high();
 			}
@@ -153,6 +165,9 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 				.unwrap_err()
 			}
 			Cmd::Off => {
+				DBG_LED1_DUTY.set(0);
+				DBG_LED2_DUTY.set(0);
+				DBG_LED3_DUTY.set(0);
 				debug_led1.set_high();
 				debug_led2.set_high();
 				debug_led3.set_high();
@@ -160,18 +175,24 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 			}
 			Cmd::Manual { states } => {
 				if states[0] {
+					DBG_LED1_DUTY.set(CONFIG_DUTY_PERIOD);
 					debug_led1.set_low();
 				} else {
+					DBG_LED1_DUTY.set(0);
 					debug_led1.set_high();
 				}
 				if states[1] {
+					DBG_LED2_DUTY.set(CONFIG_DUTY_PERIOD);
 					debug_led2.set_low();
 				} else {
+					DBG_LED2_DUTY.set(0);
 					debug_led2.set_high();
 				}
 				if states[2] {
+					DBG_LED3_DUTY.set(CONFIG_DUTY_PERIOD);
 					debug_led3.set_low();
 				} else {
+					DBG_LED3_DUTY.set(0);
 					debug_led3.set_high();
 				}
 				rx.receive().await

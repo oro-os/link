@@ -77,9 +77,7 @@ export default ({ device }: { device: Device }) => {
 			channels.push(
 				S(() => ((deviceState().controller[i] | 0) >> 8) & 0xff),
 			);
-			channels.push(
-				S(() => (deviceState().controller[i] | 0) & 0xff),
-			);
+			channels.push(S(() => (deviceState().controller[i] | 0) & 0xff));
 		})(i);
 	}
 

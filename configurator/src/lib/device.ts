@@ -81,7 +81,9 @@ export class Device {
 		if (this.#pendingRx.length > 0) {
 			const out = this.#pendingRx;
 			this.#pendingRx = new Uint8Array(0);
-			console.debug("[transport] consume pending bytes", { len: out.length });
+			console.debug("[transport] consume pending bytes", {
+				len: out.length,
+			});
 			return out;
 		}
 
@@ -91,7 +93,11 @@ export class Device {
 				this.#reader!.read(),
 				new Promise<never>((_, reject) => {
 					timer = setTimeout(() => {
-						reject(new RecoverableTransportError("Serial read timed out"));
+						reject(
+							new RecoverableTransportError(
+								"Serial read timed out",
+							),
+						);
 					}, timeoutMs);
 				}),
 			]);
@@ -100,7 +106,9 @@ export class Device {
 				throw new Error("Serial stream ended");
 			}
 
-			console.debug("[transport] serial read", { len: result.value.length });
+			console.debug("[transport] serial read", {
+				len: result.value.length,
+			});
 			return result.value;
 		} finally {
 			if (timer) {
@@ -226,7 +234,10 @@ export class Device {
 				report = this.#decoder.feed(incoming);
 			} catch (error) {
 				console.debug("[transport] decoder feed error", error);
-				throw new RecoverableTransportError("Decoder feed failed", error);
+				throw new RecoverableTransportError(
+					"Decoder feed failed",
+					error,
+				);
 			}
 
 			if (!report) {
@@ -249,7 +260,10 @@ export class Device {
 				return this.#decoder.decode_response();
 			} catch (error) {
 				console.debug("[transport] decode_response error", error);
-				throw new RecoverableTransportError("Response decode failed", error);
+				throw new RecoverableTransportError(
+					"Response decode failed",
+					error,
+				);
 			} finally {
 				report.free();
 			}
@@ -300,11 +314,18 @@ export class Device {
 					const response = await this.#readDecodedResponse();
 					console.debug("[transport] response decoded", response);
 
-					if (typeof response === "object" && "BulkTransfer" in response) {
+					if (
+						typeof response === "object" &&
+						"BulkTransfer" in response
+					) {
 						const len = response.BulkTransfer;
-						console.debug("[transport] bulk transfer begin", { len });
+						console.debug("[transport] bulk transfer begin", {
+							len,
+						});
 						const data = await this.#readRawExact(len);
-						console.debug("[transport] bulk transfer complete", { len: data.length });
+						console.debug("[transport] bulk transfer complete", {
+							len: data.length,
+						});
 						return data;
 					}
 
@@ -320,14 +341,14 @@ export class Device {
 					});
 					await this.#recoverStream(
 						requestSent
-							? "while waiting for response; continue waiting"
+							? "while waiting for response; resyncing and resending"
 							: "while sending request; retry send",
 					);
-					if (!requestSent) {
-						console.debug("[transport] retrying request send");
-					} else {
-						console.debug("[transport] request already sent; waiting for response retry");
-					}
+					// After any stream recovery both sides reset — must always resend.
+					requestSent = false;
+					console.debug(
+						"[transport] stream recovered; retrying request send",
+					);
 				}
 			}
 		});

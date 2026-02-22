@@ -6,4 +6,10 @@
 	overflow: visible;
 	position: absolute;
 	mix-blend-mode: plus-lighter;
+	pointer-events: none;
+}
+
+.handle {
+	cursor: pointer;
+	pointer-events: all;
 }

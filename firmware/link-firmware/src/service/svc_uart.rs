@@ -23,6 +23,7 @@ pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 				}
 			};
 
+			defmt::trace!("servicing packet: {:?}", packet);
 			let res = match packet {
 				Request::FactoryReset if in_init_mode => {
 					bus.svc_init.send(InitCmd::FactoryReset).await;
@@ -98,6 +99,7 @@ pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 				Request::StartLightProgram { .. } => Response::Err(Error::InitOnly).into(),
 			};
 
+			defmt::trace!("sending serviced response: {:?}", res);
 			bus.dev_uart.send(super::dev_uart::Cmd::Send(res)).await;
 		};
 

@@ -23,7 +23,7 @@ include!("./_macro.inc.rs");
 services! {
                      #[bus(false)]              dev_blinken_light,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_exteth,
-                     #[bus(false)]              #[skip(true)] dev_leds,
+                     #[bus(false)]              dev_leds,
                      #[bus(false)]              dev_oled,
                                    #[rx(false)] #[skip(true)] dev_power_monitor,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_sdcard,

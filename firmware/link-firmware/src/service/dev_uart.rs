@@ -122,12 +122,16 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 			defmt::trace!("feeding byte length: {}", incoming);
 
 			if incoming == 0 {
-				defmt::warn!("read 0 bytes from uart");
+				defmt::trace!("0 length; starting new read");
 				continue;
 			}
 
 			let report = match decoder.feed(&buf[..incoming]) {
 				Ok(r) => r,
+				Err(link_protocol::stream::StreamError::Empty) => {
+					defmt::warn!("empty frame sentinel; skipping");
+					continue;
+				}
 				Err(err) => {
 					defmt::error!("stream decoder error: {:?}", err);
 					continue 'recover;
