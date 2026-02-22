@@ -8,7 +8,7 @@ pub struct Config {
 pub async fn run(bus: super::Bus, config: Config) -> ! {
 	if !config.initialized {
 		// Run the init service.
-		bus.svc_init.send(super::svc_init::Cmd::Initialize).await;
+		bus.svc_init.send(super::svc_init::Cmd::Start).await;
 		defmt::debug!("started the initialization service; halting main service");
 		loop {
 			Timer::after_secs(3600).await;

@@ -36,7 +36,6 @@ class PutBackReader {
 			if (done) {
 				throw new Error("Unexpected end of stream");
 			}
-			console.debug("read link bytes:", value);
 			this.#buffer.push(value);
 		}
 
@@ -72,24 +71,22 @@ async function reqres(
 	reader: PutBackReader,
 	writer: WritableStreamDefaultWriter<Uint8Array>,
 	request: Request,
-): Promise<Response> {
+): Promise<Response | Uint8Array> {
 	if (!linkProtocol) {
 		linkProtocol = await initLinkProtocol();
 	}
 
-	console.debug("sending link request:", request);
 	const encodedRequest = encode_request(request);
-	console.debug("encoded link request bytes:", encodedRequest);
 	await writer.write(encodedRequest);
 
 	const lengthBytes = await reader.read(4);
-	console.debug("read link length prefix bytes:", lengthBytes);
 	const length = new DataView(lengthBytes.buffer).getUint32(0, false);
-	console.debug("decoded link length prefix:", length);
 	const responseBytes = await reader.read(length);
-	console.debug("read link response bytes:", responseBytes);
 	const response = decode_response(responseBytes);
-	console.debug("decoded link response:", response);
+
+	if (typeof response === "object" && "BulkTransfer" in response) {
+		return await reader.read(response.BulkTransfer);
+	}
 
 	return response;
 }
@@ -111,7 +108,10 @@ export class Device {
 
 		this.#port = await navigator.serial.requestPort();
 
-		await this.#port.open({ baudRate: 115200 });
+		await this.#port.open({
+			baudRate: 1000000,
+			bufferSize: 65536,
+		});
 
 		const reader = this.#port.readable?.getReader() || null;
 		this.#reader = reader ? new PutBackReader(reader) : null;
@@ -124,7 +124,7 @@ export class Device {
 		this.online(true);
 	}
 
-	public async request(request: Request): Promise<Response> {
+	public async request(request: Request): Promise<Response | Uint8Array> {
 		if (!this.#port || !this.#reader || !this.#writer) {
 			throw new Error("Device is not open");
 		}

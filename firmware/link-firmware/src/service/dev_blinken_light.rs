@@ -1,14 +1,20 @@
 //! Delta force blinking lights operation supreme, go.
 
+use core::sync::atomic::AtomicU16;
+
 use embassy_futures::select::Either;
 use embassy_stm32::gpio::OutputOpenDrain;
 use embassy_time::{Duration, Timer};
 
-use crate::channel::ReceiveDelay;
+use crate::{atomic::Relaxed, channel::ReceiveDelay};
 
-const CONFIG_DUTY_PERIOD: u64 = 1000;
+pub const CONFIG_DUTY_PERIOD: u16 = 1000;
 
 pub type Channel = crate::channel::Channel<Cmd, 2>;
+
+pub static DBG_LED1_DUTY: AtomicU16 = AtomicU16::new(0);
+pub static DBG_LED2_DUTY: AtomicU16 = AtomicU16::new(0);
+pub static DBG_LED3_DUTY: AtomicU16 = AtomicU16::new(0);
 
 #[expect(unused)]
 pub enum Cmd {
@@ -72,29 +78,33 @@ async fn config_cycle(rx: &Channel, leds: [&mut OutputOpenDrain<'static>; 3]) ->
 		let d2 = i2.next().unwrap_or(0);
 		let d3 = i3.next().unwrap_or(0);
 
+		DBG_LED1_DUTY.set(d1);
+		DBG_LED2_DUTY.set(d2);
+		DBG_LED3_DUTY.set(d3);
+
 		let p1 = async {
 			if d1 > 0 {
 				l1.set_low();
-				Timer::after_micros(d1).await;
+				Timer::after_micros(u64::from(d1)).await;
 			}
 			l1.set_high();
-			Timer::after_micros(CONFIG_DUTY_PERIOD - d1).await;
+			Timer::after_micros(u64::from(CONFIG_DUTY_PERIOD - d1)).await;
 		};
 		let p2 = async {
 			if d2 > 0 {
 				l2.set_low();
-				Timer::after_micros(d2).await;
+				Timer::after_micros(u64::from(d2)).await;
 			}
 			l2.set_high();
-			Timer::after_micros(CONFIG_DUTY_PERIOD - d2).await;
+			Timer::after_micros(u64::from(CONFIG_DUTY_PERIOD - d2)).await;
 		};
 		let p3 = async {
 			if d3 > 0 {
 				l3.set_low();
-				Timer::after_micros(d3).await;
+				Timer::after_micros(u64::from(d3)).await;
 			}
 			l3.set_high();
-			Timer::after_micros(CONFIG_DUTY_PERIOD - d3).await;
+			Timer::after_micros(u64::from(CONFIG_DUTY_PERIOD - d3)).await;
 		};
 
 		if let Either::First(ev) =

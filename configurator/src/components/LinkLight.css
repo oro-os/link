@@ -1,0 +1,10 @@
+.root {
+	position: relative;
+}
+
+.root > svg {
+	overflow: visible;
+	position: absolute;
+	mix-blend-mode: plus-lighter;
+	opacity: 0.7;
+}

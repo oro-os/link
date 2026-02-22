@@ -34,6 +34,15 @@ pub enum Request {
 	/// Err(InitOnly)
 	#[n(5)]
 	FactoryReset,
+	/// Uint
+	#[n(6)]
+	GetFrameCount,
+	/// BulkTransfer
+	#[n(7)]
+	GetFrame,
+	/// LightState
+	#[n(8)]
+	GetLightState,
 }
 
 #[derive(minicbor::Encode, minicbor::Decode)]
@@ -51,6 +60,18 @@ pub enum Response {
 	Uint(#[n(0)] u64),
 	#[n(2)]
 	Err(#[n(0)] Error),
+	#[n(3)]
+	BulkTransfer(#[n(0)] u64),
+	#[n(4)]
+	LightState {
+		#[n(0)]
+		debug_leds:          [u16; 3],
+		#[n(1)]
+		debug_leds_max_duty: u16,
+		/// 36 u8's packed BE into 18 u64s
+		#[n(2)]
+		led_controller:      [u32; 18],
+	},
 }
 
 #[derive(minicbor::Encode, minicbor::Decode)]

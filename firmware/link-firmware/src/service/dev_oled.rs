@@ -1,3 +1,5 @@
+use core::sync::atomic::AtomicU32;
+
 use embassy_stm32::{
 	gpio::{Output, OutputOpenDrain},
 	mode::Async,
@@ -11,6 +13,8 @@ use embedded_graphics::{
 };
 use embedded_graphics_core::geometry::{OriginDimensions, Size};
 use embedded_hal_async::spi::SpiBus;
+
+use crate::atomic::NumericRelaxed;
 
 const BRIGHTNESS_CURVE: [u8; 64] = [
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 8, 8, 9, 10, 11, 12, 12, 13,
@@ -30,6 +34,7 @@ pub type FrameBuf = Framebuffer<
 >;
 
 pub static FRAME_BUFFER: Mutex<CriticalSectionRawMutex, FrameBuf> = Mutex::new(FrameBuf::new());
+pub static FRAME_COUNTER: AtomicU32 = AtomicU32::new(0);
 
 #[derive(defmt::Format)]
 #[allow(unused)]
@@ -103,6 +108,7 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 			}
 			Cmd::Render => {
 				oled.repaint(&*FRAME_BUFFER.lock().await).await.unwrap();
+				FRAME_COUNTER.increment();
 			}
 		}
 	}

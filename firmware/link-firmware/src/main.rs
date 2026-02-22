@@ -2,6 +2,7 @@
 #![no_main]
 #![feature(never_type)]
 
+pub(crate) mod atomic;
 pub(crate) mod channel;
 pub(crate) mod color;
 pub(crate) mod crc32;
@@ -262,14 +263,20 @@ pub async fn main(spawner: Spawner) -> ! {
 	let syseth_cs = OutputOpenDrain::new(p.PD7, Level::High, Speed::VeryHigh);
 	let syseth = SpiDevice::new(spi3, syseth_cs);
 
-	let uart = usart::Uart::new(p.UART7, p.PE7, p.PE8, Irqs, p.DMA1_CH1, p.DMA1_CH3, {
-		let mut config = usart::Config::default();
-		config.baudrate = 115_200;
-		config.stop_bits = usart::StopBits::STOP1;
-		config.parity = usart::Parity::ParityNone;
-		config
-	})
-	.unwrap();
+	let (uart_tx, uart_rx) =
+		usart::Uart::new(p.UART7, p.PE7, p.PE8, Irqs, p.DMA1_CH1, p.DMA1_CH3, {
+			let mut config = usart::Config::default();
+			config.baudrate = 1_000_000;
+			config.stop_bits = usart::StopBits::STOP1;
+			config.parity = usart::Parity::ParityNone;
+			config
+		})
+		.unwrap()
+		.split();
+
+	static UART_RX_BUFFER: StaticCell<[u8; 4096]> = StaticCell::new();
+	let uart_rx_buffer = UART_RX_BUFFER.init([0u8; 4096]);
+	let uart_rx = uart_rx.into_ring_buffered(uart_rx_buffer);
 
 	let exteth_int = ExtiInput::new(p.PA0, p.EXTI0, Pull::None);
 	let mut exteth_int_polarity = OutputOpenDrain::new(p.PB6, Level::Low, Speed::Low);
@@ -366,7 +373,8 @@ pub async fn main(spawner: Spawner) -> ! {
 			pflash
 		},
 		dev_uart {
-			uart
+			uart_tx,
+			uart_rx,
 		},
 	}
 	.spawn_all(spawner);

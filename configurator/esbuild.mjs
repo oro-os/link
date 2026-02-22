@@ -17,4 +17,7 @@ await esbuild.build({
 
 // Copy static files
 await fsp.copyFile("src/index.html", "pkg/index.html");
+await fsp.copyFile("src/image/diagram.svg", "pkg/diagram.svg");
 await fsp.copyFile("wasm/linkproto_bg.wasm", "pkg/linkproto_bg.wasm");
+
+console.log("OK");

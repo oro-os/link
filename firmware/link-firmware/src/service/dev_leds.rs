@@ -1,3 +1,5 @@
+use core::sync::atomic::AtomicU8;
+
 use embassy_executor::Spawner;
 use embassy_stm32::{
 	gpio::Output,
@@ -9,6 +11,7 @@ use embassy_time::{Duration, Timer};
 use static_cell::StaticCell;
 
 use crate::{
+	atomic::Relaxed,
 	channel::{Channel as RawChannel, Receiver, Sender},
 	color::Rgb,
 };
@@ -25,6 +28,8 @@ type RgbReceiver = Receiver<Rgb, 2>;
 type LightSender = Sender<(usize, u8), 16>;
 type OnOffReceiver = Receiver<bool, 2>;
 type GreyReceiver = Receiver<u8, 2>;
+
+pub static DBG_LIGHT_VALUES: [AtomicU8; 36] = [const { AtomicU8::new(0) }; 36];
 
 #[derive(defmt::Format)]
 #[allow(unused)]
@@ -394,15 +399,19 @@ impl IS31FL3236A {
 			let mut shifted_pwm = [0u8; 38];
 			shifted_pwm.copy_from_slice(&self.pwm_state);
 
-			for pwm in shifted_pwm.iter_mut().skip(1) {
+			for (i, pwm) in shifted_pwm[1..=36].iter_mut().enumerate() {
 				if *pwm > 0 {
 					*pwm = (*pwm >> self.global_shift).max(IDLE_MIN);
 				}
+				DBG_LIGHT_VALUES[i].set(*pwm);
 			}
 
 			self.write(&shifted_pwm).await;
 		} else {
 			self.write(&self.pwm_state).await;
+			for (i, pwm) in self.pwm_state.iter().enumerate() {
+				DBG_LIGHT_VALUES[i].set(*pwm);
+			}
 		}
 	}
 

@@ -1,11 +1,12 @@
 use embassy_time::Timer;
-use link_protocol::{Request, Response};
 
 use crate::flash::PflashV0;
 
 pub type Channel = crate::channel::Channel<Cmd, 2>;
 pub enum Cmd {
-	Initialize,
+	Start,
+	Finish,
+	FactoryReset,
 }
 
 pub struct Config {
@@ -16,8 +17,18 @@ pub struct Config {
 pub async fn run(bus: super::Bus, rx: &'static Channel, config: Config) -> ! {
 	let Config { mut pflash } = config;
 
-	let Cmd::Initialize = rx.receive().await;
+	loop {
+		let Cmd::Start = rx.receive().await else {
+			defmt::warn!("init service received stray event but is not started; expected Start");
+			continue;
+		};
+		break;
+	}
 	defmt::info!("running initialization service");
+
+	bus.svc_uart
+		.send(super::svc_uart::Cmd::SetInitMode { in_init_mode: true })
+		.await;
 
 	bus.dev_blinken_light
 		.send(super::dev_blinken_light::Cmd::Config)
@@ -42,26 +53,26 @@ pub async fn run(bus: super::Bus, rx: &'static Channel, config: Config) -> ! {
 	let mut repl_active = true;
 	while repl_active {
 		defmt::debug!("waiting for uart request...");
-		let res = match super::dev_uart::PACKET.wait().await {
-			Request::GetVersionMajor => Response::Uint(crate::version::VERSION_MAJOR),
-			Request::GetVersionMinor => Response::Uint(crate::version::VERSION_MINOR),
-			Request::GetVersionPatch => Response::Uint(crate::version::VERSION_PATCH),
-			Request::IsInInitMode => Response::Uint(1),
-			Request::FinishInitMode => {
-				repl_active = false;
-				Response::Ok
+		match rx.receive().await {
+			Cmd::Start => {
+				defmt::warn!("received Start but Init is already started");
 			}
-			Request::FactoryReset => {
+			Cmd::Finish => {
+				repl_active = false;
+			}
+			Cmd::FactoryReset => {
 				defmt::warn!("oro link is factory resetting");
 				pflash = PflashV0::default();
-				Response::Ok
 			}
-		};
-
-		bus.dev_uart.send(super::dev_uart::Cmd::Send(res)).await;
+		}
 	}
 
 	defmt::warn!("init service is finished; writing the pflash and resetting");
+	bus.svc_uart
+		.send(super::svc_uart::Cmd::SetInitMode {
+			in_init_mode: false,
+		})
+		.await;
 	set_initialized_and_reset(pflash).await;
 }
 
