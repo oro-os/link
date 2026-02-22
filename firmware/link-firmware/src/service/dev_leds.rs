@@ -65,6 +65,8 @@ pub enum Cmd {
 	SetSdCardIndicator(bool),
 	/// Sets the SD card sense indicator on or off.
 	SetSdSenseIndicator(bool),
+	/// Sets the manual state
+	SetManualState { state: [u8; 36] },
 }
 
 pub struct Config {
@@ -231,6 +233,11 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 			}
 			Cmd::SetSdSenseIndicator(on) => {
 				sd_card_sense_led.send(on).await;
+			}
+			Cmd::SetManualState { state } => {
+				for (i, b) in state.into_iter().enumerate() {
+					light_ch.send((i + 1, b)).await;
+				}
 			}
 		}
 	}

@@ -52,7 +52,7 @@ pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 							super::dev_blinken_light::DBG_LED3_DUTY.get(),
 						],
 						led_controller:      {
-							let mut r = [0u32; 18];
+							let mut r = [0u32; 9];
 
 							for i in (0..36).step_by(4) {
 								r[i >> 2] = (u32::from(super::dev_leds::DBG_LIGHT_VALUES[i].get())
@@ -70,6 +70,32 @@ pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 					}
 					.into()
 				}
+				Request::EndLightProgram if in_init_mode => {
+					bus.dev_blinken_light
+						.send(super::dev_blinken_light::Cmd::Config)
+						.await;
+					bus.dev_leds.send(super::dev_leds::Cmd::AllOff).await;
+					Response::Ok.into()
+				}
+				Request::EndLightProgram => Response::Err(Error::InitOnly).into(),
+				Request::StartLightProgram { debug, controller } if in_init_mode => {
+					bus.dev_blinken_light
+						.send(super::dev_blinken_light::Cmd::Manual { states: debug })
+						.await;
+					let mut channels = [0u8; 36];
+					for (i, b) in controller
+						.into_iter()
+						.flat_map(u32::to_be_bytes)
+						.enumerate()
+					{
+						channels[i] = b;
+					}
+					bus.dev_leds
+						.send(super::dev_leds::Cmd::SetManualState { state: channels })
+						.await;
+					Response::Ok.into()
+				}
+				Request::StartLightProgram { .. } => Response::Err(Error::InitOnly).into(),
 			};
 
 			bus.dev_uart.send(super::dev_uart::Cmd::Send(res)).await;

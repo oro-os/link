@@ -13,6 +13,49 @@ type LinkProtocol = Awaited<ReturnType<typeof initLinkProtocol>>;
 let linkProtocol: LinkProtocol | undefined;
 
 const limit = pLimit(1);
+const MAX_FRAME_LEN = 4096;
+const RESET_REQ_WORD = 0xffffffff;
+const RESET_ACK_WORD = 0xfffffffe;
+
+class RecoverableTransportError extends Error {
+	constructor(message: string) {
+		super(message);
+		this.name = "RecoverableTransportError";
+	}
+}
+
+function crc32(data: Uint8Array): number {
+	let crc = 0xffffffff;
+	for (let index = 0; index < data.length; index += 1) {
+		crc ^= data[index];
+		for (let bit = 0; bit < 8; bit += 1) {
+			const mask = -(crc & 1);
+			crc = (crc >>> 1) ^ (0xedb88320 & mask);
+		}
+	}
+	return ~crc >>> 0;
+}
+
+function wordToBytes(value: number): Uint8Array {
+	const bytes = new Uint8Array(4);
+	new DataView(bytes.buffer).setUint32(0, value >>> 0, false);
+	return bytes;
+}
+
+function bytesToWord(bytes: Uint8Array): number {
+	return new DataView(
+		bytes.buffer,
+		bytes.byteOffset,
+		bytes.byteLength,
+	).getUint32(0, false);
+}
+
+async function writeWord(
+	writer: WritableStreamDefaultWriter<Uint8Array>,
+	word: number,
+) {
+	await writer.write(wordToBytes(word));
+}
 
 class PutBackReader {
 	#reader: ReadableStreamDefaultReader<Uint8Array>;
@@ -62,6 +105,10 @@ class PutBackReader {
 		this.#buffer.unshift(data);
 	}
 
+	clear() {
+		this.#buffer = [];
+	}
+
 	take(): ReadableStreamDefaultReader<Uint8Array> {
 		return this.#reader;
 	}
@@ -77,11 +124,31 @@ async function reqres(
 	}
 
 	const encodedRequest = encode_request(request);
+	const requestLength = bytesToWord(encodedRequest.subarray(0, 4));
+	if (requestLength === 0 || requestLength > MAX_FRAME_LEN) {
+		throw new Error("Encoded request is invalid");
+	}
+	const requestPayload = encodedRequest.subarray(4, 4 + requestLength);
 	await writer.write(encodedRequest);
+	await writeWord(writer, crc32(requestPayload));
 
-	const lengthBytes = await reader.read(4);
-	const length = new DataView(lengthBytes.buffer).getUint32(0, false);
+	const length = bytesToWord(await reader.read(4));
+	if (length === RESET_REQ_WORD) {
+		await writeWord(writer, RESET_ACK_WORD);
+		throw new RecoverableTransportError("Received reset request");
+	}
+	if (length === RESET_ACK_WORD) {
+		throw new RecoverableTransportError("Received reset acknowledgement");
+	}
+	if (length === 0 || length > MAX_FRAME_LEN) {
+		throw new RecoverableTransportError("Received invalid response length");
+	}
+
 	const responseBytes = await reader.read(length);
+	const responseCrc = bytesToWord(await reader.read(4));
+	if (responseCrc !== crc32(responseBytes)) {
+		throw new RecoverableTransportError("Response CRC mismatch");
+	}
 	const response = decode_response(responseBytes);
 
 	if (typeof response === "object" && "BulkTransfer" in response) {
@@ -89,6 +156,35 @@ async function reqres(
 	}
 
 	return response;
+}
+
+async function recoverLink(
+	reader: PutBackReader,
+	writer: WritableStreamDefaultWriter<Uint8Array>,
+): Promise<void> {
+	reader.clear();
+	await writeWord(writer, RESET_REQ_WORD);
+
+	let window = 0;
+	let filled = 0;
+	for (;;) {
+		const byte = (await reader.read(1))[0];
+		window = ((window << 8) | byte) >>> 0;
+		if (filled < 3) {
+			filled += 1;
+			continue;
+		}
+
+		if (window === RESET_REQ_WORD) {
+			await writeWord(writer, RESET_ACK_WORD);
+			continue;
+		}
+
+		if (window === RESET_ACK_WORD) {
+			reader.clear();
+			return;
+		}
+	}
 }
 
 export class Device {
@@ -109,7 +205,7 @@ export class Device {
 		this.#port = await navigator.serial.requestPort();
 
 		await this.#port.open({
-			baudRate: 1000000,
+			baudRate: 3000000,
 			bufferSize: 65536,
 		});
 
@@ -129,7 +225,19 @@ export class Device {
 			throw new Error("Device is not open");
 		}
 
-		return await limit(reqres, this.#reader!, this.#writer!, request);
+		return await limit(async () => {
+			for (;;) {
+				try {
+					return await reqres(this.#reader!, this.#writer!, request);
+				} catch (error) {
+					if (!(error instanceof RecoverableTransportError)) {
+						throw error;
+					}
+
+					await recoverLink(this.#reader!, this.#writer!);
+				}
+			}
+		});
 	}
 
 	public async close(): Promise<void> {

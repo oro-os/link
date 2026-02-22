@@ -43,6 +43,19 @@ pub enum Request {
 	/// LightState
 	#[n(8)]
 	GetLightState,
+	/// Ok
+	/// Err(InitOnly)
+	#[n(9)]
+	StartLightProgram {
+		#[n(0)]
+		debug:      [bool; 3],
+		#[n(1)]
+		controller: [u32; 9],
+	},
+	/// Ok
+	/// Err(InitOnly)
+	#[n(10)]
+	EndLightProgram,
 }
 
 #[derive(minicbor::Encode, minicbor::Decode)]
@@ -68,9 +81,9 @@ pub enum Response {
 		debug_leds:          [u16; 3],
 		#[n(1)]
 		debug_leds_max_duty: u16,
-		/// 36 u8's packed BE into 18 u64s
+		/// 36 u8's packed BE into 9 u32s
 		#[n(2)]
-		led_controller:      [u32; 18],
+		led_controller:      [u32; 9],
 	},
 }
 

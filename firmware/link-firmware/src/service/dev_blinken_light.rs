@@ -22,6 +22,7 @@ pub enum Cmd {
 	Idle,
 	Config,
 	Off,
+	Manual { states: [bool; 3] },
 }
 
 pub struct Config {
@@ -155,6 +156,24 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 				debug_led1.set_high();
 				debug_led2.set_high();
 				debug_led3.set_high();
+				rx.receive().await
+			}
+			Cmd::Manual { states } => {
+				if states[0] {
+					debug_led1.set_low();
+				} else {
+					debug_led1.set_high();
+				}
+				if states[1] {
+					debug_led2.set_low();
+				} else {
+					debug_led2.set_high();
+				}
+				if states[2] {
+					debug_led3.set_low();
+				} else {
+					debug_led3.set_high();
+				}
 				rx.receive().await
 			}
 		}

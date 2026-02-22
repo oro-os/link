@@ -4,7 +4,16 @@ import * as C from "./LinkLight.css";
 
 let counter = 0;
 
-export default ({ r, g, b, x, y }) => {
+export default ({
+	r,
+	g,
+	b,
+	x,
+	y,
+	onStartDebug,
+	onEndDebug,
+	mouseRadius = 10,
+}) => {
 	const id = `link-light-${counter++}`;
 	const color = S(() => `rgb(${S.$(r)}, ${S.$(g)}, ${S.$(b)})`);
 	const lum = S(() => Math.max(S.$(r), Math.max(S.$(g), S.$(b))) / 255.0);
@@ -41,6 +50,14 @@ export default ({ r, g, b, x, y }) => {
 					</radialGradient>
 				</defs>
 				<circle cx="50" cy="50" r="42" fill={`url(#${id})`} />
+				<circle
+					cx="50"
+					cy="50"
+					r={mouseRadius}
+					fill="transparent"
+					on:mouseenter={onStartDebug}
+					on:mouseleave={onEndDebug}
+				/>
 			</svg>
 		</div>
 	);

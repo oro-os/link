@@ -266,7 +266,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	let (uart_tx, uart_rx) =
 		usart::Uart::new(p.UART7, p.PE7, p.PE8, Irqs, p.DMA1_CH1, p.DMA1_CH3, {
 			let mut config = usart::Config::default();
-			config.baudrate = 1_000_000;
+			config.baudrate = 3_000_000;
 			config.stop_bits = usart::StopBits::STOP1;
 			config.parity = usart::Parity::ParityNone;
 			config
