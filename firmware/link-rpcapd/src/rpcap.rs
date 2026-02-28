@@ -1,5 +1,5 @@
 //! Taken from:
-//! https://github.com/the-tcpdump-group/libpcap/blob/master/rpcap-protocol.h
+//! <https://github.com/the-tcpdump-group/libpcap/blob/master/rpcap-protocol.h>
 //!
 //! NOTE: This protocol only supports as much as is needed in order to handle
 //!       the usecases of this daemon and thus may not be complete. **DO NOT USE

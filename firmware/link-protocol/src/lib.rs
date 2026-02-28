@@ -2,6 +2,8 @@
 #![feature(const_cmp, const_trait_impl)]
 
 pub use minicbor;
+#[cfg(feature = "heapless")]
+mod heapless_cbor;
 pub mod stream;
 
 #[derive(minicbor::Encode, minicbor::Decode)]
@@ -86,6 +88,16 @@ pub enum Response {
 		#[n(2)]
 		controller:          [u32; 9],
 	},
+	#[cfg(all(feature = "std", not(feature = "defmt")))]
+	#[n(5)]
+	String(#[n(0)] String),
+	#[cfg(feature = "heapless")]
+	#[n(5)]
+	String(
+		#[cbor(with = "heapless_cbor")]
+		#[n(0)]
+		heapless::String<64>,
+	),
 }
 
 #[derive(minicbor::Encode, minicbor::Decode)]

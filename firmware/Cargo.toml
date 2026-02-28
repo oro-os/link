@@ -11,12 +11,12 @@ resolver = "2"
 members = [
 	"link-firmware",
 	"link-rpcapd",
-	"link-protocol"
+	"link-protocol",
+	"link-cli"
 ]
 
 default-members = [
-	"link-rpcapd",
-	"link-protocol"
+	"link-cli"
 ]
 
 [profile.dev]
