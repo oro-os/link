@@ -5350,7 +5350,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 71.12) (xy 125.73 71.12)
+			(xy 120.65 69.85) (xy 125.73 69.85)
 		)
 		(stroke
 			(width 0)
@@ -5590,7 +5590,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 71.12) (xy 166.37 71.12)
+			(xy 161.29 69.85) (xy 166.37 69.85)
 		)
 		(stroke
 			(width 0)
@@ -6010,7 +6010,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 71.12) (xy 146.05 71.12)
+			(xy 138.43 69.85) (xy 146.05 69.85)
 		)
 		(stroke
 			(width 0)
@@ -6729,7 +6729,7 @@
 		(uuid "6be01c72-6801-4044-8265-4a049b99ac91")
 	)
 	(label "O2"
-		(at 166.37 71.12 180)
+		(at 166.37 69.85 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10055,7 +10055,7 @@
 	)
 	(symbol
 		(lib_id "OroLink:SG73P2ATTD102J")
-		(at 125.73 71.12 0)
+		(at 125.73 69.85 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10066,7 +10066,7 @@
 		(fields_autoplaced yes)
 		(uuid "70933027-4062-4da2-93dd-3846ef11ef05")
 		(property "Reference" "R27"
-			(at 132.08 65.118 0)
+			(at 132.08 63.848 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10076,7 +10076,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 132.08 67.9509 0)
+			(at 132.08 66.6809 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10086,7 +10086,7 @@
 			)
 		)
 		(property "Footprint" "OroLink:RES_SG73P_2A_KOA"
-			(at 125.73 71.12 0)
+			(at 125.73 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10098,7 +10098,7 @@
 			)
 		)
 		(property "Datasheet" "null"
-			(at 125.73 71.12 0)
+			(at 125.73 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10110,7 +10110,7 @@
 			)
 		)
 		(property "Description" "Res Thick Film 0805 1K Ohm 5% 0.5W(1/2W) ±100ppm/C Pad SMD Automotive T/R"
-			(at 125.73 71.12 0)
+			(at 125.73 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10121,7 +10121,7 @@
 			)
 		)
 		(property "Mouser URL" "null"
-			(at 125.73 74.12 0)
+			(at 125.73 72.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10133,7 +10133,7 @@
 			)
 		)
 		(property "Arrow ID" "SG73P2ATTD102J"
-			(at 125.73 74.12 0)
+			(at 125.73 72.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10145,7 +10145,7 @@
 			)
 		)
 		(property "Mouser ID" "660-SG73P2ATTD102J"
-			(at 125.73 74.12 0)
+			(at 125.73 72.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10157,7 +10157,7 @@
 			)
 		)
 		(property "Description_1" "Res Thick Film 0805 1K Ohm 5% 0.5W(1/2W) ±100ppm/C Pad SMD Automotive T/R"
-			(at 125.73 74.12 0)
+			(at 125.73 72.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10169,7 +10169,7 @@
 			)
 		)
 		(property "DigiKey ID" "2019-SG73P2ATTD102JCT-ND"
-			(at 125.73 74.12 0)
+			(at 125.73 72.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10181,7 +10181,7 @@
 			)
 		)
 		(property "Mfr. Number" "SG73P2ATTD102J"
-			(at 125.73 74.12 0)
+			(at 125.73 72.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10193,7 +10193,7 @@
 			)
 		)
 		(property "Mfr. Name" "KOA Speer"
-			(at 125.73 74.12 0)
+			(at 125.73 72.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10624,6 +10624,181 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
 					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:CLM3C-WKW-CXAYA453")
+		(at 161.29 69.85 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "86b8c03a-50a6-4892-9420-73ce02895da2")
+		(property "Reference" "LED17"
+			(at 153.67 62.3457 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CLM3C-WKW-CXAYA453"
+			(at 153.67 64.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OroLink:CLM3CWKWCXAYA453"
+			(at 148.59 -23.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Datasheet" "https://componentsearchengine.com/Datasheets/2/CLM3C-WKW-CWBYA453.pdf"
+			(at 148.59 -123.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Description" "Cree CLM3C-WKW-CXAYA453, CLM3 Series White LED, 5500K, PLCC 2, Rectangle Lens SMD Package"
+			(at 161.29 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "1.4"
+			(at 148.59 -323.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Manufacturer_Name" "CREE LED"
+			(at 148.59 -423.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CLM3C-WKW-CXAYA453"
+			(at 148.59 -523.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Mouser Part Number" "941-CLM3CWKWCXAYA453"
+			(at 148.59 -623.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Cree-Inc/CLM3C-WKW-CXaYa453?qs=3AcK5DacLbr3ewaPKwAgNg%3D%3D"
+			(at 148.59 -723.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Arrow Part Number" "CLM3C-WKW-CXAYA453"
+			(at 148.59 -823.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/clm3c-wkw-cxaya453/cree"
+			(at 148.59 -923.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Label" "SDCARD ACTIVITY INDICATOR"
+			(at 143.51 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3ba56521-f333-4c10-807c-8b8e9d45ab89")
+		)
+		(pin "2"
+			(uuid "f145a009-fcf0-42f1-b15f-ddaffa2fa8d2")
+		)
+		(instances
+			(project "link"
+				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
+					(reference "LED17")
 					(unit 1)
 				)
 			)
@@ -11225,182 +11400,6 @@
 			(project "link"
 				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
 					(reference "#PWR030")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "OroLink:APT1608VRCXF_A-5MAV")
-		(at 161.29 71.12 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ae243cc6-69be-43c4-a4a5-5c435a9bee98")
-		(property "Reference" "LED17"
-			(at 153.67 61.8955 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "APT1608VRCXF_A-5MAV"
-			(at 153.67 64.3198 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "OroLink:APT1608VRCXFA5MAV"
-			(at 148.59 164.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.co.uk/datasheet/2/216/APT1608VRCXF_A_5MAV-1152496.pdf"
-			(at 148.59 264.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Description" "Standard LEDs - SMD 1608 SMD LED Cyan"
-			(at 161.29 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Height" "0.85"
-			(at 148.59 464.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Manufacturer_Name" "Kingbright"
-			(at 148.59 564.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Manufacturer_Part_Number" "APT1608VRCXF/A-5MAV"
-			(at 148.59 664.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Mouser Part Number" "604-APT1608VRCXF5MAV"
-			(at 148.59 764.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Kingbright/APT1608VRCXF-A-5MAV?qs=xhbEVWpZdWce9Oiwfj8Zmw%3D%3D"
-			(at 148.59 864.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Arrow Part Number" "APT1608VRCXF/A-5MAV"
-			(at 148.59 964.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/apt1608vrcxfa-5mav/kingbright"
-			(at 148.59 1064.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Note" "SDCARD PRESENT INDICATOR"
-			(at 144.526 75.692 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "062c986c-5b94-487a-93b6-f99c20ce622e")
-		)
-		(pin "1"
-			(uuid "ca9f217a-0939-4419-bb47-229a1dc5ff70")
-		)
-		(instances
-			(project "link"
-				(path "/b8dafc19-6de0-4c8f-9903-23372e5103df/47cbc545-6174-4b59-b115-50b877c67ba1"
-					(reference "LED17")
 					(unit 1)
 				)
 			)
@@ -13379,7 +13378,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 120.65 71.12 0)
+		(at 120.65 69.85 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -13391,7 +13390,7 @@
 		(fields_autoplaced yes)
 		(uuid "ded8f668-479f-4e51-a1c9-6ad2c8bd069d")
 		(property "Reference" "#PWR076"
-			(at 120.65 74.93 0)
+			(at 120.65 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13402,7 +13401,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 120.65 66.9869 0)
+			(at 120.65 65.7169 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13412,7 +13411,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 120.65 71.12 0)
+			(at 120.65 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13423,7 +13422,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 120.65 71.12 0)
+			(at 120.65 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13434,7 +13433,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 120.65 71.12 0)
+			(at 120.65 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
