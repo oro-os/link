@@ -197,10 +197,11 @@ pub fn main() {
 	let out_dir_os = env::var_os("OUT_DIR").unwrap();
 	let out_dir = Path::new(&out_dir_os);
 
-	#[cfg(debug_assertions)]
-	println!("cargo:rustc-env=DEFMT_LOG=trace,embassy_net=debug,embassy_hal_internal=warn");
-	#[cfg(not(debug_assertions))]
-	println!("cargo:rustc-env=DEFMT_LOG=warn");
+	//#[cfg(debug_assertions)]
+	// println!("cargo:rustc-env=DEFMT_LOG=trace");
+	// println!("cargo:rustc-env=DEFMT_LOG=trace,embassy_net=trace,embassy_hal_internal=warn");
+	//#[cfg(not(debug_assertions))]
+	// println!("cargo:rustc-env=DEFMT_LOG=warn");
 
 	println!(
 		"cargo:rustc-link-arg=-L{}",

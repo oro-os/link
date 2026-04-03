@@ -6,6 +6,7 @@ pub(crate) mod atomic;
 pub(crate) mod channel;
 pub(crate) mod color;
 pub(crate) mod crc32;
+pub(crate) mod dns;
 pub(crate) mod flash;
 pub(crate) mod font;
 pub(crate) mod nvram;
@@ -28,7 +29,8 @@ use embassy_stm32::{
 	usart, usb,
 };
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
-use embassy_time::{Duration, Timer};
+use embassy_time::{Delay, Duration, Timer};
+use embedded_hal_bus::spi::ExclusiveDevice;
 use panic_probe as _;
 use static_cell::StaticCell;
 
@@ -239,8 +241,7 @@ pub async fn main(spawner: Spawner) -> ! {
 		p.DMA1_CH0,
 		{
 			let mut config = spi::Config::default();
-			// config.frequency = Hertz(22_500_000);
-			config.frequency = Hertz(200_000);
+			config.frequency = Hertz(22_500_000);
 			config.bit_order = spi::BitOrder::MsbFirst;
 			config.mode = spi::MODE_0;
 			config.miso_pull = Pull::Up;
@@ -259,9 +260,32 @@ pub async fn main(spawner: Spawner) -> ! {
 	let sd_spi: &'static _ = spi3;
 
 	let syseth_int = ExtiInput::new(p.PA4, p.EXTI4, Pull::None);
-	let syseth_rst = Output::new(p.PC15, Level::Low, Speed::VeryHigh);
+	let mut syseth_rst = Output::new(p.PC15, Level::Low, Speed::VeryHigh);
 	let syseth_cs = OutputOpenDrain::new(p.PD7, Level::High, Speed::VeryHigh);
 	let syseth = SpiDevice::new(spi3, syseth_cs);
+	let syseth_seed = self::rand::next_u64();
+	reset_wiznet_chip(&mut syseth_rst).await;
+
+	static SYSETH_STATE: StaticCell<embassy_net_wiznet::State<2, 2>> = StaticCell::new();
+	let syseth_state = SYSETH_STATE.init(embassy_net_wiznet::State::<2, 2>::new());
+	let (syseth_driver, syseth_wiznet_runner) = embassy_net_wiznet::new(
+		syseth_mac_address(),
+		syseth_state,
+		syseth,
+		syseth_int,
+		syseth_rst,
+	)
+	.await
+	.unwrap();
+
+	static SYSETH_STACK: StaticCell<embassy_net::StackResources<16>> = StaticCell::new();
+	let syseth_stack_resources = SYSETH_STACK.init(embassy_net::StackResources::<16>::new());
+	let (_syseth_stack, syseth_net_runner) = embassy_net::new(
+		syseth_driver,
+		embassy_net::Config::dhcpv4(Default::default()),
+		syseth_stack_resources,
+		syseth_seed,
+	);
 
 	let (uart_tx, uart_rx) =
 		usart::Uart::new(p.UART7, p.PE7, p.PE8, Irqs, p.DMA1_CH1, p.DMA1_CH3, {
@@ -280,14 +304,38 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	let exteth_int = ExtiInput::new(p.PA0, p.EXTI0, Pull::None);
 	let mut exteth_int_polarity = OutputOpenDrain::new(p.PB6, Level::Low, Speed::Low);
-	exteth_int_polarity.set_high();
-	let exteth_rst = OutputOpenDrain::new(p.PD0, Level::High, Speed::VeryHigh);
+	exteth_int_polarity.set_low(); // Enable ethernet interrupt polarity (active low)
+	let mut exteth_rst = OutputOpenDrain::new(p.PD0, Level::High, Speed::VeryHigh);
 	let exteth_cs = OutputOpenDrain::new(p.PE11, Level::High, Speed::VeryHigh);
 	let exteth = spi::Spi::new(p.SPI4, p.PE2, p.PE14, p.PE13, p.DMA2_CH1, p.DMA2_CH0, {
 		let mut config = spi::Config::default();
-		config.frequency = Hertz(50_000_000);
+		config.frequency = Hertz(20_000_000);
 		config
 	});
+	let exteth_seed = self::rand::next_u64();
+	let exteth = ExclusiveDevice::new(exteth, exteth_cs, Delay).unwrap();
+	reset_wiznet_chip(&mut exteth_rst).await;
+
+	static EXTETH_STATE: StaticCell<embassy_net_wiznet::State<2, 2>> = StaticCell::new();
+	let exteth_state = EXTETH_STATE.init(embassy_net_wiznet::State::<2, 2>::new());
+	let (exteth_driver, exteth_wiznet_runner) = embassy_net_wiznet::new(
+		exteth_mac_address(),
+		exteth_state,
+		exteth,
+		exteth_int,
+		exteth_rst,
+	)
+	.await
+	.unwrap();
+
+	static EXTETH_STACK: StaticCell<embassy_net::StackResources<16>> = StaticCell::new();
+	let exteth_stack_resources = EXTETH_STACK.init(embassy_net::StackResources::<16>::new());
+	let (exteth_stack, exteth_net_runner) = embassy_net::new(
+		exteth_driver,
+		embassy_net::Config::dhcpv4(Default::default()),
+		exteth_stack_resources,
+		exteth_seed,
+	);
 
 	let oled_rst = Output::new(p.PD1, Level::High, Speed::Low);
 	let oled_cs = OutputOpenDrain::new(p.PB9, Level::High, Speed::VeryHigh);
@@ -325,11 +373,8 @@ pub async fn main(spawner: Spawner) -> ! {
 			debug_led3,
 		},
 		dev_exteth {
-			driver: exteth,
-			cs: exteth_cs,
-			rst: exteth_rst,
-			exti: exteth_int,
-			seed: self::rand::next_u64(),
+			wiznet_runner: exteth_wiznet_runner,
+			net_runner: exteth_net_runner,
 		},
 		dev_leds {
 			spawner,
@@ -354,10 +399,8 @@ pub async fn main(spawner: Spawner) -> ! {
 			sd_host_sut_sel,
 		},
 		dev_syseth {
-			driver: syseth,
-			rst: syseth_rst,
-			exti: syseth_int,
-			seed: self::rand::next_u64(),
+			wiznet_runner: syseth_wiznet_runner,
+			net_runner: syseth_net_runner,
 		},
 		dev_usb {
 			driver: ulpi,
@@ -370,12 +413,16 @@ pub async fn main(spawner: Spawner) -> ! {
 			initialized
 		},
 		svc_init {
-			pflash
+			pflash: pflash.clone(),
 		},
 		dev_uart {
 			uart_tx,
 			uart_rx,
 		},
+		svc_daemon {
+			stack: exteth_stack,
+			daemon_endpoint: pflash.daemon_endpoint.clone(),
+		}
 	}
 	.spawn_all(spawner);
 
@@ -384,6 +431,40 @@ pub async fn main(spawner: Spawner) -> ! {
 	loop {
 		Timer::after_secs(3600).await;
 	}
+}
+
+fn exteth_mac_address() -> [u8; 6] {
+	let hash = self::unique_id::unique_id_sha256();
+
+	let mut macaddr = [0u8; 6];
+	macaddr[0] = b'.';
+	macaddr[1] = b'o';
+	macaddr[2] = b'O';
+	macaddr[3] = hash[29];
+	macaddr[4] = hash[30];
+	macaddr[5] = hash[31];
+
+	macaddr
+}
+
+fn syseth_mac_address() -> [u8; 6] {
+	let mut macaddr = [0u8; 6];
+	macaddr[0] = b'.';
+	macaddr[1] = b'o';
+	macaddr[2] = b'O';
+	macaddr[3] = 0;
+	macaddr[4] = 0;
+	macaddr[5] = 0;
+
+	macaddr
+}
+
+async fn reset_wiznet_chip<P: embedded_hal::digital::OutputPin>(pin: &mut P) {
+	Timer::after_millis(100).await;
+	let _ = pin.set_low();
+	Timer::after_millis(100).await;
+	let _ = pin.set_high();
+	Timer::after_millis(100).await;
 }
 
 /// # Safety

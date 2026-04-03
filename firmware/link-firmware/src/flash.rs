@@ -41,11 +41,22 @@ impl Default for PflashVersion {
 	}
 }
 
-#[derive(defmt::Format, Default)]
+#[derive(defmt::Format, Clone)]
 #[repr(C)]
 pub struct PflashV0 {
 	/// Whether not the system has been initialized.
-	pub initialized: bool,
+	pub initialized:     bool,
+	/// The endpoint that the daemon service should connect to, in the form "host:port".
+	pub daemon_endpoint: heapless::String<64>,
+}
+
+impl Default for PflashV0 {
+	fn default() -> Self {
+		PflashV0 {
+			initialized:     false,
+			daemon_endpoint: heapless::String::try_from("ci.oro.sh:5544").unwrap(),
+		}
+	}
 }
 
 impl From<PflashV0> for PflashVersion {
