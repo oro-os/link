@@ -52,11 +52,11 @@ pub unsafe fn go_to_sleep_and_wait_for_wol() -> ! {
 
 	// Enter Standby
 	embassy_stm32::pac::PWR.csr1().modify(|w| {
-		w.set_ewup(true);
+		w.set_ewup(true); // Enable PA0 rising edge = wakeup functionality
 	});
 	embassy_stm32::pac::PWR.cr1().modify(|w| {
 		w.set_cwuf(true); // Clear wakeup flag
-		w.set_pdds(embassy_stm32::pac::pwr::vals::Pdds::STANDBY_MODE); // PDDS=1 → Standby
+		w.set_pdds(embassy_stm32::pac::pwr::vals::Pdds::STANDBY_MODE);
 	});
 
 	// Perform a read from CR in order to ensure the chip has committed the
