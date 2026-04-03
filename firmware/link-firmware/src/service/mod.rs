@@ -33,7 +33,7 @@ services! {
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_usb,
                      #[bus(false)] #[rx(false)] #[skip(true)] svc_successful_boot,
     #[config(false)] #[bus(false)]              #[skip(true)] svc_failsafe,
-    #[config(false)]               #[rx(false)] #[skip(true)] svc_cicd,
+    #[config(false)]               #[rx(false)]               svc_cicd,
                                    #[rx(false)]               svc_main,
                                                               svc_init,
     #[config(false)]                                          svc_oled_pwr,

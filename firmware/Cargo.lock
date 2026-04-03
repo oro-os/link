@@ -1407,6 +1407,7 @@ dependencies = [
  "syn 2.0.117",
  "ttf-parser",
  "usbd-hid",
+ "w5500-ll",
 ]
 
 [[package]]
@@ -2192,6 +2193,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "de437e2a6208b014ab52972a27e59b33fa2920d3e00fe05026167a1c509d19cc"
 dependencies = [
  "vcell",
+]
+
+[[package]]
+name = "w5500-ll"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ef4332c876837525e11b6949300fb7471ec8a2718a7df4fc66084f64feb28ca6"
+dependencies = [
+ "defmt 0.3.100",
+ "embedded-hal 1.0.0",
 ]
 
 [[package]]

@@ -14,6 +14,7 @@ pub(crate) mod rand;
 pub(crate) mod service;
 pub(crate) mod unique_id;
 pub(crate) mod version;
+pub(crate) mod wol;
 
 use defmt_rtt as _;
 use embassy_embedded_hal::shared_bus::asynch::spi::SpiDevice;
