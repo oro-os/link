@@ -25,3 +25,29 @@ pub fn next_u32() -> u32 {
 		RNG.as_mut().unwrap().next_u32()
 	}
 }
+
+pub fn rng() -> impl rand_core::RngCore {
+	struct FakeRng;
+
+	#[expect(static_mut_refs)]
+	impl rand_core::RngCore for FakeRng {
+		fn fill_bytes(&mut self, dest: &mut [u8]) {
+			// SAFETY: RNG is initialized at startup
+			unsafe {
+				RNG.as_mut().unwrap().fill_bytes(dest);
+			}
+		}
+
+		fn next_u32(&mut self) -> u32 {
+			// SAFETY: RNG is initialized at startup
+			unsafe { RNG.as_mut().unwrap().next_u32() }
+		}
+
+		fn next_u64(&mut self) -> u64 {
+			// SAFETY: RNG is initialized at startup
+			unsafe { RNG.as_mut().unwrap().next_u64() }
+		}
+	}
+
+	FakeRng
+}

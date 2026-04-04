@@ -1,5 +1,5 @@
-use anyhow::Context;
+use anyhow::Result;
 
-pub fn main() -> Result<(), Box<dyn core::error::Error>> {
+pub fn main() -> Result<()> {
 	Ok(())
 }

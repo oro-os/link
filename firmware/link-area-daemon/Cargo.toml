@@ -8,7 +8,17 @@ repository = { workspace = true }
 license = { workspace = true }
 version = { workspace = true }
 
+[[bin]]
+name = "link-aread"
+path = "src/main.rs"
+
 [dependencies]
 clap = { version = "4.5.60", features = ["derive"] }
 anyhow = "1.0.102"
-tokio = { version = "1.50.0", features = ["rt-multi-thread", "macros"] }
+tokio = { version = "1.50.0", features = ["rt-multi-thread", "macros", "fs", "time"] }
+log = "0.4.29"
+env_logger = "0.11.10"
+toml = "1.1.2"
+serde = { version = "1.0.228", features = ["derive"] }
+mdns-sd = { version = "0.18.2", features = ["log"] }
+rmqtt = "0.19.1"

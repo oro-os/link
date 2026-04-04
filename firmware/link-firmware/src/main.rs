@@ -6,7 +6,6 @@ pub(crate) mod atomic;
 pub(crate) mod channel;
 pub(crate) mod color;
 pub(crate) mod crc32;
-pub(crate) mod dns;
 pub(crate) mod flash;
 pub(crate) mod font;
 pub(crate) mod nvram;
@@ -15,6 +14,8 @@ pub(crate) mod service;
 pub(crate) mod unique_id;
 pub(crate) mod version;
 pub(crate) mod wol;
+
+use core::net::Ipv4Addr;
 
 use defmt_rtt as _;
 use embassy_embedded_hal::shared_bus::asynch::spi::SpiDevice;
@@ -29,7 +30,7 @@ use embassy_stm32::{
 	time::Hertz,
 	usart, usb,
 };
-use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
+use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex, once_lock::OnceLock};
 use embassy_time::{Delay, Duration, Timer};
 use embedded_hal_bus::spi::ExclusiveDevice;
 use panic_probe as _;
@@ -283,7 +284,17 @@ pub async fn main(spawner: Spawner) -> ! {
 	let syseth_stack_resources = SYSETH_STACK.init(embassy_net::StackResources::<16>::new());
 	let (_syseth_stack, syseth_net_runner) = embassy_net::new(
 		syseth_driver,
-		embassy_net::Config::dhcpv4(Default::default()),
+		embassy_net::Config::ipv4_static({
+			let mut cfg = embassy_net::StaticConfigV4 {
+				address:     embassy_net::Ipv4Cidr::new(Ipv4Addr::from_octets([10, 0, 0, 1]), 8),
+				dns_servers: Default::default(),
+				gateway:     None,
+			};
+			cfg.dns_servers
+				.push(Ipv4Addr::from_octets([10, 0, 0, 1]))
+				.unwrap();
+			cfg
+		}),
 		syseth_stack_resources,
 		syseth_seed,
 	);
@@ -407,20 +418,19 @@ pub async fn main(spawner: Spawner) -> ! {
 			driver: ulpi,
 			ulpi_rst,
 		},
-		svc_successful_boot {
-			reboot: &mut nv_ram.reboot,
-		},
 		svc_main {
-			initialized
 		},
-		svc_daemon {
-			stack: exteth_stack,
-			daemon_endpoint: pflash.daemon_endpoint.clone(),
+		svc_mqtt {
+			stack: exteth_stack
 		}
 	}
 	.spawn_all(spawner);
 
 	defmt::info!("all services have been spawned");
+
+	Timer::after(Duration::from_secs(5)).await;
+	defmt::debug!("marking boot as successful");
+	nv_ram.reboot.reset();
 
 	loop {
 		Timer::after_secs(3600).await;
@@ -439,6 +449,23 @@ fn exteth_mac_address() -> [u8; 6] {
 	macaddr[5] = hash[31];
 
 	macaddr
+}
+
+pub fn unique_id() -> &'static str {
+	static ID: OnceLock<[u8; 6 * 2 + 5]> = OnceLock::new();
+	let id = ID.get_or_init(|| {
+		let mac = exteth_mac_address();
+		let mut id = [b'-'; { 6 * 2 + 5 }];
+		for (i, b) in mac.iter().enumerate() {
+			let b = *b;
+			id[i * 3] = ((b >> 4) & 0xF).hex_digit();
+			id[i * 3 + 1] = (b & 0xF).hex_digit();
+		}
+		id
+	});
+
+	// SAFETY: We can assert it's correct.
+	unsafe { core::str::from_utf8_unchecked(id) }
 }
 
 fn syseth_mac_address() -> [u8; 6] {
@@ -469,5 +496,19 @@ pub unsafe fn reset() -> ! {
 	#[expect(unreachable_code)]
 	{
 		panic!("system reset failed");
+	}
+}
+
+trait HexDigit {
+	fn hex_digit(self) -> u8;
+}
+
+impl HexDigit for u8 {
+	fn hex_digit(self) -> u8 {
+		match self {
+			0..=9 => b'0' + self,
+			10..=15 => b'A' + (self - 10),
+			_ => b'_',
+		}
 	}
 }

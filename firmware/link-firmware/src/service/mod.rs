@@ -7,11 +7,10 @@ pub mod dev_sdcard;
 pub mod dev_syseth;
 pub mod dev_usb;
 pub mod svc_failsafe;
-pub mod svc_successful_boot;
 // pub mod dev_usart; // TODO
 // pub mod dev_uart; // TODO
-pub mod svc_daemon;
 pub mod svc_main;
+pub mod svc_mqtt;
 pub mod svc_oled;
 pub mod svc_oled_pwr;
 
@@ -27,10 +26,9 @@ services! {
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_sdcard,
                      #[bus(false)] #[rx(false)]               dev_syseth,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_usb,
-                     #[bus(false)] #[rx(false)] #[skip(true)] svc_successful_boot,
     #[config(false)] #[bus(false)]              #[skip(true)] svc_failsafe,
                                    #[rx(false)]               svc_main,
     #[config(false)]                                          svc_oled_pwr,
     #[config(false)]                                          svc_oled,
-	                                                          svc_daemon,
+                     #[bus(false)] #[rx(false)]               svc_mqtt,
 }
