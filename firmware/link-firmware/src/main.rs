@@ -288,7 +288,7 @@ pub async fn main(spawner: Spawner) -> ! {
 		syseth_seed,
 	);
 
-	let (uart_tx, uart_rx) =
+	let (_uart_tx, uart_rx) =
 		usart::Uart::new(p.UART7, p.PE7, p.PE8, Irqs, p.DMA1_CH1, p.DMA1_CH3, {
 			let mut config = usart::Config::default();
 			config.baudrate = 3_000_000;
@@ -301,7 +301,7 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	static UART_RX_BUFFER: StaticCell<[u8; 4096]> = StaticCell::new();
 	let uart_rx_buffer = UART_RX_BUFFER.init([0u8; 4096]);
-	let uart_rx = uart_rx.into_ring_buffered(uart_rx_buffer);
+	let _uart_rx = uart_rx.into_ring_buffered(uart_rx_buffer);
 
 	let exteth_int = ExtiInput::new(p.PA0, p.EXTI0, Pull::None);
 	let mut exteth_int_polarity = OutputOpenDrain::new(p.PB6, Level::Low, Speed::Low);
@@ -412,13 +412,6 @@ pub async fn main(spawner: Spawner) -> ! {
 		},
 		svc_main {
 			initialized
-		},
-		svc_init {
-			pflash: pflash.clone(),
-		},
-		dev_uart {
-			uart_tx,
-			uart_rx,
 		},
 		svc_daemon {
 			stack: exteth_stack,

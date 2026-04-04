@@ -1,6 +1,6 @@
 [package]
-name = "link-cli"
-description = "CLI for interacting with a Link over the MINIE serial device"
+name = "link-area-daemon"
+description = "Area controller daemon for Oro Links within the same LAN"
 publish = false
 edition = { workspace = true }
 authors = { workspace = true }
@@ -10,6 +10,5 @@ version = { workspace = true }
 
 [dependencies]
 clap = { version = "4.5.60", features = ["derive"] }
-serial = "0.4.0"
 anyhow = "1.0.102"
-static_cell = { version = "2.0.0", features = ["nightly"] }
+tokio = { version = "1.50.0", features = ["rt-multi-thread", "macros"] }

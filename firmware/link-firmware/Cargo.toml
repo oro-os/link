@@ -11,8 +11,6 @@ version = { workspace = true }
 build = "build.rs"
 
 [dependencies]
-link-protocol = { path = "../link-protocol", default-features = false, features = ["defmt", "heapless"] }
-
 cortex-m-rt = "0.7.3"
 defmt = { version = "1.0.1", default-features = false }
 
@@ -36,7 +34,7 @@ micromath = "2.0.0"
 static_cell = { version = "2.0.0", features = ["nightly"] }
 defmt-rtt = "0.4.0"
 stm32-metapac = { version = "14.0.0", features = ["stm32f479vg"] }
-sha2 = { version = "0.10.7", default-features = false, features = ["asm-aarch64"] }
+sha2 = { version = "0.10.7", default-features = false }
 rand_core = "0.6.4"
 embedded-io-async = "0.6.1"
 panic-probe = { version = "1.0.0", features = ["print-defmt"] }

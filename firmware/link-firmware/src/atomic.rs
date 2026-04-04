@@ -1,3 +1,4 @@
+#[expect(unused, reason = "temporary")]
 pub trait Relaxed<T> {
 	#[must_use]
 	fn get(&self) -> T;
