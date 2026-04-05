@@ -2,7 +2,8 @@ use core::net::{Ipv4Addr, Ipv6Addr};
 
 use edge_mdns::domain::base::Ttl;
 use edge_nal::UdpSplit;
-use embassy_net::Stack;
+use embassy_futures::select::Either;
+use embassy_net::{IpListenEndpoint, Stack};
 use embassy_sync::blocking_mutex::raw::NoopRawMutex;
 use embassy_time::Timer;
 use static_cell::StaticCell;
@@ -39,6 +40,10 @@ pub enum Error {
 	Mdns(edge_mdns::io::MdnsIoError<edge_nal_embassy::UdpError>),
 	/// The network device went down before we could wait for mDNS discovery.
 	LinkDown,
+	/// The mDNS responder stopped unexpectedly while waiting for a connection.
+	MdnsStopped,
+	/// An error occurred with the TCP listener
+	Accept(embassy_net::tcp::AcceptError),
 }
 
 /// # Panics
@@ -122,11 +127,40 @@ pub async fn wait_for_mqtt<'stack>(stack: Stack<'stack>) -> Result<(), Error> {
 		&signal,
 	);
 
-	mdns.run(edge_mdns::HostAnswersMdnsHandler::new(
-		edge_mdns::host::ServiceAnswers::new(&host, &service),
-	))
-	.await
-	.map_err(Error::Mdns)?;
+	// Wait for a connection to be established, and then return.
+	let r = embassy_futures::select::select(
+		mdns.run(edge_mdns::HostAnswersMdnsHandler::new(
+			edge_mdns::host::ServiceAnswers::new(&host, &service),
+		)),
+		listener.accept(IpListenEndpoint {
+			addr: None,
+			port: 1883,
+		}),
+	)
+	.await;
+
+	match r {
+		Either::First(Ok(_)) => {
+			defmt::info!("mDNS responder stopped unexpectedly");
+			return Err(Error::MdnsStopped);
+		}
+		Either::First(Err(err)) => {
+			defmt::error!("mDNS responder error: {:?}", err);
+			return Err(Error::Mdns(err));
+		}
+		Either::Second(Ok(_)) => {
+			defmt::info!("MQTT client connected");
+		}
+		Either::Second(Err(err)) => {
+			defmt::error!("TCP listener error: {:?}", err);
+			return Err(Error::Accept(err));
+		}
+	}
+
+	loop {
+		// TODO
+		Timer::after_secs(10).await;
+	}
 
 	Ok(())
 }
