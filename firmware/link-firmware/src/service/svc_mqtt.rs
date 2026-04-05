@@ -14,22 +14,12 @@ pub struct Config {
 
 #[embassy_executor::task]
 pub async fn run(config: Config) -> ! {
-	let mqtt = match wait_for_mqtt(config.stack).await {
-		Ok(mqtt) => mqtt,
-		Err(err) => {
-			defmt::error!("MQTT initialization failed; resetting in 5s: {:?}", err);
-			Timer::after_secs(5).await;
-			// SAFETY: MQTT failures must reset.
-			unsafe {
-				crate::reset();
-			}
-		}
-	};
-
-	defmt::info!("MQTT session established");
-
-	loop {
-		Timer::after_secs(10).await;
+	let Err(err) = run_mqtt(config.stack).await;
+	defmt::error!("MQTT initialization failed; resetting in 5s: {:?}", err);
+	Timer::after_secs(5).await;
+	// SAFETY: MQTT failures must reset.
+	unsafe {
+		crate::reset();
 	}
 }
 
@@ -49,7 +39,7 @@ pub enum Error {
 /// # Panics
 /// Can only be called once. The board should reset if the connection
 /// is lost.
-pub async fn wait_for_mqtt<'stack>(stack: Stack<'stack>) -> Result<(), Error> {
+pub async fn run_mqtt<'stack>(stack: Stack<'stack>) -> Result<!, Error> {
 	defmt::debug!("waiting for stack to be configured");
 	stack.wait_config_up().await;
 
@@ -157,10 +147,25 @@ pub async fn wait_for_mqtt<'stack>(stack: Stack<'stack>) -> Result<(), Error> {
 		}
 	}
 
+	// Force mDNS responder to stop.
+	drop(mdns);
+	drop(signal);
+	drop(mdns_socket);
+
+	// Set up MQTT stack.
+	let mqtt_transport = mqttrust::transport::embedded_io::ConnectedSocketTransport::new(listener);
+	let config = mqttrust::Config::builder()
+		.client_id(name.try_into().unwrap())
+		.keepalive_interval(embassy_time::Duration::from_secs(50))
+		.build();
+
+	static STATE: StaticCell<mqttrust::State<NoopRawMutex, 1024, 1024>> = StaticCell::new();
+	let state = STATE.init(mqttrust::State::new());
+
+	let (mqtt_stack, mqtt_client) = mqttrust::new(state, config);
+
 	loop {
 		// TODO
 		Timer::after_secs(10).await;
 	}
-
-	Ok(())
 }

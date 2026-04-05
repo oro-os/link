@@ -62,14 +62,14 @@ macro_rules! services {
 						);
 					} else {
 						defmt::info!("spawning service: {}", ::core::stringify!($name));
-						spawner.must_spawn(services!(
+						spawner.spawn(services!(
 							@CALL
 							self::$name::run,
 							()
 							{$($bus)?} => {bus.clone()}
 							{$($rx)?} => {&owned_bus.$name}
 							{$($config)?} => {self.$name}
-						));
+						).unwrap());
 					}
 				)+
 			}

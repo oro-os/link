@@ -274,8 +274,8 @@ fn get_pflash_bank_and_offset(
 		($region:expr, $name:expr) => {
 			defmt::trace!("checking region {}", $name);
 
-			if $region.0.base <= pflash_base && $region.0.base + $region.0.size >= pflash_end {
-				let base = $region.0.base;
+			if $region.0.base() <= pflash_base && $region.0.base() + $region.0.size >= pflash_end {
+				let base = $region.0.base();
 				let offset = pflash_base - base;
 				defmt::debug!(
 					"found pflash region in {} at base {:08X} offset {}",

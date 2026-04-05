@@ -2,16 +2,16 @@ use embassy_stm32::{
 	exti::ExtiInput,
 	gpio::{Output, OutputOpenDrain},
 	mode::Async,
-	spi::Spi,
+	spi::{Spi, mode::Master},
 };
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 
 pub struct Config {
-	pub sd: &'static Mutex<NoopRawMutex, Spi<'static, Async>>,
+	pub sd: &'static Mutex<NoopRawMutex, Spi<'static, Async, Master>>,
 	pub sd_cs: OutputOpenDrain<'static>,
 	pub sd_en: OutputOpenDrain<'static>,
-	pub sd_sense: ExtiInput<'static>,
+	pub sd_sense: ExtiInput<'static, Async>,
 	pub sd_host_sut_sel: Output<'static>,
 }
 
@@ -60,7 +60,7 @@ pub async fn run(config: Config) -> ! {
 }
 
 struct SdCard<'a> {
-	sd:    &'a Mutex<NoopRawMutex, Spi<'static, Async>>,
+	sd:    &'a Mutex<NoopRawMutex, Spi<'static, Async, Master>>,
 	sd_cs: &'a mut OutputOpenDrain<'static>,
 }
 

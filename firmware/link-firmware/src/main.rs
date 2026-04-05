@@ -21,10 +21,10 @@ use defmt_rtt as _;
 use embassy_embedded_hal::shared_bus::asynch::spi::SpiDevice;
 use embassy_executor::Spawner;
 use embassy_stm32::{
-	Config, bind_interrupts,
-	exti::ExtiInput,
+	Config, bind_interrupts, dma,
+	exti::{self, ExtiInput},
 	gpio::{Input, Level, Output, OutputOpenDrain, Pull, Speed},
-	i2c,
+	i2c, interrupt,
 	mode::{Async, Blocking},
 	peripherals, rcc, rng, spi,
 	time::Hertz,
@@ -41,6 +41,19 @@ bind_interrupts!(struct Irqs {
 	USART2 => usart::InterruptHandler<peripherals::USART2>;
 	UART7 => usart::InterruptHandler<peripherals::UART7>;
 	HASH_RNG => rng::InterruptHandler<peripherals::RNG>;
+	DMA1_STREAM0 => dma::InterruptHandler<peripherals::DMA1_CH0>;
+	DMA1_STREAM1 => dma::InterruptHandler<peripherals::DMA1_CH1>;
+	DMA1_STREAM3 => dma::InterruptHandler<peripherals::DMA1_CH3>;
+	DMA1_STREAM4 => dma::InterruptHandler<peripherals::DMA1_CH4>;
+	DMA1_STREAM5 => dma::InterruptHandler<peripherals::DMA1_CH5>;
+	DMA1_STREAM6 => dma::InterruptHandler<peripherals::DMA1_CH6>;
+	DMA1_STREAM7 => dma::InterruptHandler<peripherals::DMA1_CH7>;
+	DMA2_STREAM0 => dma::InterruptHandler<peripherals::DMA2_CH0>;
+	DMA2_STREAM1 => dma::InterruptHandler<peripherals::DMA2_CH1>;
+	EXTI15_10 => exti::InterruptHandler<interrupt::typelevel::EXTI15_10>;
+	EXTI9_5 => exti::InterruptHandler<interrupt::typelevel::EXTI9_5>;
+	EXTI4 => exti::InterruptHandler<interrupt::typelevel::EXTI4>;
+	EXTI0 => exti::InterruptHandler<interrupt::typelevel::EXTI0>;
 });
 
 #[embassy_executor::main]
@@ -191,11 +204,11 @@ pub async fn main(spawner: Spawner) -> ! {
 		p.USART2,
 		p.PD6,
 		p.PA2,
-		Irqs,
 		p.PA1,
 		p.PD3,
 		p.DMA1_CH6,
 		p.DMA1_CH5,
+		Irqs,
 		{
 			let mut config = usart::Config::default();
 			config.baudrate = 115_200;
@@ -205,7 +218,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	.unwrap();
 
 	let _usb_output_selector = Output::new(p.PA7, Level::Low, Speed::Low);
-	let _ulpi_oc = ExtiInput::new(p.PB14, p.EXTI14, Pull::None);
+	let _ulpi_oc = ExtiInput::new(p.PB14, p.EXTI14, Pull::None, Irqs);
 	let ulpi_rst = Output::new(p.PB15, Level::Low, Speed::Low);
 	static EP_OUT_BUFFER: StaticCell<[u8; 256]> = StaticCell::new();
 	let ep_out_buffer = EP_OUT_BUFFER.init([0; 256]);
@@ -233,7 +246,8 @@ pub async fn main(spawner: Spawner) -> ! {
 		},
 	);
 
-	static SPI3: StaticCell<Mutex<NoopRawMutex, spi::Spi<'static, Async>>> = StaticCell::new();
+	static SPI3: StaticCell<Mutex<NoopRawMutex, spi::Spi<'static, Async, spi::mode::Master>>> =
+		StaticCell::new();
 	let spi3 = SPI3.init(Mutex::new(spi::Spi::new(
 		p.SPI3,
 		p.PC10,
@@ -241,6 +255,7 @@ pub async fn main(spawner: Spawner) -> ! {
 		p.PC11,
 		p.DMA1_CH7,
 		p.DMA1_CH0,
+		Irqs,
 		{
 			let mut config = spi::Config::default();
 			config.frequency = Hertz(22_500_000);
@@ -251,9 +266,9 @@ pub async fn main(spawner: Spawner) -> ! {
 		},
 	)));
 
-	let _sd_oc = ExtiInput::new(p.PA6, p.EXTI6, Pull::None);
-	let sd_sense = ExtiInput::new(p.PC13, p.EXTI13, Pull::None);
-	let _sd_sense_cable = ExtiInput::new(p.PD8, p.EXTI8, Pull::None);
+	let _sd_oc = ExtiInput::new(p.PA6, p.EXTI6, Pull::None, Irqs);
+	let sd_sense = ExtiInput::new(p.PC13, p.EXTI13, Pull::None, Irqs);
+	let _sd_sense_cable = ExtiInput::new(p.PD8, p.EXTI8, Pull::None, Irqs);
 	// TODO(qix-): Switch back to open drain after pullup is added
 	// let sd_en = OutputOpenDrain::new(p.PC14, Level::High, Speed::Low);
 	let sd_en = OutputOpenDrain::new_pull(p.PC14, Level::High, Speed::Low, Pull::Up);
@@ -261,7 +276,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	let sd_host_sut_sel = Output::new(p.PD14, Level::Low, Speed::Low);
 	let sd_spi: &'static _ = spi3;
 
-	let syseth_int = ExtiInput::new(p.PA4, p.EXTI4, Pull::None);
+	let syseth_int = ExtiInput::new(p.PA4, p.EXTI4, Pull::None, Irqs);
 	let mut syseth_rst = Output::new(p.PC15, Level::Low, Speed::VeryHigh);
 	let syseth_cs = OutputOpenDrain::new(p.PD7, Level::High, Speed::VeryHigh);
 	let syseth = SpiDevice::new(spi3, syseth_cs);
@@ -300,7 +315,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	);
 
 	let (_uart_tx, uart_rx) =
-		usart::Uart::new(p.UART7, p.PE7, p.PE8, Irqs, p.DMA1_CH1, p.DMA1_CH3, {
+		usart::Uart::new(p.UART7, p.PE7, p.PE8, p.DMA1_CH1, p.DMA1_CH3, Irqs, {
 			let mut config = usart::Config::default();
 			config.baudrate = 3_000_000;
 			config.stop_bits = usart::StopBits::STOP1;
@@ -314,16 +329,25 @@ pub async fn main(spawner: Spawner) -> ! {
 	let uart_rx_buffer = UART_RX_BUFFER.init([0u8; 4096]);
 	let _uart_rx = uart_rx.into_ring_buffered(uart_rx_buffer);
 
-	let exteth_int = ExtiInput::new(p.PA0, p.EXTI0, Pull::None);
+	let exteth_int = ExtiInput::new(p.PA0, p.EXTI0, Pull::None, Irqs);
 	let mut exteth_int_polarity = OutputOpenDrain::new(p.PB6, Level::Low, Speed::Low);
 	exteth_int_polarity.set_low(); // Enable ethernet interrupt polarity (active low)
 	let mut exteth_rst = OutputOpenDrain::new(p.PD0, Level::High, Speed::VeryHigh);
 	let exteth_cs = OutputOpenDrain::new(p.PE11, Level::High, Speed::VeryHigh);
-	let exteth = spi::Spi::new(p.SPI4, p.PE2, p.PE14, p.PE13, p.DMA2_CH1, p.DMA2_CH0, {
-		let mut config = spi::Config::default();
-		config.frequency = Hertz(20_000_000);
-		config
-	});
+	let exteth = spi::Spi::new(
+		p.SPI4,
+		p.PE2,
+		p.PE14,
+		p.PE13,
+		p.DMA2_CH1,
+		p.DMA2_CH0,
+		Irqs,
+		{
+			let mut config = spi::Config::default();
+			config.frequency = Hertz(20_000_000);
+			config
+		},
+	);
 	let exteth_seed = self::rand::next_u64();
 	let exteth = ExclusiveDevice::new(exteth, exteth_cs, Delay).unwrap();
 	reset_wiznet_chip(&mut exteth_rst).await;
@@ -353,7 +377,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	let oled_cs = OutputOpenDrain::new(p.PB9, Level::High, Speed::VeryHigh);
 	let oled_dc = Output::new(p.PD4, Level::Low, Speed::VeryHigh);
 	let oled_en = Output::new(p.PD9, Level::Low, Speed::Low);
-	let oled = spi::Spi::new_txonly(p.SPI2, p.PA9, p.PC1, p.DMA1_CH4, {
+	let oled = spi::Spi::new_txonly(p.SPI2, p.PA9, p.PC1, p.DMA1_CH4, Irqs, {
 		let mut oledconf = spi::Config::default();
 		oledconf.mode = spi::MODE_0;
 		oledconf.bit_order = spi::BitOrder::MsbFirst;
@@ -366,12 +390,12 @@ pub async fn main(spawner: Spawner) -> ! {
 	let _gpio4 = Output::new(p.PC6, Level::Low, Speed::Low);
 	let _gpio5 = Output::new(p.PB4, Level::Low, Speed::Low);
 
-	let _vbus_oc = ExtiInput::new(p.PD15, p.EXTI15, Pull::None);
+	let _vbus_oc = ExtiInput::new(p.PD15, p.EXTI15, Pull::None, Irqs);
 	let _vbus_en = Output::new(p.PE15, Level::High, Speed::Low);
 	let _aux_vbus_sense = Input::new(p.PA11, Pull::None);
-	let _aux_vbus_oc = ExtiInput::new(p.PA12, p.EXTI12, Pull::None);
+	let _aux_vbus_oc = ExtiInput::new(p.PA12, p.EXTI12, Pull::None, Irqs);
 	let _aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
-	let _board_power_alert = ExtiInput::new(p.PE9, p.EXTI9, Pull::None);
+	let _board_power_alert = ExtiInput::new(p.PE9, p.EXTI9, Pull::None, Irqs);
 	let _psu_on = Output::new(p.PD10, Level::Low, Speed::Low);
 	let _sut_pwr_switch = Output::new(p.PE12, Level::Low, Speed::Low);
 	let _sut_rst_switch = Output::new(p.PE10, Level::Low, Speed::Low);

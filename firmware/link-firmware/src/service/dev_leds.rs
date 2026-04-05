@@ -119,7 +119,7 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 				static CHANNEL: StaticCell<RawChannel<Rgb, 2>> = StaticCell::new();
 				let ch = CHANNEL.init(RawChannel::new());
 				let rx = ch.receiver();
-				spawner.spawn(rgb_light_task(rx, light_ch.sender(), $ch_r, $ch_g, $ch_b)).unwrap();
+				spawner.spawn(rgb_light_task(rx, light_ch.sender(), $ch_r, $ch_g, $ch_b).unwrap());
 				ch.sender()
 			}
 		};
@@ -128,7 +128,7 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 				static CHANNEL: StaticCell<RawChannel<bool, 2>> = StaticCell::new();
 				let ch = CHANNEL.init(RawChannel::new());
 				let rx = ch.receiver();
-				spawner.spawn(on_off_light_task(rx, light_ch.sender(), $ch_bool)).unwrap();
+				spawner.spawn(on_off_light_task(rx, light_ch.sender(), $ch_bool).unwrap());
 				ch.sender()
 			}
 		};
@@ -140,7 +140,7 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 				static CHANNEL: StaticCell<RawChannel<Rgb, 2>> = StaticCell::new();
 				let ch = CHANNEL.init(RawChannel::new());
 				let rx = ch.receiver();
-				spawner.spawn(multi_rgb_light_task(rx, light_ch.sender(), CH_R, CH_G, CH_B)).unwrap();
+				spawner.spawn(multi_rgb_light_task(rx, light_ch.sender(), CH_R, CH_G, CH_B).unwrap());
 				ch.sender()
 			}
 		};
@@ -150,7 +150,7 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 				static CHANNEL: StaticCell<RawChannel<u8, 2>> = StaticCell::new();
 				let ch = CHANNEL.init(RawChannel::new());
 				let rx = ch.receiver();
-				spawner.spawn(multi_grey_light_task(rx, light_ch.sender(), CH_GREY)).unwrap();
+				spawner.spawn(multi_grey_light_task(rx, light_ch.sender(), CH_GREY).unwrap());
 				ch.sender()
 			}
 		};
@@ -183,9 +183,7 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 		let backlight_white_led = MultiGrey(7, 8, 3);
 	}
 
-	spawner
-		.spawn(presenter_task(light_ch.receiver(), led))
-		.unwrap();
+	spawner.spawn(presenter_task(light_ch.receiver(), led).unwrap());
 
 	loop {
 		let msg = recv.receive().await;

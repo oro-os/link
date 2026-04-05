@@ -4,15 +4,15 @@ use embassy_stm32::{
 	exti::ExtiInput,
 	gpio::{Output, OutputOpenDrain},
 	mode::Async,
-	spi::Spi,
+	spi::{Spi, mode::Master},
 };
 use embassy_sync::blocking_mutex::raw::NoopRawMutex;
 
 pub type WiznetRunner = embassy_net_wiznet::Runner<
 	'static,
 	embassy_net_wiznet::chip::W5500,
-	SpiDevice<'static, NoopRawMutex, Spi<'static, Async>, OutputOpenDrain<'static>>,
-	ExtiInput<'static>,
+	SpiDevice<'static, NoopRawMutex, Spi<'static, Async, Master>, OutputOpenDrain<'static>>,
+	ExtiInput<'static, Async>,
 	Output<'static>,
 >;
 

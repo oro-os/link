@@ -1,12 +1,17 @@
 use embassy_futures::select::select;
-use embassy_stm32::{exti::ExtiInput, gpio::OutputOpenDrain, mode::Async, spi::Spi};
+use embassy_stm32::{
+	exti::ExtiInput,
+	gpio::OutputOpenDrain,
+	mode::Async,
+	spi::{Spi, mode::Master},
+};
 use embedded_hal_bus::spi::ExclusiveDevice;
 
 pub type WiznetRunner = embassy_net_wiznet::Runner<
 	'static,
 	embassy_net_wiznet::chip::W5500,
-	ExclusiveDevice<Spi<'static, Async>, OutputOpenDrain<'static>, embassy_time::Delay>,
-	ExtiInput<'static>,
+	ExclusiveDevice<Spi<'static, Async, Master>, OutputOpenDrain<'static>, embassy_time::Delay>,
+	ExtiInput<'static, Async>,
 	OutputOpenDrain<'static>,
 >;
 

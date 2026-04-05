@@ -26,7 +26,7 @@ pub unsafe fn go_to_sleep_and_wait_for_wol() -> ! {
 	// NOTE: **NEVER** make this function async.
 
 	// First, steal away the SPI4 peripheral. We can do this unsafely.
-	let exteth: spi::Spi<'_, embassy_stm32::mode::Blocking> = unsafe {
+	let exteth: spi::Spi<'_, embassy_stm32::mode::Blocking, embassy_stm32::spi::mode::Master> = unsafe {
 		spi::Spi::new_blocking(
 			per::SPI4::steal(),
 			per::PE2::steal(),

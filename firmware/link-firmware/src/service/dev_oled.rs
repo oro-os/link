@@ -3,7 +3,7 @@ use core::sync::atomic::AtomicU32;
 use embassy_stm32::{
 	gpio::{Output, OutputOpenDrain},
 	mode::Async,
-	spi::{Error, Spi},
+	spi::{Error, Spi, mode::Master},
 };
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
@@ -45,7 +45,7 @@ pub enum Cmd {
 }
 
 pub struct Config {
-	pub spi:     Spi<'static, Async>,
+	pub spi:     Spi<'static, Async, Master>,
 	pub cs:      OutputOpenDrain<'static>,
 	pub dc:      Output<'static>,
 	pub rst:     Output<'static>,
@@ -115,7 +115,7 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 }
 
 struct Ssd1362 {
-	spi: Spi<'static, Async>,
+	spi: Spi<'static, Async, Master>,
 	dc: Output<'static>,
 	cs: OutputOpenDrain<'static>,
 	comms_enabled: bool,
@@ -123,7 +123,11 @@ struct Ssd1362 {
 
 #[expect(dead_code)]
 impl Ssd1362 {
-	fn new(spi: Spi<'static, Async>, dc: Output<'static>, cs: OutputOpenDrain<'static>) -> Self {
+	fn new(
+		spi: Spi<'static, Async, Master>,
+		dc: Output<'static>,
+		cs: OutputOpenDrain<'static>,
+	) -> Self {
 		Self {
 			spi,
 			dc,
@@ -141,7 +145,7 @@ impl Ssd1362 {
 			return Ok(());
 		}
 
-		<Spi<'static, Async> as SpiBus<u8>>::flush(&mut self.spi).await?;
+		<Spi<'static, Async, Master> as SpiBus<u8>>::flush(&mut self.spi).await?;
 		Ok(())
 	}
 
