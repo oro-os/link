@@ -37,8 +37,15 @@ impl Config {
 #[derive(Debug, serde::Deserialize, serde::Serialize)]
 pub struct InstanceConfig {
 	/// The port to listen on for incoming connections.
-	#[serde(default = "default_port")]
-	pub port:       u16,
+	///
+	/// Note that the Links are connected *to* via mDNS,
+	/// so this port is only used for incoming connections for
+	/// explorers, debugging tools, etc.
+	///
+	/// If `None`, no TCP listener will be started; the service
+	/// will only connect to discovered Links, but will not accept
+	/// incoming connections (e.g. for debugging).
+	pub port:       Option<u16>,
 	/// The network interface to bind to (defaults to all interfaces).
 	#[serde(default = "default_bind")]
 	pub bind:       String,
@@ -53,10 +60,6 @@ pub struct LinkConfig {
 	///
 	/// Shown on the OLED on first boot/reset.
 	pub otp: String,
-}
-
-pub const fn default_port() -> u16 {
-	5544
 }
 
 pub fn default_bind() -> String {

@@ -1,5 +1,7 @@
 #![feature(never_type)]
 
+use std::net::{SocketAddr, SocketAddrV4};
+
 use anyhow::{Context, Result};
 use clap::Parser;
 use rmqtt::{context::ServerContext, net::Builder as MqttBuilder, server::MqttServer};
@@ -36,13 +38,33 @@ async fn pmain() -> Result<()> {
 
 	let (socket_sender, socket_receiver) = tokio::sync::mpsc::channel(16);
 
-	let mqtt = MqttServer::new(scx)
-		.listener(
+	let mqtt = MqttServer::new(scx).listener_by_id(
+		MqttBuilder::new()
+			.name("internal/link")
+			.receive(socket_receiver)?,
+		0,
+	);
+	let mqtt = if let Some(port) = config.instance.port {
+		let sockaddr = SocketAddr::V4(SocketAddrV4::new(
+			config
+				.instance
+				.bind
+				.parse()
+				.context("invalid bind address")?,
+			port,
+		));
+
+		mqtt.listener(
 			MqttBuilder::new()
 				.name("internal/tcp")
-				.receive(socket_receiver)?,
+				.laddr(sockaddr)
+				.bind()?
+				.tcp()?,
 		)
-		.build();
+	} else {
+		mqtt
+	};
+	let mqtt = mqtt.build();
 
 	log::info!("MQTT server initialized");
 
