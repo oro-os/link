@@ -1,7 +1,5 @@
 #![feature(never_type)]
 
-use std::net::SocketAddr;
-
 use anyhow::{Context, Result};
 use clap::Parser;
 use rmqtt::{context::ServerContext, net::Builder as MqttBuilder, server::MqttServer};
@@ -36,30 +34,17 @@ async fn pmain() -> Result<()> {
 
 	let scx = ServerContext::new().build().await;
 
-	let sockaddr = SocketAddr::new(
-		config
-			.instance
-			.bind
-			.parse()
-			.context("failed to parse bind address")?,
-		config.instance.port,
-	);
+	let (socket_sender, socket_receiver) = tokio::sync::mpsc::channel(16);
 
 	let mqtt = MqttServer::new(scx)
 		.listener(
 			MqttBuilder::new()
 				.name("internal/tcp")
-				.laddr(sockaddr)
-				.bind()?
-				.tcp()?,
+				.receive(socket_receiver)?,
 		)
 		.build();
 
-	log::info!(
-		"listening on {}:{}",
-		config.instance.bind,
-		config.instance.port
-	);
+	log::info!("MQTT server initialized");
 
 	let (link_discovery_sender, link_discovery_receiver) = tokio::sync::mpsc::channel(16);
 
@@ -72,7 +57,7 @@ async fn pmain() -> Result<()> {
 		res = mdns::listen_for_links(link_discovery_sender) => {
 			res.context("mDNS listener failed")?;
 		}
-		res = link_connection::handle_link_connections(link_discovery_receiver, &config.link) => {
+		res = link_connection::handle_link_connections(link_discovery_receiver, socket_sender, &config.link) => {
 			res.context("link connection handler failed")?;
 		}
 	}

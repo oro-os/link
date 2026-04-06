@@ -48,6 +48,10 @@ pub struct PflashV0 {
 	pub initialized: bool,
 }
 
+#[expect(
+	clippy::derivable_impls,
+	reason = "In this case, I want the defaults to be explicit and visible."
+)]
 impl Default for PflashV0 {
 	fn default() -> Self {
 		PflashV0 { initialized: false }

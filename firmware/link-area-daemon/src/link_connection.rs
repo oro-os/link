@@ -1,12 +1,16 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, net::SocketAddr};
 
 use anyhow::{Context, Result};
-use tokio::{net::TcpStream, sync::mpsc::Receiver};
+use tokio::{
+	net::TcpStream,
+	sync::mpsc::{Receiver, Sender},
+};
 
 use crate::{config::LinkConfig, mdns::LinkInfo};
 
 pub async fn handle_link_connections(
 	mut receiver: Receiver<LinkInfo>,
+	socket_sender: Sender<(TcpStream, SocketAddr)>,
 	links: &HashMap<String, LinkConfig>,
 ) -> Result<!> {
 	loop {
@@ -23,7 +27,7 @@ pub async fn handle_link_connections(
 			link_info.port
 		);
 
-		let Some(link_config) = links.get(&link_info.name) else {
+		let Some(_link_config) = links.get(&link_info.name) else {
 			log::warn!(
 				"discovered link '{}' is not in the config, skipping",
 				link_info.name
@@ -33,7 +37,8 @@ pub async fn handle_link_connections(
 
 		log::debug!("connecting to link: {link_info:?}");
 
-		let stream = match TcpStream::connect((link_info.address, link_info.port)).await {
+		let sock_addr: SocketAddr = (link_info.address, link_info.port).into();
+		let stream = match TcpStream::connect(sock_addr).await {
 			Ok(stream) => stream,
 			Err(err) => {
 				log::error!("failed to connect to link '{}': {:?}", link_info.name, err);
@@ -42,8 +47,10 @@ pub async fn handle_link_connections(
 		};
 
 		log::info!("connected to link '{}'", link_info.name);
+		if let Err(err) = socket_sender.send((stream, sock_addr)).await {
+			anyhow::bail!("failed to send link connection to MQTT server: {err:?}");
+		}
 
-		log::debug!("handling link connections (TODO)");
 		tokio::time::sleep(std::time::Duration::from_secs(60)).await;
 	}
 }

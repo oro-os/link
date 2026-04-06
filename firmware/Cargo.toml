@@ -20,6 +20,10 @@ default-members = [
 	"link-area-daemon"
 ]
 
+[patch.crates-io]
+rmqtt = { git = "https://github.com/oro-os/rmqtt.git" }
+rmqtt-net = { git = "https://github.com/oro-os/rmqtt.git" }
+
 [profile.dev]
 opt-level = 1
 

@@ -7,7 +7,6 @@ use embassy_net::{IpListenEndpoint, Stack};
 use embassy_sync::blocking_mutex::raw::NoopRawMutex;
 use embassy_time::Timer;
 use static_cell::StaticCell;
-
 pub struct Config {
 	pub stack: Stack<'static>,
 }
@@ -34,6 +33,8 @@ pub enum Error {
 	MdnsStopped,
 	/// An error occurred with the TCP listener
 	Accept(embassy_net::tcp::AcceptError),
+	/// The MQTT stack stopped unexpectedly after a connection was established.
+	MqttStopped,
 }
 
 /// # Panics
@@ -45,11 +46,6 @@ pub async fn run_mqtt<'stack>(stack: Stack<'stack>) -> Result<!, Error> {
 
 	let Some(our_endpoint) = stack.config_v4() else {
 		defmt::error!("the link returned None for the ipv4 config");
-		return Err(Error::LinkDown);
-	};
-
-	let embassy_net::HardwareAddress::Ethernet(mac) = stack.hardware_address() else {
-		defmt::error!("the link's stack hardware address is not a MAC address");
 		return Err(Error::LinkDown);
 	};
 
@@ -153,7 +149,10 @@ pub async fn run_mqtt<'stack>(stack: Stack<'stack>) -> Result<!, Error> {
 	drop(mdns_socket);
 
 	// Set up MQTT stack.
-	let mqtt_transport = mqttrust::transport::embedded_io::ConnectedSocketTransport::new(listener);
+	let mut mqtt_transport = ConnectedSocketTransport {
+		socket:        listener,
+		has_connected: false,
+	};
 	let config = mqttrust::Config::builder()
 		.client_id(name.try_into().unwrap())
 		.keepalive_interval(embassy_time::Duration::from_secs(50))
@@ -162,10 +161,94 @@ pub async fn run_mqtt<'stack>(stack: Stack<'stack>) -> Result<!, Error> {
 	static STATE: StaticCell<mqttrust::State<NoopRawMutex, 1024, 1024>> = StaticCell::new();
 	let state = STATE.init(mqttrust::State::new());
 
-	let (mqtt_stack, mqtt_client) = mqttrust::new(state, config);
+	let (mut mqtt_stack, mqtt_client) = mqttrust::new(state, config);
 
-	loop {
-		// TODO
-		Timer::after_secs(10).await;
+	embassy_futures::select::select(
+		async {
+			mqtt_stack.run(&mut mqtt_transport).await;
+			defmt::error!("MQTT stack stopped unexpectedly");
+		},
+		async {
+			defmt::debug!("publishing MQTT message");
+			mqtt_client
+				.publish(
+					mqttrust::Publish::builder()
+						.topic_name("orolink/test")
+						.retain(false)
+						.payload(b"yep it works")
+						.build(),
+				)
+				.await
+				.unwrap();
+
+			defmt::info!("published MQTT message!");
+			loop {
+				Timer::after_secs(60).await;
+			}
+		},
+	)
+	.await;
+
+	Err(Error::MqttStopped)
+}
+
+/// A transport layer for MQTT using an already connected socket.
+///
+/// This struct is useful when the socket is already connected and does not require
+/// any additional connection logic.
+pub struct ConnectedSocketTransport<S> {
+	socket:        S,
+	has_connected: bool,
+}
+
+impl<S: edge_nal::io::Read + edge_nal::io::Write> mqttrust::transport::Transport
+	for ConnectedSocketTransport<S>
+{
+	type Socket = S;
+
+	/// This method is a no-op since the socket is already connected.
+	///
+	/// # Returns
+	///
+	/// `Ok(())` always, as no connection logic is required.
+	async fn connect(&mut self) -> Result<(), mqttrust::ConnectionError> {
+		if self.has_connected {
+			defmt::warn!("connect called on ConnectedSocketTransport, but it's already connected");
+			Err(mqttrust::ConnectionError::ConnectionRefused)
+		} else {
+			self.has_connected = true;
+			Ok(())
+		}
+	}
+
+	/// This method is a no-op since the socket is managed externally.
+	///
+	/// # Returns
+	///
+	/// `Ok(())` always, as no disconnection logic is required.
+	fn disconnect(&mut self) -> Result<(), mqttrust::ConnectionError> {
+		Err(mqttrust::ConnectionError::RequestsDone)
+	}
+
+	/// Checks if the transport is currently connected.
+	///
+	/// # Returns
+	///
+	/// `true` if the transport has only connected once.
+	fn is_connected(&self) -> bool {
+		return self.has_connected;
+	}
+
+	/// Provides a mutable reference to the socket used by the transport.
+	///
+	/// # Returns
+	///
+	/// `Ok(&mut Self::Socket)` always, as the socket is always available.
+	fn socket(&mut self) -> Result<&mut Self::Socket, mqttrust::StateError> {
+		if !self.has_connected {
+			return Err(mqttrust::StateError::InvalidState);
+		}
+
+		Ok(&mut self.socket)
 	}
 }

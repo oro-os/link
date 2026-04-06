@@ -217,7 +217,7 @@ checksum = "c96bf972d85afc50bf5ab8fe2d54d1586b4e0b46c97c50a0c9e71e2f7bcd812a"
 dependencies = [
  "async-task",
  "concurrent-queue",
- "fastrand 2.3.0",
+ "fastrand 2.4.0",
  "futures-lite 2.6.1",
  "pin-project-lite",
  "slab",
@@ -1698,9 +1698,9 @@ dependencies = [
 
 [[package]]
 name = "fastrand"
-version = "2.3.0"
+version = "2.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "37909eebbb50d72f9059c3b6d82c0463f2ff062c9e95845c43a6c9c0355411be"
+checksum = "a043dc74da1e37d6afe657061213aa6f425f855399a11d3463c6ecccc4dfda1f"
 
 [[package]]
 name = "fdeflate"
@@ -1854,7 +1854,7 @@ version = "2.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f78e10609fe0e0b3f4157ffab1876319b5b0db102a2c60dc4626306dc46b44ad"
 dependencies = [
- "fastrand 2.3.0",
+ "fastrand 2.4.0",
  "futures-core",
  "futures-io",
  "parking",
@@ -2724,7 +2724,7 @@ version = "0.18.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d797ab3274a16f4940f9650a29838e940223aeff31773df5c2827ad82150182f"
 dependencies = [
- "fastrand 2.3.0",
+ "fastrand 2.4.0",
  "flume",
  "if-addrs",
  "log",
@@ -2793,7 +2793,7 @@ dependencies = [
 [[package]]
 name = "mqttrust"
 version = "1.0.0"
-source = "git+https://github.com/oro-os/mqttrust.git#4a557a408a04a2c949612a1bba9632299f18fd68"
+source = "git+https://github.com/oro-os/mqttrust.git#a7d24032c31c092d72ec977daccc1c845a92b784"
 dependencies = [
  "bon",
  "defmt 1.0.1",
@@ -3033,7 +3033,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c835479a4443ded371d6c535cbfd8d31ad92c5d23ae9770a61bc155e4992a3c1"
 dependencies = [
  "atomic-waker",
- "fastrand 2.3.0",
+ "fastrand 2.4.0",
  "futures-io",
 ]
 
@@ -3549,8 +3549,7 @@ dependencies = [
 [[package]]
 name = "rmqtt"
 version = "0.19.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b8f7fe32751ea42ac0b701392ca31e84773d4670071be4ad1699ccee5c5c7157"
+source = "git+https://github.com/oro-os/rmqtt.git#bce39d1aa2cf40697dbaca07059ca14d1947cfc0"
 dependencies = [
  "ahash",
  "anyhow",
@@ -3609,8 +3608,7 @@ dependencies = [
 [[package]]
 name = "rmqtt-net"
 version = "0.3.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4b1feb5ad9b97bc02d7626f39336083ad19914162bfcdf46947b21d84827a334"
+source = "git+https://github.com/oro-os/rmqtt.git#bce39d1aa2cf40697dbaca07059ca14d1947cfc0"
 dependencies = [
  "anyhow",
  "bytestring",
