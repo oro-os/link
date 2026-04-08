@@ -13,6 +13,10 @@ firmware:
 run:
 	cargo run-firmware
 
+.PHONY: run-release
+run-release:
+	cargo run-firmware --release
+
 .PHONY: cli
 cli:
 	cargo build -p link-cli
