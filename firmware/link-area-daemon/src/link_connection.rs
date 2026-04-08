@@ -50,7 +50,5 @@ pub async fn handle_link_connections(
 		if let Err(err) = socket_sender.send((stream, sock_addr)).await {
 			anyhow::bail!("failed to send link connection to MQTT server: {err:?}");
 		}
-
-		tokio::time::sleep(std::time::Duration::from_secs(60)).await;
 	}
 }
