@@ -11,6 +11,7 @@ pub mod svc_failsafe;
 // pub mod dev_uart; // TODO
 pub mod svc_main;
 pub mod svc_mqtt;
+pub mod svc_mqtt_stats;
 pub mod svc_oled;
 pub mod svc_oled_pwr;
 
@@ -18,17 +19,18 @@ include!("./_macro.inc.rs");
 
 #[rustfmt::skip]
 services! {
-                     #[bus(false)]                            dev_blinken_light,
+                     #[bus(false)]              #[skip(true)] dev_blinken_light,
                      #[bus(false)] #[rx(false)]               dev_exteth,
-                     #[bus(false)]                            dev_leds,
-                     #[bus(false)]                            dev_oled,
-                                   #[rx(false)] #[skip(true)] dev_power_monitor,
+                     #[bus(false)]              #[skip(true)] dev_leds,
+                     #[bus(false)]              #[skip(true)] dev_oled,
+                                   #[rx(false)]               dev_power_monitor,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_sdcard,
-                     #[bus(false)] #[rx(false)]               dev_syseth,
+                     #[bus(false)] #[rx(false)] #[skip(true)] dev_syseth,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_usb,
-    #[config(false)] #[bus(false)]              #[skip(true)] svc_failsafe,
-                                   #[rx(false)]               svc_main,
-    #[config(false)]                                          svc_oled_pwr,
-    #[config(false)]                                          svc_oled,
+    #[config(false)] #[bus(false)]                            svc_failsafe,
+                                   #[rx(false)] #[skip(true)] svc_main,
+                                                              svc_oled_pwr,
+    #[config(false)]                            #[skip(true)] svc_oled,
                      #[bus(false)] #[rx(false)]               svc_mqtt,
+                     #[bus(false)] #[rx(false)]               svc_mqtt_stats,
 }

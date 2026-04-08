@@ -1,7 +1,9 @@
 use embassy_futures::select::{Either, select};
+use embassy_sync::once_lock::OnceLock;
 use embassy_time::{Duration, Timer};
 
 use super::dev_oled::Cmd as OledCmd;
+use crate::service::{svc_mqtt::Mqtt, svc_mqtt_stats::Stat};
 
 pub type Channel = crate::channel::Channel<Cmd, 4>;
 
@@ -11,6 +13,9 @@ const IDLE_COOL_OFF_STEP_DURATION: Duration = Duration::from_millis(100);
 const IDLE_COOL_OFF_STEP: u8 = 1; // Decrease brightness by 5 each step
 const IDLE_MIN_BRIGHTNESS: u8 = 80; // Minimum brightness before vreg shutoff
 const IDLE_VREG_OFF_DELAY: Duration = Duration::from_secs(10); // Time after turning off display to turn off VREG
+
+pub static STAT_PWR_STATE: Stat<State> = Stat::new("power/oled/state");
+pub static STAT_PWR_TARGET: Stat<State> = Stat::new("power/oled/target");
 
 pub enum Cmd {
 	SetState { state: State },
@@ -27,13 +32,32 @@ pub enum State {
 	Off,
 }
 
+impl AsRef<[u8]> for State {
+	fn as_ref(&self) -> &[u8] {
+		match self {
+			State::On => "on".as_bytes(),
+			State::Off => "off".as_bytes(),
+			State::Idle => "idle".as_bytes(),
+		}
+	}
+}
+
+pub struct Config {
+	pub mqtt: &'static OnceLock<Mqtt>,
+}
+
 #[embassy_executor::task]
-pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
+pub async fn run(bus: super::Bus, rx: &'static Channel, config: Config) -> ! {
+	let Config { mqtt } = config;
+
 	let mut current_state = State::Off;
 	let mut target_state = State::Off;
 
 	'next_state: loop {
 		'state_change: {
+			STAT_PWR_STATE.set(current_state);
+			STAT_PWR_TARGET.set(target_state);
+
 			let either = match (current_state, target_state) {
 				(current, target) if current == target => {
 					break 'state_change;

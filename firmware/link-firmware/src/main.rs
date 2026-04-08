@@ -1,6 +1,7 @@
 #![no_std]
 #![no_main]
 #![feature(never_type)]
+#![feature(adt_const_params)]
 
 pub(crate) mod atomic;
 pub(crate) mod channel;
@@ -178,8 +179,8 @@ pub async fn main(spawner: Spawner) -> ! {
 	nv_ram.reboot.in_progress.write(true);
 
 	// Begin initialization
-	let debug_led1 = OutputOpenDrain::new(p.PD2, Level::High, Speed::Low);
-	let debug_led2 = OutputOpenDrain::new(p.PB7, Level::High, Speed::Low);
+	let mut debug_led1 = OutputOpenDrain::new(p.PD2, Level::High, Speed::Low);
+	let mut debug_led2 = OutputOpenDrain::new(p.PB7, Level::High, Speed::Low);
 	let debug_led3 = OutputOpenDrain::new(p.PC8, Level::High, Speed::Low);
 
 	let ind_en = Output::new(p.PB8, Level::Low, Speed::Low);
@@ -217,7 +218,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	)
 	.unwrap();
 
-	let _usb_output_selector = Output::new(p.PA7, Level::Low, Speed::Low);
+	let usb_output_selector = Output::new(p.PA7, Level::High, Speed::Low);
 	let _ulpi_oc = ExtiInput::new(p.PB14, p.EXTI14, Pull::None, Irqs);
 	let ulpi_rst = Output::new(p.PB15, Level::Low, Speed::Low);
 	static EP_OUT_BUFFER: StaticCell<[u8; 256]> = StaticCell::new();
@@ -391,16 +392,19 @@ pub async fn main(spawner: Spawner) -> ! {
 	let _gpio5 = Output::new(p.PB4, Level::Low, Speed::Low);
 
 	let _vbus_oc = ExtiInput::new(p.PD15, p.EXTI15, Pull::None, Irqs);
-	let _vbus_en = Output::new(p.PE15, Level::High, Speed::Low);
+	let mut vbus_en = Output::new(p.PE15, Level::Low, Speed::Low);
 	let _aux_vbus_sense = Input::new(p.PA11, Pull::None);
 	let _aux_vbus_oc = ExtiInput::new(p.PA12, p.EXTI12, Pull::None, Irqs);
-	let _aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
+	let mut aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
 	let _board_power_alert = ExtiInput::new(p.PE9, p.EXTI9, Pull::None, Irqs);
 	let _psu_on = Output::new(p.PD10, Level::Low, Speed::Low);
 	let _sut_pwr_switch = Output::new(p.PE12, Level::Low, Speed::Low);
 	let _sut_rst_switch = Output::new(p.PE10, Level::Low, Speed::Low);
 
 	defmt::info!("initialization complete; starting services...");
+
+	static MQTT_CELL: StaticCell<OnceLock<service::svc_mqtt::Mqtt>> = StaticCell::new();
+	let mqtt: &'static _ = MQTT_CELL.init(OnceLock::new());
 
 	service_config! {
 		dev_blinken_light {
@@ -424,8 +428,11 @@ pub async fn main(spawner: Spawner) -> ! {
 			rst: oled_rst,
 			vreg_en: oled_en,
 		},
+		svc_oled_pwr {
+			mqtt
+		},
 		dev_power_monitor {
-			i2c
+			i2c,
 		},
 		dev_sdcard {
 			sd: sd_spi,
@@ -445,7 +452,12 @@ pub async fn main(spawner: Spawner) -> ! {
 		svc_main {
 		},
 		svc_mqtt {
-			stack: exteth_stack
+			stack: exteth_stack,
+			mqtt
+		},
+		svc_mqtt_stats {
+			spawner,
+			mqtt
 		}
 	}
 	.spawn_all(spawner);

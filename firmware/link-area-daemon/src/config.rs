@@ -51,6 +51,10 @@ pub struct InstanceConfig {
 	pub bind:       String,
 	/// The IP address to advertise for this instance.
 	pub ip_address: String,
+	/// The path to the RocksDB database to use for storing
+	/// paired link information and retained MQTT data.
+	#[serde(default = "default_db_path")]
+	pub db_path:    String,
 }
 
 #[derive(Debug, serde::Deserialize, serde::Serialize)]
@@ -64,4 +68,8 @@ pub struct LinkConfig {
 
 pub fn default_bind() -> String {
 	"0.0.0.0".to_string()
+}
+
+pub fn default_db_path() -> String {
+	"/var/lib/oro/link-area.db".to_string()
 }

@@ -1,12 +1,20 @@
+use core::cell::OnceCell;
+
 use defmt::{error, info, trace};
 use embassy_stm32::{
 	i2c::{I2c, mode::Master},
 	mode::Blocking,
 };
-use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
+use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex, once_lock::OnceLock};
 use embassy_time::{Duration, Timer};
 
-use crate::service;
+use crate::service::{
+	self,
+	svc_mqtt::{Mqtt, PrefixedTopic},
+	svc_mqtt_stats::{QoS, StrStat},
+};
+
+pub static STAT_CURRENT: StrStat<u16, 5, { QoS::Q0 }> = StrStat::new("power/current_mA");
 
 const ADDR: u8 = 0x40;
 
@@ -76,13 +84,18 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 	set!(0x05, 0x0A00u16);
 	info!("calibrated power monitor chip");
 
+	let mqtt_topic: OnceCell<PrefixedTopic> = OnceCell::new();
+
 	loop {
 		Timer::after(Duration::from_millis(250)).await;
 		let current = get!(0x04);
 		trace!("powermon: current: {}mA", current);
+
 		bus.svc_failsafe
 			.send(service::svc_failsafe::Cmd::PowerReading { ma: current })
 			.await;
+
+		STAT_CURRENT.set(current);
 	}
 }
 

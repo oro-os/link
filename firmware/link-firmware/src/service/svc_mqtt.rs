@@ -4,16 +4,19 @@ use edge_mdns::domain::base::Ttl;
 use edge_nal::UdpSplit;
 use embassy_futures::select::Either;
 use embassy_net::{IpListenEndpoint, Stack};
-use embassy_sync::blocking_mutex::raw::NoopRawMutex;
+use embassy_sync::{blocking_mutex::raw::NoopRawMutex, once_lock::OnceLock};
 use embassy_time::Timer;
+use mqttrust::MqttClient;
 use static_cell::StaticCell;
+
 pub struct Config {
 	pub stack: Stack<'static>,
+	pub mqtt:  &'static OnceLock<Mqtt>,
 }
 
 #[embassy_executor::task]
 pub async fn run(config: Config) -> ! {
-	let Err(err) = run_mqtt(config.stack).await;
+	let Err(err) = run_mqtt(config.stack, config.mqtt).await;
 	defmt::error!("MQTT initialization failed; resetting in 5s: {:?}", err);
 	Timer::after_secs(5).await;
 	// SAFETY: MQTT failures must reset.
@@ -40,7 +43,10 @@ pub enum Error {
 /// # Panics
 /// Can only be called once. The board should reset if the connection
 /// is lost.
-pub async fn run_mqtt<'stack>(stack: Stack<'stack>) -> Result<!, Error> {
+pub async fn run_mqtt<'stack>(
+	stack: Stack<'stack>,
+	mqtt: &'static OnceLock<Mqtt>,
+) -> Result<!, Error> {
 	defmt::debug!("waiting for stack to be configured");
 	stack.wait_config_up().await;
 
@@ -163,32 +169,15 @@ pub async fn run_mqtt<'stack>(stack: Stack<'stack>) -> Result<!, Error> {
 
 	let (mut mqtt_stack, mqtt_client) = mqttrust::new(state, config);
 
-	embassy_futures::select::select(
-		async {
-			mqtt_stack.run(&mut mqtt_transport).await;
-			defmt::error!("MQTT stack stopped unexpectedly");
-		},
-		async {
-			defmt::debug!("publishing MQTT message");
-			mqtt_client
-				.publish(
-					mqttrust::Publish::builder()
-						.topic_name("orolink/test")
-						.retain(false)
-						.payload(b"yep it works")
-						.build(),
-				)
-				.await
-				.unwrap();
+	static CLIENT: StaticCell<mqttrust::MqttClient<'static, NoopRawMutex>> = StaticCell::new();
+	mqtt.init(Mqtt {
+		client: CLIENT.init(mqtt_client),
+		prefix: crate::unique_id(),
+	})
+	.ok();
 
-			defmt::info!("published MQTT message!");
-			loop {
-				Timer::after_secs(60).await;
-			}
-		},
-	)
-	.await;
-
+	mqtt_stack.run(&mut mqtt_transport).await;
+	defmt::error!("MQTT stack stopped unexpectedly");
 	Err(Error::MqttStopped)
 }
 
@@ -250,5 +239,112 @@ impl<S: edge_nal::io::Read + edge_nal::io::Write> mqttrust::transport::Transport
 		}
 
 		Ok(&mut self.socket)
+	}
+}
+
+/// An error produced by the [`Mqtt`] wrapper.
+#[derive(defmt::Format)]
+pub enum MqttError {
+	Mqtt(mqttrust::Error),
+	TopicTooLong,
+}
+
+/// A wrapper around the MQTT client that allows it to be
+/// shared across the application, as well as scoped
+/// to this particular device.
+#[derive(Clone)]
+pub struct Mqtt {
+	client: &'static MqttClient<'static, NoopRawMutex>,
+	prefix: &'static str,
+}
+
+macro_rules! impl_pubs {
+	($($(#[$attr:meta])*$name:ident($retain:expr, $qos:expr),)* $(,)?) => {
+		$($(#[$attr])*
+		pub async fn $name(&self, topic: impl IntoPrefixedTopic, payload: impl AsRef<[u8]>) -> Result<(), MqttError> {
+			let topic = topic.into_prefixed_topic(Prefix(self.prefix)).or(Err(MqttError::TopicTooLong))?;
+			self.client.publish(mqttrust::Publish::builder().retain($retain).qos($qos).topic_name(topic.0.as_str()).payload(payload.as_ref()).build()).await.map_err(MqttError::Mqtt)?;
+			Ok(())
+		})*
+	}
+}
+
+impl Mqtt {
+	impl_pubs! {
+		/// Publishes a message to the MQTT broker with the given topic and payload, using QoS 0 (at most once).
+		publish_0(false, mqttrust::QoS::AtMostOnce),
+		/// Publishes a message to the MQTT broker with the given topic and payload, using QoS 1 (at least once).
+		publish_1(false, mqttrust::QoS::AtLeastOnce),
+		/// Publishes a message to the MQTT broker with the given topic and payload, using QoS 2 (exactly once).
+		publish_2(false, mqttrust::QoS::ExactlyOnce),
+		/// Publishes and retains a message to the MQTT broker with the given topic and payload, using QoS 0 (at most once).
+		retain_0(false, mqttrust::QoS::AtMostOnce),
+		/// Publishes and retains a message to the MQTT broker with the given topic and payload, using QoS 1 (at least once).
+		retain_1(false, mqttrust::QoS::AtLeastOnce),
+		/// Publishes and retains a message to the MQTT broker with the given topic and payload, using QoS 2 (exactly once).
+		retain_2(false, mqttrust::QoS::ExactlyOnce),
+	}
+
+	/// Bakes a topic with a given suffix. Returns `Err(topic)` if the topic is too long.
+	pub fn try_prepare_topic<T: IntoPrefixedTopic>(&self, topic: T) -> Result<PrefixedTopic, T> {
+		topic.into_prefixed_topic(Prefix(self.prefix))
+	}
+
+	/// Bakes a topic with the given suffix.
+	///
+	/// # Panics
+	/// Panics if the topic is too long. Use [`Mqtt::try_prepare_topic()`] if panicking is undesireable.
+	pub fn prepare_topic<T: IntoPrefixedTopic>(&self, topic: T) -> PrefixedTopic {
+		match self.try_prepare_topic(topic) {
+			Ok(t) => t,
+			Err(_) => {
+				panic!("failed to prepare topic; too long");
+			}
+		}
+	}
+}
+
+/// Inner, hidden type to prevent `IntoPrefixedTopic` from being misused.
+#[repr(transparent)]
+struct Prefix(&'static str);
+
+/// Creates a checked [`PrefixedTopic`] from the implementing type.
+pub trait IntoPrefixedTopic: Sized {
+	/// Returns `Err(self)` if the prefixed topic would be too long.
+	fn into_prefixed_topic(self, prefix: Prefix) -> Result<PrefixedTopic, Self>;
+}
+
+/// A checked, fully qualified topic that is prefixed with the [`Mqtt`] prefix.
+#[derive(defmt::Format)]
+pub struct PrefixedTopic(heapless::String<64>);
+
+impl<'a> IntoPrefixedTopic for &'a str {
+	fn into_prefixed_topic(self, prefix: Prefix) -> Result<PrefixedTopic, Self> {
+		let mut r = heapless::String::new();
+		let Ok(_) = r.push_str(prefix.0) else {
+			return Err(self);
+		};
+		let Ok(_) = r.push('/') else {
+			return Err(self);
+		};
+		if (r.len() + self.len()) > r.capacity() {
+			return Err(self);
+		}
+		r.push_str(self).unwrap();
+		Ok(PrefixedTopic(r))
+	}
+}
+
+impl IntoPrefixedTopic for PrefixedTopic {
+	#[inline]
+	fn into_prefixed_topic(self, _prefix: Prefix) -> Result<PrefixedTopic, Self> {
+		Ok(self)
+	}
+}
+
+impl<'a> IntoPrefixedTopic for &'a PrefixedTopic {
+	#[inline]
+	fn into_prefixed_topic(self, _prefix: Prefix) -> Result<PrefixedTopic, Self> {
+		Ok(PrefixedTopic(self.0.clone()))
 	}
 }
