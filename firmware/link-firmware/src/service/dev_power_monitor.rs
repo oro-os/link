@@ -1,16 +1,13 @@
-use core::cell::OnceCell;
-
 use defmt::{error, info, trace};
 use embassy_stm32::{
 	i2c::{I2c, mode::Master},
 	mode::Blocking,
 };
-use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex, once_lock::OnceLock};
+use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 
 use crate::service::{
 	self,
-	svc_mqtt::{Mqtt, PrefixedTopic},
 	svc_mqtt_stats::{QoS, StrStat},
 };
 
@@ -83,8 +80,6 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 	// Set the calibration register. The board uses a 2mOhm shunt resistor.
 	set!(0x05, 0x0A00u16);
 	info!("calibrated power monitor chip");
-
-	let mqtt_topic: OnceCell<PrefixedTopic> = OnceCell::new();
 
 	loop {
 		Timer::after(Duration::from_millis(250)).await;

@@ -29,7 +29,7 @@ services! {
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_usb,
     #[config(false)] #[bus(false)]                            svc_failsafe,
                                    #[rx(false)] #[skip(true)] svc_main,
-                                                              svc_oled_pwr,
+    #[config(false)]                                          svc_oled_pwr,
     #[config(false)]                            #[skip(true)] svc_oled,
                      #[bus(false)] #[rx(false)]               svc_mqtt,
                      #[bus(false)] #[rx(false)]               svc_mqtt_stats,

@@ -37,6 +37,13 @@ use embedded_hal_bus::spi::ExclusiveDevice;
 use panic_probe as _;
 use static_cell::StaticCell;
 
+use crate::service::svc_mqtt_stats::{BoolStat, QoS, StrStat};
+
+pub static STAT_INITIALIZED: BoolStat<{ QoS::Q2 }> = BoolStat::new("status/initialized");
+pub static STAT_VERSION_MAJOR: StrStat<u64, 4, { QoS::Q2 }> = StrStat::new("version/major");
+pub static STAT_VERSION_MINOR: StrStat<u64, 4, { QoS::Q2 }> = StrStat::new("version/minor");
+pub static STAT_VERSION_PATCH: StrStat<u64, 4, { QoS::Q2 }> = StrStat::new("version/patch");
+
 bind_interrupts!(struct Irqs {
 	OTG_HS => usb::InterruptHandler<peripherals::USB_OTG_HS>;
 	USART2 => usart::InterruptHandler<peripherals::USART2>;
@@ -170,17 +177,21 @@ pub async fn main(spawner: Spawner) -> ! {
 		true
 	} else {
 		defmt::warn!("system is uninitialized; performing first-time setup");
-
 		nv_ram.reset();
 		false
 	};
+
+	STAT_INITIALIZED.set(initialized);
+	STAT_VERSION_MAJOR.set(crate::version::VERSION_MAJOR);
+	STAT_VERSION_MINOR.set(crate::version::VERSION_MINOR);
+	STAT_VERSION_PATCH.set(crate::version::VERSION_PATCH);
 
 	// This gets cleared on a successful boot later
 	nv_ram.reboot.in_progress.write(true);
 
 	// Begin initialization
-	let mut debug_led1 = OutputOpenDrain::new(p.PD2, Level::High, Speed::Low);
-	let mut debug_led2 = OutputOpenDrain::new(p.PB7, Level::High, Speed::Low);
+	let debug_led1 = OutputOpenDrain::new(p.PD2, Level::High, Speed::Low);
+	let debug_led2 = OutputOpenDrain::new(p.PB7, Level::High, Speed::Low);
 	let debug_led3 = OutputOpenDrain::new(p.PC8, Level::High, Speed::Low);
 
 	let ind_en = Output::new(p.PB8, Level::Low, Speed::Low);
@@ -218,7 +229,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	)
 	.unwrap();
 
-	let usb_output_selector = Output::new(p.PA7, Level::High, Speed::Low);
+	let _usb_output_selector = Output::new(p.PA7, Level::High, Speed::Low);
 	let _ulpi_oc = ExtiInput::new(p.PB14, p.EXTI14, Pull::None, Irqs);
 	let ulpi_rst = Output::new(p.PB15, Level::Low, Speed::Low);
 	static EP_OUT_BUFFER: StaticCell<[u8; 256]> = StaticCell::new();
@@ -392,10 +403,10 @@ pub async fn main(spawner: Spawner) -> ! {
 	let _gpio5 = Output::new(p.PB4, Level::Low, Speed::Low);
 
 	let _vbus_oc = ExtiInput::new(p.PD15, p.EXTI15, Pull::None, Irqs);
-	let mut vbus_en = Output::new(p.PE15, Level::Low, Speed::Low);
+	let _vbus_en = Output::new(p.PE15, Level::Low, Speed::Low);
 	let _aux_vbus_sense = Input::new(p.PA11, Pull::None);
 	let _aux_vbus_oc = ExtiInput::new(p.PA12, p.EXTI12, Pull::None, Irqs);
-	let mut aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
+	let _aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
 	let _board_power_alert = ExtiInput::new(p.PE9, p.EXTI9, Pull::None, Irqs);
 	let _psu_on = Output::new(p.PD10, Level::Low, Speed::Low);
 	let _sut_pwr_switch = Output::new(p.PE12, Level::Low, Speed::Low);
@@ -427,9 +438,6 @@ pub async fn main(spawner: Spawner) -> ! {
 			dc: oled_dc,
 			rst: oled_rst,
 			vreg_en: oled_en,
-		},
-		svc_oled_pwr {
-			mqtt
 		},
 		dev_power_monitor {
 			i2c,

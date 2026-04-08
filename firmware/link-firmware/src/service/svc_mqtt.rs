@@ -1,3 +1,8 @@
+#![expect(
+	private_interfaces,
+	reason = "MQTT prefixes are very strictly enforced"
+)]
+
 use core::net::{Ipv4Addr, Ipv6Addr};
 
 use edge_mdns::domain::base::Ttl;
@@ -225,7 +230,7 @@ impl<S: edge_nal::io::Read + edge_nal::io::Write> mqttrust::transport::Transport
 	///
 	/// `true` if the transport has only connected once.
 	fn is_connected(&self) -> bool {
-		return self.has_connected;
+		self.has_connected
 	}
 
 	/// Provides a mutable reference to the socket used by the transport.
@@ -318,7 +323,7 @@ pub trait IntoPrefixedTopic: Sized {
 #[derive(defmt::Format)]
 pub struct PrefixedTopic(heapless::String<64>);
 
-impl<'a> IntoPrefixedTopic for &'a str {
+impl IntoPrefixedTopic for &str {
 	fn into_prefixed_topic(self, prefix: Prefix) -> Result<PrefixedTopic, Self> {
 		let mut r = heapless::String::new();
 		let Ok(_) = r.push_str(prefix.0) else {
@@ -342,7 +347,7 @@ impl IntoPrefixedTopic for PrefixedTopic {
 	}
 }
 
-impl<'a> IntoPrefixedTopic for &'a PrefixedTopic {
+impl IntoPrefixedTopic for &PrefixedTopic {
 	#[inline]
 	fn into_prefixed_topic(self, _prefix: Prefix) -> Result<PrefixedTopic, Self> {
 		Ok(PrefixedTopic(self.0.clone()))

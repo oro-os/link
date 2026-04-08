@@ -1,9 +1,8 @@
 use embassy_futures::select::{Either, select};
-use embassy_sync::once_lock::OnceLock;
 use embassy_time::{Duration, Timer};
 
 use super::dev_oled::Cmd as OledCmd;
-use crate::service::{svc_mqtt::Mqtt, svc_mqtt_stats::Stat};
+use crate::service::svc_mqtt_stats::Stat;
 
 pub type Channel = crate::channel::Channel<Cmd, 4>;
 
@@ -18,6 +17,7 @@ pub static STAT_PWR_STATE: Stat<State> = Stat::new("power/oled/state");
 pub static STAT_PWR_TARGET: Stat<State> = Stat::new("power/oled/target");
 
 pub enum Cmd {
+	#[expect(unused, reason = "temporary")]
 	SetState { state: State },
 }
 
@@ -42,14 +42,8 @@ impl AsRef<[u8]> for State {
 	}
 }
 
-pub struct Config {
-	pub mqtt: &'static OnceLock<Mqtt>,
-}
-
 #[embassy_executor::task]
-pub async fn run(bus: super::Bus, rx: &'static Channel, config: Config) -> ! {
-	let Config { mqtt } = config;
-
+pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 	let mut current_state = State::Off;
 	let mut target_state = State::Off;
 

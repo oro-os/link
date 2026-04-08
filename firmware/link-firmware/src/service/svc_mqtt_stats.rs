@@ -1,10 +1,6 @@
-use core::cell::OnceCell;
-
 use embassy_executor::Spawner;
 use embassy_sync::{
-	blocking_mutex::raw::{CriticalSectionRawMutex, NoopRawMutex},
-	once_lock::OnceLock,
-	signal::Signal,
+	blocking_mutex::raw::CriticalSectionRawMutex, once_lock::OnceLock, signal::Signal,
 };
 
 use crate::service::svc_mqtt::{Mqtt, PrefixedTopic};
@@ -18,8 +14,9 @@ pub enum QoS {
 	Q2 = 2,
 }
 
-/// Light wrapper around stats.
-pub struct Stat<T, const QOS: QoS = { QoS::Q1 }, const RETAIN: bool = false> {
+/// Implements a firmware-wide global stat; must be listed
+/// in the `svc_mqtt_stats` service to be transmitted.
+pub struct Stat<T, const QOS: QoS = { QoS::Q1 }, const RETAIN: bool = true> {
 	signal:       Signal<CriticalSectionRawMutex, T>,
 	topic_suffix: &'static str,
 	topic:        OnceLock<PrefixedTopic>,
@@ -28,12 +25,12 @@ pub struct Stat<T, const QOS: QoS = { QoS::Q1 }, const RETAIN: bool = false> {
 /// A stat where the contents are stringized; if possible, use a
 /// [`Stat`] with an implementation of `AsRef<[u8]>` on the type
 /// instead.
-pub type StrStat<
-	T: core::fmt::Display,
-	const SZ: usize = 16,
-	const QOS: QoS = { QoS::Q1 },
-	const RETAIN: bool = false,
-> = Stat<Stringized<T, SZ>, QOS, RETAIN>;
+pub type StrStat<T, const SZ: usize = 16, const QOS: QoS = { QoS::Q1 }, const RETAIN: bool = true> =
+	Stat<Stringized<T, SZ>, QOS, RETAIN>;
+
+/// A boolean stat.
+pub type BoolStat<const QOS: QoS = { QoS::Q1 }, const RETAIN: bool = true> =
+	Stat<Boolized, QOS, RETAIN>;
 
 impl<T, const QOS: QoS, const RETAIN: bool> Stat<T, QOS, RETAIN> {
 	pub const fn new(topic: &'static str) -> Self {
@@ -109,9 +106,30 @@ pub async fn run(config: Config) {
 		super::svc_oled_pwr::STAT_PWR_STATE,
 		super::svc_oled_pwr::STAT_PWR_TARGET,
 		super::dev_power_monitor::STAT_CURRENT,
+		super::dev_blinken_light::STAT_CMD,
+		crate::STAT_INITIALIZED,
 	);
 
 	defmt::debug!("all stat spawners have started; finishing run");
+}
+
+#[derive(Clone, Copy)]
+#[repr(transparent)]
+pub struct Boolized(bool);
+
+impl From<bool> for Boolized {
+	fn from(value: bool) -> Self {
+		Self(value)
+	}
+}
+
+impl AsRef<[u8]> for Boolized {
+	fn as_ref(&self) -> &[u8] {
+		match self.0 {
+			true => "true".as_ref(),
+			false => "false".as_ref(),
+		}
+	}
 }
 
 pub struct Stringized<T, const SZ: usize = 16>(heapless::String<SZ>, core::marker::PhantomData<T>);

@@ -12,6 +12,7 @@ mod status;
 
 pub type Channel = crate::channel::Channel<Cmd, 4>;
 
+#[expect(unused, reason = "temporary")]
 pub enum Line {
 	Normal(&'static str),
 	Bold(&'static str),
@@ -39,6 +40,7 @@ enum SceneState {
 }
 
 pub enum Cmd {
+	#[expect(unused, reason = "temporary")]
 	SetScene { scene: Scene },
 }
 

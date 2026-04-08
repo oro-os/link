@@ -1,21 +1,18 @@
 //! Delta force blinking lights operation supreme, go.
 
-use core::sync::atomic::AtomicU16;
-
 use embassy_futures::select::Either;
 use embassy_stm32::gpio::OutputOpenDrain;
 use embassy_time::{Duration, Timer};
 
-use crate::{atomic::Relaxed, channel::ReceiveDelay};
+use crate::{channel::ReceiveDelay, service::svc_mqtt_stats::Stat};
 
 pub const CONFIG_DUTY_PERIOD: u16 = 1000;
 
 pub type Channel = crate::channel::Channel<Cmd, 2>;
 
-pub static DBG_LED1_DUTY: AtomicU16 = AtomicU16::new(0);
-pub static DBG_LED2_DUTY: AtomicU16 = AtomicU16::new(0);
-pub static DBG_LED3_DUTY: AtomicU16 = AtomicU16::new(0);
+pub static STAT_CMD: Stat<Cmd> = Stat::new("status/dbg_led");
 
+#[derive(Clone, Copy)]
 #[expect(unused)]
 pub enum Cmd {
 	On,
@@ -23,6 +20,30 @@ pub enum Cmd {
 	Config,
 	Off,
 	Manual { states: [bool; 3] },
+}
+
+impl AsRef<[u8]> for Cmd {
+	fn as_ref(&self) -> &[u8] {
+		match self {
+			Self::On => "all on".as_bytes(),
+			Self::Idle => "idle".as_bytes(),
+			Self::Config => "config".as_bytes(),
+			Self::Off => "all off".as_bytes(),
+			Self::Manual { states } => {
+				match (states[0], states[1], states[2]) {
+					(false, false, false) => "off, off, off",
+					(false, false, true) => "off, off, on",
+					(false, true, false) => "off, on, off",
+					(false, true, true) => "off, on, on",
+					(true, false, false) => "on, off, off",
+					(true, false, true) => "on, off, on",
+					(true, true, false) => "on, on, off",
+					(true, true, true) => "on, on, on",
+				}
+				.as_bytes()
+			}
+		}
+	}
 }
 
 pub struct Config {
@@ -37,29 +58,17 @@ async fn blink_cycle(
 	cycle_delay: Option<Duration>,
 ) -> Result<!, Cmd> {
 	loop {
-		for (i, led) in leds.iter_mut().enumerate() {
-			let duty = match i {
-				0 => &DBG_LED1_DUTY,
-				1 => &DBG_LED2_DUTY,
-				2 => &DBG_LED3_DUTY,
-				_ => unreachable!(),
-			};
-
+		for led in leds.iter_mut() {
 			for _ in 0..2 {
 				led.set_low();
-				duty.set(CONFIG_DUTY_PERIOD);
 				rx.after_receive(Duration::from_millis(10)).await?;
 				led.set_high();
-				duty.set(0);
 				rx.after_receive(Duration::from_millis(20)).await?;
 			}
 			rx.after_receive(Duration::from_millis(30)).await?;
 		}
 
 		if let Some(delay) = cycle_delay {
-			DBG_LED1_DUTY.set(0);
-			DBG_LED2_DUTY.set(0);
-			DBG_LED3_DUTY.set(0);
 			for led in &mut leds {
 				led.set_high();
 			}
@@ -90,10 +99,6 @@ async fn config_cycle(rx: &Channel, leds: [&mut OutputOpenDrain<'static>; 3]) ->
 		let d1 = i1.next().unwrap_or(0);
 		let d2 = i2.next().unwrap_or(0);
 		let d3 = i3.next().unwrap_or(0);
-
-		DBG_LED1_DUTY.set(d1);
-		DBG_LED2_DUTY.set(d2);
-		DBG_LED3_DUTY.set(d3);
 
 		let p1 = async {
 			if d1 > 0 {
@@ -140,6 +145,8 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 	let mut mode = Cmd::On;
 
 	loop {
+		STAT_CMD.set(mode);
+
 		mode = match mode {
 			Cmd::On => {
 				blink_cycle(
@@ -165,9 +172,6 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 				.unwrap_err()
 			}
 			Cmd::Off => {
-				DBG_LED1_DUTY.set(0);
-				DBG_LED2_DUTY.set(0);
-				DBG_LED3_DUTY.set(0);
 				debug_led1.set_high();
 				debug_led2.set_high();
 				debug_led3.set_high();
@@ -175,24 +179,18 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 			}
 			Cmd::Manual { states } => {
 				if states[0] {
-					DBG_LED1_DUTY.set(CONFIG_DUTY_PERIOD);
 					debug_led1.set_low();
 				} else {
-					DBG_LED1_DUTY.set(0);
 					debug_led1.set_high();
 				}
 				if states[1] {
-					DBG_LED2_DUTY.set(CONFIG_DUTY_PERIOD);
 					debug_led2.set_low();
 				} else {
-					DBG_LED2_DUTY.set(0);
 					debug_led2.set_high();
 				}
 				if states[2] {
-					DBG_LED3_DUTY.set(CONFIG_DUTY_PERIOD);
 					debug_led3.set_low();
 				} else {
-					DBG_LED3_DUTY.set(0);
 					debug_led3.set_high();
 				}
 				rx.receive().await
