@@ -39,10 +39,10 @@ use static_cell::StaticCell;
 
 use crate::service::svc_mqtt_stats::{BoolStat, QoS, StrStat};
 
-pub static STAT_INITIALIZED: BoolStat<{ QoS::Q2 }> = BoolStat::new("status/initialized");
-pub static STAT_VERSION_MAJOR: StrStat<u64, 4, { QoS::Q2 }> = StrStat::new("version/major");
-pub static STAT_VERSION_MINOR: StrStat<u64, 4, { QoS::Q2 }> = StrStat::new("version/minor");
-pub static STAT_VERSION_PATCH: StrStat<u64, 4, { QoS::Q2 }> = StrStat::new("version/patch");
+pub static STAT_INITIALIZED: BoolStat<{ QoS::Q1 }> = BoolStat::new("status/initialized");
+pub static STAT_VERSION_MAJOR: StrStat<u64, 4, { QoS::Q1 }> = StrStat::new("version/major");
+pub static STAT_VERSION_MINOR: StrStat<u64, 4, { QoS::Q1 }> = StrStat::new("version/minor");
+pub static STAT_VERSION_PATCH: StrStat<u64, 4, { QoS::Q1 }> = StrStat::new("version/patch");
 
 bind_interrupts!(struct Irqs {
 	OTG_HS => usb::InterruptHandler<peripherals::USB_OTG_HS>;

@@ -40,7 +40,6 @@ enum SceneState {
 }
 
 pub enum Cmd {
-	#[expect(unused, reason = "temporary")]
 	SetScene { scene: Scene },
 }
 

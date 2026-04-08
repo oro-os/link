@@ -19,18 +19,18 @@ include!("./_macro.inc.rs");
 
 #[rustfmt::skip]
 services! {
-                     #[bus(false)]              #[skip(true)] dev_blinken_light,
+                     #[bus(false)]                            dev_blinken_light,
                      #[bus(false)] #[rx(false)]               dev_exteth,
                      #[bus(false)]              #[skip(true)] dev_leds,
-                     #[bus(false)]              #[skip(true)] dev_oled,
+                     #[bus(false)]                            dev_oled,
                                    #[rx(false)]               dev_power_monitor,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_sdcard,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_syseth,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_usb,
     #[config(false)] #[bus(false)]                            svc_failsafe,
-                                   #[rx(false)] #[skip(true)] svc_main,
+                                   #[rx(false)]               svc_main,
     #[config(false)]                                          svc_oled_pwr,
-    #[config(false)]                            #[skip(true)] svc_oled,
+    #[config(false)]                                          svc_oled,
                      #[bus(false)] #[rx(false)]               svc_mqtt,
                      #[bus(false)] #[rx(false)]               svc_mqtt_stats,
 }

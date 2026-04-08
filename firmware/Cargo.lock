@@ -217,7 +217,7 @@ checksum = "c96bf972d85afc50bf5ab8fe2d54d1586b4e0b46c97c50a0c9e71e2f7bcd812a"
 dependencies = [
  "async-task",
  "concurrent-queue",
- "fastrand 2.4.0",
+ "fastrand 2.4.1",
  "futures-lite 2.6.1",
  "pin-project-lite",
  "slab",
@@ -1698,9 +1698,9 @@ dependencies = [
 
 [[package]]
 name = "fastrand"
-version = "2.4.0"
+version = "2.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a043dc74da1e37d6afe657061213aa6f425f855399a11d3463c6ecccc4dfda1f"
+checksum = "9f1f227452a390804cdb637b74a86990f2a7d7ba4b7d5693aac9b4dd6defd8d6"
 
 [[package]]
 name = "fdeflate"
@@ -1854,7 +1854,7 @@ version = "2.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f78e10609fe0e0b3f4157ffab1876319b5b0db102a2c60dc4626306dc46b44ad"
 dependencies = [
- "fastrand 2.4.0",
+ "fastrand 2.4.1",
  "futures-core",
  "futures-io",
  "parking",
@@ -2724,7 +2724,7 @@ version = "0.18.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d797ab3274a16f4940f9650a29838e940223aeff31773df5c2827ad82150182f"
 dependencies = [
- "fastrand 2.4.0",
+ "fastrand 2.4.1",
  "flume",
  "if-addrs",
  "log",
@@ -3033,7 +3033,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c835479a4443ded371d6c535cbfd8d31ad92c5d23ae9770a61bc155e4992a3c1"
 dependencies = [
  "atomic-waker",
- "fastrand 2.4.0",
+ "fastrand 2.4.1",
  "futures-io",
 ]
 
@@ -3549,7 +3549,7 @@ dependencies = [
 [[package]]
 name = "rmqtt"
 version = "0.19.1"
-source = "git+https://github.com/oro-os/rmqtt.git#bce39d1aa2cf40697dbaca07059ca14d1947cfc0"
+source = "git+https://github.com/oro-os/rmqtt.git#5f54705ac5a4fa5da4df65ad26214987dfdb0a6c"
 dependencies = [
  "ahash",
  "anyhow",
@@ -3608,7 +3608,7 @@ dependencies = [
 [[package]]
 name = "rmqtt-net"
 version = "0.3.4"
-source = "git+https://github.com/oro-os/rmqtt.git#bce39d1aa2cf40697dbaca07059ca14d1947cfc0"
+source = "git+https://github.com/oro-os/rmqtt.git#5f54705ac5a4fa5da4df65ad26214987dfdb0a6c"
 dependencies = [
  "anyhow",
  "bytestring",
@@ -4374,9 +4374,9 @@ checksum = "1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20"
 
 [[package]]
 name = "tokio"
-version = "1.51.0"
+version = "1.51.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2bd1c4c0fc4a7ab90fc15ef6daaa3ec3b893f004f915f2392557ed23237820cd"
+checksum = "f66bf9585cda4b724d3e78ab34b73fb2bbaba9011b9bfdf69dc836382ea13b8c"
 dependencies = [
  "bytes",
  "libc",

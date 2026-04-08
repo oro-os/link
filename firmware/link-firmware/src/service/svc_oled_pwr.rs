@@ -17,7 +17,6 @@ pub static STAT_PWR_STATE: Stat<State> = Stat::new("power/oled/state");
 pub static STAT_PWR_TARGET: Stat<State> = Stat::new("power/oled/target");
 
 pub enum Cmd {
-	#[expect(unused, reason = "temporary")]
 	SetState { state: State },
 }
 

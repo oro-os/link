@@ -221,6 +221,7 @@ impl<S: edge_nal::io::Read + edge_nal::io::Write> mqttrust::transport::Transport
 	///
 	/// `Ok(())` always, as no disconnection logic is required.
 	fn disconnect(&mut self) -> Result<(), mqttrust::ConnectionError> {
+		defmt::warn!("disconnect called on ConnectedSocketTransport; link likely to reboot");
 		Err(mqttrust::ConnectionError::RequestsDone)
 	}
 
@@ -240,6 +241,7 @@ impl<S: edge_nal::io::Read + edge_nal::io::Write> mqttrust::transport::Transport
 	/// `Ok(&mut Self::Socket)` always, as the socket is always available.
 	fn socket(&mut self) -> Result<&mut Self::Socket, mqttrust::StateError> {
 		if !self.has_connected {
+			defmt::warn!("socket referenced in an invalid state");
 			return Err(mqttrust::StateError::InvalidState);
 		}
 
@@ -276,19 +278,19 @@ macro_rules! impl_pubs {
 
 impl Mqtt {
 	impl_pubs! {
-		/// Publishes a message to the MQTT broker with the given topic and payload, using QoS 0 (at most once).
-		publish_0(false, mqttrust::QoS::AtMostOnce),
-		/// Publishes a message to the MQTT broker with the given topic and payload, using QoS 1 (at least once).
-		publish_1(false, mqttrust::QoS::AtLeastOnce),
-		/// Publishes a message to the MQTT broker with the given topic and payload, using QoS 2 (exactly once).
-		publish_2(false, mqttrust::QoS::ExactlyOnce),
-		/// Publishes and retains a message to the MQTT broker with the given topic and payload, using QoS 0 (at most once).
-		retain_0(false, mqttrust::QoS::AtMostOnce),
-		/// Publishes and retains a message to the MQTT broker with the given topic and payload, using QoS 1 (at least once).
-		retain_1(false, mqttrust::QoS::AtLeastOnce),
-		/// Publishes and retains a message to the MQTT broker with the given topic and payload, using QoS 2 (exactly once).
-		retain_2(false, mqttrust::QoS::ExactlyOnce),
-	}
+			/// Publishes a message to the MQTT broker with the given topic and payload, using QoS 0 (at most once).
+			publish_0(false, mqttrust::QoS::AtMostOnce),
+			/// Publishes a message to the MQTT broker with the given topic and payload, using QoS 1 (at least once).
+			publish_1(false, mqttrust::QoS::AtLeastOnce),
+	//		/// Publishes a message to the MQTT broker with the given topic and payload, using QoS 2 (exactly once).
+	//		publish_2(false, mqttrust::QoS::ExactlyOnce),
+			/// Publishes and retains a message to the MQTT broker with the given topic and payload, using QoS 0 (at most once).
+			retain_0(false, mqttrust::QoS::AtMostOnce),
+			/// Publishes and retains a message to the MQTT broker with the given topic and payload, using QoS 1 (at least once).
+			retain_1(false, mqttrust::QoS::AtLeastOnce),
+	//		/// Publishes and retains a message to the MQTT broker with the given topic and payload, using QoS 2 (exactly once).
+	//		retain_2(false, mqttrust::QoS::ExactlyOnce),
+		}
 
 	/// Bakes a topic with a given suffix. Returns `Err(topic)` if the topic is too long.
 	pub fn try_prepare_topic<T: IntoPrefixedTopic>(&self, topic: T) -> Result<PrefixedTopic, T> {
@@ -326,6 +328,9 @@ pub struct PrefixedTopic(heapless::String<64>);
 impl IntoPrefixedTopic for &str {
 	fn into_prefixed_topic(self, prefix: Prefix) -> Result<PrefixedTopic, Self> {
 		let mut r = heapless::String::new();
+		let Ok(_) = r.push_str("orolink/") else {
+			return Err(self);
+		};
 		let Ok(_) = r.push_str(prefix.0) else {
 			return Err(self);
 		};

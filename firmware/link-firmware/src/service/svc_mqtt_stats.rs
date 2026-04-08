@@ -11,7 +11,8 @@ use crate::service::svc_mqtt::{Mqtt, PrefixedTopic};
 pub enum QoS {
 	Q0 = 0,
 	Q1 = 1,
-	Q2 = 2,
+	// NOTE: This is not supported by rmqtt, so we don't support it here.
+	// Q2 = 2,
 }
 
 /// Implements a firmware-wide global stat; must be listed
@@ -72,10 +73,10 @@ macro_rules! impl_update {
 impl_update! {
 	publish_0(Q0, false, "failed to publish topic (QoS=0, no-retain): {:?}: {:?}"),
 	publish_1(Q1, false, "failed to publish topic (QoS=1, no-retain): {:?}: {:?}"),
-	publish_2(Q2, false, "failed to publish topic (QoS=2, no-retain): {:?}: {:?}"),
+//	publish_2(Q2, false, "failed to publish topic (QoS=2, no-retain): {:?}: {:?}"),
 	retain_0(Q0, true, "failed to publish topic (QoS=0, retain): {:?}: {:?}"),
 	retain_1(Q1, true, "failed to publish topic (QoS=1, retain): {:?}: {:?}"),
-	retain_2(Q2, true, "failed to publish topic (QoS=2, retain): {:?}: {:?}"),
+//	retain_2(Q2, true, "failed to publish topic (QoS=2, retain): {:?}: {:?}"),
 }
 
 pub struct Config {

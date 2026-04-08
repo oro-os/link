@@ -5,6 +5,7 @@ pub trait Relaxed<T> {
 	fn set(&self, v: T) -> T;
 }
 
+#[expect(unused, reason = "useful, but not currently used")]
 pub trait NumericRelaxed<T> {
 	fn increment(&self) -> T;
 }
