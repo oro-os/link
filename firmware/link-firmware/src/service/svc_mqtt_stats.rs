@@ -108,6 +108,9 @@ pub async fn run(config: Config) {
 		super::dev_power_monitor::STAT_CURRENT,
 		super::dev_blinken_light::STAT_CMD,
 		crate::STAT_INITIALIZED,
+		crate::STAT_VERSION_MAJOR,
+		crate::STAT_VERSION_MINOR,
+		crate::STAT_VERSION_PATCH,
 	);
 
 	defmt::debug!("all stat spawners have started; finishing run");
