@@ -79,11 +79,18 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 				scene: super::svc_oled::Scene::Logo,
 			})
 			.await;
-
 		bus.svc_oled_pwr
 			.send(super::svc_oled_pwr::Cmd::SetState {
 				state: super::svc_oled_pwr::State::Idle,
 			})
+			.await;
+		bus.svc_leds
+			.send(super::svc_leds::Cmd::SetState {
+				state: super::svc_leds::State::Off,
+			})
+			.await;
+		bus.dev_blinken_light
+			.send(super::dev_blinken_light::Cmd::Idle)
 			.await;
 
 		defmt::info!("waiting for PR...");
@@ -92,16 +99,14 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 			continue;
 		}
 
-		bus.svc_oled_pwr
-			.send(super::svc_oled_pwr::Cmd::SetState {
-				state: super::svc_oled_pwr::State::On,
+		defmt::info!("PR run started");
+
+		bus.svc_leds
+			.send(super::svc_leds::Cmd::SetState {
+				state: super::svc_leds::State::PrPending,
 			})
 			.await;
 
-		// Wait for OLED to turn on
-		Timer::after_millis(250).await;
-
-		defmt::info!("PR run started");
 		bus.svc_oled
 			.send(super::svc_oled::Cmd::SetScene {
 				scene: super::svc_oled::Scene::Status(super::svc_oled::Status {
@@ -112,6 +117,16 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 					..Default::default()
 				}),
 			})
+			.await;
+
+		bus.svc_oled_pwr
+			.send(super::svc_oled_pwr::Cmd::SetState {
+				state: super::svc_oled_pwr::State::On,
+			})
+			.await;
+
+		bus.dev_blinken_light
+			.send(super::dev_blinken_light::Cmd::On)
 			.await;
 
 		// XXX

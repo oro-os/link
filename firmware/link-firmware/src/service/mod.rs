@@ -9,6 +9,7 @@ pub mod dev_usb;
 pub mod svc_failsafe;
 // pub mod dev_usart; // TODO
 // pub mod dev_uart; // TODO
+pub mod svc_leds;
 pub mod svc_main;
 pub mod svc_mqtt;
 pub mod svc_mqtt_config;
@@ -22,7 +23,7 @@ include!("./_macro.inc.rs");
 services! {
                      #[bus(false)]                            dev_blinken_light,
                      #[bus(false)] #[rx(false)]               dev_exteth,
-                     #[bus(false)]              #[skip(true)] dev_leds,
+                     #[bus(false)]                            dev_leds,
                      #[bus(false)]                            dev_oled,
                                    #[rx(false)]               dev_power_monitor,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_sdcard,
@@ -32,6 +33,7 @@ services! {
                                    #[rx(false)]               svc_main,
     #[config(false)]                                          svc_oled_pwr,
     #[config(false)]                                          svc_oled,
+    #[config(false)]                                          svc_leds,
                      #[bus(false)] #[rx(false)]               svc_mqtt,
                      #[bus(false)] #[rx(false)]               svc_mqtt_stats,
                      #[bus(false)] #[rx(false)]               svc_mqtt_config,
