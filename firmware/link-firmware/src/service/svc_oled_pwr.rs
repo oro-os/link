@@ -44,38 +44,46 @@ impl AsRef<[u8]> for State {
 #[embassy_executor::task]
 pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 	let mut current_state = State::Off;
-	let mut target_state = State::Off;
 
-	'next_state: loop {
-		'state_change: {
-			STAT_PWR_STATE.set(current_state);
+	STAT_PWR_STATE.set(current_state);
+	STAT_PWR_TARGET.set(current_state);
+
+	loop {
+		let mut target_state = receive_state(rx, current_state).await;
+
+		loop {
+			defmt::debug!(
+				"OLED power state change: {:?} -> {:?}",
+				current_state,
+				target_state
+			);
+
 			STAT_PWR_TARGET.set(target_state);
 
-			let either = match (current_state, target_state) {
-				(current, target) if current == target => {
-					break 'state_change;
+			let either = match target_state {
+				State::On => select(receive_state(rx, target_state), perform_turnon(&bus)).await,
+				State::Idle => {
+					select(receive_state(rx, target_state), perform_idle_cooloff(&bus)).await
 				}
-				(current, State::On) => {
-					select(receive_state(rx, current), perform_turnon(&bus)).await
-				}
-				(current, State::Idle) => {
-					select(receive_state(rx, current), perform_idle_cooloff(&bus)).await
-				}
-				(current, State::Off) => {
-					select(receive_state(rx, current), perform_shutoff(&bus)).await
-				}
+				State::Off => select(receive_state(rx, target_state), perform_shutoff(&bus)).await,
 			};
 
-			if let Either::First(state) = either {
-				target_state = state;
-				continue 'next_state;
+			current_state = target_state;
+			STAT_PWR_STATE.set(current_state);
+
+			if let Either::First(new_state) = either {
+				// We were interrupted; start new target
+				defmt::debug!(
+					"OLED power state transition was interrupted with new state: {:?}",
+					new_state
+				);
+				target_state = new_state;
 			} else {
-				current_state = target_state;
+				// State transition completed successfully
+				defmt::debug!("OLED power state transition completed successfully");
+				break;
 			}
 		}
-
-		let Cmd::SetState { state } = rx.receive().await;
-		target_state = state;
 	}
 }
 
