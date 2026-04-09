@@ -12,6 +12,11 @@ use embedded_graphics::{
 use embedded_graphics_core::geometry::{OriginDimensions, Size};
 use embedded_hal_async::spi::SpiBus;
 
+use crate::service::svc_mqtt_stats::{BoolStat, StrStat};
+
+pub static STAT_PWR_VREG: BoolStat = BoolStat::new("power/oled/vreg");
+pub static STAT_BRIGHTNESS: StrStat<u8> = StrStat::new("power/oled/brightness");
+
 const BRIGHTNESS_CURVE: [u8; 64] = [
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 8, 8, 9, 10, 11, 12, 12, 13,
 	14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 27, 28, 29, 31, 32, 34, 35, 37, 38, 40, 41, 43, 45,
@@ -71,6 +76,7 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 
 						defmt::debug!("enabling OLED VBUS");
 						vreg_en.set_high();
+						STAT_PWR_VREG.set(true);
 						Timer::after(Duration::from_millis(10)).await;
 
 						defmt::debug!("resetting OLED after VBUS enable");
@@ -92,6 +98,7 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 
 						defmt::debug!("disabling OLED VBUS");
 						vreg_en.set_low();
+						STAT_PWR_VREG.set(false);
 						Timer::after(Duration::from_millis(10)).await;
 					}
 					_ => {}
@@ -100,6 +107,7 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 				vbus_state = enabled;
 			}
 			Cmd::SetBrightness { brightness } => {
+				STAT_BRIGHTNESS.set(brightness);
 				oled.set_contrast(brightness).await.unwrap();
 			}
 			Cmd::Render => {

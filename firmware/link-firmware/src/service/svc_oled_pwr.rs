@@ -66,11 +66,11 @@ pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 				}
 			};
 
-			current_state = target_state;
-
 			if let Either::First(state) = either {
 				target_state = state;
 				continue 'next_state;
+			} else {
+				current_state = target_state;
 			}
 		}
 

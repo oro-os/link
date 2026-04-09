@@ -62,9 +62,11 @@ macro_rules! impl_update {
 			async fn update(&self, mqtt: &Mqtt) {
 				let topic = self.topic.get_or_init(|| mqtt.prepare_topic(self.topic_suffix));
 				let v = self.signal.wait().await;
+				defmt::trace!("updating topic {:?}", topic);
 				if let Err(err) = mqtt.$method(topic, v).await {
 					defmt::warn!($fail_message, topic, err);
 				}
+				defmt::trace!("updated topic {:?}", topic);
 			}
 		})*
 	}
@@ -108,6 +110,8 @@ pub async fn run(config: Config) {
 		super::svc_oled_pwr::STAT_PWR_TARGET,
 		super::dev_power_monitor::STAT_CURRENT,
 		super::dev_blinken_light::STAT_CMD,
+		super::dev_oled::STAT_PWR_VREG,
+		super::dev_oled::STAT_BRIGHTNESS,
 		crate::STAT_INITIALIZED,
 		crate::STAT_VERSION_MAJOR,
 		crate::STAT_VERSION_MINOR,

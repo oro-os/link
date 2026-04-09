@@ -11,6 +11,7 @@ pub mod svc_failsafe;
 // pub mod dev_uart; // TODO
 pub mod svc_main;
 pub mod svc_mqtt;
+pub mod svc_mqtt_config;
 pub mod svc_mqtt_stats;
 pub mod svc_oled;
 pub mod svc_oled_pwr;
@@ -33,4 +34,5 @@ services! {
     #[config(false)]                                          svc_oled,
                      #[bus(false)] #[rx(false)]               svc_mqtt,
                      #[bus(false)] #[rx(false)]               svc_mqtt_stats,
+                     #[bus(false)] #[rx(false)]               svc_mqtt_config,
 }

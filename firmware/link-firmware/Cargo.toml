@@ -47,7 +47,7 @@ w5500-ll = { version = "0.13.0", features = ["defmt", "eh1"] }
 edge-mdns = { features = ["defmt"], git = "https://github.com/oro-os/edge-net.git" }
 edge-nal-embassy = { features = ["defmt"], git = "https://github.com/oro-os/edge-net.git" }
 edge-nal = { git = "https://github.com/oro-os/edge-net.git" }
-mqttrust = { features = ["mqttv5", "defmt", "qos2"], git = "https://github.com/oro-os/mqttrust.git" }
+mqttrust = { features = ["mqttv5", "defmt", "qos2", "max-inflight-16"], git = "https://github.com/oro-os/mqttrust.git" }
 
 [dependencies.oro-logo-rle]
 git = "https://github.com/oro-os/oro-logo-rle"

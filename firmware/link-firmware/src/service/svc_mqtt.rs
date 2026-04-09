@@ -11,7 +11,7 @@ use embassy_futures::select::Either;
 use embassy_net::{IpListenEndpoint, Stack};
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, once_lock::OnceLock};
 use embassy_time::Timer;
-use mqttrust::MqttClient;
+use mqttrust::{MqttClient, Subscription};
 use static_cell::StaticCell;
 
 pub struct Config {
@@ -166,7 +166,7 @@ pub async fn run_mqtt<'stack>(
 	};
 	let config = mqttrust::Config::builder()
 		.client_id(name.try_into().unwrap())
-		.keepalive_interval(embassy_time::Duration::from_secs(50))
+		.keepalive_interval(embassy_time::Duration::from_secs(20))
 		.build();
 
 	static STATE: StaticCell<mqttrust::State<NoopRawMutex, 1024, 1024>> = StaticCell::new();
@@ -306,6 +306,38 @@ impl Mqtt {
 			Ok(t) => t,
 			Err(_) => {
 				panic!("failed to prepare topic; too long");
+			}
+		}
+	}
+
+	/// Subscribes to a topic.
+	pub async fn subscribe<'a, T: IntoPrefixedTopic>(
+		&'a self,
+		topic: T,
+	) -> Subscription<'static, 'a, NoopRawMutex, 1> {
+		let topic = self.prepare_topic(topic);
+		loop {
+			match self
+				.client
+				.subscribe(
+					mqttrust::Subscribe::builder()
+						.topics(&[mqttrust::SubscribeTopic::builder()
+							.topic_path(topic.0.as_str())
+							.build()])
+						.build(),
+				)
+				.await
+			{
+				Ok(s) => {
+					return s;
+				}
+				Err(mqttrust::Error::MaxInflight) => {
+					defmt::warn!("hit maximum in-flight packets; retrying in 100ms");
+					Timer::after_millis(100).await;
+				}
+				Err(err) => {
+					panic!("failed to start subscription: {:?}", err);
+				}
 			}
 		}
 	}

@@ -7,7 +7,7 @@ pub(crate) mod atomic;
 pub(crate) mod channel;
 pub(crate) mod color;
 pub(crate) mod crc32;
-pub(crate) mod flash;
+// pub(crate) mod flash;
 pub(crate) mod font;
 pub(crate) mod nvram;
 pub(crate) mod rand;
@@ -111,8 +111,8 @@ pub async fn main(spawner: Spawner) -> ! {
 	self::rand::init_rng(rng_gen);
 
 	// MUST BE SECOND: Initialize pflash subsystem
-	defmt::debug!("initializing flash");
-	flash::init_pflash(p.FLASH);
+	// defmt::debug!("initializing flash");
+	// flash::init_pflash(p.FLASH);
 
 	// Check for reset sequence
 	defmt::debug!("initializing nvram");
@@ -136,18 +136,18 @@ pub async fn main(spawner: Spawner) -> ! {
 		nv_ram.reboot.fast_count.read()
 	);
 
-	let pflash = match flash::read_pflash() {
-		Ok(pflash) => pflash,
-		Err(e) => {
-			defmt::warn!("failed to read pflash; reinitializing: {:?}", e);
-			// SAFETY: We're initializing it.
-			unsafe { flash::write_pflash(flash::Pflash::default()) }
-				.expect("failed to write/read-back default pflash")
-		}
-	};
+	// let pflash = match flash::read_pflash() {
+	// 	Ok(pflash) => pflash,
+	// 	Err(e) => {
+	// 		defmt::warn!("failed to read pflash; reinitializing: {:?}", e);
+	// 		// SAFETY: We're initializing it.
+	// 		unsafe { flash::write_pflash(flash::Pflash::default()) }
+	// 			.expect("failed to write/read-back default pflash")
+	// 	}
+	//};
 
-	let mut pflash = pflash.into_latest();
-	defmt::debug!("pflash contents: {:?}", pflash);
+	// let mut pflash = pflash.into_latest();
+	// defmt::debug!("pflash contents: {:?}", pflash);
 
 	if nv_ram.reboot.fast_count.read() >= 10 {
 		nv_ram.reset();
@@ -157,14 +157,14 @@ pub async fn main(spawner: Spawner) -> ! {
 			nv_ram.reboot.fast_count
 		);
 
-		pflash.initialized = false;
+		// pflash.initialized = false;
 
-		if let Err(err) = unsafe { flash::write_pflash(pflash) } {
-			defmt::error!(
-				"failed to reset pflash during fast reboot recovery; system is NOT reset: {:?}",
-				err
-			);
-		}
+		// if let Err(err) = unsafe { flash::write_pflash(pflash) } {
+		// 	defmt::error!(
+		// 		"failed to reset pflash during fast reboot recovery; system is NOT reset: {:?}",
+		// 		err
+		// 	);
+		//}
 
 		defmt::warn!("Oro Link reset complete; rebooting system");
 
@@ -172,14 +172,15 @@ pub async fn main(spawner: Spawner) -> ! {
 		unsafe { self::reset() }
 	}
 
-	let initialized = if pflash.initialized {
-		defmt::info!("system is initialized");
-		true
-	} else {
-		defmt::warn!("system is uninitialized; performing first-time setup");
-		nv_ram.reset();
-		false
-	};
+	// let initialized = if pflash.initialized {
+	// 	defmt::info!("system is initialized");
+	// 	true
+	//} else {
+	// 	defmt::warn!("system is uninitialized; performing first-time setup");
+	// 	nv_ram.reset();
+	// 	false
+	//};
+	let initialized = true;
 
 	STAT_INITIALIZED.set(initialized);
 	STAT_VERSION_MAJOR.set(crate::version::VERSION_MAJOR);
@@ -458,6 +459,7 @@ pub async fn main(spawner: Spawner) -> ! {
 			ulpi_rst,
 		},
 		svc_main {
+			mqtt
 		},
 		svc_mqtt {
 			stack: exteth_stack,
@@ -466,6 +468,10 @@ pub async fn main(spawner: Spawner) -> ! {
 		svc_mqtt_stats {
 			spawner,
 			mqtt
+		},
+		svc_mqtt_config {
+			mqtt,
+			spawner
 		}
 	}
 	.spawn_all(spawner);
