@@ -14,8 +14,8 @@ use embedded_hal_async::spi::SpiBus;
 
 use crate::service::svc_mqtt_stats::{BoolStat, StrStat};
 
-pub static STAT_PWR_VREG: BoolStat = BoolStat::new("power/oled/vreg");
-pub static STAT_BRIGHTNESS: StrStat<u8> = StrStat::new("power/oled/brightness");
+pub static STAT_PWR_VREG: BoolStat = BoolStat::new("power/oled_vreg");
+pub static STAT_BRIGHTNESS: StrStat<u8> = StrStat::new("status/oled/brightness");
 
 const BRIGHTNESS_CURVE: [u8; 64] = [
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 8, 8, 9, 10, 11, 12, 12, 13,

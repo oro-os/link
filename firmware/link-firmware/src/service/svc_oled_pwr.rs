@@ -13,8 +13,8 @@ const IDLE_COOL_OFF_STEP: u8 = 1; // Decrease brightness by 5 each step
 const IDLE_MIN_BRIGHTNESS: u8 = 80; // Minimum brightness before vreg shutoff
 const IDLE_VREG_OFF_DELAY: Duration = Duration::from_secs(10); // Time after turning off display to turn off VREG
 
-pub static STAT_PWR_STATE: Stat<State> = Stat::new("power/oled/state");
-pub static STAT_PWR_TARGET: Stat<State> = Stat::new("power/oled/target");
+pub static STAT_PWR_STATE: Stat<State> = Stat::new("status/oled/state");
+pub static STAT_PWR_TARGET: Stat<State> = Stat::new("status/oled/target");
 
 pub enum Cmd {
 	SetState { state: State },
