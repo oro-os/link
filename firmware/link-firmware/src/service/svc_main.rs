@@ -1,7 +1,7 @@
 use embassy_sync::once_lock::OnceLock;
 use embassy_time::Timer;
 
-use crate::service::svc_mqtt::Mqtt;
+use crate::{color::Rgb, service::svc_mqtt::Mqtt};
 
 pub struct Config {
 	pub mqtt: &'static OnceLock<Mqtt>,
@@ -11,6 +11,7 @@ pub struct Config {
 pub async fn run(bus: super::Bus, config: Config) -> ! {
 	let Config { mqtt } = config;
 
+	// Initial LED state
 	bus.dev_blinken_light
 		.send(super::dev_blinken_light::Cmd::Config)
 		.await;
@@ -27,10 +28,23 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 		})
 		.await;
 
-	// Let the logo show up :D
-	Timer::after_secs(2).await;
+	// Perform LED self-test
+	bus.dev_leds.send(super::dev_leds::Cmd::SelfTest).await;
+
+	// Wait for self-test to complete (and let the logo show up :D)
+	Timer::after_secs(5).await;
 
 	// Wait for MQTT to connect
+	bus.dev_leds.send(super::dev_leds::Cmd::AllOff).await;
+	bus.dev_leds
+		.send(super::dev_leds::Cmd::SetSystemIndicator(Rgb::new(2, 18, 2)))
+		.await;
+	bus.dev_leds
+		.send(super::dev_leds::Cmd::SetRemoteIndicator(Rgb::new(
+			245, 65, 5,
+		)))
+		.await;
+
 	bus.svc_oled
 		.send(super::svc_oled::Cmd::SetScene {
 			scene: super::svc_oled::Scene::Status(super::svc_oled::Status {
@@ -42,6 +56,10 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 		.await;
 
 	mqtt.get().await;
+
+	bus.dev_leds
+		.send(super::dev_leds::Cmd::SetRemoteIndicator(Rgb::new(2, 18, 2)))
+		.await;
 
 	bus.dev_blinken_light
 		.send(super::dev_blinken_light::Cmd::Idle)
@@ -74,6 +92,10 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 	}
 
 	loop {
+		bus.dev_leds
+			.send(super::dev_leds::Cmd::SetJobIndicator(Rgb::new(2, 1, 1)))
+			.await;
+
 		bus.svc_oled
 			.send(super::svc_oled::Cmd::SetScene {
 				scene: super::svc_oled::Scene::Logo,
@@ -127,6 +149,10 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 
 		bus.dev_blinken_light
 			.send(super::dev_blinken_light::Cmd::On)
+			.await;
+
+		bus.dev_leds
+			.send(super::dev_leds::Cmd::SetJobIndicator(Rgb::new(245, 65, 5)))
 			.await;
 
 		// XXX

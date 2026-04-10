@@ -202,11 +202,17 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 					for channel in 1..=36 {
 						light_ch.send((channel, 255)).await;
 					}
-					Timer::after(Duration::from_millis(500)).await;
+					Timer::after(Duration::from_millis(250)).await;
 					for channel in 1..=36 {
 						light_ch.send((channel, 0)).await;
 					}
-					Timer::after(Duration::from_millis(500)).await;
+					Timer::after(Duration::from_millis(250)).await;
+				}
+
+				for channel in 1..=36 {
+					light_ch.send((channel, 255)).await;
+					Timer::after(Duration::from_millis(50)).await;
+					light_ch.send((channel, 0)).await;
 				}
 			}
 			Cmd::SetIdle(is_idle) => {
