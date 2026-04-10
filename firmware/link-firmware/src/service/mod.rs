@@ -38,3 +38,18 @@ services! {
                      #[bus(false)] #[rx(false)]               svc_mqtt_stats,
                      #[bus(false)] #[rx(false)]               svc_mqtt_config,
 }
+
+#[macro_export]
+macro_rules! bus {
+	($bus:expr, $service:ident, $cmd:ident{$($tt:tt)*} $(,)?) => (
+		$bus.$service.send($crate::service::$service::Cmd::$cmd{$($tt)*}).await
+	);
+
+	($bus:expr, $service:ident, $cmd:ident($($tt:tt)*) $(,)?) => (
+		$bus.$service.send($crate::service::$service::Cmd::$cmd($($tt)*)).await
+	);
+
+	($bus:expr, $service:ident, $cmd:ident $(,)?) => (
+		$bus.$service.send($crate::service::$service::Cmd::$cmd).await
+	);
+}

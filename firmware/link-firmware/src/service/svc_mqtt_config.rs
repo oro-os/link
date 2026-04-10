@@ -8,6 +8,9 @@ use embassy_sync::{
 use crate::service::svc_mqtt::Mqtt;
 
 pub static CFG_PR_RUN: Opt<bool> = Opt::new_with_default("pr/run", false);
+pub static CFG_PR_TITLE: Opt<heapless::String<64>> = Opt::new("pr/title");
+pub static CFG_PR_AUTHOR: Opt<heapless::String<64>> = Opt::new("pr/author");
+pub static CFG_PR_NUMBER: Opt<u64> = Opt::new("pr/number");
 
 pub struct Config {
 	pub mqtt:    &'static OnceLock<Mqtt>,
@@ -33,7 +36,7 @@ pub async fn run(config: Config) {
 		})*}
 	}
 
-	spawn_cfg_updaters!(CFG_PR_RUN);
+	spawn_cfg_updaters!(CFG_PR_RUN, CFG_PR_TITLE, CFG_PR_NUMBER, CFG_PR_AUTHOR,);
 
 	defmt::debug!("all config loops spawned");
 }
@@ -51,7 +54,6 @@ impl<T> Opt<T>
 where
 	T: FromStr + 'static,
 {
-	#[expect(unused, reason = "temporary")]
 	const fn new(suffix: &'static str) -> Self {
 		Self {
 			signal:       Signal::new(),
@@ -66,6 +68,10 @@ where
 			topic_suffix: suffix,
 			default:      OnceValue::new(Some(default)),
 		}
+	}
+
+	pub const fn suffix(&self) -> &str {
+		self.topic_suffix
 	}
 
 	async fn update(&self, mqtt: &Mqtt) -> ! {

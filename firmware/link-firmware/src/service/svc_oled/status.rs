@@ -8,6 +8,77 @@ use crate::{
 
 pub struct Scene(pub super::Status);
 
+#[macro_export]
+macro_rules! oled_status {
+	(
+		$bus:expr,
+		$style1:ident($line1:expr),
+		$style2:ident($line2:expr),
+		$style3:ident($line3:expr),
+		$style4:ident($line4:expr) $(,)?
+	) => {
+		$bus.svc_oled
+			.send($crate::service::svc_oled::Cmd::SetScene {
+				scene: $crate::service::svc_oled::Scene::Status(
+					$crate::service::svc_oled::Status {
+						line1: Some($crate::service::svc_oled::Line::$style1($line1)),
+						line2: Some($crate::service::svc_oled::Line::$style2($line2)),
+						line3: Some($crate::service::svc_oled::Line::$style3($line3)),
+						line4: Some($crate::service::svc_oled::Line::$style4($line4)),
+					},
+				),
+			})
+			.await
+	};
+
+	(
+		$bus:expr,
+		$style1:ident($line1:expr),
+		$style2:ident($line2:expr),
+		$style3:ident($line3:expr) $(,)?
+	) => {
+		$bus.svc_oled
+			.send($crate::service::svc_oled::Cmd::SetScene {
+				scene: $crate::service::svc_oled::Scene::Status(
+					$crate::service::svc_oled::Status {
+						line1: Some($crate::service::svc_oled::Line::$style1($line1)),
+						line2: Some($crate::service::svc_oled::Line::$style2($line2)),
+						line3: Some($crate::service::svc_oled::Line::$style3($line3)),
+						..Default::default()
+					},
+				),
+			})
+			.await
+	};
+
+	($bus:expr, $style1:ident($line1:expr), $style2:ident($line2:expr) $(,)?) => {
+		$bus.svc_oled
+			.send($crate::service::svc_oled::Cmd::SetScene {
+				scene: $crate::service::svc_oled::Scene::Status(
+					$crate::service::svc_oled::Status {
+						line2: Some($crate::service::svc_oled::Line::$style1($line1)),
+						line3: Some($crate::service::svc_oled::Line::$style2($line2)),
+						..Default::default()
+					},
+				),
+			})
+			.await
+	};
+
+	($bus:expr, $style:ident($line:expr) $(,)?) => {
+		$bus.svc_oled
+			.send($crate::service::svc_oled::Cmd::SetScene {
+				scene: $crate::service::svc_oled::Scene::Status(
+					$crate::service::svc_oled::Status {
+						line2: Some($crate::service::svc_oled::Line::$style($line)),
+						..Default::default()
+					},
+				),
+			})
+			.await
+	};
+}
+
 impl super::RenderScene for Scene {
 	fn render(&mut self, fb: &mut FrameBuf) -> Option<Duration> {
 		let this = &self.0;
