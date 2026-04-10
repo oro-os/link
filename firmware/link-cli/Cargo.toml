@@ -13,3 +13,4 @@ clap = { version = "4.5.60", features = ["derive"] }
 serial = "0.4.0"
 anyhow = "1.0.102"
 static_cell = { version = "2.0.0", features = ["nightly"] }
+rcgen = { version = "0.14.7", features = ["crypto", "pem"] }

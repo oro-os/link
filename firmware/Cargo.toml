@@ -13,16 +13,14 @@ members = [
 	"link-rpcapd",
 	"link-cli",
 	"link-area-daemon",
+	"link-daemon",
 ]
 
 default-members = [
 	"link-cli",
-	"link-area-daemon"
+	"link-area-daemon",
+	"link-daemon",
 ]
-
-[patch.crates-io]
-rmqtt = { git = "https://github.com/oro-os/rmqtt.git" }
-rmqtt-net = { git = "https://github.com/oro-os/rmqtt.git" }
 
 [profile.dev]
 opt-level = 1

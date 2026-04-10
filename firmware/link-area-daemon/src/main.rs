@@ -1,10 +1,7 @@
 #![feature(never_type)]
 
-use std::net::{SocketAddr, SocketAddrV4};
-
 use anyhow::{Context, Result};
 use clap::Parser;
-use rmqtt::{context::ServerContext, net::Builder as MqttBuilder, server::MqttServer};
 
 pub mod config;
 pub mod link_connection;
@@ -34,52 +31,18 @@ async fn pmain() -> Result<()> {
 		config
 	};
 
-	let scx = ServerContext::new().build().await;
-
-	let (socket_sender, socket_receiver) = tokio::sync::mpsc::channel(16);
-
-	let mqtt = MqttServer::new(scx).listener_by_id(
-		MqttBuilder::new()
-			.name("internal/link")
-			.receive(socket_receiver)?,
-		0,
-	);
-	let mqtt = if let Some(port) = config.instance.port {
-		let sockaddr = SocketAddr::V4(SocketAddrV4::new(
-			config
-				.instance
-				.bind
-				.parse()
-				.context("invalid bind address")?,
-			port,
-		));
-
-		mqtt.listener(
-			MqttBuilder::new()
-				.name("internal/tcp")
-				.laddr(sockaddr)
-				.bind()?
-				.tcp()?,
-		)
-	} else {
-		mqtt
-	};
-	let mqtt = mqtt.build();
-
-	log::info!("MQTT server initialized");
-
 	let (link_discovery_sender, link_discovery_receiver) = tokio::sync::mpsc::channel(16);
 
 	log::debug!("entering main loop");
 	tokio::select! {
-		res = mqtt.run() => {
-			res.context("MQTT server failed")?;
-			log::warn!("MQTT server stopped unexpectedly");
+		res = tokio::signal::ctrl_c() => {
+			res.context("failed to listen for ctrl-c")?;
+			log::warn!("received ctrl-c, shutting down");
 		}
 		res = mdns::listen_for_links(link_discovery_sender) => {
 			res.context("mDNS listener failed")?;
 		}
-		res = link_connection::handle_link_connections(link_discovery_receiver, socket_sender, &config.link) => {
+		res = link_connection::handle_link_connections(link_discovery_receiver, &config.link, &config.daemon) => {
 			res.context("link connection handler failed")?;
 		}
 	}

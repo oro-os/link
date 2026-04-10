@@ -7,6 +7,8 @@ use anyhow::Result;
 pub struct Config {
 	/// The instance information.
 	pub instance: InstanceConfig,
+	/// The remote daemon to proxy MQTT traffic to.
+	pub daemon:   DaemonConfig,
 	/// The devices to manage and their configuration.
 	#[serde(default)]
 	pub link:     HashMap<String, LinkConfig>,
@@ -36,25 +38,25 @@ impl Config {
 
 #[derive(Debug, serde::Deserialize, serde::Serialize)]
 pub struct InstanceConfig {
-	/// The port to listen on for incoming connections.
-	///
-	/// Note that the Links are connected *to* via mDNS,
-	/// so this port is only used for incoming connections for
-	/// explorers, debugging tools, etc.
-	///
-	/// If `None`, no TCP listener will be started; the service
-	/// will only connect to discovered Links, but will not accept
-	/// incoming connections (e.g. for debugging).
-	pub port:       Option<u16>,
-	/// The network interface to bind to (defaults to all interfaces).
-	#[serde(default = "default_bind")]
-	pub bind:       String,
-	/// The IP address to advertise for this instance.
-	pub ip_address: String,
-	/// The path to the RocksDB database to use for storing
-	/// paired link information and retained MQTT data.
-	#[serde(default = "default_db_path")]
-	pub db_path:    String,
+	/// Reserved for future area-controller instance options.
+	#[serde(flatten)]
+	pub reserved: HashMap<String, toml::Value>,
+}
+
+#[derive(Debug, serde::Deserialize, serde::Serialize)]
+pub struct DaemonConfig {
+	/// Hostname of the centralized Oro Link daemon.
+	#[serde(default = "default_daemon_host")]
+	pub host:        String,
+	/// TLS port that carries proxied MQTT traffic.
+	#[serde(default = "default_daemon_port")]
+	pub port:        u16,
+	/// PEM public key or certificate used to pin the daemon's TLS identity.
+	pub server_key:  String,
+	/// Client certificate used for mutual TLS to the daemon.
+	pub client_cert: String,
+	/// Client private key matching `client_cert`.
+	pub client_key:  String,
 }
 
 #[derive(Debug, serde::Deserialize, serde::Serialize)]
@@ -66,10 +68,10 @@ pub struct LinkConfig {
 	pub otp: String,
 }
 
-pub fn default_bind() -> String {
-	"0.0.0.0".to_string()
+pub fn default_daemon_host() -> String {
+	"ci.oro.sh".to_string()
 }
 
-pub fn default_db_path() -> String {
-	"/var/lib/oro/link-area.db".to_string()
+pub fn default_daemon_port() -> u16 {
+	5544
 }

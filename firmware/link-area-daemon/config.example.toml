@@ -1,7 +1,11 @@
 [instance]
-port = 1883
-bind = "0.0.0.0"
-ip_address = "192.168.0.2"
+
+[daemon]
+host = "ci.oro.sh"
+port = 5544
+server_key = "/etc/oro/link-area/ci-daemon.pub.pem"
+client_cert = "/etc/oro/link-area/area.cert.pem"
+client_key = "/etc/oro/link-area/area.key.pem"
 
 [link."2E:6F:4F:E1:9E:F6"]
 otp = "123456"
