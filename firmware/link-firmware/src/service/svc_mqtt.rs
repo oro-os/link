@@ -9,11 +9,14 @@ use edge_mdns::domain::base::Ttl;
 use edge_nal::UdpSplit;
 use embassy_futures::select::Either;
 use embassy_net::{IpListenEndpoint, Stack};
-use embassy_sync::{blocking_mutex::raw::NoopRawMutex, once_lock::OnceLock};
+use embassy_sync::{
+	blocking_mutex::raw::{CriticalSectionRawMutex, NoopRawMutex},
+	once_lock::OnceLock,
+	semaphore::{GreedySemaphore, Semaphore},
+};
 use embassy_time::Timer;
 use mqttrust::{MqttClient, Subscription};
 use static_cell::StaticCell;
-
 pub struct Config {
 	pub stack: Stack<'static>,
 	pub mqtt:  &'static OnceLock<Mqtt>,
@@ -175,8 +178,12 @@ pub async fn run_mqtt<'stack>(
 	let (mut mqtt_stack, mqtt_client) = mqttrust::new(state, config);
 
 	static CLIENT: StaticCell<mqttrust::MqttClient<'static, NoopRawMutex>> = StaticCell::new();
+	static CLIENT_SEMA: StaticCell<GreedySemaphore<CriticalSectionRawMutex>> = StaticCell::new();
+
 	mqtt.init(Mqtt {
 		client: CLIENT.init(mqtt_client),
+		// Max 16 users at a time (matches the rmqtt feature in Cargo.toml)
+		sema:   CLIENT_SEMA.init(GreedySemaphore::new(16)),
 		prefix: crate::unique_id(),
 	})
 	.ok();
@@ -262,6 +269,7 @@ pub enum MqttError {
 #[derive(Clone)]
 pub struct Mqtt {
 	client: &'static MqttClient<'static, NoopRawMutex>,
+	sema:   &'static GreedySemaphore<CriticalSectionRawMutex>,
 	prefix: &'static str,
 }
 
@@ -269,6 +277,7 @@ macro_rules! impl_pubs {
 	($($(#[$attr:meta])*$name:ident($retain:expr, $qos:expr),)* $(,)?) => {
 		$($(#[$attr])*
 		pub async fn $name(&self, topic: impl IntoPrefixedTopic, payload: impl AsRef<[u8]>) -> Result<(), MqttError> {
+			let _sema = self.sema.acquire(1).await.unwrap();
 			let topic = topic.into_prefixed_topic(Prefix(self.prefix)).or(Err(MqttError::TopicTooLong))?;
 			self.client.publish(mqttrust::Publish::builder().retain($retain).qos($qos).topic_name(topic.0.as_str()).payload(payload.as_ref()).build()).await.map_err(MqttError::Mqtt)?;
 			Ok(())
@@ -317,6 +326,7 @@ impl Mqtt {
 	) -> Subscription<'static, 'a, NoopRawMutex, 1> {
 		let topic = self.prepare_topic(topic);
 		loop {
+			let _sema = self.sema.acquire(1).await.unwrap();
 			match self
 				.client
 				.subscribe(
@@ -333,6 +343,7 @@ impl Mqtt {
 				}
 				Err(mqttrust::Error::MaxInflight) => {
 					defmt::warn!("hit maximum in-flight packets; retrying in 100ms");
+					drop(_sema); // release the semaphore
 					Timer::after_millis(100).await;
 				}
 				Err(err) => {

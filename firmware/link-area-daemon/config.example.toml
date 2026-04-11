@@ -7,5 +7,11 @@ server_key = "/etc/oro/link-area/ci-daemon.pub.pem"
 client_cert = "/etc/oro/link-area/area.cert.pem"
 client_key = "/etc/oro/link-area/area.key.pem"
 
-[link."2E:6F:4F:E1:9E:F6"]
-otp = "123456"
+[link."2E-6F-4F-E1-9E-F6"]
+power_type = "psu"
+architecture = "x86_64-amd"
+usb_iface = "header"
+boot_source = "usb_msd"
+machine_action_label = "x86_64,amd64"
+require_4a_vbus = false
+wol = "10m"

@@ -36,14 +36,35 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 
 	// Wait for MQTT to connect
 	crate::bus!(bus, dev_leds, AllOff);
-	crate::bus!(bus, dev_leds, SetSystemIndicator(Rgb::new(2, 18, 2)));
+	crate::bus!(bus, dev_leds, SetSystemIndicator(Rgb::new(245, 65, 5)));
 	crate::bus!(bus, dev_leds, SetRemoteIndicator(Rgb::new(245, 65, 5)));
 
 	crate::oled_status!(bus, Bold("Waiting for MQTT..."), Normal(crate::unique_id()),);
 
 	mqtt.get().await;
-
 	crate::bus!(bus, dev_leds, SetRemoteIndicator(Rgb::new(2, 18, 2)));
+
+	// Wait for global configuration
+	macro_rules! fetch_pr_config {
+		($cfg:expr) => {{
+			crate::oled_status!(
+				bus,
+				Bold("Fetching configuration..."),
+				Normal($cfg.suffix()),
+			);
+			let v = $cfg.next().await;
+			defmt::info!("Global config fetched: {} = {:?}", $cfg.suffix(), v);
+			v
+		}};
+	}
+
+	let _power_type = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_POWER_TYPE);
+	let _usb_iface = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_USB_IFACE);
+	let _boot_source = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_BOOT_SOURCE);
+	let _require_4a_vbus = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_REQUIRE_4A_VBUS);
+	let _wol = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_WOL);
+
+	crate::bus!(bus, dev_leds, SetSystemIndicator(Rgb::new(2, 18, 2)));
 	crate::bus!(bus, dev_blinken_light, Idle);
 
 	// SAFETY: keep the number of seconds in the single digits.

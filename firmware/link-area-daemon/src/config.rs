@@ -61,11 +61,111 @@ pub struct DaemonConfig {
 
 #[derive(Debug, serde::Deserialize, serde::Serialize)]
 pub struct LinkConfig {
-	/// The one time password for the link, used for authentication
-	/// during initial pairing. After pairing, this is no longer used and can be discarded.
-	///
-	/// Shown on the OLED on first boot/reset.
-	pub otp: String,
+	/// The kind of power source that should be used for the link.
+	pub power_type: PowerType,
+	/// The system-under-test architecture wired to this link.
+	pub architecture: SutArch,
+	/// How the USB interface should be exposed.
+	pub usb_iface: UsbIface,
+	/// Which boot source should be selected.
+	pub boot_source: BootSource,
+	/// Human-readable label for the primary machine action.
+	pub machine_action_label: String,
+	/// Whether the link requires a 4A-capable VBUS supply.
+	pub require_4a_vbus: bool,
+	/// Wake-on-LAN retry behavior.
+	pub wol: Wol,
+}
+
+fn serialize_plain_value<T>(value: T) -> String
+where
+	T: serde::Serialize,
+{
+	serde_plain::to_string(&value).expect("config enums should serialize as plain strings")
+}
+
+#[derive(Clone, Copy, Debug, serde::Deserialize, serde::Serialize)]
+pub enum PowerType {
+	#[serde(rename = "usb")]
+	Usb,
+	#[serde(rename = "vbus")]
+	UsbVbus,
+	#[serde(rename = "psu")]
+	Psu,
+}
+
+impl PowerType {
+	pub fn as_mqtt_value(self) -> String {
+		serialize_plain_value(self)
+	}
+}
+
+#[derive(Clone, Copy, Debug, serde::Deserialize, serde::Serialize)]
+pub enum SutArch {
+	#[serde(rename = "x86_64-amd")]
+	X8664Amd,
+	#[serde(rename = "x86_64-intel")]
+	X8664Intel,
+	#[serde(rename = "aarch64")]
+	Aarch64,
+	#[serde(rename = "aarch64-mobile")]
+	Aarch64Mobile,
+	#[serde(rename = "riscv64")]
+	Riscv64,
+}
+
+impl SutArch {
+	pub fn as_mqtt_value(self) -> String {
+		serialize_plain_value(self)
+	}
+}
+
+#[derive(Clone, Copy, Debug, serde::Deserialize, serde::Serialize)]
+pub enum UsbIface {
+	#[serde(rename = "port")]
+	Port,
+	#[serde(rename = "header")]
+	Header,
+	#[serde(rename = "off")]
+	Off,
+}
+
+impl UsbIface {
+	pub fn as_mqtt_value(self) -> String {
+		serialize_plain_value(self)
+	}
+}
+
+#[derive(Clone, Copy, Debug, serde::Deserialize, serde::Serialize)]
+pub enum BootSource {
+	#[serde(rename = "usb_msd")]
+	UsbMsd,
+	#[serde(rename = "sd")]
+	Sd,
+}
+
+impl BootSource {
+	pub fn as_mqtt_value(self) -> String {
+		serialize_plain_value(self)
+	}
+}
+
+#[derive(Clone, Copy, Debug, serde::Deserialize, serde::Serialize)]
+pub enum Wol {
+	#[serde(rename = "off")]
+	Off,
+	#[serde(rename = "5m")]
+	Mins5,
+	#[serde(rename = "10m")]
+	Mins10,
+	#[serde(rename = "30m")]
+	Mins30,
+}
+
+impl Wol {
+	pub fn as_mqtt_value(self) -> String {
+		serialize_plain_value(self)
+	}
 }
 
 pub fn default_daemon_host() -> String {

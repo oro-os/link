@@ -4,6 +4,7 @@ use anyhow::{Context, Result};
 use clap::Parser;
 
 pub mod config;
+pub mod daemon_config_service;
 pub mod daemon_connection;
 pub mod link_connection;
 pub mod mdns;
@@ -33,6 +34,7 @@ async fn pmain() -> Result<()> {
 	};
 	let daemon_connection_config = daemon_connection::DaemonConnectionConfig::build(&config.daemon)
 		.context("failed to build daemon TLS connection config")?;
+	let link_connection_daemon_connection_config = daemon_connection_config.clone();
 	let daemon_port = config.daemon.port;
 
 	let (link_discovery_sender, link_discovery_receiver) = tokio::sync::mpsc::channel(16);
@@ -49,10 +51,13 @@ async fn pmain() -> Result<()> {
 		res = link_connection::handle_link_connections(
 			link_discovery_receiver,
 			&config.link,
-			daemon_connection_config,
+			link_connection_daemon_connection_config,
 			daemon_port,
 		) => {
 			res.context("link connection handler failed")?;
+		}
+		res = daemon_config_service::run(&config.link, daemon_connection_config, daemon_port) => {
+			res.context("daemon config service failed")?;
 		}
 	}
 

@@ -1266,6 +1266,7 @@ dependencies = [
  "defmt 1.0.1",
  "document-features",
  "embassy-time-driver",
+ "embassy-time-queue-utils",
  "embedded-hal 0.2.7",
  "embedded-hal 1.0.0",
  "embedded-hal-async",
@@ -2123,12 +2124,18 @@ version = "1.0.0"
 dependencies = [
  "anyhow",
  "clap",
+ "critical-section",
+ "embassy-sync 0.8.0",
+ "embassy-time",
+ "embedded-io-async 0.7.0",
  "env_logger 0.11.10",
  "log",
  "mdns-sd",
+ "mqttrust",
  "rustls",
  "rustls-pemfile",
  "serde",
+ "serde_plain",
  "tokio",
  "tokio-rustls",
  "toml",
@@ -2968,6 +2975,15 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.117",
+]
+
+[[package]]
+name = "serde_plain"
+version = "1.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9ce1fc6db65a611022b23a0dec6975d63fb80a302cb3388835ff02c097258d50"
+dependencies = [
+ "serde",
 ]
 
 [[package]]
