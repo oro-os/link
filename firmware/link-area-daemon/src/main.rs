@@ -4,6 +4,7 @@ use anyhow::{Context, Result};
 use clap::Parser;
 
 pub mod config;
+pub mod daemon_connection;
 pub mod link_connection;
 pub mod mdns;
 
@@ -30,6 +31,9 @@ async fn pmain() -> Result<()> {
 			.with_context(|| format!("failed to normalize config file '{}'", opts.config))?;
 		config
 	};
+	let daemon_connection_config = daemon_connection::DaemonConnectionConfig::build(&config.daemon)
+		.context("failed to build daemon TLS connection config")?;
+	let daemon_port = config.daemon.port;
 
 	let (link_discovery_sender, link_discovery_receiver) = tokio::sync::mpsc::channel(16);
 
@@ -42,7 +46,12 @@ async fn pmain() -> Result<()> {
 		res = mdns::listen_for_links(link_discovery_sender) => {
 			res.context("mDNS listener failed")?;
 		}
-		res = link_connection::handle_link_connections(link_discovery_receiver, &config.link, &config.daemon) => {
+		res = link_connection::handle_link_connections(
+			link_discovery_receiver,
+			&config.link,
+			daemon_connection_config,
+			daemon_port,
+		) => {
 			res.context("link connection handler failed")?;
 		}
 	}
