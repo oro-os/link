@@ -19,6 +19,7 @@ pub enum Cmd {
 	Idle,
 	Config,
 	Off,
+	Error,
 	Manual { states: [bool; 3] },
 }
 
@@ -29,6 +30,7 @@ impl AsRef<[u8]> for Cmd {
 			Self::Idle => "idle".as_bytes(),
 			Self::Config => "config".as_bytes(),
 			Self::Off => "all off".as_bytes(),
+			Self::Error => "error".as_bytes(),
 			Self::Manual { states } => {
 				match (states[0], states[1], states[2]) {
 					(false, false, false) => "off, off, off",
@@ -134,6 +136,22 @@ async fn config_cycle(rx: &Channel, leds: [&mut OutputOpenDrain<'static>; 3]) ->
 	}
 }
 
+async fn error_cycle(rx: &Channel, mut leds: [&mut OutputOpenDrain<'static>; 3]) -> Result<!, Cmd> {
+	loop {
+		for led in leds.iter_mut() {
+			led.set_low();
+		}
+
+		rx.after_receive(Duration::from_millis(100)).await?;
+
+		for led in leds.iter_mut() {
+			led.set_high();
+		}
+
+		rx.after_receive(Duration::from_millis(100)).await?;
+	}
+}
+
 #[embassy_executor::task]
 pub async fn run(rx: &'static Channel, config: Config) -> ! {
 	let Config {
@@ -194,6 +212,11 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 					debug_led3.set_high();
 				}
 				rx.receive().await
+			}
+			Cmd::Error => {
+				error_cycle(rx, [&mut debug_led1, &mut debug_led2, &mut debug_led3])
+					.await
+					.unwrap_err()
 			}
 		}
 	}

@@ -1,15 +1,22 @@
+use core::future;
+
+use embassy_stm32::gpio::Input;
 use embassy_sync::once_lock::OnceLock;
 use embassy_time::Timer;
 
 use crate::{color::Rgb, service::svc_mqtt::Mqtt};
 
 pub struct Config {
-	pub mqtt: &'static OnceLock<Mqtt>,
+	pub mqtt:           &'static OnceLock<Mqtt>,
+	pub aux_vbus_sense: Input<'static>,
 }
 
 #[embassy_executor::task]
 pub async fn run(bus: super::Bus, config: Config) -> ! {
-	let Config { mqtt } = config;
+	let Config {
+		mqtt,
+		aux_vbus_sense,
+	} = config;
 
 	// Initial LED state
 	crate::bus!(bus, dev_blinken_light, Config);
@@ -61,9 +68,33 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 	let _power_type = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_POWER_TYPE);
 	let _usb_iface = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_USB_IFACE);
 	let _boot_source = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_BOOT_SOURCE);
-	let _require_4a_vbus = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_REQUIRE_4A_VBUS);
+	let require_4a_vbus = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_REQUIRE_4A_VBUS);
 	let _wol = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_WOL);
 
+	// Make sure 4A VBUS line is sensed if needed.
+	// Note that the sense line is active-low, so if it's high, it means there's no
+	// aux VBUS line.
+	defmt::debug!(
+		"checking 4A vbus requirements: required = {}, is_low = {}",
+		require_4a_vbus,
+		aux_vbus_sense.is_low()
+	);
+	if require_4a_vbus && aux_vbus_sense.is_high() {
+		crate::bus!(bus, dev_leds, SetSystemIndicator(Rgb::new(255, 0, 0)));
+
+		crate::oled_status!(
+			bus,
+			Bold("4A VBUS line required"),
+			Normal("Connect a 4A-equipped power supply"),
+			Normal("and reboot the Link"),
+		);
+
+		crate::bus!(bus, dev_blinken_light, Error);
+
+		future::pending::<()>().await; // never continue
+	}
+
+	// Signal all good
 	crate::bus!(bus, dev_leds, SetSystemIndicator(Rgb::new(2, 18, 2)));
 	crate::bus!(bus, dev_blinken_light, Idle);
 
