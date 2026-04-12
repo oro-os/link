@@ -2,9 +2,13 @@ use core::future;
 
 use embassy_stm32::gpio::Output;
 use embassy_sync::once_lock::OnceLock;
-use embassy_time::Timer;
+use embassy_time::{Duration, Timer};
 
-use crate::{color::Rgb, nvram::LastBootFailure, service::svc_mqtt::Mqtt};
+use crate::{
+	color::Rgb,
+	nvram::LastBootFailure,
+	service::{svc_mqtt::Mqtt, svc_mqtt_config::Wol},
+};
 
 pub struct Config {
 	pub mqtt: &'static OnceLock<Mqtt>,
@@ -94,7 +98,7 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 	let usb_iface = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_USB_IFACE);
 	let _boot_source = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_BOOT_SOURCE);
 	let require_4a_vbus = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_REQUIRE_4A_VBUS);
-	let _wol = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_WOL);
+	let wol = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_WOL);
 
 	// Set the USB output selector
 	match usb_iface {
@@ -135,30 +139,8 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 	crate::bus!(bus, dev_leds, SetSystemIndicator(Rgb::new(2, 18, 2)));
 	crate::bus!(bus, dev_blinken_light, Idle);
 
-	// SAFETY: keep the number of seconds in the single digits.
-	#[expect(static_mut_refs)]
-	for s in (1..=5).rev() {
-		static mut TIMEOUT_MSG: heapless::String<24> = heapless::String::new();
-		// SAFETY: this is the only place it's used and it's used in lockstep;
-		// SAFETY: technically UB but not a problem in this very specific case.
-		// SAFETY: if the seconds is ever increased to double digits, a race
-		// SAFETY: condition could occur, so don't do that.
-		unsafe {
-			TIMEOUT_MSG = heapless::format!("standing by in {s}s...").unwrap();
-		}
-
-		crate::oled_status!(
-			bus,
-			Bold("MQTT connected"),
-			Normal(unsafe { TIMEOUT_MSG.as_str() })
-		);
-
-		Timer::after_secs(1).await;
-	}
-
 	loop {
 		// Reset state
-		crate::bus!(bus, dev_leds, SetJobIndicator(Rgb::new(2, 1, 1)));
 		crate::bus!(
 			bus,
 			svc_oled,
@@ -184,6 +166,13 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 		crate::bus!(bus, svc_vbus_power, Off);
 		crate::bus!(bus, svc_psu, Off);
 
+		match wol {
+			Wol::Off => crate::bus!(bus, svc_wol, Off),
+			Wol::Mins5 => crate::bus!(bus, svc_wol, After(Duration::from_secs(5 * 60))),
+			Wol::Mins10 => crate::bus!(bus, svc_wol, After(Duration::from_secs(10 * 60))),
+			Wol::Mins30 => crate::bus!(bus, svc_wol, After(Duration::from_secs(30 * 60))),
+		}
+
 		defmt::info!("waiting for PR...");
 		if !super::svc_mqtt_config::CFG_PR_RUN.next().await {
 			defmt::debug!("pr sent false; ignoring");
@@ -191,6 +180,8 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 		}
 
 		defmt::info!("PR run started");
+
+		crate::bus!(bus, svc_wol, Off);
 
 		crate::bus!(
 			bus,

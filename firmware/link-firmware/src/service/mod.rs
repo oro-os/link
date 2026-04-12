@@ -21,6 +21,7 @@ pub mod svc_oled;
 pub mod svc_oled_pwr;
 pub mod svc_psu;
 pub mod svc_vbus_power;
+pub mod svc_wol;
 
 include!("./_macro.inc.rs");
 
@@ -43,6 +44,7 @@ services! {
                      #[bus(false)] #[rx(false)]               svc_mqtt_config,
                                                               svc_vbus_power,
                      #[bus(false)]                            svc_psu,
+    #[config(false)]                                          svc_wol,
                      #[bus(false)] #[rx(false)]               failsafe_board_oc,
                      #[bus(false)] #[rx(false)]               failsafe_aux_vbus_oc,
                      #[bus(false)] #[rx(false)]               failsafe_ulpi_oc,

@@ -22,7 +22,6 @@ use w5500_ll::{Interrupt, Protocol, Sn, SocketCommand, SocketMode, eh1::vdm::W55
 ///
 /// Blocks the CPU indefinitely, puts the system into a WoL
 /// state, and relies on an external WoL packet to wake it up.
-#[expect(unused, reason = "temporary")]
 pub unsafe fn go_to_sleep_and_wait_for_wol() -> ! {
 	// NOTE: **NEVER** make this function async.
 
