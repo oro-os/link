@@ -31,7 +31,7 @@ services! {
                      #[bus(false)] #[rx(false)]               dev_power_monitor,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_sdcard,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_syseth,
-                     #[bus(false)] #[rx(false)] #[skip(true)] dev_usb,
+                     #[bus(false)] #[rx(false)]               dev_usb,
                                    #[rx(false)]               svc_main,
     #[config(false)]                                          svc_oled_pwr,
     #[config(false)]                                          svc_oled,

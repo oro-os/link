@@ -120,14 +120,13 @@ impl SutArch {
 	}
 }
 
-#[derive(Clone, Copy, Debug, serde::Deserialize, serde::Serialize)]
+#[derive(Clone, Copy, Debug, serde::Deserialize, serde::Serialize, Default)]
 pub enum UsbIface {
+	#[default]
 	#[serde(rename = "port")]
 	Port,
 	#[serde(rename = "header")]
 	Header,
-	#[serde(rename = "off")]
-	Off,
 }
 
 impl UsbIface {

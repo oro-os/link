@@ -243,7 +243,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	)
 	.unwrap();
 
-	let _usb_output_selector = Output::new(p.PA7, Level::Low, Speed::Low);
+	let usb_output_selector = Output::new(p.PA7, Level::High, Speed::Low);
 	let _ulpi_oc = ExtiInput::new(p.PB14, p.EXTI14, Pull::None, Irqs);
 	let ulpi_rst = Output::new(p.PB15, Level::Low, Speed::Low);
 	static EP_OUT_BUFFER: StaticCell<[u8; 256]> = StaticCell::new();
@@ -483,7 +483,8 @@ pub async fn main(spawner: Spawner) -> ! {
 		svc_main {
 			mqtt,
 			aux_vbus_sense,
-			last_boot_failure
+			last_boot_failure,
+			usb_output_selector
 		},
 		svc_mqtt {
 			stack: exteth_stack,

@@ -210,7 +210,6 @@ impl FromStr for PowerType {
 pub enum UsbIface {
 	Port,
 	Header,
-	Off,
 }
 
 impl FromStr for UsbIface {
@@ -220,7 +219,6 @@ impl FromStr for UsbIface {
 		match s {
 			"port" => Ok(Self::Port),
 			"header" => Ok(Self::Header),
-			"off" => Ok(Self::Off),
 			other => {
 				defmt::warn!("got invalid usb iface type: {}", other);
 				Err(())

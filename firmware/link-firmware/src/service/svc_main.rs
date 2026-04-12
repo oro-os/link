@@ -1,5 +1,6 @@
 use core::future;
 
+use embassy_stm32::gpio::Output;
 use embassy_sync::once_lock::OnceLock;
 use embassy_time::Timer;
 
@@ -9,6 +10,7 @@ pub struct Config {
 	pub mqtt: &'static OnceLock<Mqtt>,
 	pub aux_vbus_sense: bool,
 	pub last_boot_failure: LastBootFailure,
+	pub usb_output_selector: Output<'static>,
 }
 
 #[embassy_executor::task]
@@ -17,6 +19,7 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 		mqtt,
 		aux_vbus_sense,
 		last_boot_failure,
+		mut usb_output_selector,
 	} = config;
 
 	// Was the last boot a failure?
@@ -88,10 +91,22 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 	}
 
 	let _power_type = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_POWER_TYPE);
-	let _usb_iface = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_USB_IFACE);
+	let usb_iface = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_USB_IFACE);
 	let _boot_source = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_BOOT_SOURCE);
 	let require_4a_vbus = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_REQUIRE_4A_VBUS);
 	let _wol = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_WOL);
+
+	// Set the USB output selector
+	match usb_iface {
+		crate::service::svc_mqtt_config::UsbIface::Header => {
+			usb_output_selector.set_low();
+			defmt::debug!("USB is routed to header");
+		}
+		crate::service::svc_mqtt_config::UsbIface::Port => {
+			usb_output_selector.set_high();
+			defmt::debug!("USB is routed to port");
+		}
+	}
 
 	// Make sure 4A VBUS line is sensed if needed.
 	// Note that the sense line is active-low, so if it's high, it means there's no
