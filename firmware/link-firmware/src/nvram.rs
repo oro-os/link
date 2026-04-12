@@ -130,6 +130,8 @@ pub enum LastBootFailure {
 	AuxVbusOC      = 2,
 	/// The main VBUS OC warn line was asserted.
 	VbusOC         = 3,
+	/// The ULPI VBUS OC line was asserted.
+	UlpiOC         = 4,
 }
 
 impl LastBootFailure {
@@ -139,6 +141,7 @@ impl LastBootFailure {
 			Self::PowerMonitorOC => "power monitor (board 5V) overcurrent",
 			Self::AuxVbusOC => "high-current VBUS line overcurrent",
 			Self::VbusOC => "main (low-current) VBUS line overcurrent",
+			Self::UlpiOC => "ULPI VBUS line overcurrent",
 		}
 	}
 }

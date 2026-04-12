@@ -244,7 +244,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	.unwrap();
 
 	let usb_output_selector = Output::new(p.PA7, Level::High, Speed::Low);
-	let _ulpi_oc = ExtiInput::new(p.PB14, p.EXTI14, Pull::None, Irqs);
+	let ulpi_oc = ExtiInput::new(p.PB14, p.EXTI14, Pull::None, Irqs);
 	let ulpi_rst = Output::new(p.PB15, Level::Low, Speed::Low);
 	static EP_OUT_BUFFER: StaticCell<[u8; 256]> = StaticCell::new();
 	let ep_out_buffer = EP_OUT_BUFFER.init([0; 256]);
@@ -504,6 +504,10 @@ pub async fn main(spawner: Spawner) -> ! {
 		},
 		failsafe_aux_vbus_oc {
 			aux_vbus_oc,
+			failure
+		},
+		failsafe_ulpi_oc {
+			ulpi_oc,
 			failure
 		},
 		svc_vbus_power {
