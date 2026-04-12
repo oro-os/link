@@ -44,14 +44,16 @@ impl<T> Volatile<T> {
 #[derive(defmt::Format)]
 #[repr(C)]
 pub struct NvRam {
-	integrity:  Integrity,
-	pub reboot: NvRamRebootStats,
+	integrity:   Integrity,
+	pub reboot:  NvRamRebootStats,
+	pub failure: Volatile<LastBootFailure>,
 }
 
 impl NvRam {
 	pub fn reset(&mut self) {
 		self.integrity.reset();
 		self.reboot.reset();
+		self.failure.take_and_reset();
 	}
 }
 
@@ -111,6 +113,51 @@ impl IntegrityData {
 			sizeof:  core::mem::size_of::<NvRam>(),
 			nonce:   crate::rand::next_u32(),
 		}
+	}
+}
+
+#[derive(defmt::Format, Clone, Copy, Default, PartialEq, Eq)]
+#[repr(u8)]
+pub enum LastBootFailure {
+	/// There was no failure; board rebooted
+	/// gracefully.
+	#[default]
+	None           = 0,
+	/// The board's power monitor (board-wide 5V monitor)
+	/// tripped the OC interrupt.
+	PowerMonitorOC = 1,
+	/// The aux VBUS OC warn line was asserted.
+	AuxVbusOC      = 2,
+	/// The main VBUS OC warn line was asserted.
+	VbusOC         = 3,
+}
+
+impl LastBootFailure {
+	pub const fn as_str(&self) -> &'static str {
+		match self {
+			Self::None => "ok",
+			Self::PowerMonitorOC => "power monitor (board 5V) overcurrent",
+			Self::AuxVbusOC => "high-current VBUS line overcurrent",
+			Self::VbusOC => "main (low-current) VBUS line overcurrent",
+		}
+	}
+}
+
+impl AsRef<[u8]> for LastBootFailure {
+	fn as_ref(&self) -> &[u8] {
+		self.as_str().as_bytes()
+	}
+}
+
+pub trait VolatileLastBootFailure {
+	fn take_and_reset(&mut self) -> LastBootFailure;
+}
+
+impl VolatileLastBootFailure for Volatile<LastBootFailure> {
+	fn take_and_reset(&mut self) -> LastBootFailure {
+		let v = self.read();
+		self.write(LastBootFailure::default());
+		v
 	}
 }
 

@@ -116,10 +116,13 @@ pub async fn run(config: Config) {
 		super::dev_leds::STAT_CHIP_ENABLED,
 		super::svc_leds::STAT_STATE,
 		super::svc_leds::STAT_TARGET,
+		super::svc_vbus_power::STAT_VBUS_STATE,
 		crate::STAT_INITIALIZED,
 		crate::STAT_VERSION_MAJOR,
 		crate::STAT_VERSION_MINOR,
 		crate::STAT_VERSION_PATCH,
+		crate::STAT_LAST_BOOT_FAILURE,
+		crate::STAT_AUX_VBUS_SENSE,
 	);
 
 	defmt::debug!("all stat spawners have started; finishing run");

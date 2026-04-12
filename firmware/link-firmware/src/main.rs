@@ -2,6 +2,7 @@
 #![no_main]
 #![feature(never_type)]
 #![feature(adt_const_params)]
+#![feature(unsafe_cell_access)]
 
 pub(crate) mod atomic;
 pub(crate) mod channel;
@@ -16,7 +17,7 @@ pub(crate) mod unique_id;
 pub(crate) mod version;
 pub(crate) mod wol;
 
-use core::net::Ipv4Addr;
+use core::{cell::UnsafeCell, net::Ipv4Addr};
 
 use defmt_rtt as _;
 use embassy_embedded_hal::shared_bus::asynch::spi::SpiDevice;
@@ -37,12 +38,17 @@ use embedded_hal_bus::spi::ExclusiveDevice;
 use panic_probe as _;
 use static_cell::StaticCell;
 
-use crate::service::svc_mqtt_stats::{BoolStat, QoS, StrStat};
+use crate::{
+	nvram::{LastBootFailure, Volatile, VolatileLastBootFailure},
+	service::svc_mqtt_stats::{BoolStat, Stat, StrStat},
+};
 
-pub static STAT_INITIALIZED: BoolStat<{ QoS::Q1 }> = BoolStat::new("status/initialized");
-pub static STAT_VERSION_MAJOR: StrStat<u64, 4, { QoS::Q1 }> = StrStat::new("version/major");
-pub static STAT_VERSION_MINOR: StrStat<u64, 4, { QoS::Q1 }> = StrStat::new("version/minor");
-pub static STAT_VERSION_PATCH: StrStat<u64, 4, { QoS::Q1 }> = StrStat::new("version/patch");
+pub static STAT_INITIALIZED: BoolStat = BoolStat::new("status/initialized");
+pub static STAT_VERSION_MAJOR: StrStat<u64, 4> = StrStat::new("version/major");
+pub static STAT_VERSION_MINOR: StrStat<u64, 4> = StrStat::new("version/minor");
+pub static STAT_VERSION_PATCH: StrStat<u64, 4> = StrStat::new("version/patch");
+pub static STAT_LAST_BOOT_FAILURE: Stat<LastBootFailure> = Stat::new("status/boot_failure");
+pub static STAT_AUX_VBUS_SENSE: BoolStat = BoolStat::new("power/aux_vbus_sense");
 
 bind_interrupts!(struct Irqs {
 	OTG_HS => usb::InterruptHandler<peripherals::USB_OTG_HS>;
@@ -135,6 +141,13 @@ pub async fn main(spawner: Spawner) -> ! {
 		"current fast reboot count: {}",
 		nv_ram.reboot.fast_count.read()
 	);
+
+	let last_boot_failure = nv_ram.failure.take_and_reset();
+	match last_boot_failure {
+		nvram::LastBootFailure::None => defmt::info!("last boot failure: {:?}", last_boot_failure),
+		other => defmt::error!("last boot failure: {:?}", other),
+	}
+	STAT_LAST_BOOT_FAILURE.set(last_boot_failure);
 
 	// let pflash = match flash::read_pflash() {
 	// 	Ok(pflash) => pflash,
@@ -403,11 +416,14 @@ pub async fn main(spawner: Spawner) -> ! {
 	let _gpio4 = Output::new(p.PC6, Level::Low, Speed::Low);
 	let _gpio5 = Output::new(p.PB4, Level::Low, Speed::Low);
 
-	let _vbus_oc = ExtiInput::new(p.PD15, p.EXTI15, Pull::None, Irqs);
-	let _vbus_en = Output::new(p.PE15, Level::Low, Speed::Low);
-	let aux_vbus_sense = Input::new(p.PA11, Pull::None);
-	let _aux_vbus_oc = ExtiInput::new(p.PA12, p.EXTI12, Pull::None, Irqs);
-	let _aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
+	let vbus_oc = ExtiInput::new(p.PD15, p.EXTI15, Pull::None, Irqs);
+	let vbus_en = Output::new(p.PE15, Level::Low, Speed::Low);
+	let aux_vbus_sense_pin = Input::new(p.PA11, Pull::None);
+	// Have we sensed the aux vbus line?
+	let aux_vbus_sense = aux_vbus_sense_pin.is_low();
+	STAT_AUX_VBUS_SENSE.set(aux_vbus_sense);
+	let aux_vbus_oc = ExtiInput::new(p.PA12, p.EXTI12, Pull::None, Irqs);
+	let aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
 	// TODO: Set `Pull::None` once external pull-up has been added
 	// TODO: https://github.com/oro-os/link/issues/112
 	let board_power_alert = ExtiInput::new(p.PE9, p.EXTI9, Pull::Up, Irqs);
@@ -419,6 +435,10 @@ pub async fn main(spawner: Spawner) -> ! {
 
 	static MQTT_CELL: StaticCell<OnceLock<service::svc_mqtt::Mqtt>> = StaticCell::new();
 	let mqtt: &'static _ = MQTT_CELL.init(OnceLock::new());
+
+	static FAILURE_REF: StaticCell<UnsafeCell<&'static mut Volatile<LastBootFailure>>> =
+		StaticCell::new();
+	let failure = FAILURE_REF.init(UnsafeCell::new(&mut nv_ram.failure));
 
 	service_config! {
 		dev_blinken_light {
@@ -462,7 +482,8 @@ pub async fn main(spawner: Spawner) -> ! {
 		},
 		svc_main {
 			mqtt,
-			aux_vbus_sense
+			aux_vbus_sense,
+			last_boot_failure
 		},
 		svc_mqtt {
 			stack: exteth_stack,
@@ -477,7 +498,19 @@ pub async fn main(spawner: Spawner) -> ! {
 			spawner
 		},
 		failsafe_board_oc {
-			board_power_alert
+			board_power_alert,
+			failure
+		},
+		failsafe_aux_vbus_oc {
+			aux_vbus_oc,
+			failure
+		},
+		svc_vbus_power {
+			aux_vbus_sense,
+			aux_vbus_en,
+			vbus_en,
+			vbus_oc,
+			failure
 		}
 	}
 	.spawn_all(spawner);

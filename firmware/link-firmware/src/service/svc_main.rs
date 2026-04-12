@@ -1,14 +1,14 @@
 use core::future;
 
-use embassy_stm32::gpio::Input;
 use embassy_sync::once_lock::OnceLock;
 use embassy_time::Timer;
 
-use crate::{color::Rgb, service::svc_mqtt::Mqtt};
+use crate::{color::Rgb, nvram::LastBootFailure, service::svc_mqtt::Mqtt};
 
 pub struct Config {
-	pub mqtt:           &'static OnceLock<Mqtt>,
-	pub aux_vbus_sense: Input<'static>,
+	pub mqtt: &'static OnceLock<Mqtt>,
+	pub aux_vbus_sense: bool,
+	pub last_boot_failure: LastBootFailure,
 }
 
 #[embassy_executor::task]
@@ -16,7 +16,29 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 	let Config {
 		mqtt,
 		aux_vbus_sense,
+		last_boot_failure,
 	} = config;
+
+	// Was the last boot a failure?
+	if last_boot_failure != LastBootFailure::None {
+		crate::bus!(bus, dev_blinken_light, Error);
+		crate::bus!(bus, dev_leds, SetSystemIndicator(Rgb::new(255, 0, 0)));
+		crate::bus!(
+			bus,
+			svc_oled_pwr,
+			SetState {
+				state: super::svc_oled_pwr::State::On,
+			}
+		);
+		crate::oled_status!(
+			bus,
+			Bold("!!  CRITICAL FAILURE  !!"),
+			Normal(last_boot_failure.as_str()),
+			Normal(""),
+			Normal("(board must be manually reset)")
+		);
+		future::pending::<!>().await; // never continue
+	}
 
 	// Initial LED state
 	crate::bus!(bus, dev_blinken_light, Config);
@@ -75,11 +97,11 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 	// Note that the sense line is active-low, so if it's high, it means there's no
 	// aux VBUS line.
 	defmt::debug!(
-		"checking 4A vbus requirements: required = {}, is_low = {}",
+		"checking 4A vbus requirements: required = {}, aux_vbus_sense = {}",
 		require_4a_vbus,
-		aux_vbus_sense.is_low()
+		aux_vbus_sense
 	);
-	if require_4a_vbus && aux_vbus_sense.is_high() {
+	if require_4a_vbus && !aux_vbus_sense {
 		crate::bus!(bus, dev_leds, SetSystemIndicator(Rgb::new(255, 0, 0)));
 
 		crate::oled_status!(
@@ -91,7 +113,7 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 
 		crate::bus!(bus, dev_blinken_light, Error);
 
-		future::pending::<()>().await; // never continue
+		future::pending::<!>().await; // never continue
 	}
 
 	// Signal all good
@@ -120,6 +142,7 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 	}
 
 	loop {
+		// Reset state
 		crate::bus!(bus, dev_leds, SetJobIndicator(Rgb::new(2, 1, 1)));
 		crate::bus!(
 			bus,
@@ -143,6 +166,7 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 			}
 		);
 		crate::bus!(bus, dev_blinken_light, Idle);
+		crate::bus!(bus, svc_vbus_power, Off);
 
 		defmt::info!("waiting for PR...");
 		if !super::svc_mqtt_config::CFG_PR_RUN.next().await {
@@ -199,6 +223,7 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 		);
 
 		// XXX
-		Timer::after_secs(10).await;
+		crate::bus!(bus, svc_vbus_power, On);
+		Timer::after_secs(30).await;
 	}
 }
