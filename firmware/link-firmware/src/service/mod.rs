@@ -6,7 +6,7 @@ pub mod dev_power_monitor;
 pub mod dev_sdcard;
 pub mod dev_syseth;
 pub mod dev_usb;
-pub mod svc_failsafe;
+pub mod failsafe_board_oc;
 // pub mod dev_usart; // TODO
 // pub mod dev_uart; // TODO
 pub mod svc_leds;
@@ -25,11 +25,10 @@ services! {
                      #[bus(false)] #[rx(false)]               dev_exteth,
                      #[bus(false)]                            dev_leds,
                      #[bus(false)]                            dev_oled,
-                                   #[rx(false)]               dev_power_monitor,
+                     #[bus(false)] #[rx(false)]               dev_power_monitor,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_sdcard,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_syseth,
                      #[bus(false)] #[rx(false)] #[skip(true)] dev_usb,
-    #[config(false)] #[bus(false)]                            svc_failsafe,
                                    #[rx(false)]               svc_main,
     #[config(false)]                                          svc_oled_pwr,
     #[config(false)]                                          svc_oled,
@@ -37,6 +36,7 @@ services! {
                      #[bus(false)] #[rx(false)]               svc_mqtt,
                      #[bus(false)] #[rx(false)]               svc_mqtt_stats,
                      #[bus(false)] #[rx(false)]               svc_mqtt_config,
+                     #[bus(false)] #[rx(false)]               failsafe_board_oc,
 }
 
 #[macro_export]

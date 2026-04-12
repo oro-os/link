@@ -408,7 +408,9 @@ pub async fn main(spawner: Spawner) -> ! {
 	let aux_vbus_sense = Input::new(p.PA11, Pull::None);
 	let _aux_vbus_oc = ExtiInput::new(p.PA12, p.EXTI12, Pull::None, Irqs);
 	let _aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
-	let _board_power_alert = ExtiInput::new(p.PE9, p.EXTI9, Pull::None, Irqs);
+	// TODO: Set `Pull::None` once external pull-up has been added
+	// TODO: https://github.com/oro-os/link/issues/112
+	let board_power_alert = ExtiInput::new(p.PE9, p.EXTI9, Pull::Up, Irqs);
 	let _psu_on = Output::new(p.PD10, Level::Low, Speed::Low);
 	let _sut_pwr_switch = Output::new(p.PE12, Level::Low, Speed::Low);
 	let _sut_rst_switch = Output::new(p.PE10, Level::Low, Speed::Low);
@@ -473,6 +475,9 @@ pub async fn main(spawner: Spawner) -> ! {
 		svc_mqtt_config {
 			mqtt,
 			spawner
+		},
+		failsafe_board_oc {
+			board_power_alert
 		}
 	}
 	.spawn_all(spawner);

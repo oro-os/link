@@ -109,6 +109,7 @@ pub async fn run(config: Config) {
 		super::svc_oled_pwr::STAT_PWR_STATE,
 		super::svc_oled_pwr::STAT_PWR_TARGET,
 		super::dev_power_monitor::STAT_CURRENT,
+		super::failsafe_board_oc::STAT_OC_MA,
 		super::dev_blinken_light::STAT_CMD,
 		super::dev_oled::STAT_PWR_VREG,
 		super::dev_oled::STAT_BRIGHTNESS,
