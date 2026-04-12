@@ -6,7 +6,7 @@ use embassy_time::Timer;
 
 use crate::service::svc_mqtt_stats::StrStat;
 
-pub const ALERT_ON_CURRENT_MA: u16 = 400;
+pub const ALERT_ON_CURRENT_MA: u16 = 1900;
 
 pub static STAT_OC_MA: StrStat<u16, 7> = StrStat::new("power/oc_limit_board");
 
