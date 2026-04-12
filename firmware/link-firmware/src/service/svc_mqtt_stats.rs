@@ -117,6 +117,7 @@ pub async fn run(config: Config) {
 		super::svc_leds::STAT_STATE,
 		super::svc_leds::STAT_TARGET,
 		super::svc_vbus_power::STAT_VBUS_STATE,
+		super::svc_psu::STAT_PSU_ON,
 		crate::STAT_INITIALIZED,
 		crate::STAT_VERSION_MAJOR,
 		crate::STAT_VERSION_MINOR,

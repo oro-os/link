@@ -427,7 +427,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	// TODO: Set `Pull::None` once external pull-up has been added
 	// TODO: https://github.com/oro-os/link/issues/112
 	let board_power_alert = ExtiInput::new(p.PE9, p.EXTI9, Pull::Up, Irqs);
-	let _psu_on = Output::new(p.PD10, Level::Low, Speed::Low);
+	let psu_on = Output::new(p.PD10, Level::Low, Speed::Low);
 	let _sut_pwr_switch = Output::new(p.PE12, Level::Low, Speed::Low);
 	let _sut_rst_switch = Output::new(p.PE10, Level::Low, Speed::Low);
 
@@ -511,6 +511,9 @@ pub async fn main(spawner: Spawner) -> ! {
 			vbus_en,
 			vbus_oc,
 			failure
+		},
+		svc_psu {
+			psu_on
 		}
 	}
 	.spawn_all(spawner);

@@ -167,6 +167,7 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 		);
 		crate::bus!(bus, dev_blinken_light, Idle);
 		crate::bus!(bus, svc_vbus_power, Off);
+		crate::bus!(bus, svc_psu, Off);
 
 		defmt::info!("waiting for PR...");
 		if !super::svc_mqtt_config::CFG_PR_RUN.next().await {

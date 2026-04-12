@@ -10,11 +10,15 @@ use embassy_time::Timer;
 
 use crate::{Stat, Volatile, nvram::LastBootFailure};
 
-const AUX_VBUS_SWITCH_TIME_MS: u64 = 10;
+// The ATX power standard mandates a maximum of 20ms ramp-up time
+// for PSUs' 5V rails to be active after PS_ON is asserted.
+// We're generous, giving them a 2ms grace time. Too much more
+// and we risk tripping the on-board fuse.
+const AUX_VBUS_SWITCH_TIME_MS: u64 = 22;
 
 pub static STAT_VBUS_STATE: Stat<State> = Stat::new("power/vbus_state");
 
-pub type Channel = crate::channel::Channel<Cmd>;
+pub type Channel = crate::channel::Channel<Cmd, 2>;
 
 pub struct Config {
 	pub vbus_en:        Output<'static>,
@@ -48,7 +52,7 @@ impl AsRef<[u8]> for State {
 }
 
 #[embassy_executor::task]
-pub async fn run(rx: &'static Channel, config: Config) -> ! {
+pub async fn run(bus: super::Bus, rx: &'static Channel, config: Config) -> ! {
 	let Config {
 		mut vbus_en,
 		mut vbus_oc,
@@ -78,6 +82,7 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 				let Either::First(next) = select(
 					next_cmd(rx, cmd),
 					run_vbus_driver(
+						&bus,
 						&mut vbus_en,
 						&mut vbus_oc,
 						&mut aux_vbus_en,
@@ -93,6 +98,7 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 }
 
 async fn run_vbus_driver(
+	bus: &super::Bus,
 	vbus_en: &mut Output<'static>,
 	vbus_oc: &mut ExtiInput<'static, Async>,
 	aux_vbus_en: &mut OutputOpenDrain<'static>,
@@ -131,6 +137,7 @@ async fn run_vbus_driver(
 	defmt::debug!("main VBUS OC line asserted; enabling aux power");
 	aux_vbus_en.set_low();
 	STAT_VBUS_STATE.set(State::AuxVbus);
+	crate::bus!(bus, svc_psu, On);
 	Timer::after_millis(AUX_VBUS_SWITCH_TIME_MS).await;
 	defmt::debug!("aux VBUS power enabled; switching off main VBUS line");
 	vbus_en.set_low();
