@@ -292,7 +292,7 @@ pub async fn main(spawner: Spawner) -> ! {
 		},
 	)));
 
-	let _sd_oc = ExtiInput::new(p.PA6, p.EXTI6, Pull::None, Irqs);
+	let sd_oc = ExtiInput::new(p.PA6, p.EXTI6, Pull::None, Irqs);
 	let sd_sense = ExtiInput::new(p.PC13, p.EXTI13, Pull::None, Irqs);
 	let _sd_sense_cable = ExtiInput::new(p.PD8, p.EXTI8, Pull::None, Irqs);
 	// TODO(qix-): Switch back to open drain after pullup is added
@@ -508,6 +508,10 @@ pub async fn main(spawner: Spawner) -> ! {
 		},
 		failsafe_ulpi_oc {
 			ulpi_oc,
+			failure
+		},
+		failsafe_sd_oc {
+			sd_oc,
 			failure
 		},
 		svc_vbus_power {

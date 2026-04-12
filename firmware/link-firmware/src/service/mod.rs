@@ -10,6 +10,7 @@ pub mod dev_usb;
 // pub mod dev_uart; // TODO
 pub mod failsafe_aux_vbus_oc;
 pub mod failsafe_board_oc;
+pub mod failsafe_sd_oc;
 pub mod failsafe_ulpi_oc;
 pub mod svc_leds;
 pub mod svc_main;
@@ -45,6 +46,7 @@ services! {
                      #[bus(false)] #[rx(false)]               failsafe_board_oc,
                      #[bus(false)] #[rx(false)]               failsafe_aux_vbus_oc,
                      #[bus(false)] #[rx(false)]               failsafe_ulpi_oc,
+                     #[bus(false)] #[rx(false)]               failsafe_sd_oc,
 }
 
 #[macro_export]

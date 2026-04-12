@@ -132,6 +132,8 @@ pub enum LastBootFailure {
 	VbusOC         = 3,
 	/// The ULPI VBUS OC line was asserted.
 	UlpiOC         = 4,
+	/// The MicroSD OC line was asserted.
+	SdOC           = 5,
 }
 
 impl LastBootFailure {
@@ -142,6 +144,7 @@ impl LastBootFailure {
 			Self::AuxVbusOC => "high-current VBUS line overcurrent",
 			Self::VbusOC => "main (low-current) VBUS line overcurrent",
 			Self::UlpiOC => "ULPI VBUS line overcurrent",
+			Self::SdOC => "microSD OC line overcurrent",
 		}
 	}
 }
