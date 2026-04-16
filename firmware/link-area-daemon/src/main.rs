@@ -1,7 +1,11 @@
 #![feature(never_type)]
+#![feature(iter_intersperse)]
+
+use std::sync::Arc;
 
 use anyhow::{Context, Result};
 use clap::Parser;
+use tokio::sync::Semaphore;
 
 pub mod config;
 pub mod daemon_config_service;
@@ -39,6 +43,8 @@ async fn pmain() -> Result<()> {
 
 	let (link_discovery_sender, link_discovery_receiver) = tokio::sync::mpsc::channel(16);
 
+	let config_ready = Arc::new(Semaphore::new(0));
+
 	log::debug!("entering main loop");
 	tokio::select! {
 		res = tokio::signal::ctrl_c() => {
@@ -53,10 +59,16 @@ async fn pmain() -> Result<()> {
 			&config.link,
 			link_connection_daemon_connection_config,
 			daemon_port,
+			Arc::clone(&config_ready),
 		) => {
 			res.context("link connection handler failed")?;
 		}
-		res = daemon_config_service::run(&config.link, daemon_connection_config, daemon_port) => {
+		res = daemon_config_service::run(
+			&config.link,
+			daemon_connection_config,
+			daemon_port,
+			Arc::clone(&config_ready)
+		) => {
 			res.context("daemon config service failed")?;
 		}
 	}

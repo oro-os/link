@@ -1,8 +1,9 @@
-use std::{collections::HashMap, future::pending};
+use std::{collections::HashMap, future::pending, sync::Arc};
 
 use anyhow::Result;
 use embassy_sync::blocking_mutex::raw::CriticalSectionRawMutex;
 use mqttrust::{MqttClient, Publish, QoS, Subscribe, SubscribeTopic};
+use tokio::sync::Semaphore;
 
 use crate::{config::LinkConfig, daemon_connection::DaemonConnectionConfig};
 
@@ -14,15 +15,28 @@ pub async fn run(
 	links: &HashMap<String, LinkConfig>,
 	daemon_connection_config: DaemonConnectionConfig,
 	daemon_port: u16,
+	config_ready: Arc<Semaphore>,
 ) -> Result<!> {
 	let client_id = daemon_connection_config
 		.mqtt_client_id()
 		.try_into()
 		.map_err(|_| anyhow::anyhow!("daemon MQTT client id is too long"))?;
+	let last_will_message = links
+		.keys()
+		.map(|id| format!("-{id}"))
+		.intersperse(";".into())
+		.collect::<String>();
 	let mqtt_config = mqttrust::Config::builder()
 		.client_id(client_id)
 		.keepalive_interval(embassy_time::Duration::from_secs(20))
 		.backoff_algo(mqtt_backoff)
+		.last_will(
+			mqttrust::LastWill::builder()
+				.qos(QoS::AtLeastOnce)
+				.topic("orolink/register")
+				.data(last_will_message.as_bytes())
+				.build(),
+		)
 		.build();
 	let mut state =
 		mqttrust::State::<CriticalSectionRawMutex, MQTT_TX_BUFFER_SIZE, MQTT_RX_BUFFER_SIZE>::new();
@@ -36,7 +50,7 @@ pub async fn run(
 		} => {
 			anyhow::bail!("daemon MQTT stack stopped unexpectedly");
 		}
-		res = handle_config_requests(links, &mqtt_client) => {
+		res = handle_config_requests(links, &mqtt_client, config_ready) => {
 			res?;
 		}
 	}
@@ -45,7 +59,27 @@ pub async fn run(
 async fn handle_config_requests(
 	links: &HashMap<String, LinkConfig>,
 	mqtt_client: &MqttClient<'_, CriticalSectionRawMutex>,
+	config_ready: Arc<Semaphore>,
 ) -> Result<!> {
+	// Advertise which links we have available and then signal that
+	// we're free to start looking for links.
+	let register_message = links
+		.iter()
+		.map(|(id, config)| format!("+{id}={}", config.machine_action_label))
+		.intersperse(";".into())
+		.collect::<String>();
+	mqtt_client
+		.publish(
+			mqttrust::Publish::builder()
+				.qos(QoS::AtLeastOnce)
+				.topic_name("orolink/register")
+				.payload(register_message.as_bytes())
+				.build(),
+		)
+		.await
+		.map_err(|err| anyhow::anyhow!("failed to announce links via orolink/register: {err:?}"))?;
+	config_ready.add_permits(1);
+
 	let request_topics = build_request_topics(links)?;
 
 	if request_topics.is_empty() {
