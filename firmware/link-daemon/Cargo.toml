@@ -19,6 +19,7 @@ env_logger = "0.11.10"
 log = "0.4.29"
 rustls = "0.23.37"
 rustls-pemfile = "2.2.0"
-tokio = { version = "1.50.0", features = ["io-util", "macros", "net", "rt-multi-thread", "signal"] }
+tokio = { version = "1.50.0", features = ["io-util", "macros", "net", "rt-multi-thread", "signal", "time"] }
 tokio-rustls = "0.26.4"
 x509-parser = "0.16.0"
+mqtt-async-client = { version = "0.3.1", default-features = false }

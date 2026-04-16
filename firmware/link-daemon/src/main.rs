@@ -1,9 +1,13 @@
+#![feature(never_type)]
+
 use std::path::PathBuf;
 
 use anyhow::{Context, Result};
 use clap::Parser;
 
 mod area_controller_tcp_listener;
+pub(crate) mod link_id;
+mod link_registration_tracker;
 mod mqtt_proxy;
 
 #[derive(Debug, Parser)]
@@ -50,11 +54,12 @@ async fn pmain() -> Result<()> {
 			&opts.tls_cert,
 			&opts.tls_key,
 		)?;
+
 	let proxy_config = mqtt_proxy::Config {
 		listen_addr: opts.listen_addr.0,
 		listen_port: opts.listen_port,
 		area_controller_listener_config,
-		mqtt_host: opts.mqtt_host,
+		mqtt_host: opts.mqtt_host.clone(),
 		mqtt_port: opts.mqtt_port,
 	};
 
@@ -63,15 +68,16 @@ async fn pmain() -> Result<()> {
 		res = tokio::signal::ctrl_c() => {
 			res.context("failed to listen for ctrl-c")?;
 			log::info!("received ctrl-c, shutting down link-daemon");
-			return Ok(());
 		}
 		res = mqtt_proxy::run(proxy_config) => {
 			res.context("MQTT proxy task failed")?;
 		}
+		res = link_registration_tracker::run(opts.mqtt_host.clone(), opts.mqtt_port) => {
+			res.context("link registration tracker failed")?;
+		}
 	}
 
-	log::warn!("one or more services have stopped unexpectedly, shutting down");
-	anyhow::bail!("service stopped")
+	Ok(())
 }
 
 #[tokio::main]

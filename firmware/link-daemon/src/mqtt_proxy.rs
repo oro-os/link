@@ -14,7 +14,7 @@ pub struct Config {
 	pub mqtt_port: u16,
 }
 
-pub async fn run(config: Config) -> Result<()> {
+pub async fn run(config: Config) -> Result<!> {
 	let listener = AreaControllerTcpListener::bind(
 		config.area_controller_listener_config.clone(),
 		(config.listen_addr.as_str(), config.listen_port),
