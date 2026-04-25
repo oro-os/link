@@ -45,7 +45,7 @@ vars! {
 	21 => RWN<String<128>> CFG_PR_AUTHOR("pr_author"),
 	22 => RWN<i64> CFG_PR_NUMBER("pr_number"),
 	23 => RWN<PowerType> CFG_SUT_POWER_TYPE("sut_power_type"),
-	24 => RWN<bool> CFG_CONFIGURED("configured"),
+	24 => W<bool> CFG_CONFIGURED("configured"),
 	25 => RWN<Wol> CFG_WOL("wol"),
 	26 => RWN<UsbIface> CFG_SUT_USB_IFACE("sut_usb_iface"),
 	27 => RWN<BootSource> CFG_SUT_BOOT_SOURCE("sut_boot_source"),
