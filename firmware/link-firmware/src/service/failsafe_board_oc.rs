@@ -6,11 +6,9 @@ use core::cell::UnsafeCell;
 use embassy_stm32::{exti::ExtiInput, mode::Async};
 use embassy_time::Timer;
 
-use crate::{Volatile, nvram::LastBootFailure, service::svc_mqtt_stats::StrStat};
+use crate::{Volatile, nvram::LastBootFailure};
 
 pub const ALERT_ON_CURRENT_MA: u16 = 1900;
-
-pub static STAT_OC_MA: StrStat<u16, 7> = StrStat::new("power/oc_limit_board");
 
 pub struct Config {
 	pub board_power_alert: ExtiInput<'static, Async>,
@@ -29,7 +27,7 @@ pub async fn run(config: Config) -> ! {
 	// (and bring low high the alert pin).
 	Timer::after_millis(100).await;
 
-	STAT_OC_MA.set(ALERT_ON_CURRENT_MA);
+	crate::vars::STAT_BOARD_OC_MA.set(ALERT_ON_CURRENT_MA as i64);
 
 	board_power_alert.wait_for_low().await;
 	defmt::error!("board power OC alert; rebooting");

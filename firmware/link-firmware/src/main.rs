@@ -3,6 +3,7 @@
 #![feature(never_type)]
 #![feature(adt_const_params)]
 #![feature(unsafe_cell_access)]
+#![feature(impl_trait_in_assoc_type)]
 
 pub(crate) mod atomic;
 pub(crate) mod channel;
@@ -14,6 +15,7 @@ pub(crate) mod nvram;
 pub(crate) mod rand;
 pub(crate) mod service;
 pub(crate) mod unique_id;
+pub(crate) mod vars;
 pub(crate) mod version;
 pub(crate) mod wol;
 
@@ -38,17 +40,7 @@ use embedded_hal_bus::spi::ExclusiveDevice;
 use panic_probe as _;
 use static_cell::StaticCell;
 
-use crate::{
-	nvram::{LastBootFailure, Volatile, VolatileLastBootFailure},
-	service::svc_mqtt_stats::{BoolStat, Stat, StrStat},
-};
-
-pub static STAT_INITIALIZED: BoolStat = BoolStat::new("status/initialized");
-pub static STAT_VERSION_MAJOR: StrStat<u64, 4> = StrStat::new("version/major");
-pub static STAT_VERSION_MINOR: StrStat<u64, 4> = StrStat::new("version/minor");
-pub static STAT_VERSION_PATCH: StrStat<u64, 4> = StrStat::new("version/patch");
-pub static STAT_LAST_BOOT_FAILURE: Stat<LastBootFailure> = Stat::new("status/boot_failure");
-pub static STAT_AUX_VBUS_SENSE: BoolStat = BoolStat::new("power/aux_vbus_sense");
+use crate::nvram::{LastBootFailure, Volatile, VolatileLastBootFailure};
 
 bind_interrupts!(struct Irqs {
 	OTG_HS => usb::InterruptHandler<peripherals::USB_OTG_HS>;
@@ -147,7 +139,7 @@ pub async fn main(spawner: Spawner) -> ! {
 		nvram::LastBootFailure::None => defmt::info!("last boot failure: {:?}", last_boot_failure),
 		other => defmt::error!("last boot failure: {:?}", other),
 	}
-	STAT_LAST_BOOT_FAILURE.set(last_boot_failure);
+	crate::vars::STAT_LAST_BOOT_FAILURE.set(last_boot_failure.into());
 
 	// let pflash = match flash::read_pflash() {
 	// 	Ok(pflash) => pflash,
@@ -195,10 +187,10 @@ pub async fn main(spawner: Spawner) -> ! {
 	//};
 	let initialized = true;
 
-	STAT_INITIALIZED.set(initialized);
-	STAT_VERSION_MAJOR.set(crate::version::VERSION_MAJOR);
-	STAT_VERSION_MINOR.set(crate::version::VERSION_MINOR);
-	STAT_VERSION_PATCH.set(crate::version::VERSION_PATCH);
+	crate::vars::STAT_INITIALIZED.set(initialized);
+	crate::vars::STAT_VERSION_MAJOR.set(crate::version::VERSION_MAJOR as i64);
+	crate::vars::STAT_VERSION_MINOR.set(crate::version::VERSION_MINOR as i64);
+	crate::vars::STAT_VERSION_PATCH.set(crate::version::VERSION_PATCH as i64);
 
 	// This gets cleared on a successful boot later
 	nv_ram.reboot.in_progress.write(true);
@@ -421,7 +413,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	let aux_vbus_sense_pin = Input::new(p.PA11, Pull::None);
 	// Have we sensed the aux vbus line?
 	let aux_vbus_sense = aux_vbus_sense_pin.is_low();
-	STAT_AUX_VBUS_SENSE.set(aux_vbus_sense);
+	crate::vars::STAT_AUX_VBUS_SENSE.set(aux_vbus_sense);
 	let aux_vbus_oc = ExtiInput::new(p.PA12, p.EXTI12, Pull::None, Irqs);
 	let aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
 	// TODO: Set `Pull::None` once external pull-up has been added
@@ -432,9 +424,6 @@ pub async fn main(spawner: Spawner) -> ! {
 	let _sut_rst_switch = Output::new(p.PE10, Level::Low, Speed::Low);
 
 	defmt::info!("initialization complete; starting services...");
-
-	static MQTT_CELL: StaticCell<OnceLock<service::svc_mqtt::Mqtt>> = StaticCell::new();
-	let mqtt: &'static _ = MQTT_CELL.init(OnceLock::new());
 
 	static FAILURE_REF: StaticCell<UnsafeCell<&'static mut Volatile<LastBootFailure>>> =
 		StaticCell::new();
@@ -481,22 +470,9 @@ pub async fn main(spawner: Spawner) -> ! {
 			ulpi_rst,
 		},
 		svc_main {
-			mqtt,
 			aux_vbus_sense,
 			last_boot_failure,
 			usb_output_selector
-		},
-		svc_mqtt {
-			stack: exteth_stack,
-			mqtt
-		},
-		svc_mqtt_stats {
-			spawner,
-			mqtt
-		},
-		svc_mqtt_config {
-			mqtt,
-			spawner
 		},
 		failsafe_board_oc {
 			board_power_alert,
@@ -523,7 +499,10 @@ pub async fn main(spawner: Spawner) -> ! {
 		},
 		svc_psu {
 			psu_on
-		}
+		},
+		svc_qup {
+			stack: exteth_stack
+		},
 	}
 	.spawn_all(spawner);
 

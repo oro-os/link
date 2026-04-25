@@ -7,32 +7,28 @@ use clap::Parser;
 
 mod area_controller_tcp_listener;
 pub(crate) mod link_id;
-mod link_registration_tracker;
-mod mqtt_proxy;
+mod redis_proxy;
 
 #[derive(Debug, Parser)]
 struct Opts {
 	/// Address to bind for area-controller TLS connections.
 	#[clap(long, default_value = "0.0.0.0")]
-	listen_addr:      PathOrHost,
+	listen_addr: PathOrHost,
 	/// Port to bind for area-controller MQTT-over-TLS proxy traffic.
 	#[clap(long, default_value_t = 5544)]
-	listen_port:      u16,
+	listen_port: u16,
 	/// Directory containing allowed client public keys or certificates.
 	#[clap(long, default_value = "/etc/oro/linkd/allowed/")]
 	allowed_keys_dir: PathBuf,
 	/// TLS certificate chain to present to area controllers.
 	#[clap(long)]
-	tls_cert:         PathBuf,
+	tls_cert: PathBuf,
 	/// TLS private key matching `--tls-cert`.
 	#[clap(long)]
-	tls_key:          PathBuf,
-	/// Hostname or IP of the upstream MQTT broker.
-	#[clap(long, default_value = "127.0.0.1")]
-	mqtt_host:        String,
-	/// TCP port of the upstream MQTT broker.
-	#[clap(long, default_value_t = 1883)]
-	mqtt_port:        u16,
+	tls_key: PathBuf,
+	/// Redis connection URI
+	#[clap(long = "redis", default_value = "redis://localhost:6379")]
+	redis_connection_info: redis::ConnectionInfo,
 }
 
 #[derive(Clone, Debug)]
@@ -55,12 +51,11 @@ async fn pmain() -> Result<()> {
 			&opts.tls_key,
 		)?;
 
-	let proxy_config = mqtt_proxy::Config {
+	let proxy_config = redis_proxy::Config {
 		listen_addr: opts.listen_addr.0,
 		listen_port: opts.listen_port,
 		area_controller_listener_config,
-		mqtt_host: opts.mqtt_host.clone(),
-		mqtt_port: opts.mqtt_port,
+		redis_connection_info: opts.redis_connection_info,
 	};
 
 	log::debug!("entering main loop");
@@ -69,11 +64,8 @@ async fn pmain() -> Result<()> {
 			res.context("failed to listen for ctrl-c")?;
 			log::info!("received ctrl-c, shutting down link-daemon");
 		}
-		res = mqtt_proxy::run(proxy_config) => {
-			res.context("MQTT proxy task failed")?;
-		}
-		res = link_registration_tracker::run(opts.mqtt_host.clone(), opts.mqtt_port) => {
-			res.context("link registration tracker failed")?;
+		res = redis_proxy::run(proxy_config) => {
+			res.context("redis proxy task failed")?;
 		}
 	}
 

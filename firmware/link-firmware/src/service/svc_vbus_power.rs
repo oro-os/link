@@ -8,15 +8,13 @@ use embassy_stm32::{
 };
 use embassy_time::Timer;
 
-use crate::{Stat, Volatile, nvram::LastBootFailure};
+use crate::{Volatile, nvram::LastBootFailure};
 
 // The ATX power standard mandates a maximum of 20ms ramp-up time
 // for PSUs' 5V rails to be active after PS_ON is asserted.
 // We're generous, giving them a 2ms grace time. Too much more
 // and we risk tripping the on-board fuse.
 const AUX_VBUS_SWITCH_TIME_MS: u64 = 22;
-
-pub static STAT_VBUS_STATE: Stat<State> = Stat::new("power/vbus_state");
 
 pub type Channel = crate::channel::Channel<Cmd, 2>;
 
@@ -41,12 +39,12 @@ pub enum State {
 	AuxVbus,
 }
 
-impl AsRef<[u8]> for State {
-	fn as_ref(&self) -> &[u8] {
-		match self {
-			State::Off => "off".as_bytes(),
-			State::Vbus => "vbus".as_bytes(),
-			State::AuxVbus => "aux_vbus".as_bytes(),
+impl From<State> for heapless::String<8> {
+	fn from(state: State) -> Self {
+		match state {
+			State::Off => "off".try_into().unwrap(),
+			State::Vbus => "vbus".try_into().unwrap(),
+			State::AuxVbus => "aux_vbus".try_into().unwrap(),
 		}
 	}
 }
@@ -73,7 +71,7 @@ pub async fn run(bus: super::Bus, rx: &'static Channel, config: Config) -> ! {
 		cmd = match cmd {
 			Cmd::Off => {
 				defmt::debug!("turning off VBUS");
-				STAT_VBUS_STATE.set(State::Off);
+				crate::vars::STAT_VBUS_POWER_STATE.set(State::Off.into());
 				// Already reset; continue;
 				next_cmd(rx, cmd).await
 			}
@@ -107,7 +105,7 @@ async fn run_vbus_driver(
 ) -> ! {
 	// Enable the VBUS line.
 	defmt::debug!("enabling main vbus line");
-	STAT_VBUS_STATE.set(State::Vbus);
+	crate::vars::STAT_VBUS_POWER_STATE.set(State::Vbus.into());
 	vbus_en.set_high();
 	Timer::after_millis(10).await;
 
@@ -136,7 +134,7 @@ async fn run_vbus_driver(
 	// main vbus line so the board doesn't leech power.
 	defmt::debug!("main VBUS OC line asserted; enabling aux power");
 	aux_vbus_en.set_low();
-	STAT_VBUS_STATE.set(State::AuxVbus);
+	crate::vars::STAT_VBUS_POWER_STATE.set(State::AuxVbus.into());
 	crate::bus!(bus, svc_psu, On);
 	Timer::after_millis(AUX_VBUS_SWITCH_TIME_MS).await;
 	defmt::debug!("aux VBUS power enabled; switching off main VBUS line");

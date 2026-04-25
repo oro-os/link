@@ -1,26 +1,19 @@
 use core::future;
 
 use embassy_stm32::gpio::Output;
-use embassy_sync::once_lock::OnceLock;
 use embassy_time::{Duration, Timer};
 
-use crate::{
-	color::Rgb,
-	nvram::LastBootFailure,
-	service::{svc_mqtt::Mqtt, svc_mqtt_config::Wol},
-};
+use crate::{color::Rgb, nvram::LastBootFailure};
 
 pub struct Config {
-	pub mqtt: &'static OnceLock<Mqtt>,
-	pub aux_vbus_sense: bool,
-	pub last_boot_failure: LastBootFailure,
+	pub aux_vbus_sense:      bool,
+	pub last_boot_failure:   LastBootFailure,
 	pub usb_output_selector: Output<'static>,
 }
 
 #[embassy_executor::task]
 pub async fn run(bus: super::Bus, config: Config) -> ! {
 	let Config {
-		mqtt,
 		aux_vbus_sense,
 		last_boot_failure,
 		mut usb_output_selector,
@@ -70,43 +63,34 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 	// Wait for self-test to complete (and let the logo show up :D)
 	Timer::after_secs(5).await;
 
-	// Wait for MQTT to connect
+	// Wait for QUP to connect
 	crate::bus!(bus, dev_leds, AllOff);
 	crate::bus!(bus, dev_leds, SetSystemIndicator(Rgb::new(245, 65, 5)));
 	crate::bus!(bus, dev_leds, SetRemoteIndicator(Rgb::new(245, 65, 5)));
 
-	crate::oled_status!(bus, Bold("Waiting for MQTT..."), Normal(crate::unique_id()),);
+	crate::oled_status!(
+		bus,
+		Bold("Waiting for config..."),
+		Normal(crate::unique_id()),
+	);
+	crate::vars::CFG_CONFIGURED.wait_for(&true).await;
 
-	mqtt.get().await;
 	crate::bus!(bus, dev_leds, SetRemoteIndicator(Rgb::new(2, 18, 2)));
+	crate::oled_status!(bus, Bold("Configuring..."), Normal(crate::unique_id()),);
 
-	// Wait for global configuration
-	macro_rules! fetch_pr_config {
-		($cfg:expr) => {{
-			crate::oled_status!(
-				bus,
-				Bold("Fetching configuration..."),
-				Normal($cfg.suffix()),
-			);
-			let v = $cfg.next().await;
-			defmt::info!("Global config fetched: {} = {:?}", $cfg.suffix(), v);
-			v
-		}};
-	}
-
-	let _power_type = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_POWER_TYPE);
-	let usb_iface = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_USB_IFACE);
-	let _boot_source = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_BOOT_SOURCE);
-	let require_4a_vbus = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_REQUIRE_4A_VBUS);
-	let wol = fetch_pr_config!(super::svc_mqtt_config::CFG_GLOBAL_WOL);
+	let _power_type = crate::vars::CFG_SUT_POWER_TYPE.get();
+	let usb_iface = crate::vars::CFG_SUT_USB_IFACE.get();
+	let require_4a_vbus = crate::vars::CFG_SUT_REQUIRE_4A_VBUS.get();
+	let _boot_source = crate::vars::CFG_SUT_BOOT_SOURCE.get();
+	let wol = crate::vars::CFG_WOL.get();
 
 	// Set the USB output selector
 	match usb_iface {
-		crate::service::svc_mqtt_config::UsbIface::Header => {
+		crate::vars::UsbIface::Header => {
 			usb_output_selector.set_low();
 			defmt::debug!("USB is routed to header");
 		}
-		crate::service::svc_mqtt_config::UsbIface::Port => {
+		crate::vars::UsbIface::Port => {
 			usb_output_selector.set_high();
 			defmt::debug!("USB is routed to port");
 		}
@@ -141,6 +125,11 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 
 	loop {
 		// Reset state
+		crate::vars::CFG_PR_RUN.set(false);
+		crate::vars::CFG_PR_TITLE.set(Default::default());
+		crate::vars::CFG_PR_AUTHOR.set(Default::default());
+		crate::vars::CFG_PR_NUMBER.set(0);
+
 		crate::bus!(
 			bus,
 			svc_oled,
@@ -167,18 +156,20 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 		crate::bus!(bus, svc_psu, Off);
 
 		match wol {
-			Wol::Off => crate::bus!(bus, svc_wol, Off),
-			Wol::Mins5 => crate::bus!(bus, svc_wol, After(Duration::from_secs(5 * 60))),
-			Wol::Mins10 => crate::bus!(bus, svc_wol, After(Duration::from_secs(10 * 60))),
-			Wol::Mins30 => crate::bus!(bus, svc_wol, After(Duration::from_secs(30 * 60))),
+			crate::vars::Wol::Off => crate::bus!(bus, svc_wol, Off),
+			crate::vars::Wol::Mins5 => {
+				crate::bus!(bus, svc_wol, After(Duration::from_secs(5 * 60)))
+			}
+			crate::vars::Wol::Mins10 => {
+				crate::bus!(bus, svc_wol, After(Duration::from_secs(10 * 60)))
+			}
+			crate::vars::Wol::Mins30 => {
+				crate::bus!(bus, svc_wol, After(Duration::from_secs(30 * 60)))
+			}
 		}
 
 		defmt::info!("waiting for PR...");
-		if !super::svc_mqtt_config::CFG_PR_RUN.next().await {
-			defmt::debug!("pr sent false; ignoring");
-			continue;
-		}
-
+		crate::vars::CFG_PR_RUN.wait_for(&true).await;
 		defmt::info!("PR run started");
 
 		crate::bus!(bus, svc_wol, Off);
@@ -206,22 +197,9 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 		crate::bus!(bus, dev_blinken_light, On);
 		crate::bus!(bus, dev_leds, SetJobIndicator(Rgb::new(245, 65, 5)));
 
-		macro_rules! fetch_pr_config {
-			($cfg:expr) => {{
-				crate::oled_status!(
-					bus,
-					Bold("PR started; fetching configuration"),
-					Normal($cfg.suffix()),
-				);
-				let v = $cfg.next().await;
-				defmt::info!("PR config fetched: {} = {}", $cfg.suffix(), v);
-				v
-			}};
-		}
-
-		let _pr_title = fetch_pr_config!(super::svc_mqtt_config::CFG_PR_TITLE);
-		let _pr_number = fetch_pr_config!(super::svc_mqtt_config::CFG_PR_NUMBER);
-		let _pr_author = fetch_pr_config!(super::svc_mqtt_config::CFG_PR_AUTHOR);
+		let _pr_title = crate::vars::CFG_PR_TITLE.get();
+		let _pr_number = crate::vars::CFG_PR_NUMBER.get();
+		let _pr_author = crate::vars::CFG_PR_AUTHOR.get();
 
 		crate::oled_status!(
 			bus,

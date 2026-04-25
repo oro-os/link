@@ -14,12 +14,10 @@ pub mod failsafe_sd_oc;
 pub mod failsafe_ulpi_oc;
 pub mod svc_leds;
 pub mod svc_main;
-pub mod svc_mqtt;
-pub mod svc_mqtt_config;
-pub mod svc_mqtt_stats;
 pub mod svc_oled;
 pub mod svc_oled_pwr;
 pub mod svc_psu;
+pub mod svc_qup;
 pub mod svc_vbus_power;
 pub mod svc_wol;
 
@@ -39,12 +37,10 @@ services! {
     #[config(false)]                                          svc_oled_pwr,
     #[config(false)]                                          svc_oled,
     #[config(false)]                                          svc_leds,
-                     #[bus(false)] #[rx(false)]               svc_mqtt,
-                     #[bus(false)] #[rx(false)]               svc_mqtt_stats,
-                     #[bus(false)] #[rx(false)]               svc_mqtt_config,
                                                               svc_vbus_power,
                      #[bus(false)]                            svc_psu,
     #[config(false)]                                          svc_wol,
+                     #[bus(false)] #[rx(false)]               svc_qup,
                      #[bus(false)] #[rx(false)]               failsafe_board_oc,
                      #[bus(false)] #[rx(false)]               failsafe_aux_vbus_oc,
                      #[bus(false)] #[rx(false)]               failsafe_ulpi_oc,

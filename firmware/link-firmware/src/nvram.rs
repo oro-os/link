@@ -149,9 +149,9 @@ impl LastBootFailure {
 	}
 }
 
-impl AsRef<[u8]> for LastBootFailure {
-	fn as_ref(&self) -> &[u8] {
-		self.as_str().as_bytes()
+impl From<LastBootFailure> for heapless::String<128> {
+	fn from(v: LastBootFailure) -> Self {
+		v.as_str().try_into().unwrap()
 	}
 }
 

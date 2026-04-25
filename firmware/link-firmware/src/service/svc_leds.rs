@@ -1,11 +1,9 @@
 use embassy_futures::select::{Either, select};
 
-use crate::{color::Rgb, service::svc_mqtt_stats::Stat};
+use crate::color::Rgb;
 
 pub type Channel = crate::channel::Channel<Cmd, 4>;
 
-pub static STAT_STATE: Stat<State> = Stat::new("status/leds/state");
-pub static STAT_TARGET: Stat<State> = Stat::new("status/leds/target");
 pub enum Cmd {
 	SetState { state: State },
 }
@@ -16,11 +14,11 @@ pub enum State {
 	PrPending,
 }
 
-impl AsRef<[u8]> for State {
-	fn as_ref(&self) -> &[u8] {
-		match self {
-			State::Off => "off".as_bytes(),
-			State::PrPending => "pr_pending".as_bytes(),
+impl From<State> for heapless::String<16> {
+	fn from(state: State) -> Self {
+		match state {
+			State::Off => "off".try_into().unwrap(),
+			State::PrPending => "pr_pending".try_into().unwrap(),
 		}
 	}
 }
@@ -29,8 +27,8 @@ impl AsRef<[u8]> for State {
 pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 	let mut current_state = State::Off;
 
-	STAT_STATE.set(current_state);
-	STAT_TARGET.set(current_state);
+	crate::vars::STAT_LEDS_STATE.set(current_state.into());
+	crate::vars::STAT_LEDS_TARGET_STATE.set(current_state.into());
 
 	loop {
 		let mut target_state = receive_state(rx, current_state).await;
@@ -42,7 +40,7 @@ pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 				target_state
 			);
 
-			STAT_TARGET.set(target_state);
+			crate::vars::STAT_LEDS_TARGET_STATE.set(target_state.into());
 
 			let either = match target_state {
 				State::Off => select(receive_state(rx, target_state), perform_turnoff(&bus)).await,
@@ -52,7 +50,7 @@ pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 			};
 
 			current_state = target_state;
-			STAT_STATE.set(current_state);
+			crate::vars::STAT_LEDS_STATE.set(current_state.into());
 
 			if let Either::First(new_state) = either {
 				// We were interrupted; start new target

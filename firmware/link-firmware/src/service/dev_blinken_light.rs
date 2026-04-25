@@ -4,16 +4,13 @@ use embassy_futures::select::Either;
 use embassy_stm32::gpio::OutputOpenDrain;
 use embassy_time::{Duration, Timer};
 
-use crate::{channel::ReceiveDelay, service::svc_mqtt_stats::Stat};
+use crate::channel::ReceiveDelay;
 
 pub const CONFIG_DUTY_PERIOD: u16 = 1000;
 
 pub type Channel = crate::channel::Channel<Cmd, 2>;
 
-pub static STAT_CMD: Stat<Cmd> = Stat::new("status/dbg_led");
-
 #[derive(Clone, Copy)]
-#[expect(unused)]
 pub enum Cmd {
 	On,
 	Idle,
@@ -23,15 +20,15 @@ pub enum Cmd {
 	Manual { states: [bool; 3] },
 }
 
-impl AsRef<[u8]> for Cmd {
-	fn as_ref(&self) -> &[u8] {
-		match self {
-			Self::On => "all on".as_bytes(),
-			Self::Idle => "idle".as_bytes(),
-			Self::Config => "config".as_bytes(),
-			Self::Off => "all off".as_bytes(),
-			Self::Error => "error".as_bytes(),
-			Self::Manual { states } => {
+impl From<Cmd> for heapless::String<16> {
+	fn from(v: Cmd) -> Self {
+		match v {
+			Cmd::On => "all on".try_into().unwrap(),
+			Cmd::Idle => "idle".try_into().unwrap(),
+			Cmd::Config => "config".try_into().unwrap(),
+			Cmd::Off => "all off".try_into().unwrap(),
+			Cmd::Error => "error".try_into().unwrap(),
+			Cmd::Manual { states } => {
 				match (states[0], states[1], states[2]) {
 					(false, false, false) => "off, off, off",
 					(false, false, true) => "off, off, on",
@@ -42,7 +39,8 @@ impl AsRef<[u8]> for Cmd {
 					(true, true, false) => "on, on, off",
 					(true, true, true) => "on, on, on",
 				}
-				.as_bytes()
+				.try_into()
+				.unwrap()
 			}
 		}
 	}
@@ -163,7 +161,7 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 	let mut mode = Cmd::On;
 
 	loop {
-		STAT_CMD.set(mode);
+		crate::vars::STAT_BLINKEN_LIGHT_CMD.set(mode.into());
 
 		mode = match mode {
 			Cmd::On => {

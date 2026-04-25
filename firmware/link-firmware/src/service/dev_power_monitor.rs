@@ -5,10 +5,6 @@ use embassy_stm32::{
 use embassy_sync::{blocking_mutex::raw::NoopRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Timer};
 
-use crate::service::svc_mqtt_stats::{QoS, Stat};
-
-pub static STAT_CURRENT: Stat<heapless::String<16>, { QoS::Q0 }> = Stat::new("power/current_mA");
-
 const ADDR: u8 = 0x40;
 const MA_CALIBRATION: u16 = 0x0A00;
 // NOTE: this is not the maximum rating (which is 2A) but really
@@ -119,7 +115,8 @@ pub async fn run(config: Config) -> ! {
 			current_ua
 		);
 
-		STAT_CURRENT.set(heapless::format!("{current_ma}.{current_ua}").unwrap());
+		crate::vars::STAT_BOARD_CURRENT_MA.set(current_ma as i64);
+		crate::vars::STAT_BOARD_CURRENT_UA.set(current_ua as i64);
 	}
 }
 

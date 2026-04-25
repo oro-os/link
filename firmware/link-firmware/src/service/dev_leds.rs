@@ -14,7 +14,6 @@ use crate::{
 	atomic::Relaxed,
 	channel::{Channel as RawChannel, Receiver, Sender},
 	color::Rgb,
-	service::svc_mqtt_stats::BoolStat,
 };
 
 const ADDR: u8 = 0b01111000 >> 1;
@@ -29,8 +28,6 @@ type RgbReceiver = Receiver<Rgb, 2>;
 type LightSender = Sender<(usize, u8), 16>;
 type OnOffReceiver = Receiver<bool, 2>;
 type GreyReceiver = Receiver<u8, 2>;
-
-pub static STAT_CHIP_ENABLED: BoolStat = BoolStat::new("status/leds_enabled");
 
 pub static DBG_LIGHT_VALUES: [AtomicU8; 36] = [const { AtomicU8::new(0) }; 36];
 
@@ -84,10 +81,10 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 		mut enable_chip,
 	} = config;
 
-	STAT_CHIP_ENABLED.set(false);
+	crate::vars::STAT_LEDS_CHIP_ENABLED.set(false);
 	enable_chip.set_high();
 	Timer::after(Duration::from_millis(100)).await;
-	STAT_CHIP_ENABLED.set(true);
+	crate::vars::STAT_LEDS_CHIP_ENABLED.set(true);
 
 	let mut led = IS31FL3236A::new(i2c);
 	led.reset().await;

@@ -52,12 +52,7 @@ pub async fn handle_link_connections(
 	links: &HashMap<String, LinkConfig>,
 	daemon_connection_config: DaemonConnectionConfig,
 	daemon_port: u16,
-	config_ready: Arc<Semaphore>,
 ) -> Result<!> {
-	log::debug!("waiting for config to be ready before accepting links");
-	drop(config_ready.acquire().await);
-	log::debug!("config is up; beginning to handle links coming online");
-
 	let mut active_connections: HashMap<String, JoinHandle<()>> = HashMap::new();
 
 	loop {

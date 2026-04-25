@@ -1,9 +1,5 @@
 use embassy_stm32::gpio::Output;
 
-use crate::BoolStat;
-
-pub static STAT_PSU_ON: BoolStat = BoolStat::new("power/psu_on");
-
 pub type Channel = crate::channel::Channel<Cmd, 2>;
 
 pub enum Cmd {
@@ -24,12 +20,12 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 			Cmd::On => {
 				defmt::debug!("turning PSU on");
 				psu_on.set_high();
-				STAT_PSU_ON.set(true);
+				crate::vars::STAT_PSU_ON.set(true);
 			}
 			Cmd::Off => {
 				defmt::debug!("turning PSU off");
 				psu_on.set_low();
-				STAT_PSU_ON.set(false);
+				crate::vars::STAT_PSU_ON.set(false);
 			}
 		}
 	}

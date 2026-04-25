@@ -15,7 +15,6 @@ pub async fn run(
 	links: &HashMap<String, LinkConfig>,
 	daemon_connection_config: DaemonConnectionConfig,
 	daemon_port: u16,
-	config_ready: Arc<Semaphore>,
 ) -> Result<!> {
 	let client_id = daemon_connection_config
 		.mqtt_client_id()

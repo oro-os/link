@@ -2,7 +2,6 @@ use embassy_futures::select::{Either, select};
 use embassy_time::{Duration, Timer};
 
 use super::dev_oled::Cmd as OledCmd;
-use crate::service::svc_mqtt_stats::Stat;
 
 pub type Channel = crate::channel::Channel<Cmd, 4>;
 
@@ -12,9 +11,6 @@ const IDLE_COOL_OFF_STEP_DURATION: Duration = Duration::from_millis(100);
 const IDLE_COOL_OFF_STEP: u8 = 1; // Decrease brightness by 5 each step
 const IDLE_MIN_BRIGHTNESS: u8 = 80; // Minimum brightness before vreg shutoff
 const IDLE_VREG_OFF_DELAY: Duration = Duration::from_secs(10); // Time after turning off display to turn off VREG
-
-pub static STAT_PWR_STATE: Stat<State> = Stat::new("status/oled/state");
-pub static STAT_PWR_TARGET: Stat<State> = Stat::new("status/oled/target");
 
 pub enum Cmd {
 	SetState { state: State },
@@ -31,12 +27,12 @@ pub enum State {
 	Off,
 }
 
-impl AsRef<[u8]> for State {
-	fn as_ref(&self) -> &[u8] {
-		match self {
-			State::On => "on".as_bytes(),
-			State::Off => "off".as_bytes(),
-			State::Idle => "idle".as_bytes(),
+impl From<State> for heapless::String<4> {
+	fn from(v: State) -> Self {
+		match v {
+			State::On => "on".try_into().unwrap(),
+			State::Off => "off".try_into().unwrap(),
+			State::Idle => "idle".try_into().unwrap(),
 		}
 	}
 }
@@ -45,8 +41,8 @@ impl AsRef<[u8]> for State {
 pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 	let mut current_state = State::Off;
 
-	STAT_PWR_STATE.set(current_state);
-	STAT_PWR_TARGET.set(current_state);
+	crate::vars::STAT_OLED_POWER_STATE.set(current_state.into());
+	crate::vars::STAT_OLED_POWER_TARGET_STATE.set(current_state.into());
 
 	loop {
 		let mut target_state = receive_state(rx, current_state).await;
@@ -58,7 +54,7 @@ pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 				target_state
 			);
 
-			STAT_PWR_TARGET.set(target_state);
+			crate::vars::STAT_OLED_POWER_TARGET_STATE.set(target_state.into());
 
 			let either = match target_state {
 				State::On => select(receive_state(rx, target_state), perform_turnon(&bus)).await,
@@ -69,7 +65,7 @@ pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 			};
 
 			current_state = target_state;
-			STAT_PWR_STATE.set(current_state);
+			crate::vars::STAT_OLED_POWER_STATE.set(current_state.into());
 
 			if let Either::First(new_state) = either {
 				// We were interrupted; start new target

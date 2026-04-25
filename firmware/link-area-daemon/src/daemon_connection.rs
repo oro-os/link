@@ -1,8 +1,6 @@
 use std::{fs, io::BufReader, path::Path, sync::Arc};
 
 use anyhow::{Context, Result};
-use embedded_io_async::{ErrorType, Read, Write};
-use mqttrust::{ConnectionError, StateError, transport::Transport};
 use rustls::{
 	CertificateError, DigitallySignedStruct, SignatureScheme,
 	client::{
@@ -12,10 +10,7 @@ use rustls::{
 	crypto::CryptoProvider,
 	pki_types::{CertificateDer, PrivateKeyDer, ServerName, UnixTime},
 };
-use tokio::{
-	io::{AsyncReadExt, AsyncWriteExt},
-	net::TcpStream,
-};
+use tokio::net::TcpStream;
 use tokio_rustls::{TlsConnector, client::TlsStream};
 use x509_parser::prelude::{FromDer, X509Certificate};
 
@@ -25,9 +20,8 @@ pub type DaemonStream = TlsStream<TcpStream>;
 
 #[derive(Clone)]
 pub struct DaemonConnectionConfig {
-	host:           String,
-	mqtt_client_id: String,
-	connector:      TlsConnector,
+	host:      String,
+	connector: TlsConnector,
 }
 
 impl DaemonConnectionConfig {
@@ -35,7 +29,6 @@ impl DaemonConnectionConfig {
 		let provider = tls_provider();
 		let pinned_key = load_pinned_key_file(Path::new(&daemon.server_key))?;
 		let certs = load_certificates(Path::new(&daemon.client_cert))?;
-		let mqtt_client_id = build_mqtt_client_id(&certs[0])?;
 		let key = load_private_key(Path::new(&daemon.client_key))?;
 		let verifier = Arc::new(PinnedServerKeyVerifier::new(&provider, pinned_key));
 
@@ -52,7 +45,6 @@ impl DaemonConnectionConfig {
 
 		Ok(Self {
 			host,
-			mqtt_client_id,
 			connector: TlsConnector::from(Arc::new(config)),
 		})
 	}
@@ -73,76 +65,6 @@ impl DaemonConnectionConfig {
 
 	pub fn host(&self) -> &str {
 		&self.host
-	}
-
-	pub fn mqtt_client_id(&self) -> &str {
-		&self.mqtt_client_id
-	}
-
-	pub fn transport(&self, port: u16) -> DaemonTransport {
-		DaemonTransport {
-			connection_config: self.clone(),
-			port,
-			socket: None,
-		}
-	}
-}
-
-pub struct DaemonTransport {
-	connection_config: DaemonConnectionConfig,
-	port: u16,
-	socket: Option<DaemonSocket>,
-}
-
-impl Transport for DaemonTransport {
-	type Socket = DaemonSocket;
-
-	async fn connect(&mut self) -> std::result::Result<(), ConnectionError> {
-		match self.connection_config.connect(self.port).await {
-			Ok(stream) => {
-				self.socket = Some(DaemonSocket(stream));
-				Ok(())
-			}
-			Err(err) => {
-				log::warn!("failed to connect daemon transport: {err:#}");
-				Err(ConnectionError::Io(embedded_io_async::ErrorKind::Other))
-			}
-		}
-	}
-
-	fn disconnect(&mut self) -> std::result::Result<(), ConnectionError> {
-		self.socket = None;
-		Ok(())
-	}
-
-	fn is_connected(&self) -> bool {
-		self.socket.is_some()
-	}
-
-	fn socket(&mut self) -> std::result::Result<&mut Self::Socket, StateError> {
-		self.socket.as_mut().ok_or(StateError::InvalidState)
-	}
-}
-
-pub struct DaemonSocket(DaemonStream);
-
-impl ErrorType for DaemonSocket {
-	type Error = std::io::Error;
-}
-
-impl Read for DaemonSocket {
-	async fn read(&mut self, buf: &mut [u8]) -> std::result::Result<usize, Self::Error> {
-		self.0.read(buf).await
-	}
-}
-
-impl Write for DaemonSocket {
-	async fn write(&mut self, buf: &[u8]) -> std::result::Result<usize, Self::Error> {
-		self.0.write(buf).await
-	}
-
-	async fn flush(&mut self) -> std::result::Result<(), Self::Error> {
-		self.0.flush().await
 	}
 }
 
@@ -201,18 +123,6 @@ fn extract_spki_from_certificate(cert: &CertificateDer<'_>) -> Result<Vec<u8>> {
 	let (_, parsed) = X509Certificate::from_der(cert.as_ref())
 		.map_err(|err| anyhow::anyhow!("failed to parse X.509 certificate: {err}"))?;
 	Ok(parsed.tbs_certificate.subject_pki.raw.to_vec())
-}
-
-fn build_mqtt_client_id(cert: &CertificateDer<'_>) -> Result<String> {
-	let spki = extract_spki_from_certificate(cert)?;
-	let mut client_id = String::from("link-aread-");
-	for byte in spki.iter().take(6) {
-		use std::fmt::Write as _;
-
-		write!(&mut client_id, "{byte:02x}").expect("writing to String cannot fail");
-	}
-
-	Ok(client_id)
 }
 
 fn load_pinned_key_file(path: &Path) -> Result<Vec<u8>> {
