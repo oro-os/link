@@ -11,7 +11,7 @@ pub struct LinkInfo {
 	pub port:    u16,
 }
 
-pub async fn listen_for_links(sender: Sender<LinkInfo>) -> Result<!> {
+pub async fn listen_for_links(sender: Sender<LinkInfo>) -> Result<()> {
 	let mdns = mdns_sd::ServiceDaemon::new().context("failed to create mDNS service daemon")?;
 
 	let browser = mdns
@@ -49,15 +49,15 @@ pub async fn listen_for_links(sender: Sender<LinkInfo>) -> Result<!> {
 			name,
 			info.get_addresses()
 				.iter()
-				.map(|a| a.to_string())
+				.map(|address| address.to_string())
 				.collect::<Vec<_>>()
 				.join(", "),
 			info.get_port()
 		);
 
-		let Some(address) = info.get_addresses().iter().find_map(|a| {
-			match a {
-				ScopedIp::V4(addr) => Some(addr),
+		let Some(address) = info.get_addresses().iter().find_map(|address| {
+			match address {
+				ScopedIp::V4(address) => Some(address),
 				_ => None,
 			}
 		}) else {

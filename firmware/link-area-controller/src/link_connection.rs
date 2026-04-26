@@ -1,28 +1,23 @@
-use std::{collections::HashMap, sync::Arc};
+use std::collections::HashMap;
 
 use anyhow::{Context, Result};
-use tokio::{
-	io::copy_bidirectional,
-	net::TcpStream,
-	sync::{Semaphore, mpsc::Receiver},
-	task::JoinHandle,
-};
+use tokio::{io::copy_bidirectional, net::TcpStream, sync::mpsc::Receiver, task::JoinHandle};
 
-use crate::{config::LinkConfig, daemon_connection::DaemonConnectionConfig, mdns::LinkInfo};
+use crate::{daemon_connection::DaemonConnectionConfig, mdns::LinkInfo};
 
 async fn proxy_link_to_daemon(
 	link_name: String,
 	link_info: LinkInfo,
 	daemon_connection_config: DaemonConnectionConfig,
-	daemon_port: u16,
 ) -> Result<()> {
-	let sock_addr = (link_info.address, link_info.port);
-	let mut link_stream = TcpStream::connect(sock_addr).await.with_context(|| {
-		format!(
-			"failed to connect to link '{}' at {}:{}",
-			link_name, link_info.address, link_info.port
-		)
-	})?;
+	let mut link_stream = TcpStream::connect((link_info.address, link_info.port))
+		.await
+		.with_context(|| {
+			format!(
+				"failed to connect to link '{}' at {}:{}",
+				link_name, link_info.address, link_info.port
+			)
+		})?;
 
 	log::info!(
 		"connected to link '{}' at {}:{}",
@@ -31,14 +26,16 @@ async fn proxy_link_to_daemon(
 		link_info.port
 	);
 
-	let mut daemon_tls = daemon_connection_config.connect(daemon_port).await?;
+	let daemon_addr = daemon_connection_config.address();
+	let mut daemon_tls = daemon_connection_config.connect().await?;
+	log::info!("connected to daemon '{daemon_addr}' for link '{link_name}'");
 
 	let (from_link, from_daemon) = copy_bidirectional(&mut link_stream, &mut daemon_tls)
 		.await
-		.with_context(|| format!("proxy stream for link '{}' failed", link_name))?;
+		.with_context(|| format!("proxy stream for link '{link_name}' failed"))?;
 
 	log::info!(
-		"closed proxied MQTT stream for '{}': {} bytes link->daemon, {} bytes daemon->link",
+		"closed proxied link stream for '{}': {} bytes link->daemon, {} bytes daemon->link",
 		link_name,
 		from_link,
 		from_daemon
@@ -49,10 +46,8 @@ async fn proxy_link_to_daemon(
 
 pub async fn handle_link_connections(
 	mut receiver: Receiver<LinkInfo>,
-	links: &HashMap<String, LinkConfig>,
 	daemon_connection_config: DaemonConnectionConfig,
-	daemon_port: u16,
-) -> Result<!> {
+) -> Result<()> {
 	let mut active_connections: HashMap<String, JoinHandle<()>> = HashMap::new();
 
 	loop {
@@ -68,14 +63,6 @@ pub async fn handle_link_connections(
 			link_info.address,
 			link_info.port
 		);
-
-		let Some(_link_config) = links.get(&name) else {
-			log::warn!(
-				"discovered link '{}' is not in the config, skipping",
-				link_info.name
-			);
-			continue;
-		};
 
 		if let Some(handle) = active_connections.remove(&name) {
 			if !handle.is_finished() {
@@ -95,13 +82,8 @@ pub async fn handle_link_connections(
 		let link_name = name.clone();
 
 		let handle = tokio::spawn(async move {
-			if let Err(err) = proxy_link_to_daemon(
-				link_name.clone(),
-				link_info,
-				daemon_connection_config,
-				daemon_port,
-			)
-			.await
+			if let Err(err) =
+				proxy_link_to_daemon(link_name.clone(), link_info, daemon_connection_config).await
 			{
 				log::warn!(
 					"link '{}' proxy session ended with error: {err:#}",

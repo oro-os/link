@@ -1,49 +1,52 @@
-#![feature(never_type)]
-
-use std::path::PathBuf;
+use std::{path::PathBuf, sync::Arc};
 
 use anyhow::{Context, Result};
 use clap::Parser;
 
 mod area_controller_tcp_listener;
-pub(crate) mod link_id;
-mod redis_proxy;
+mod config;
+mod link_id;
+mod link_service;
 
 #[derive(Debug, Parser)]
 struct Opts {
+	/// The configuration file to use.
+	#[clap(short = 'c', long, default_value = "/etc/oro/link-daemon.toml")]
+	config:           PathBuf,
 	/// Address to bind for area-controller TLS connections.
 	#[clap(long, default_value = "0.0.0.0")]
-	listen_addr: PathOrHost,
-	/// Port to bind for area-controller MQTT-over-TLS proxy traffic.
+	listen_addr:      String,
+	/// Port to bind for area-controller proxied link traffic.
 	#[clap(long, default_value_t = 5544)]
-	listen_port: u16,
+	listen_port:      u16,
 	/// Directory containing allowed client public keys or certificates.
 	#[clap(long, default_value = "/etc/oro/linkd/allowed/")]
 	allowed_keys_dir: PathBuf,
 	/// TLS certificate chain to present to area controllers.
 	#[clap(long)]
-	tls_cert: PathBuf,
+	tls_cert:         PathBuf,
 	/// TLS private key matching `--tls-cert`.
 	#[clap(long)]
-	tls_key: PathBuf,
-	/// Redis connection URI
-	#[clap(long = "redis", default_value = "redis://localhost:6379")]
-	redis_connection_info: redis::ConnectionInfo,
-}
-
-#[derive(Clone, Debug)]
-struct PathOrHost(String);
-
-impl std::str::FromStr for PathOrHost {
-	type Err = std::convert::Infallible;
-
-	fn from_str(value: &str) -> std::result::Result<Self, Self::Err> {
-		Ok(Self(value.to_string()))
-	}
+	tls_key:          PathBuf,
 }
 
 async fn pmain() -> Result<()> {
 	let opts = Opts::parse();
+	let config_path = opts.config.display().to_string();
+
+	log::info!("loading config from '{config_path}'");
+	let config_str = tokio::fs::read_to_string(&opts.config)
+		.await
+		.with_context(|| format!("failed to read config file '{config_path}'"))?;
+	let config = {
+		let mut config = toml::from_str::<config::Config>(&config_str)
+			.with_context(|| format!("failed to parse config file '{config_path}'"))?;
+		config
+			.normalize()
+			.with_context(|| format!("failed to normalize config file '{config_path}'"))?;
+		config
+	};
+
 	let area_controller_listener_config =
 		area_controller_tcp_listener::AreaControllerListenerConfig::build(
 			&opts.allowed_keys_dir,
@@ -51,11 +54,11 @@ async fn pmain() -> Result<()> {
 			&opts.tls_key,
 		)?;
 
-	let proxy_config = redis_proxy::Config {
-		listen_addr: opts.listen_addr.0,
+	let service_config = link_service::Config {
+		listen_addr: opts.listen_addr,
 		listen_port: opts.listen_port,
 		area_controller_listener_config,
-		redis_connection_info: opts.redis_connection_info,
+		links: Arc::new(config.link),
 	};
 
 	log::debug!("entering main loop");
@@ -64,8 +67,8 @@ async fn pmain() -> Result<()> {
 			res.context("failed to listen for ctrl-c")?;
 			log::info!("received ctrl-c, shutting down link-daemon");
 		}
-		res = redis_proxy::run(proxy_config) => {
-			res.context("redis proxy task failed")?;
+		res = link_service::run(service_config) => {
+			res.context("link service failed")?;
 		}
 	}
 

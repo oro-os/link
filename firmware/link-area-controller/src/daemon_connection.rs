@@ -14,22 +14,27 @@ use tokio::net::TcpStream;
 use tokio_rustls::{TlsConnector, client::TlsStream};
 use x509_parser::prelude::{FromDer, X509Certificate};
 
-use crate::config::DaemonConfig;
-
 pub type DaemonStream = TlsStream<TcpStream>;
 
 #[derive(Clone)]
 pub struct DaemonConnectionConfig {
 	host:      String,
+	port:      u16,
 	connector: TlsConnector,
 }
 
 impl DaemonConnectionConfig {
-	pub fn build(daemon: &DaemonConfig) -> Result<Self> {
+	pub fn build(
+		host: &str,
+		port: u16,
+		server_key: &Path,
+		client_cert: &Path,
+		client_key: &Path,
+	) -> Result<Self> {
 		let provider = tls_provider();
-		let pinned_key = load_pinned_key_file(Path::new(&daemon.server_key))?;
-		let certs = load_certificates(Path::new(&daemon.client_cert))?;
-		let key = load_private_key(Path::new(&daemon.client_key))?;
+		let pinned_key = load_pinned_key_file(server_key)?;
+		let certs = load_certificates(client_cert)?;
+		let key = load_private_key(client_key)?;
 		let verifier = Arc::new(PinnedServerKeyVerifier::new(&provider, pinned_key));
 
 		let config = ClientConfig::builder_with_provider(provider)
@@ -39,18 +44,20 @@ impl DaemonConnectionConfig {
 			.with_client_auth_cert(certs, key)
 			.context("failed to build area-controller TLS client config")?;
 
-		let host = daemon.host.clone();
+		let host = host.to_string();
 		ServerName::try_from(host.clone())
 			.with_context(|| format!("daemon host '{host}' is not a valid TLS server name"))?;
 
 		Ok(Self {
 			host,
+			port,
 			connector: TlsConnector::from(Arc::new(config)),
 		})
 	}
 
-	pub async fn connect(&self, port: u16) -> Result<DaemonStream> {
+	pub async fn connect(&self) -> Result<DaemonStream> {
 		let host = self.host.as_str();
+		let port = self.port;
 		let stream = TcpStream::connect((host, port))
 			.await
 			.with_context(|| format!("failed to connect to daemon at {host}:{port}"))?;
@@ -63,8 +70,8 @@ impl DaemonConnectionConfig {
 			.with_context(|| format!("TLS handshake to daemon {host}:{port} failed"))
 	}
 
-	pub fn host(&self) -> &str {
-		&self.host
+	pub fn address(&self) -> String {
+		format!("{}:{}", self.host, self.port)
 	}
 }
 

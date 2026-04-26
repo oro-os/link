@@ -12,13 +12,15 @@ members = [
 	"link-firmware",
 	"link-rpcapd",
 	"link-cli",
-	"link-area-daemon",
+	"link-keygen",
+	"link-area-controller",
 	"link-daemon",
 ]
 
 default-members = [
 	"link-cli",
-	"link-area-daemon",
+	"link-keygen",
+	"link-area-controller",
 	"link-daemon",
 ]
 
