@@ -1,9 +1,5 @@
 .PHONY: all
-all: wasm firmware cli
-
-.PHONY: wasm
-wasm:
-	wasm-pack build --target web --out-dir ../../configurator/wasm --out-name linkproto link-protocol --features typescript
+all: firmware
 
 .PHONY: firmware
 firmware:
@@ -16,7 +12,3 @@ run:
 .PHONY: run-release
 run-release:
 	cargo run-firmware --release
-
-.PHONY: cli
-cli:
-	cargo build -p link-cli

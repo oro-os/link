@@ -10,19 +10,9 @@ resolver = "2"
 
 members = [
 	"link-firmware",
-	"link-rpcapd",
-	"link-cli",
-	"link-keygen",
-	"link-area-controller",
-	"link-daemon",
 ]
 
-default-members = [
-	"link-cli",
-	"link-keygen",
-	"link-area-controller",
-	"link-daemon",
-]
+default-members = []
 
 [profile.dev]
 opt-level = 1

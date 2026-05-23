@@ -3,7 +3,6 @@
 #![feature(never_type)]
 #![feature(adt_const_params)]
 #![feature(unsafe_cell_access)]
-#![feature(impl_trait_in_assoc_type)]
 
 pub(crate) mod atomic;
 pub(crate) mod channel;

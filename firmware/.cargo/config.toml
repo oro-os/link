@@ -1,9 +1,9 @@
 [alias]
-build-firmware = ["build", "-p", "link-firmware", "--target", "link-firmware//thumbv7em-none-eabihf.json", "-Zunstable-options", "-Zbuild-std=core,compiler_builtins", "-Zbuild-std-features=compiler-builtins-mem"]
-run-firmware = ["run", "-p", "link-firmware", "--target", "link-firmware/thumbv7em-none-eabihf.json", "-Zunstable-options", "-Zbuild-std=core,compiler_builtins", "-Zbuild-std-features=compiler-builtins-mem"]
+build-firmware = ["build", "-p", "link-firmware", "--target", "link-firmware//thumbv7em-none-eabihf.json", "-Zunstable-options", "-Zbuild-std=core,compiler_builtins", "-Zbuild-std-features=compiler-builtins-mem", "-Zjson-target-spec"]
+run-firmware = ["run", "-p", "link-firmware", "--target", "link-firmware/thumbv7em-none-eabihf.json", "-Zunstable-options", "-Zbuild-std=core,compiler_builtins", "-Zbuild-std-features=compiler-builtins-mem", "-Zjson-target-spec"]
 
-clippy-firmware = ["clippy", "-p", "link-firmware", "--target", "link-firmware/thumbv7em-none-eabihf.json", "-Zunstable-options", "-Zbuild-std=core,compiler_builtins", "-Zbuild-std-features=compiler-builtins-mem"]
-doc-firmware = ["doc", "-p", "link-firmware", "--target", "link-firmware/thumbv7em-none-eabihf.json", "-Zunstable-options", "-Zbuild-std=core,compiler_builtins", "-Zbuild-std-features=compiler-builtins-mem"]
+clippy-firmware = ["clippy", "-p", "link-firmware", "--target", "link-firmware/thumbv7em-none-eabihf.json", "-Zunstable-options", "-Zbuild-std=core,compiler_builtins", "-Zbuild-std-features=compiler-builtins-mem", "-Zjson-target-spec"]
+doc-firmware = ["doc", "-p", "link-firmware", "--target", "link-firmware/thumbv7em-none-eabihf.json", "-Zunstable-options", "-Zbuild-std=core,compiler_builtins", "-Zbuild-std-features=compiler-builtins-mem", "-Zjson-target-spec"]
 
 [target.thumbv7em-none-eabihf]
 runner = ["probe-rs", "run", "--speed", "3300", "--chip", "STM32F479VGTx", "--log-format", "<{f}:{l}> {L} {s}"]
