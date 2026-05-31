@@ -81,6 +81,8 @@ pub async fn run(config: Config) -> ! {
 		request_handler:   None,
 		poll_ms:           60,
 		max_packet_size:   8,
+		hid_boot_protocol: embassy_usb::class::hid::HidBootProtocol::Keyboard,
+		hid_subclass:      embassy_usb::class::hid::HidSubclass::No,
 	};
 
 	let hid = HidReaderWriter::<_, 1, 8>::new(&mut builder, state, config);

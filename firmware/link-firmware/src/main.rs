@@ -65,35 +65,35 @@ bind_interrupts!(struct Irqs {
 pub async fn main(spawner: Spawner) -> ! {
 	// Initialize the chip's clock
 	let mut config = Config::default();
-	config.rcc.ls.rtc = rcc::RtcClockSource::LSI;
+	config.rcc.ls.rtc = rcc::RtcClockSource::Lsi;
 	config.rcc.hse = Some(rcc::Hse {
 		freq: Hertz::mhz(24),
 		mode: rcc::HseMode::Oscillator,
 	});
-	config.rcc.pll_src = rcc::PllSource::HSE;
-	config.rcc.ahb_pre = rcc::AHBPrescaler::DIV1;
-	config.rcc.sys = rcc::Sysclk::PLL1_P;
+	config.rcc.pll_src = rcc::PllSource::Hse;
+	config.rcc.ahb_pre = rcc::AHBPrescaler::Div1;
+	config.rcc.sys = rcc::Sysclk::Pll1P;
 	config.rcc.pll = Some(rcc::Pll {
-		prediv: rcc::PllPreDiv::DIV24,
-		mul:    rcc::PllMul::MUL360,
-		divp:   Some(rcc::PllPDiv::DIV2),
-		divq:   Some(rcc::PllQDiv::DIV2),
+		prediv: rcc::PllPreDiv::Div24,
+		mul:    rcc::PllMul::Mul360,
+		divp:   Some(rcc::PllPDiv::Div2),
+		divq:   Some(rcc::PllQDiv::Div2),
 		divr:   None,
 	});
 	config.rcc.pllsai = Some(rcc::Pll {
-		prediv: rcc::PllPreDiv::DIV24,
-		mul:    rcc::PllMul::MUL192,
+		prediv: rcc::PllPreDiv::Div24,
+		mul:    rcc::PllMul::Mul192,
 		divp:   None,
-		divq:   Some(rcc::PllQDiv::DIV4),
+		divq:   Some(rcc::PllQDiv::Div4),
 		divr:   None,
 	});
 
 	let mut clock_mux = rcc::mux::ClockMux::default();
-	clock_mux.clk48sel = rcc::mux::Clk48sel::PLLSAI1_Q;
+	clock_mux.clk48sel = rcc::mux::Clk48sel::Pllsai1Q;
 	config.rcc.mux = clock_mux;
 
-	config.rcc.apb1_pre = rcc::APBPrescaler::DIV4;
-	config.rcc.apb2_pre = rcc::APBPrescaler::DIV2;
+	config.rcc.apb1_pre = rcc::APBPrescaler::Div4;
+	config.rcc.apb2_pre = rcc::APBPrescaler::Div2;
 
 	config.enable_debug_during_sleep = true;
 
@@ -499,7 +499,10 @@ pub async fn main(spawner: Spawner) -> ! {
 		svc_psu {
 			psu_on
 		},
-		svc_qup {
+		//svc_qup {
+		//	stack: exteth_stack
+		//},
+		svc_mdns {
 			stack: exteth_stack
 		},
 	}

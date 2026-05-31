@@ -17,7 +17,8 @@ pub mod svc_main;
 pub mod svc_oled;
 pub mod svc_oled_pwr;
 pub mod svc_psu;
-pub mod svc_qup;
+// pub mod svc_qup;
+pub mod svc_mdns;
 pub mod svc_vbus_power;
 pub mod svc_wol;
 
@@ -40,7 +41,8 @@ services! {
                                                               svc_vbus_power,
                      #[bus(false)]                            svc_psu,
     #[config(false)]                                          svc_wol,
-                     #[bus(false)] #[rx(false)]               svc_qup,
+ //                    #[bus(false)] #[rx(false)] #[skip(true)] svc_qup,
+                     #[bus(false)] #[rx(false)]               svc_mdns,
                      #[bus(false)] #[rx(false)]               failsafe_board_oc,
                      #[bus(false)] #[rx(false)]               failsafe_aux_vbus_oc,
                      #[bus(false)] #[rx(false)]               failsafe_ulpi_oc,

@@ -56,7 +56,7 @@ pub unsafe fn go_to_sleep_and_wait_for_wol() -> ! {
 	});
 	embassy_stm32::pac::PWR.cr1().modify(|w| {
 		w.set_cwuf(true); // Clear wakeup flag
-		w.set_pdds(embassy_stm32::pac::pwr::vals::Pdds::STANDBY_MODE);
+		w.set_pdds(embassy_stm32::pac::pwr::vals::Pdds::StandbyMode);
 	});
 
 	// Perform a read from CR in order to ensure the chip has committed the

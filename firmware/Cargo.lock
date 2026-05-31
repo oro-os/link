@@ -49,9 +49,9 @@ dependencies = [
 
 [[package]]
 name = "autocfg"
-version = "1.5.0"
+version = "1.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8"
+checksum = "f2032f911046de80f0a198e0901378627c33f59ea0ac00e363d481118bd70a53"
 
 [[package]]
 name = "az"
@@ -130,9 +130,9 @@ checksum = "1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b"
 
 [[package]]
 name = "cc"
-version = "1.2.61"
+version = "1.2.62"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d16d90359e986641506914ba71350897565610e87ce0ad9e6f28569db3dd5c6d"
+checksum = "a1dce859f0832a7d088c4f1119888ab94ef4b5d6795d1ce05afb7fe159d79f98"
 dependencies = [
  "find-msvc-tools",
  "shlex",
@@ -262,14 +262,14 @@ version = "0.3.100"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f0963443817029b2024136fc4dd07a5107eb8f977eaf18fcd1fdeb11306b64ad"
 dependencies = [
- "defmt 1.0.1",
+ "defmt 1.1.0",
 ]
 
 [[package]]
 name = "defmt"
-version = "1.0.1"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "548d977b6da32fa1d1fda2876453da1e7df63ad0304c8b3dae4dbe7b96f39b78"
+checksum = "a6e524506490a1953d237cb87b1cfc1e46f88c18f10a22dfe0f507dc6bfc7f7f"
 dependencies = [
  "bitflags 1.3.2",
  "defmt-macros",
@@ -277,9 +277,9 @@ dependencies = [
 
 [[package]]
 name = "defmt-macros"
-version = "1.0.1"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3d4fc12a85bcf441cfe44344c4b72d58493178ce635338a3f3b78943aceb258e"
+checksum = "f0a27770e9c8f719a79d8b638281f4d828f77d8fd61e0bd94451b9b85e576a0b"
 dependencies = [
  "defmt-parser",
  "proc-macro-error2",
@@ -308,15 +308,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "deranged"
-version = "0.5.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7cd812cc2bc1d69d4764bd80df88b4317eaef9e773c75226407d9bc0876b211c"
-dependencies = [
- "powerfmt",
-]
-
-[[package]]
 name = "digest"
 version = "0.10.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -336,74 +327,23 @@ dependencies = [
 ]
 
 [[package]]
-name = "domain"
-version = "0.11.1"
+name = "dsp-fixedpoint"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f7ff15f82df7d5086fb15dfc1c1e96598a6ded9829840a9bcfa1fa3ccd8d01d"
+checksum = "bb62c4b76dcbb298300dbc74a3ecd9fc0e180b806500bd5b1fc53ec85c0f27cd"
 dependencies = [
- "domain-macros",
- "heapless 0.8.0",
- "octseq",
- "time",
-]
-
-[[package]]
-name = "domain-macros"
-version = "0.11.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8d1a6796ad411f6812d691955066ad27450196bfb181bb91b66a643cc3e8f5b7"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 2.0.117",
-]
-
-[[package]]
-name = "edge-mdns"
-version = "0.7.0"
-source = "git+https://github.com/oro-os/edge-net.git#1f084b41944c35b233cbe17accfbc09a56d5eaf0"
-dependencies = [
- "defmt 1.0.1",
- "domain",
- "edge-nal",
- "embassy-futures",
- "embassy-sync 0.8.0",
- "embassy-time",
- "heapless 0.9.2",
- "rand_core 0.10.1",
-]
-
-[[package]]
-name = "edge-nal"
-version = "0.6.0"
-source = "git+https://github.com/oro-os/edge-net.git#1f084b41944c35b233cbe17accfbc09a56d5eaf0"
-dependencies = [
- "embassy-time",
- "embedded-io-async 0.7.0",
-]
-
-[[package]]
-name = "edge-nal-embassy"
-version = "0.8.1"
-source = "git+https://github.com/oro-os/edge-net.git#1f084b41944c35b233cbe17accfbc09a56d5eaf0"
-dependencies = [
- "defmt 1.0.1",
- "edge-nal",
- "embassy-futures",
- "embassy-net",
- "embedded-io-async 0.7.0",
+ "num-traits",
 ]
 
 [[package]]
 name = "embassy-embedded-hal"
 version = "0.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b0641612053b2f34fc250bb63f6630ae75de46e02ade7f457268447081d709ce"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
- "defmt 1.0.1",
- "embassy-futures",
- "embassy-hal-internal 0.4.0",
- "embassy-sync 0.8.0",
+ "defmt 1.1.0",
+ "embassy-futures 0.1.2 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-hal-internal",
+ "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
  "embassy-time",
  "embedded-hal 0.2.7",
  "embedded-hal 1.0.0",
@@ -416,8 +356,7 @@ dependencies = [
 [[package]]
 name = "embassy-executor"
 version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5d0d3b15c9d7dc4fec1d8cb77112472fb008b3b28c51ad23838d83587a6d2f1e"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
  "cordyceps",
  "cortex-m",
@@ -430,8 +369,7 @@ dependencies = [
 [[package]]
 name = "embassy-executor-macros"
 version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d11a246f53de5f97a387f40ac24726817cd0b6f833e7603baac784f29d6ff276"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
  "darling",
  "proc-macro2",
@@ -442,8 +380,7 @@ dependencies = [
 [[package]]
 name = "embassy-executor-timer-queue"
 version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2fc328bf943af66b80b98755db9106bf7e7471b0cf47dc8559cd9a6be504cc9c"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 
 [[package]]
 name = "embassy-futures"
@@ -452,85 +389,67 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dc2d050bdc5c21e0862a89256ed8029ae6c290a93aecefc73084b3002cdebb01"
 
 [[package]]
-name = "embassy-hal-internal"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f10ce10a4dfdf6402d8e9bd63128986b96a736b1a0a6680547ed2ac55d55dba"
-dependencies = [
- "num-traits",
-]
+name = "embassy-futures"
+version = "0.1.2"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 
 [[package]]
 name = "embassy-hal-internal"
 version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "568659fc53866d3d85c60fa33723fb751aa69e71507634fc2c19e7649432fb75"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
+ "aligned",
+ "as-slice",
  "cortex-m",
  "critical-section",
- "defmt 1.0.1",
+ "defmt 1.1.0",
  "num-traits",
 ]
 
 [[package]]
 name = "embassy-net"
 version = "0.9.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "347bc855bdbdf50ed9c5a1d80e8204badb0ba149b8732dde38e1e9708ed9d313"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
- "defmt 1.0.1",
+ "defmt 1.1.0",
  "document-features",
  "embassy-net-driver",
- "embassy-sync 0.8.0",
+ "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
  "embassy-time",
  "embedded-io-async 0.7.0",
  "embedded-nal-async",
- "heapless 0.9.2",
+ "heapless 0.9.3",
  "managed",
- "smoltcp 0.13.0",
+ "smoltcp 0.13.1 (git+https://github.com/oro-os/smoltcp?branch=dns-srv-macros)",
 ]
 
 [[package]]
 name = "embassy-net-driver"
 version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "524eb3c489760508f71360112bca70f6e53173e6fe48fc5f0efd0f5ab217751d"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
- "defmt 0.3.100",
-]
-
-[[package]]
-name = "embassy-net-driver-channel"
-version = "0.3.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b7b2739fbcf6cd206ae08779c7d709087b16577d255f2ea4a45bc4bbbf305b3f"
-dependencies = [
- "embassy-futures",
- "embassy-net-driver",
- "embassy-sync 0.7.2",
+ "defmt 1.1.0",
 ]
 
 [[package]]
 name = "embassy-net-driver-channel"
 version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a07d2eb9f05a6fc876500949856ea1be40773d866d8cb99384f72d0ae4568c16"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
- "defmt 1.0.1",
- "embassy-futures",
+ "defmt 1.1.0",
+ "embassy-futures 0.1.2 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
  "embassy-net-driver",
- "embassy-sync 0.8.0",
+ "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
 ]
 
 [[package]]
 name = "embassy-net-wiznet"
 version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "336e290ec0eedc19e9d0a948d2f715ea187de79da517a0a24e55553c1a185ab8"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
- "defmt 1.0.1",
- "embassy-futures",
- "embassy-net-driver-channel 0.4.0",
+ "defmt 1.1.0",
+ "embassy-futures 0.1.2 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-net-driver-channel",
  "embassy-time",
  "embedded-hal 1.0.0",
  "embedded-hal-async",
@@ -539,8 +458,7 @@ dependencies = [
 [[package]]
 name = "embassy-stm32"
 version = "0.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "486c0622deb5a519fc4d2cb8e3ef324f7568fcdfff201ff8fcab46557d663ceb"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
  "aligned",
  "bit_field",
@@ -550,13 +468,14 @@ dependencies = [
  "cortex-m",
  "cortex-m-rt",
  "critical-section",
- "defmt 1.0.1",
+ "defmt 1.1.0",
  "document-features",
+ "dsp-fixedpoint",
  "embassy-embedded-hal",
- "embassy-futures",
- "embassy-hal-internal 0.5.0",
+ "embassy-futures 0.1.2 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-hal-internal",
  "embassy-net-driver",
- "embassy-sync 0.8.0",
+ "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
  "embassy-time",
  "embassy-time-driver",
  "embassy-time-queue-utils",
@@ -572,10 +491,12 @@ dependencies = [
  "embedded-storage",
  "embedded-storage-async",
  "futures-util",
- "heapless 0.9.2",
+ "heapless 0.9.3",
  "nb 1.1.0",
+ "once_cell",
  "proc-macro2",
  "quote",
+ "rand_core 0.10.1",
  "rand_core 0.6.4",
  "rand_core 0.9.5",
  "regex",
@@ -590,42 +511,40 @@ dependencies = [
 
 [[package]]
 name = "embassy-sync"
-version = "0.7.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "73974a3edbd0bd286759b3d483540f0ebef705919a5f56f4fc7709066f71689b"
-dependencies = [
- "cfg-if",
- "critical-section",
- "embedded-io-async 0.6.1",
- "futures-core",
- "futures-sink",
- "heapless 0.8.0",
-]
-
-[[package]]
-name = "embassy-sync"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7bbd85cf5a5ae56bdf26f618364af642d1d0a4e245cdd75cd9aabda382f65a81"
 dependencies = [
  "cfg-if",
  "critical-section",
- "defmt 1.0.1",
  "embedded-io-async 0.7.0",
  "futures-core",
  "futures-sink",
- "heapless 0.9.2",
+ "heapless 0.9.3",
+]
+
+[[package]]
+name = "embassy-sync"
+version = "0.8.0"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
+dependencies = [
+ "cfg-if",
+ "critical-section",
+ "defmt 1.1.0",
+ "embedded-io-async 0.7.0",
+ "futures-core",
+ "futures-sink",
+ "heapless 0.9.3",
 ]
 
 [[package]]
 name = "embassy-time"
 version = "0.5.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "592b0c143ec626e821d4d90da51a2bd91d559d6c442b7c74a47d368c9e23d97a"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
  "cfg-if",
  "critical-section",
- "defmt 1.0.1",
+ "defmt 1.1.0",
  "document-features",
  "embassy-time-driver",
  "embedded-hal 0.2.7",
@@ -637,8 +556,7 @@ dependencies = [
 [[package]]
 name = "embassy-time-driver"
 version = "0.2.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6ee71af1b3a0deaa53eaf2d39252f83504c853646e472400b763060389b9fcc9"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
  "document-features",
 ]
@@ -646,50 +564,50 @@ dependencies = [
 [[package]]
 name = "embassy-time-queue-utils"
 version = "0.3.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "168297bf80aaf114b3c9ad589bf38b01b3009b9af7f97cd18086c5bbf96f5693"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
  "embassy-executor-timer-queue",
- "heapless 0.9.2",
+ "heapless 0.9.3",
 ]
 
 [[package]]
 name = "embassy-usb"
-version = "0.5.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dc4462e48b19a4f401a11901bdd981aab80c6a826608016a0bdc73cbbab31954"
+version = "0.6.0"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
- "defmt 1.0.1",
- "embassy-futures",
- "embassy-net-driver-channel 0.3.2",
- "embassy-sync 0.7.2",
+ "bitflags 2.11.1",
+ "defmt 1.1.0",
+ "embassy-futures 0.1.2 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-net-driver-channel",
+ "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-time",
  "embassy-usb-driver",
- "embedded-io-async 0.6.1",
- "heapless 0.8.0",
+ "embedded-io-async 0.7.0",
+ "heapless 0.9.3",
  "ssmarshal",
  "usbd-hid",
 ]
 
 [[package]]
 name = "embassy-usb-driver"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "17119855ccc2d1f7470a39756b12068454ae27a3eabb037d940b5c03d9c77b7a"
+version = "0.2.1"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
- "defmt 1.0.1",
- "embedded-io-async 0.6.1",
+ "defmt 1.1.0",
+ "embedded-io-async 0.7.0",
 ]
 
 [[package]]
 name = "embassy-usb-synopsys-otg"
-version = "0.3.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cbe46f4083109c7ea12a03ca61095d1e87c76fec52c7ca9ee06a42935606dacb"
+version = "0.3.3"
+source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#9e4a6813425b667d06b1b07ba79cab317840d974"
 dependencies = [
  "critical-section",
- "defmt 1.0.1",
- "embassy-sync 0.8.0",
+ "defmt 1.1.0",
+ "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-time",
  "embassy-usb-driver",
+ "portable-atomic",
 ]
 
 [[package]]
@@ -802,7 +720,7 @@ version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9eb1aa714776b75c7e67e1da744b81a129b3ff919c8712b5e1b32252c1f07cc7"
 dependencies = [
- "defmt 1.0.1",
+ "defmt 1.1.0",
 ]
 
 [[package]]
@@ -820,7 +738,7 @@ version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2564b9f813c544241430e147d8bc454815ef9ac998878d30cc3055449f7fd4c0"
 dependencies = [
- "defmt 1.0.1",
+ "defmt 1.1.0",
  "embedded-io 0.7.1",
 ]
 
@@ -983,18 +901,17 @@ version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0bfb9eb618601c89945a70e254898da93b13be0388091d42117462b265bb3fad"
 dependencies = [
- "defmt 0.3.100",
  "hash32",
  "stable_deref_trait",
 ]
 
 [[package]]
 name = "heapless"
-version = "0.9.2"
+version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2af2455f757db2b292a9b1768c4b70186d443bcb3b316252d6b540aec1cd89ed"
+checksum = "25ba4bd83f9415b58b4ed8dc5714c76e626a105be4646c02630ad730ad3b5aa4"
 dependencies = [
- "defmt 1.0.1",
+ "defmt 1.1.0",
  "hash32",
  "stable_deref_trait",
 ]
@@ -1024,24 +941,27 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "68ab91017fe16c622486840e4c83c9a37afeff978bd239b5293d61ece587de66"
 
 [[package]]
+name = "libm"
+version = "0.2.16"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b6d2cec3eae94f9f509c767b45932f1ada8350c4bdb85af2fcab4a3c14807981"
+
+[[package]]
 name = "link-firmware"
 version = "1.0.0"
 dependencies = [
  "cortex-m",
  "cortex-m-rt",
  "crc32fast",
- "defmt 1.0.1",
+ "defmt 1.1.0",
  "defmt-rtt",
- "edge-mdns",
- "edge-nal",
- "edge-nal-embassy",
  "embassy-embedded-hal",
  "embassy-executor",
- "embassy-futures",
+ "embassy-futures 0.1.2 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
  "embassy-net",
  "embassy-net-wiznet",
  "embassy-stm32",
- "embassy-sync 0.8.0",
+ "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
  "embassy-time",
  "embassy-usb",
  "embedded-graphics",
@@ -1052,7 +972,7 @@ dependencies = [
  "embedded-hal-bus",
  "embedded-io-async 0.6.1",
  "embedded-storage",
- "heapless 0.9.2",
+ "heapless 0.9.3",
  "micromath",
  "oro-logo-rle",
  "panic-probe",
@@ -1064,7 +984,7 @@ dependencies = [
  "qup-embassy",
  "rand_core 0.10.1",
  "sha2",
- "smoltcp 0.12.0",
+ "smoltcp 0.13.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "static_cell",
  "stm32-metapac 14.0.0",
  "syn 2.0.117",
@@ -1172,27 +1092,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "num-conv"
-version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c6673768db2d862beb9b39a78fdcb1a69439615d5794a1be50caa9bc92c81967"
-
-[[package]]
 name = "num-traits"
 version = "0.2.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "071dfc062690e90b734c0b2273ce72ad0ffa95f0c74596bc250dcfd960262841"
 dependencies = [
  "autocfg",
-]
-
-[[package]]
-name = "octseq"
-version = "0.5.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "126c3ca37c9c44cec575247f43a3e4374d8927684f129d2beeb0d2cef262fe12"
-dependencies = [
- "heapless 0.8.0",
+ "libm",
 ]
 
 [[package]]
@@ -1200,6 +1106,10 @@ name = "once_cell"
 version = "1.21.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50"
+dependencies = [
+ "critical-section",
+ "portable-atomic",
+]
 
 [[package]]
 name = "oro-logo-rle"
@@ -1220,7 +1130,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fd402d00b0fb94c5aee000029204a46884b1262e0c443f166d86d2c0747e1a1a"
 dependencies = [
  "cortex-m",
- "defmt 1.0.1",
+ "defmt 1.1.0",
 ]
 
 [[package]]
@@ -1256,12 +1166,6 @@ name = "portable-atomic"
 version = "1.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c33a9471896f1c69cecef8d20cbe2f7accd12527ce60845ff44c153bb2a21b49"
-
-[[package]]
-name = "powerfmt"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "439ee305def115ba05938db6eb1644ff94165c5ab5e9420d1c1bcedbba909391"
 
 [[package]]
 name = "proc-macro-error-attr2"
@@ -1308,7 +1212,7 @@ name = "qup-core"
 version = "0.1.0"
 source = "git+https://github.com/oro-os/qup.git#fa497411292cafd5b4d1db70bc072cd83010d839"
 dependencies = [
- "defmt 1.0.1",
+ "defmt 1.1.0",
 ]
 
 [[package]]
@@ -1316,10 +1220,10 @@ name = "qup-embassy"
 version = "0.1.0"
 source = "git+https://github.com/oro-os/qup.git#fa497411292cafd5b4d1db70bc072cd83010d839"
 dependencies = [
- "defmt 1.0.1",
- "embassy-futures",
- "embassy-sync 0.8.0",
- "heapless 0.9.2",
+ "defmt 1.1.0",
+ "embassy-futures 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "embassy-sync 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "heapless 0.9.3",
  "qup-core",
  "qup-embassy-proc",
 ]
@@ -1502,29 +1406,28 @@ checksum = "67b1b7a3b5fe4f1376887184045fcf45c69e92af734b7aaddc05fb777b6fbd03"
 
 [[package]]
 name = "smoltcp"
-version = "0.12.0"
+version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dad095989c1533c1c266d9b1e8d70a1329dd3723c3edac6d03bbd67e7bf6f4bb"
+checksum = "5f73d40463bba65efc9adc6370b56df76d563cc46e2482bba58351b4afb7535e"
 dependencies = [
  "bitflags 1.3.2",
  "byteorder",
  "cfg-if",
  "defmt 0.3.100",
- "heapless 0.8.0",
+ "heapless 0.9.3",
  "managed",
 ]
 
 [[package]]
 name = "smoltcp"
-version = "0.13.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ac729b0a77bd092a3f06ddaddc59fe0d67f48ba0de45a9abe707c2842c7f8767"
+version = "0.13.1"
+source = "git+https://github.com/oro-os/smoltcp?branch=dns-srv-macros#e23b2ca539d82b3bcda2022d83565a86ba0f907d"
 dependencies = [
  "bitflags 1.3.2",
  "byteorder",
  "cfg-if",
  "defmt 0.3.100",
- "heapless 0.9.2",
+ "heapless 0.9.3",
  "managed",
 ]
 
@@ -1580,8 +1483,7 @@ dependencies = [
 [[package]]
 name = "stm32-metapac"
 version = "21.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e74b78632cea498cfb28386a29f8bfae7476d6570a78733eb5fecbee66c2f4ce"
+source = "git+https://github.com/embassy-rs/stm32-data-generated?tag=stm32-data-6d108b6d3695cafd30923b033bc82291da5859a7#afce0040f03f376ad34e62e78e201fbfe275a0a1"
 dependencies = [
  "cortex-m",
  "cortex-m-rt",
@@ -1644,24 +1546,6 @@ checksum = "f60246a4944f24f6e018aa17cdeffb7818b76356965d03b07d6a9886e8962185"
 dependencies = [
  "cfg-if",
 ]
-
-[[package]]
-name = "time"
-version = "0.3.47"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "743bd48c283afc0388f9b8827b976905fb217ad9e647fae3a379a9283c4def2c"
-dependencies = [
- "deranged",
- "num-conv",
- "powerfmt",
- "time-core",
-]
-
-[[package]]
-name = "time-core"
-version = "0.1.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7694e1cfe791f8d31026952abf09c69ca6f6fa4e1a1229e18988f06a04a12dca"
 
 [[package]]
 name = "tracing"
@@ -1765,30 +1649,28 @@ dependencies = [
 
 [[package]]
 name = "usbd-hid"
-version = "0.8.2"
+version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e6f291ab53d428685cc780f08a2eb9d5d6ff58622db2b36e239a4f715f1e184c"
+checksum = "68beab087e4971a2fe76f631478b0e91d39593f58efd2775026ce6dc07a7bac6"
 dependencies = [
- "serde",
- "ssmarshal",
  "usb-device",
  "usbd-hid-macros",
 ]
 
 [[package]]
 name = "usbd-hid-descriptors"
-version = "0.8.2"
+version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0eee54712c5d778d2fb2da43b1ce5a7b5060886ef7b09891baeb4bf36910a3ed"
+checksum = "b297f021719c4308d5d0c61b6c1e7c6b3ba383deba774b49aa5484f996bdb8f1"
 dependencies = [
  "bitfield 0.14.0",
 ]
 
 [[package]]
 name = "usbd-hid-macros"
-version = "0.8.2"
+version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bb573c76e7884035ac5e1ab4a81234c187a82b6100140af0ab45757650ccda38"
+checksum = "011a3219e0933f5b3ad7dc90d9a66541a967d084c98c067deed1cd608e557ed7"
 dependencies = [
  "byteorder",
  "hashbrown",
@@ -1796,7 +1678,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "serde",
- "syn 1.0.109",
+ "syn 2.0.117",
  "usbd-hid-descriptors",
 ]
 
