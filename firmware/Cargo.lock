@@ -443,9 +443,9 @@ version = "0.6.0"
 source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#b2a40cd671fa9137e00b37f2451b5f5e3d453767"
 dependencies = [
  "defmt 1.1.0",
- "embassy-futures 0.1.2 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-futures",
  "embassy-hal-internal",
- "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-sync",
  "embassy-time",
  "embedded-hal 0.2.7",
  "embedded-hal 1.0.0",
@@ -487,12 +487,6 @@ source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#b2a40cd671fa9
 [[package]]
 name = "embassy-futures"
 version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dc2d050bdc5c21e0862a89256ed8029ae6c290a93aecefc73084b3002cdebb01"
-
-[[package]]
-name = "embassy-futures"
-version = "0.1.2"
 source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#b2a40cd671fa9137e00b37f2451b5f5e3d453767"
 
 [[package]]
@@ -516,7 +510,7 @@ dependencies = [
  "defmt 1.1.0",
  "document-features",
  "embassy-net-driver",
- "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-sync",
  "embassy-time",
  "embedded-io-async 0.7.0",
  "embedded-nal-async",
@@ -539,9 +533,9 @@ version = "0.4.0"
 source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#b2a40cd671fa9137e00b37f2451b5f5e3d453767"
 dependencies = [
  "defmt 1.1.0",
- "embassy-futures 0.1.2 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-futures",
  "embassy-net-driver",
- "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-sync",
 ]
 
 [[package]]
@@ -550,7 +544,7 @@ version = "0.3.0"
 source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#b2a40cd671fa9137e00b37f2451b5f5e3d453767"
 dependencies = [
  "defmt 1.1.0",
- "embassy-futures 0.1.2 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-futures",
  "embassy-net-driver-channel",
  "embassy-time",
  "embedded-hal 1.0.0",
@@ -574,10 +568,10 @@ dependencies = [
  "document-features",
  "dsp-fixedpoint",
  "embassy-embedded-hal",
- "embassy-futures 0.1.2 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-futures",
  "embassy-hal-internal",
  "embassy-net-driver",
- "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-sync",
  "embassy-time",
  "embassy-time-driver",
  "embassy-time-queue-utils",
@@ -609,20 +603,6 @@ dependencies = [
  "trait-set",
  "vcell",
  "volatile-register",
-]
-
-[[package]]
-name = "embassy-sync"
-version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7bbd85cf5a5ae56bdf26f618364af642d1d0a4e245cdd75cd9aabda382f65a81"
-dependencies = [
- "cfg-if",
- "critical-section",
- "embedded-io-async 0.7.0",
- "futures-core",
- "futures-sink",
- "heapless 0.9.3",
 ]
 
 [[package]]
@@ -679,9 +659,9 @@ source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#b2a40cd671fa9
 dependencies = [
  "bitflags 2.13.0",
  "defmt 1.1.0",
- "embassy-futures 0.1.2 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-futures",
  "embassy-net-driver-channel",
- "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-sync",
  "embassy-time",
  "embassy-usb-driver",
  "embedded-io-async 0.7.0",
@@ -707,7 +687,7 @@ source = "git+https://github.com/oro-os/embassy.git?branch=dns-srv#b2a40cd671fa9
 dependencies = [
  "critical-section",
  "defmt 1.1.0",
- "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-sync",
  "embassy-time",
  "embassy-usb-driver",
  "portable-atomic",
@@ -1169,11 +1149,11 @@ dependencies = [
  "defmt-rtt",
  "embassy-embedded-hal",
  "embassy-executor",
- "embassy-futures 0.1.2 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-futures",
  "embassy-net",
  "embassy-net-wiznet",
  "embassy-stm32",
- "embassy-sync 0.8.0 (git+https://github.com/oro-os/embassy.git?branch=dns-srv)",
+ "embassy-sync",
  "embassy-time",
  "embassy-usb",
  "embedded-graphics",
@@ -1192,8 +1172,6 @@ dependencies = [
  "png",
  "proc-macro2",
  "quote",
- "qup-core",
- "qup-embassy",
  "rand_core 0.10.1",
  "sha2",
  "smoltcp 0.13.1 (git+https://github.com/oro-os/smoltcp?branch=dns-srv)",
@@ -1471,38 +1449,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "41f2619966050689382d2b44f664f4bc593e129785a36d6ee376ddf37259b924"
 dependencies = [
  "proc-macro2",
-]
-
-[[package]]
-name = "qup-core"
-version = "0.1.0"
-source = "git+https://github.com/oro-os/qup.git#fa497411292cafd5b4d1db70bc072cd83010d839"
-dependencies = [
- "defmt 1.1.0",
-]
-
-[[package]]
-name = "qup-embassy"
-version = "0.1.0"
-source = "git+https://github.com/oro-os/qup.git#fa497411292cafd5b4d1db70bc072cd83010d839"
-dependencies = [
- "defmt 1.1.0",
- "embassy-futures 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "embassy-sync 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "heapless 0.9.3",
- "qup-core",
- "qup-embassy-proc",
-]
-
-[[package]]
-name = "qup-embassy-proc"
-version = "0.1.0"
-source = "git+https://github.com/oro-os/qup.git#fa497411292cafd5b4d1db70bc072cd83010d839"
-dependencies = [
- "heck",
- "proc-macro2",
- "quote",
- "syn 2.0.117",
 ]
 
 [[package]]

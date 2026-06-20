@@ -44,11 +44,6 @@ usbd-hid = "0.10.0"
 embedded-storage = "0.3.1"
 crc32fast = { version = "1.5.0", default-features = false }
 w5500-ll = { version = "0.13.0", features = ["defmt", "eh1"] }
-#edge-mdns = { features = ["defmt"], git = "https://github.com/oro-os/edge-net.git" }
-#edge-nal-embassy = { features = ["defmt"], git = "https://github.com/oro-os/edge-net.git" }
-#edge-nal = { git = "https://github.com/oro-os/edge-net.git" }
-qup-embassy = { git = "https://github.com/oro-os/qup.git", features = ["defmt", "macros"] }
-qup-core = { git = "https://github.com/oro-os/qup.git", features = ["defmt"] }
 
 [dependencies.oro-logo-rle]
 git = "https://github.com/oro-os/oro-logo-rle"
