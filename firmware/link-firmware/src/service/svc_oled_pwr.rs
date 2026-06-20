@@ -41,8 +41,12 @@ impl From<State> for heapless::String<4> {
 pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 	let mut current_state = State::Off;
 
-	crate::vars::STAT_OLED_POWER_STATE.set(current_state.into());
-	crate::vars::STAT_OLED_POWER_TARGET_STATE.set(current_state.into());
+	crate::vars::STAT_OLED_POWER_STATE
+		.set(current_state.into())
+		.await;
+	crate::vars::STAT_OLED_POWER_TARGET_STATE
+		.set(current_state.into())
+		.await;
 
 	loop {
 		let mut target_state = receive_state(rx, current_state).await;
@@ -54,7 +58,9 @@ pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 				target_state
 			);
 
-			crate::vars::STAT_OLED_POWER_TARGET_STATE.set(target_state.into());
+			crate::vars::STAT_OLED_POWER_TARGET_STATE
+				.set(target_state.into())
+				.await;
 
 			let either = match target_state {
 				State::On => select(receive_state(rx, target_state), perform_turnon(&bus)).await,
@@ -65,7 +71,9 @@ pub async fn run(bus: super::Bus, rx: &'static Channel) -> ! {
 			};
 
 			current_state = target_state;
-			crate::vars::STAT_OLED_POWER_STATE.set(current_state.into());
+			crate::vars::STAT_OLED_POWER_STATE
+				.set(current_state.into())
+				.await;
 
 			if let Either::First(new_state) = either {
 				// We were interrupted; start new target

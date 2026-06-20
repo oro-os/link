@@ -37,9 +37,7 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 			} else {
 				defmt::info!("found service record: {:?}", service);
 				existing = Some(service);
-				bus.svc_redis
-					.send(super::svc_redis::Cmd::Connect { endpoint: service })
-					.await;
+				crate::bus!(bus, svc_redis, Connect { endpoint: service });
 			}
 		} else {
 			defmt::warn!("no area controller found via mDNS; checking again in 3s");

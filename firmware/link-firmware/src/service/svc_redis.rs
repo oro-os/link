@@ -15,6 +15,7 @@ pub struct Config {
 }
 
 #[embassy_executor::task]
+#[allow(irrefutable_let_patterns)]
 pub async fn run(rx: &'static Channel, config: Config) -> ! {
 	// Wait for service endpoint
 	let endpoint = loop {
@@ -49,32 +50,42 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 	client.ping().await.expect("failed to ping redis");
 	defmt::info!("pinged redis successfully");
 
-	let mut counter = 0u32;
 	loop {
-		counter = counter.wrapping_add(1);
-		client
-			.set("debug:counter", format_args!("count={counter}"))
-			.await
-			.expect("failed to set COUNTER in redis");
-		let message: Option<heapless::String<64>> = client
-			.get("debug:message")
-			.await
-			.expect("failed to get MESSAGE from redis");
-		if let Some(message) = message {
-			defmt::info!("got message from redis: {}", message);
-		} else {
-			defmt::debug!("no message in redis");
-		}
-		let count: Option<u32> = client
-			.get("debug:server-count")
-			.await
-			.expect("failed to get COUNT from redis");
-		if let Some(count) = count {
-			defmt::info!("got count from redis: {}", count);
-		} else {
-			defmt::debug!("no count in redis");
-		}
+		crate::vars::foreach_var!(var => {
+			sync_var(var, &mut client).await;
+		});
 
-		Timer::after_secs(1).await;
+		embassy_futures::select::select(Timer::after_secs(3), crate::vars::DIRTY_FLAG.wait()).await;
+	}
+}
+
+async fn sync_var(var: &impl crate::vars::SyncVar, client: &mut crate::redis::Client<'_, 512>) {
+	use crate::redis::Error;
+	if let Err(err) = var.sync(client).await {
+		match err {
+			Error::ProtocolError => {
+				defmt::error!("protocol error while syncing variable; resetting");
+			}
+			Error::ReadExact(err) => {
+				defmt::error!("read error while syncing variable: {:?}", err);
+			}
+			Error::Tcp(err) => {
+				defmt::error!("TCP error while syncing variable: {:?}", err);
+			}
+			Error::UnexpectedResponse => {
+				defmt::warn!("unexpected response while syncing variable");
+				// We don't reset here; we just don't update it.
+				return;
+			}
+			Error::TooLong => {
+				defmt::error!("value too long while syncing variable");
+				// We don't reset here; we just don't update it.
+				return;
+			}
+		}
+		// SAFETY: No other choice but to reset.
+		unsafe {
+			crate::reset();
+		};
 	}
 }

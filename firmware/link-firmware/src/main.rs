@@ -139,7 +139,9 @@ pub async fn main(spawner: Spawner) -> ! {
 		nvram::LastBootFailure::None => defmt::info!("last boot failure: {:?}", last_boot_failure),
 		other => defmt::error!("last boot failure: {:?}", other),
 	}
-	crate::vars::STAT_LAST_BOOT_FAILURE.set(last_boot_failure.into());
+	crate::vars::STAT_LAST_BOOT_FAILURE
+		.set(last_boot_failure.into())
+		.await;
 
 	// let pflash = match flash::read_pflash() {
 	// 	Ok(pflash) => pflash,
@@ -187,10 +189,16 @@ pub async fn main(spawner: Spawner) -> ! {
 	//};
 	let initialized = true;
 
-	crate::vars::STAT_INITIALIZED.set(initialized);
-	crate::vars::STAT_VERSION_MAJOR.set(crate::version::VERSION_MAJOR as i64);
-	crate::vars::STAT_VERSION_MINOR.set(crate::version::VERSION_MINOR as i64);
-	crate::vars::STAT_VERSION_PATCH.set(crate::version::VERSION_PATCH as i64);
+	crate::vars::STAT_INITIALIZED.set(initialized).await;
+	crate::vars::STAT_VERSION_MAJOR
+		.set(crate::version::VERSION_MAJOR as i64)
+		.await;
+	crate::vars::STAT_VERSION_MINOR
+		.set(crate::version::VERSION_MINOR as i64)
+		.await;
+	crate::vars::STAT_VERSION_PATCH
+		.set(crate::version::VERSION_PATCH as i64)
+		.await;
 
 	// This gets cleared on a successful boot later
 	nv_ram.reboot.in_progress.write(true);
@@ -413,7 +421,7 @@ pub async fn main(spawner: Spawner) -> ! {
 	let aux_vbus_sense_pin = Input::new(p.PA11, Pull::None);
 	// Have we sensed the aux vbus line?
 	let aux_vbus_sense = aux_vbus_sense_pin.is_low();
-	crate::vars::STAT_AUX_VBUS_SENSE.set(aux_vbus_sense);
+	crate::vars::STAT_AUX_VBUS_SENSE.set(aux_vbus_sense).await;
 	let aux_vbus_oc = ExtiInput::new(p.PA12, p.EXTI12, Pull::None, Irqs);
 	let aux_vbus_en = OutputOpenDrain::new(p.PA15, Level::High, Speed::Low);
 	// TODO: Set `Pull::None` once external pull-up has been added

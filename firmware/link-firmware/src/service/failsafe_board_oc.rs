@@ -27,7 +27,9 @@ pub async fn run(config: Config) -> ! {
 	// (and bring low high the alert pin).
 	Timer::after_millis(100).await;
 
-	crate::vars::STAT_BOARD_OC_MA.set(ALERT_ON_CURRENT_MA as i64);
+	crate::vars::STAT_BOARD_OC_MA
+		.set(ALERT_ON_CURRENT_MA as i64)
+		.await;
 
 	board_power_alert.wait_for_low().await;
 	defmt::error!("board power OC alert; rebooting");

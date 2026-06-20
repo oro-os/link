@@ -71,7 +71,7 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 
 						defmt::debug!("enabling OLED VBUS");
 						vreg_en.set_high();
-						crate::vars::STAT_OLED_POWER_VREG.set(true);
+						crate::vars::STAT_OLED_POWER_VREG.set(true).await;
 						Timer::after(Duration::from_millis(10)).await;
 
 						defmt::debug!("resetting OLED after VBUS enable");
@@ -93,7 +93,7 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 
 						defmt::debug!("disabling OLED VBUS");
 						vreg_en.set_low();
-						crate::vars::STAT_OLED_POWER_VREG.set(false);
+						crate::vars::STAT_OLED_POWER_VREG.set(false).await;
 						Timer::after(Duration::from_millis(10)).await;
 					}
 					_ => {}
@@ -102,7 +102,9 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 				vbus_state = enabled;
 			}
 			Cmd::SetBrightness { brightness } => {
-				crate::vars::STAT_OLED_BRIGHTNESS.set(brightness as i64);
+				crate::vars::STAT_OLED_BRIGHTNESS
+					.set(brightness as i64)
+					.await;
 				oled.set_contrast(brightness).await.unwrap();
 			}
 			Cmd::Render => {

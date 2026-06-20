@@ -17,7 +17,6 @@ pub mod svc_main;
 pub mod svc_oled;
 pub mod svc_oled_pwr;
 pub mod svc_psu;
-// pub mod svc_qup;
 pub mod svc_mdns;
 pub mod svc_redis;
 pub mod svc_vbus_power;
@@ -29,26 +28,25 @@ include!("./_macro.inc.rs");
 services! {
                      #[bus(false)]                            dev_blinken_light,
                      #[bus(false)] #[rx(false)]               dev_exteth,
-                     #[bus(false)]              #[skip(true)] dev_leds,
-                     #[bus(false)]              #[skip(true)] dev_oled,
-                     #[bus(false)] #[rx(false)] #[skip(true)] dev_power_monitor,
-                     #[bus(false)] #[rx(false)] #[skip(true)] dev_sdcard,
-                     #[bus(false)] #[rx(false)] #[skip(true)] dev_syseth,
-                     #[bus(false)] #[rx(false)] #[skip(true)] dev_usb,
-                                   #[rx(false)] #[skip(true)] svc_main,
-    #[config(false)]                            #[skip(true)] svc_oled_pwr,
-    #[config(false)]                            #[skip(true)] svc_oled,
-    #[config(false)]                            #[skip(true)] svc_leds,
-                                                #[skip(true)] svc_vbus_power,
-                     #[bus(false)]              #[skip(true)] svc_psu,
-    #[config(false)]                            #[skip(true)] svc_wol,
- //                    #[bus(false)] #[rx(false)] #[skip(true)] svc_qup,
+                     #[bus(false)]                            dev_leds,
+                     #[bus(false)]                            dev_oled,
+                     #[bus(false)] #[rx(false)]               dev_power_monitor,
+                     #[bus(false)] #[rx(false)]               dev_sdcard,
+                     #[bus(false)] #[rx(false)]               dev_syseth,
+                     #[bus(false)] #[rx(false)]               dev_usb,
+                                   #[rx(false)]               svc_main,
+    #[config(false)]                                          svc_oled_pwr,
+    #[config(false)]                                          svc_oled,
+    #[config(false)]                                          svc_leds,
+                                                              svc_vbus_power,
+                     #[bus(false)]                            svc_psu,
+    #[config(false)]                                          svc_wol,
                                    #[rx(false)]               svc_mdns,
                      #[bus(false)]                            svc_redis,
-                     #[bus(false)] #[rx(false)] #[skip(true)] failsafe_board_oc,
-                     #[bus(false)] #[rx(false)] #[skip(true)] failsafe_aux_vbus_oc,
-                     #[bus(false)] #[rx(false)] #[skip(true)] failsafe_ulpi_oc,
-                     #[bus(false)] #[rx(false)] #[skip(true)] failsafe_sd_oc,
+                     #[bus(false)] #[rx(false)]               failsafe_board_oc,
+                     #[bus(false)] #[rx(false)]               failsafe_aux_vbus_oc,
+                     #[bus(false)] #[rx(false)]               failsafe_ulpi_oc,
+                     #[bus(false)] #[rx(false)]               failsafe_sd_oc,
 }
 
 #[macro_export]

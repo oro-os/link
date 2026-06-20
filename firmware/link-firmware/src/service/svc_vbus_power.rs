@@ -71,7 +71,9 @@ pub async fn run(bus: super::Bus, rx: &'static Channel, config: Config) -> ! {
 		cmd = match cmd {
 			Cmd::Off => {
 				defmt::debug!("turning off VBUS");
-				crate::vars::STAT_VBUS_POWER_STATE.set(State::Off.into());
+				crate::vars::STAT_VBUS_POWER_STATE
+					.set(State::Off.into())
+					.await;
 				// Already reset; continue;
 				next_cmd(rx, cmd).await
 			}
@@ -105,7 +107,9 @@ async fn run_vbus_driver(
 ) -> ! {
 	// Enable the VBUS line.
 	defmt::debug!("enabling main vbus line");
-	crate::vars::STAT_VBUS_POWER_STATE.set(State::Vbus.into());
+	crate::vars::STAT_VBUS_POWER_STATE
+		.set(State::Vbus.into())
+		.await;
 	vbus_en.set_high();
 	Timer::after_millis(10).await;
 
@@ -134,7 +138,9 @@ async fn run_vbus_driver(
 	// main vbus line so the board doesn't leech power.
 	defmt::debug!("main VBUS OC line asserted; enabling aux power");
 	aux_vbus_en.set_low();
-	crate::vars::STAT_VBUS_POWER_STATE.set(State::AuxVbus.into());
+	crate::vars::STAT_VBUS_POWER_STATE
+		.set(State::AuxVbus.into())
+		.await;
 	crate::bus!(bus, svc_psu, On);
 	Timer::after_millis(AUX_VBUS_SWITCH_TIME_MS).await;
 	defmt::debug!("aux VBUS power enabled; switching off main VBUS line");

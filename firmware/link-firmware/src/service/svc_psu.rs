@@ -20,12 +20,12 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 			Cmd::On => {
 				defmt::debug!("turning PSU on");
 				psu_on.set_high();
-				crate::vars::STAT_PSU_ON.set(true);
+				crate::vars::STAT_PSU_ON.set(true).await;
 			}
 			Cmd::Off => {
 				defmt::debug!("turning PSU off");
 				psu_on.set_low();
-				crate::vars::STAT_PSU_ON.set(false);
+				crate::vars::STAT_PSU_ON.set(false).await;
 			}
 		}
 	}

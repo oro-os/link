@@ -73,16 +73,16 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 		Bold("Waiting for config..."),
 		Normal(crate::unique_id()),
 	);
-	crate::vars::CFG_CONFIGURED.wait_for(&true).await;
+	crate::vars::CFG_CONFIGURED.wait_for(Some(&true)).await;
 
 	crate::bus!(bus, dev_leds, SetRemoteIndicator(Rgb::new(2, 18, 2)));
 	crate::oled_status!(bus, Bold("Configuring..."), Normal(crate::unique_id()),);
 
-	let _power_type = crate::vars::CFG_SUT_POWER_TYPE.get();
-	let usb_iface = crate::vars::CFG_SUT_USB_IFACE.get();
-	let require_4a_vbus = crate::vars::CFG_SUT_REQUIRE_4A_VBUS.get();
-	let _boot_source = crate::vars::CFG_SUT_BOOT_SOURCE.get();
-	let wol = crate::vars::CFG_WOL.get();
+	let _power_type = crate::vars::CFG_SUT_POWER_TYPE.get().await;
+	let usb_iface = crate::vars::CFG_SUT_USB_IFACE.get().await;
+	let require_4a_vbus = crate::vars::CFG_SUT_REQUIRE_4A_VBUS.get().await;
+	let _boot_source = crate::vars::CFG_SUT_BOOT_SOURCE.get().await;
+	let wol = crate::vars::CFG_WOL.get().await;
 
 	// Set the USB output selector
 	match usb_iface {
@@ -125,10 +125,7 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 
 	loop {
 		// Reset state
-		crate::vars::CFG_PR_RUN.set(false);
-		crate::vars::CFG_PR_TITLE.set(Default::default());
-		crate::vars::CFG_PR_AUTHOR.set(Default::default());
-		crate::vars::CFG_PR_NUMBER.set(0);
+		crate::vars::CFG_PR_RUN.set(false).await;
 
 		crate::bus!(
 			bus,
@@ -155,21 +152,18 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 		crate::bus!(bus, svc_vbus_power, Off);
 		crate::bus!(bus, svc_psu, Off);
 
-		match wol {
-			crate::vars::Wol::Off => crate::bus!(bus, svc_wol, Off),
-			crate::vars::Wol::Mins5 => {
-				crate::bus!(bus, svc_wol, After(Duration::from_secs(5 * 60)))
-			}
-			crate::vars::Wol::Mins10 => {
-				crate::bus!(bus, svc_wol, After(Duration::from_secs(10 * 60)))
-			}
-			crate::vars::Wol::Mins30 => {
-				crate::bus!(bus, svc_wol, After(Duration::from_secs(30 * 60)))
-			}
+		if wol == 0 {
+			crate::bus!(bus, svc_wol, Off);
+		} else {
+			crate::bus!(
+				bus,
+				svc_wol,
+				After(Duration::from_secs(u64::from(wol) * 60))
+			);
 		}
 
 		defmt::info!("waiting for PR...");
-		crate::vars::CFG_PR_RUN.wait_for(&true).await;
+		crate::vars::CFG_PR_RUN.wait_for(Some(&true)).await;
 		defmt::info!("PR run started");
 
 		crate::bus!(bus, svc_wol, Off);

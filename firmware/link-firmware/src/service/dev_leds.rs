@@ -81,10 +81,10 @@ pub async fn run(recv: &'static Channel, config: Config) -> ! {
 		mut enable_chip,
 	} = config;
 
-	crate::vars::STAT_LEDS_CHIP_ENABLED.set(false);
+	crate::vars::STAT_LEDS_CHIP_ENABLED.set(false).await;
 	enable_chip.set_high();
 	Timer::after(Duration::from_millis(100)).await;
-	crate::vars::STAT_LEDS_CHIP_ENABLED.set(true);
+	crate::vars::STAT_LEDS_CHIP_ENABLED.set(true).await;
 
 	let mut led = IS31FL3236A::new(i2c);
 	led.reset().await;

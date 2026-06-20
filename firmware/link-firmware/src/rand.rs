@@ -26,6 +26,7 @@ pub fn next_u32() -> u32 {
 	}
 }
 
+#[expect(unused)]
 pub fn rng() -> impl rand_core::Rng {
 	struct FakeRng;
 

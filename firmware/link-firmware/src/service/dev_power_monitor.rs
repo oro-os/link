@@ -115,8 +115,12 @@ pub async fn run(config: Config) -> ! {
 			current_ua
 		);
 
-		crate::vars::STAT_BOARD_CURRENT_MA.set(current_ma as i64);
-		crate::vars::STAT_BOARD_CURRENT_UA.set(current_ua as i64);
+		crate::vars::STAT_BOARD_CURRENT_MA
+			.set(current_ma as i64)
+			.await;
+		crate::vars::STAT_BOARD_CURRENT_UA
+			.set(current_ua as i64)
+			.await;
 	}
 }
 

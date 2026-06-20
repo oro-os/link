@@ -161,7 +161,7 @@ pub async fn run(rx: &'static Channel, config: Config) -> ! {
 	let mut mode = Cmd::On;
 
 	loop {
-		crate::vars::STAT_BLINKEN_LIGHT_CMD.set(mode.into());
+		crate::vars::STAT_BLINKEN_LIGHT_CMD.set(mode.into()).await;
 
 		mode = match mode {
 			Cmd::On => {
