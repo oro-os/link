@@ -1,12 +1,9 @@
 use embassy_net::{
 	IpEndpoint, Ipv4Address, Stack,
-	udp::{PacketMetadata, UdpSocket},
+	dns::QueryResult,
 };
 use embassy_time::{Duration, Timer};
-use smoltcp::wire::Ipv4Address as SmolIpv4;
-use static_cell::StaticCell;
 
-const MDNS_PORT: u16 = 5353;
 const MDNS_MULTICAST: Ipv4Address = Ipv4Address::new(224, 0, 0, 251);
 
 pub struct Config {
@@ -21,81 +18,88 @@ pub async fn run(config: Config) -> ! {
 	stack.wait_config_up().await;
 	defmt::debug!("network is up; looking for area controllers...");
 
-	// static RX_BUF: StaticCell<[u8; 1024]> = StaticCell::new();
-	// static TX_BUF: StaticCell<[u8; 512]> = StaticCell::new();
-	// let mut rx_meta = [PacketMetadata::EMPTY; 4];
-	// let rx_buf = RX_BUF.init([0u8; 1024]);
-	// let mut tx_meta = [PacketMetadata::EMPTY; 2];
-	// let tx_buf = TX_BUF.init([0u8; 512]);
-
-	// let mut socket = UdpSocket::new(
-	// 	stack,
-	// 	&mut rx_meta,
-	// 	rx_buf,
-	// 	&mut tx_meta,
-	// 	tx_buf,
-	//);
-
-	// socket.bind(MDNS_PORT).expect("failed to bind MDNS socket");
-	// stack.join_multicast_group(MDNS_MULTICAST).expect("failed to join multicast group");
+	stack
+		.join_multicast_group(MDNS_MULTICAST)
+		.expect("failed to join multicast group");
 
 	let dns = embassy_net::dns::DnsSocket::new(stack);
-	let result = dns
-		.query("oro.sh", embassy_net::dns::DnsQueryType::A)
-		.await
-		.expect("DNS query failed");
-	defmt::warn!("DNS query result: oro.sh: {:?}", result);
-	let result = dns
-		.query(
-			"_matrix._tcp.matrix.org",
-			embassy_net::dns::DnsQueryType::Srv,
-		)
-		.await
-		.expect("DNS query failed");
-	defmt::warn!("DNS query result: _matrix._tcp.matrix.org: {:?}", result);
-
+	let mut existing = None;
 	loop {
-		//// Build a multi-question query
-		// let mut buf = [0u8; 512];
-		// let len = build_multi_question_mdns_query(&mut buf);
-
-		// let endpoint = IpEndpoint::new(
-		//    MDNS_MULTICAST.into(),
-		//    MDNS_PORT,
-		//);
-
-		//// Send the query
-		// match socket.send_to(&buf[..len], endpoint).await {
-		//    Ok(_) => defmt::info!("mDNS multi-question query sent"),
-		//    Err(e) => defmt::warn!("Send error: {:?}", e),
-		//}
+		if let Some(service) = resolve_service(&dns).await {
+			defmt::trace!("found mDNS service: {:?}", service);
+			if let Some(existing) = &existing {
+				if *existing != service {
+					defmt::warn!("service record changed: {:?} -> {:?}", existing, service);
+					defmt::warn!("rebooting");
+					// SAFETY: Rebooting is the best way to recover; we've been asked to connect
+					// SAFETY: to a different area controller.
+					unsafe {
+						crate::reset();
+					}
+				}
+			} else {
+				defmt::info!("found service record: {:?}", service);
+				existing = Some(service);
+			}
+		} else {
+			defmt::warn!("no area controller found via mDNS; checking again in 3s");
+			Timer::after(Duration::from_secs(3)).await;
+			continue;
+		};
 
 		Timer::after(Duration::from_secs(10)).await;
 	}
 }
 
-// fn build_multi_question_mdns_query(buf: &mut [u8]) -> usize {
-//    use smoltcp::wire::{
-//        DnsPacket, DnsRepr, DnsFlags, DnsOpcode, DnsRcode,
-//        DnsQuestion, DnsQueryType as DnsType, // Note: it's DnsQueryType in some versions
-//    };
-//
-//    let mut packet = match DnsPacket::new_checked(buf) {
-//        Ok(p) => p,
-//        Err(_) => return 0,
-//    };
-//
-//    let repr = DnsRepr {
-//        transaction_id: 0,
-//        opcode: DnsOpcode::Query,
-//        flags: DnsFlags::empty(),
-//        question: DnsQuestion {           // Only ONE question supported in Repr
-//            name: b"mydevice.local",
-//            type_: DnsType::
-//        },
-//    };
-//
-//    repr.emit(&mut packet);
-// 	packet.payload().len()
-//}
-//
+async fn resolve_service(dns: &embassy_net::dns::DnsSocket<'_>) -> Option<IpEndpoint> {
+	let result = match dns.query("_oro-link-aread._tcp.local", embassy_net::dns::DnsQueryType::Ptr).await {
+		Ok(r) => r,
+		Err(e) => {
+			defmt::warn!("mDNS PTR query failed: {:?}", e);
+			return None;
+		}
+	};
+
+	for record in result {
+		if let QueryResult::Ptr(rec) = record {
+			defmt::debug!("found PTR record: {}", defmt::Display2Format(&rec));
+			let srv_result = match dns.query(rec, embassy_net::dns::DnsQueryType::Srv).await {
+				Ok(r) => r,
+				Err(e) => {
+					defmt::warn!("mDNS SRV query failed: {:?}", e);
+					continue;
+				}
+			};
+
+			for srv_record in srv_result {
+				if let QueryResult::Srv(srv) = srv_record {
+					defmt::debug!(
+						"found SRV record: priority {}, weight {}, port {}, target {}",
+						srv.priority,
+						srv.weight,
+						srv.port,
+						defmt::Display2Format(&srv.target)
+					);
+					let port = srv.port;
+
+					let a_result = match dns.query(&srv.target, embassy_net::dns::DnsQueryType::A).await {
+						Ok(r) => r,
+						Err(e) => {
+							defmt::warn!("mDNS A query failed: {:?}", e);
+							continue;
+						}
+					};
+
+					for a_record in a_result {
+						if let QueryResult::Address(a) = a_record {
+							defmt::debug!("found A record: {}", a);
+							return Some(IpEndpoint::new(a, port));
+						}
+					}
+				}
+			}
+		}
+	}
+
+	None
+}

@@ -1,0 +1,17 @@
+[package]
+name = "link-aread"
+description = "Oro Link area controller daemon"
+publish = false
+edition.workspace = true
+authors.workspace = true
+repository.workspace = true
+license.workspace = true
+version.workspace = true
+
+[dependencies]
+tokio = { version = "1.52.3", features = ["rt", "rt-multi-thread", "macros", "net"] }
+log = { version = "0.4.30", features = ["kv", "kv_std"] }
+env_logger = { version = "0.11.10", features = ["kv"] }
+anyhow = "1.0.102"
+clap = { version = "4.6.1", features = ["derive"] }
+mdns-sd = "0.20.0"

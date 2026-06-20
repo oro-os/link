@@ -10,9 +10,12 @@ resolver = "2"
 
 members = [
 	"link-firmware",
+	"link-aread",
 ]
 
-default-members = []
+default-members = [
+	"link-aread"
+]
 
 [profile.dev]
 opt-level = 1
