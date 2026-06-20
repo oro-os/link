@@ -17,6 +17,7 @@ pub(crate) mod unique_id;
 pub(crate) mod vars;
 pub(crate) mod version;
 pub(crate) mod wol;
+pub(crate) mod redis;
 
 use core::{cell::UnsafeCell, net::Ipv4Addr};
 
@@ -503,6 +504,9 @@ pub async fn main(spawner: Spawner) -> ! {
 		//	stack: exteth_stack
 		//},
 		svc_mdns {
+			stack: exteth_stack
+		},
+		svc_redis {
 			stack: exteth_stack
 		},
 	}

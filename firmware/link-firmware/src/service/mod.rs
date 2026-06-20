@@ -21,6 +21,7 @@ pub mod svc_psu;
 pub mod svc_mdns;
 pub mod svc_vbus_power;
 pub mod svc_wol;
+pub mod svc_redis;
 
 include!("./_macro.inc.rs");
 
@@ -42,7 +43,8 @@ services! {
                      #[bus(false)]              #[skip(true)] svc_psu,
     #[config(false)]                            #[skip(true)] svc_wol,
  //                    #[bus(false)] #[rx(false)] #[skip(true)] svc_qup,
-                     #[bus(false)] #[rx(false)]               svc_mdns,
+                                   #[rx(false)]               svc_mdns,
+                     #[bus(false)]                            svc_redis,
                      #[bus(false)] #[rx(false)] #[skip(true)] failsafe_board_oc,
                      #[bus(false)] #[rx(false)] #[skip(true)] failsafe_aux_vbus_oc,
                      #[bus(false)] #[rx(false)] #[skip(true)] failsafe_ulpi_oc,

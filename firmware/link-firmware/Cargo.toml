@@ -36,7 +36,7 @@ defmt-rtt = "0.4.0"
 stm32-metapac = { version = "14.0.0", features = ["stm32f479vg"] }
 sha2 = { version = "0.10.7", default-features = false }
 rand_core = "0.10.0"
-embedded-io-async = "0.6.1"
+embedded-io-async = "0.7.0"
 panic-probe = { version = "1.0.0", features = ["print-defmt"] }
 cortex-m = { version = "0.7.7", features = ["critical-section-single-core", "inline-asm"] }
 # XXX DEBUG: This is just to test USB connectivity.

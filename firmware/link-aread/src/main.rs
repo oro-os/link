@@ -48,7 +48,7 @@ async fn run_mdns_service() -> Result<!> {
 		"DBG_INSTANCE",
 		"192.168.50.198.local.",
 		"192.168.50.198",
-		8744,
+		7778,
 		&([])[..]
 	)
 	.context("failed to create mDNS service info")?;

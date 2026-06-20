@@ -177,7 +177,7 @@ pub fn init() -> &'static mut NvRam {
 		NV_INITIALIZED_THIS_SESSION = true;
 	}
 
-	defmt::trace!("initializing NVRAM");
+	defmt::debug!("initializing NVRAM");
 
 	// Enable BKPSRAM
 	{
@@ -197,12 +197,14 @@ pub fn init() -> &'static mut NvRam {
 		rcc.ahb1enr().modify(|w| w.set_bkpsramen(true));
 	}
 
-	defmt::trace!("NVRAM registers initialized");
+	defmt::debug!("NVRAM registers initialized");
 
 	// SAFETY: This is technically UB. However we properly handle
 	// integrity checking and initialization below.
-	let nv_ram = unsafe { NV_RAM.as_mut_ptr().as_mut().unwrap() };
-	defmt::debug!("nvram raw contents: {:?}", nv_ram);
+	defmt::debug!("nvram pointer: {:X}", unsafe { NV_RAM.as_mut_ptr() });
+	// SAFETY: This is technically UB. However we properly handle
+	// integrity checking and initialization below.
+	let nv_ram = unsafe { &mut *NV_RAM.as_mut_ptr() };
 
 	if !nv_ram.integrity.check() {
 		defmt::warn!("NVRAM integrity check failed, initializing to defaults");
@@ -213,6 +215,8 @@ pub fn init() -> &'static mut NvRam {
 			nv_ram.integrity
 		);
 	}
+
+	defmt::debug!("nvram raw contents: {:?}", nv_ram);
 
 	nv_ram
 }

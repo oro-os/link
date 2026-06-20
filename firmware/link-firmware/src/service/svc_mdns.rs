@@ -11,7 +11,7 @@ pub struct Config {
 }
 
 #[embassy_executor::task]
-pub async fn run(config: Config) -> ! {
+pub async fn run(bus: super::Bus, config: Config) -> ! {
 	let Config { stack } = config;
 
 	defmt::debug!("waiting for network...");
@@ -40,6 +40,7 @@ pub async fn run(config: Config) -> ! {
 			} else {
 				defmt::info!("found service record: {:?}", service);
 				existing = Some(service);
+				bus.svc_redis.send(super::svc_redis::Cmd::Connect { endpoint: service }).await;
 			}
 		} else {
 			defmt::warn!("no area controller found via mDNS; checking again in 3s");
