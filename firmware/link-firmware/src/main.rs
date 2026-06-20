@@ -12,12 +12,12 @@ pub(crate) mod crc32;
 pub(crate) mod font;
 pub(crate) mod nvram;
 pub(crate) mod rand;
+pub(crate) mod redis;
 pub(crate) mod service;
 pub(crate) mod unique_id;
 pub(crate) mod vars;
 pub(crate) mod version;
 pub(crate) mod wol;
-pub(crate) mod redis;
 
 use core::{cell::UnsafeCell, net::Ipv4Addr};
 

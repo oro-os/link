@@ -1,7 +1,4 @@
-use embassy_net::{
-	IpEndpoint, Ipv4Address, Stack,
-	dns::QueryResult,
-};
+use embassy_net::{IpEndpoint, Ipv4Address, Stack, dns::QueryResult};
 use embassy_time::{Duration, Timer};
 
 const MDNS_MULTICAST: Ipv4Address = Ipv4Address::new(224, 0, 0, 251);
@@ -40,7 +37,9 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 			} else {
 				defmt::info!("found service record: {:?}", service);
 				existing = Some(service);
-				bus.svc_redis.send(super::svc_redis::Cmd::Connect { endpoint: service }).await;
+				bus.svc_redis
+					.send(super::svc_redis::Cmd::Connect { endpoint: service })
+					.await;
 			}
 		} else {
 			defmt::warn!("no area controller found via mDNS; checking again in 3s");
@@ -53,7 +52,13 @@ pub async fn run(bus: super::Bus, config: Config) -> ! {
 }
 
 async fn resolve_service(dns: &embassy_net::dns::DnsSocket<'_>) -> Option<IpEndpoint> {
-	let result = match dns.query("_oro-link-aread._tcp.local", embassy_net::dns::DnsQueryType::Ptr).await {
+	let result = match dns
+		.query(
+			"_oro-link-aread._tcp.local",
+			embassy_net::dns::DnsQueryType::Ptr,
+		)
+		.await
+	{
 		Ok(r) => r,
 		Err(e) => {
 			defmt::warn!("mDNS PTR query failed: {:?}", e);
@@ -83,7 +88,10 @@ async fn resolve_service(dns: &embassy_net::dns::DnsSocket<'_>) -> Option<IpEndp
 					);
 					let port = srv.port;
 
-					let a_result = match dns.query(&srv.target, embassy_net::dns::DnsQueryType::A).await {
+					let a_result = match dns
+						.query(&srv.target, embassy_net::dns::DnsQueryType::A)
+						.await
+					{
 						Ok(r) => r,
 						Err(e) => {
 							defmt::warn!("mDNS A query failed: {:?}", e);

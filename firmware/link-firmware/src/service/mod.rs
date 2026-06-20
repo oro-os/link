@@ -19,9 +19,9 @@ pub mod svc_oled_pwr;
 pub mod svc_psu;
 // pub mod svc_qup;
 pub mod svc_mdns;
+pub mod svc_redis;
 pub mod svc_vbus_power;
 pub mod svc_wol;
-pub mod svc_redis;
 
 include!("./_macro.inc.rs");
 

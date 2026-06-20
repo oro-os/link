@@ -49,7 +49,7 @@ async fn run_mdns_service() -> Result<!> {
 		"192.168.50.198.local.",
 		"192.168.50.198",
 		7778,
-		&([])[..]
+		&([])[..],
 	)
 	.context("failed to create mDNS service info")?;
 
