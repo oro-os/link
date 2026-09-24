@@ -3527,6 +3527,260 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "OroLink:L+3V3"
+			(power local)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files no)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+3V3"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+3V3\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "L+3V3_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "L+3V3_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "OroLink:LGND"
+			(power local)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files no)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LGND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "LGND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "OroLink:LM1085ISX-3.3_NOPB"
 			(pin_names
 				(offset 0.254)
@@ -8453,145 +8707,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+3V3"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "+3V3"
-				(at 0 3.556 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+3V3\""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "+3V3_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+3V3_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+5V"
 			(power global)
 			(pin_numbers
@@ -8851,121 +8966,6 @@
 			(symbol "+5VP_1_1"
 				(pin power_in line
 					(at 0 0 90)
-					(length 0)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "power:GND"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR"
-				(at 0 -6.35 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "GND"
-				(at 0 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "GND_0_1"
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "GND_1_1"
-				(pin power_in line
-					(at 0 0 270)
 					(length 0)
 					(name ""
 						(effects
@@ -12141,13 +12141,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 271.78 30.48 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -12164,13 +12164,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 271.78 34.6131 0)
+			(at 273.685 31.75 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -12219,13 +12220,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 210.82 80.01 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -12242,13 +12243,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 210.82 84.1431 0)
+			(at 212.725 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -12375,13 +12377,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
+		(lib_id "OroLink:L+3V3")
 		(at 43.18 24.13 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -12398,13 +12400,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 43.18 19.9969 0)
+			(at 44.577 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -12896,13 +12899,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
+		(lib_id "OroLink:L+3V3")
 		(at 138.43 123.19 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -12919,13 +12922,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 138.43 119.0569 0)
+			(at 139.827 121.92 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -12974,13 +12978,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 91.44 184.15 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2629037d-7ebe-4254-9a63-4456f94bc2b4")
@@ -12996,7 +13000,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 91.44 188.2831 0)
+			(at 91.44 187.96 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13578,13 +13582,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 149.86 184.15 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3903848c-0fdc-42d0-9767-6eaf844d91f7")
@@ -13600,7 +13604,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 149.86 188.2831 0)
+			(at 149.86 187.96 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13655,13 +13659,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 111.76 130.81 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -13678,13 +13682,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 111.76 134.9431 0)
+			(at 113.665 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -13977,13 +13982,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 248.92 62.23 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -14000,13 +14005,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 248.92 66.3631 0)
+			(at 250.825 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -14387,39 +14393,41 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
+		(lib_id "OroLink:LGND")
 		(at 143.51 179.07 90)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4d0456fa-20c2-424b-aa92-9d6eb1994f5e")
 		(property "Reference" "TP4"
-			(at 140.208 174.2905 90)
+			(at 146.685 177.8578 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "GND"
-			(at 140.208 176.7148 90)
+			(at 146.685 180.2821 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
-			(at 143.51 173.99 0)
+		(property "Footprint" ""
+			(at 143.51 179.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14430,7 +14438,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 143.51 173.99 0)
+			(at 143.51 179.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14440,7 +14448,7 @@
 				)
 			)
 		)
-		(property "Description" "test point"
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 143.51 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -14629,13 +14637,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 46.99 77.47 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4f04fbb8-2e58-4c95-b4c9-c9c8e4acf916")
@@ -14651,7 +14659,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 46.99 81.6031 0)
+			(at 46.99 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14706,13 +14714,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
+		(lib_id "OroLink:L+3V3")
 		(at 157.48 24.13 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -14729,13 +14737,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 157.48 19.9969 0)
+			(at 158.877 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -14863,13 +14872,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
+		(lib_id "OroLink:L+3V3")
 		(at 116.84 125.73 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -14886,13 +14895,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 116.84 121.5969 0)
+			(at 118.237 124.46 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -15185,13 +15195,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 246.38 132.08 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "659e1ef3-7946-414d-ba05-8194a22efa9f")
@@ -15207,7 +15217,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 246.38 136.2131 0)
+			(at 246.38 135.89 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15262,13 +15272,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 146.05 69.85 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -15285,13 +15295,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 146.05 73.9831 0)
+			(at 147.955 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -16714,13 +16725,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 52.07 77.47 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8f050f87-6988-4fc5-a69a-f9ec5ef867ff")
@@ -16736,7 +16747,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 52.07 81.6031 0)
+			(at 52.07 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17037,13 +17048,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 266.7 80.01 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -17060,13 +17071,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 266.7 84.1431 0)
+			(at 268.605 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -17115,13 +17127,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 38.1 77.47 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "94257548-1861-4656-9bd7-aeb5ea86b746")
@@ -17137,7 +17149,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 38.1 81.6031 0)
+			(at 38.1 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17192,13 +17204,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 187.96 156.21 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -17215,13 +17227,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 187.96 160.3431 0)
+			(at 189.865 157.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -17270,13 +17283,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
+		(lib_id "OroLink:L+3V3")
 		(at 151.13 166.37 270)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -17349,13 +17362,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 199.39 134.62 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9a975f29-b6f6-46af-a2d6-aba856ca6d0c")
@@ -17371,7 +17384,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 199.39 138.7531 0)
+			(at 199.39 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18344,13 +18357,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
+		(lib_id "OroLink:L+3V3")
 		(at 69.85 181.61 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -18367,13 +18380,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 69.85 177.4769 0)
+			(at 71.247 180.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -18757,13 +18771,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 26.67 120.65 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -18780,13 +18794,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 26.67 124.7831 0)
+			(at 28.575 121.92 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -18835,13 +18850,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 25.4 181.61 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -18858,13 +18873,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 25.4 185.7431 0)
+			(at 27.305 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -18913,13 +18929,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 107.95 90.17 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -18936,13 +18952,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 107.95 94.3031 0)
+			(at 109.855 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -18991,13 +19008,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
+		(lib_id "OroLink:L+3V3")
 		(at 190.5 50.8 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -19014,13 +19031,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 190.5 46.6669 0)
+			(at 191.897 49.53 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -19069,13 +19087,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 170.18 25.4 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -19092,13 +19110,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 170.18 29.5331 0)
+			(at 172.085 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -19503,13 +19522,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 25.4 158.75 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -19526,13 +19545,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 25.4 162.8831 0)
+			(at 27.305 160.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -20743,13 +20763,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 128.27 143.51 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -20766,13 +20786,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 128.27 147.6431 0)
+			(at 130.175 144.78 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -20821,13 +20842,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 143.51 184.15 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -20844,14 +20865,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 143.51 187.3249 90)
+			(at 145.415 185.42 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -21398,13 +21419,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 248.92 45.72 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -21421,13 +21442,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 248.92 49.8531 0)
+			(at 250.825 46.99 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -21476,13 +21498,13 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "OroLink:LGND")
 		(at 184.15 35.56 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -21499,13 +21521,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 184.15 39.6931 0)
+			(at 186.055 36.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""

@@ -1,0 +1,244 @@
+(footprint "APT1608VRCXFA5MAV"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "APT1608VRCXF/A-5MAV")
+	(tags "LED")
+	(property "Reference" "LED**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "e947e5df-b59c-4b6d-ad27-d691932e8bd7")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "APT1608VRCXFA5MAV"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "4d88f519-7764-45c0-9631-fcb7f19322f1")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "876f6161-7ec3-4e0b-8f2c-ce695be74b12")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f450e33d-507a-4ba3-899b-0af8fe91dba4")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e5dd7107-9533-4e47-ba51-153e6c658177")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -1.75 -0.05)
+		(end -1.75 -0.05)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a4dcef40-b7f1-4ecf-9940-1014f2ad5ed8")
+	)
+	(fp_line
+		(start -1.75 0.05)
+		(end -1.75 0.05)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "bec76744-599f-4fd3-8524-c569133c2e3c")
+	)
+	(fp_line
+		(start -0.3 -0.4)
+		(end 0.3 -0.4)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e0cb055e-c905-473d-9a7f-11ee773885d9")
+	)
+	(fp_line
+		(start -0.3 0.4)
+		(end 0.3 0.4)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "907a90f0-b009-40bd-bb0c-67552839bd7e")
+	)
+	(fp_arc
+		(start -1.75 -0.05)
+		(mid -1.7 0)
+		(end -1.75 0.05)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "da41805e-fbcd-454e-9735-756adcb07c9a")
+	)
+	(fp_arc
+		(start -1.75 0.05)
+		(mid -1.8 0)
+		(end -1.75 -0.05)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b1b3c47e-4e43-4fc8-9756-0a24c6340f42")
+	)
+	(fp_line
+		(start -2.225 -1.4)
+		(end 2.225 -1.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "ceff7f86-0088-4d54-bebe-96cf63ac1f92")
+	)
+	(fp_line
+		(start -2.225 1.4)
+		(end -2.225 -1.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "0a04b0fd-4878-4f79-8105-b34d14d6513d")
+	)
+	(fp_line
+		(start 2.225 -1.4)
+		(end 2.225 1.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "cbf2d83a-1eb6-4071-8fca-e736a1213633")
+	)
+	(fp_line
+		(start 2.225 1.4)
+		(end -2.225 1.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a89b6825-bc82-423d-a00f-c6bb42d699f3")
+	)
+	(fp_line
+		(start -0.8 -0.4)
+		(end 0.8 -0.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "1db03f97-c2aa-48c4-bc05-bf3a602d736d")
+	)
+	(fp_line
+		(start -0.8 0.4)
+		(end -0.8 -0.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "55f1b062-bd19-429f-a60b-cedf5e0a2d2b")
+	)
+	(fp_line
+		(start 0.8 -0.4)
+		(end 0.8 0.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "4aa25a97-e92b-41c4-bd36-ac30887a3179")
+	)
+	(fp_line
+		(start 0.8 0.4)
+		(end -0.8 0.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "faa878cc-6fc7-4373-b7d0-cd3f69844144")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "0a8c303a-0760-4d09-a7d7-83d56567297f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -0.825 0)
+		(size 0.8 0.8)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "e777ef6e-9c2e-4fa0-b7e6-18b57fd41cb9")
+	)
+	(pad "2" smd rect
+		(at 0.825 0)
+		(size 0.8 0.8)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "6b73bc82-0fb1-485f-b237-560fd8c0e71c")
+	)
+	(model "../step/APT1608VRCXF_A-5MAV.stp"
+		(offset
+			(xyz 0 -0.01999999925 0.1299999933)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 90 -180 -180)
+		)
+	)
+)

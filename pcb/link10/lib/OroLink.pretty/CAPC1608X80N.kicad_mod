@@ -1,0 +1,183 @@
+(footprint "CAPC1608X80N"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "C1608 (080 thickness)")
+	(tags "Capacitor")
+	(property "Reference" "C**"
+		(at 0 -2 0)
+		(layer "F.SilkS")
+		(uuid "f26badf1-9abb-4c4d-a86c-1eb850ca4d36")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "CAPC1608X80N"
+		(at 0 -4 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "58753f27-5550-4aee-9ee6-96a7bcc3fe33")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4f3ff252-72cc-41ef-b9bf-67a64256dbfc")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4757626c-bfd3-47c7-96b1-992ae1f5c5e9")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9d7fb21b-6a28-4508-b959-22303d7fba79")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start 0 -0.3)
+		(end 0 0.3)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c03c1602-f9ca-4238-abd5-565e0215d962")
+	)
+	(fp_line
+		(start -1.22 -0.62)
+		(end 1.22 -0.62)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "6735fbaf-f6cc-4055-8254-82415a918155")
+	)
+	(fp_line
+		(start -1.22 0.62)
+		(end -1.22 -0.62)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "51c33be4-794b-4217-866c-7d89fa4f2f9e")
+	)
+	(fp_line
+		(start -0.8 -0.4)
+		(end 0.8 -0.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "d121a8f1-e21b-4a02-a8e5-86bc09e81021")
+	)
+	(fp_line
+		(start -0.8 0.4)
+		(end -0.8 -0.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "b64bbaa0-f6f8-46d6-986e-11bc1a8f9bc5")
+	)
+	(fp_line
+		(start 0.8 -0.4)
+		(end 0.8 0.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "5b69e23b-6a5f-467f-82f4-b36285e29147")
+	)
+	(fp_line
+		(start 0.8 0.4)
+		(end -0.8 0.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "1234b6ff-fed1-4e36-a1d2-47048b64287e")
+	)
+	(fp_line
+		(start 1.22 -0.62)
+		(end 1.22 0.62)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "63cb3c13-8065-436b-8598-a0f1efb632fa")
+	)
+	(fp_line
+		(start 1.22 0.62)
+		(end -1.22 0.62)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "692201ca-7120-458b-875a-ccd1940e086d")
+	)
+	(pad "1" smd rect
+		(at -0.8 0)
+		(size 0.54 0.94)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(thermal_bridge_angle 45)
+		(uuid "a4812d8d-eed9-4d2d-8649-85da94ab3092")
+	)
+	(pad "2" smd rect
+		(at 0.8 0)
+		(size 0.54 0.94)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(thermal_bridge_angle 45)
+		(uuid "a941e633-92c7-4229-80f3-fcea29bb21d8")
+	)
+	(model "../step/C1608X5R1H102K080AA.stp"
+		(offset
+			(xyz 0 0 0.4)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 90 0 90)
+		)
+	)
+)

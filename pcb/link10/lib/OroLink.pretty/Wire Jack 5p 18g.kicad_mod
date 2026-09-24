@@ -1,0 +1,111 @@
+(footprint "Wire Jack 5p 18g"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 3.8 -3.2 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "880a9631-8dc6-4ad1-9db8-4ca97e0c2a5a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "WireJack5p"
+		(at 0 4 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "fb3805d4-ca75-4ff4-99fd-5c68fae3a09f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4ecf6667-2bdf-4b35-ac40-581c0a1dc21f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ae29412d-4ce5-4b64-ba71-85b454b3a051")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd exclude_from_bom)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_text user "${REFERENCE}"
+		(at -0.2 2.6 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "c545d4b7-f8ad-4a25-be64-54b3306f7043")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at 0 0)
+		(size 3 3)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "2ef2a9a4-9719-4db3-b80f-176d1f50bf0e")
+	)
+	(pad "2" thru_hole circle
+		(at 3.4 0)
+		(size 3 3)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "f84a0fb8-6555-4f9f-83c8-50146f8815a5")
+	)
+	(pad "3" thru_hole circle
+		(at 6.8 0)
+		(size 3 3)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "f48f0534-1e8f-40b8-a5a1-f96cfb42961d")
+	)
+	(pad "4" thru_hole circle
+		(at 10.2 0)
+		(size 3 3)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e51ae611-f038-433a-877a-2f26265bb6e6")
+	)
+	(pad "5" thru_hole circle
+		(at 13.6 0)
+		(size 3 3)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "711e7540-03aa-4753-b76d-053a81fec8a9")
+	)
+	(embedded_fonts no)
+)

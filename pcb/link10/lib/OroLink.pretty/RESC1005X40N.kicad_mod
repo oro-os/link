@@ -1,0 +1,173 @@
+(footprint "RESC1005X40N"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "CR0402")
+	(tags "Resistor")
+	(property "Reference" "R**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "547b39cc-e6b6-4866-8c0a-a081333b4318")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "RESC1005X40N"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "89fe456f-e466-4a0d-8e03-1714171edd15")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "72709f07-db31-4fc3-b512-8cb521f02171")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ab963fbc-bea3-4341-ae8d-62a574630c50")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "02db072c-0dcb-40c7-a8f1-26687857f853")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -1.175 -0.55)
+		(end 1.175 -0.55)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "b162e31d-53b5-46c4-ad2c-a2051a8f7852")
+	)
+	(fp_line
+		(start -1.175 0.55)
+		(end -1.175 -0.55)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "607c39b6-b389-41ce-96fb-6bdecfb2555c")
+	)
+	(fp_line
+		(start -0.5 -0.25)
+		(end 0.5 -0.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "945b582b-8a52-4ef7-b438-402bdebf2285")
+	)
+	(fp_line
+		(start -0.5 0.25)
+		(end -0.5 -0.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "d2e77869-f5d7-4e31-9ac2-f247e14d0774")
+	)
+	(fp_line
+		(start 0.5 -0.25)
+		(end 0.5 0.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "e37f1e4c-5ff1-4689-9f52-68a9d8897cf1")
+	)
+	(fp_line
+		(start 0.5 0.25)
+		(end -0.5 0.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "a3581c1f-d6d9-4f69-aa9a-a6690e28fc0d")
+	)
+	(fp_line
+		(start 1.175 -0.55)
+		(end 1.175 0.55)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "6a18c58d-9e05-498f-a4b6-26b5cf900bbd")
+	)
+	(fp_line
+		(start 1.175 0.55)
+		(end -1.175 0.55)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "d1cd0caa-0bc7-4a30-bf0b-eae4100e27a0")
+	)
+	(pad "1" smd rect
+		(at -0.55 0 90)
+		(size 0.6 0.75)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(thermal_bridge_angle 45)
+		(uuid "639ed165-8190-4a05-a90f-8f8e2b3525ff")
+	)
+	(pad "2" smd rect
+		(at 0.55 0 90)
+		(size 0.6 0.75)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(thermal_bridge_angle 45)
+		(uuid "31464c57-5291-4f54-909a-8a972b37e6d3")
+	)
+	(model "../step/CR0402-FX-1650GLF.stp"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 0 0)
+		)
+	)
+)
