@@ -1,0 +1,2112 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "a70f06c5-be00-4bc8-bd65-e567781cea44")
+	(paper "A3")
+	(title_block
+		(title "Link Mk.10 Main Board")
+		(date "2026-09-23")
+		(rev "10")
+		(company "Oro Operating System")
+		(comment 1 "oro.sh")
+		(comment 2 "Copyright 2023-2026, MPL 2.0")
+		(comment 3 "Joshua Lee Junon")
+	)
+	(lib_symbols
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mechanical:MountingHole_Pad"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Oro:OP_00059"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "EXT"
+				(at -2.54 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Value" "FFSD-07-D-06.00-01-N-R"
+				(at 2.032 1.016 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://suddendocs.samtec.com/catalog_english/ffsd.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "14 Position Cable Assembly Rectangular Socket to Socket, Reversed 0.500' (152.40mm, 6.00\")"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Note" "STLINK-V3MINIE Programming Cable"
+				(at 2.032 -1.016 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Oro ID" "OP:00059"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "Samtec Inc."
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Arrow P/N" "FFSD-07-D-06.00-01-N-R"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Digi-Key P/N" "SAM15164-ND"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Farnell P/N" "FFSD-07-D-06.00-01-N-R"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Mouser P/N" "200-FFSD07D06.0001NR"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "OP_00059_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.4811)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "OP_00059_1_1"
+				(text "EXT\nPART"
+					(at 0 0 0)
+					(effects
+						(font
+							(size 0.635 0.635)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Oro:OP_0005A"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 19.05 7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "FTSH-107-01-L-DV-K-A-TR"
+				(at 19.05 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "Oro:OP_0005A"
+				(at 19.05 -94.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Datasheet" "http://suddendocs.samtec.com/prints/ftsh-1xx-xx-xxx-dv-xxx-xxx-mkt.pdf"
+				(at 19.05 -194.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Description" "14 position, High Reliability Header Strips, 0.050&quot; pitch, Dual-Row Vertical"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Height" ""
+				(at 19.05 -394.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Name" "SAMTEC"
+				(at 19.05 -494.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Part_Number" "FTSH-107-01-L-DV-K-A-TR"
+				(at 19.05 -594.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Part Number" "200-FTSH10701LDVKATR"
+				(at 19.05 -694.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Samtec/FTSH-107-01-L-DV-K-A-TR?qs=LW8h5wBZGrFFWB%2FoEC5IXw%3D%3D"
+				(at 19.05 -794.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Part Number" "FTSH-107-01-L-DV-K-A-TR"
+				(at 19.05 -894.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ftsh-107-01-l-dv-k-a-tr/samtec.html?utm_currency=USD&region=europe"
+				(at 19.05 -994.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Oro ID" "OP:0005A"
+				(at 19.05 -94.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(symbol "OP_0005A_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 17.78 -17.78)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 22.86 0 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 22.86 -2.54 180)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 22.86 -5.08 180)
+					(length 5.08)
+					(name "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 0)
+					(length 5.08)
+					(name "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 22.86 -7.62 180)
+					(length 5.08)
+					(name "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -10.16 0)
+					(length 5.08)
+					(name "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 22.86 -10.16 180)
+					(length 5.08)
+					(name "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -12.7 0)
+					(length 5.08)
+					(name "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 22.86 -12.7 180)
+					(length 5.08)
+					(name "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -15.24 0)
+					(length 5.08)
+					(name "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 22.86 -15.24 180)
+					(length 5.08)
+					(name "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GNDPWR"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GNDPWR"
+				(at 0 -3.302 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GNDPWR_0_1"
+				(polyline
+					(pts
+						(xy -1.016 -1.27) (xy -1.27 -2.032) (xy -1.27 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 -1.27) (xy -0.762 -2.032) (xy -0.762 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 0 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy -0.254 -2.032) (xy -0.254 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 -1.27) (xy 0.254 -2.032) (xy 0.254 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27) (xy -1.016 -1.27) (xy -1.016 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27) (xy 0.762 -2.032) (xy 0.762 -2.032) (xy 0.762 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GNDPWR_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(wire
+		(pts
+			(xy 377.19 237.49) (xy 377.19 238.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6f8674d-fbcc-4d64-bd0d-75d9767dc22e")
+	)
+	(symbol
+		(lib_id "power:GNDPWR")
+		(at 377.19 238.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3db5b240-dcbc-4e5b-bb6d-5a435b5ef3ff")
+		(property "Reference" "#PWR01"
+			(at 377.19 243.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDPWR"
+			(at 377.063 242.4867 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 377.19 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 377.19 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 377.19 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f3727ad6-44fb-4471-a78b-c3907d079681")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 377.19 228.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "565a7625-08c2-48ec-84c3-4f22ccd3f255")
+		(property "Reference" "H3"
+			(at 379.73 227.3878 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 379.73 229.8121 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 377.19 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 377.19 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 377.19 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 377.19 223.52 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5b0e306a-0ebd-4e27-af4d-bc551c04ca2e")
+		(property "Reference" "H2"
+			(at 379.73 222.3078 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 379.73 224.7321 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 377.19 223.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 377.19 223.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 377.19 223.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_00059")
+		(at 335.28 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6609778c-4e09-4614-99bf-ee079babd2b3")
+		(property "Reference" "EXT1"
+			(at 332.74 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "FFSD-07-D-06.00-01-N-R"
+			(at 337.3961 104.1978 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 335.28 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://suddendocs.samtec.com/catalog_english/ffsd.pdf"
+			(at 335.28 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "14 Position Cable Assembly Rectangular Socket to Socket, Reversed 0.500' (152.40mm, 6.00\")"
+			(at 335.28 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "STLINK-V3MINIE Programming Cable"
+			(at 337.3961 106.6221 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Oro ID" "OP:00059"
+			(at 335.28 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samtec Inc."
+			(at 335.28 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Arrow P/N" "FFSD-07-D-06.00-01-N-R"
+			(at 335.28 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Digi-Key P/N" "SAM15164-ND"
+			(at 335.28 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Farnell P/N" "FFSD-07-D-06.00-01-N-R"
+			(at 335.28 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser P/N" "200-FFSD07D06.0001NR"
+			(at 335.28 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
+					(reference "EXT1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 377.19 218.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7d0283e9-45aa-46f7-9bc5-2eb86454bc67")
+		(property "Reference" "H1"
+			(at 379.73 217.2278 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 379.73 219.6521 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 377.19 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 377.19 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 377.19 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 377.19 234.95 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "97a3aed3-ff79-4bac-9551-0f72b6e0a185")
+		(property "Reference" "H4"
+			(at 379.73 232.4678 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 379.73 234.8921 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
+			(at 377.19 234.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 377.19 234.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 377.19 234.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "992e74e4-801b-4c59-be01-c2cf25762e5a")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0005A")
+		(at 341.63 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9e10685f-349b-453f-bfc1-d2540cea40ee")
+		(property "Reference" "J4"
+			(at 353.06 69.5155 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FTSH-107-01-L-DV-K-A-TR"
+			(at 353.06 71.9398 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Oro:OP_0005A"
+			(at 360.68 171.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "http://suddendocs.samtec.com/prints/ftsh-1xx-xx-xxx-dv-xxx-xxx-mkt.pdf"
+			(at 360.68 271.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "14 position, High Reliability Header Strips, 0.050&quot; pitch, Dual-Row Vertical"
+			(at 341.63 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" ""
+			(at 360.68 471.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "SAMTEC"
+			(at 360.68 571.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "FTSH-107-01-L-DV-K-A-TR"
+			(at 360.68 671.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "200-FTSH10701LDVKATR"
+			(at 360.68 771.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Samtec/FTSH-107-01-L-DV-K-A-TR?qs=LW8h5wBZGrFFWB%2FoEC5IXw%3D%3D"
+			(at 360.68 871.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "FTSH-107-01-L-DV-K-A-TR"
+			(at 360.68 971.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ftsh-107-01-l-dv-k-a-tr/samtec.html?utm_currency=USD&region=europe"
+			(at 360.68 1071.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Oro ID" "OP:0005A"
+			(at 360.68 171.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "6"
+			(uuid "a87d3f8c-4156-4ce6-ac82-0806c60b4fd6")
+		)
+		(pin "2"
+			(uuid "3b239b56-b75d-4cab-bde7-32ecfb346d8e")
+		)
+		(pin "14"
+			(uuid "484a835c-f6a3-47c5-8b0e-08d4274edd30")
+		)
+		(pin "3"
+			(uuid "60881218-19ff-47ea-9bed-3990462faedb")
+		)
+		(pin "11"
+			(uuid "6915170b-835b-46b4-89e9-902ecd4cabce")
+		)
+		(pin "7"
+			(uuid "00344cc4-7226-47c0-934f-8c528d6920eb")
+		)
+		(pin "8"
+			(uuid "638554c0-efe2-4768-9f6d-3e0c14ecdb9f")
+		)
+		(pin "12"
+			(uuid "5520443f-8d7f-4841-a27a-c346ba57d75b")
+		)
+		(pin "4"
+			(uuid "bdce203d-5080-45ae-b2bd-8adc43491ac3")
+		)
+		(pin "1"
+			(uuid "65952e90-6e8d-438a-b30d-8abfa8a3e16f")
+		)
+		(pin "5"
+			(uuid "5b467cb8-b0d1-49c8-8992-d6196711e54a")
+		)
+		(pin "10"
+			(uuid "50c88d76-b31b-4afa-a4dd-be26da1d8dc4")
+		)
+		(pin "13"
+			(uuid "5dfa8c40-8b2e-4c9a-a1d8-1e9ef40e6d9b")
+		)
+		(pin "9"
+			(uuid "10ccac10-8604-4612-a070-efd2e007ef87")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 217.17 175.26)
+		(size 62.23 24.13)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "0bceadc4-59dc-4502-8b0e-44178a81c8b7")
+		(property "Sheetname" "Ethernet"
+			(at 217.17 174.5484 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "eth.kicad_sch"
+			(at 217.17 199.9746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 78.74 180.34)
+		(size 57.15 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "15658b1c-35c9-4214-a484-d284052e3d52")
+		(property "Sheetname" "Bridge (RP)"
+			(at 78.74 179.6284 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "bridge.kicad_sch"
+			(at 78.74 206.3246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 232.41 123.19)
+		(size 48.26 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "5891dbab-63f5-4c8b-85ef-402fd2c7de17")
+		(property "Sheetname" "OLED"
+			(at 232.41 122.4784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "oled.kicad_sch"
+			(at 232.41 149.1746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 77.47 123.19)
+		(size 58.42 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "5fd21dd6-1ba7-4ca4-bad7-34447a37c333")
+		(property "Sheetname" "Ethernet Port + PoE"
+			(at 77.47 122.4784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mainboard-eth-port-poe.kicad_sch"
+			(at 77.47 149.1746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 77.47 78.74)
+		(size 58.42 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "9943a742-9010-4484-baf5-b9968ace2aa4")
+		(property "Sheetname" "Microcontroller"
+			(at 77.47 78.0284 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "main-board-microcontroller.kicad_sch"
+			(at 77.47 97.1046 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+	(embedded_files
+		(file
+			(name "Oro.kicad_wks")
+			(type worksheet)
+			(data |KLUv/WBFQTWPAEoLGSMt4I5IkjZo4nP7Ofqflb/BV9CTwGecTAfKjMRCncjunVImE4OTCckwzGAf
+				MMYB3QLoAeMBv2pnOOzg6GVUHh1rzZINvYNkJBvXjxyI3H2e0JjFyoNU1uDQSPGlO6rlKk8Nj9Td
+				Movoxjg3Tjft0WMK28fQMqa4Fl2mG9PXSI8Xn9rR3KfhgqdBdx0uTux+1BufdLQ4KVmJeTfzycGC
+				c9fcW1LrTJmksIvyUuiqq9fy0FsvtTakSqlZyvQnRCribdBBYZdYSU9bqqJvtGw/HffTFRFLs2EZ
+				5xMemT+jr8pOd+JU7DfuoLCUhJcpmQqd1NHI6+tTO/6O3LK6CnEqfx3xxvRHq56ctLdGM3VjNg/F
+				QmR8yVNzeWZcF4vWtpQhnlQZxrLc+LXRc1KvacCoPxvVv9XJKLZXPGAb5qA416AiAwtkSGCg1O2g
+				jHmAsCCDCxAYSp1z/Z5JFVMCBBAYkMHDBAwYQBhACgEIHkTAgAYYoBIg4UEEEiBASMAELKodZh5n
+				wAMIICwgAgIcEFDB4cKEhEPxQIvWEEJYgIQIEi4kHCSUpQWHItHQcMEEAiBABgRgIUKDIjEBgwiI
+				CoqIBgwTIpAAQgQPIriAwwQWLkBQKN4ID4AgAQUaJDBrUCiA48UJIWhAhAkkgPAACg7wwAARFICB
+				AcyYG1SUZQCChAcHoACCAyaYIAIGBlAUoCEx4QAREREZRDQkHhoqFBlU4JDIMIEITAs+yKBTCAUK
+				FIR2oIHEA0QFLKZFBggMDdigSFigIUEhMeJpIZOBBSIqPDgkJjRgaIiQQiIaHiIgKiQuFFJIAwlU
+				gLhAoWi4kHBIFA0XJAoLDxOAiJhQNCgSDw0YYABRoUULCw8NdyFkkYiYkMjQoEHRgMGEh0SFhggH
+				MIBIJCAoYIBIXGCBQ4SweHCwIGICBhQkKmi48MBwSHFBwoJDBRoeHC48MINFwwUcMiQs0JBwoAEM
+				E0g0ZJAhbEBBAwcLDRRcwNCgiIBITIhoeGiw4AEj6UqLBwiHDBENFHCgAQAEIIMEKkCBhQkVHCTg
+				QGV1pMbM9N4ItapoT8XIZtWrjpzLqIzIcxqa/DlUN2jOqhcrsn19WcRBdkYLjaG2VyyrO5qqlibf
+				2NBTsB6kI+LRXNLImOKENdchj9cQuzs5pDGjGezQ1L+sjy12U8oN8iJTkj+3dvtY89NnZG7IcmPi
+				jrEl3+hPXrXkltHipNBgYTLDZBwsblV+b0w2LhIRFVupqbJ/Ym29X52kUX06mb34V4d492zyKXFK
+				Rrrf0GpmTF7vRW5fQ5PkalZ3M6OU8Vo1ojnV+axCC5H6qZrRYvgxZqNFlcYTjjG6b15/Ufgpaj1O
+				Dp2M9zVjpBsvLETE28ZEMuyx1egdnW5jenVjCrM5Mc2P7iDVyQ0Zq9VHnHZqPMch5VGqYiRp0hN9
+				/XyG1BB7qiIj/xtyPTF7b7xb45ZYRDQNEqXlK4tvzmJFdXOj2EqtkZqeiKyE12vVyjfk/yhDu6Zq
+				p5O37GN22fjxN26eM7Je9RrzMpGa61R6H3QlLeOPQ2uHcp6uKdJa1rKLDN1Ls7p2VdPRCa3qlynJ
+				JGJvZmRILJmZkJjkiSv+Hfl2dHfIKiVJvLOWb+RWclJ0Myy63WqtKBxWLN65rRP6XTdXTbWXjTI7
+				shtWpeynKQ7yx8b8RHXFY+roOw8V0VnHU1bG+TEyml4WfF1Mtqdk1NMNsdGuVLo5+w2yZuooEc3c
+				y0ZLXKJVpT26ljG/19BZHdVVaZYaHksVGa+Zn93t7DSpjhw3nXedSpFvHw+TejeuOTFTjR+vLHEZ
+				O75xG5fCu/CkYTueo19d14vk4ZzohnTDr5PycynNjG0yIuNUcyZ2nBtUWpkQix1ld0ZuOdWG5TAV
+				HcVi5LPIdLeZubJXyf2ym9x3WMaiK8liUzT/qJNdmV7pjHixLaOsPTPXoKuhedf1TsYc5PJ1Q6RR
+				b8o1mab75SfL+KXSzTE1R3OWm9LGWrT/Z1ZCw5p3bLtC6ssupiH7/lseogyeai9T8YZnPiV3V3H8
+				NTsT9sp1NpbXjX6mv8GSmYp67eC9VUUeIqbpM6QnKSk7M3N1g/7Z77kTfe5sjm6dWHO6zYidWqTK
+				6k6dtWd0o77QGFnzsWyow5+qfSSz+U9mw562aJffxqobv+P7GpnIc9srV5dQ7T3H5jmOHcnDsnSw
+				THaqThWZblojU8S/NjtLn+/i7BwMxXzfUt037z9vZ8bu36mesdjqEt/JpEjnKzP6tpioxYuLhiQp
+				80pqvo/FqGjLGM9qJr3IjAZ1HB2ZdOfNzJHIkO3nuWxK5tO9zvQ8zp1tJhk73u/s7HbWk3FsNaqr
+				cmoaAAjAAzwb9szo2P6x2om9rMpN+XVXH3OkkXrY8610umobjTJ+rmGaUfmk5jL8jkmx0zE73UOP
+				tkQ6a91N0Tp4Zh/760NqNhnCEXpvXjZ0ZEOsrmSwRHXPNiSjucFaTX2jO5qR8i83a6eGW/qEHXdw
+				I0cf2WRCNhEyOzcip9LXDJtPUyVpWtFtNyvTMkQct2l+r7fGym6czjUR2k9S1hgS1ibPOdsnday0
+				It42yIY+wvGx/djUNzX8UO+emqGzyUtnPT5LNKqo7E7ORrO6FxWRZ4audmkUOXfGzu308+b9h+R2
+				7xWdxvlU9SaP+vyso0ivylw5ij5TN6WV0E8mRKZPzZHuOvzr13XJ5yCWZFCZleS7G7JRzUnN3GZM
+				O/Wzj0+6lkQ2jimyMT8Sv8aLahmbczp+4l1p02IdzX835JT5fYsethH2V/3LU+OdErta+c5BNOy5
+				NoaqZFD1rYk4ZsbOpopKVjfo/TjrZNyjqIzjnkdjt1bZjSp5VEh3rEt/j0zGHn0stynNmvRhJ7/2
+				ap8ZfxtnpobIdFb3shtCNJVPNSo6shlrvW58DyoHHcsy6GzPUWmoKjdMQ8Sx8S7H0HjNxuknLvda
+				4TjVWfupnuGrm9yrkSGZSNdRTuta80TlEQ+ePRw0nsbuM9R3GoZjqBNxImQ2UUYkSZIsB2P3EQRU
+				g5mkrA7DkUOBFDinKh1TiIiIiIiIiEhKkoJkGQPMhMh8m7t8As1dxTHpVsASBqa2Tu4WL1E4Ohok
+				QqgXzUkZ5hSf3AxV400d9mZXkatCbIeXoZLLW/z4we6+oWSQbR5DSGOIKlTfqBBIZqsGHvwiSCQq
+				YC+/oH4QWHL70tUgJtyGg9LG0fiJ6haWcZOcak2aEq41Iwry8cOWMIfypdJgLT8/dfPJZ+uQtcTu
+				JcnZMdMmsiLYNdrw7AxdFuNNPNomzFRlk9ZRrLYkMTmald6hJhZNv5RULER3E0dEIVr9WrjBCYgA
+				AjyCxQJvHv4+RGi6colT5K6sNUHyd3miF2ses2dfzuG9AmVu9ozVZtul2chiiJTyPSTGhLTndvaZ
+				7BgshnibUOAU7y28zv39VFEpnF0R8ZB0MllsN3oaXda4NR95NYsrD7D1CNhrKDL/7kRW4ah8lNOq
+				KPcRVafyLuxYgxD1AbKuDoscCXFzvfp2h5m55IAukszyJzzZ6qax6pwPUOBHaSygNxVj5Vmf1Sab
+				JJGHagOoyRWrbCuM9ZTTJfUAE6JttrCsXGO7jbX2OM40giDGaiNGUMFYmaLMw0mQyNqr/SYKUxCJ
+				Onaqk/hYVLqGd/MUlcCcjOyAPHLOg8RD1x0lrAyty1GdcoNBo8yM+BSTnEwaSm6v9Oxf1sVCUlSb
+				USsS10gYFCNZJVC4pWGSMOcJlrRDYi+KvcEmNFMCrAwK+pDVcYfEBUCV0MYmYy+NuY1EBh5h8GJR
+				FA+tZkVsdUoZc5UdCt3UhsSW0ll0L/MN4ozNFle1N9kXZ+VljIiiUY2O00deoEptGzQ7prw+46LU
+				YUdxKA+JeahChSWlLxZEvAviViB6+XNicTYLCSw6CfzwrCI8hy9PJxoG1S5LowkZmNGp0dyXfPVJ
+				x3BxoixLvZqYSM4ySYJos+YyxpH8sIN88lNGg1gXnIk7T3Bmlc0dfS8eKQLeTiDjX0JHLqmkdNJU
+				2blQ+egz7Uvj4gm3LrVQDVWmMkfvwA8jamPEHexC9poAckhWYLSxyuxa5pIoQN+vK8LlrCJqlu0Y
+				usCZff+vhUbNNzuLS4WIaiVW7OcyWIV5D5ana7oQcNUJIu8zFp36jHZ0uqQSrAEOcMYRU/6vvWk8
+				fEt27VdVouYEL4evNcKCL/7pCt6sYkk9Buib2CR5j6LSuTVKDuHvVEekWw5V3SQq9HSYC6WES6os
+				LdI/CyVwFiEBB4hJAEEPc1NNPn4svmMKnWlb32m9Z4kBsjpX2s/n2wlUwh2sKpoyrFadxTffMOHw
+				Ji2Mxc6sWYxckVgozSIcOpb9m4fUJ9YJNUqHAQxiJkDqhnuBuzVxERFXFWmlkTHimNSm7YR34tjP
+				QyinikVAWrJp45lgipxeAZhh+s2b3oCmW2IZBFU8iQjYQCSfHmAnonxyxBrkaRhDtRQD23JGPYp9
+				lWJCzx0pA5nB3NtCS+SFJfJJhqKlx/HLW+faB4l1HIU4WbvQE+0pxiPedT1AzWGW6TzfyOy6Vqnq
+				pJnhGL0giPlbuFrUPXEtQcqrNXt0qrugUpNLNSpwCamfPlJdES1I9JO7j9ReZyRj1mni8VsfFrnx
+				kjEu6UO+yWe7wr+WFn6fWhgXnCyvEFBDuNwJNA2j0ScI1qWxCAOoeqsk1yVCPb0KnRi23zACy9wx
+				dX1J9H/iFF3FqZeXYAF7iB117mttvcK5qOxT9nIW3GEJyoXjVUMq6pbG0uEAWYnjerNjlS2i3E5A
+				/NlOqgV3mkdY0td9txITpa+1XVLq35DYIGeNG3RZ0fSIanMM0UYEtQ7JOyFiXyC3qQE9nHhDGqyr
+				0XjlnqtCEVywGzHCHqAVIuA4nbImtOcEzlwTsVIqS5Oaj7dJBGGtD3JltLISpCM+i9QHSChe6xcK
+				lHox5wCJYkG81NNS8YfcPihhqV4sPRVIzQaVxAo7plHyEdPL4JGjJWFt9LIcMsP7KyPEEKxSDHu1
+				Krcu6jB/UdtYKPLzXaLR0a4gSl57e3B2HjdnlGnRmyziS+QUJC5DyafXs2w2dOnY6ERgECLrcIBQ
+				bJafd5k0lRlEc5XKYUJ6da3pTsYHeNr0BgbKpkP+92iQbIFYgC9DDHFnK6en8ZtBK7RCXm5PrQpi
+				jIhxZC3pgEGpU0bAgYffdl57WC1fZixCgoag056+Q3BnQKQTUvllitIGcH+AKNimDQIERS7Zqm6o
+				wKHy0uOixsqE7f6/7RSVKnhf2Xo3t4EI1Q64sFOpemzOZIUHAcTmNVCUVzPT2p7nUJqmOKEZ9Gcs
+				04lTywrAyziyO8FUA8e1rD9MVOwO7OKzLmElx1GBOEt40TQzJXcSdeULkBQWqafpJAD2ks0aAZuu
+				RStZEUHPvVI2W867GOKCWlZxbVy2BQyARanMyhCwZqrZQ3oMuqo466UoiKQ6JI/dKTRpnHiGUdxK
+				ofkisxlw44JbW00lm3ZNh1zyrst56eyUUU9JC1bF5eim+/nJlpjQsmaSQ1Kmk/taZeMQrrm3lT5f
+				0bM4KVwrTxb1Bb2UwkYLM9Ik52wWehn9YYI1OXlyrSj3I2USgKwJrbcRGimLOT8FQXcMd7pMoN88
+				f7QWWAZLZ2VqpN5dOv1cG+Yod9aipt7FIX/ZKRWku59Z/47BxCHlTb7V4WiyNtYCKZstaOEBoSQV
+				DPshqq7N2soB4pnCp8maLMbbuQPCMSHMf2KXtxxX5FJL/GuuW67/V/u5pFnY+d+ZH81mkj4ocx6H
+				ijAjV9maK/7yUDtE8j8kalDITptIJKKwnNHglJJ526uTbv5UHxq5z4kwm5uPfnyYj0903+OjWcj3
+				Pws0gfxdB8M4494X5wcb4/JgY/tAqKyfep3wmQ2Dio8OjSSaZoiyXVE3LIbTOJXL5RuKX0bkKVtq
+				XIaCcowZP3GuB2w5xrme7p/uV9xDRy03Fq5cL6rFJXrUNZwBkWjHLr8usWJ6DT08kN2BE/RzhACu
+				C5m6ta6C6w0umXXXtZ7OVAfGQtQOvVQANW01z3V7qLZ0otqbDSx0mFM3OP/Bl1teaPmUZZw/6W42
+				sYXrYRb05OfrxGhEkm15Z87J34AmHtAWD2RTdGOBQ1c=|
+			)
+			(checksum "E7EC7915A0828EB8D5DF08E49E94C00B")
+		)
+	)
+)

@@ -1,4 +1,8319 @@
 (kicad_symbol_lib
 	(version 20251024)
 	(generator "oro_lab")
+	(symbol "OP_00006"
+		(pin_names (offset 0.762))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "LED8"
+			(at 12.7 6.189 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "150120M173000"
+			(at 12.7 3.6521 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "Oro:OP_00006"
+			(at 21.59 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Datasheet" "https://www.we-online.com/catalog/datasheet/150120M173000.pdf"
+			(at 21.59 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Description" "Standard LEDs - SMD WL-SFCW SMT Full-color Chip LED waterclear 1206 RGB"
+			(at 21.59 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Height" "0.85"
+			(at 21.59 -5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Manufacturer_Name" "Wurth Elektronik"
+			(at 21.59 -7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Manufacturer_Part_Number" "150120M173000"
+			(at 21.59 -10.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Mouser Part Number" "710-150120M173000"
+			(at 21.59 -12.7 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/150120M173000?qs=GedFDFLaBXG2uqjQCP7dEg%3D%3D"
+			(at 21.59 -15.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Arrow Part Number" ""
+			(at 21.59 -17.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Arrow Price/Stock" ""
+			(at 21.59 -20.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Mouser Testing Part Number" ""
+			(at 21.59 -22.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Mouser Testing Price/Stock" ""
+			(at 21.59 -25.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Oro ID" "OP:00006"
+			(at 21.59 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(symbol "OP_00006_0_0"
+			(pin passive line
+				(at 0 0 0)
+				(length 5.08)
+				(name "K_B"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -2.54 0)
+				(length 5.08)
+				(name "A_G"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 25.4 -2.54 180)
+				(length 5.08)
+				(name "K_G"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 25.4 0 180)
+				(length 5.08)
+				(name "K_R"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_00006_0_1"
+			(polyline
+				(pts
+					(xy 5.08 2.54)
+					(xy 20.32 2.54)
+					(xy 20.32 -5.08)
+					(xy 5.08 -5.08)
+					(xy 5.08 2.54)
+				)
+				(stroke (width 0.1524) (type default))
+				(fill (type none))
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0000F"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 3.81 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "0402B103J160CT"
+			(at 3.81 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0000F"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/210/WTC_MLCC_General_Purpose-1534899.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "Ceramic Capacitor, Multilayer, Ceramic, 16V, 5% +Tol, 5% -Tol, X7R, 15% TC, 0.01uF, Surface Mount, 0402"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Mfr. Name" "Walsin"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser ID" "791-0402B103J160CT"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "DigiKey ID" "1292-0402B103J160CT-ND"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow ID" "null"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description_1" "Ceramic Capacitor, Multilayer, Ceramic, 16V, 5% +Tol, 5% -Tol, X7R, 15% TC, 0.01uF, Surface Mount, 0402"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Walsin/0402B103J160CT?qs=fIkAfuXiAQJQ%252BjA7a5Mepg%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=791-0402B103J160CT&utm_content=Walsin"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Number" "0402B103J160CT"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0000F"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "0402B103J160CT"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_0402_N_WAL CAP_0402_N_WAL-M CAP_0402_N_WAL-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0000F_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.4798 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.4798 -1.905) (xy 3.4798 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 0) (xy 5.08 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 -1.905) (xy 4.1148 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 7.62 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0000F_1_2"
+			(polyline
+				(pts (xy -1.905 -3.4798) (xy 1.905 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.905 -4.1148) (xy 1.905 -4.1148))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -2.54) (xy 0 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -4.1148) (xy 0 -5.08))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -7.62 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_00016"
+		(pin_names (hide yes))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "LED"
+			(at 5.588 8.382 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Value" "CLM3C-WKW-CXAYA453"
+			(at -3.302 5.842 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Footprint" "Oro:OP_00016"
+			(at 12.7 -93.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Datasheet" "https://componentsearchengine.com/Datasheets/2/CLM3C-WKW-CWBYA453.pdf"
+			(at 12.7 -193.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Description" "Cree CLM3C-WKW-CXAYA453, CLM3 Series White LED, 5500K, PLCC 2, Rectangle Lens SMD Package"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Height" "1.4"
+			(at 12.7 -393.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Manufacturer_Name" "CREE LED"
+			(at 12.7 -493.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Manufacturer_Part_Number" "CLM3C-WKW-CXAYA453"
+			(at 12.7 -593.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Mouser Part Number" "941-CLM3CWKWCXAYA453"
+			(at 12.7 -693.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Cree-Inc/CLM3C-WKW-CXaYa453?qs=3AcK5DacLbr3ewaPKwAgNg%3D%3D"
+			(at 12.7 -793.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Arrow Part Number" "CLM3C-WKW-CXAYA453"
+			(at 12.7 -893.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/clm3c-wkw-cxaya453/cree"
+			(at 12.7 -993.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Oro ID" "OP:00016"
+			(at 12.7 -93.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(symbol "OP_00016_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 5.08 0))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 2.54) (xy 5.08 -2.54))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 0) (xy 10.16 2.54) (xy 10.16 -2.54) (xy 5.08 0))
+				(stroke (width 0.254) (type default))
+				(fill (type outline))
+			)
+			(polyline
+				(pts
+					(xy 5.334 4.318)
+					(xy 4.572 3.556)
+					(xy 3.81 5.08)
+					(xy 5.334 4.318)
+				)
+				(stroke (width 0.254) (type default))
+				(fill (type outline))
+			)
+			(polyline
+				(pts (xy 6.35 2.54) (xy 3.81 5.08))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts
+					(xy 7.874 4.318)
+					(xy 7.112 3.556)
+					(xy 6.35 5.08)
+					(xy 7.874 4.318)
+				)
+				(stroke (width 0.254) (type default))
+				(fill (type outline))
+			)
+			(polyline
+				(pts (xy 8.89 2.54) (xy 6.35 5.08))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 0) (xy 12.7 0))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(pin passive line
+				(at 15.24 0 180)
+				(length 2.54)
+				(name "A"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 0 0)
+				(length 2.54)
+				(name "K"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0001C"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "CRCW04024K70FKEDHP"
+			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0001C"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.vishay.com/doc?20043"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "CRCW0402-HP 100 4K7 1% ET7 E3"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Mouser ID" "71-CRCW04024K70FKEDH"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Vishay-Dale/CRCW04024K70FKEDHP?qs=k2%2FDWSARqgH3ASlI4vM3KQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=71-CRCW04024K70FKEDH&utm_content=Vishay"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Number" "CRCW04024K70FKEDHP"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "DigiKey ID" "541-4.70KYCT-ND"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Name" "Vishay"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description_1" "CRCW0402-HP 100 4K7 1% ET7 E3"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow ID" "CRCW04024K70FKEDHP"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0001C"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "CRCW04024K70FKEDHP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "RES_CRCW_0402_VIS RES_CRCW_0402_VIS-M RES_CRCW_0402_VIS-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0001C_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -1.27) (xy 10.16 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0001C_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 12.7 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0001E"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "Y"
+			(at 34.29 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Value" "ECS-2520SMV-240-FP-TR"
+			(at 34.29 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Footprint" "Oro:OP_0001E"
+			(at 34.29 -94.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Datasheet" "https://ecsxtal.com/store/pdf/ECS-2520SMV.pdf"
+			(at 34.29 -194.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Description" "Standard Clock Oscillators FACTORY NOT ACCEPTING ORDERS"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Height" "0.9"
+			(at 34.29 -394.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Name" "ECS"
+			(at 34.29 -494.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Part_Number" "ECS-2520SMV-240-FP-TR"
+			(at 34.29 -594.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Part Number" "520-2520SMV-240-FP-T"
+			(at 34.29 -694.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ECS/ECS-2520SMV-240-FP-TR?qs=XeJtXLiO41TYrhk2ghGLsQ%3D%3D"
+			(at 34.29 -794.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Part Number" "ECS-2520SMV-240-FP-TR"
+			(at 34.29 -894.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ecs-2520smv-240-fp-tr/ecs-international?region=nac"
+			(at 34.29 -994.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Oro ID" "OP:0001E"
+			(at 34.29 -94.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(symbol "OP_0001E_1_1"
+			(rectangle
+				(start 5.08 2.54)
+				(end 33.02 -5.08)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+			(pin passive line
+				(at 0 -2.54 0)
+				(length 5.08)
+				(name "TRI-STATE"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 38.1 -2.54 180)
+				(length 5.08)
+				(name "GND"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 38.1 0 180)
+				(length 5.08)
+				(name "OUTPUT"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 0 0)
+				(length 5.08)
+				(name "VDD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0001G"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 3.81 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "EMK105CC6225KV-F"
+			(at 3.81 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0001G"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/Taiyo_Yuden_mlcc_all_e-1847032.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "Multilayer Ceramic Capacitors (High dielectric type), 16V, 2.2 uF, ± 10 %, 0402, X6S, RoHS"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Description_1" "Multilayer Ceramic Capacitors (High dielectric type), 16V, 2.2 uF, ± 10 %, 0402, X6S, RoHS"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Number" "EMK105CC6225KV-F"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser ID" "963-EMK105CC6225KV-F"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow ID" "EMK105CC6225KV-F"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/EMK105CC6225KV-F?qs=vmHwEFxEFR8sJMXgmJtkPQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=963-EMK105CC6225KV-F&utm_content=TAIYO%20YUDEN"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Name" "Taiyo Yuden"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "DigiKey ID" "587-EMK105CC6225KV-FCT-ND"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0001G"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "EMK105CC6225KV-F"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_MK105_V_TAY CAP_MK105_V_TAY-M CAP_MK105_V_TAY-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0001G_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.4798 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.4798 -1.905) (xy 3.4798 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 0) (xy 5.08 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 -1.905) (xy 4.1148 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 7.62 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0001G_1_2"
+			(polyline
+				(pts (xy -1.905 -3.4798) (xy 1.905 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.905 -4.1148) (xy 1.905 -4.1148))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -2.54) (xy 0 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -4.1148) (xy 0 -5.08))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -7.62 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0001L"
+		(pin_names (hide yes))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 3.302 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Value" "GRM155C61E475ME15J"
+			(at -6.096 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Footprint" "Oro:OP_0001L"
+			(at 8.89 -96.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155C61E475ME15-01A.pdf"
+			(at 8.89 -196.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 25VDC 4.7F 20% X5S"
+			(at 20.828 10.668 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Height" "0.33"
+			(at 8.89 -396.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Name" "Murata Electronics"
+			(at 8.89 -496.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Part_Number" "GRM155C61E475ME15J"
+			(at 8.89 -596.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Part Number" "81-GRM15C61E475ME15J"
+			(at 8.89 -696.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM155C61E475ME15J?qs=By6Nw2ByBD02p8xq06vhEQ%3D%3D"
+			(at 8.89 -796.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Part Number" "GRM155C61E475ME15J"
+			(at 8.89 -896.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/grm155c61e475me15j/murata-manufacturing?region=nac"
+			(at 8.89 -996.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Oro ID" "OP:0001L"
+			(at 8.89 -96.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(symbol "OP_0001L_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.4798 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.4798 -1.905) (xy 3.4798 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 0) (xy 5.08 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 -1.905) (xy 4.1148 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 7.62 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0001Q"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "IC"
+			(at 41.91 17.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Value" "IS31FL3236A-TQLS4-TR"
+			(at 41.91 15.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Footprint" "Oro:OP_0001Q"
+			(at 41.91 -84.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Datasheet" "https://www.arrow.com/en/products/is31fl3236a-tqls4-tr/lumissil-microsystems"
+			(at 41.91 -184.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Description" "Constant Current LED Driver 3.3V/5V T/R"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Height" "1.2"
+			(at 41.91 -384.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Name" "Lumissil Microsystems"
+			(at 41.91 -484.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Part_Number" "IS31FL3236A-TQLS4-TR"
+			(at 41.91 -584.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Part Number" "870-I31FL3236ATQLS4T"
+			(at 41.91 -684.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Lumissil/IS31FL3236A-TQLS4-TR?qs=F5EMLAvA7IBwVb50nDr6Cg%3D%3D"
+			(at 41.91 -784.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Part Number" "IS31FL3236A-TQLS4-TR"
+			(at 41.91 -884.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/is31fl3236a-tqls4-tr/integrated-silicon-solution-inc?region=nac"
+			(at 41.91 -984.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Oro ID" "OP:0001Q"
+			(at 41.91 -84.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(symbol "OP_0001Q_1_1"
+			(rectangle
+				(start 5.08 12.7)
+				(end 40.64 -40.64)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+			(pin passive line
+				(at 0 0 0)
+				(length 5.08)
+				(name "OUT3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -2.54 0)
+				(length 5.08)
+				(name "OUT4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -5.08 0)
+				(length 5.08)
+				(name "OUT5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -7.62 0)
+				(length 5.08)
+				(name "GND_1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -10.16 0)
+				(length 5.08)
+				(name "OUT6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -12.7 0)
+				(length 5.08)
+				(name "OUT7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -15.24 0)
+				(length 5.08)
+				(name "OUT8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -17.78 0)
+				(length 5.08)
+				(name "OUT9"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -20.32 0)
+				(length 5.08)
+				(name "OUT10"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -22.86 0)
+				(length 5.08)
+				(name "OUT11"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -25.4 0)
+				(length 5.08)
+				(name "OUT12"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "11"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -27.94 0)
+				(length 5.08)
+				(name "OUT13"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "12"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 7.62 -45.72 90)
+				(length 5.08)
+				(name "OUT14"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "13"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 10.16 -45.72 90)
+				(length 5.08)
+				(name "OUT15"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "14"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 12.7 -45.72 90)
+				(length 5.08)
+				(name "OUT16"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "15"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 15.24 -45.72 90)
+				(length 5.08)
+				(name "OUT17"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "16"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 17.78 -45.72 90)
+				(length 5.08)
+				(name "OUT18"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "17"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 20.32 -45.72 90)
+				(length 5.08)
+				(name "GND_2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "18"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 -45.72 90)
+				(length 5.08)
+				(name "GND_3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "19"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 25.4 -45.72 90)
+				(length 5.08)
+				(name "OUT19"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "20"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 -45.72 90)
+				(length 5.08)
+				(name "OUT20"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "21"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 30.48 -45.72 90)
+				(length 5.08)
+				(name "OUT21"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "22"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 33.02 -45.72 90)
+				(length 5.08)
+				(name "OUT22"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "23"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 35.56 -45.72 90)
+				(length 5.08)
+				(name "OUT23"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "24"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 -27.94 180)
+				(length 5.08)
+				(name "OUT24"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "25"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 -25.4 180)
+				(length 5.08)
+				(name "OUT25"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "26"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 -22.86 180)
+				(length 5.08)
+				(name "OUT26"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "27"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 -20.32 180)
+				(length 5.08)
+				(name "OUT27"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "28"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 -17.78 180)
+				(length 5.08)
+				(name "OUT28"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "29"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 -15.24 180)
+				(length 5.08)
+				(name "OUT29"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "30"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 -12.7 180)
+				(length 5.08)
+				(name "OUT30"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "31"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 -10.16 180)
+				(length 5.08)
+				(name "OUT31"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "32"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 -7.62 180)
+				(length 5.08)
+				(name "GND_4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "33"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 -5.08 180)
+				(length 5.08)
+				(name "OUT32"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "34"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 -2.54 180)
+				(length 5.08)
+				(name "OUT33"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "35"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 0 180)
+				(length 5.08)
+				(name "OUT34"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "36"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 38.1 17.78 270)
+				(length 5.08)
+				(name "OUT35"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "37"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 35.56 17.78 270)
+				(length 5.08)
+				(name "OUT36"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "38"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 33.02 17.78 270)
+				(length 5.08)
+				(name "SDB"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "39"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 30.48 17.78 270)
+				(length 5.08)
+				(name "AD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "40"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 17.78 270)
+				(length 5.08)
+				(name "VCC"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "41"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 25.4 17.78 270)
+				(length 5.08)
+				(name "GND_5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "42"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 17.78 270)
+				(length 5.08)
+				(name "GND_6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "43"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 20.32 17.78 270)
+				(length 5.08)
+				(name "R_EXT"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "44"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 17.78 17.78 270)
+				(length 5.08)
+				(name "SDA"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "45"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 15.24 17.78 270)
+				(length 5.08)
+				(name "SCL"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "46"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 12.7 17.78 270)
+				(length 5.08)
+				(name "OUT1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "47"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 10.16 17.78 270)
+				(length 5.08)
+				(name "OUT2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "48"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 7.62 17.78 270)
+				(length 5.08)
+				(name "EP"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "49"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0001R"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 3.81 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "JMK105BJ105KVHF"
+			(at 3.81 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0001R"
+			(at -1.778 9.398 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/taiyo_yuden_12132018_mlcc11_hq_e-1510082.pdf"
+			(at -3.302 9.652 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "Capacitor, ceramic, 0402, 6.3V, x5R, 1 F, ±10% Rohs Compliant: Yes |Taiyo Yuden JMK105BJ105KVHF"
+			(at -0.254 8.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "DigiKey ID" "587-3766-1-ND"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow ID" "JMK105BJ105KVHF"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Name" "Taiyo Yuden"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description_1" "Capacitor, ceramic, 0402, 6.3V, x5R, 1 F, ±10% Rohs Compliant: Yes |Taiyo Yuden JMK105BJ105KVHF"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser ID" "963-JMK105BJ105KVHF"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Number" "JMK105BJ105KVHF"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/JMK105BJ105KVHF?qs=qPaGMJUC%252BSupRtwk0yj9HQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=963-JMK105BJ105KVHF&utm_content=TAIYO%20YUDEN"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0001R"
+			(at -1.778 9.398 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "JMK105BJ105KVHF"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "cap_UMK105 CG080CV-F_TAY cap_UMK105 CG080CV-F_TAY-M cap_UMK105 CG080CV-F_TAY-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0001R_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.4798 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.4798 -1.905) (xy 3.4798 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 0) (xy 5.08 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 -1.905) (xy 4.1148 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 7.62 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0001R_1_2"
+			(polyline
+				(pts (xy -1.905 -3.4798) (xy 1.905 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.905 -4.1148) (xy 1.905 -4.1148))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -2.54) (xy 0 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -4.1148) (xy 0 -5.08))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -7.62 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0001X"
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 30.48 10.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "MEM2061-01-188-00-A"
+			(at 30.48 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0001X"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/837/MEM2061-2887869.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "Memory Card Connectors Micro SD Push Push, Closed, SMT, 1.88mm profile, No Peg, T&R"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Mouser ID" "640-MEM20610118800A"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Name" "Global Connector Technology"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Number" "MEM2061-01-188-00-A"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "DigiKey ID" "2073-MEM2061-01-188-00-ACT-ND"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/GCT/MEM2061-01-188-00-A?qs=KUoIvG%2F9IlYc25USp0M1eQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=640-MEM20610118800A&utm_content=GCT"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description_1" "Memory Card Connectors Micro SD Push Push, Closed, SMT, 1.88mm profile, No Peg, T&R"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow ID" "null"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0001X"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "MEM2061-01-188-00-A"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "MEM2061-01-188-00-A_GCT"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0001X_0_1"
+			(polyline
+				(pts (xy 7.62 5.08) (xy 7.62 -17.78))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -17.78) (xy 53.34 -17.78))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 53.34 5.08) (xy 7.62 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 53.34 -17.78) (xy 53.34 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 60.96 -7.62 180)
+				(length 7.62)
+				(name "CARD_DETECT"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 60.96 -5.08 180)
+				(length 7.62)
+				(name "CARD_DETECT"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_out line
+				(at 60.96 -2.54 180)
+				(length 7.62)
+				(name "GROUND"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "11"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_out line
+				(at 60.96 0 180)
+				(length 7.62)
+				(name "GROUND"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "12"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 0 0)
+				(length 7.62)
+				(name "DAT2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "P1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -2.54 0)
+				(length 7.62)
+				(name "CD/DAT3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "P2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -5.08 0)
+				(length 7.62)
+				(name "CMD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "P3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -7.62 0)
+				(length 7.62)
+				(name "VDD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "P4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -10.16 0)
+				(length 7.62)
+				(name "CLK"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "P5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_out line
+				(at 0 -12.7 0)
+				(length 7.62)
+				(name "VSS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "P6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 60.96 -12.7 180)
+				(length 7.62)
+				(name "DAT0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "P7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 60.96 -10.16 180)
+				(length 7.62)
+				(name "DAT1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "P8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0001Y"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 3.81 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "MSAST1L3YB5104KFNA01"
+			(at 3.81 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0001Y"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/Tayio_Yuden_1102023_MS_mlcc_all_e-3081579.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Mfr. Name" "Taiyo Yuden"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Number" "MSAST1L3YB5104KFNA01"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/MSAST1L3YB5104KFNA01?qs=tlsG%2FOw5FFhBwK%252BMwEZpCA%3D%3D"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description_1" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow ID" "MSAST1L3YB5104KFNA01"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "DigiKey ID" "587-MSAST1L3YB5104KFNA01CT-ND"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser ID" "963-MSAST1L3YB5104KF"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0001Y"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "MSAST1L3YB5104KFNA01"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_MSAS1L-3_TAY CAP_MSAS1L-3_TAY-M CAP_MSAS1L-3_TAY-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0001Y_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.4798 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.4798 -1.905) (xy 3.4798 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 0) (xy 5.08 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 -1.905) (xy 4.1148 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 7.62 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0001Y_1_2"
+			(polyline
+				(pts (xy -1.905 -3.4798) (xy 1.905 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.905 -4.1148) (xy 1.905 -4.1148))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -2.54) (xy 0 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -4.1148) (xy 0 -5.08))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -7.62 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0001Z"
+		(pin_names (offset 0.254) (hide yes))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "Q"
+			(at 11.43 1.905 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "PMV20ENR"
+			(at 11.43 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0001Z"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PMV20EN.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "Trans Mosfet N-ch 30V 7.6A 3-PIN SOT-23 T/r"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Arrow ID" "PMV20ENR"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "DigiKey ID" "1727-2301-1-ND"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description_1" "Trans Mosfet N-ch 30V 7.6A 3-PIN SOT-23 T/r"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Name" "Nexperia"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser ID" "771-PMV20ENR"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Number" "PMV20ENR"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Nexperia/PMV20ENR?qs=sV%252BQJnSpgu%2FSnnW%252BQ4V7GA%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=771-PMV20ENR&utm_content=Nexperia"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0001Z"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "PMV20ENR"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "QNMOS1G2S3D_TO-236AB_SOT23_NEX QNMOS1G2S3D_TO-236AB_SOT23_NEX-M QNMOS1G2S3D_TO-236AB_SOT23_NEX-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0001Z_0_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 4.445 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -2.54) (xy 4.445 2.54))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 1.905) (xy 6.985 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 1.27) (xy 5.08 2.54))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 -0.635) (xy 5.08 0.635))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 -1.905) (xy 6.985 -1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 -2.54) (xy 5.08 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.35 0.635) (xy 5.08 0) (xy 6.35 -0.635))
+				(stroke (width 0) (type default))
+				(fill (type outline))
+			)
+			(polyline
+				(pts (xy 6.35 0) (xy 6.985 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 6.35 0)
+				(radius 3.81)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 2.54) (xy 8.255 2.54))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 1.905) (xy 6.985 2.54))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 6.985 -1.905)
+				(radius 0.127)
+				(stroke (width 0.508) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -2.54) (xy 6.985 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -2.54) (xy 8.255 -2.54))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 7.62 2.54)
+				(radius 0.127)
+				(stroke (width 0.508) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 7.62 -2.54)
+				(radius 0.127)
+				(stroke (width 0.508) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 0.635) (xy 8.255 2.54))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 -2.54) (xy 8.255 -0.635))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.89 0.635) (xy 7.62 0.635))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.89 -0.635) (xy 7.62 -0.635) (xy 8.255 0.635))
+				(stroke (width 0) (type default))
+				(fill (type outline))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name "G"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0001Z_1_1"
+			(pin unspecified line
+				(at 7.62 -7.62 90)
+				(length 5.08)
+				(name "S"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 7.62 7.62 270)
+				(length 5.08)
+				(name "D"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_00021"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "RMCF0402FT10K0"
+			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_00021"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/385/SEI_RMCF_RMCP-3077565.pdf"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
+			(at 0.762 5.334 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Description_1" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Name" "Stackpole International"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "DigiKey ID" "RMCF0402FT10K0CT-ND"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/SEI-Stackpole/RMCF0402FT10K0?qs=FESYatJ8odLDpjm%252BwxiA1Q%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=708-RMCF0402FT10K0&utm_content=SEI%20Stackpole"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow ID" "RMCF0402FT10K0"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Number" "RMCF0402FT10K0"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser ID" "708-RMCF0402FT10K0"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:00021"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "RMCF0402FT10K0"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "STA_RMCF0402_STP STA_RMCF0402_STP-M STA_RMCF0402_STP-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_00021_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -1.27) (xy 10.16 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_00021_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 12.7 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_00028"
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at 20.32 10.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "STM32F479VGT6"
+			(at 20.32 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_00028"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/389/stm32f479ai-1839304.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "High-performance advanced line, ARM Cortex-M4 core with DSP and FPU, 1 Mbyte Flash, 180 MHz CPU, ART Accelerator, Chrom-ART Accelerator, FMC with SDRAM, Dual QSPI, TFT, MIPI-DSI"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Mfr. Name" "STMicroelectronics"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/STMicroelectronics/STM32F479VGT6?qs=o7IDWEFmXKADp8QFprcgSQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=511-STM32F479VGT6&utm_content=STMicroelectronics"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser ID" "511-STM32F479VGT6"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description_1" "High-performance advanced line, ARM Cortex-M4 core with DSP and FPU, 1 Mbyte Flash, 180 MHz CPU, ART Accelerator, Chrom-ART Accelerator, FMC with SDRAM, Dual QSPI, TFT, MIPI-DSI"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "DigiKey ID" "497-STM32F479VGT6-ND"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Number" "STM32F479VGT6"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow ID" "STM32F479VGT6"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:00028"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "STM32F479VGT6"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "LQFP100_STM LQFP100_STM-M LQFP100_STM-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_00028_1_1"
+			(polyline
+				(pts (xy 7.62 5.08) (xy 7.62 -86.36))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -86.36) (xy 33.02 -86.36))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 33.02 5.08) (xy 7.62 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 33.02 -86.36) (xy 33.02 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(pin bidirectional line
+				(at 40.64 -27.94 180)
+				(length 7.62)
+				(name "PC13"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -30.48 180)
+				(length 7.62)
+				(name "PC14"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -33.02 180)
+				(length 7.62)
+				(name "PC15"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 0 180)
+				(length 7.62)
+				(name "PC0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "12"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -2.54 180)
+				(length 7.62)
+				(name "PC1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "13"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -5.08 180)
+				(length 7.62)
+				(name "PC2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "14"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -7.62 180)
+				(length 7.62)
+				(name "PC3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "15"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 0 0)
+				(length 7.62)
+				(name "PA0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "19"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -2.54 0)
+				(length 7.62)
+				(name "PA1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "20"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -5.08 0)
+				(length 7.62)
+				(name "PA2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "21"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -7.62 0)
+				(length 7.62)
+				(name "PA3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "22"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -10.16 0)
+				(length 7.62)
+				(name "PA4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "25"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -12.7 0)
+				(length 7.62)
+				(name "PA5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "26"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -15.24 0)
+				(length 7.62)
+				(name "PA6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "27"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -17.78 0)
+				(length 7.62)
+				(name "PA7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "28"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -43.18 0)
+				(length 7.62)
+				(name "PB0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "29"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -45.72 0)
+				(length 7.62)
+				(name "PB1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "30"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -48.26 0)
+				(length 7.62)
+				(name "PB2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "31"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -68.58 0)
+				(length 7.62)
+				(name "PB10"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "41"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -71.12 0)
+				(length 7.62)
+				(name "PB11"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "42"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -73.66 0)
+				(length 7.62)
+				(name "PB12"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "46"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -76.2 0)
+				(length 7.62)
+				(name "PB13"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "47"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -78.74 0)
+				(length 7.62)
+				(name "PB14"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "48"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -81.28 0)
+				(length 7.62)
+				(name "PB15"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "49"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -60.96 180)
+				(length 7.62)
+				(name "PD8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "50"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -63.5 180)
+				(length 7.62)
+				(name "PD9"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "51"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -66.04 180)
+				(length 7.62)
+				(name "PD10"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "52"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -68.58 180)
+				(length 7.62)
+				(name "PD14"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "53"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -71.12 180)
+				(length 7.62)
+				(name "PD15"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "54"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -10.16 180)
+				(length 7.62)
+				(name "PC6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "66"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -12.7 180)
+				(length 7.62)
+				(name "PC7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "67"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -15.24 180)
+				(length 7.62)
+				(name "PC8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "68"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -17.78 180)
+				(length 7.62)
+				(name "PC9"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "69"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -20.32 0)
+				(length 7.62)
+				(name "PA8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "70"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -22.86 0)
+				(length 7.62)
+				(name "PA9"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "71"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -25.4 0)
+				(length 7.62)
+				(name "PA10"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "72"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -27.94 0)
+				(length 7.62)
+				(name "PA11"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "73"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -30.48 0)
+				(length 7.62)
+				(name "PA12"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "74"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -33.02 0)
+				(length 7.62)
+				(name "PA13"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "75"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -35.56 0)
+				(length 7.62)
+				(name "PA14"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "79"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -38.1 0)
+				(length 7.62)
+				(name "PA15"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "80"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -20.32 180)
+				(length 7.62)
+				(name "PC10"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "81"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -22.86 180)
+				(length 7.62)
+				(name "PC11"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "82"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -25.4 180)
+				(length 7.62)
+				(name "PC12"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "83"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -40.64 180)
+				(length 7.62)
+				(name "PD0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "84"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -43.18 180)
+				(length 7.62)
+				(name "PD1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "85"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -45.72 180)
+				(length 7.62)
+				(name "PD2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "86"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -48.26 180)
+				(length 7.62)
+				(name "PD3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "87"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -50.8 180)
+				(length 7.62)
+				(name "PD4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "88"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -53.34 180)
+				(length 7.62)
+				(name "PD5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "89"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -55.88 180)
+				(length 7.62)
+				(name "PD6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "90"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 40.64 -58.42 180)
+				(length 7.62)
+				(name "PD7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "91"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -50.8 0)
+				(length 7.62)
+				(name "PB3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "92"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -53.34 0)
+				(length 7.62)
+				(name "PB4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "93"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -55.88 0)
+				(length 7.62)
+				(name "PB5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "94"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -58.42 0)
+				(length 7.62)
+				(name "PB6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "95"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -60.96 0)
+				(length 7.62)
+				(name "PB7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "96"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -63.5 0)
+				(length 7.62)
+				(name "PB8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "98"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -66.04 0)
+				(length 7.62)
+				(name "PB9"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "99"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_00028_2_1"
+			(polyline
+				(pts (xy 7.62 5.08) (xy 7.62 -35.56))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -35.56) (xy 48.26 -35.56))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 48.26 5.08) (xy 7.62 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 48.26 -35.56) (xy 48.26 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(pin bidirectional line
+				(at 0 0 0)
+				(length 7.62)
+				(name "PE2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -27.94 0)
+				(length 7.62)
+				(name "PH0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -30.48 0)
+				(length 7.62)
+				(name "PH1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 55.88 0 180)
+				(length 7.62)
+				(name "NRST"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "11"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -2.54 0)
+				(length 7.62)
+				(name "PE7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "32"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -5.08 0)
+				(length 7.62)
+				(name "PE8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "33"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -7.62 0)
+				(length 7.62)
+				(name "PE9"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "34"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -10.16 0)
+				(length 7.62)
+				(name "PE10"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "35"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -12.7 0)
+				(length 7.62)
+				(name "PE11"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "36"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -15.24 0)
+				(length 7.62)
+				(name "PE12"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "37"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -17.78 0)
+				(length 7.62)
+				(name "PE13"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "38"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -20.32 0)
+				(length 7.62)
+				(name "PE14"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "39"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -22.86 0)
+				(length 7.62)
+				(name "PE15"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "40"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 55.88 -25.4 180)
+				(length 7.62)
+				(name "DSIHOST_D0P"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "57"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 55.88 -17.78 180)
+				(length 7.62)
+				(name "DSIHOST_D0N"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "58"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 55.88 -12.7 180)
+				(length 7.62)
+				(name "DSIHOST_CKP"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "60"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 55.88 -10.16 180)
+				(length 7.62)
+				(name "DSIHOST_CKN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "61"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 55.88 -27.94 180)
+				(length 7.62)
+				(name "DSIHOST_D1P"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "63"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 55.88 -20.32 180)
+				(length 7.62)
+				(name "DSIHOST_D1N"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "64"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 55.88 -5.08 180)
+				(length 7.62)
+				(name "BOOT0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "97"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_00028_3_1"
+			(polyline
+				(pts (xy 7.62 5.08) (xy 7.62 -43.18))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -43.18) (xy 48.26 -43.18))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 48.26 5.08) (xy 7.62 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 48.26 -43.18) (xy 48.26 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(pin power_in line
+				(at 0 0 0)
+				(length 7.62)
+				(name "VSS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -25.4 0)
+				(length 7.62)
+				(name "VBAT"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -2.54 0)
+				(length 7.62)
+				(name "VSS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 55.88 0 180)
+				(length 7.62)
+				(name "VDD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -15.24 0)
+				(length 7.62)
+				(name "VSSA"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "16"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 55.88 -35.56 180)
+				(length 7.62)
+				(name "VREF+"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "17"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 55.88 -15.24 180)
+				(length 7.62)
+				(name "VDDA"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "18"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -5.08 0)
+				(length 7.62)
+				(name "VSS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "23"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 55.88 -2.54 180)
+				(length 7.62)
+				(name "VDD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "24"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -30.48 0)
+				(length 7.62)
+				(name "VCAP1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "43"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -7.62 0)
+				(length 7.62)
+				(name "VSS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "44"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 55.88 -5.08 180)
+				(length 7.62)
+				(name "VDD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "45"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 55.88 -20.32 180)
+				(length 7.62)
+				(name "VDDDSI"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "55"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -38.1 0)
+				(length 7.62)
+				(name "VCAPDSI"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "56"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -20.32 0)
+				(length 7.62)
+				(name "VSSDSI"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "59"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 55.88 -30.48 180)
+				(length 7.62)
+				(name "VDD12DSI"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "62"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 55.88 -25.4 180)
+				(length 7.62)
+				(name "VDDUSB"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "65"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -33.02 0)
+				(length 7.62)
+				(name "VCAP2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "76"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 55.88 -7.62 180)
+				(length 7.62)
+				(name "VDD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "77"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -10.16 0)
+				(length 7.62)
+				(name "VSS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "78"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 55.88 -10.16 180)
+				(length 7.62)
+				(name "VDD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "100"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_00050"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "IC"
+			(at 62.23 25.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Value" "SC1510-A4"
+			(at 62.23 22.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Footprint" "Oro:OP_00050"
+			(at 62.23 -77.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Datasheet" "https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf"
+			(at 62.23 -177.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Description" "ARM Microcontrollers - MCU RP2350B 150MHz clock Dual Arm Cortex-M33 cores 520KB RAM 8KB on-chip QFN-80"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Height" "0.9"
+			(at 62.23 -377.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Name" "RASPBERRY-PI"
+			(at 62.23 -477.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Part_Number" "SC1510-A4"
+			(at 62.23 -577.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Part Number" ""
+			(at 62.23 -677.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Price/Stock" ""
+			(at 62.23 -777.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Part Number" ""
+			(at 62.23 -877.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Price/Stock" ""
+			(at 62.23 -977.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Oro ID" "OP:00050"
+			(at 62.23 -77.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(symbol "OP_00050_1_1"
+			(rectangle
+				(start 5.08 20.32)
+				(end 60.96 -63.5)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+			(pin passive line
+				(at 0 0 0)
+				(length 5.08)
+				(name "GPIO4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -2.54 0)
+				(length 5.08)
+				(name "GPIO5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -5.08 0)
+				(length 5.08)
+				(name "GPIO6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -7.62 0)
+				(length 5.08)
+				(name "GPIO7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -10.16 0)
+				(length 5.08)
+				(name "IOVDD_1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -12.7 0)
+				(length 5.08)
+				(name "GPIO8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -15.24 0)
+				(length 5.08)
+				(name "GPIO9"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -17.78 0)
+				(length 5.08)
+				(name "GPIO10"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -20.32 0)
+				(length 5.08)
+				(name "GPIO11"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -22.86 0)
+				(length 5.08)
+				(name "DVDD_1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -25.4 0)
+				(length 5.08)
+				(name "GPIO12"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "11"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -27.94 0)
+				(length 5.08)
+				(name "GPIO13"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "12"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -30.48 0)
+				(length 5.08)
+				(name "GPIO14"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "13"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -33.02 0)
+				(length 5.08)
+				(name "GPIO15"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "14"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -35.56 0)
+				(length 5.08)
+				(name "IOVDD_2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "15"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -38.1 0)
+				(length 5.08)
+				(name "GPIO16"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "16"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -40.64 0)
+				(length 5.08)
+				(name "GPIO17"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "17"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -43.18 0)
+				(length 5.08)
+				(name "GPIO18"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "18"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -45.72 0)
+				(length 5.08)
+				(name "GPIO19"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "19"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -48.26 0)
+				(length 5.08)
+				(name "GPIO20"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "20"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 7.62 -68.58 90)
+				(length 5.08)
+				(name "GPIO21"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "21"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 10.16 -68.58 90)
+				(length 5.08)
+				(name "GPIO22"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "22"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 12.7 -68.58 90)
+				(length 5.08)
+				(name "GPIO23"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "23"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 15.24 -68.58 90)
+				(length 5.08)
+				(name "IOVDD_3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "24"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 17.78 -68.58 90)
+				(length 5.08)
+				(name "GPIO24"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "25"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 20.32 -68.58 90)
+				(length 5.08)
+				(name "GPIO25"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "26"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 -68.58 90)
+				(length 5.08)
+				(name "GPIO26"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "27"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 25.4 -68.58 90)
+				(length 5.08)
+				(name "GPIO27"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "28"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 -68.58 90)
+				(length 5.08)
+				(name "IOVDD_4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "29"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 30.48 -68.58 90)
+				(length 5.08)
+				(name "XIN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "30"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 33.02 -68.58 90)
+				(length 5.08)
+				(name "XOUT"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "31"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 35.56 -68.58 90)
+				(length 5.08)
+				(name "DVDD_2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "32"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 38.1 -68.58 90)
+				(length 5.08)
+				(name "SWCLK"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "33"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 40.64 -68.58 90)
+				(length 5.08)
+				(name "SWDIO"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "34"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 43.18 -68.58 90)
+				(length 5.08)
+				(name "RUN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "35"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 -68.58 90)
+				(length 5.08)
+				(name "GPIO28"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "36"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 48.26 -68.58 90)
+				(length 5.08)
+				(name "GPIO29"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "37"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 50.8 -68.58 90)
+				(length 5.08)
+				(name "GPIO30"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "38"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 53.34 -68.58 90)
+				(length 5.08)
+				(name "GPIO31"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "39"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 55.88 -68.58 90)
+				(length 5.08)
+				(name "GPIO32"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "40"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -48.26 180)
+				(length 5.08)
+				(name "IOVDD_5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "41"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -45.72 180)
+				(length 5.08)
+				(name "GPIO33"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "42"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -43.18 180)
+				(length 5.08)
+				(name "GPIO34"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "43"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -40.64 180)
+				(length 5.08)
+				(name "GPIO35"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "44"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -38.1 180)
+				(length 5.08)
+				(name "GPIO36"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "45"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -35.56 180)
+				(length 5.08)
+				(name "GPIO37"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "46"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -33.02 180)
+				(length 5.08)
+				(name "GPIO38"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "47"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -30.48 180)
+				(length 5.08)
+				(name "GPIO39"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "48"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -27.94 180)
+				(length 5.08)
+				(name "GPIO40_ADC0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "49"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -25.4 180)
+				(length 5.08)
+				(name "IOVDD_6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "50"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -22.86 180)
+				(length 5.08)
+				(name "DVDD_3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "51"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -20.32 180)
+				(length 5.08)
+				(name "GPIO41_ADC1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "52"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -17.78 180)
+				(length 5.08)
+				(name "GPIO42_ADC2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "53"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -15.24 180)
+				(length 5.08)
+				(name "GPIO43_ADC3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "54"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -12.7 180)
+				(length 5.08)
+				(name "GPIO44_ADC4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "55"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -10.16 180)
+				(length 5.08)
+				(name "GPIO45_ADC5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "56"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -7.62 180)
+				(length 5.08)
+				(name "GPIO46_ADC6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "57"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -5.08 180)
+				(length 5.08)
+				(name "GPIO47_ADC7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "58"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 -2.54 180)
+				(length 5.08)
+				(name "ADC_AVDD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "59"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 66.04 0 180)
+				(length 5.08)
+				(name "IOVDD_7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "60"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 58.42 25.4 270)
+				(length 5.08)
+				(name "VREG_AVDD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "61"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 55.88 25.4 270)
+				(length 5.08)
+				(name "VREG_PGND"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "62"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 53.34 25.4 270)
+				(length 5.08)
+				(name "VREG_LX"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "63"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 50.8 25.4 270)
+				(length 5.08)
+				(name "VREG_VIN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "64"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 48.26 25.4 270)
+				(length 5.08)
+				(name "VREG_FB"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "65"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 45.72 25.4 270)
+				(length 5.08)
+				(name "USB_DM"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "66"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 43.18 25.4 270)
+				(length 5.08)
+				(name "USB_DP"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "67"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 40.64 25.4 270)
+				(length 5.08)
+				(name "USB_OTP_VDD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "68"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 38.1 25.4 270)
+				(length 5.08)
+				(name "QSPI_IOVDD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "69"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 35.56 25.4 270)
+				(length 5.08)
+				(name "QSPI_SD3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "70"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 33.02 25.4 270)
+				(length 5.08)
+				(name "QSPI_SCLK"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "71"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 30.48 25.4 270)
+				(length 5.08)
+				(name "QSPI_SD0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "72"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 25.4 270)
+				(length 5.08)
+				(name "QSPI_SD2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "73"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 25.4 25.4 270)
+				(length 5.08)
+				(name "QSPI_SD1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "74"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 25.4 270)
+				(length 5.08)
+				(name "QSPI_SS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "75"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 20.32 25.4 270)
+				(length 5.08)
+				(name "IOVDD_8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "76"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 17.78 25.4 270)
+				(length 5.08)
+				(name "GPIO0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "77"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 15.24 25.4 270)
+				(length 5.08)
+				(name "GPIO1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "78"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 12.7 25.4 270)
+				(length 5.08)
+				(name "GPIO2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "79"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 10.16 25.4 270)
+				(length 5.08)
+				(name "GPIO3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "80"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 7.62 25.4 270)
+				(length 5.08)
+				(name "GND"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "81"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_00052"
+		(pin_names (offset 0.254) (hide yes))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 8.89 6.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "5034801400"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_00052"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/5034801400?display=pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:00052"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "5034801400"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CON_5034801400_MOL"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_00052_1_1"
+			(polyline
+				(pts (xy 5.08 2.54) (xy 5.08 -40.64))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 -40.64) (xy 12.7 -40.64))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 0) (xy 5.08 0))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 0) (xy 8.89 0.8467))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 0) (xy 8.89 -0.8467))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -2.54) (xy 5.08 -2.54))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -2.54) (xy 8.89 -1.6933))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -2.54) (xy 8.89 -3.3867))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -5.08) (xy 5.08 -5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -5.08) (xy 8.89 -4.2333))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -5.08) (xy 8.89 -5.9267))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -7.62) (xy 5.08 -7.62))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -7.62) (xy 8.89 -6.7733))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -7.62) (xy 8.89 -8.4667))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -10.16) (xy 5.08 -10.16))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -10.16) (xy 8.89 -9.3133))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -10.16) (xy 8.89 -11.0067))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -12.7) (xy 5.08 -12.7))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -12.7) (xy 8.89 -11.8533))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -12.7) (xy 8.89 -13.5467))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -15.24) (xy 5.08 -15.24))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -15.24) (xy 8.89 -14.3933))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -15.24) (xy 8.89 -16.0867))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -17.78) (xy 5.08 -17.78))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -17.78) (xy 8.89 -16.9333))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -17.78) (xy 8.89 -18.6267))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -20.32) (xy 5.08 -20.32))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -20.32) (xy 8.89 -19.4733))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -20.32) (xy 8.89 -21.1667))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -22.86) (xy 5.08 -22.86))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -22.86) (xy 8.89 -22.0133))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -22.86) (xy 8.89 -23.7067))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -25.4) (xy 5.08 -25.4))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -25.4) (xy 8.89 -24.5533))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -25.4) (xy 8.89 -26.2467))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -27.94) (xy 5.08 -27.94))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -27.94) (xy 8.89 -27.0933))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -27.94) (xy 8.89 -28.7867))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -30.48) (xy 5.08 -30.48))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -30.48) (xy 8.89 -29.6333))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -30.48) (xy 8.89 -31.3267))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -33.02) (xy 5.08 -33.02))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -33.02) (xy 8.89 -32.1733))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -33.02) (xy 8.89 -33.8667))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -35.56) (xy 5.08 -35.56))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -35.56) (xy 8.89 -34.7133))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -35.56) (xy 8.89 -36.4067))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -38.1) (xy 5.08 -38.1))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -38.1) (xy 8.89 -37.2533))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -38.1) (xy 8.89 -38.9467))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 2.54) (xy 5.08 2.54))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 -40.64) (xy 12.7 2.54))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 5.08)
+				(name "1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -2.54 0)
+				(length 5.08)
+				(name "2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -5.08 0)
+				(length 5.08)
+				(name "3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -7.62 0)
+				(length 5.08)
+				(name "4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -10.16 0)
+				(length 5.08)
+				(name "5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -12.7 0)
+				(length 5.08)
+				(name "6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -15.24 0)
+				(length 5.08)
+				(name "7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -17.78 0)
+				(length 5.08)
+				(name "8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -20.32 0)
+				(length 5.08)
+				(name "9"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -22.86 0)
+				(length 5.08)
+				(name "10"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -25.4 0)
+				(length 5.08)
+				(name "11"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "11"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -27.94 0)
+				(length 5.08)
+				(name "12"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "12"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -30.48 0)
+				(length 5.08)
+				(name "13"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "13"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -33.02 0)
+				(length 5.08)
+				(name "14"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "14"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -35.56 0)
+				(length 5.08)
+				(name "P1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "P1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -38.1 0)
+				(length 5.08)
+				(name "P2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "P2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_00052_1_2"
+			(polyline
+				(pts (xy 5.08 2.54) (xy 5.08 -40.64))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 -40.64) (xy 12.7 -40.64))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 0) (xy 5.08 0))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 0) (xy 8.89 0.8467))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 0) (xy 8.89 -0.8467))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -2.54) (xy 5.08 -2.54))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -2.54) (xy 8.89 -1.6933))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -2.54) (xy 8.89 -3.3867))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -5.08) (xy 5.08 -5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -5.08) (xy 8.89 -4.2333))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -5.08) (xy 8.89 -5.9267))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -7.62) (xy 5.08 -7.62))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -7.62) (xy 8.89 -6.7733))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -7.62) (xy 8.89 -8.4667))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -10.16) (xy 5.08 -10.16))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -10.16) (xy 8.89 -9.3133))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -10.16) (xy 8.89 -11.0067))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -12.7) (xy 5.08 -12.7))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -12.7) (xy 8.89 -11.8533))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -12.7) (xy 8.89 -13.5467))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -15.24) (xy 5.08 -15.24))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -15.24) (xy 8.89 -14.3933))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -15.24) (xy 8.89 -16.0867))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -17.78) (xy 5.08 -17.78))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -17.78) (xy 8.89 -16.9333))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -17.78) (xy 8.89 -18.6267))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -20.32) (xy 5.08 -20.32))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -20.32) (xy 8.89 -19.4733))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -20.32) (xy 8.89 -21.1667))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -22.86) (xy 5.08 -22.86))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -22.86) (xy 8.89 -22.0133))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -22.86) (xy 8.89 -23.7067))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -25.4) (xy 5.08 -25.4))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -25.4) (xy 8.89 -24.5533))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -25.4) (xy 8.89 -26.2467))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -27.94) (xy 5.08 -27.94))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -27.94) (xy 8.89 -27.0933))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -27.94) (xy 8.89 -28.7867))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -30.48) (xy 5.08 -30.48))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -30.48) (xy 8.89 -29.6333))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -30.48) (xy 8.89 -31.3267))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -33.02) (xy 5.08 -33.02))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -33.02) (xy 8.89 -32.1733))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -33.02) (xy 8.89 -33.8667))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -35.56) (xy 5.08 -35.56))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -35.56) (xy 8.89 -34.7133))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -35.56) (xy 8.89 -36.4067))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -38.1) (xy 5.08 -38.1))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -38.1) (xy 8.89 -37.2533))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -38.1) (xy 8.89 -38.9467))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 2.54) (xy 5.08 2.54))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 -40.64) (xy 12.7 2.54))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 5.08)
+				(name "1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -2.54 0)
+				(length 5.08)
+				(name "2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -5.08 0)
+				(length 5.08)
+				(name "3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -7.62 0)
+				(length 5.08)
+				(name "4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -10.16 0)
+				(length 5.08)
+				(name "5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -12.7 0)
+				(length 5.08)
+				(name "6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -15.24 0)
+				(length 5.08)
+				(name "7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -17.78 0)
+				(length 5.08)
+				(name "8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -20.32 0)
+				(length 5.08)
+				(name "9"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -22.86 0)
+				(length 5.08)
+				(name "10"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -25.4 0)
+				(length 5.08)
+				(name "11"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "11"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -27.94 0)
+				(length 5.08)
+				(name "12"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "12"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -30.48 0)
+				(length 5.08)
+				(name "13"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "13"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -33.02 0)
+				(length 5.08)
+				(name "14"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "14"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -35.56 0)
+				(length 5.08)
+				(name "P1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "P1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -38.1 0)
+				(length 5.08)
+				(name "P2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "P2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_00053"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 19.05 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Value" "1149867"
+			(at 19.05 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Footprint" "Oro:OP_00053"
+			(at 19.05 -94.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Datasheet" "https://www.phoenixcontact.com/en-us/products/female-insert-cuc-sp-j1st-ar4lt-led-1149867?type=pdf"
+			(at 19.05 -194.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Description" "CUC-SP-J1ST-A/R4LT-LED - Modular RJ45 PCB connectors, 1x1 single-port, connection direction of the connector to the PCB: 90 , Tab up, Shielded, LED (yellow, green), number of positions: 8, 10 Gbps, PoE++, THT, THD, Wave, IP20, type of packaging: Tray"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Height" "11.3"
+			(at 19.05 -394.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Name" "Phoenix Contact"
+			(at 19.05 -494.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Part_Number" "1149867"
+			(at 19.05 -594.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Part Number" "651-1149867"
+			(at 19.05 -694.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Phoenix-Contact/1149867?qs=7MVldsJ5UayqkB2j5TPR5A%3D%3D"
+			(at 19.05 -794.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Part Number" "1149867"
+			(at 19.05 -894.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/1149867/phoenix-contact?region=nac"
+			(at 19.05 -994.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Oro ID" "OP:00053"
+			(at 19.05 -94.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(symbol "OP_00053_0_1"
+			(polyline
+				(pts (xy 11.43 -1.016) (xy 11.938 -1.016))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 11.684 -1.016) (xy 11.684 0) (xy 12.446 0))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 11.684 -8.636) (xy 12.192 -8.636))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 11.938 -8.636) (xy 11.938 -7.62) (xy 12.7 -7.62))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts
+					(xy 12.446 -2.54)
+					(xy 11.684 -2.54)
+					(xy 11.684 -1.778)
+					(xy 11.176 -1.778)
+					(xy 11.684 -1.016)
+					(xy 12.192 -1.778)
+					(xy 11.684 -1.778)
+				)
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts
+					(xy 12.7 -10.16)
+					(xy 11.938 -10.16)
+					(xy 11.938 -9.398)
+					(xy 11.43 -9.398)
+					(xy 11.938 -8.636)
+					(xy 12.446 -9.398)
+					(xy 11.938 -9.398)
+				)
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+		)
+		(symbol "OP_00053_1_1"
+			(rectangle
+				(start 5.08 2.54)
+				(end 17.78 -20.32)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+			(pin passive line
+				(at 0 0 0)
+				(length 5.08)
+				(name "1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -2.54 0)
+				(length 5.08)
+				(name "2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -5.08 0)
+				(length 5.08)
+				(name "3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -7.62 0)
+				(length 5.08)
+				(name "4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -10.16 0)
+				(length 5.08)
+				(name "5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -12.7 0)
+				(length 5.08)
+				(name "6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -15.24 0)
+				(length 5.08)
+				(name "7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -17.78 0)
+				(length 5.08)
+				(name "8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 0 180)
+				(length 5.08)
+				(name "G_C"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 -2.54 180)
+				(length 5.08)
+				(name "G_A"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 -7.62 180)
+				(length 5.08)
+				(name "Y_C"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "11"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 -10.16 180)
+				(length 5.08)
+				(name "Y_A"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "12"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 -15.24 180)
+				(length 5.08)
+				(name "MH1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "MH1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 -17.78 180)
+				(length 5.08)
+				(name "MH2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "MH2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_00054"
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at 43.18 10.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "W25Q128JVPIM"
+			(at 43.18 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_00054"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "W25Q128JVPIM"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:00054"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "W25Q128JVPIM"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "8L-WSON_6X5MM_WIN 8L-WSON_6X5MM_WIN-M 8L-WSON_6X5MM_WIN-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_00054_0_1"
+			(polyline
+				(pts (xy 7.62 5.08) (xy 7.62 -15.24))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -15.24) (xy 78.74 -15.24))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 78.74 5.08) (xy 7.62 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 78.74 -15.24) (xy 78.74 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 7.62)
+				(name "/CS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -2.54 0)
+				(length 7.62)
+				(name "DO_(IO1)"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -5.08 0)
+				(length 7.62)
+				(name "/WP_(IO2)"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_out line
+				(at 0 -7.62 0)
+				(length 7.62)
+				(name "GND"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 86.36 -10.16 180)
+				(length 7.62)
+				(name "DI_(IO0)"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 86.36 -7.62 180)
+				(length 7.62)
+				(name "CLK"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 86.36 -5.08 180)
+				(length 7.62)
+				(name "/HOLD_OR_/RESET_(IO3)"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 86.36 -2.54 180)
+				(length 7.62)
+				(name "VCC"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_out line
+				(at 86.36 0 180)
+				(length 7.62)
+				(name "EPAD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_00055"
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at 30.48 10.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "APS6404L-3SQR-SN"
+			(at 30.48 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_00055"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "APS6404L-3SQR-SN"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:00055"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "APS6404L-3SQR-SN"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "APS6404L-3SQR-SN_APY APS6404L-3SQR-SN_APY-M APS6404L-3SQR-SN_APY-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_00055_0_1"
+			(polyline
+				(pts (xy 7.62 5.08) (xy 7.62 -12.7))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -12.7) (xy 53.34 -12.7))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 53.34 5.08) (xy 7.62 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 53.34 -12.7) (xy 53.34 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 7.62)
+				(name "/CE"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -2.54 0)
+				(length 7.62)
+				(name "SO/SIO[1]"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -5.08 0)
+				(length 7.62)
+				(name "SIO[2]"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -7.62 0)
+				(length 7.62)
+				(name "VSS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 60.96 -7.62 180)
+				(length 7.62)
+				(name "SI/SIO[0]"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 60.96 -5.08 180)
+				(length 7.62)
+				(name "SCLK"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 60.96 -2.54 180)
+				(length 7.62)
+				(name "SIO[3]"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 60.96 0 180)
+				(length 7.62)
+				(name "VDD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_00056"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "IC"
+			(at 41.91 17.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Value" "W6300-L"
+			(at 41.91 15.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Footprint" "Oro:OP_00056"
+			(at 41.91 -84.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Datasheet" "https://docs.wiznet.io/img/products/w6300/W6300%20DS_V100E.pdf"
+			(at 41.91 -184.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Description" "Ethernet ICs a WIZnet 10/100 TOE ethernet chip that combines the high-speed ethernet performance with Dual IPv4/v6 Hardware stack."
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Height" "1.6"
+			(at 41.91 -384.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Name" "WIZnet Inc"
+			(at 41.91 -484.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Part_Number" "W6300-L"
+			(at 41.91 -584.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Part Number" ""
+			(at 41.91 -684.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Price/Stock" ""
+			(at 41.91 -784.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Part Number" ""
+			(at 41.91 -884.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Price/Stock" ""
+			(at 41.91 -984.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Oro ID" "OP:00056"
+			(at 41.91 -84.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(symbol "OP_00056_1_1"
+			(rectangle
+				(start 5.08 12.7)
+				(end 40.64 -40.64)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+			(pin output line
+				(at 0 0 0)
+				(length 5.08)
+				(name "TXON"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 0 -2.54 0)
+				(length 5.08)
+				(name "TXOP"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -5.08 0)
+				(length 5.08)
+				(name "1V2A_1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 0 -7.62 0)
+				(length 5.08)
+				(name "RXIN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 0 -10.16 0)
+				(length 5.08)
+				(name "RXIP"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -12.7 0)
+				(length 5.08)
+				(name "GND33A"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -15.24 0)
+				(length 5.08)
+				(name "3V3A_1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 0 -17.78 0)
+				(length 5.08)
+				(name "RSET_BG"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -20.32 0)
+				(length 5.08)
+				(name "1V2D_1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -22.86 0)
+				(length 5.08)
+				(name "3V3D_1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 0 -25.4 0)
+				(length 5.08)
+				(name "XSCI"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "11"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 0 -27.94 0)
+				(length 5.08)
+				(name "XSCO"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "12"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 7.62 -45.72 90)
+				(length 5.08)
+				(name "1V2O"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "13"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 10.16 -45.72 90)
+				(length 5.08)
+				(name "3V3A_2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "14"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 12.7 -45.72 90)
+				(length 5.08)
+				(name "GNDA_1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "15"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 15.24 -45.72 90)
+				(length 5.08)
+				(name "1V2A_2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "16"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 17.78 -45.72 90)
+				(length 5.08)
+				(name "GND12A"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "17"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 20.32 -45.72 90)
+				(length 5.08)
+				(name "1V2D_2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "18"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 22.86 -45.72 90)
+				(length 5.08)
+				(name "LNKN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "19"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 25.4 -45.72 90)
+				(length 5.08)
+				(name "SPDN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "20"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 27.94 -45.72 90)
+				(length 5.08)
+				(name "DPXN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "21"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 30.48 -45.72 90)
+				(length 5.08)
+				(name "ACTN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "22"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 33.02 -45.72 90)
+				(length 5.08)
+				(name "COLN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "23"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 35.56 -45.72 90)
+				(length 5.08)
+				(name "3V3D_2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "24"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 45.72 -27.94 180)
+				(length 5.08)
+				(name "MOD0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "25"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 45.72 -25.4 180)
+				(length 5.08)
+				(name "MOD1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "26"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 45.72 -22.86 180)
+				(length 5.08)
+				(name "MOD2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "27"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 45.72 -20.32 180)
+				(length 5.08)
+				(name "MOD3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "28"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 45.72 -17.78 180)
+				(length 5.08)
+				(name "CSN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "29"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 45.72 -15.24 180)
+				(length 5.08)
+				(name "SCLK"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "30"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 45.72 -12.7 180)
+				(length 5.08)
+				(name "1V2D_3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "31"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 45.72 -10.16 180)
+				(length 5.08)
+				(name "QD0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "32"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 45.72 -7.62 180)
+				(length 5.08)
+				(name "QD1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "33"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 45.72 -5.08 180)
+				(length 5.08)
+				(name "QD2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "34"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 45.72 -2.54 180)
+				(length 5.08)
+				(name "QD3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "35"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 45.72 0 180)
+				(length 5.08)
+				(name "3V3D_3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "36"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 38.1 17.78 270)
+				(length 5.08)
+				(name "DAT0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "37"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 35.56 17.78 270)
+				(length 5.08)
+				(name "DAT1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "38"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 33.02 17.78 270)
+				(length 5.08)
+				(name "DAT2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "39"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 30.48 17.78 270)
+				(length 5.08)
+				(name "DAT3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "40"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 27.94 17.78 270)
+				(length 5.08)
+				(name "DAT4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "41"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 25.4 17.78 270)
+				(length 5.08)
+				(name "DAT5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "42"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 22.86 17.78 270)
+				(length 5.08)
+				(name "DAT6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "43"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 20.32 17.78 270)
+				(length 5.08)
+				(name "DAT7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "44"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 17.78 17.78 270)
+				(length 5.08)
+				(name "INTN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "45"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 15.24 17.78 270)
+				(length 5.08)
+				(name "RSTN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "46"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 12.7 17.78 270)
+				(length 5.08)
+				(name "1V2D_4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "47"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 10.16 17.78 270)
+				(length 5.08)
+				(name "GNDA_2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "48"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 7.62 17.78 270)
+				(length 5.08)
+				(name "GND"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "49"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_00057"
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at 0 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "TPS23751PWP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_00057"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.ti.com/lit/gpn/tps23751"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:00057"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "TPS23751PWP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "PWP0016J_N PWP0016J_M PWP0016J_L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_00057_0_1"
+			(polyline
+				(pts (xy -12.7 22.86) (xy -12.7 -22.86))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -12.7 -22.86) (xy 12.7 -22.86))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 22.86) (xy -12.7 22.86))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 -22.86) (xy 12.7 22.86))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin power_in line
+				(at -17.78 17.78 0)
+				(length 5.08)
+				(name "VDD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at -17.78 12.7 0)
+				(length 5.08)
+				(name "DEN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at -17.78 7.62 0)
+				(length 5.08)
+				(name "CLS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at -17.78 2.54 0)
+				(length 5.08)
+				(name "APD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at -17.78 -12.7 0)
+				(length 5.08)
+				(name "RT"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 17.78 17.78 180)
+				(length 5.08)
+				(name "T2P"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 17.78 5.08 180)
+				(length 5.08)
+				(name "SRD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at -17.78 -2.54 0)
+				(length 5.08)
+				(name "CTL"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at -17.78 -7.62 0)
+				(length 5.08)
+				(name "SRT"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 17.78 12.7 180)
+				(length 5.08)
+				(name "VB"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 17.78 -5.08 180)
+				(length 5.08)
+				(name "CS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "11"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 17.78 10.16 180)
+				(length 5.08)
+				(name "VC"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "12"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 17.78 0 180)
+				(length 5.08)
+				(name "GATE"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "13"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 17.78 -12.7 180)
+				(length 5.08)
+				(name "ARTN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "14"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 17.78 -10.16 180)
+				(length 5.08)
+				(name "RTN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "15"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 17.78 -17.78 180)
+				(length 5.08)
+				(name "VSS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "16"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 17.78 -20.32 180)
+				(length 5.08)
+				(name "PAD"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "17"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_00058"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "T"
+			(at 24.13 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Value" "749022011"
+			(at 24.13 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Footprint" "Oro:OP_00058"
+			(at 24.13 -94.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/749022011.pdf"
+			(at 24.13 -194.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Description" "Surface Mount Lan Ethernet Transformer, 18.3 x 12.2 x 6.35mm, -40  +85 C"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Height" "6.35"
+			(at 24.13 -394.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Name" "Wurth Elektronik"
+			(at 24.13 -494.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Part_Number" "749022011"
+			(at 24.13 -594.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Part Number" "710-749022011"
+			(at 24.13 -694.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/749022011?qs=2sV1BwmkawS7FDopOvedTw%3D%3D"
+			(at 24.13 -794.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Part Number" ""
+			(at 24.13 -894.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Price/Stock" ""
+			(at 24.13 -994.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Oro ID" "OP:00058"
+			(at 24.13 -94.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(symbol "OP_00058_1_1"
+			(rectangle
+				(start 5.08 2.54)
+				(end 22.86 -30.48)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+			(pin passive line
+				(at 0 0 0)
+				(length 5.08)
+				(name "TD_1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -2.54 0)
+				(length 5.08)
+				(name "D-_1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -5.08 0)
+				(length 5.08)
+				(name "D-_2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -7.62 0)
+				(length 5.08)
+				(name "TD_2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -10.16 0)
+				(length 5.08)
+				(name "D-_3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -12.7 0)
+				(length 5.08)
+				(name "D-_4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -15.24 0)
+				(length 5.08)
+				(name "TD_3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -17.78 0)
+				(length 5.08)
+				(name "D-_5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -20.32 0)
+				(length 5.08)
+				(name "D-_6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -22.86 0)
+				(length 5.08)
+				(name "TD_4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -25.4 0)
+				(length 5.08)
+				(name "D-_7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "11"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -27.94 0)
+				(length 5.08)
+				(name "D-_8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "12"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 -27.94 180)
+				(length 5.08)
+				(name "X-_1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "13"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 -25.4 180)
+				(length 5.08)
+				(name "X-_2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "14"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 -22.86 180)
+				(length 5.08)
+				(name "TX_1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "15"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 -20.32 180)
+				(length 5.08)
+				(name "X-_3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "16"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 -17.78 180)
+				(length 5.08)
+				(name "X-_4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "17"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 -15.24 180)
+				(length 5.08)
+				(name "TX_2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "18"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 -12.7 180)
+				(length 5.08)
+				(name "X-_5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "19"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 -10.16 180)
+				(length 5.08)
+				(name "X-_6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "20"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 -7.62 180)
+				(length 5.08)
+				(name "TX_3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "21"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 -5.08 180)
+				(length 5.08)
+				(name "X-_7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "22"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 -2.54 180)
+				(length 5.08)
+				(name "X-_8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "23"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 27.94 0 180)
+				(length 5.08)
+				(name "TX_4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "24"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_00059"
+		(pin_numbers (hide yes))
+		(pin_names (offset 0) (hide yes))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "EXT"
+			(at -2.54 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+		(property "Value" "FFSD-07-D-06.00-01-N-R"
+			(at 2.032 1.016 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://suddendocs.samtec.com/catalog_english/ffsd.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Description" "14 Position Cable Assembly Rectangular Socket to Socket, Reversed 0.500' (152.40mm, 6.00\")"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Note" "STLINK-V3MINIE Programming Cable"
+			(at 2.032 -1.016 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Oro ID" "OP:00059"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Samtec Inc."
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Arrow P/N" "FFSD-07-D-06.00-01-N-R"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Digi-Key P/N" "SAM15164-ND"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Farnell P/N" "FFSD-07-D-06.00-01-N-R"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Mouser P/N" "200-FFSD07D06.0001NR"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_00059_0_1"
+			(circle
+				(center 0 0)
+				(radius 1.4811)
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+		)
+		(symbol "OP_00059_1_1"
+			(text "EXT\nPART"
+				(at 0 0 0)
+				(effects (font (size 0.635 0.635)))
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0005A"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 19.05 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Value" "FTSH-107-01-L-DV-K-A-TR"
+			(at 19.05 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Footprint" "Oro:OP_0005A"
+			(at 19.05 -94.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Datasheet" "http://suddendocs.samtec.com/prints/ftsh-1xx-xx-xxx-dv-xxx-xxx-mkt.pdf"
+			(at 19.05 -194.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Description" "14 position, High Reliability Header Strips, 0.050&quot; pitch, Dual-Row Vertical"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Height" ""
+			(at 19.05 -394.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Name" "SAMTEC"
+			(at 19.05 -494.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Part_Number" "FTSH-107-01-L-DV-K-A-TR"
+			(at 19.05 -594.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Part Number" "200-FTSH10701LDVKATR"
+			(at 19.05 -694.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Samtec/FTSH-107-01-L-DV-K-A-TR?qs=LW8h5wBZGrFFWB%2FoEC5IXw%3D%3D"
+			(at 19.05 -794.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Part Number" "FTSH-107-01-L-DV-K-A-TR"
+			(at 19.05 -894.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ftsh-107-01-l-dv-k-a-tr/samtec.html?utm_currency=USD&region=europe"
+			(at 19.05 -994.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Oro ID" "OP:0005A"
+			(at 19.05 -94.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(symbol "OP_0005A_1_1"
+			(rectangle
+				(start 5.08 2.54)
+				(end 17.78 -17.78)
+				(stroke (width 0.254) (type default))
+				(fill (type background))
+			)
+			(pin passive line
+				(at 0 0 0)
+				(length 5.08)
+				(name "1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 0 180)
+				(length 5.08)
+				(name "2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -2.54 0)
+				(length 5.08)
+				(name "3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 -2.54 180)
+				(length 5.08)
+				(name "4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -5.08 0)
+				(length 5.08)
+				(name "5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 -5.08 180)
+				(length 5.08)
+				(name "6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -7.62 0)
+				(length 5.08)
+				(name "7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 -7.62 180)
+				(length 5.08)
+				(name "8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -10.16 0)
+				(length 5.08)
+				(name "9"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 -10.16 180)
+				(length 5.08)
+				(name "10"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -12.7 0)
+				(length 5.08)
+				(name "11"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "11"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 -12.7 180)
+				(length 5.08)
+				(name "12"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "12"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 -15.24 0)
+				(length 5.08)
+				(name "13"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "13"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 22.86 -15.24 180)
+				(length 5.08)
+				(name "14"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "14"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0005B"
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "S"
+			(at 21.59 7.62 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Value" "MJTP1129B"
+			(at 21.59 5.08 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Footprint" "Oro:OP_0005B"
+			(at 21.59 -94.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Datasheet" "https://www.apem.com/idec-apem/en_IN/medias/12mmMJTPSERIES16NOV2021.pdf?context=bWFzdGVyfGRvY3VtZW50c3w4MzU4NDd8YXBwbGljYXRpb24vcGRmfGhhNi9oZmIvOTI0ODEwNTk4ODEyNi8xMm1tTUpUUFNFUklFUzE2Tk9WMjAyMS5wZGZ8MmE1MmE5N2VmYTJhYmIxYTY4NWIxZmNkYmNmNjQ1YjA4OTE0NjY3Njg"
+			(at 21.59 -194.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "ki_description" "Tactile Switch SPST-NO Side Actuated Through Hole, Right Angle"
+			(at 21.59 -294.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Height" "8"
+			(at 21.59 -394.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Manufacturer_Name" "Apem"
+			(at 21.59 -494.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Manufacturer_Part_Number" "MJTP1129B"
+			(at 21.59 -594.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Mouser Part Number" "642-MJTP1129B"
+			(at 21.59 -694.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.com/Search/Refine.aspx?Keyword=642-MJTP1129B"
+			(at 21.59 -794.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Arrow Part Number" ""
+			(at 21.59 -894.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 21.59 -994.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Oro ID" "OP:0005B"
+			(at 21.59 -94.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(rectangle
+			(start 5.08 2.54)
+			(end 20.32 -5.08)
+			(stroke (width 0.254) (type default))
+			(fill (type background))
+		)
+		(pin passive line
+			(at 25.4 0 180)
+			(length 5.08)
+			(name "COM"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "1"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 25.4 -2.54 180)
+			(length 5.08)
+			(name "NO"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "2"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 0 0 0)
+			(length 5.08)
+			(name "MH1"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "MH1"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 0 -2.54 0)
+			(length 5.08)
+			(name "MH2"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "MH2"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+	)
 )
