@@ -623,6 +623,244 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Oro:OP_00014"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 3.302 6.096 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "GRM155C61E475ME15J"
+				(at -6.096 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "Oro:OP_00014"
+				(at 8.89 -96.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155C61E475ME15-01A.pdf"
+				(at 8.89 -196.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 25VDC 4.7F 20% X5S"
+				(at 20.828 10.668 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Height" "0.33"
+				(at 8.89 -396.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Name" "Murata Electronics"
+				(at 8.89 -496.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Part_Number" "GRM155C61E475ME15J"
+				(at 8.89 -596.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Part Number" "81-GRM15C61E475ME15J"
+				(at 8.89 -696.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM155C61E475ME15J?qs=By6Nw2ByBD02p8xq06vhEQ%3D%3D"
+				(at 8.89 -796.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Part Number" "GRM155C61E475ME15J"
+				(at 8.89 -896.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/grm155c61e475me15j/murata-manufacturing?region=nac"
+				(at 8.89 -996.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(symbol "OP_00014_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.4798 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.4798 -1.905) (xy 3.4798 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 -1.905) (xy 4.1148 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Oro:OP_0001C"
 			(body_styles demorgan)
 			(pin_names
@@ -14282,6 +14520,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001Y"
+			(at 361.95 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "bd0063a2-285e-4b29-bd71-5864811f7d43")
 		)
@@ -14615,6 +14864,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001R"
+			(at 231.14 246.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "220661dc-e754-4a15-b326-0ecac0dc6e27")
 		)
@@ -14789,6 +15049,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0000F"
+			(at 201.93 251.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -14968,6 +15239,17 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(property "Oro ID" "OP:0001E"
+			(at 316.23 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -15240,6 +15522,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001R"
+			(at 231.14 236.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -15780,6 +16073,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001G"
+			(at 69.85 252.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "e6fcc197-0c27-418e-9622-eb9907e34c7e")
 		)
@@ -15957,6 +16261,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001Y"
+			(at 170.18 246.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f83d94dd-19a4-4131-907a-07d2e055337e")
 		)
@@ -15985,7 +16300,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Oro:OP_0001L")
+		(lib_id "Oro:OP_00014")
 		(at 262.89 226.06 0)
 		(unit 1)
 		(body_style 1)
@@ -16015,7 +16330,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Oro:OP_0001L"
+		(property "Footprint" "Oro:OP_00014"
 			(at 271.78 322.25 0)
 			(hide yes)
 			(show_name no)
@@ -16218,6 +16533,17 @@
 				(justify left top)
 			)
 		)
+		(property "Oro ID" "OP:00014"
+			(at 262.89 226.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "e9d31ccf-f56f-4c96-a938-bf6b084bdbe7")
 		)
@@ -16394,6 +16720,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001C"
+			(at 54.61 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -16578,6 +16915,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001C"
+			(at 50.8 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "73c0e153-0185-4754-8298-694eb5c09ca7")
 		)
@@ -16752,6 +17100,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001Y"
+			(at 170.18 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -17022,6 +17381,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 201.93 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "5484cb34-6893-47a7-91b0-06a1ddde3e3c")
 		)
@@ -17288,6 +17658,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:00028"
+			(at 285.75 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -17763,6 +18144,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 330.2 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "73fde410-dbf8-4a5d-8964-1849b0aed588")
 		)
@@ -17940,6 +18332,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001G"
+			(at 69.85 257.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "882d9256-17a9-4810-b878-46b620c7cde6")
 		)
@@ -18114,6 +18517,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0000F"
+			(at 201.93 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -18297,6 +18711,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:00021"
+			(at 386.08 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "03bceee6-ea04-4f84-a28c-426fed2b13d0")
 		)
@@ -18474,6 +18899,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 201.93 236.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "86b2a105-0d48-48f4-8e3e-e14c3ebf3974")
 		)
@@ -18502,7 +18938,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Oro:OP_0001L")
+		(lib_id "Oro:OP_00014")
 		(at 262.89 231.14 0)
 		(unit 1)
 		(body_style 1)
@@ -18532,7 +18968,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Oro:OP_0001L"
+		(property "Footprint" "Oro:OP_00014"
 			(at 271.78 327.33 0)
 			(hide yes)
 			(show_name no)
@@ -18735,6 +19171,17 @@
 				(justify left top)
 			)
 		)
+		(property "Oro ID" "OP:00014"
+			(at 262.89 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "4657cffe-651d-4e6d-88b9-87d7c5c9eb16")
 		)
@@ -18912,6 +19359,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 201.93 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "06dab82d-26c0-4248-a250-e4721d10da05")
 		)
@@ -19030,7 +19488,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Oro:OP_0001L")
+		(lib_id "Oro:OP_00014")
 		(at 262.89 220.98 0)
 		(unit 1)
 		(body_style 1)
@@ -19060,7 +19518,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Oro:OP_0001L"
+		(property "Footprint" "Oro:OP_00014"
 			(at 271.78 317.17 0)
 			(hide yes)
 			(show_name no)
@@ -19263,6 +19721,17 @@
 				(justify left top)
 			)
 		)
+		(property "Oro ID" "OP:00014"
+			(at 262.89 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "757632bb-185d-42e8-943b-f5c9e9477b6e")
 		)
@@ -19438,6 +19907,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001Y"
+			(at 330.2 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -19618,6 +20098,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001R"
+			(at 231.14 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5f4b418a-e85a-4088-9212-4dab24e9ed2d")
 		)
@@ -19793,6 +20284,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:00028"
+			(at 124.46 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -20357,6 +20859,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 201.93 226.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "d292699b-9d43-4e2f-ba42-931e090b8ba8")
 		)
@@ -20625,6 +21138,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001R"
+			(at 231.14 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a54e5fc3-23bb-41b4-aacd-9738a1da934a")
 		)
@@ -20799,6 +21323,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001Y"
+			(at 170.18 236.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -20979,6 +21514,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 201.93 246.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "be7eea26-efb9-4012-bd35-51212d01f35f")
 		)
@@ -21154,6 +21700,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:00021"
+			(at 320.04 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -21515,6 +22072,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001R"
+			(at 330.2 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -21953,6 +22521,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001G"
+			(at 69.85 262.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "9350ac06-e7cf-4f3f-96eb-7806ec05b30c")
 		)
@@ -22130,6 +22709,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001R"
+			(at 231.14 251.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c962d817-2e26-454a-a0f7-ff22dfabb84b")
 		)
@@ -22304,6 +22894,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001R"
+			(at 231.14 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -22574,6 +23175,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001Y"
+			(at 170.18 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "244bcdf3-23fe-43bd-aa46-d116147a0f32")
 		)
@@ -22749,6 +23361,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:00028"
+			(at 82.55 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -23313,6 +23936,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001R"
+			(at 231.14 226.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "6cb5f79d-9248-436d-b659-fdbd940cd4b6")
 		)
@@ -23670,6 +24304,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001Y"
+			(at 170.18 251.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5416970e-bb47-4479-9dfd-e4526679bfd9")
 		)
@@ -23844,6 +24489,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001Y"
+			(at 170.18 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -24024,6 +24680,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001Y"
+			(at 170.18 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "4b62ce51-5c2d-47bb-b9f3-db971c9154aa")
 		)
@@ -24201,6 +24868,17 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 201.93 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "7f0d63d5-4e3a-4c79-b710-1139d8a7e91a")
 		)
@@ -24375,6 +25053,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001Y"
+			(at 170.18 226.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -24822,6 +25511,17 @@
 				(font
 					(size 1.27 1.27)
 					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001R"
+			(at 231.14 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)

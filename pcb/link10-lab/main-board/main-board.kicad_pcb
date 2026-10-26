@@ -270,6 +270,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001Y"
+			(at 153.4565 98.6664)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2b1f7488-08fc-4c18-9f1f-58c047c98df2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_MSAS1L-3_TAY CAP_MSAS1L-3_TAY-M CAP_MSAS1L-3_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/e85e2594-2176-4c09-9715-115411e9e2e7")
 		(sheetname "/Microcontroller/")
@@ -668,6 +680,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 169.7575 94.848)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7549c90a-fe2f-4130-a844-0b0d5d8e37bd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_0402_N_WAL CAP_0402_N_WAL-M CAP_0402_N_WAL-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/4735687b-e836-4122-83c1-cd0793bd154e")
 		(sheetname "/Microcontroller/")
@@ -981,6 +1005,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -1267,6 +1292,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -2078,6 +2104,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001Y"
+			(at 156.8695 89.7896)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f24af48e-ce37-4a2b-aa05-aa3f49ee4d8a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_MSAS1L-3_TAY CAP_MSAS1L-3_TAY-M CAP_MSAS1L-3_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/72ee9bbc-4210-4b07-85b6-5e5937b9e28b")
 		(sheetname "/Microcontroller/")
@@ -2472,6 +2510,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001R"
+			(at 163.6955 89.7896)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c78b548a-077a-43f9-a908-d68fefbe1df3")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -3023,7 +3073,7 @@
 	(footprint "Oro:OP_00056"
 		(layer "F.Cu")
 		(uuid "2ac23d4f-a0d1-4f1a-91d2-6b6424610441")
-		(at 122.6361 60.6855)
+		(at 135 45)
 		(descr "48LQFP")
 		(tags "Integrated Circuit")
 		(property "Reference" "IC2"
@@ -3899,6 +3949,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001Y"
+			(at 156.8695 98.6664)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "86d8934e-af85-4693-9749-19373628d842")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_MSAS1L-3_TAY CAP_MSAS1L-3_TAY-M CAP_MSAS1L-3_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/d25077cb-3bfc-4add-8641-8e50f8599e67")
 		(sheetname "/Microcontroller/")
@@ -4153,7 +4215,7 @@
 			)
 		)
 	)
-	(footprint "Oro:OP_0001L"
+	(footprint "Oro:OP_00014"
 		(layer "F.Cu")
 		(uuid "2c1d06a3-39be-4072-9534-efd97d4467bd")
 		(at 172.23 75)
@@ -4388,6 +4450,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:00014"
+			(at 172.23 75)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ce629afd-9b46-4a6d-91ba-9e14292724dc")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/47bfba7d-7dd8-4d7b-87a3-967d8f1d0ddc")
 		(sheetname "/Microcontroller/")
 		(sheetfile "main-board-microcontroller.kicad_sch")
@@ -4507,7 +4581,7 @@
 			(uuid "4cdb5621-0349-4e41-966e-35adf12c5448")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../lib/step/OP_0001L.step"
+		(model "${KIPRJMOD}/../lib/step/OP_00014.step"
 			(offset
 				(xyz 0 -0.279999997 0.2499999962)
 			)
@@ -4578,6 +4652,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -5516,6 +5591,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 169.7575 96.864)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a8209d6a-55c9-4e8b-a408-17fa3a92e9a7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_0402_N_WAL CAP_0402_N_WAL-M CAP_0402_N_WAL-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/e20afa4d-cf06-4d31-99f2-5b604d00ee79")
 		(sheetname "/Microcontroller/")
@@ -5829,6 +5916,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -6238,7 +6326,7 @@
 	(footprint "Oro:OP_00053"
 		(layer "F.Cu")
 		(uuid "364c0ac6-3e06-40af-8290-d8d1d8648129")
-		(at 145.2654 67.7451)
+		(at 143.57 65.61)
 		(descr "1149867")
 		(tags "Connector")
 		(property "Reference" "J2"
@@ -6735,7 +6823,7 @@
 	(footprint "TestPoint:TestPoint_Pad_2.0x2.0mm"
 		(layer "F.Cu")
 		(uuid "3b75268a-ba25-483b-b323-84a99ed7fbbe")
-		(at 106.8896 59.6402)
+		(at 97.5 52.5)
 		(descr "SMD rectangular pad as test Point, square 2.0mm side length")
 		(tags "test point SMD pad rectangle square")
 		(property "Reference" "TP1"
@@ -6959,6 +7047,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -9605,6 +9694,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001R"
+			(at 160.2825 96.4472)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0c8a47e2-050c-49aa-8a74-e685f073b7a7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "cap_UMK105 CG080CV-F_TAY cap_UMK105 CG080CV-F_TAY-M cap_UMK105 CG080CV-F_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/5556c9e3-be47-4746-b9bf-256272cc7b57")
 		(sheetname "/Microcontroller/")
@@ -10149,7 +10250,7 @@
 			)
 		)
 	)
-	(footprint "Oro:OP_0001L"
+	(footprint "Oro:OP_00014"
 		(layer "F.Cu")
 		(uuid "3ee6e716-40c9-469b-8fb4-21674c37682a")
 		(at 172.23 72.9)
@@ -10384,6 +10485,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:00014"
+			(at 172.23 72.9)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b22963d1-7d91-4f52-8c8a-e80840cad319")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/29e9218a-a033-4ebc-9bed-cce07eb0a80c")
 		(sheetname "/Microcontroller/")
 		(sheetfile "main-board-microcontroller.kicad_sch")
@@ -10503,7 +10616,7 @@
 			(uuid "cbab852a-be8f-41e1-9180-f31a869e6d17")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../lib/step/OP_0001L.step"
+		(model "${KIPRJMOD}/../lib/step/OP_00014.step"
 			(offset
 				(xyz 0 -0.279999997 0.2499999962)
 			)
@@ -10574,6 +10687,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -11905,6 +12019,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001Y"
+			(at 156.8695 92.0088)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d4cd23a5-923d-4370-b6bb-9c9300fcf566")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_MSAS1L-3_TAY CAP_MSAS1L-3_TAY-M CAP_MSAS1L-3_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/d779382c-a163-41cd-b831-b8e7f8f7433d")
 		(sheetname "/Microcontroller/")
@@ -12218,6 +12344,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -12515,6 +12642,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -13285,6 +13413,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001R"
+			(at 160.2825 100.8856)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e28aaaef-0fc6-474f-a6cb-6458700d17f6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "cap_UMK105 CG080CV-F_TAY cap_UMK105 CG080CV-F_TAY-M cap_UMK105 CG080CV-F_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/a4ef21d6-d10e-45f9-ae9b-188ba1519bd5")
 		(sheetname "/Microcontroller/")
@@ -13542,7 +13682,7 @@
 	(footprint "Oro:OP_00058"
 		(layer "F.Cu")
 		(uuid "4c869434-6f10-472c-bc9e-979f0981626b")
-		(at 140.9176 45.4933)
+		(at 110 45)
 		(descr "749022011-5")
 		(tags "Transformer")
 		(property "Reference" "T1"
@@ -14187,6 +14327,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -15125,6 +15266,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001Y"
+			(at 156.8695 96.4472)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7919d580-3c19-4cf1-a01c-13e13c75c705")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_MSAS1L-3_TAY CAP_MSAS1L-3_TAY-M CAP_MSAS1L-3_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/cb6b0848-f41f-4cfe-aeaf-4f6002de809a")
 		(sheetname "/Microcontroller/")
@@ -15438,6 +15591,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -16126,7 +16280,7 @@
 	(footprint "Oro:OP_0001E"
 		(layer "F.Cu")
 		(uuid "5eb0330e-5046-4b78-9955-99b7fd9e2aac")
-		(at 149.825 78)
+		(at 145 80)
 		(descr "ECS-2520SMV-240-FP-TR-1")
 		(tags "Crystal or Oscillator")
 		(property "Reference" "Y1"
@@ -16263,6 +16417,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001E"
+			(at 145 80)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "87bfb024-a428-4ca9-b005-f832b71ddf95")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -16519,6 +16685,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -17311,6 +17478,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 166.8525 94.848)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "89ad4c77-2e3e-4e81-80d4-faff3f762424")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_0402_N_WAL CAP_0402_N_WAL-M CAP_0402_N_WAL-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/4c57558c-375c-4656-98f2-4e556fecbc07")
 		(sheetname "/Microcontroller/")
@@ -17624,6 +17803,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -17920,6 +18100,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -18216,6 +18397,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -18592,6 +18774,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Oro ID" "OP:00021"
+			(at 172.2595 84.7288)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ab78465-62da-4064-99f2-86da5b9ee9d3")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -18977,6 +19171,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001G"
+			(at 153.4565 92.0088)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "84bb8121-53e9-4e53-a5f6-ddd5c6a8788d")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -19379,6 +19585,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001Y"
+			(at 156.8695 94.228)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e698a63-dd02-45a0-bd02-112124840863")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_MSAS1L-3_TAY CAP_MSAS1L-3_TAY-M CAP_MSAS1L-3_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/2927a55d-a34b-4c2b-a6e7-4428da53372a")
 		(sheetname "/Microcontroller/")
@@ -19692,6 +19910,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -20321,7 +20540,7 @@
 	(footprint "Oro:OP_00028"
 		(layer "F.Cu")
 		(uuid "6efe8cca-6d1f-4e02-9011-a0065057c059")
-		(at 161.2162 79.2162)
+		(at 161.2162 72.5)
 		(tags "STM32F479VGT6 ")
 		(property "Reference" "U1"
 			(at 0 0 0)
@@ -20458,6 +20677,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Oro ID" "OP:00028"
+			(at 161.2162 72.5)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ba70da3c-fb7c-436c-986a-f24fd8d60186")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -26084,6 +26315,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 172.6625 98.88)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a893466c-003f-45d8-8816-8c53f09c63de")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_0402_N_WAL CAP_0402_N_WAL-M CAP_0402_N_WAL-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/3cbe913b-0181-49f0-8acf-0ef6aad93e7b")
 		(sheetname "/Microcontroller/")
@@ -26397,6 +26640,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -28180,6 +28424,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 166.8525 98.88)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b337ed39-b7b5-4044-86ec-91a8be88e54c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_0402_N_WAL CAP_0402_N_WAL-M CAP_0402_N_WAL-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/3ebf9be5-0022-49a5-b92a-37098b257b12")
 		(sheetname "/Microcontroller/")
@@ -28493,6 +28749,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -29330,6 +29587,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 169.7575 98.88)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "282c5a5f-78f0-4ac4-81bd-9bed19d1d370")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_0402_N_WAL CAP_0402_N_WAL-M CAP_0402_N_WAL-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/74da6b85-a73a-4d0c-a2f6-66d30c6f9b3b")
 		(sheetname "/Microcontroller/")
@@ -29726,6 +29995,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:00021"
+			(at 172.2595 82.5096)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e9d10e62-8e88-42ab-aa5e-07f28a2c7472")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "STA_RMCF0402_STP STA_RMCF0402_STP-M STA_RMCF0402_STP-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/85223682-5ee0-421f-891d-33c1bc1f06d2")
 		(sheetname "/Microcontroller/")
@@ -30109,6 +30390,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0002A"
+			(at 169.9259 91.2628)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4bf45b01-73f7-46f8-b3c1-1c2029a65bf5")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -30542,6 +30835,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001Y"
+			(at 153.4565 100.8856)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6cc1c929-c011-450b-bedc-ff22acb6bd89")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_MSAS1L-3_TAY CAP_MSAS1L-3_TAY-M CAP_MSAS1L-3_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/ad7cb590-7ede-4aa8-b96d-182455d6dfc5")
 		(sheetname "/Microcontroller/")
@@ -30940,6 +31245,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001R"
+			(at 160.2825 89.7896)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "abc80fac-4f01-456b-90ea-e5cddd354b3e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "cap_UMK105 CG080CV-F_TAY cap_UMK105 CG080CV-F_TAY-M cap_UMK105 CG080CV-F_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/c1346e2e-e480-4c92-9453-3b1abffc7c2e")
 		(sheetname "/Microcontroller/")
@@ -31332,6 +31649,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001G"
+			(at 153.4565 89.7896)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "52b701fd-fa7a-4211-b0bd-9bd13e3faacd")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -32174,6 +32503,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001Y"
+			(at 163.6955 94.228)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "02127b14-2a90-4259-962e-5f8613d7845a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_MSAS1L-3_TAY CAP_MSAS1L-3_TAY-M CAP_MSAS1L-3_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/549b8346-31c2-46c4-9b4f-e6e93e80827c")
 		(sheetname "/Microcontroller/")
@@ -32487,6 +32828,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -32884,6 +33226,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001Y"
+			(at 153.4565 96.4472)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "214746f7-2c8e-4e9f-a002-062b83f5a81b")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -34139,6 +34493,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001R"
+			(at 160.2825 98.6664)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "67a883d1-b8a2-4024-a8ac-ad809822e219")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "cap_UMK105 CG080CV-F_TAY cap_UMK105 CG080CV-F_TAY-M cap_UMK105 CG080CV-F_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/0c60513a-0ea8-44e5-a84d-7314eb13688a")
 		(sheetname "/Microcontroller/")
@@ -34533,6 +34899,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001R"
+			(at 156.8695 100.8856)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a91809f5-7822-48ab-bc0a-e02df4340dd6")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -34935,6 +35313,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001R"
+			(at 160.2825 94.228)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e6074468-cb23-4bff-8366-2804d2a5cb58")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "cap_UMK105 CG080CV-F_TAY cap_UMK105 CG080CV-F_TAY-M cap_UMK105 CG080CV-F_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/1785e888-76b1-4f9c-8ed9-5ae519e9f782")
 		(sheetname "/Microcontroller/")
@@ -35248,6 +35638,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -36018,6 +36409,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001R"
+			(at 160.2825 92.0088)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eb0be5cc-f11a-43f2-bf6f-74cd71741399")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "cap_UMK105 CG080CV-F_TAY cap_UMK105 CG080CV-F_TAY-M cap_UMK105 CG080CV-F_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/6ffd4946-aae5-4ecc-afae-6d71102aa85d")
 		(sheetname "/Microcontroller/")
@@ -36331,6 +36734,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -36709,6 +37113,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001C"
+			(at 175.1809 84.1954)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "be9b3977-d176-4db0-8141-01467b0789ef")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -37216,6 +37632,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 172.6625 94.848)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f71a1a02-e560-40a1-a253-4cfa88c888e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_0402_N_WAL CAP_0402_N_WAL-M CAP_0402_N_WAL-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/0c82a174-a333-414f-a0d3-f813556a9952")
 		(sheetname "/Microcontroller/")
@@ -37470,7 +37898,7 @@
 			)
 		)
 	)
-	(footprint "Oro:OP_0001L"
+	(footprint "Oro:OP_00014"
 		(layer "F.Cu")
 		(uuid "cd3ea833-9536-499d-93c2-8af21155126a")
 		(at 172.23 70.8)
@@ -37705,6 +38133,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:00014"
+			(at 172.23 70.8)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "19deef04-cfef-4205-a648-8ea042636c68")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/529434fe-f7dd-417f-a4aa-a60d0fe15a1f")
 		(sheetname "/Microcontroller/")
 		(sheetfile "main-board-microcontroller.kicad_sch")
@@ -37824,7 +38264,7 @@
 			(uuid "e4da83c5-4a21-4968-82b9-0498d9490276")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../lib/step/OP_0001L.step"
+		(model "${KIPRJMOD}/../lib/step/OP_00014.step"
 			(offset
 				(xyz 0 -0.279999997 0.2499999962)
 			)
@@ -37976,6 +38416,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0000F"
+			(at 166.8525 96.864)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b5023357-ef6c-4bdc-bfb3-93a6081659f3")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -38405,7 +38857,7 @@
 	(footprint "Oro:OP_0005B"
 		(layer "F.Cu")
 		(uuid "d5ebe737-a681-4378-80b2-dac0a4afde6f")
-		(at 115.824 44.4881)
+		(at 85 42.5)
 		(descr "MJTP1129B-1")
 		(tags "Switch")
 		(property "Reference" "S1"
@@ -39029,6 +39481,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0001G"
+			(at 153.4565 94.228)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7246917b-1a2e-428b-871a-e2fdd846e114")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_MK105_V_TAY CAP_MK105_V_TAY-M CAP_MK105_V_TAY-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/a3686e6e-1c18-4910-91a6-18ecbfe1903c")
 		(sheetname "/Microcontroller/")
@@ -39423,6 +39887,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001R"
+			(at 163.6955 92.0088)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "98417988-143b-4c96-af46-39711c33ccc4")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -39957,6 +40433,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -41534,6 +42011,18 @@
 				)
 			)
 		)
+		(property "Oro ID" "OP:0000F"
+			(at 172.6625 96.864)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4cfc34a9-910d-4e60-899a-cc43fac60977")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "CAP_0402_N_WAL CAP_0402_N_WAL-M CAP_0402_N_WAL-L")
 		(path "/9943a742-9010-4484-baf5-b9968ace2aa4/390e3867-4e11-4633-995d-e68b813ebba9")
 		(sheetname "/Microcontroller/")
@@ -42412,6 +42901,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -42779,6 +43269,18 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001C"
+			(at 175.1809 82.3318)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2559a6f1-14b4-4ea5-bd1e-51016083e18f")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -44067,7 +44569,7 @@
 		(end 153.4946 76.216201)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "/Microcontroller/GND")
+		(net "unconnected-(U1A-PA1-Pad20)")
 		(uuid "8e19ebbc-913a-4a50-95dd-20d13599c3d1")
 	)
 	(segment
@@ -44075,7 +44577,7 @@
 		(end 151.275 78.725)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "/Microcontroller/GND")
+		(net "unconnected-(U1A-PA1-Pad20)")
 		(uuid "ba798394-1b93-48f6-add1-24355b5335d0")
 	)
 	(segment
@@ -44083,7 +44585,7 @@
 		(end 151.75 78.25)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "/Microcontroller/GND")
+		(net "unconnected-(U1A-PA1-Pad20)")
 		(uuid "c26546f5-87ac-40e8-8c89-2192b12cb164")
 	)
 	(segment
@@ -44091,7 +44593,7 @@
 		(end 152.283799 76.216201)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "/Microcontroller/GND")
+		(net "unconnected-(U1A-PA1-Pad20)")
 		(uuid "d57df933-b722-45a2-b422-08e4cc1559a8")
 	)
 	(via
@@ -44099,7 +44601,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "/Microcontroller/GND")
+		(net "unconnected-(U1A-PA1-Pad20)")
 		(uuid "349c18b0-2a6c-42fe-98a9-02f71e2d9f95")
 	)
 	(via
@@ -44107,7 +44609,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "/Microcontroller/GND")
+		(net "unconnected-(U1A-PA1-Pad20)")
 		(uuid "595273e5-bc85-4fbe-99c4-1ffddbe8e6d0")
 	)
 	(segment
@@ -44115,7 +44617,7 @@
 		(end 151.75 76.75)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Microcontroller/GND")
+		(net "unconnected-(U1A-PA1-Pad20)")
 		(uuid "3923e38c-06ac-4d1e-98bf-b9515d77b5d0")
 	)
 	(segment
@@ -44123,7 +44625,7 @@
 		(end 152 76.5)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Microcontroller/GND")
+		(net "unconnected-(U1A-PA1-Pad20)")
 		(uuid "bae99c0f-b2aa-44e2-82dc-856283b473e8")
 	)
 	(segment
@@ -44131,7 +44633,7 @@
 		(end 150.808801 77.216199)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(U1B-PH0)")
+		(net "/Microcontroller/USB_HS.D0")
 		(uuid "594e822c-3709-4645-9a0c-b204067c7612")
 	)
 	(segment
@@ -44139,7 +44641,7 @@
 		(end 150.75 77.275)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(U1B-PH0)")
+		(net "/Microcontroller/USB_HS.D0")
 		(uuid "c44528ba-5288-4520-b067-c73dded22b82")
 	)
 	(embedded_fonts no)

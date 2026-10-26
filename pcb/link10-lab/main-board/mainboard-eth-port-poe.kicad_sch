@@ -137,6 +137,121 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "LocalPower:LAGND"
+			(power local)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files no)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "AGND"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LAGND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "LAGND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Oro:OP_0000R"
 			(pin_names
 				(hide yes)
@@ -6814,6 +6929,2195 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Oro:OP_0005I"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "L"
+				(at 16.51 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "LPS3015-332MRC"
+				(at 16.51 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "Oro:OP_0005I"
+				(at 16.51 -96.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Datasheet" "https://www.digikey.com/en/products/detail/coilcraft/LPS3015-332MRC/12714459"
+				(at 16.51 -196.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Description" "Fixed Inductors 3.3uH Shld 20% 130mOhms AECQ2"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Height" "1.5"
+				(at 16.51 -396.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Name" "COILCRAFT"
+				(at 16.51 -496.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Part_Number" "LPS3015-332MRC"
+				(at 16.51 -596.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Part Number" "994-LPS3015-332MRC"
+				(at 16.51 -696.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Coilcraft/LPS3015-332MRC?qs=QQJxVsr8EGYyDzfkMJtE8A%3D%3D"
+				(at 16.51 -796.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Part Number" ""
+				(at 16.51 -896.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Price/Stock" ""
+				(at 16.51 -996.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Oro ID" "OP:0005I"
+				(at 16.51 -96.19 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(symbol "OP_0005I_1_1"
+				(arc
+					(start 5.08 0)
+					(mid 6.35 1.219)
+					(end 7.62 0)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 7.62 0)
+					(mid 8.89 1.219)
+					(end 10.16 0)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 10.16 0)
+					(mid 11.43 1.219)
+					(end 12.7 0)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 12.7 0)
+					(mid 13.97 1.219)
+					(end 15.24 0)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 0 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Oro:OP_0005J"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "T"
+				(at 31.75 7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "NA5730-ALD"
+				(at 31.75 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "Oro:OP_0005J"
+				(at 31.75 -94.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Datasheet" "https://www.coilcraft.com/pdfs/na5730.pdf"
+				(at 31.75 -194.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Description" "Audio Transformers / Signal Transformers NA5730 SMT Flyback For TI TPS23751/2"
+				(at 0 21.59 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Height" "11.43"
+				(at 31.75 -394.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Name" "COILCRAFT"
+				(at 31.75 -494.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Part_Number" "NA5730-ALD"
+				(at 31.75 -594.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Part Number" "994-NA5730-ALD"
+				(at 31.75 -694.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Coilcraft/NA5730-ALD?qs=ZYnrCdKdyeeezEGhfUt6Hg%3D%3D"
+				(at 31.75 -794.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Part Number" ""
+				(at 31.75 -894.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Price/Stock" ""
+				(at 31.75 -994.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Oro ID" "OP:0005J"
+				(at 31.75 -94.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(symbol "OP_0005J_0_1"
+				(rectangle
+					(start 5.08 3.175)
+					(end 24.13 -36.195)
+					(stroke
+						(width 0)
+						(type dot)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.985 -2.54) (xy 5.08 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 6.985 -2.54)
+					(mid 8.7811 -3.2839)
+					(end 9.525 -5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 9.525 -5.08)
+					(mid 8.7811 -6.8761)
+					(end 6.985 -7.62)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 6.985 -7.62)
+					(mid 8.7811 -8.3639)
+					(end 9.525 -10.16)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 6.985 -10.16)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(arc
+					(start 9.525 -10.16)
+					(mid 8.7811 -11.9561)
+					(end 6.985 -12.7)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.985 -12.7) (xy 5.08 -12.7)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 10.16 0)
+					(mid 11.9561 -0.7439)
+					(end 12.7 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 12.7 -2.54)
+					(mid 11.9561 -4.3361)
+					(end 10.16 -5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 10.16 -5.08)
+					(mid 11.9561 -5.8239)
+					(end 12.7 -7.62)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 12.7 -7.62)
+					(mid 11.9561 -9.4161)
+					(end 10.16 -10.16)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 10.16 -10.16)
+					(mid 11.9561 -10.9039)
+					(end 12.7 -12.7)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 12.7 -12.7)
+					(mid 11.9561 -14.4961)
+					(end 10.16 -15.24)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -15.24) (xy 5.08 -15.24)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -17.78) (xy 5.08 -17.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 10.16 -17.78)
+					(mid 11.9561 -18.5239)
+					(end 12.7 -20.32)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 12.7 -20.32)
+					(mid 11.9561 -22.1161)
+					(end 10.16 -22.86)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 10.16 -22.86)
+					(mid 11.9561 -23.6039)
+					(end 12.7 -25.4)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 12.7 -25.4)
+					(mid 11.9561 -27.1961)
+					(end 10.16 -27.94)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 10.16 -27.94)
+					(mid 11.9561 -28.6839)
+					(end 12.7 -30.48)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 12.7 -30.48)
+					(mid 11.9561 -32.2761)
+					(end 10.16 -33.02)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -33.02) (xy 5.08 -33.02)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 10.795 -12.7)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 10.795 -20.32)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 13.97 -0.635) (xy 13.97 -32.385)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.605 -32.385) (xy 14.605 -0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 17.78 -2.54)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 17.78 -20.32)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 18.415 0) (xy 24.13 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 15.875 -2.54)
+					(mid 16.6189 -0.7439)
+					(end 18.415 0)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 18.415 -5.08)
+					(mid 16.6189 -4.3361)
+					(end 15.875 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 15.875 -7.62)
+					(mid 16.6189 -5.8239)
+					(end 18.415 -5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 18.415 -10.16)
+					(mid 16.6189 -9.4161)
+					(end 15.875 -7.62)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 15.875 -12.7)
+					(mid 16.6189 -10.9039)
+					(end 18.415 -10.16)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 18.415 -15.24)
+					(mid 16.6189 -14.4961)
+					(end 15.875 -12.7)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 18.415 -15.24) (xy 24.13 -15.24)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 18.415 -17.78) (xy 24.13 -17.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 15.875 -20.32)
+					(mid 16.6189 -18.5239)
+					(end 18.415 -17.78)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 18.415 -22.86)
+					(mid 16.6189 -22.1161)
+					(end 15.875 -20.32)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 15.875 -25.4)
+					(mid 16.6189 -23.6039)
+					(end 18.415 -22.86)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 18.415 -27.94)
+					(mid 16.6189 -27.1961)
+					(end 15.875 -25.4)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 15.875 -30.48)
+					(mid 16.6189 -28.6839)
+					(end 18.415 -27.94)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 18.415 -33.02)
+					(mid 16.6189 -32.2761)
+					(end 15.875 -30.48)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 18.415 -33.02) (xy 24.13 -33.02)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 21.59 -2.54) (xy 24.13 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 19.05 -5.08)
+					(mid 19.7939 -3.2839)
+					(end 21.59 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 21.59 -5.08)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(arc
+					(start 21.59 -7.62)
+					(mid 19.7939 -6.8761)
+					(end 19.05 -5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 19.05 -10.16)
+					(mid 19.7939 -8.3639)
+					(end 21.59 -7.62)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 21.59 -12.7)
+					(mid 19.7939 -11.9561)
+					(end 19.05 -10.16)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 21.59 -12.7) (xy 24.13 -12.7)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "OP_0005J_1_1"
+				(text "PRI"
+					(at 8.255 1.27 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "BIAS"
+					(at 8.255 -34.29 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "SEC"
+					(at 20.32 1.27 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "DRV"
+					(at 20.32 -34.29 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -15.24 0)
+					(length 5.08)
+					(name "PRI_1_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -12.7 0)
+					(length 5.08)
+					(name "PRI_2_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "PRI_1_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "PRI_2_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -17.78 0)
+					(length 5.08)
+					(name "BIAS_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -33.02 0)
+					(length 5.08)
+					(name "BIAS_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 29.21 -33.02 180)
+					(length 5.08)
+					(name "DRIVE_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 29.21 -17.78 180)
+					(length 5.08)
+					(name "DRIVE_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 29.21 -12.7 180)
+					(length 5.08)
+					(name "SEC_1_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 29.21 -15.24 180)
+					(length 5.08)
+					(name "SEC_2_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 29.21 -2.54 180)
+					(length 5.08)
+					(name "SEC_1_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 29.21 0 180)
+					(length 5.08)
+					(name "SEC_2_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Oro:OP_0005L"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 3.81 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "1210B105K101CT"
+				(at 3.81 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "Oro:OP_0005L"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" "1210B105K101CT"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Oro ID" "OP:0005L"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "1210B105K101CT"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CAP_1210_K_WAL CAP_1210_K_WAL-M CAP_1210_K_WAL-L"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "OP_0005L_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.4798 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.4798 -1.905) (xy 3.4798 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 -1.905) (xy 4.1148 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "OP_0005L_1_2"
+				(polyline
+					(pts
+						(xy -1.905 -3.4798) (xy 1.905 -3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -4.1148) (xy 1.905 -4.1148)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -4.1148) (xy 0 -5.08)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Oro:OP_0005M"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 3.81 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "CL21B104KCFSFNE"
+				(at 3.81 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "Oro:OP_0005M"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" "CL21B104KCFSFNE"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Oro ID" "OP:0005M"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "CL21B104KCFSFNE"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CAP_CL21_SAM CAP_CL21_SAM-M CAP_CL21_SAM-L"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "OP_0005M_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.4798 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.4798 -1.905) (xy 3.4798 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 -1.905) (xy 4.1148 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "OP_0005M_1_2"
+				(polyline
+					(pts
+						(xy -1.905 -3.4798) (xy 1.905 -3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -4.1148) (xy 1.905 -4.1148)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -4.1148) (xy 0 -5.08)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Oro:OP_0005N"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 3.81 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "EEE-FK1J470P"
+				(at 3.81 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "Oro:OP_0005N"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" "EEE-FK1J470P"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Oro ID" "OP:0005N"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "EEE-FK1J470P"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CAP_EEFK_F_PAN CAP_EEFK_F_PAN-M CAP_EEFK_F_PAN-L"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "OP_0005N_1_1"
+				(polyline
+					(pts
+						(xy 1.5748 1.27) (xy 2.8448 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.2098 0.635) (xy 2.2098 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.4798 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.4798 -1.905) (xy 3.4798 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 4.7541 -1.9108)
+					(mid 4.1148 0)
+					(end 4.7541 1.9108)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "OP_0005N_1_2"
+				(polyline
+					(pts
+						(xy -1.905 -3.4798) (xy 1.905 -3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -4.1148) (xy 0 -5.08)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.9108 -4.7541)
+					(mid 0 -4.1148)
+					(end 1.9108 -4.7541)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 -2.2098) (xy 1.905 -2.2098)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.5748) (xy 1.27 -2.8448)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GNDPWR"
 			(power global)
 			(pin_numbers
@@ -7003,158 +9307,218 @@
 		)
 	)
 	(junction
-		(at 118.11 83.82)
+		(at 212.09 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "06b43215-6de4-4b26-944d-c1964cb5f546")
+	)
+	(junction
+		(at 86.36 313.69)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "15183177-c8bf-44f8-8267-52c5bd5bb7f4")
 	)
 	(junction
-		(at 203.2 88.9)
+		(at 171.45 318.77)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "15978950-22e6-49a5-ae4b-0d33ba783373")
 	)
 	(junction
-		(at 193.04 88.9)
+		(at 161.29 318.77)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "16fbae97-8add-45ff-9f4c-eeb1b94dd789")
 	)
 	(junction
-		(at 182.88 149.86)
+		(at 68.58 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "359efada-b1d9-4065-80a3-a10a0e0b37af")
+	)
+	(junction
+		(at 207.01 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "46f93b57-8fd6-4948-a54a-90e236d8cdad")
+	)
+	(junction
+		(at 212.09 52.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4cce7912-3e94-4e65-be35-6b320d2df743")
+	)
+	(junction
+		(at 151.13 379.73)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4fbae4f2-a41b-4a66-865a-b32dc37114cb")
 	)
 	(junction
-		(at 245.11 88.9)
+		(at 176.53 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5001879f-5ee3-473a-9f4c-9296a1577b7c")
+	)
+	(junction
+		(at 213.36 318.77)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5206ed4e-7009-43e8-8df8-539fbb779581")
 	)
 	(junction
-		(at 118.11 147.32)
+		(at 86.36 377.19)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "590f145c-e9c1-4c3d-890c-3a57c91bb1c0")
 	)
 	(junction
-		(at 245.11 149.86)
+		(at 213.36 379.73)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "627f1b31-b9a6-4b3c-8ed3-eccd45186db0")
 	)
 	(junction
-		(at 193.04 118.11)
+		(at 223.52 318.77)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6d34756e-87de-4e6b-bcb6-76e6a11b0136")
+	)
+	(junction
+		(at 231.14 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "72f3ee82-8651-4173-af4f-5d39786d41a8")
+	)
+	(junction
+		(at 161.29 347.98)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "762e638a-3b53-47ad-b398-37f54138ba62")
 	)
 	(junction
-		(at 121.92 147.32)
+		(at 90.17 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "83d5bf78-3fdb-4742-bf58-bc4099cf2d5b")
+	)
+	(junction
+		(at 90.17 377.19)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "89c7db96-01e9-48c0-8c5a-0b9304070ba3")
 	)
 	(junction
-		(at 193.04 149.86)
+		(at 161.29 379.73)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "90c4aed4-1246-4444-8fd7-3c5e77d25370")
 	)
 	(junction
-		(at 133.35 88.9)
+		(at 101.6 318.77)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "918863b3-31fc-4ada-a5c6-0f3ec68e9947")
 	)
 	(junction
-		(at 172.72 125.73)
+		(at 140.97 355.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "919e55fb-bbfa-4671-97be-2b9c129883d5")
 	)
 	(junction
-		(at 125.73 86.36)
+		(at 93.98 316.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9946ba8f-5b98-4c4a-9678-ad3607718e37")
 	)
 	(junction
-		(at 182.88 121.92)
+		(at 151.13 351.79)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9c1ff24a-32f5-42f8-840e-8f4b9a306e5b")
 	)
 	(junction
-		(at 255.27 88.9)
+		(at 240.03 39.37)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "aa936a8e-01a5-4667-8c48-7a84bdc05062")
+		(uuid "9e3c2f10-2f28-4b3f-8a1a-854c3d1fcdba")
 	)
 	(junction
-		(at 182.88 88.9)
+		(at 157.48 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a162329a-1535-42e2-b445-4f42a97c5a6f")
+	)
+	(junction
+		(at 151.13 318.77)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b119dff9-e787-438c-8180-a535c58e9e8f")
 	)
 	(junction
-		(at 59.69 59.69)
+		(at 27.94 289.56)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b47ba98a-4993-4498-a146-0fd4bef08989")
 	)
 	(junction
-		(at 214.63 88.9)
+		(at 182.88 318.77)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ba15a290-9a87-47bc-a760-1a6ba966c2d6")
 	)
 	(junction
-		(at 125.73 147.32)
+		(at 93.98 377.19)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bcc631cd-afd0-4fd8-b8ca-17d688b04945")
 	)
 	(junction
-		(at 110.49 81.28)
+		(at 78.74 311.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c29e30b0-b735-46e5-8e81-df0cdf730043")
 	)
 	(junction
-		(at 214.63 149.86)
+		(at 182.88 379.73)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cbc753ab-4b41-4821-8791-a11d14cd5c5c")
 	)
 	(junction
-		(at 255.27 149.86)
+		(at 223.52 379.73)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cf51ef11-23b1-42bf-8700-a782e66ab0ab")
 	)
 	(junction
-		(at 203.2 114.3)
+		(at 207.01 52.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d92d8e40-4032-4344-8fa9-8063d8b1f1b2")
+	)
+	(junction
+		(at 171.45 344.17)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "db1278d6-b268-4d26-a346-2b378ad22999")
 	)
 	(junction
-		(at 203.2 149.86)
+		(at 171.45 379.73)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ded573e2-9cbf-45e5-9d20-1da7403087b3")
 	)
 	(junction
-		(at 297.18 88.9)
+		(at 176.53 52.07)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e7531eff-b116-49b7-ae01-03cd8ad5577d")
+		(uuid "f004015d-aeee-4273-a5e0-29d767428de9")
 	)
 	(wire
 		(pts
-			(xy 297.18 104.14) (xy 300.99 104.14)
+			(xy 68.58 64.77) (xy 72.39 64.77)
 		)
 		(stroke
 			(width 0)
@@ -7164,7 +9528,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 88.9) (xy 182.88 88.9)
+			(xy 161.29 318.77) (xy 151.13 318.77)
 		)
 		(stroke
 			(width 0)
@@ -7174,7 +9538,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 147.32) (xy 118.11 147.32)
+			(xy 78.74 377.19) (xy 86.36 377.19)
 		)
 		(stroke
 			(width 0)
@@ -7184,7 +9548,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 57.15) (xy 62.23 57.15)
+			(xy 27.94 287.02) (xy 30.48 287.02)
 		)
 		(stroke
 			(width 0)
@@ -7194,7 +9558,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 57.15) (xy 91.44 57.15)
+			(xy 53.34 287.02) (xy 59.69 287.02)
 		)
 		(stroke
 			(width 0)
@@ -7204,7 +9568,7 @@
 	)
 	(wire
 		(pts
-			(xy 255.27 124.46) (xy 255.27 149.86)
+			(xy 223.52 354.33) (xy 223.52 379.73)
 		)
 		(stroke
 			(width 0)
@@ -7214,7 +9578,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 39.37) (xy 135.89 39.37)
+			(xy 78.74 269.24) (xy 104.14 269.24)
 		)
 		(stroke
 			(width 0)
@@ -7224,7 +9588,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 88.9) (xy 193.04 88.9)
+			(xy 171.45 318.77) (xy 161.29 318.77)
 		)
 		(stroke
 			(width 0)
@@ -7234,7 +9598,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 59.69) (xy 59.69 60.96)
+			(xy 27.94 289.56) (xy 27.94 290.83)
 		)
 		(stroke
 			(width 0)
@@ -7244,7 +9608,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 54.61) (xy 101.6 54.61)
+			(xy 53.34 284.48) (xy 69.85 284.48)
 		)
 		(stroke
 			(width 0)
@@ -7254,7 +9618,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 52.07) (xy 93.98 62.23)
+			(xy 62.23 281.94) (xy 62.23 292.1)
 		)
 		(stroke
 			(width 0)
@@ -7264,7 +9628,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 97.79) (xy 172.72 88.9)
+			(xy 140.97 327.66) (xy 140.97 318.77)
 		)
 		(stroke
 			(width 0)
@@ -7274,7 +9638,27 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 125.73) (xy 172.72 125.73)
+			(xy 276.86 54.61) (xy 276.86 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c92edfd-1bb7-4b3c-8fe0-d959fcf4a487")
+	)
+	(wire
+		(pts
+			(xy 212.09 52.07) (xy 212.09 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ca58617-65a9-4781-91ec-4963f586774e")
+	)
+	(wire
+		(pts
+			(xy 120.65 355.6) (xy 140.97 355.6)
 		)
 		(stroke
 			(width 0)
@@ -7284,7 +9668,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 57.15) (xy 135.89 57.15)
+			(xy 93.98 287.02) (xy 104.14 287.02)
 		)
 		(stroke
 			(width 0)
@@ -7294,7 +9678,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 68.58) (xy 135.89 68.58)
+			(xy 59.69 298.45) (xy 104.14 298.45)
 		)
 		(stroke
 			(width 0)
@@ -7304,7 +9688,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 81.28) (xy 163.83 81.28)
+			(xy 78.74 311.15) (xy 132.08 311.15)
 		)
 		(stroke
 			(width 0)
@@ -7314,7 +9698,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 88.9) (xy 172.72 88.9)
+			(xy 151.13 318.77) (xy 140.97 318.77)
 		)
 		(stroke
 			(width 0)
@@ -7324,7 +9708,17 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 124.46) (xy 110.49 127)
+			(xy 207.01 39.37) (xy 207.01 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29813b44-5d75-42a4-81df-605b78292175")
+	)
+	(wire
+		(pts
+			(xy 78.74 354.33) (xy 78.74 356.87)
 		)
 		(stroke
 			(width 0)
@@ -7334,7 +9728,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 88.9) (xy 101.6 88.9)
+			(xy 101.6 318.77) (xy 69.85 318.77)
 		)
 		(stroke
 			(width 0)
@@ -7344,7 +9738,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 111.76) (xy 133.35 88.9)
+			(xy 101.6 341.63) (xy 101.6 318.77)
 		)
 		(stroke
 			(width 0)
@@ -7354,7 +9748,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 54.61) (xy 101.6 53.34)
+			(xy 69.85 284.48) (xy 69.85 283.21)
 		)
 		(stroke
 			(width 0)
@@ -7364,7 +9758,17 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 144.78) (xy 125.73 147.32)
+			(xy 207.01 39.37) (xy 212.09 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31cf87e6-bd95-4788-9931-a4fa39b14d9c")
+	)
+	(wire
+		(pts
+			(xy 93.98 374.65) (xy 93.98 377.19)
 		)
 		(stroke
 			(width 0)
@@ -7374,7 +9778,7 @@
 	)
 	(wire
 		(pts
-			(xy 279.4 149.86) (xy 255.27 149.86)
+			(xy 247.65 379.73) (xy 223.52 379.73)
 		)
 		(stroke
 			(width 0)
@@ -7384,7 +9788,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 83.82) (xy 101.6 83.82)
+			(xy 86.36 313.69) (xy 69.85 313.69)
 		)
 		(stroke
 			(width 0)
@@ -7394,7 +9798,17 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 46.99) (xy 101.6 50.8)
+			(xy 240.03 39.37) (xy 243.84 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "395dda27-c720-48e1-940c-f6bba8442a81")
+	)
+	(wire
+		(pts
+			(xy 69.85 276.86) (xy 69.85 280.67)
 		)
 		(stroke
 			(width 0)
@@ -7404,7 +9818,7 @@
 	)
 	(wire
 		(pts
-			(xy 255.27 88.9) (xy 245.11 88.9)
+			(xy 213.36 318.77) (xy 223.52 318.77)
 		)
 		(stroke
 			(width 0)
@@ -7414,7 +9828,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 48.26) (xy 135.89 48.26)
+			(xy 86.36 278.13) (xy 104.14 278.13)
 		)
 		(stroke
 			(width 0)
@@ -7424,7 +9838,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 88.9) (xy 133.35 66.04)
+			(xy 101.6 318.77) (xy 101.6 295.91)
 		)
 		(stroke
 			(width 0)
@@ -7434,7 +9848,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 57.15) (xy 91.44 68.58)
+			(xy 59.69 287.02) (xy 59.69 298.45)
 		)
 		(stroke
 			(width 0)
@@ -7444,7 +9858,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 114.3) (xy 203.2 114.3)
+			(xy 132.08 344.17) (xy 171.45 344.17)
 		)
 		(stroke
 			(width 0)
@@ -7454,7 +9868,27 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 107.95) (xy 182.88 121.92)
+			(xy 157.48 41.91) (xy 157.48 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41241c66-b0f7-46c5-a122-bde7abe2a00e")
+	)
+	(wire
+		(pts
+			(xy 176.53 39.37) (xy 177.8 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41ff8a82-eb6a-40bf-b983-28b652180f3b")
+	)
+	(wire
+		(pts
+			(xy 151.13 337.82) (xy 151.13 351.79)
 		)
 		(stroke
 			(width 0)
@@ -7464,7 +9898,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 71.12) (xy 135.89 71.12)
+			(xy 57.15 300.99) (xy 104.14 300.99)
 		)
 		(stroke
 			(width 0)
@@ -7474,7 +9908,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 85.09) (xy 245.11 88.9)
+			(xy 213.36 314.96) (xy 213.36 318.77)
 		)
 		(stroke
 			(width 0)
@@ -7484,7 +9918,17 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 125.73) (xy 214.63 149.86)
+			(xy 212.09 39.37) (xy 231.14 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44db1d04-be82-4f93-b32c-212793c57f4a")
+	)
+	(wire
+		(pts
+			(xy 182.88 355.6) (xy 182.88 379.73)
 		)
 		(stroke
 			(width 0)
@@ -7494,7 +9938,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 107.95) (xy 172.72 125.73)
+			(xy 140.97 337.82) (xy 140.97 355.6)
 		)
 		(stroke
 			(width 0)
@@ -7504,7 +9948,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 124.46) (xy 133.35 127)
+			(xy 101.6 354.33) (xy 101.6 356.87)
 		)
 		(stroke
 			(width 0)
@@ -7514,7 +9958,37 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 46.99) (xy 101.6 46.99)
+			(xy 273.05 54.61) (xy 276.86 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4613f7ad-9b35-4899-8343-3bef87cf011c")
+	)
+	(wire
+		(pts
+			(xy 90.17 39.37) (xy 157.48 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ae0267b-17b3-4c4b-9643-048d5a5c8d54")
+	)
+	(wire
+		(pts
+			(xy 207.01 52.07) (xy 212.09 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4af58f80-c24a-41f9-befb-2d5101e8ce75")
+	)
+	(wire
+		(pts
+			(xy 53.34 276.86) (xy 69.85 276.86)
 		)
 		(stroke
 			(width 0)
@@ -7524,7 +9998,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 107.95) (xy 193.04 118.11)
+			(xy 161.29 337.82) (xy 161.29 347.98)
 		)
 		(stroke
 			(width 0)
@@ -7534,7 +10008,17 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 149.86) (xy 172.72 146.05)
+			(xy 240.03 39.37) (xy 240.03 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ddd752f-5157-46a9-b32b-97a1c4faf348")
+	)
+	(wire
+		(pts
+			(xy 140.97 379.73) (xy 140.97 375.92)
 		)
 		(stroke
 			(width 0)
@@ -7544,7 +10028,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 83.82) (xy 160.02 118.11)
+			(xy 128.27 313.69) (xy 128.27 347.98)
 		)
 		(stroke
 			(width 0)
@@ -7554,7 +10038,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 57.15) (xy 59.69 59.69)
+			(xy 27.94 287.02) (xy 27.94 289.56)
 		)
 		(stroke
 			(width 0)
@@ -7564,17 +10048,7 @@
 	)
 	(wire
 		(pts
-			(xy 255.27 88.9) (xy 297.18 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "549949bb-262f-41f8-a365-1ee571f30782")
-	)
-	(wire
-		(pts
-			(xy 255.27 149.86) (xy 245.11 149.86)
+			(xy 223.52 379.73) (xy 213.36 379.73)
 		)
 		(stroke
 			(width 0)
@@ -7584,7 +10058,7 @@
 	)
 	(wire
 		(pts
-			(xy 318.77 104.14) (xy 325.12 104.14)
+			(xy 90.17 64.77) (xy 96.52 64.77)
 		)
 		(stroke
 			(width 0)
@@ -7594,7 +10068,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 147.32) (xy 133.35 144.78)
+			(xy 101.6 377.19) (xy 101.6 374.65)
 		)
 		(stroke
 			(width 0)
@@ -7604,7 +10078,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 81.28) (xy 110.49 111.76)
+			(xy 78.74 311.15) (xy 78.74 341.63)
 		)
 		(stroke
 			(width 0)
@@ -7614,7 +10088,27 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 88.9) (xy 193.04 97.79)
+			(xy 273.05 39.37) (xy 276.86 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d2ba78e-3420-44be-b4d5-e5c2afc594c3")
+	)
+	(wire
+		(pts
+			(xy 212.09 49.53) (xy 212.09 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f2f0efb-6d80-4388-8a14-6bb58cedd36d")
+	)
+	(wire
+		(pts
+			(xy 161.29 318.77) (xy 161.29 327.66)
 		)
 		(stroke
 			(width 0)
@@ -7624,7 +10118,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 39.37) (xy 110.49 81.28)
+			(xy 78.74 269.24) (xy 78.74 311.15)
 		)
 		(stroke
 			(width 0)
@@ -7634,7 +10128,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 147.32) (xy 121.92 147.32)
+			(xy 86.36 377.19) (xy 90.17 377.19)
 		)
 		(stroke
 			(width 0)
@@ -7644,7 +10138,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 121.92) (xy 156.21 121.92)
+			(xy 151.13 351.79) (xy 124.46 351.79)
 		)
 		(stroke
 			(width 0)
@@ -7654,7 +10148,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 86.36) (xy 125.73 111.76)
+			(xy 93.98 316.23) (xy 93.98 341.63)
 		)
 		(stroke
 			(width 0)
@@ -7664,7 +10158,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 49.53) (xy 96.52 59.69)
+			(xy 64.77 279.4) (xy 64.77 289.56)
 		)
 		(stroke
 			(width 0)
@@ -7674,7 +10168,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 124.46) (xy 125.73 127)
+			(xy 93.98 354.33) (xy 93.98 356.87)
 		)
 		(stroke
 			(width 0)
@@ -7684,7 +10178,17 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 52.07) (xy 93.98 52.07)
+			(xy 157.48 39.37) (xy 176.53 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70235a43-23cc-45e6-81ad-a945015d7b4a")
+	)
+	(wire
+		(pts
+			(xy 53.34 281.94) (xy 62.23 281.94)
 		)
 		(stroke
 			(width 0)
@@ -7694,7 +10198,7 @@
 	)
 	(wire
 		(pts
-			(xy 255.27 111.76) (xy 255.27 88.9)
+			(xy 223.52 341.63) (xy 223.52 318.77)
 		)
 		(stroke
 			(width 0)
@@ -7704,7 +10208,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 81.28) (xy 101.6 81.28)
+			(xy 78.74 311.15) (xy 69.85 311.15)
 		)
 		(stroke
 			(width 0)
@@ -7714,7 +10218,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 147.32) (xy 125.73 147.32)
+			(xy 90.17 377.19) (xy 93.98 377.19)
 		)
 		(stroke
 			(width 0)
@@ -7724,7 +10228,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 149.86) (xy 182.88 149.86)
+			(xy 161.29 379.73) (xy 151.13 379.73)
 		)
 		(stroke
 			(width 0)
@@ -7734,7 +10238,17 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 149.86) (xy 245.11 149.86)
+			(xy 240.03 54.61) (xy 240.03 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7714df91-e18f-46a4-bf79-af31c1f42743")
+	)
+	(wire
+		(pts
+			(xy 203.2 379.73) (xy 213.36 379.73)
 		)
 		(stroke
 			(width 0)
@@ -7744,7 +10258,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 88.9) (xy 245.11 110.49)
+			(xy 213.36 318.77) (xy 213.36 340.36)
 		)
 		(stroke
 			(width 0)
@@ -7754,7 +10268,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 86.36) (xy 156.21 121.92)
+			(xy 124.46 316.23) (xy 124.46 351.79)
 		)
 		(stroke
 			(width 0)
@@ -7764,7 +10278,17 @@
 	)
 	(wire
 		(pts
-			(xy 318.77 88.9) (xy 318.77 99.06)
+			(xy 157.48 49.53) (xy 157.48 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ed1c170-f179-465e-83be-2344358aa268")
+	)
+	(wire
+		(pts
+			(xy 90.17 39.37) (xy 90.17 59.69)
 		)
 		(stroke
 			(width 0)
@@ -7774,7 +10298,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 88.9) (xy 203.2 88.9)
+			(xy 182.88 318.77) (xy 171.45 318.77)
 		)
 		(stroke
 			(width 0)
@@ -7784,7 +10308,47 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 88.9) (xy 214.63 113.03)
+			(xy 240.03 52.07) (xy 243.84 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "804d1f63-93ef-470b-8a4a-786e72adcccb")
+	)
+	(wire
+		(pts
+			(xy 157.48 52.07) (xy 176.53 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "805784e6-4bd7-42fd-95d1-339776bd4a54")
+	)
+	(wire
+		(pts
+			(xy 243.84 54.61) (xy 240.03 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8387c3db-68be-47ee-8da2-6170b2a820dd")
+	)
+	(wire
+		(pts
+			(xy 240.03 41.91) (xy 243.84 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83dd345d-be93-4c43-9ee6-a4be9ce84530")
+	)
+	(wire
+		(pts
+			(xy 182.88 318.77) (xy 182.88 342.9)
 		)
 		(stroke
 			(width 0)
@@ -7794,7 +10358,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 48.26) (xy 118.11 83.82)
+			(xy 86.36 278.13) (xy 86.36 313.69)
 		)
 		(stroke
 			(width 0)
@@ -7804,7 +10368,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 83.82) (xy 160.02 83.82)
+			(xy 86.36 313.69) (xy 128.27 313.69)
 		)
 		(stroke
 			(width 0)
@@ -7814,7 +10378,17 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 53.34) (xy 101.6 53.34)
+			(xy 207.01 49.53) (xy 207.01 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9093b2ea-78b6-4203-b31f-c1a9e97b041d")
+	)
+	(wire
+		(pts
+			(xy 104.14 283.21) (xy 69.85 283.21)
 		)
 		(stroke
 			(width 0)
@@ -7824,7 +10398,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 166.37) (xy 121.92 163.83)
+			(xy 90.17 396.24) (xy 90.17 393.7)
 		)
 		(stroke
 			(width 0)
@@ -7834,7 +10408,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 83.82) (xy 118.11 111.76)
+			(xy 86.36 313.69) (xy 86.36 341.63)
 		)
 		(stroke
 			(width 0)
@@ -7844,7 +10418,27 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 121.92) (xy 182.88 135.89)
+			(xy 240.03 72.39) (xy 240.03 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d07de68-5ef0-49a4-b7b9-29626d672b91")
+	)
+	(wire
+		(pts
+			(xy 223.52 318.77) (xy 247.65 318.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d0a39b9-cc07-467c-a1c4-f265f36c0d3a")
+	)
+	(wire
+		(pts
+			(xy 151.13 351.79) (xy 151.13 365.76)
 		)
 		(stroke
 			(width 0)
@@ -7854,7 +10448,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 88.9) (xy 182.88 97.79)
+			(xy 151.13 318.77) (xy 151.13 327.66)
 		)
 		(stroke
 			(width 0)
@@ -7864,7 +10458,27 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 149.86) (xy 203.2 146.05)
+			(xy 273.05 52.07) (xy 276.86 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5735be5-41c0-4f08-91ac-0d515a7f2f5f")
+	)
+	(wire
+		(pts
+			(xy 176.53 52.07) (xy 207.01 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8400157-2901-45cc-8e87-18b076d35587")
+	)
+	(wire
+		(pts
+			(xy 171.45 379.73) (xy 171.45 375.92)
 		)
 		(stroke
 			(width 0)
@@ -7874,7 +10488,7 @@
 	)
 	(wire
 		(pts
-			(xy 297.18 104.14) (xy 297.18 88.9)
+			(xy 68.58 64.77) (xy 68.58 39.37)
 		)
 		(stroke
 			(width 0)
@@ -7884,7 +10498,17 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 57.15) (xy 125.73 86.36)
+			(xy 273.05 41.91) (xy 276.86 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "acece672-1945-4e8d-b951-96a523fdb7f6")
+	)
+	(wire
+		(pts
+			(xy 93.98 287.02) (xy 93.98 316.23)
 		)
 		(stroke
 			(width 0)
@@ -7894,7 +10518,17 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 149.86) (xy 203.2 149.86)
+			(xy 212.09 39.37) (xy 212.09 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aeb24d87-4ddf-469d-af3a-75b10ee5ff08")
+	)
+	(wire
+		(pts
+			(xy 182.88 379.73) (xy 171.45 379.73)
 		)
 		(stroke
 			(width 0)
@@ -7904,7 +10538,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 149.86) (xy 182.88 146.05)
+			(xy 151.13 379.73) (xy 151.13 375.92)
 		)
 		(stroke
 			(width 0)
@@ -7914,7 +10548,27 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 49.53) (xy 96.52 49.53)
+			(xy 176.53 41.91) (xy 176.53 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b257d15b-522f-4cad-8503-5bf3efb49654")
+	)
+	(wire
+		(pts
+			(xy 243.84 72.39) (xy 240.03 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b48f7916-7161-4ade-8193-5a4202806d51")
+	)
+	(wire
+		(pts
+			(xy 53.34 279.4) (xy 64.77 279.4)
 		)
 		(stroke
 			(width 0)
@@ -7924,7 +10578,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 59.69) (xy 88.9 71.12)
+			(xy 57.15 289.56) (xy 57.15 300.99)
 		)
 		(stroke
 			(width 0)
@@ -7934,7 +10588,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 149.86) (xy 193.04 146.05)
+			(xy 161.29 379.73) (xy 161.29 375.92)
 		)
 		(stroke
 			(width 0)
@@ -7944,7 +10598,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 149.86) (xy 245.11 125.73)
+			(xy 213.36 379.73) (xy 213.36 355.6)
 		)
 		(stroke
 			(width 0)
@@ -7954,7 +10608,7 @@
 	)
 	(wire
 		(pts
-			(xy 297.18 88.9) (xy 318.77 88.9)
+			(xy 68.58 39.37) (xy 90.17 39.37)
 		)
 		(stroke
 			(width 0)
@@ -7964,7 +10618,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 88.9) (xy 152.4 88.9)
+			(xy 101.6 318.77) (xy 120.65 318.77)
 		)
 		(stroke
 			(width 0)
@@ -7974,7 +10628,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 124.46) (xy 118.11 127)
+			(xy 86.36 354.33) (xy 86.36 356.87)
 		)
 		(stroke
 			(width 0)
@@ -7984,7 +10638,17 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 107.95) (xy 203.2 114.3)
+			(xy 176.53 49.53) (xy 176.53 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8b07fab-1df7-4b39-a64e-ec8d9f6538f9")
+	)
+	(wire
+		(pts
+			(xy 171.45 337.82) (xy 171.45 344.17)
 		)
 		(stroke
 			(width 0)
@@ -7994,7 +10658,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 88.9) (xy 152.4 125.73)
+			(xy 120.65 318.77) (xy 120.65 355.6)
 		)
 		(stroke
 			(width 0)
@@ -8004,7 +10668,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 66.04) (xy 135.89 66.04)
+			(xy 101.6 295.91) (xy 104.14 295.91)
 		)
 		(stroke
 			(width 0)
@@ -8014,7 +10678,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 147.32) (xy 133.35 147.32)
+			(xy 93.98 377.19) (xy 101.6 377.19)
 		)
 		(stroke
 			(width 0)
@@ -8024,7 +10688,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 62.23) (xy 135.89 62.23)
+			(xy 62.23 292.1) (xy 104.14 292.1)
 		)
 		(stroke
 			(width 0)
@@ -8034,7 +10698,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 153.67) (xy 245.11 149.86)
+			(xy 213.36 383.54) (xy 213.36 379.73)
 		)
 		(stroke
 			(width 0)
@@ -8044,7 +10708,17 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 147.32) (xy 121.92 151.13)
+			(xy 198.12 39.37) (xy 207.01 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d11d81ea-d1cf-4919-a4d3-51c0ad382cec")
+	)
+	(wire
+		(pts
+			(xy 90.17 377.19) (xy 90.17 381)
 		)
 		(stroke
 			(width 0)
@@ -8054,7 +10728,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 125.73) (xy 172.72 135.89)
+			(xy 140.97 355.6) (xy 140.97 365.76)
 		)
 		(stroke
 			(width 0)
@@ -8064,7 +10738,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 88.9) (xy 214.63 88.9)
+			(xy 185.42 318.77) (xy 182.88 318.77)
 		)
 		(stroke
 			(width 0)
@@ -8074,7 +10748,17 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 88.9) (xy 245.11 88.9)
+			(xy 276.86 41.91) (xy 276.86 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d43fe26d-0505-4596-bd74-1c6ded65ce34")
+	)
+	(wire
+		(pts
+			(xy 203.2 318.77) (xy 213.36 318.77)
 		)
 		(stroke
 			(width 0)
@@ -8084,7 +10768,17 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 59.69) (xy 135.89 59.69)
+			(xy 231.14 41.91) (xy 231.14 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc99a306-101a-42a6-93a1-1d7066352804")
+	)
+	(wire
+		(pts
+			(xy 64.77 289.56) (xy 104.14 289.56)
 		)
 		(stroke
 			(width 0)
@@ -8094,7 +10788,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 81.28) (xy 163.83 114.3)
+			(xy 132.08 311.15) (xy 132.08 344.17)
 		)
 		(stroke
 			(width 0)
@@ -8104,7 +10798,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 118.11) (xy 193.04 118.11)
+			(xy 128.27 347.98) (xy 161.29 347.98)
 		)
 		(stroke
 			(width 0)
@@ -8114,7 +10808,7 @@
 	)
 	(wire
 		(pts
-			(xy 318.77 99.06) (xy 325.12 99.06)
+			(xy 90.17 59.69) (xy 96.52 59.69)
 		)
 		(stroke
 			(width 0)
@@ -8124,7 +10818,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 59.69) (xy 88.9 59.69)
+			(xy 53.34 289.56) (xy 57.15 289.56)
 		)
 		(stroke
 			(width 0)
@@ -8134,7 +10828,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 118.11) (xy 193.04 135.89)
+			(xy 161.29 347.98) (xy 161.29 365.76)
 		)
 		(stroke
 			(width 0)
@@ -8144,7 +10838,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 149.86) (xy 172.72 149.86)
+			(xy 151.13 379.73) (xy 140.97 379.73)
 		)
 		(stroke
 			(width 0)
@@ -8154,7 +10848,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 144.78) (xy 110.49 147.32)
+			(xy 78.74 374.65) (xy 78.74 377.19)
 		)
 		(stroke
 			(width 0)
@@ -8164,7 +10858,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 88.9) (xy 203.2 97.79)
+			(xy 171.45 318.77) (xy 171.45 327.66)
 		)
 		(stroke
 			(width 0)
@@ -8174,7 +10868,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 114.3) (xy 203.2 135.89)
+			(xy 171.45 344.17) (xy 171.45 365.76)
 		)
 		(stroke
 			(width 0)
@@ -8184,7 +10878,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 149.86) (xy 214.63 149.86)
+			(xy 185.42 379.73) (xy 182.88 379.73)
 		)
 		(stroke
 			(width 0)
@@ -8194,7 +10888,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 59.69) (xy 62.23 59.69)
+			(xy 27.94 289.56) (xy 30.48 289.56)
 		)
 		(stroke
 			(width 0)
@@ -8204,7 +10898,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 86.36) (xy 101.6 86.36)
+			(xy 93.98 316.23) (xy 69.85 316.23)
 		)
 		(stroke
 			(width 0)
@@ -8214,7 +10908,17 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 144.78) (xy 118.11 147.32)
+			(xy 231.14 39.37) (xy 240.03 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f14880ee-6358-4dda-91cd-1ed9e8741af5")
+	)
+	(wire
+		(pts
+			(xy 86.36 374.65) (xy 86.36 377.19)
 		)
 		(stroke
 			(width 0)
@@ -8224,7 +10928,17 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 149.86) (xy 193.04 149.86)
+			(xy 52.07 39.37) (xy 68.58 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2d8db98-979e-4d67-b972-f0194f8316d8")
+	)
+	(wire
+		(pts
+			(xy 171.45 379.73) (xy 161.29 379.73)
 		)
 		(stroke
 			(width 0)
@@ -8234,7 +10948,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 44.45) (xy 85.09 44.45)
+			(xy 104.14 274.32) (xy 53.34 274.32)
 		)
 		(stroke
 			(width 0)
@@ -8244,7 +10958,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 86.36) (xy 156.21 86.36)
+			(xy 93.98 316.23) (xy 124.46 316.23)
 		)
 		(stroke
 			(width 0)
@@ -8254,7 +10968,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 50.8) (xy 135.89 50.8)
+			(xy 69.85 280.67) (xy 104.14 280.67)
 		)
 		(stroke
 			(width 0)
@@ -8264,7 +10978,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 41.91) (xy 85.09 41.91)
+			(xy 104.14 271.78) (xy 53.34 271.78)
 		)
 		(stroke
 			(width 0)
@@ -8273,7 +10987,7 @@
 		(uuid "fe8006e0-db09-418d-89cb-7b3c7ae644d8")
 	)
 	(label "POE_VDD"
-		(at 279.4 88.9 180)
+		(at 247.65 318.77 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8283,7 +10997,7 @@
 		(uuid "9cab488b-ad4d-425b-a272-3ae37e7f0fbf")
 	)
 	(label "POE_VSS"
-		(at 279.4 149.86 180)
+		(at 247.65 379.73 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8292,9 +11006,19 @@
 		)
 		(uuid "9ef72863-0ccd-487c-99ab-bda8a637c801")
 	)
+	(label "POE_VDD"
+		(at 52.07 39.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a7319787-b4c0-4193-8897-73eb387d7ff3")
+	)
 	(symbol
 		(lib_id "Oro:OP_0005E")
-		(at 203.2 146.05 270)
+		(at 171.45 375.92 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -8305,7 +11029,7 @@
 		(dnp no)
 		(uuid "08804295-22a7-4dad-8b81-aafc45d5b8dc")
 		(property "Reference" "D5"
-			(at 209.8429 144.78 0)
+			(at 178.0929 374.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8316,7 +11040,7 @@
 			)
 		)
 		(property "Value" "B2100-13-F"
-			(at 207.01 144.78 0)
+			(at 175.26 374.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8327,7 +11051,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005E"
-			(at 203.2 146.05 0)
+			(at 171.45 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8339,7 +11063,7 @@
 			)
 		)
 		(property "Datasheet" "B2100-13-F"
-			(at 203.2 146.05 0)
+			(at 171.45 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8351,7 +11075,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 203.2 146.05 0)
+			(at 171.45 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8362,7 +11086,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005E"
-			(at 203.2 146.05 0)
+			(at 171.45 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8390,7 +11114,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Small")
-		(at 101.6 88.9 0)
+		(at 69.85 318.77 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -8401,7 +11125,7 @@
 		(dnp no)
 		(uuid "0998c805-1998-4eb8-a212-2a690b5791ba")
 		(property "Reference" "TP5"
-			(at 100.33 88.9 0)
+			(at 68.58 318.77 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8412,7 +11136,7 @@
 			)
 		)
 		(property "Value" "PAIR78"
-			(at 95.25 88.9 0)
+			(at 63.5 318.77 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8423,7 +11147,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
-			(at 96.52 88.9 0)
+			(at 64.77 318.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8434,7 +11158,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 88.9 0)
+			(at 64.77 318.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8445,7 +11169,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 101.6 88.9 0)
+			(at 69.85 318.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8468,8 +11192,86 @@
 		)
 	)
 	(symbol
+		(lib_id "LocalPower:LAGND")
+		(at 240.03 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "09a6ae9c-c80d-4179-8eab-13c11ac5b915")
+		(property "Reference" "#PWR04"
+			(at 240.03 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AGND"
+			(at 240.03 80.3331 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 240.03 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 240.03 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 240.03 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "494a102f-4c0b-4fe6-b337-ed552a04b065")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Oro:OP_0000R")
-		(at 214.63 125.73 90)
+		(at 182.88 355.6 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8479,7 +11281,7 @@
 		(dnp no)
 		(uuid "11bb3073-4fda-4612-bc24-0fb524e5226f")
 		(property "Reference" "C42"
-			(at 217.932 118.1678 90)
+			(at 186.182 348.0378 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8490,7 +11292,7 @@
 			)
 		)
 		(property "Value" "1000pF >=2kV"
-			(at 217.932 120.5921 90)
+			(at 186.182 350.4621 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8501,7 +11303,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0000R"
-			(at 310.82 116.84 0)
+			(at 279.07 346.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8513,7 +11315,7 @@
 			)
 		)
 		(property "Datasheet" "https://katalog.we-online.com/pbs/datasheet/885342210004.pdf"
-			(at 410.82 116.84 0)
+			(at 379.07 346.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8525,7 +11327,7 @@
 			)
 		)
 		(property "Description" "Multilayer Ceramic Chip Capacitor WCAP-CSMH Series 1808 1000pF X7R1808102KC00DFCT10000"
-			(at 214.63 125.73 0)
+			(at 182.88 355.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8536,7 +11338,7 @@
 			)
 		)
 		(property "Height" "2.2"
-			(at 610.82 116.84 0)
+			(at 579.07 346.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8548,7 +11350,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Wurth Elektronik"
-			(at 710.82 116.84 0)
+			(at 679.07 346.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8560,7 +11362,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "885342210004"
-			(at 810.82 116.84 0)
+			(at 779.07 346.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8572,7 +11374,7 @@
 			)
 		)
 		(property "Mouser Part Number" "710-885342210004"
-			(at 910.82 116.84 0)
+			(at 879.07 346.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8584,7 +11386,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/885342210004?qs=MLItCLRbWsya%2F3qdX09FHQ%3D%3D"
-			(at 1010.82 116.84 0)
+			(at 979.07 346.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8596,7 +11398,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 1110.82 116.84 0)
+			(at 1079.07 346.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8608,7 +11410,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 1210.82 116.84 0)
+			(at 1179.07 346.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8620,7 +11422,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0000R"
-			(at 310.82 116.84 0)
+			(at 279.07 346.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8648,7 +11450,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005C")
-		(at 133.35 124.46 270)
+		(at 101.6 354.33 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -8659,7 +11461,7 @@
 		(dnp no)
 		(uuid "28798665-a836-4e1a-bfad-0d73e6fcbb46")
 		(property "Reference" "C36"
-			(at 131.9643 115.57 0)
+			(at 100.2143 345.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8670,7 +11472,7 @@
 			)
 		)
 		(property "Value" "10nF >=150V"
-			(at 129.54 115.57 0)
+			(at 97.79 345.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8681,7 +11483,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005C"
-			(at 37.16 115.57 0)
+			(at 5.41 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8693,7 +11495,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.kemet.com/specsheet/C0603C103J2RECAUTO7411"
-			(at -62.84 115.57 0)
+			(at -94.59 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8705,7 +11507,7 @@
 			)
 		)
 		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 200V 0.01uF 0603 X7R 5% AEC-Q200"
-			(at 133.35 124.46 0)
+			(at 101.6 354.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8716,7 +11518,7 @@
 			)
 		)
 		(property "Height" "0.87"
-			(at -262.84 115.57 0)
+			(at -294.59 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8728,7 +11530,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Yageo Group"
-			(at -362.84 115.57 0)
+			(at -394.59 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8740,7 +11542,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C103J2RECAUTO7411"
-			(at -462.84 115.57 0)
+			(at -494.59 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8752,7 +11554,7 @@
 			)
 		)
 		(property "Mouser Part Number" "80-C0603C103J2REAULR"
-			(at -562.84 115.57 0)
+			(at -594.59 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8764,7 +11566,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KEMET/C0603C103J2RECAUTO7411?qs=Mv7BduZupUhtJ7MYR2YVFQ%3D%3D"
-			(at -662.84 115.57 0)
+			(at -694.59 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8776,7 +11578,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at -762.84 115.57 0)
+			(at -794.59 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8788,7 +11590,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at -862.84 115.57 0)
+			(at -894.59 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8800,7 +11602,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005C"
-			(at 37.16 115.57 0)
+			(at 5.41 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8828,7 +11630,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005E")
-		(at 182.88 107.95 270)
+		(at 151.13 337.82 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -8839,7 +11641,7 @@
 		(dnp no)
 		(uuid "2e802427-d88a-4cff-abd6-031216b846f7")
 		(property "Reference" "D2"
-			(at 189.23 106.68 0)
+			(at 157.48 336.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8850,7 +11652,7 @@
 			)
 		)
 		(property "Value" "B2100-13-F"
-			(at 186.3971 106.68 0)
+			(at 154.6471 336.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8861,7 +11663,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005E"
-			(at 182.88 107.95 0)
+			(at 151.13 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8873,7 +11675,7 @@
 			)
 		)
 		(property "Datasheet" "B2100-13-F"
-			(at 182.88 107.95 0)
+			(at 151.13 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8885,7 +11687,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 182.88 107.95 0)
+			(at 151.13 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8896,7 +11698,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005E"
-			(at 182.88 107.95 0)
+			(at 151.13 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8924,7 +11726,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005E")
-		(at 193.04 107.95 270)
+		(at 161.29 337.82 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -8935,7 +11737,7 @@
 		(dnp no)
 		(uuid "32649dd9-5d06-4616-bf19-82055f5a6f0f")
 		(property "Reference" "D3"
-			(at 199.39 106.68 0)
+			(at 167.64 336.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8946,7 +11748,7 @@
 			)
 		)
 		(property "Value" "B2100-13-F"
-			(at 196.5571 106.68 0)
+			(at 164.8071 336.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8957,7 +11759,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005E"
-			(at 193.04 107.95 0)
+			(at 161.29 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8969,7 +11771,7 @@
 			)
 		)
 		(property "Datasheet" "B2100-13-F"
-			(at 193.04 107.95 0)
+			(at 161.29 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8981,7 +11783,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 193.04 107.95 0)
+			(at 161.29 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8992,7 +11794,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005E"
-			(at 193.04 107.95 0)
+			(at 161.29 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9020,7 +11822,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Small")
-		(at 245.11 85.09 270)
+		(at 213.36 314.96 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -9031,7 +11833,7 @@
 		(dnp no)
 		(uuid "3e3aa8e7-28f9-4408-9053-e420bb7c1487")
 		(property "Reference" "TP7"
-			(at 245.11 83.82 0)
+			(at 213.36 313.69 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9042,7 +11844,7 @@
 			)
 		)
 		(property "Value" "POE_VDD"
-			(at 245.11 78.74 0)
+			(at 213.36 308.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9053,7 +11855,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
-			(at 245.11 80.01 0)
+			(at 213.36 309.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9064,7 +11866,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 245.11 80.01 0)
+			(at 213.36 309.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9075,7 +11877,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 245.11 85.09 0)
+			(at 213.36 314.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9099,7 +11901,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005E")
-		(at 182.88 146.05 270)
+		(at 151.13 375.92 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -9110,7 +11912,7 @@
 		(dnp no)
 		(uuid "477a36ff-12e5-4875-81d1-db4a45b670c8")
 		(property "Reference" "D7"
-			(at 189.5229 144.78 0)
+			(at 157.7729 374.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9121,7 +11923,7 @@
 			)
 		)
 		(property "Value" "B2100-13-F"
-			(at 186.69 144.78 0)
+			(at 154.94 374.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9132,7 +11934,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005E"
-			(at 182.88 146.05 0)
+			(at 151.13 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9144,7 +11946,7 @@
 			)
 		)
 		(property "Datasheet" "B2100-13-F"
-			(at 182.88 146.05 0)
+			(at 151.13 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9156,7 +11958,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 182.88 146.05 0)
+			(at 151.13 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9167,7 +11969,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005E"
-			(at 182.88 146.05 0)
+			(at 151.13 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9195,7 +11997,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Small")
-		(at 101.6 81.28 0)
+		(at 69.85 311.15 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -9206,7 +12008,7 @@
 		(dnp no)
 		(uuid "4ed426e0-d71d-4cec-9b63-8bbbd2300313")
 		(property "Reference" "TP2"
-			(at 100.33 81.28 0)
+			(at 68.58 311.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9217,7 +12019,7 @@
 			)
 		)
 		(property "Value" "PAIR12"
-			(at 95.25 81.28 0)
+			(at 63.5 311.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9228,7 +12030,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
-			(at 96.52 81.28 0)
+			(at 64.77 311.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9239,7 +12041,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 81.28 0)
+			(at 64.77 311.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9250,7 +12052,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 101.6 81.28 0)
+			(at 69.85 311.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9274,7 +12076,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005C")
-		(at 118.11 124.46 270)
+		(at 86.36 354.33 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -9285,7 +12087,7 @@
 		(dnp no)
 		(uuid "50be466f-30f8-406a-a13d-6266885bfea7")
 		(property "Reference" "C38"
-			(at 116.7243 115.57 0)
+			(at 84.9743 345.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9296,7 +12098,7 @@
 			)
 		)
 		(property "Value" "10nF >=150V"
-			(at 114.3 115.57 0)
+			(at 82.55 345.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9307,7 +12109,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005C"
-			(at 21.92 115.57 0)
+			(at -9.83 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9319,7 +12121,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.kemet.com/specsheet/C0603C103J2RECAUTO7411"
-			(at -78.08 115.57 0)
+			(at -109.83 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9331,7 +12133,7 @@
 			)
 		)
 		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 200V 0.01uF 0603 X7R 5% AEC-Q200"
-			(at 118.11 124.46 0)
+			(at 86.36 354.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9342,7 +12144,7 @@
 			)
 		)
 		(property "Height" "0.87"
-			(at -278.08 115.57 0)
+			(at -309.83 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9354,7 +12156,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Yageo Group"
-			(at -378.08 115.57 0)
+			(at -409.83 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9366,7 +12168,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C103J2RECAUTO7411"
-			(at -478.08 115.57 0)
+			(at -509.83 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9378,7 +12180,7 @@
 			)
 		)
 		(property "Mouser Part Number" "80-C0603C103J2REAULR"
-			(at -578.08 115.57 0)
+			(at -609.83 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9390,7 +12192,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KEMET/C0603C103J2RECAUTO7411?qs=Mv7BduZupUhtJ7MYR2YVFQ%3D%3D"
-			(at -678.08 115.57 0)
+			(at -709.83 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9402,7 +12204,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at -778.08 115.57 0)
+			(at -809.83 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9414,7 +12216,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at -878.08 115.57 0)
+			(at -909.83 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9426,7 +12228,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005C"
-			(at 21.92 115.57 0)
+			(at -9.83 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9454,7 +12256,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Small")
-		(at 245.11 153.67 90)
+		(at 213.36 383.54 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -9465,7 +12267,7 @@
 		(dnp no)
 		(uuid "584f2cbb-2426-4571-a5fc-e3be01d3c8ec")
 		(property "Reference" "TP8"
-			(at 245.11 154.94 0)
+			(at 213.36 384.81 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9476,7 +12278,7 @@
 			)
 		)
 		(property "Value" "POE_VSS"
-			(at 245.11 160.02 0)
+			(at 213.36 389.89 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9487,7 +12289,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
-			(at 245.11 158.75 0)
+			(at 213.36 388.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9498,7 +12300,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 245.11 158.75 0)
+			(at 213.36 388.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9509,7 +12311,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 245.11 153.67 0)
+			(at 213.36 383.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9532,8 +12334,104 @@
 		)
 	)
 	(symbol
+		(lib_id "Oro:OP_0005M")
+		(at 231.14 41.91 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "59b2b5e9-cfd8-458b-923b-6519e2afb666")
+		(property "Reference" "C47"
+			(at 233.7816 44.3035 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1uF 100V"
+			(at 233.7816 47.1364 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Oro:OP_0005M"
+			(at 231.14 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "CL21B104KCFSFNE"
+			(at 231.14 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 231.14 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0005M"
+			(at 231.14 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d9c2da69-db3b-4d67-9800-907bf63b4b1d")
+		)
+		(pin "2"
+			(uuid "c5381a19-f45e-4164-af58-243b227df722")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "C47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GNDPWR")
-		(at 59.69 60.96 0)
+		(at 27.94 290.83 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -9545,7 +12443,7 @@
 		(fields_autoplaced yes)
 		(uuid "662557bf-2836-4478-bec4-21fb451084dd")
 		(property "Reference" "#PWR03"
-			(at 59.69 66.04 0)
+			(at 27.94 295.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9556,7 +12454,7 @@
 			)
 		)
 		(property "Value" "CHASSIS"
-			(at 59.817 64.6867 0)
+			(at 28.067 294.5567 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9566,7 +12464,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 59.69 62.23 0)
+			(at 27.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9577,7 +12475,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 59.69 62.23 0)
+			(at 27.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9588,7 +12486,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 59.69 60.96 0)
+			(at 27.94 290.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9612,7 +12510,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDPWR")
-		(at 121.92 166.37 0)
+		(at 90.17 396.24 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -9624,7 +12522,7 @@
 		(fields_autoplaced yes)
 		(uuid "6aa231ae-6f52-48fb-9c88-3814aa63e1d9")
 		(property "Reference" "#PWR02"
-			(at 121.92 171.45 0)
+			(at 90.17 401.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9635,7 +12533,7 @@
 			)
 		)
 		(property "Value" "CHASSIS"
-			(at 122.047 170.0967 0)
+			(at 90.297 399.9667 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9645,7 +12543,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 121.92 167.64 0)
+			(at 90.17 397.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9656,7 +12554,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 121.92 167.64 0)
+			(at 90.17 397.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9667,7 +12565,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 121.92 166.37 0)
+			(at 90.17 396.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9691,7 +12589,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_00053")
-		(at 85.09 41.91 0)
+		(at 53.34 271.78 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -9703,7 +12601,7 @@
 		(fields_autoplaced yes)
 		(uuid "6e258761-7f31-4945-a996-6fd2bafce08c")
 		(property "Reference" "J2"
-			(at 73.66 35.2255 0)
+			(at 41.91 265.0955 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9713,7 +12611,7 @@
 			)
 		)
 		(property "Value" "1149867"
-			(at 73.66 37.6498 0)
+			(at 41.91 267.5198 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9723,7 +12621,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_00053"
-			(at 66.04 136.83 0)
+			(at 34.29 366.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9735,7 +12633,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.phoenixcontact.com/en-us/products/female-insert-cuc-sp-j1st-ar4lt-led-1149867?type=pdf"
-			(at 66.04 236.83 0)
+			(at 34.29 466.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9747,7 +12645,7 @@
 			)
 		)
 		(property "Description" "CUC-SP-J1ST-A/R4LT-LED - Modular RJ45 PCB connectors, 1x1 single-port, connection direction of the connector to the PCB: 90 , Tab up, Shielded, LED (yellow, green), number of positions: 8, 10 Gbps, PoE++, THT, THD, Wave, IP20, type of packaging: Tray"
-			(at 85.09 41.91 0)
+			(at 53.34 271.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9758,7 +12656,7 @@
 			)
 		)
 		(property "Height" "11.3"
-			(at 66.04 436.83 0)
+			(at 34.29 666.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9770,7 +12668,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Phoenix Contact"
-			(at 66.04 536.83 0)
+			(at 34.29 766.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9782,7 +12680,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "1149867"
-			(at 66.04 636.83 0)
+			(at 34.29 866.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9794,7 +12692,7 @@
 			)
 		)
 		(property "Mouser Part Number" "651-1149867"
-			(at 66.04 736.83 0)
+			(at 34.29 966.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9806,7 +12704,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Phoenix-Contact/1149867?qs=7MVldsJ5UayqkB2j5TPR5A%3D%3D"
-			(at 66.04 836.83 0)
+			(at 34.29 1066.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9818,7 +12716,7 @@
 			)
 		)
 		(property "Arrow Part Number" "1149867"
-			(at 66.04 936.83 0)
+			(at 34.29 1166.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9830,7 +12728,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/1149867/phoenix-contact?region=nac"
-			(at 66.04 1036.83 0)
+			(at 34.29 1266.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9842,7 +12740,7 @@
 			)
 		)
 		(property "Oro ID" "OP:00053"
-			(at 66.04 136.83 0)
+			(at 34.29 366.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9906,7 +12804,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_00058")
-		(at 163.83 39.37 0)
+		(at 132.08 269.24 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -9918,7 +12816,7 @@
 		(fields_autoplaced yes)
 		(uuid "703744e1-f4f2-462a-8424-96d660c22416")
 		(property "Reference" "T1"
-			(at 149.987 31.5425 0)
+			(at 118.237 261.4125 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9928,7 +12826,7 @@
 			)
 		)
 		(property "Value" "749022011"
-			(at 149.987 33.9668 0)
+			(at 118.237 263.8368 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9938,7 +12836,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_00058"
-			(at 139.7 134.29 0)
+			(at 107.95 364.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9950,7 +12848,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/749022011.pdf"
-			(at 139.7 234.29 0)
+			(at 107.95 464.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9962,7 +12860,7 @@
 			)
 		)
 		(property "Description" "Surface Mount Lan Ethernet Transformer, 18.3 x 12.2 x 6.35mm, -40  +85 C"
-			(at 159.385 19.05 0)
+			(at 127.635 248.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9973,7 +12871,7 @@
 			)
 		)
 		(property "Height" "6.35"
-			(at 139.7 434.29 0)
+			(at 107.95 664.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9985,7 +12883,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Wurth Elektronik"
-			(at 139.7 534.29 0)
+			(at 107.95 764.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9997,7 +12895,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "749022011"
-			(at 139.7 634.29 0)
+			(at 107.95 864.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10009,7 +12907,7 @@
 			)
 		)
 		(property "Mouser Part Number" "710-749022011"
-			(at 139.7 734.29 0)
+			(at 107.95 964.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10021,7 +12919,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/749022011?qs=2sV1BwmkawS7FDopOvedTw%3D%3D"
-			(at 139.7 834.29 0)
+			(at 107.95 1064.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10033,7 +12931,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 139.7 934.29 0)
+			(at 107.95 1164.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10045,7 +12943,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 139.7 1034.29 0)
+			(at 107.95 1264.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10057,7 +12955,7 @@
 			)
 		)
 		(property "Oro ID" "OP:00058"
-			(at 139.7 134.29 0)
+			(at 107.95 364.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10151,7 +13049,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Small")
-		(at 101.6 83.82 0)
+		(at 69.85 313.69 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -10162,7 +13060,7 @@
 		(dnp no)
 		(uuid "71c0217f-7c0d-4310-b37a-b668203af6aa")
 		(property "Reference" "TP3"
-			(at 100.33 83.82 0)
+			(at 68.58 313.69 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10173,7 +13071,7 @@
 			)
 		)
 		(property "Value" "PAIR36"
-			(at 95.25 83.82 0)
+			(at 63.5 313.69 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10184,7 +13082,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
-			(at 96.52 83.82 0)
+			(at 64.77 313.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10195,7 +13093,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 83.82 0)
+			(at 64.77 313.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10206,7 +13104,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 101.6 83.82 0)
+			(at 69.85 313.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10230,7 +13128,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005C")
-		(at 255.27 124.46 90)
+		(at 223.52 354.33 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10240,7 +13138,7 @@
 		(dnp no)
 		(uuid "8e9c7779-a779-47b7-986f-88ab55e71cc5")
 		(property "Reference" "C43"
-			(at 260.35 116.9557 90)
+			(at 228.6 346.8257 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10251,7 +13149,7 @@
 			)
 		)
 		(property "Value" "10nF >=150V"
-			(at 260.35 119.38 90)
+			(at 228.6 349.25 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10262,7 +13160,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005C"
-			(at 351.46 115.57 0)
+			(at 319.71 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10274,7 +13172,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.kemet.com/specsheet/C0603C103J2RECAUTO7411"
-			(at 451.46 115.57 0)
+			(at 419.71 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10286,7 +13184,7 @@
 			)
 		)
 		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 200V 0.01uF 0603 X7R 5% AEC-Q200"
-			(at 255.27 124.46 0)
+			(at 223.52 354.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10297,7 +13195,7 @@
 			)
 		)
 		(property "Height" "0.87"
-			(at 651.46 115.57 0)
+			(at 619.71 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10309,7 +13207,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Yageo Group"
-			(at 751.46 115.57 0)
+			(at 719.71 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10321,7 +13219,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C103J2RECAUTO7411"
-			(at 851.46 115.57 0)
+			(at 819.71 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10333,7 +13231,7 @@
 			)
 		)
 		(property "Mouser Part Number" "80-C0603C103J2REAULR"
-			(at 951.46 115.57 0)
+			(at 919.71 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10345,7 +13243,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KEMET/C0603C103J2RECAUTO7411?qs=Mv7BduZupUhtJ7MYR2YVFQ%3D%3D"
-			(at 1051.46 115.57 0)
+			(at 1019.71 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10357,7 +13255,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 1151.46 115.57 0)
+			(at 1119.71 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10369,7 +13267,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 1251.46 115.57 0)
+			(at 1219.71 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10381,7 +13279,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005C"
-			(at 351.46 115.57 0)
+			(at 319.71 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10409,7 +13307,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0002Z")
-		(at 118.11 144.78 270)
+		(at 86.36 374.65 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -10420,7 +13318,7 @@
 		(dnp no)
 		(uuid "93fd212e-2e39-4c8a-88dd-4a45bcb4d1c1")
 		(property "Reference" "R8"
-			(at 116.84 130.81 0)
+			(at 85.09 360.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10431,7 +13329,7 @@
 			)
 		)
 		(property "Value" "75R 1%"
-			(at 114.4157 130.81 0)
+			(at 82.6657 360.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10442,7 +13340,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0002Z"
-			(at 21.92 130.81 0)
+			(at -9.83 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10454,7 +13352,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.koaspeer.com/catimages/Products/RK73-RT/RK73-RT.pdf"
-			(at -78.08 130.81 0)
+			(at -109.83 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10466,7 +13364,7 @@
 			)
 		)
 		(property "Description" "Thick Film Resistors - SMD 1/16watts 75ohms 1%"
-			(at 118.11 144.78 0)
+			(at 86.36 374.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10477,7 +13375,7 @@
 			)
 		)
 		(property "Height" "0.4"
-			(at -278.08 130.81 0)
+			(at -309.83 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10489,7 +13387,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KOA Speer"
-			(at -378.08 130.81 0)
+			(at -409.83 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10501,7 +13399,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "RK73H1ETTP75R0F"
-			(at -478.08 130.81 0)
+			(at -509.83 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10513,7 +13411,7 @@
 			)
 		)
 		(property "Mouser Part Number" "660-RK73H1ETTP75R0F"
-			(at -578.08 130.81 0)
+			(at -609.83 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10525,7 +13423,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KOA-Speer/RK73H1ETTP75R0F?qs=wUWquvs7oCIcRElcVFlmog%3D%3D"
-			(at -678.08 130.81 0)
+			(at -709.83 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10537,7 +13435,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at -778.08 130.81 0)
+			(at -809.83 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10549,7 +13447,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at -878.08 130.81 0)
+			(at -909.83 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10561,7 +13459,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0002Z"
-			(at 21.92 130.81 0)
+			(at -9.83 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10589,7 +13487,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0002Z")
-		(at 133.35 144.78 270)
+		(at 101.6 374.65 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -10600,7 +13498,7 @@
 		(dnp no)
 		(uuid "9a59d5ad-6aff-4a72-a31a-17fab51a79c8")
 		(property "Reference" "R6"
-			(at 132.08 130.81 0)
+			(at 100.33 360.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10611,7 +13509,7 @@
 			)
 		)
 		(property "Value" "75R 1%"
-			(at 129.6557 130.81 0)
+			(at 97.9057 360.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10622,7 +13520,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0002Z"
-			(at 37.16 130.81 0)
+			(at 5.41 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10634,7 +13532,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.koaspeer.com/catimages/Products/RK73-RT/RK73-RT.pdf"
-			(at -62.84 130.81 0)
+			(at -94.59 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10646,7 +13544,7 @@
 			)
 		)
 		(property "Description" "Thick Film Resistors - SMD 1/16watts 75ohms 1%"
-			(at 133.35 144.78 0)
+			(at 101.6 374.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10657,7 +13555,7 @@
 			)
 		)
 		(property "Height" "0.4"
-			(at -262.84 130.81 0)
+			(at -294.59 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10669,7 +13567,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KOA Speer"
-			(at -362.84 130.81 0)
+			(at -394.59 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10681,7 +13579,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "RK73H1ETTP75R0F"
-			(at -462.84 130.81 0)
+			(at -494.59 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10693,7 +13591,7 @@
 			)
 		)
 		(property "Mouser Part Number" "660-RK73H1ETTP75R0F"
-			(at -562.84 130.81 0)
+			(at -594.59 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10705,7 +13603,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KOA-Speer/RK73H1ETTP75R0F?qs=wUWquvs7oCIcRElcVFlmog%3D%3D"
-			(at -662.84 130.81 0)
+			(at -694.59 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10717,7 +13615,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at -762.84 130.81 0)
+			(at -794.59 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10729,7 +13627,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at -862.84 130.81 0)
+			(at -894.59 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10741,7 +13639,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0002Z"
-			(at 37.16 130.81 0)
+			(at 5.41 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10768,8 +13666,103 @@
 		)
 	)
 	(symbol
+		(lib_id "Oro:OP_0005M")
+		(at 157.48 41.91 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9b38e068-0e94-47be-9d82-d7388431daba")
+		(property "Reference" "C46"
+			(at 160.02 44.45 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1uF 100V"
+			(at 160.02 46.99 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Oro:OP_0005M"
+			(at 157.48 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "CL21B104KCFSFNE"
+			(at 157.48 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 157.48 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0005M"
+			(at 157.48 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "46f7142a-6cd5-42a9-b8a8-0db831df0ca8")
+		)
+		(pin "2"
+			(uuid "fe92cea2-c297-4fa0-baa0-f9ec44c56390")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "C46")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Oro:OP_0002Z")
-		(at 125.73 144.78 270)
+		(at 93.98 374.65 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -10780,7 +13773,7 @@
 		(dnp no)
 		(uuid "9e73f096-bde0-4170-ab11-0dd1272d87c3")
 		(property "Reference" "R7"
-			(at 124.46 130.81 0)
+			(at 92.71 360.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10791,7 +13784,7 @@
 			)
 		)
 		(property "Value" "75R 1%"
-			(at 122.0357 130.81 0)
+			(at 90.2857 360.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10802,7 +13795,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0002Z"
-			(at 29.54 130.81 0)
+			(at -2.21 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10814,7 +13807,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.koaspeer.com/catimages/Products/RK73-RT/RK73-RT.pdf"
-			(at -70.46 130.81 0)
+			(at -102.21 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10826,7 +13819,7 @@
 			)
 		)
 		(property "Description" "Thick Film Resistors - SMD 1/16watts 75ohms 1%"
-			(at 125.73 144.78 0)
+			(at 93.98 374.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10837,7 +13830,7 @@
 			)
 		)
 		(property "Height" "0.4"
-			(at -270.46 130.81 0)
+			(at -302.21 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10849,7 +13842,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KOA Speer"
-			(at -370.46 130.81 0)
+			(at -402.21 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10861,7 +13854,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "RK73H1ETTP75R0F"
-			(at -470.46 130.81 0)
+			(at -502.21 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10873,7 +13866,7 @@
 			)
 		)
 		(property "Mouser Part Number" "660-RK73H1ETTP75R0F"
-			(at -570.46 130.81 0)
+			(at -602.21 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10885,7 +13878,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KOA-Speer/RK73H1ETTP75R0F?qs=wUWquvs7oCIcRElcVFlmog%3D%3D"
-			(at -670.46 130.81 0)
+			(at -702.21 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10897,7 +13890,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at -770.46 130.81 0)
+			(at -802.21 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10909,7 +13902,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at -870.46 130.81 0)
+			(at -902.21 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10921,7 +13914,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0002Z"
-			(at 29.54 130.81 0)
+			(at -2.21 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10949,7 +13942,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005E")
-		(at 172.72 146.05 270)
+		(at 140.97 375.92 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -10960,7 +13953,7 @@
 		(dnp no)
 		(uuid "a297fe3a-8baf-48e9-9b7e-3d0db1128797")
 		(property "Reference" "D8"
-			(at 179.3629 144.78 0)
+			(at 147.6129 374.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10971,7 +13964,7 @@
 			)
 		)
 		(property "Value" "B2100-13-F"
-			(at 176.53 144.78 0)
+			(at 144.78 374.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10982,7 +13975,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005E"
-			(at 172.72 146.05 0)
+			(at 140.97 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10994,7 +13987,7 @@
 			)
 		)
 		(property "Datasheet" "B2100-13-F"
-			(at 172.72 146.05 0)
+			(at 140.97 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11006,7 +13999,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 172.72 146.05 0)
+			(at 140.97 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11017,7 +14010,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005E"
-			(at 172.72 146.05 0)
+			(at 140.97 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11045,7 +14038,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005F")
-		(at 234.95 149.86 0)
+		(at 203.2 379.73 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -11057,7 +14050,7 @@
 		(fields_autoplaced yes)
 		(uuid "a4466d94-0fff-4f25-b101-dacce2de97e8")
 		(property "Reference" "FB1"
-			(at 226.314 143.8105 0)
+			(at 194.564 373.6805 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11067,7 +14060,7 @@
 			)
 		)
 		(property "Value" "500R >=1.5A"
-			(at 226.314 146.2348 0)
+			(at 194.564 376.1048 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11077,7 +14070,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005F"
-			(at 218.44 244.78 0)
+			(at 186.69 474.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11089,7 +14082,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.murata.com/en-us/api/pdfdownloadapi?cate=cgsubChipFerriBead&partno=NFZ2MSD501SZ10%23"
-			(at 218.44 344.78 0)
+			(at 186.69 574.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11101,7 +14094,7 @@
 			)
 		)
 		(property "Description" "Ferrite Beads 500  OHM  3.2A"
-			(at 226.568 135.382 0)
+			(at 194.818 365.252 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11112,7 +14105,7 @@
 			)
 		)
 		(property "Height" "1.2"
-			(at 218.44 544.78 0)
+			(at 186.69 774.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11124,7 +14117,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Murata Electronics"
-			(at 218.44 644.78 0)
+			(at 186.69 874.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11136,7 +14129,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "NFZ2MSD501SZ10L"
-			(at 218.44 744.78 0)
+			(at 186.69 974.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11148,7 +14141,7 @@
 			)
 		)
 		(property "Mouser Part Number" "81-NFZ2MSD501SZ10L"
-			(at 218.44 844.78 0)
+			(at 186.69 1074.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11160,7 +14153,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/NFZ2MSD501SZ10L?qs=rkhjVJ6%2F3EJLxrZuR74EMg%3D%3D"
-			(at 218.44 944.78 0)
+			(at 186.69 1174.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11172,7 +14165,7 @@
 			)
 		)
 		(property "Arrow Part Number" "NFZ2MSD501SZ10L"
-			(at 218.44 1044.78 0)
+			(at 186.69 1274.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11184,7 +14177,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/nfz2msd501sz10l/murata-manufacturing?utm_currency=USD&region=nac"
-			(at 218.44 1144.78 0)
+			(at 186.69 1374.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11196,7 +14189,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005F"
-			(at 218.44 244.78 0)
+			(at 186.69 474.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11224,7 +14217,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Small")
-		(at 101.6 86.36 0)
+		(at 69.85 316.23 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -11235,7 +14228,7 @@
 		(dnp no)
 		(uuid "ae3729c6-a19a-4db8-affb-c530696d0182")
 		(property "Reference" "TP4"
-			(at 100.33 86.36 0)
+			(at 68.58 316.23 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11246,7 +14239,7 @@
 			)
 		)
 		(property "Value" "PAIR45"
-			(at 95.25 86.36 0)
+			(at 63.5 316.23 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11257,7 +14250,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
-			(at 96.52 86.36 0)
+			(at 64.77 316.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11268,7 +14261,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 86.36 0)
+			(at 64.77 316.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11279,7 +14272,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 101.6 86.36 0)
+			(at 69.85 316.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11303,7 +14296,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005E")
-		(at 203.2 107.95 270)
+		(at 171.45 337.82 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -11314,7 +14307,7 @@
 		(dnp no)
 		(uuid "b08f064d-d176-42a0-8c1b-d17b18afdee4")
 		(property "Reference" "D4"
-			(at 209.55 106.68 0)
+			(at 177.8 336.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11325,7 +14318,7 @@
 			)
 		)
 		(property "Value" "B2100-13-F"
-			(at 206.7171 106.68 0)
+			(at 174.9671 336.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11336,7 +14329,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005E"
-			(at 203.2 107.95 0)
+			(at 171.45 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11348,7 +14341,7 @@
 			)
 		)
 		(property "Datasheet" "B2100-13-F"
-			(at 203.2 107.95 0)
+			(at 171.45 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11360,7 +14353,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 203.2 107.95 0)
+			(at 171.45 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11371,7 +14364,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005E"
-			(at 203.2 107.95 0)
+			(at 171.45 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11399,7 +14392,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005C")
-		(at 125.73 124.46 270)
+		(at 93.98 354.33 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -11410,7 +14403,7 @@
 		(dnp no)
 		(uuid "b08f9539-9bc8-4ada-b7fb-24c480641a05")
 		(property "Reference" "C37"
-			(at 124.3443 115.57 0)
+			(at 92.5943 345.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11421,7 +14414,7 @@
 			)
 		)
 		(property "Value" "10nF >=150V"
-			(at 121.92 115.57 0)
+			(at 90.17 345.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11432,7 +14425,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005C"
-			(at 29.54 115.57 0)
+			(at -2.21 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11444,7 +14437,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.kemet.com/specsheet/C0603C103J2RECAUTO7411"
-			(at -70.46 115.57 0)
+			(at -102.21 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11456,7 +14449,7 @@
 			)
 		)
 		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 200V 0.01uF 0603 X7R 5% AEC-Q200"
-			(at 125.73 124.46 0)
+			(at 93.98 354.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11467,7 +14460,7 @@
 			)
 		)
 		(property "Height" "0.87"
-			(at -270.46 115.57 0)
+			(at -302.21 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11479,7 +14472,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Yageo Group"
-			(at -370.46 115.57 0)
+			(at -402.21 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11491,7 +14484,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C103J2RECAUTO7411"
-			(at -470.46 115.57 0)
+			(at -502.21 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11503,7 +14496,7 @@
 			)
 		)
 		(property "Mouser Part Number" "80-C0603C103J2REAULR"
-			(at -570.46 115.57 0)
+			(at -602.21 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11515,7 +14508,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KEMET/C0603C103J2RECAUTO7411?qs=Mv7BduZupUhtJ7MYR2YVFQ%3D%3D"
-			(at -670.46 115.57 0)
+			(at -702.21 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11527,7 +14520,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at -770.46 115.57 0)
+			(at -802.21 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11539,7 +14532,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at -870.46 115.57 0)
+			(at -902.21 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11551,7 +14544,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005C"
-			(at 29.54 115.57 0)
+			(at -2.21 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11579,7 +14572,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005E")
-		(at 172.72 107.95 270)
+		(at 140.97 337.82 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -11590,7 +14583,7 @@
 		(dnp no)
 		(uuid "b1a0c9e7-4637-427a-8cd7-3b35b549c1df")
 		(property "Reference" "D1"
-			(at 179.07 106.68 0)
+			(at 147.32 336.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11601,7 +14594,7 @@
 			)
 		)
 		(property "Value" "B2100-13-F"
-			(at 176.2371 106.68 0)
+			(at 144.4871 336.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11612,7 +14605,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005E"
-			(at 172.72 107.95 0)
+			(at 140.97 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11624,7 +14617,7 @@
 			)
 		)
 		(property "Datasheet" "B2100-13-F"
-			(at 172.72 107.95 0)
+			(at 140.97 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11636,7 +14629,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 172.72 107.95 0)
+			(at 140.97 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11647,7 +14640,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005E"
-			(at 172.72 107.95 0)
+			(at 140.97 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11675,7 +14668,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005H")
-		(at 318.77 104.14 180)
+		(at 90.17 64.77 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11686,7 +14679,7 @@
 		(fields_autoplaced yes)
 		(uuid "ccbcad28-c396-47a7-9c36-990546a46357")
 		(property "Reference" "R11"
-			(at 309.88 98.7255 0)
+			(at 81.28 59.3555 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11696,7 +14689,7 @@
 			)
 		)
 		(property "Value" "24.9K 1% 1/4W 150V"
-			(at 309.88 101.1498 0)
+			(at 81.28 61.7798 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11706,7 +14699,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005H"
-			(at 304.8 7.95 0)
+			(at 76.2 -31.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11718,7 +14711,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 304.8 -92.05 0)
+			(at 76.2 -131.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11730,7 +14723,7 @@
 			)
 		)
 		(property "Description" "Thick Film Resistors - SMD 24.9K 1%"
-			(at 318.77 104.14 0)
+			(at 90.17 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11741,7 +14734,7 @@
 			)
 		)
 		(property "Height" "0.75"
-			(at 304.8 -292.05 0)
+			(at 76.2 -331.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11753,7 +14746,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Bourns"
-			(at 304.8 -392.05 0)
+			(at 76.2 -431.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11765,7 +14758,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CR1206-FX-2492ELF"
-			(at 304.8 -492.05 0)
+			(at 76.2 -531.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11777,7 +14770,7 @@
 			)
 		)
 		(property "Mouser Part Number" "652-CR1206FX-2492ELF"
-			(at 304.8 -592.05 0)
+			(at 76.2 -631.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11789,7 +14782,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Bourns/CR1206-FX-2492ELF?qs=UUWDWenVDLgjReRVm8cvMQ%3D%3D"
-			(at 304.8 -692.05 0)
+			(at 76.2 -731.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11801,7 +14794,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 304.8 -792.05 0)
+			(at 76.2 -831.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11813,7 +14806,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 304.8 -892.05 0)
+			(at 76.2 -931.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11825,7 +14818,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005H"
-			(at 304.8 7.95 0)
+			(at 76.2 -31.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11852,9 +14845,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Oro:OP_0005C")
-		(at 110.49 124.46 270)
-		(mirror x)
+		(lib_id "Oro:OP_0005I")
+		(at 177.8 39.37 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11862,31 +14854,29 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "d4c3049a-8a81-4d50-82c7-405cfdcfc0c1")
-		(property "Reference" "C39"
-			(at 109.1043 115.57 0)
+		(uuid "d3c1c4da-e63c-4cc0-9a57-a2705140d01b")
+		(property "Reference" "L1"
+			(at 187.96 33.1357 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "10nF >=150V"
-			(at 106.68 115.57 0)
+		(property "Value" "LPS3015-332MRC"
+			(at 187.96 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "Oro:OP_0005C"
-			(at 14.3 115.57 0)
+		(property "Footprint" "Oro:OP_0005I"
+			(at 194.31 135.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11897,8 +14887,8 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://www.kemet.com/specsheet/C0603C103J2RECAUTO7411"
-			(at -85.7 115.57 0)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/coilcraft/LPS3015-332MRC/12714459"
+			(at 194.31 235.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11909,8 +14899,8 @@
 				(justify left top)
 			)
 		)
-		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 200V 0.01uF 0603 X7R 5% AEC-Q200"
-			(at 110.49 124.46 0)
+		(property "Description" "Fixed Inductors 3.3uH Shld 20% 130mOhms AECQ2"
+			(at 177.8 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11920,20 +14910,8 @@
 				)
 			)
 		)
-		(property "Height" "0.87"
-			(at -285.7 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Name" "Yageo Group"
-			(at -385.7 115.57 0)
+		(property "Height" "1.5"
+			(at 194.31 435.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11944,8 +14922,8 @@
 				(justify left top)
 			)
 		)
-		(property "Manufacturer_Part_Number" "C0603C103J2RECAUTO7411"
-			(at -485.7 115.57 0)
+		(property "Manufacturer_Name" "COILCRAFT"
+			(at 194.31 535.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11956,8 +14934,8 @@
 				(justify left top)
 			)
 		)
-		(property "Mouser Part Number" "80-C0603C103J2REAULR"
-			(at -585.7 115.57 0)
+		(property "Manufacturer_Part_Number" "LPS3015-332MRC"
+			(at 194.31 635.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11968,8 +14946,20 @@
 				(justify left top)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KEMET/C0603C103J2RECAUTO7411?qs=Mv7BduZupUhtJ7MYR2YVFQ%3D%3D"
-			(at -685.7 115.57 0)
+		(property "Mouser Part Number" "994-LPS3015-332MRC"
+			(at 194.31 735.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Coilcraft/LPS3015-332MRC?qs=QQJxVsr8EGYyDzfkMJtE8A%3D%3D"
+			(at 194.31 835.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11981,7 +14971,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at -785.7 115.57 0)
+			(at 194.31 935.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11993,7 +14983,187 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at -885.7 115.57 0)
+			(at 194.31 1035.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Oro ID" "OP:0005I"
+			(at 194.31 135.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "283ad4ac-a4aa-42a8-86d9-294c5f7e12f4")
+		)
+		(pin "2"
+			(uuid "6861e6b6-c075-41a5-a80a-d81e35171a82")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0005C")
+		(at 78.74 354.33 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d4c3049a-8a81-4d50-82c7-405cfdcfc0c1")
+		(property "Reference" "C39"
+			(at 77.3543 345.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10nF >=150V"
+			(at 74.93 345.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Oro:OP_0005C"
+			(at -17.45 345.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.kemet.com/specsheet/C0603C103J2RECAUTO7411"
+			(at -117.45 345.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 200V 0.01uF 0603 X7R 5% AEC-Q200"
+			(at 78.74 354.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.87"
+			(at -317.45 345.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Yageo Group"
+			(at -417.45 345.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "C0603C103J2RECAUTO7411"
+			(at -517.45 345.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "80-C0603C103J2REAULR"
+			(at -617.45 345.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KEMET/C0603C103J2RECAUTO7411?qs=Mv7BduZupUhtJ7MYR2YVFQ%3D%3D"
+			(at -717.45 345.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at -817.45 345.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at -917.45 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12005,7 +15175,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005C"
-			(at 14.3 115.57 0)
+			(at -17.45 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12033,7 +15203,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_00057")
-		(at 342.9 116.84 0)
+		(at 114.3 77.47 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12044,7 +15214,7 @@
 		(fields_autoplaced yes)
 		(uuid "d56f7d55-85a4-4bed-8f21-01f7419e90ff")
 		(property "Reference" "U4"
-			(at 342.9 89.248 0)
+			(at 114.3 49.878 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12054,7 +15224,7 @@
 			)
 		)
 		(property "Value" "TPS23751PWP"
-			(at 342.9 92.0809 0)
+			(at 114.3 52.7109 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12064,7 +15234,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_00057"
-			(at 342.9 116.84 0)
+			(at 114.3 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12076,7 +15246,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.ti.com/lit/gpn/tps23751"
-			(at 342.9 116.84 0)
+			(at 114.3 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12088,7 +15258,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 342.9 116.84 0)
+			(at 114.3 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12099,7 +15269,7 @@
 			)
 		)
 		(property "Oro ID" "OP:00057"
-			(at 342.9 116.84 0)
+			(at 114.3 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12172,7 +15342,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005E")
-		(at 193.04 146.05 270)
+		(at 161.29 375.92 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -12183,7 +15353,7 @@
 		(dnp no)
 		(uuid "d8b19ffb-5bf9-48dc-b379-83bac6cba0c8")
 		(property "Reference" "D6"
-			(at 199.6829 144.78 0)
+			(at 167.9329 374.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12194,7 +15364,7 @@
 			)
 		)
 		(property "Value" "B2100-13-F"
-			(at 196.85 144.78 0)
+			(at 165.1 374.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12205,7 +15375,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005E"
-			(at 193.04 146.05 0)
+			(at 161.29 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12217,7 +15387,7 @@
 			)
 		)
 		(property "Datasheet" "B2100-13-F"
-			(at 193.04 146.05 0)
+			(at 161.29 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12229,7 +15399,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 193.04 146.05 0)
+			(at 161.29 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12240,7 +15410,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005E"
-			(at 193.04 146.05 0)
+			(at 161.29 375.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12267,8 +15437,86 @@
 		)
 	)
 	(symbol
+		(lib_id "LocalPower:LAGND")
+		(at 212.09 53.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dcfbf59b-aab7-4494-823f-d28048948d64")
+		(property "Reference" "#PWR05"
+			(at 212.09 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AGND"
+			(at 212.09 57.4731 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 212.09 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 212.09 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 212.09 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f9ac16d7-516a-401d-8584-d0c52b19e1f5")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Oro:OP_0002Z")
-		(at 110.49 144.78 270)
+		(at 78.74 374.65 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -12279,7 +15527,7 @@
 		(dnp no)
 		(uuid "e147bbcd-fbcc-4454-8f02-8b912e0a38a7")
 		(property "Reference" "R9"
-			(at 109.22 130.81 0)
+			(at 77.47 360.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12290,7 +15538,7 @@
 			)
 		)
 		(property "Value" "75R 1%"
-			(at 106.7957 130.81 0)
+			(at 75.0457 360.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12301,7 +15549,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0002Z"
-			(at 14.3 130.81 0)
+			(at -17.45 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12313,7 +15561,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.koaspeer.com/catimages/Products/RK73-RT/RK73-RT.pdf"
-			(at -85.7 130.81 0)
+			(at -117.45 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12325,7 +15573,7 @@
 			)
 		)
 		(property "Description" "Thick Film Resistors - SMD 1/16watts 75ohms 1%"
-			(at 110.49 144.78 0)
+			(at 78.74 374.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12336,7 +15584,7 @@
 			)
 		)
 		(property "Height" "0.4"
-			(at -285.7 130.81 0)
+			(at -317.45 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12348,7 +15596,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KOA Speer"
-			(at -385.7 130.81 0)
+			(at -417.45 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12360,7 +15608,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "RK73H1ETTP75R0F"
-			(at -485.7 130.81 0)
+			(at -517.45 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12372,7 +15620,7 @@
 			)
 		)
 		(property "Mouser Part Number" "660-RK73H1ETTP75R0F"
-			(at -585.7 130.81 0)
+			(at -617.45 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12384,7 +15632,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KOA-Speer/RK73H1ETTP75R0F?qs=wUWquvs7oCIcRElcVFlmog%3D%3D"
-			(at -685.7 130.81 0)
+			(at -717.45 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12396,7 +15644,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at -785.7 130.81 0)
+			(at -817.45 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12408,7 +15656,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at -885.7 130.81 0)
+			(at -917.45 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12420,7 +15668,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0002Z"
-			(at 14.3 130.81 0)
+			(at -17.45 360.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12448,7 +15696,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005G")
-		(at 245.11 110.49 90)
+		(at 213.36 340.36 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -12459,7 +15707,7 @@
 		(dnp no)
 		(uuid "e21e742c-6401-47cc-bd0e-ff43ff1a0b5b")
 		(property "Reference" "D9"
-			(at 242.57 109.22 90)
+			(at 210.82 339.09 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12470,7 +15718,7 @@
 			)
 		)
 		(property "Value" "824500581 OR SMAJ58A"
-			(at 242.57 111.6443 90)
+			(at 210.82 341.5143 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12481,7 +15729,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005G"
-			(at 338.76 120.65 0)
+			(at 307.01 350.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12493,7 +15741,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.we-online.com/catalog/datasheet/824500581.pdf"
-			(at 438.76 120.65 0)
+			(at 407.01 350.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12505,7 +15753,7 @@
 			)
 		)
 		(property "Description" "WE-TVSP Power TVS Diode \" SMAJ58A \" ; Size DO-214AC; unidirectional; P Diss = 400 W; V DC = 58 V; V BR = 67.8 V; I Peak = 4.3 A; V Clamp = 93.6 V @ 4.3"
-			(at 245.11 110.49 0)
+			(at 213.36 340.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12516,7 +15764,7 @@
 			)
 		)
 		(property "Height" "2.25"
-			(at 638.76 120.65 0)
+			(at 607.01 350.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12528,7 +15776,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Wurth Elektronik"
-			(at 738.76 120.65 0)
+			(at 707.01 350.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12540,7 +15788,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "824500581"
-			(at 838.76 120.65 0)
+			(at 807.01 350.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12552,7 +15800,7 @@
 			)
 		)
 		(property "Mouser Part Number" "710-824500581"
-			(at 938.76 120.65 0)
+			(at 907.01 350.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12564,7 +15812,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/824500581?qs=16w8nSHsg3u%252BQvaXil7lrg%3D%3D"
-			(at 1038.76 120.65 0)
+			(at 1007.01 350.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12576,7 +15824,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 1138.76 120.65 0)
+			(at 1107.01 350.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12588,7 +15836,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 1238.76 120.65 0)
+			(at 1207.01 350.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12600,7 +15848,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005G"
-			(at 338.76 120.65 0)
+			(at 307.01 350.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12628,7 +15876,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0005F")
-		(at 234.95 88.9 0)
+		(at 203.2 318.77 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -12640,7 +15888,7 @@
 		(fields_autoplaced yes)
 		(uuid "e3a1d930-3cb7-410b-a87e-d0c539561f28")
 		(property "Reference" "FB2"
-			(at 226.314 82.8505 0)
+			(at 194.564 312.7205 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12650,7 +15898,7 @@
 			)
 		)
 		(property "Value" "500R >=1.5A"
-			(at 226.314 85.2748 0)
+			(at 194.564 315.1448 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12660,7 +15908,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0005F"
-			(at 218.44 183.82 0)
+			(at 186.69 413.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12672,7 +15920,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.murata.com/en-us/api/pdfdownloadapi?cate=cgsubChipFerriBead&partno=NFZ2MSD501SZ10%23"
-			(at 218.44 283.82 0)
+			(at 186.69 513.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12684,7 +15932,7 @@
 			)
 		)
 		(property "Description" "Ferrite Beads 500  OHM  3.2A"
-			(at 226.568 74.422 0)
+			(at 194.818 304.292 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12695,7 +15943,7 @@
 			)
 		)
 		(property "Height" "1.2"
-			(at 218.44 483.82 0)
+			(at 186.69 713.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12707,7 +15955,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Murata Electronics"
-			(at 218.44 583.82 0)
+			(at 186.69 813.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12719,7 +15967,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "NFZ2MSD501SZ10L"
-			(at 218.44 683.82 0)
+			(at 186.69 913.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12731,7 +15979,7 @@
 			)
 		)
 		(property "Mouser Part Number" "81-NFZ2MSD501SZ10L"
-			(at 218.44 783.82 0)
+			(at 186.69 1013.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12743,7 +15991,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/NFZ2MSD501SZ10L?qs=rkhjVJ6%2F3EJLxrZuR74EMg%3D%3D"
-			(at 218.44 883.82 0)
+			(at 186.69 1113.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12755,7 +16003,7 @@
 			)
 		)
 		(property "Arrow Part Number" "NFZ2MSD501SZ10L"
-			(at 218.44 983.82 0)
+			(at 186.69 1213.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12767,7 +16015,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/nfz2msd501sz10l/murata-manufacturing?utm_currency=USD&region=nac"
-			(at 218.44 1083.82 0)
+			(at 186.69 1313.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12779,7 +16027,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0005F"
-			(at 218.44 183.82 0)
+			(at 186.69 413.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12806,9 +16054,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Oro:OP_0000R")
-		(at 121.92 163.83 270)
-		(mirror x)
+		(lib_id "Oro:OP_0005J")
+		(at 243.84 39.37 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12817,31 +16064,29 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "f78b4649-65de-4553-b989-3d49e0261214")
-		(property "Reference" "C40"
-			(at 118.618 156.2678 90)
+		(uuid "e7913e2e-de39-42d8-89c8-c23b50e669db")
+		(property "Reference" "T2"
+			(at 258.445 32.1775 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Value" "1000pF >=2kV"
-			(at 118.618 158.6921 90)
+		(property "Value" "NA5730-ALD"
+			(at 258.445 34.6018 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Oro:OP_0000R"
-			(at 25.73 154.94 0)
+		(property "Footprint" "Oro:OP_0005J"
+			(at 275.59 134.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12852,8 +16097,8 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://katalog.we-online.com/pbs/datasheet/885342210004.pdf"
-			(at -74.27 154.94 0)
+		(property "Datasheet" "https://www.coilcraft.com/pdfs/na5730.pdf"
+			(at 275.59 234.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12864,8 +16109,8 @@
 				(justify left top)
 			)
 		)
-		(property "Description" "Multilayer Ceramic Chip Capacitor WCAP-CSMH Series 1808 1000pF X7R1808102KC00DFCT10000"
-			(at 121.92 163.83 0)
+		(property "Description" "Audio Transformers / Signal Transformers NA5730 SMT Flyback For TI TPS23751/2"
+			(at 243.84 17.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12875,20 +16120,8 @@
 				)
 			)
 		)
-		(property "Height" "2.2"
-			(at -274.27 154.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Name" "Wurth Elektronik"
-			(at -374.27 154.94 0)
+		(property "Height" "11.43"
+			(at 275.59 434.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12899,8 +16132,8 @@
 				(justify left top)
 			)
 		)
-		(property "Manufacturer_Part_Number" "885342210004"
-			(at -474.27 154.94 0)
+		(property "Manufacturer_Name" "COILCRAFT"
+			(at 275.59 534.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12911,8 +16144,8 @@
 				(justify left top)
 			)
 		)
-		(property "Mouser Part Number" "710-885342210004"
-			(at -574.27 154.94 0)
+		(property "Manufacturer_Part_Number" "NA5730-ALD"
+			(at 275.59 634.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12923,8 +16156,20 @@
 				(justify left top)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/885342210004?qs=MLItCLRbWsya%2F3qdX09FHQ%3D%3D"
-			(at -674.27 154.94 0)
+		(property "Mouser Part Number" "994-NA5730-ALD"
+			(at 275.59 734.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Coilcraft/NA5730-ALD?qs=ZYnrCdKdyeeezEGhfUt6Hg%3D%3D"
+			(at 275.59 834.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12936,7 +16181,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at -774.27 154.94 0)
+			(at 275.59 934.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12948,7 +16193,409 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at -874.27 154.94 0)
+			(at 275.59 1034.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Oro ID" "OP:0005J"
+			(at 275.59 134.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "11"
+			(uuid "bfe1ee6a-be24-4eb8-8359-26ca6c162422")
+		)
+		(pin "2"
+			(uuid "27bd87f7-16a0-44e5-b204-aa7a41bb36dc")
+		)
+		(pin "1"
+			(uuid "b1da22c9-ca0a-4624-b245-b8efed35cf50")
+		)
+		(pin "9"
+			(uuid "810099c9-6a8c-4d56-85c2-498159c8d44b")
+		)
+		(pin "12"
+			(uuid "26fe0865-9dc8-4cd6-9ecf-e0ee4123932d")
+		)
+		(pin "10"
+			(uuid "5633e084-2038-4b01-ac66-5a8c20fb3905")
+		)
+		(pin "3"
+			(uuid "77bed658-493a-4532-9b8d-9a4dd3253235")
+		)
+		(pin "7"
+			(uuid "2776dce2-35b3-4e57-b67e-1c07fb5a7d01")
+		)
+		(pin "6"
+			(uuid "d166e741-9b5d-4455-b61d-33cf680cfa4e")
+		)
+		(pin "5"
+			(uuid "3603362f-c23c-4a09-b06b-eee14537e357")
+		)
+		(pin "8"
+			(uuid "fb345e18-b3c5-4c03-ade1-fa8150c6e469")
+		)
+		(pin "4"
+			(uuid "3333f246-04f6-4f8f-959d-7b3ee7a30ba4")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "T2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0005N")
+		(at 176.53 41.91 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f014745a-2991-4acd-90dc-5d3836fc5339")
+		(property "Reference" "C48"
+			(at 179.07 44.45 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47uF 63V"
+			(at 179.07 46.99 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Oro:OP_0005N"
+			(at 176.53 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "EEE-FK1J470P"
+			(at 176.53 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 176.53 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0005N"
+			(at 176.53 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c60584ae-e039-49de-a92a-ef7e763f142c")
+		)
+		(pin "2"
+			(uuid "ddbf6c16-95f7-4336-af60-b9a048d40867")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "C48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0005L")
+		(at 207.01 49.53 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f4256f05-64ff-464e-8eef-b6e4924cb25b")
+		(property "Reference" "C45"
+			(at 208.28 34.29 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "1uF 100V X7R 1210"
+			(at 222.25 36.83 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Oro:OP_0005L"
+			(at 207.01 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "1210B105K101CT"
+			(at 207.01 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 207.01 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0005L"
+			(at 207.01 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "f6b2e24b-98cd-4b09-9ccc-acc30d9d7634")
+		)
+		(pin "1"
+			(uuid "a8115c88-87cd-4104-a0c8-cc1021ef1736")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "C45")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0000R")
+		(at 90.17 393.7 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f78b4649-65de-4553-b989-3d49e0261214")
+		(property "Reference" "C40"
+			(at 86.868 386.1378 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "1000pF >=2kV"
+			(at 86.868 388.5621 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Oro:OP_0000R"
+			(at -6.02 384.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://katalog.we-online.com/pbs/datasheet/885342210004.pdf"
+			(at -106.02 384.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "Multilayer Ceramic Chip Capacitor WCAP-CSMH Series 1808 1000pF X7R1808102KC00DFCT10000"
+			(at 90.17 393.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "2.2"
+			(at -306.02 384.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Wurth Elektronik"
+			(at -406.02 384.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "885342210004"
+			(at -506.02 384.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "710-885342210004"
+			(at -606.02 384.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/885342210004?qs=MLItCLRbWsya%2F3qdX09FHQ%3D%3D"
+			(at -706.02 384.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at -806.02 384.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at -906.02 384.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12960,7 +16607,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0000R"
-			(at 25.73 154.94 0)
+			(at -6.02 384.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12981,6 +16628,102 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
 					(reference "C40")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0005L")
+		(at 212.09 49.53 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fe96113d-2941-4c53-ab42-4b16ca399b72")
+		(property "Reference" "C44"
+			(at 210.82 34.29 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "1uF 100V X7R 1210"
+			(at 214.7316 47.1364 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Oro:OP_0005L"
+			(at 212.09 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "1210B105K101CT"
+			(at 212.09 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 212.09 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0005L"
+			(at 212.09 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "2dc90423-0cac-4461-9022-d72d43f9e989")
+		)
+		(pin "1"
+			(uuid "dffc91b2-ec95-4865-a349-f383da7e3c4a")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "C44")
 					(unit 1)
 				)
 			)
