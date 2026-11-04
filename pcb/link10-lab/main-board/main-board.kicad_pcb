@@ -185,6 +185,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -420,6 +421,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -2628,6 +2630,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -4308,6 +4311,370 @@
 		)
 		(embedded_fonts no)
 		(model "${KIPRJMOD}/../lib/step/OP_0001R.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "Oro:OP_00062"
+		(layer "F.Cu")
+		(uuid "2577ef18-2e0d-414f-9c44-4599bdb9107e")
+		(at 171.25 58.55)
+		(descr "HCPL-181-060E")
+		(tags "Phototransistor")
+		(property "Reference" "Q3"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(uuid "8ac69468-800d-4440-8693-04c16aa46d0f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.254)
+				)
+			)
+		)
+		(property "Value" "HCPL-181-06AE"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "0559b332-db12-4624-80e6-2b5183ba9fa0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.254)
+				)
+			)
+		)
+		(property "Datasheet" "https://docs.broadcom.com/doc/HCPL-181-Phototransistor-Optocoupler-SMD-Mini-Flat-Type-DS"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1dbd312d-61ed-4a1c-bdc3-bc4ed2363c8e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "BROADCOM LIMITED - HCPL-181-06AE - OPTOCOUPLER, SMD, TRANSISTOR O/P"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e1a5a003-11b1-4986-b803-20a1432234a2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Oro ID" "OP:00062"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "08f6dece-2fd9-41de-a72c-c63c90e09d9c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "2.4"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f766b54f-ec16-4f5a-bb26-4691e1a9d3fd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer_Name" "Avago Technologies"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f806c2b9-00c2-4475-8d55-58cabcaf41ee")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "HCPL-181-06AE"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "86aab84d-5dcc-4745-acb6-4ced75a7f29b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number" "630-HCPL-181-06AE"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "36b0b7bf-af90-4987-a17b-e5086f2a54ee")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Broadcom-Avago/HCPL-181-06AE?qs=xnajaXqBF9921eQAB58x%252BQ%3D%3D"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9bbb07f0-ef32-46a4-81b9-90eed3a96489")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "54d7f9c4-8344-4c5a-81a8-d37657c02d8a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8dd14874-4842-4027-b9a5-0bf2ded6f686")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/5fd21dd6-1ba7-4ca4-bad7-34447a37c333/fc456449-ff41-4e4d-a93a-4b8c9ca8dd4a")
+		(sheetname "/Ethernet Port + PoE/")
+		(sheetfile "mainboard-eth-port-poe.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "4" "3")
+			)
+		)
+		(attr smd)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.975 -1.945)
+			(end -2.2 -1.945)
+			(stroke
+				(width 0.2)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "25a64677-846f-4371-94b9-805d5a9225fd")
+		)
+		(fp_line
+			(start -1.85 -1.85)
+			(end 1.85 -1.85)
+			(stroke
+				(width 0.2)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "73400ed7-0c89-44ad-9ae1-0e4f213930cd")
+		)
+		(fp_line
+			(start -1.85 1.85)
+			(end -1.85 -1.85)
+			(stroke
+				(width 0.2)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "5b16543d-df23-4039-89bf-25c06eb71b1e")
+		)
+		(fp_line
+			(start 1.85 -1.85)
+			(end 1.85 1.85)
+			(stroke
+				(width 0.2)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "97d4a942-ec14-4984-bf66-a79c5b0925ae")
+		)
+		(fp_line
+			(start 1.85 1.85)
+			(end -1.85 1.85)
+			(stroke
+				(width 0.2)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "3691ddfb-3edd-4104-941e-6be306f23b9f")
+		)
+		(fp_line
+			(start -4.225 -2.325)
+			(end 4.225 -2.325)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "46394efd-db9a-4f8d-b085-9d57e9487d8b")
+		)
+		(fp_line
+			(start -4.225 2.325)
+			(end -4.225 -2.325)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "55c31e6e-9f92-47d4-af9e-79264485a22a")
+		)
+		(fp_line
+			(start 4.225 -2.325)
+			(end 4.225 2.325)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "fbc9975c-db2a-4665-aa33-5d058ec8bda3")
+		)
+		(fp_line
+			(start 4.225 2.325)
+			(end -4.225 2.325)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "badc8307-b90d-4a23-add1-c939fdb9707c")
+		)
+		(fp_line
+			(start -2.2 -1.85)
+			(end 2.2 -1.85)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "022a4e87-f492-44cc-bd58-ddd2565f31f4")
+		)
+		(fp_line
+			(start -2.2 0.69)
+			(end 0.34 -1.85)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "9a7660fa-474c-463e-8612-d47299bda5df")
+		)
+		(fp_line
+			(start -2.2 1.85)
+			(end -2.2 -1.85)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "e238ef89-b2c1-43e2-a601-3d9da739d5a3")
+		)
+		(fp_line
+			(start 2.2 -1.85)
+			(end 2.2 1.85)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "654c86eb-3982-4c60-a5e8-b6986c4f2c36")
+		)
+		(fp_line
+			(start 2.2 1.85)
+			(end -2.2 1.85)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "446fe7c6-84f1-422a-bfa2-9742a783d316")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "5a5b5505-c387-4c3e-92d7-2fbe1af12626")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.254)
+				)
+			)
+		)
+		(pad "1" smd rect
+			(at -3.088 -1.27 90)
+			(size 0.65 1.775)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net "unconnected-(Q3-Pad1)")
+			(pinfunction "1_1")
+			(pintype "unspecified")
+			(uuid "2c1ed249-cc80-41ca-b612-a68aad7acff3")
+		)
+		(pad "2" smd rect
+			(at -3.088 1.27 90)
+			(size 0.65 1.775)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net "unconnected-(Q3-Pad2)")
+			(pinfunction "2_2")
+			(pintype "unspecified")
+			(uuid "be64ea9a-72f1-4759-a082-2f4d4a271acb")
+		)
+		(pad "3" smd rect
+			(at 3.088 1.27 90)
+			(size 0.65 1.775)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net "/Ethernet Port + PoE/AGND")
+			(pinfunction "3_3")
+			(pintype "unspecified")
+			(uuid "d5a14f78-3082-4660-ac9d-23e52e187aa8")
+		)
+		(pad "4" smd rect
+			(at 3.088 -1.27 90)
+			(size 0.65 1.775)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net "Net-(U4-CTL)")
+			(pinfunction "4_4")
+			(pintype "unspecified")
+			(uuid "cd16a045-61ae-4ec5-bbe4-e2340121134a")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../lib/step/OP_00062.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -6161,7 +6528,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "EEE-FK1E220R"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -6198,16 +6565,10 @@
 		(path "/5fd21dd6-1ba7-4ca4-bad7-34447a37c333/1a27fbb6-e960-4dc2-8af7-65fa5554e653")
 		(sheetname "/Ethernet Port + PoE/")
 		(sheetfile "mainboard-eth-port-poe.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -2.8829 -2.8829)
+			(start -2.8829 -1.4)
 			(end -2.8829 -0.86614)
 			(stroke
 				(width 0.1524)
@@ -6218,7 +6579,7 @@
 		)
 		(fp_line
 			(start -2.8829 0.86614)
-			(end -2.8829 2.8829)
+			(end -2.8829 1.4)
 			(stroke
 				(width 0.1524)
 				(type solid)
@@ -6227,7 +6588,27 @@
 			(uuid "2f0ad7d9-deec-4284-b5de-89f8efeb17da")
 		)
 		(fp_line
-			(start -2.8829 2.8829)
+			(start -1.2 -2.8829)
+			(end -2.8829 -1.4)
+			(stroke
+				(width 0.12)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "94c9bc92-2ff9-4f1b-9fbe-1bae590c7637")
+		)
+		(fp_line
+			(start -1.2 2.8829)
+			(end -2.8829 1.4)
+			(stroke
+				(width 0.12)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "3aba668c-cc42-4abf-95af-dac4ab42debd")
+		)
+		(fp_line
+			(start -1.2 2.8829)
 			(end 2.8829 2.8829)
 			(stroke
 				(width 0.1524)
@@ -6238,7 +6619,7 @@
 		)
 		(fp_line
 			(start 2.8829 -2.8829)
-			(end -2.8829 -2.8829)
+			(end -1.2 -2.8829)
 			(stroke
 				(width 0.1524)
 				(type solid)
@@ -6573,7 +6954,7 @@
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -90 -0 -180)
 			)
 		)
 	)
@@ -7870,7 +8251,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "EEE-FK1J470P"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -7900,7 +8281,6 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -7908,12 +8288,6 @@
 		(path "/5fd21dd6-1ba7-4ca4-bad7-34447a37c333/f014745a-2991-4acd-90dc-5d3836fc5339")
 		(sheetname "/Ethernet Port + PoE/")
 		(sheetfile "mainboard-eth-port-poe.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8303,9 +8677,177 @@
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz -90 -0 -0)
+				(xyz -90 -0 -180)
 			)
 		)
+	)
+	(footprint "TestPoint:TestPoint_Pad_2.0x2.0mm"
+		(layer "F.Cu")
+		(uuid "350cd04b-060b-4b09-a282-26c62108d760")
+		(at 116 51.05)
+		(descr "SMD rectangular pad as test Point, square 2.0mm side length")
+		(tags "test point SMD pad rectangle square")
+		(property "Reference" "TP13"
+			(at 0 -1.998 0)
+			(layer "F.SilkS")
+			(uuid "af54384d-c747-4db1-8c70-267249100568")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "POE_GATE"
+			(at 0 2.05 0)
+			(layer "F.Fab")
+			(uuid "9751b1d1-48ef-470f-82ce-1df17a421d60")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6adca822-1d09-4aca-80f9-075b8c49b2f3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7a3c2431-5427-470c-ac80-15b841bd6efb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/5fd21dd6-1ba7-4ca4-bad7-34447a37c333/69c99ca8-d9f7-4775-b2cd-ca0a02bb9078")
+		(sheetname "/Ethernet Port + PoE/")
+		(sheetfile "mainboard-eth-port-poe.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
+		(attr exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.2 -1.2)
+			(end 1.2 -1.2)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "684be1cb-c225-47f2-bf14-dae27a1c71e9")
+		)
+		(fp_line
+			(start -1.2 1.2)
+			(end -1.2 -1.2)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "0ab0fca1-a45f-4bc5-9ebb-598626b11a89")
+		)
+		(fp_line
+			(start 1.2 -1.2)
+			(end 1.2 1.2)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "1daae958-08ac-4130-b5e6-5d39f0964780")
+		)
+		(fp_line
+			(start 1.2 1.2)
+			(end -1.2 1.2)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "fc3268c8-03f4-4588-a40c-201879c4af3c")
+		)
+		(fp_line
+			(start -1.5 -1.5)
+			(end -1.5 1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "15ae0fa7-0a87-4dde-bc2d-0257c59dfbfa")
+		)
+		(fp_line
+			(start -1.5 -1.5)
+			(end 1.5 -1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "d0d0e880-2e92-40f9-9f30-d52670ac895f")
+		)
+		(fp_line
+			(start 1.5 1.5)
+			(end -1.5 1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "ad35a02c-ea88-43c5-a726-d422871544cd")
+		)
+		(fp_line
+			(start 1.5 1.5)
+			(end 1.5 -1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "e399aba5-68a5-4ef9-806c-a69fc923f645")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -2 0)
+			(layer "F.Fab")
+			(uuid "ee369cf2-6e18-407e-8676-3f8f636c6dc8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd rect
+			(at 0 0)
+			(size 2 2)
+			(layers "F.Cu" "F.Mask")
+			(net "Net-(U4-GATE)")
+			(pinfunction "1_1")
+			(pintype "passive")
+			(uuid "bc677154-77f6-4a08-9400-ac930f7e98a6")
+		)
+		(embedded_fonts no)
 	)
 	(footprint "Oro:OP_0005D"
 		(layer "F.Cu")
@@ -9329,6 +9871,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -12056,7 +12599,7 @@
 			(at -2.849999 1.625001 90)
 			(size 0.399999 1.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "unconnected-(U4-SRD-Pad7)")
+			(net "Net-(U4-SRD)")
 			(pinfunction "SRD_7")
 			(pintype "output")
 			(uuid "ea430adc-d68f-43de-9b64-57e17c3debb2")
@@ -12065,7 +12608,7 @@
 			(at -2.849999 2.275002 90)
 			(size 0.399999 1.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "unconnected-(U4-CTL-Pad8)")
+			(net "Net-(U4-CTL)")
 			(pinfunction "CTL_8")
 			(pintype "input")
 			(uuid "c80fc379-d9ec-4852-bcc1-09b78c68d7a0")
@@ -14708,6 +15251,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -18282,6 +18826,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -30856,6 +31401,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -31366,6 +31912,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -34192,6 +34739,174 @@
 				(xyz 0 0 0)
 			)
 		)
+	)
+	(footprint "TestPoint:TestPoint_Pad_2.0x2.0mm"
+		(layer "F.Cu")
+		(uuid "8e44c2d3-e23e-4cf2-b488-c5d436571d17")
+		(at 116 47)
+		(descr "SMD rectangular pad as test Point, square 2.0mm side length")
+		(tags "test point SMD pad rectangle square")
+		(property "Reference" "TP12"
+			(at 0 -1.998 0)
+			(layer "F.SilkS")
+			(uuid "b1a979cb-358b-481e-bc02-e11f2bb4518b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "POE_CS"
+			(at 0 2.05 0)
+			(layer "F.Fab")
+			(uuid "3e301f80-3d60-4365-a35e-a7fdd340c369")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4f4a56e5-3e1f-48cb-adaf-022c2f932b5d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8390aa4e-f0c8-4f20-8451-8aa6a633a00c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/5fd21dd6-1ba7-4ca4-bad7-34447a37c333/4d65af6f-d0ee-4916-b5a9-4451c9c28be8")
+		(sheetname "/Ethernet Port + PoE/")
+		(sheetfile "mainboard-eth-port-poe.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
+		(attr exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.2 -1.2)
+			(end 1.2 -1.2)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e5f65df9-701a-4e52-9352-0a52b92ff398")
+		)
+		(fp_line
+			(start -1.2 1.2)
+			(end -1.2 -1.2)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "2550b0ea-5739-4cf8-ad9e-fe187c4f9b73")
+		)
+		(fp_line
+			(start 1.2 -1.2)
+			(end 1.2 1.2)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e748892d-48f1-4f72-a2af-43f8c526d8af")
+		)
+		(fp_line
+			(start 1.2 1.2)
+			(end -1.2 1.2)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "5881c1c0-a299-4d55-a2fc-e1cd1ed4204e")
+		)
+		(fp_line
+			(start -1.5 -1.5)
+			(end -1.5 1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "b87754fe-0124-4f8a-a29e-4e4d58228e8b")
+		)
+		(fp_line
+			(start -1.5 -1.5)
+			(end 1.5 -1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "d36fa812-0f65-4c28-84bb-5cf7361b7bad")
+		)
+		(fp_line
+			(start 1.5 1.5)
+			(end -1.5 1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "c057ff9c-f6f2-4ff7-86a9-404aa5698780")
+		)
+		(fp_line
+			(start 1.5 1.5)
+			(end 1.5 -1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "4f198239-6655-4c0e-8535-8b28e40ee136")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -2 0)
+			(layer "F.Fab")
+			(uuid "b147229b-cb3e-45b2-8cf1-425aee0c13b5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd rect
+			(at 0 0)
+			(size 2 2)
+			(layers "F.Cu" "F.Mask")
+			(net "Net-(U4-CS)")
+			(pinfunction "1_1")
+			(pintype "passive")
+			(uuid "7475454b-2532-4630-8e73-a5be54aec7bd")
+		)
+		(embedded_fonts no)
 	)
 	(footprint "Oro:OP_0000F"
 		(layer "F.Cu")
@@ -38380,6 +39095,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -38687,6 +39403,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -43695,6 +44412,174 @@
 	)
 	(footprint "TestPoint:TestPoint_Pad_2.0x2.0mm"
 		(layer "F.Cu")
+		(uuid "cdb01952-e4ad-4d02-b730-2d15f23de38d")
+		(at 116 42.95)
+		(descr "SMD rectangular pad as test Point, square 2.0mm side length")
+		(tags "test point SMD pad rectangle square")
+		(property "Reference" "TP11"
+			(at 0 -1.998 0)
+			(layer "F.SilkS")
+			(uuid "3a5a5d51-a8ec-4103-bc4d-236610bbaace")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "POE_PRIM_SWITCH_WAV"
+			(at 0 2.05 0)
+			(layer "F.Fab")
+			(uuid "4708845c-e780-4630-9bda-51eb499ad80d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "438ad544-afc2-4125-ad98-c21bb32ae870")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7b0cfe63-2d5c-4ab0-b1ef-2b92c3e39839")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/5fd21dd6-1ba7-4ca4-bad7-34447a37c333/d861b4d0-d1fe-4e1e-9eda-feef5965d6bb")
+		(sheetname "/Ethernet Port + PoE/")
+		(sheetfile "mainboard-eth-port-poe.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
+		(attr exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.2 -1.2)
+			(end 1.2 -1.2)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "2df579ae-b2bc-4e39-aeca-3768e8d68a3d")
+		)
+		(fp_line
+			(start -1.2 1.2)
+			(end -1.2 -1.2)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "d70711fa-b73f-474d-9cb1-31190b72c2fb")
+		)
+		(fp_line
+			(start 1.2 -1.2)
+			(end 1.2 1.2)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "a683886d-0dde-4888-9f44-a3a8227ed65e")
+		)
+		(fp_line
+			(start 1.2 1.2)
+			(end -1.2 1.2)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "d0cf4ea9-e8bc-483f-b6f7-b2c6af0a230a")
+		)
+		(fp_line
+			(start -1.5 -1.5)
+			(end -1.5 1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "d783b8ef-b6b3-40ba-8f53-58fd734744e7")
+		)
+		(fp_line
+			(start -1.5 -1.5)
+			(end 1.5 -1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "d6fd9e44-3aaf-4a2a-8441-82b1908e1ef6")
+		)
+		(fp_line
+			(start 1.5 1.5)
+			(end -1.5 1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "f7a89a1f-e4f1-4fbe-85c1-812b70eca8d2")
+		)
+		(fp_line
+			(start 1.5 1.5)
+			(end 1.5 -1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "7b6836b4-0670-4920-903e-99e88fd2c16f")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -2 0)
+			(layer "F.Fab")
+			(uuid "ae3f0572-4cd6-4fd9-ae39-52e05422aa2a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd rect
+			(at 0 0)
+			(size 2 2)
+			(layers "F.Cu" "F.Mask")
+			(net "Net-(D10-A)")
+			(pinfunction "1_1")
+			(pintype "passive")
+			(uuid "6a8f63db-a418-4f60-aceb-0adcb0694297")
+		)
+		(embedded_fonts no)
+	)
+	(footprint "TestPoint:TestPoint_Pad_2.0x2.0mm"
+		(layer "F.Cu")
 		(uuid "ce5efc13-6859-4e53-852a-04d9a28033ac")
 		(at 133.525 68.985)
 		(descr "SMD rectangular pad as test Point, square 2.0mm side length")
@@ -45981,6 +46866,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -49288,6 +50174,370 @@
 		)
 		(embedded_fonts no)
 		(model "${KIPRJMOD}/../lib/step/OP_0001Y.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "Oro:OP_00062"
+		(layer "F.Cu")
+		(uuid "ea24f817-cede-4a9d-adc4-a39cb5dbfb8d")
+		(at 171.25 52.85)
+		(descr "HCPL-181-060E")
+		(tags "Phototransistor")
+		(property "Reference" "Q2"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(uuid "72a45649-61ec-4233-89c5-cf1d2e4627c8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.254)
+				)
+			)
+		)
+		(property "Value" "HCPL-181-06AE"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "f8d2d257-bb32-4b4e-b69d-1308ad3a61f4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.254)
+				)
+			)
+		)
+		(property "Datasheet" "https://docs.broadcom.com/doc/HCPL-181-Phototransistor-Optocoupler-SMD-Mini-Flat-Type-DS"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f2bedc51-32e2-40aa-91a6-c6e6781a256a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "BROADCOM LIMITED - HCPL-181-06AE - OPTOCOUPLER, SMD, TRANSISTOR O/P"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9dc8d979-e755-4340-94e5-3c7a2a9a70b1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Oro ID" "OP:00062"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2db5640e-d07d-49c6-a2ef-abfe6a250580")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "2.4"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dc2eecc0-7af3-40ec-bc0f-78bd3a5c4480")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer_Name" "Avago Technologies"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5604e399-89c8-4df4-8656-55aed6525e99")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "HCPL-181-06AE"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "91c6587e-51dd-41f2-9645-185a9dd7646c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number" "630-HCPL-181-06AE"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7958a91e-fdc3-47b2-89d6-cf1db0661b18")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Broadcom-Avago/HCPL-181-06AE?qs=xnajaXqBF9921eQAB58x%252BQ%3D%3D"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "114a9969-ab77-47bc-958b-c6f960aa06ad")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "813e96dc-bb44-4282-abae-710373eddb63")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "332c81c1-9533-4950-9067-80a6c55523b6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/5fd21dd6-1ba7-4ca4-bad7-34447a37c333/11ce2237-a84f-49a4-b554-8d0309f8c48e")
+		(sheetname "/Ethernet Port + PoE/")
+		(sheetfile "mainboard-eth-port-poe.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "4" "3")
+			)
+		)
+		(attr smd)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.975 -1.945)
+			(end -2.2 -1.945)
+			(stroke
+				(width 0.2)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "5bb690ad-9032-4fb1-a6d3-948fb8b53f2a")
+		)
+		(fp_line
+			(start -1.85 -1.85)
+			(end 1.85 -1.85)
+			(stroke
+				(width 0.2)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e7c15c97-7913-4b03-8e51-5d4c003f1b84")
+		)
+		(fp_line
+			(start -1.85 1.85)
+			(end -1.85 -1.85)
+			(stroke
+				(width 0.2)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "d97eaaba-6110-4b37-99cb-7c1396039599")
+		)
+		(fp_line
+			(start 1.85 -1.85)
+			(end 1.85 1.85)
+			(stroke
+				(width 0.2)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "9814b60e-3aa7-4801-bce1-df9b6f3e6125")
+		)
+		(fp_line
+			(start 1.85 1.85)
+			(end -1.85 1.85)
+			(stroke
+				(width 0.2)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e0243ff3-3a0a-4a23-82e6-d83280ac54fd")
+		)
+		(fp_line
+			(start -4.225 -2.325)
+			(end 4.225 -2.325)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "0a33feb5-4dc5-4046-a8b8-76e4b480c744")
+		)
+		(fp_line
+			(start -4.225 2.325)
+			(end -4.225 -2.325)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "8da2ef08-77dd-4ef1-be30-a2feaa7bd1dc")
+		)
+		(fp_line
+			(start 4.225 -2.325)
+			(end 4.225 2.325)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "52126671-5bd8-4970-9dfc-3512f58d5361")
+		)
+		(fp_line
+			(start 4.225 2.325)
+			(end -4.225 2.325)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "24c74d0c-4556-44df-8025-11b3e34ec7d8")
+		)
+		(fp_line
+			(start -2.2 -1.85)
+			(end 2.2 -1.85)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "c54e7690-7de2-4a7a-98e9-536a7c0abc19")
+		)
+		(fp_line
+			(start -2.2 0.69)
+			(end 0.34 -1.85)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "f74247d0-2bd1-4168-af7e-c37970ff01e5")
+		)
+		(fp_line
+			(start -2.2 1.85)
+			(end -2.2 -1.85)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "6cab4f77-7a30-43a6-a97a-8b036c675006")
+		)
+		(fp_line
+			(start 2.2 -1.85)
+			(end 2.2 1.85)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "fff36a19-8478-4dd3-a248-d4338f3640a3")
+		)
+		(fp_line
+			(start 2.2 1.85)
+			(end -2.2 1.85)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "a7cd1cda-d03b-4550-8309-a7d2206c7199")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "039b0546-6cd0-4c0b-ab77-06fc6e1de53e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.254)
+				)
+			)
+		)
+		(pad "1" smd rect
+			(at -3.088 -1.27 90)
+			(size 0.65 1.775)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net "unconnected-(Q2-Pad1)")
+			(pinfunction "1_1")
+			(pintype "unspecified")
+			(uuid "92fdeb0a-7954-49e2-bd7e-7f0aed109981")
+		)
+		(pad "2" smd rect
+			(at -3.088 1.27 90)
+			(size 0.65 1.775)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net "Net-(U4-SRD)")
+			(pinfunction "2_2")
+			(pintype "unspecified")
+			(uuid "d444191e-f4df-48e9-b29e-51d406cd9b0a")
+		)
+		(pad "3" smd rect
+			(at 3.088 1.27 90)
+			(size 0.65 1.775)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net "unconnected-(Q2-Pad3)")
+			(pinfunction "3_3")
+			(pintype "unspecified")
+			(uuid "d1b5def3-2167-426b-8792-c1b758308422")
+		)
+		(pad "4" smd rect
+			(at 3.088 -1.27 90)
+			(size 0.65 1.775)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(net "unconnected-(Q2-Pad4)")
+			(pinfunction "4_4")
+			(pintype "unspecified")
+			(uuid "c50f325c-b433-43c7-b68d-23007afa7841")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../lib/step/OP_00062.step"
 			(offset
 				(xyz 0 0 0)
 			)
