@@ -1,0 +1,76 @@
+(module "OP_0006Q"
+	(layer F.Cu)
+	(descr "0.063\" L x 0.031\" W (1.60mm x 0.80mm)")
+	(tags "Capacitor")
+	(property "Oro ID" "OP:0006Q")
+	(attr smd)
+	(fp_text reference C**
+		(at 0 0)
+		(layer F.SilkS)
+		(effects (font (size 1.27 1.27) (thickness 0.254)))
+	)
+	(fp_text user %R
+		(at 0 0)
+		(layer F.Fab)
+		(effects (font (size 1.27 1.27) (thickness 0.254)))
+	)
+	(fp_text value "CAPC1608X87N"
+		(at 0 0)
+		(layer F.SilkS)
+		hide
+		(effects (font (size 1.27 1.27) (thickness 0.254)))
+	)
+	(fp_line
+		(start -1.24 -0.64)
+		(end 1.24 -0.64)
+		(layer F.CrtYd)
+		(width 0.05)
+	)
+	(fp_line
+		(start 1.24 -0.64)
+		(end 1.24 0.64)
+		(layer F.CrtYd)
+		(width 0.05)
+	)
+	(fp_line
+		(start 1.24 0.64)
+		(end -1.24 0.64)
+		(layer F.CrtYd)
+		(width 0.05)
+	)
+	(fp_line
+		(start -1.24 0.64)
+		(end -1.24 -0.64)
+		(layer F.CrtYd)
+		(width 0.05)
+	)
+	(fp_line
+		(start -0.8 -0.4)
+		(end 0.8 -0.4)
+		(layer F.Fab)
+		(width 0.1)
+	)
+	(fp_line (start 0.8 -0.4) (end 0.8 0.4) (layer F.Fab) (width 0.1))
+	(fp_line (start 0.8 0.4) (end -0.8 0.4) (layer F.Fab) (width 0.1))
+	(fp_line
+		(start -0.8 0.4)
+		(end -0.8 -0.4)
+		(layer F.Fab)
+		(width 0.1)
+	)
+	(pad 1 smd rect
+		(at -0.7 0 0)
+		(size 0.78 0.98)
+		(layers F.Cu F.Paste F.Mask)
+	)
+	(pad 2 smd rect
+		(at 0.7 0 0)
+		(size 0.78 0.98)
+		(layers F.Cu F.Paste F.Mask)
+	)
+	(model ${KIPRJMOD}/../lib/step/OP_0006Q.step
+		(at (xyz -0.034251968691668 -0.01889763737288 0))
+		(scale (xyz 1 1 1))
+		(rotate (xyz -90 0 0))
+	)
+)

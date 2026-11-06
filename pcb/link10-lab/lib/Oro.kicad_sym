@@ -1,6 +1,194 @@
 (kicad_symbol_lib
 	(version 20251024)
 	(generator "oro_lab")
+	(symbol "OP_00001"
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 3.81 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "0603YD105KAT2A"
+			(at 3.81 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_00001"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://datasheets.kyocera-avx.com/cx5r-KGM.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "1 µF ±10% 16V Ceramic Capacitor X5R 0603 (1608 Metric)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:00001"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "KYOCERA AVX"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "0603YD105KAT2A"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "478-KGM15BR51C105KTCT-ND, 478-KGM15BR51C105KTDKR-ND, 478-KGM15BR51C105KTTR-ND"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "0603YD105KAT2A"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "581-0603YD105K"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "0603YD105KAT2A"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_0603G_AVX CAP_0603G_AVX-M CAP_0603G_AVX-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_00001_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.4798 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.4798 -1.905) (xy 3.4798 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 0) (xy 5.08 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 -1.905) (xy 4.1148 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 7.62 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_00001_1_2"
+			(polyline
+				(pts (xy -1.905 -3.4798) (xy 1.905 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.905 -4.1148) (xy 1.905 -4.1148))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -2.54) (xy 0 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -4.1148) (xy 0 -5.08))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -7.62 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 	(symbol "OP_00006"
 		(pin_names (offset 0.762))
 		(exclude_from_sim no)
@@ -293,26 +481,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "0402B103J160CT"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "CAP_0402_N_WAL CAP_0402_N_WAL-M CAP_0402_N_WAL-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Walsin Technology Corporation"
 			(at 0 0 0)
 			(show_name no)
@@ -333,6 +501,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "0402B103J160CT"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_0402_N_WAL CAP_0402_N_WAL-M CAP_0402_N_WAL-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0000F_1_1"
 			(polyline
@@ -685,26 +873,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "CL05A475KP5NRNC"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "CAP_CL05_SAM CAP_CL05_SAM-M CAP_CL05_SAM-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 0 0 0)
 			(show_name no)
@@ -739,6 +907,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "CL05A475KP5NRNC"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_CL05_SAM CAP_CL05_SAM-M CAP_CL05_SAM-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00014_1_1"
 			(polyline
@@ -1121,26 +1309,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "CRCW04024K70FKEDHP"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "RES_CRCW_0402_VIS RES_CRCW_0402_VIS-M RES_CRCW_0402_VIS-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Vishay Dale"
 			(at 0 0 0)
 			(show_name no)
@@ -1175,6 +1343,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "CRCW04024K70FKEDHP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "RES_CRCW_0402_VIS RES_CRCW_0402_VIS-M RES_CRCW_0402_VIS-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0001C_1_1"
 			(polyline
@@ -1569,26 +1757,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "EMK105CC6225KV-F"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "CAP_MK105_V_TAY CAP_MK105_V_TAY-M CAP_MK105_V_TAY-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Taiyo Yuden"
 			(at 0 0 0)
 			(show_name no)
@@ -1623,6 +1791,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "EMK105CC6225KV-F"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_MK105_V_TAY CAP_MK105_V_TAY-M CAP_MK105_V_TAY-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0001G_1_1"
 			(polyline
@@ -2591,26 +2779,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "JMK105BJ105KVHF"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "cap_UMK105 CG080CV-F_TAY cap_UMK105 CG080CV-F_TAY-M cap_UMK105 CG080CV-F_TAY-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Taiyo Yuden"
 			(at -3.302 9.652 0)
 			(show_name no)
@@ -2638,6 +2806,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "JMK105BJ105KVHF"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "cap_UMK105 CG080CV-F_TAY cap_UMK105 CG080CV-F_TAY-M cap_UMK105 CG080CV-F_TAY-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0001R_1_1"
 			(polyline
@@ -2821,26 +3009,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "MEM2061-01-188-00-A"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "MEM2061-01-188-00-A_GCT"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "GCT"
 			(at 0 0 0)
 			(show_name no)
@@ -2861,6 +3029,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "MEM2061-01-188-00-A"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "MEM2061-01-188-00-A_GCT"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0001X_0_1"
 			(polyline
@@ -3103,26 +3291,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "MSAST1L3YB5104KFNA01"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "CAP_MSAS1L-3_TAY CAP_MSAS1L-3_TAY-M CAP_MSAS1L-3_TAY-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Taiyo Yuden"
 			(at 0 0 0)
 			(show_name no)
@@ -3157,6 +3325,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "MSAST1L3YB5104KFNA01"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_MSAS1L-3_TAY CAP_MSAS1L-3_TAY-M CAP_MSAS1L-3_TAY-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0001Y_1_1"
 			(polyline
@@ -3340,20 +3528,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_keywords" "PMV20ENR"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "QNMOS1G2S3D_TO-236AB_SOT23_NEX QNMOS1G2S3D_TO-236AB_SOT23_NEX-M QNMOS1G2S3D_TO-236AB_SOT23_NEX-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Nexperia USA Inc."
 			(at 0 0 0)
 			(show_name no)
@@ -3388,6 +3562,20 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "PMV20ENR"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "QNMOS1G2S3D_TO-236AB_SOT23_NEX QNMOS1G2S3D_TO-236AB_SOT23_NEX-M QNMOS1G2S3D_TO-236AB_SOT23_NEX-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0001Z_0_1"
 			(polyline
@@ -3631,26 +3819,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "RMCF0402FT10K0"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "STA_RMCF0402_STP STA_RMCF0402_STP-M STA_RMCF0402_STP-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "SEI Stackpole"
 			(at -0.762 6.604 0)
 			(show_name no)
@@ -3678,6 +3846,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "RMCF0402FT10K0"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "STA_RMCF0402_STP STA_RMCF0402_STP-M STA_RMCF0402_STP-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00021_1_1"
 			(polyline
@@ -3737,6 +3925,274 @@
 			)
 		)
 		(symbol "OP_00021_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 12.7 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_00023"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "RT0402FRE0749R9L"
+			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_00023"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.waldomemea.com/productfiles/mf-YAG/YAG-RT0402FRE0749R9L.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "49.9 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Thin Film"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Mfr. Number" "RT0402FRE0749R9L"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser URL" "null"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description_1" "Res Thin Film 0402 49.9 Ohm 1% 0.063W(1/16W) ±50ppm/C Pad SMD T/R"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "DigiKey ID" "YAG3346CT-ND"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser ID" "603-RT0402FRE0749R9L"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow ID" "RT0402FRE0749R9L"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Name" "Yageo"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:00023"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "Yageo America"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "RT0402FRE0749R9L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "5831-RT0402FRE0749R9LTR-ND, YAG3346CT-ND, YAG3346DKR-ND, YAG3346TR-ND"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "RT0402FRE0749R9L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "603-RT0402FRE0749R9L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "RT0402FRE0749R9L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "RC0402N_YAG RC0402N_YAG-M RC0402N_YAG-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_00023_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -1.27) (xy 10.16 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_00023_1_2"
 			(polyline
 				(pts (xy -1.27 8.255) (xy 1.27 9.525))
 				(stroke (width 0.2032) (type default))
@@ -3891,26 +4347,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "STM32F479VGT6"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "LQFP100_STM LQFP100_STM-M LQFP100_STM-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "STMicroelectronics"
 			(at 0 0 0)
 			(show_name no)
@@ -3938,6 +4374,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "STM32F479VGT6"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "LQFP100_STM LQFP100_STM-M LQFP100_STM-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00028_1_1"
 			(polyline
@@ -5048,13 +5504,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "ki_keywords" "RK73H1ETTP75R0F"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Oro ID" "OP:0002Z"
 			(at 0 6.096 0)
 			(show_name no)
@@ -5096,6 +5545,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "RK73H1ETTP75R0F"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0002Z_1_1"
 			(polyline
@@ -5260,26 +5716,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "SG73P2ATTD102J"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "RES_SG73P_2A_KOA RES_SG73P_2A_KOA-M RES_SG73P_2A_KOA-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "KOA Speer Electronics, Inc."
 			(at 0 0 0)
 			(show_name no)
@@ -5314,6 +5750,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "SG73P2ATTD102J"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "RES_SG73P_2A_KOA RES_SG73P_2A_KOA-M RES_SG73P_2A_KOA-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0003D_1_1"
 			(polyline
@@ -6414,20 +6870,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_keywords" "5034801400"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "CON_5034801400_MOL"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Molex"
 			(at 0 0 0)
 			(show_name no)
@@ -6462,6 +6904,20 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "5034801400"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CON_5034801400_MOL"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00052_1_1"
 			(polyline
@@ -7684,26 +8140,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "W25Q128JVPIM"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "8L-WSON_6X5MM_WIN 8L-WSON_6X5MM_WIN-M 8L-WSON_6X5MM_WIN-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Winbond Electronics"
 			(at 0 0 0)
 			(show_name no)
@@ -7731,6 +8167,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "W25Q128JVPIM"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "8L-WSON_6X5MM_WIN 8L-WSON_6X5MM_WIN-M 8L-WSON_6X5MM_WIN-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00054_0_1"
 			(polyline
@@ -7893,6 +8349,20 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
+		(property "Manufacturer" "AP Memory"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "878-APS6404L-3SQR-SN"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
 		(property "ki_locked" ""
 			(at 0 0 0)
 			(show_name no)
@@ -7912,20 +8382,6 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27)))
-		)
-		(property "Manufacturer" "AP Memory"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27) (italic yes)))
-		)
-		(property "Mouser P/N" "878-APS6404L-3SQR-SN"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(symbol "OP_00055_0_1"
 			(polyline
@@ -8701,26 +9157,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "TPS23751PWP"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "PWP0016J_N PWP0016J_M PWP0016J_L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Texas Instruments"
 			(at 0 0 0)
 			(show_name no)
@@ -8748,6 +9184,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "TPS23751PWP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "PWP0016J_N PWP0016J_M PWP0016J_L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00057_0_1"
 			(polyline
@@ -11665,13 +12121,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "ki_keywords" "C0603C103J2RECAUTO7411"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Oro ID" "OP:0005C"
 			(at 0 0 0)
 			(show_name no)
@@ -11699,6 +12148,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "C0603C103J2RECAUTO7411"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005C_1_1"
 			(polyline
@@ -11980,20 +12436,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_keywords" "B2100-13-F"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "SMB_DIO SMB_DIO-M SMB_DIO-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Diodes Incorporated"
 			(at 0 0 0)
 			(show_name no)
@@ -12028,6 +12470,20 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "B2100-13-F"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "SMB_DIO SMB_DIO-M SMB_DIO-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005E_1_1"
 			(polyline
@@ -12549,13 +13005,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_keywords" "CR1206-FX-2492ELF"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Bourns Inc."
 			(at -0.762 6.604 0)
 			(show_name no)
@@ -12583,6 +13032,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "CR1206-FX-2492ELF"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005H_1_1"
 			(polyline
@@ -13518,26 +13974,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "1210B105K101CT"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "CAP_1210_K_WAL CAP_1210_K_WAL-M CAP_1210_K_WAL-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Walsin Technology Corporation"
 			(at 0 0 0)
 			(show_name no)
@@ -13558,6 +13994,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "1210B105K101CT"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_1210_K_WAL CAP_1210_K_WAL-M CAP_1210_K_WAL-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005L_1_1"
 			(polyline
@@ -13692,26 +14148,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "CL21B104KCFSFNE"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "CAP_CL21_SAM CAP_CL21_SAM-M CAP_CL21_SAM-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 0 0 0)
 			(show_name no)
@@ -13746,6 +14182,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "CL21B104KCFSFNE"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_CL21_SAM CAP_CL21_SAM-M CAP_CL21_SAM-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005M_1_1"
 			(polyline
@@ -13880,26 +14336,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "EEE-FK1J470P"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "CAP_EEFK_F_PAN CAP_EEFK_F_PAN-M CAP_EEFK_F_PAN-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Panasonic Industry"
 			(at 0 0 0)
 			(show_name no)
@@ -13934,6 +14370,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "EEE-FK1J470P"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_EEFK_F_PAN CAP_EEFK_F_PAN-M CAP_EEFK_F_PAN-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005N_1_1"
 			(polyline
@@ -14093,13 +14549,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_keywords" "RK73H2BTTD1502F"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "KOA Speer Electronics, Inc."
 			(at -0.762 6.604 0)
 			(show_name no)
@@ -14134,6 +14583,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "RK73H2BTTD1502F"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005O_1_1"
 			(polyline
@@ -14474,13 +14930,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_keywords" "RC0603FR-07475KL"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "YAGEO"
 			(at -0.762 6.604 0)
 			(show_name no)
@@ -14508,6 +14957,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "RC0603FR-07475KL"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005Q_1_1"
 			(polyline
@@ -15167,26 +15623,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "0805B105K250CT"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "CAP_0805_D_WAL CAP_0805_D_WAL-M CAP_0805_D_WAL-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Walsin Technology Corporation"
 			(at 0 0 0)
 			(show_name no)
@@ -15214,6 +15650,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "0805B105K250CT"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_0805_D_WAL CAP_0805_D_WAL-M CAP_0805_D_WAL-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005T_1_1"
 			(polyline
@@ -15349,13 +15805,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_keywords" "0805S8J0100T5E"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Royalohm"
 			(at -0.762 6.604 0)
 			(show_name no)
@@ -15369,6 +15818,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "0805S8J0100T5E"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005U_1_1"
 			(polyline
@@ -15533,26 +15989,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "EEE-FK1E220R"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "CAP_EEFK_C_PAN CAP_EEFK_C_PAN-M CAP_EEFK_C_PAN-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Panasonic Industry"
 			(at 0 0 0)
 			(show_name no)
@@ -15587,6 +16023,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "EEE-FK1E220R"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_EEFK_C_PAN CAP_EEFK_C_PAN-M CAP_EEFK_C_PAN-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005V_1_1"
 			(polyline
@@ -15746,13 +16202,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_keywords" "ERJ-P06F63R4V"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Panasonic Industry"
 			(at -0.762 6.604 0)
 			(show_name no)
@@ -15780,6 +16229,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "ERJ-P06F63R4V"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005W_1_1"
 			(polyline
@@ -15945,13 +16401,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_keywords" "CR0805-FX-3402ELF"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Bourns Inc."
 			(at -0.762 6.604 0)
 			(show_name no)
@@ -15979,6 +16428,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "CR0805-FX-3402ELF"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005X_1_1"
 			(polyline
@@ -16144,13 +16600,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_keywords" "CR0603-FX-43R2ELF"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Bourns Inc."
 			(at -0.762 6.604 0)
 			(show_name no)
@@ -16178,6 +16627,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "CR0603-FX-43R2ELF"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005Y_1_1"
 			(polyline
@@ -16342,26 +16798,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "MMBT3906LT1G"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "SOT-23_ONS SOT-23_ONS-M SOT-23_ONS-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "onsemi"
 			(at 0 0 0)
 			(show_name no)
@@ -16396,6 +16832,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "MMBT3906LT1G"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "SOT-23_ONS SOT-23_ONS-M SOT-23_ONS-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0005Z_0_1"
 			(polyline
@@ -16534,26 +16990,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_keywords" "RMCF2512FTR100"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "RES_RMCF2512_STP RES_RMCF2512_STP-M RES_RMCF2512_STP-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Stackpole Electronics Inc"
 			(at 0 0 0)
 			(show_name no)
@@ -16581,6 +17017,26 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "RMCF2512FTR100"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "RES_RMCF2512_STP RES_RMCF2512_STP-M RES_RMCF2512_STP-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00060_0_1"
 			(polyline
@@ -16951,20 +17407,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
 		)
-		(property "ki_keywords" "SI2304DDS-T1-BE3"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "ki_fp_filters" "SOT-23_SI2304_VIS SOT-23_SI2304_VIS-M SOT-23_SI2304_VIS-L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Manufacturer" "Vishay Siliconix"
 			(at 0 0 0)
 			(show_name no)
@@ -16999,6 +17441,20 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "SI2304DDS-T1-BE3"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "SOT-23_SI2304_VIS SOT-23_SI2304_VIS-M SOT-23_SI2304_VIS-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00063_0_1"
 			(polyline
@@ -17194,13 +17650,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "ki_keywords" "CRCW0603549KFKEAHP"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Oro ID" "OP:00064"
 			(at 0 6.096 0)
 			(show_name no)
@@ -17228,6 +17677,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "CRCW0603549KFKEAHP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00064_1_1"
 			(polyline
@@ -17386,13 +17842,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "ki_keywords" "RC0603FR-1333K2L"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Oro ID" "OP:00065"
 			(at 0 6.096 0)
 			(show_name no)
@@ -17420,6 +17869,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "RC0603FR-1333K2L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00065_1_1"
 			(polyline
@@ -17578,13 +18034,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "ki_keywords" "CQ03WAF1003T5E"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Oro ID" "OP:00066"
 			(at 0 6.096 0)
 			(show_name no)
@@ -17605,6 +18054,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "CQ03WAF1003T5E"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00066_1_1"
 			(polyline
@@ -17763,13 +18219,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "ki_keywords" "RMCF0603FT332R"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Oro ID" "OP:00067"
 			(at 0 6.096 0)
 			(show_name no)
@@ -17804,6 +18253,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "RMCF0603FT332R"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00067_1_1"
 			(polyline
@@ -17962,13 +18418,6 @@
 			(hide yes)
 			(effects (font (size 1.27 1.27)))
 		)
-		(property "ki_keywords" "885012206105"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects (font (size 1.27 1.27)))
-		)
 		(property "Oro ID" "OP:00068"
 			(at 0 0 0)
 			(show_name no)
@@ -18003,6 +18452,13 @@
 			(do_not_autoplace no)
 			(hide yes)
 			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "885012206105"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00068_1_1"
 			(polyline
@@ -18092,90 +18548,125 @@
 	)
 	(symbol "OP_00069"
 		(pin_names (offset 0.254))
+		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(id 0)
 			(at 3.81 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects (font (size 1.524 1.524)))
 		)
 		(property "Value" "CGA3E2X7R1H223K080AA"
-			(id 1)
 			(at 3.81 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects (font (size 1.524 1.524)))
 		)
 		(property "Footprint" "Oro:OP_00069"
-			(id 2)
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_general_en.pdf"
-			(id 3)
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
-		)
-		(property "ki_keywords" "CGA3E2X7R1H223K080AA"
-			(id 4)
-			(at 0 0 0)
-			(effects (font (size 1.27 1.27)) hide)
-		)
-		(property "ki_locked" ""
-			(id 5)
-			(at 0 0 0)
-			(effects (font (size 1.27 1.27)) hide)
-		)
-		(property "ki_fp_filters" "CAP_1608_TDK CAP_1608_TDK-M CAP_1608_TDK-L"
-			(id 6)
-			(at 0 0 0)
-			(effects (font (size 1.27 1.27)) hide)
-		)
-		(property "Oro ID" "OP:00069"
-			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Description" "0.022 µF ±10% 50V Ceramic Capacitor X7R 0603 (1608 Metric)"
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:00069"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Manufacturer" "TDK"
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Arrow P/N" "CGA3E2X7R1H223K080AA"
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Digi-Key P/N" "445-5663-1-ND, 445-5663-2-ND, 445-5663-6-ND"
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Farnell P/N" "CGA3E2X7R1H223K080AA"
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Mouser P/N" "810-CGA3E2X7R1H223K"
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "CGA3E2X7R1H223K080AA"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_1608_TDK CAP_1608_TDK-M CAP_1608_TDK-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_00069_1_1"
 			(polyline
-				(pts (xy 3.4798 -1.905) (xy 3.4798 1.905))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(pts (xy 2.54 0) (xy 3.4798 0))
+				(stroke (width 0.2032) (type default))
 				(fill (type none))
 			)
 			(polyline
-				(pts (xy 4.1148 -1.905) (xy 4.1148 1.905))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(pts (xy 3.4798 -1.905) (xy 3.4798 1.905))
+				(stroke (width 0.2032) (type default))
 				(fill (type none))
 			)
 			(polyline
 				(pts (xy 4.1148 0) (xy 5.08 0))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(stroke (width 0.2032) (type default))
 				(fill (type none))
 			)
 			(polyline
-				(pts (xy 2.54 0) (xy 3.4798 0))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(pts (xy 4.1148 -1.905) (xy 4.1148 1.905))
+				(stroke (width 0.2032) (type default))
 				(fill (type none))
 			)
 			(pin unspecified line
@@ -18202,22 +18693,22 @@
 		(symbol "OP_00069_1_2"
 			(polyline
 				(pts (xy -1.905 -3.4798) (xy 1.905 -3.4798))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(stroke (width 0.2032) (type default))
 				(fill (type none))
 			)
 			(polyline
 				(pts (xy -1.905 -4.1148) (xy 1.905 -4.1148))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
-				(fill (type none))
-			)
-			(polyline
-				(pts (xy 0 -4.1148) (xy 0 -5.08))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(stroke (width 0.2032) (type default))
 				(fill (type none))
 			)
 			(polyline
 				(pts (xy 0 -2.54) (xy 0 -3.4798))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -4.1148) (xy 0 -5.08))
+				(stroke (width 0.2032) (type default))
 				(fill (type none))
 			)
 			(pin unspecified line
@@ -18241,119 +18732,145 @@
 				)
 			)
 		)
+		(embedded_fonts no)
 	)
 	(symbol "OP_0006A"
 		(pin_names (offset 0.254))
+		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(id 0)
 			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects (font (size 1.524 1.524)))
 		)
 		(property "Value" "CRCW06033K65FKEA"
-			(id 1)
 			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects (font (size 1.524 1.524)))
 		)
 		(property "Footprint" "Oro:OP_0006A"
-			(id 2)
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(id 3)
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
-		)
-		(property "ki_keywords" "CRCW06033K65FKEA"
-			(id 4)
-			(at 0 0 0)
-			(effects (font (size 1.27 1.27)) hide)
-		)
-		(property "ki_locked" ""
-			(id 5)
-			(at 0 0 0)
-			(effects (font (size 1.27 1.27)) hide)
-		)
-		(property "ki_fp_filters" "RES_CRCW_0603 RES_CRCW_0603-M RES_CRCW_0603-L"
-			(id 6)
-			(at 0 0 0)
-			(effects (font (size 1.27 1.27)) hide)
-		)
-		(property "Oro ID" "OP:0006A"
-			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Description" "3.65 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film"
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0006A"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Manufacturer" "Vishay Dale"
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Arrow P/N" "CRCW06033K65FKEA"
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Digi-Key P/N" "541-3.65KHCT-ND, 541-3.65KHDKR-ND, 541-3.65KHTR-ND"
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Farnell P/N" "CRCW06033K65FKEA"
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
 		)
 		(property "Mouser P/N" "71-CRCW0603-3.65K-E3"
 			(at 0 0 0)
-			(effects (font (size 1.27 1.27) italic) hide)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "CRCW06033K65FKEA"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "RES_CRCW_0603 RES_CRCW_0603-M RES_CRCW_0603-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
 		)
 		(symbol "OP_0006A_1_1"
 			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
 				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(stroke (width 0.2032) (type default))
 				(fill (type none))
 			)
 			(polyline
 				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(stroke (width 0.2032) (type default))
 				(fill (type none))
 			)
 			(polyline
 				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(stroke (width 0.2032) (type default))
 				(fill (type none))
 			)
 			(polyline
 				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(stroke (width 0.2032) (type default))
 				(fill (type none))
 			)
 			(polyline
 				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
-				(fill (type none))
-			)
-			(polyline
-				(pts (xy 2.54 0) (xy 3.175 1.27))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(stroke (width 0.2032) (type default))
 				(fill (type none))
 			)
 			(polyline
 				(pts (xy 9.525 -1.27) (xy 10.16 0))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(stroke (width 0.2032) (type default))
 				(fill (type none))
-			)
-			(pin unspecified line
-				(at 0 0 0)
-				(length 2.54)
-				(name ""
-					(effects (font (size 1.27 1.27)))
-				)
-				(number "2"
-					(effects (font (size 1.27 1.27)))
-				)
 			)
 			(pin unspecified line
 				(at 12.7 0 180)
@@ -18365,45 +18882,8 @@
 					(effects (font (size 1.27 1.27)))
 				)
 			)
-		)
-		(symbol "OP_0006A_1_2"
-			(polyline
-				(pts (xy 0 2.54) (xy -1.27 3.175))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
-				(fill (type none))
-			)
-			(polyline
-				(pts (xy -1.27 3.175) (xy 1.27 4.445))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
-				(fill (type none))
-			)
-			(polyline
-				(pts (xy 1.27 4.445) (xy -1.27 5.715))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
-				(fill (type none))
-			)
-			(polyline
-				(pts (xy -1.27 5.715) (xy 1.27 6.985))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
-				(fill (type none))
-			)
-			(polyline
-				(pts (xy -1.27 8.255) (xy 1.27 9.525))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
-				(fill (type none))
-			)
-			(polyline
-				(pts (xy 1.27 9.525) (xy 0 10.16))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
-				(fill (type none))
-			)
-			(polyline
-				(pts (xy 1.27 6.985) (xy -1.27 8.255))
-				(stroke (width 0.2032) (type default) (color 0 0 0 0))
-				(fill (type none))
-			)
 			(pin unspecified line
-				(at 0 0 90)
+				(at 0 0 0)
 				(length 2.54)
 				(name ""
 					(effects (font (size 1.27 1.27)))
@@ -18411,6 +18891,43 @@
 				(number "2"
 					(effects (font (size 1.27 1.27)))
 				)
+			)
+		)
+		(symbol "OP_0006A_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
 			)
 			(pin unspecified line
 				(at 0 12.7 270)
@@ -18422,6 +18939,3928 @@
 					(effects (font (size 1.27 1.27)))
 				)
 			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
 		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006B"
+		(pin_names (offset 0.254) (hide yes))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at 7.62 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "MBR0530T1G"
+			(at 7.62 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006B"
+			(at -2.54 13.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mbr0530t1-d.pdf"
+			(at -2.54 13.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "Diode 30 V 500mA Surface Mount SOD-123"
+			(at -2.54 13.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0006B"
+			(at -2.54 13.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "onsemi"
+			(at -2.54 13.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "MBR0530T1G"
+			(at -2.54 13.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "MBR0530T1GOSCT-ND, MBR0530T1GOSDKR-ND, MBR0530T1GOSTR-ND"
+			(at -2.54 13.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "MBR0530T1G"
+			(at -2.54 13.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "863-MBR0530T1G"
+			(at -2.54 13.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "MBR0530T1G"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "SOD-123_ONS SOD-123_ONS-M SOD-123_ONS-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0006B_0_1"
+			(polyline
+				(pts (xy 5.08 2.54) (xy 6.35 2.54) (xy 6.35 1.27))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 -2.54) (xy 3.81 -2.54) (xy 3.81 -1.27))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+		)
+		(symbol "OP_0006B_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 5.08 0))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 2.54) (xy 5.08 -2.54))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 0) (xy 10.16 2.54) (xy 10.16 -2.54) (xy 5.08 0))
+				(stroke (width 0.254) (type default))
+				(fill (type outline))
+			)
+			(polyline
+				(pts (xy 10.16 0) (xy 12.7 0))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name "CATHODE"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 15.24 0 180)
+				(length 2.54)
+				(name "ANODE"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006C"
+		(pin_names (offset 0.254) (hide yes))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at 10.16 10.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "NTMFS4C55NT1G"
+			(at 10.16 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006C"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://media.digikey.com/pdf/Data%20Sheets/ON%20Semiconductor%20PDFs/NTMFS4C55N.PDF"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "N-Channel 30 V 11.9A (Ta), 78A (Tc) 770mW (Ta), 33W (Tc) Surface Mount 5-DFN (5x6) (8-SOFL)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0006C"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "onsemi"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "488-NTMFS4C55NT1GCT-ND, 488-NTMFS4C55NT1GDKR-ND, 488-NTMFS4C55NT1GTR-ND"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "863-NTMFS4C55NT1G"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "NTMFS4C55NT1G"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "SO-8FL_6P10X5P10_ONS"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0006C_0_1"
+			(polyline
+				(pts (xy 8.6212 -0.6297) (xy 7.62 0))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.668 1.524) (xy 10.668 -2.286))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 11.176 1.905) (xy 11.176 0.889))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 11.176 0.127) (xy 11.176 -0.889))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 11.176 -1.651) (xy 11.176 -2.667))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts
+					(xy 11.176 -2.159)
+					(xy 13.716 -2.159)
+					(xy 13.716 1.397)
+					(xy 11.176 1.397)
+				)
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts
+					(xy 11.43 -0.381)
+					(xy 12.446 0)
+					(xy 12.446 -0.762)
+					(xy 11.43 -0.381)
+				)
+				(stroke (width 0) (type default))
+				(fill (type outline))
+			)
+			(polyline
+				(pts (xy 11.43 -0.635) (xy 8.636 -0.635))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 12.065 -0.381)
+				(radius 2.794)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.954 2.159) (xy 12.954 1.397))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 12.954 1.397)
+				(radius 0.254)
+				(stroke (width 0) (type default))
+				(fill (type outline))
+			)
+			(circle
+				(center 12.954 -2.159)
+				(radius 0.254)
+				(stroke (width 0) (type default))
+				(fill (type outline))
+			)
+			(polyline
+				(pts (xy 12.954 -2.921) (xy 12.954 -0.381) (xy 11.176 -0.381))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.9546 -3.0405) (xy 13.97 -5.08) (xy 13.97 -10.16))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.9779 2.2667) (xy 13.97 3.81))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 13.335 0) (xy 14.097 0))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts
+					(xy 13.716 0)
+					(xy 13.335 -0.635)
+					(xy 14.097 -0.635)
+					(xy 13.716 0)
+				)
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(pin input line
+				(at 21.59 -10.16 180)
+				(length 7.62)
+				(name "SOURCE"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 21.59 -7.62 180)
+				(length 7.62)
+				(name "SOURCE"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 21.59 -5.08 180)
+				(length 7.62)
+				(name "SOURCE"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 7.62)
+				(name "GATE"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 21.59 3.81 180)
+				(length 7.62)
+				(name "DRAIN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006D"
+		(pin_names (offset 0.254) (hide yes))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "Q"
+			(at 15.875 10.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "2N7002DW"
+			(at 15.24 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006D"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N7002DW-D.PDF"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "Mosfet Array 60V 115mA 200mW Surface Mount SC-88 (SC-70-6)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0006D"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "onsemi"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "2N7002DW"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "2N7002DWCT-ND, 2N7002DWDKR-ND, 2N7002DWTR-ND"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "2N7002DW"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "512-2N7002DW"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "2N7002DW"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "SC-88/SC70-6/SOT-363_419B-02_ONS_OSI SC-88/SC70-6/SOT-363_419B-02_ONS_OSI-M SC-88/SC70-6/SOT-363_419B-02_ONS_OSI-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0006D_0_1"
+			(polyline
+				(pts (xy 7.62 5.08) (xy 7.62 -15.24))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 0) (xy 9.525 0))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -2.54) (xy 9.525 -2.54))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -7.62) (xy 9.525 -7.62))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -15.24) (xy 22.86 -15.24))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 0.635) (xy 9.525 0))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 0.635) (xy 12.7 0.635))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -2.54) (xy 9.525 -3.81))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -3.81) (xy 15.24 -3.81))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -7.62) (xy 9.525 -11.43))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -11.43) (xy 12.7 -11.43))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 1.397) (xy 17.78 1.397))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 12.7 0.635)
+				(radius 0.127)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 -0.127) (xy 12.7 1.397))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 -0.127) (xy 15.24 -0.127))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 -1.905) (xy 13.716 -1.905))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 -2.54) (xy 17.78 -2.54))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 -10.668) (xy 12.7 -12.192))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 12.7 -11.43)
+				(radius 0.127)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 13.208 -0.127)
+				(radius 0.127)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 13.208 -1.905) (xy 13.208 -0.127))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 13.208 -8.89) (xy 13.208 -10.668))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 13.208 -10.668) (xy 12.7 -10.668))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 13.716 -8.89) (xy 12.7 -8.89))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 14.732 0.889) (xy 14.732 1.905) (xy 15.748 1.397))
+				(stroke (width 0) (type default))
+				(fill (type outline))
+			)
+			(polyline
+				(pts (xy 14.732 -0.889) (xy 15.24 -1.905) (xy 15.748 -0.889))
+				(stroke (width 0) (type default))
+				(fill (type outline))
+			)
+			(polyline
+				(pts (xy 14.732 -1.905) (xy 15.748 -1.905))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 14.732 -11.684) (xy 14.732 -12.7))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 15.24 -0.635)
+				(radius 3.81)
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 15.24 -1.905) (xy 15.24 -0.127))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 15.24 -2.54) (xy 15.24 -3.81))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 15.24 -8.255) (xy 15.24 -7.62))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 15.24 -8.89) (xy 15.24 -10.668))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 15.24 -10.16)
+				(radius 3.81)
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 15.748 0.889) (xy 15.748 1.905))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 15.748 -8.89) (xy 14.732 -8.89))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 15.748 -9.906) (xy 15.24 -8.89) (xy 14.732 -9.906))
+				(stroke (width 0) (type default))
+				(fill (type outline))
+			)
+			(polyline
+				(pts (xy 15.748 -11.684) (xy 15.748 -12.7) (xy 14.732 -12.192))
+				(stroke (width 0) (type default))
+				(fill (type outline))
+			)
+			(polyline
+				(pts (xy 16.764 -1.905) (xy 17.78 -1.905))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 17.272 -0.127) (xy 17.78 -0.127))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 17.272 -1.905) (xy 17.272 -0.127))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 17.272 -8.89) (xy 17.272 -10.668))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 17.272 -10.668)
+				(radius 0.127)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 17.78 0.635) (xy 20.955 0.635))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 17.78 0.635)
+				(radius 0.127)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 17.78 -0.127) (xy 17.78 1.397))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 17.78 -8.255) (xy 12.7 -8.255))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 17.78 -8.89) (xy 16.764 -8.89))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 17.78 -10.668) (xy 15.24 -10.668))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 17.78 -10.668) (xy 17.78 -12.192))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 17.78 -11.43) (xy 21.59 -11.43))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(circle
+				(center 17.78 -11.43)
+				(radius 0.127)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 17.78 -12.192) (xy 12.7 -12.192))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 20.955 0.635) (xy 20.955 0))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 21.59 -10.16) (xy 21.59 -11.43))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 21.59 -10.16) (xy 22.86 -10.16))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 22.86 5.08) (xy 7.62 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 22.86 0) (xy 20.955 0))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 22.86 -7.62) (xy 15.24 -7.62))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 22.86 -15.24) (xy 22.86 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 7.62)
+				(name "1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -2.54 0)
+				(length 7.62)
+				(name "2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -7.62 0)
+				(length 7.62)
+				(name "3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 30.48 -10.16 180)
+				(length 7.62)
+				(name "4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 30.48 -7.62 180)
+				(length 7.62)
+				(name "5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 30.48 0 180)
+				(length 7.62)
+				(name "6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006E"
+		(pin_names (hide yes))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "D"
+			(at 10.16 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify top))
+		)
+		(property "Value" "SS8P4C-M3_87A"
+			(at 10.16 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify top))
+		)
+		(property "Footprint" "Oro:OP_0006E"
+			(at 19.05 -94.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/89029/ss8p3c.pdf"
+			(at 19.05 -194.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Description" "Diode Array 1 Pair Common Cathode 40 V 4A Surface Mount TO-277, 3-PowerDFN"
+			(at 19.05 -194.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Height" "1.2"
+			(at 19.05 -394.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Name" "Vishay"
+			(at 19.05 -494.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Part_Number" "SS8P4C-M3/87A"
+			(at 19.05 -594.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Part Number" "625-SS8P4C-M3/87A"
+			(at 19.05 -694.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-General-Semiconductor/SS8P4C-M3-87A?qs=4WjKNJoURz6%252B%252BwqdRelJdw%3D%3D"
+			(at 19.05 -794.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Part Number" ""
+			(at 19.05 -894.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Price/Stock" ""
+			(at 19.05 -994.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Oro ID" "OP:0006E"
+			(at 19.05 -94.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer" "Vishay General Semiconductor - Diodes Division"
+			(at 19.05 -194.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow P/N" "SS8P4C-M387A"
+			(at 19.05 -194.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Digi-Key P/N" "112-SS8P4C-M3/87ACT-ND, 112-SS8P4C-M3/87ADKR-ND, 112-SS8P4C-M3/87ATR-ND"
+			(at 19.05 -194.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser P/N" "625-SS8P4C-M3/87A"
+			(at 19.05 -194.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(symbol "OP_0006E_0_1"
+			(rectangle
+				(start 5.08 2.54)
+				(end 15.24 -7.62)
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 0) (xy 8.89 0))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 -5.08) (xy 8.89 -5.08))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.89 1.27) (xy 10.16 0))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.89 0) (xy 8.89 1.27))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.89 -1.27) (xy 8.89 0))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.89 -3.81) (xy 10.16 -5.08))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.89 -5.08) (xy 8.89 -3.81))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.89 -6.35) (xy 8.89 -5.08))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 1.27) (xy 10.16 -1.27))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 0) (xy 8.89 -1.27))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts
+					(xy 10.16 0)
+					(xy 12.7 0)
+					(xy 12.7 -1.27)
+					(xy 12.7 -2.54)
+					(xy 15.24 -2.54)
+				)
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -3.81) (xy 10.16 -6.35))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -5.08) (xy 8.89 -6.35))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -5.08) (xy 12.7 -5.08) (xy 12.7 -2.54))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+		)
+		(symbol "OP_0006E_1_1"
+			(pin passive line
+				(at 0 -5.08 0)
+				(length 5.08)
+				(name "A_1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 0 0)
+				(length 5.08)
+				(name "A_2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 20.32 -2.54 180)
+				(length 5.08)
+				(name "K"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006F"
+		(pin_numbers (hide yes))
+		(pin_names (offset 0) (hide yes))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "L"
+			(at 10.16 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "PA5003.331NLT"
+			(at 10.16 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "Oro:OP_0006F"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://yageogroup.com/download/datasheet/PA5003.331NLT"
+			(at 0 12.7 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Description" "330 nH Shielded Molded Inductor 19.2 A 3.52mOhm Max Nonstandard"
+			(at 0 12.7 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:0006F"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Pulse Electronics"
+			(at -6.35 13.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Arrow P/N" "PA5003.331NLT"
+			(at 0 6.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Digi-Key P/N" "553-4080-1-ND, 553-4080-2-ND, 553-4080-6-ND"
+			(at 0 12.7 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Farnell P/N" "PA5003.331NLT"
+			(at -7.62 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Mouser P/N" "673-PA5003.331NLT"
+			(at -3.81 13.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0006F_1_1"
+			(arc
+				(start 5.08 0)
+				(mid 6.35 1.219)
+				(end 7.62 0)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(arc
+				(start 7.62 0)
+				(mid 8.89 1.219)
+				(end 10.16 0)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(arc
+				(start 10.16 0)
+				(mid 11.43 1.219)
+				(end 12.7 0)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(arc
+				(start 12.7 0)
+				(mid 13.97 1.219)
+				(end 15.24 0)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(pin passive line
+				(at 0 0 0)
+				(length 5.08)
+				(name "1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 20.32 0 180)
+				(length 5.08)
+				(name "2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006G"
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 3.81 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "LMK325BJ476KMHP"
+			(at 3.81 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006G"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/2092/LMK325BJ476KMHP_SS.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "47 µF ±10% 10V Ceramic Capacitor X5R 1210 (3225 Metric)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0006G"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "Taiyo Yuden"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "LMK325BJ476KMHP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "587-6341-1-ND, 587-6341-2-ND, 587-6341-6-ND"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "LMK325BJ476KMHP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "963-LMK325BJ476KMHP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "LMK325BJ476KMHP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "LMK325M_TAY LMK325M_TAY-M LMK325M_TAY-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0006G_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.4798 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.4798 -1.905) (xy 3.4798 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 0) (xy 5.08 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 -1.905) (xy 4.1148 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 7.62 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0006G_1_2"
+			(polyline
+				(pts (xy -1.905 -3.4798) (xy 1.905 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.905 -4.1148) (xy 1.905 -4.1148))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -2.54) (xy 0 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -4.1148) (xy 0 -5.08))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -7.62 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006H"
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 3.81 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "EEE-FK0J331XP"
+			(at 3.81 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006H"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDE0000/ABA0000C1181.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "330 µF 6.3 V Aluminum Electrolytic Capacitors Radial, Can - SMD 2000 Hrs @ 105°C"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0006H"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "Panasonic Industry"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "EEE-FK0J331XP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "PCE3768CT-ND, PCE3768DKR-ND, PCE3768TR-ND"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "EEEFK0J331XP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "667-EEE-FK0J331XP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "EEE-FK0J331XP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "CAP_EEFK_D8_PAN CAP_EEFK_D8_PAN-M CAP_EEFK_D8_PAN-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0006H_1_1"
+			(polyline
+				(pts (xy 1.5748 1.27) (xy 2.8448 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 2.2098 0.635) (xy 2.2098 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 2.54 0) (xy 3.4798 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.4798 -1.905) (xy 3.4798 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 0) (xy 5.08 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(arc
+				(start 4.7541 -1.9108)
+				(mid 4.1148 0)
+				(end 4.7541 1.9108)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 7.62 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0006H_1_2"
+			(polyline
+				(pts (xy -1.905 -3.4798) (xy 1.905 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -2.54) (xy 0 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -4.1148) (xy 0 -5.08))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(arc
+				(start -1.9108 -4.7541)
+				(mid 0 -4.1148)
+				(end 1.9108 -4.7541)
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0.635 -2.2098) (xy 1.905 -2.2098))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 -1.5748) (xy 1.27 -2.8448))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 -7.62 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006I"
+		(pin_names (hide yes))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "D"
+			(at 10.16 8.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Value" "BAT54"
+			(at 10.16 6.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Footprint" "Oro:OP_0006I"
+			(at 10.16 -93.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Datasheet" "https://diotec.com/request/datasheet/bat54.pdf"
+			(at 10.16 -193.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Description" "Diode 30 V 200mA Surface Mount SOT-23 (TO-236)"
+			(at 10.16 -193.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Height" "1.2"
+			(at 10.16 -393.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Name" "Diotec"
+			(at 10.16 -493.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer_Part_Number" "BAT54"
+			(at 10.16 -593.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Part Number" "637-BAT54"
+			(at 10.16 -693.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diotec-Semiconductor/BAT54?qs=OlC7AqGiEDly6dDY2EuTHA%3D%3D"
+			(at 10.16 -793.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Part Number" "BAT54"
+			(at 10.16 -893.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/bat54/diotec-semiconductor-ag.html?utm_currency=USD&region=europe"
+			(at 10.16 -993.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Oro ID" "OP:0006I"
+			(at 10.16 -93.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Manufacturer" "Diotec Semiconductor"
+			(at 10.16 -193.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Arrow P/N" "BAT54"
+			(at 10.16 -193.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Digi-Key P/N" "4878-BAT54CT-ND, 4878-BAT54DKR-ND, 4878-BAT54TR-ND"
+			(at 10.16 -193.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Farnell P/N" "BAT54"
+			(at 10.16 -193.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Mouser P/N" "637-BAT54"
+			(at 10.16 -193.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(symbol "OP_0006I_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 5.08 0))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.064 -1.524) (xy 4.064 -2.54))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 2.54) (xy 5.08 -2.54))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 2.54) (xy 6.096 2.54))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 0) (xy 10.16 2.54) (xy 10.16 -2.54) (xy 5.08 0))
+				(stroke (width 0.254) (type default))
+				(fill (type outline))
+			)
+			(polyline
+				(pts (xy 5.08 -2.54) (xy 4.064 -2.54))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.096 1.524) (xy 6.096 2.54))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 0) (xy 10.16 0))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(pin passive line
+				(at 15.24 0 180)
+				(length 2.54)
+				(name "A"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin no_connect line
+				(at 15.24 -2.54 180)
+				(length 2.54)
+				(name "NC"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin passive line
+				(at 0 0 0)
+				(length 2.54)
+				(name "K"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006J"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "MCT06030C4122FP500"
+			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006J"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/28700/mcx0x0xpre.pdf"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "41.2 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Anti-Sulfur Thin Film"
+			(at 0.762 5.334 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:0006J"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "Vishay"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "749-MCT06030C4122FP500CT-ND, 749-MCT06030C4122FP500DKR-ND, 749-MCT06030C4122FP500TR-ND"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "594-MCT06030C4122FP5"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "MCT06030C4122FP500"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0006J_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -1.27) (xy 10.16 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0006J_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 12.7 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006K"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "ERA-3AEB6040V"
+			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006K"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "604 Ohms ±0.1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thin Film"
+			(at 0.762 5.334 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:0006K"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "Panasonic Industry"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "ERA-3AEB6040V"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "P604DBCT-ND, P604DBDKR-ND, P604DBTR-ND"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "ERA3AEB6040V"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "667-ERA-3AEB6040V, ERA-3AEB6040V"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "ERA-3AEB6040V"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0006K_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -1.27) (xy 10.16 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0006K_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 12.7 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006L"
+		(pin_names (offset 0.254) (hide yes))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at 22.86 10.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "TLV431ASNT1G"
+			(at 22.86 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006L"
+			(at -3.81 20.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/tlv431a-d.pdf"
+			(at 1.27 22.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "Shunt Voltage Reference IC Adjustable 1.24V 16 VV ±1% 20 mA 5-TSOP"
+			(at 1.27 22.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0006L"
+			(at -3.81 20.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "onsemi"
+			(at -2.54 20.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "TLV431ASNT1G"
+			(at -3.81 20.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "TLV431ASNT1GOSCT-ND, TLV431ASNT1GOSDKR-ND, TLV431ASNT1GOSTR-ND"
+			(at 1.27 22.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "TLV431ASNT1G"
+			(at -3.81 20.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "863-TLV431ASNT1G"
+			(at -3.81 20.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_keywords" "TLV431ASNT1G"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "TSOP-5_ONS TSOP-5_ONS-M TSOP-5_ONS-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0006L_0_1"
+			(pin no_connect line
+				(at -16.51 7.62 0)
+				(length 7.62)
+				(hide yes)
+				(name "NC"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin no_connect line
+				(at -16.51 5.08 0)
+				(length 7.62)
+				(hide yes)
+				(name "NC"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0006L_1_1"
+			(polyline
+				(pts (xy 8.89 0) (xy 11.43 0))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 13.97 0) (xy 13.97 -2.54))
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 16.51 1.27) (xy 15.24 2.54))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 16.51 0) (xy 11.43 -2.54) (xy 11.43 2.54) (xy 16.51 0))
+				(stroke (width 0.254) (type default))
+				(fill (type outline))
+			)
+			(polyline
+				(pts (xy 16.51 -1.27) (xy 16.51 1.27))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 16.51 -1.27) (xy 17.78 -2.54))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 19.05 0) (xy 16.51 0))
+				(stroke (width 0.254) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 21.59 0 180)
+				(length 2.54)
+				(name "CATHODE"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 13.97 -6.35 90)
+				(length 3.81)
+				(name "REFERENCE"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 6.35 0 0)
+				(length 2.54)
+				(name "ANODE"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006M"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "MCT0603MD1372DP500"
+			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006M"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/28700/mcx0x0xpre.pdf"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "13.7 kOhms ±0.5% 0.11W Chip Resistor 0603 (1608 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thin Film"
+			(at 0.762 5.334 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "MCT0603MD1372DP500"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:0006M"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "Vishay"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "749-MCT0603MD1372DP500CT-ND, 749-MCT0603MD1372DP500DKR-ND, 749-MCT0603MD1372DP500TR-ND"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "594-MCT0603MD1372DP5"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(symbol "OP_0006M_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -1.27) (xy 10.16 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0006M_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 12.7 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006N"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "CPA2512Q10R0FS-T10"
+			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006N"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.susumu.co.jp/common/pdf/CPA.pdf"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "10 Ohms ±1% 16W Chip Resistor 2512 (6332 Metric) Moisture Resistant Thin Film"
+			(at 0.762 5.334 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "CPA2512Q10R0FS-T10"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:0006N"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "Susumu"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "CPA25Q10.0CT-ND, CPA25Q10.0DKR-ND, CPA25Q10.0TR-ND"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "754-CPA2512Q10R0FST"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(symbol "OP_0006N_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -1.27) (xy 10.16 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0006N_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 12.7 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006O"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "MCT06030C4708FP500"
+			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006O"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/28700/mcx0x0xpre.pdf"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "4.7 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Anti-Sulfur Thin Film"
+			(at 0.762 5.334 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "MCT06030C4708FP500"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:0006O"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "Vishay"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "MCT06030C4708FP500"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "749-1657-1-ND, 749-1657-2-ND, 749-1657-6-ND"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "MCT06030C4708FP500"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "594-MCT06030C4708FP5"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(symbol "OP_0006O_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -1.27) (xy 10.16 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0006O_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 12.7 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006P"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "RT0603BRD074K99L"
+			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006P"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "4.99 kOhms ±0.1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Thin Film"
+			(at 0.762 5.334 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "RT0603BRD074K99L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:0006P"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "YAGEO"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "YAG1678CT-ND, YAG1678DKR-ND, YAG1678TR-ND"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "RT0603BRD074K99L"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "603-RT0603BRD074K99L"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(symbol "OP_0006P_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -1.27) (xy 10.16 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0006P_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 12.7 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006Q"
+		(in_bom yes)
+		(on_board yes)
+		(pin_names hide)
+		(property "Reference" "C"
+			(at 8.89 6.35 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Value" "C0603C471K5RAC"
+			(at 8.89 3.81 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Footprint" "Oro:OP_0006Q"
+			(at 8.89 -96.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/3/508/1/KEM_C1002_X7R_SMD.pdf"
+			(at 8.89 -196.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "ki_description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 50V 470pF X7R 0603 10%"
+			(at 8.89 -296.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Height" "0.87"
+			(at 8.89 -396.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Manufacturer_Name" "Yageo Group"
+			(at 8.89 -496.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Manufacturer_Part_Number" "C0603C471K5RAC"
+			(at 8.89 -596.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Mouser Part Number" "80-C0603C471K5RAC"
+			(at 8.89 -696.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KEMET/C0603C471K5RAC?qs=IOSO19fP00r2w1%2FdmNMwLA%3D%3D"
+			(at 8.89 -796.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Arrow Part Number" ""
+			(at 8.89 -896.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 8.89 -996.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Oro ID" "OP:0006Q"
+			(at 8.89 -96.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 50V 470pF X7R 0603 10%"
+			(at 8.89 -196.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Manufacturer" "Kemet"
+			(at 8.89 -196.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Arrow P/N" "C0603C471K5RAC"
+			(at 8.89 -196.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Mouser P/N" "80-C0603C471K5RAC"
+			(at 8.89 -196.19 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(polyline
+			(pts (xy 5.588 2.54) (xy 5.588 -2.54))
+			(stroke (width 0.254) (type default))
+			(fill (type none))
+		)
+		(polyline
+			(pts (xy 7.112 2.54) (xy 7.112 -2.54))
+			(stroke (width 0.254) (type default))
+			(fill (type none))
+		)
+		(polyline
+			(pts (xy 5.08 0) (xy 5.588 0))
+			(stroke (width 0.254) (type default))
+			(fill (type none))
+		)
+		(polyline
+			(pts (xy 7.112 0) (xy 7.62 0))
+			(stroke (width 0.254) (type default))
+			(fill (type none))
+		)
+		(pin passive line
+			(at 0 0 0)
+			(length 5.08)
+			(name "1"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "1"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 12.7 0 180)
+			(length 5.08)
+			(name "2"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "2"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+	)
+	(symbol "OP_0006R"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "RT0603BRD0720KL"
+			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006R"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "20 kOhms ±0.1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Thin Film"
+			(at 0.762 5.334 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "RT0603BRD0720KL"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:0006R"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "YAGEO"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "YAG1582CT-ND, YAG1582DKR-ND, YAG1582TR-ND"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "RT0603BRD0720KL"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "603-RT0603BRD0720KL"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(symbol "OP_0006R_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -1.27) (xy 10.16 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0006R_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 12.7 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006S"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "CPF0603F30K1C1"
+			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006S"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773200&DocType=Data%20Sheet&DocLang=English&DocFormat=pdf&PartCntxt=1879061-3"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "30.1 kOhms ±1% 0.063W, 1/16W Chip Resistor 0603 (1608 Metric) Thin Film"
+			(at 0.762 5.334 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "CPF0603F30K1C1"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:0006S"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "TE Connectivity Passive Product"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "1879338-6, CPF0603F30K1C1"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "A102260CT-ND, A102260DKR-ND, A102260TR-ND"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "CPF0603F30K1C1"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "279-CPF0603F30K1C1"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(symbol "OP_0006S_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -1.27) (xy 10.16 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0006S_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 12.7 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0006T"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 3.81 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "C4532X7R3D222K130KA"
+			(at 3.81 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0006T"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://product.tdk.com/en/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_highvoltage_en.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "2200 pF ±10% 2000V (2kV) Ceramic Capacitor X7R 1812 (4532 Metric)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "C4532X7R3D222K130KA"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:0006T"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "TDK"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "C4532X7R3D222K130KA"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "445-2389-1-ND, 445-2389-2-ND, 445-2389-6-ND"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "C4532X7R3D222K130KA"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "810-C4532X7R3D222K"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(symbol "OP_0006T_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.4798 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.4798 -1.905) (xy 3.4798 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 0) (xy 5.08 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.1148 -1.905) (xy 4.1148 1.905))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 7.62 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0006T_1_2"
+			(polyline
+				(pts (xy -1.905 -3.4798) (xy 1.905 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.905 -4.1148) (xy 1.905 -4.1148))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -2.54) (xy 0 -3.4798))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 -4.1148) (xy 0 -5.08))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -7.62 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
 	)
 )
