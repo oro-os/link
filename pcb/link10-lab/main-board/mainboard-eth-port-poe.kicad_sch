@@ -367,60 +367,42 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "OP_0005Z_1"
+		(symbol "LocalPower:LGNDPWR"
+			(power local)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0.254)
+				(offset 0)
+				(hide yes)
 			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files no)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at 12.7 10.16 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "MMBT3906LT1G"
-				(at 12.7 7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" "Oro:OP_0005Z"
-				(at 0 0 0)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
-						(italic yes)
 					)
 				)
 			)
-			(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mmbt3906lt1-d.pdf"
-				(at 0 0 0)
+			(property "Value" "GNDPWR"
+				(at 0 -3.302 0)
 				(show_name no)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
-						(italic yes)
 					)
 				)
 			)
-			(property "Description" "Bipolar (BJT) Transistor PNP 40 V 200 mA 250MHz 300 mW Surface Mount SOT-23-3 (TO-236)"
+			(property "Footprint" ""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -431,89 +413,7 @@
 					)
 				)
 			)
-			(property "Oro ID" "OP:0005Z"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Manufacturer" "onsemi"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Arrow P/N" "MMBT3906LT1G"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Digi-Key P/N" "MMBT3906LT1GOSCT-ND, MMBT3906LT1GOSDKR-ND, MMBT3906LT1GOSTR-ND"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Farnell P/N" "MMBT3906LT1G"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Mouser P/N" "863-MMBT3906LT1G"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "MMBT3906LT1G"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -524,7 +424,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "SOT-23_ONS SOT-23_ONS-M SOT-23_ONS-L"
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -535,13 +435,24 @@
 					)
 				)
 			)
-			(symbol "OP_0005Z_1_0_1"
+			(property "ki_keywords" "local power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LGNDPWR_0_1"
 				(polyline
 					(pts
-						(xy 12.7 2.54) (xy 12.7 -2.54)
+						(xy -1.016 -1.27) (xy -1.27 -2.032) (xy -1.27 -2.032)
 					)
 					(stroke
-						(width 0.127)
+						(width 0.2032)
 						(type default)
 					)
 					(fill
@@ -550,10 +461,10 @@
 				)
 				(polyline
 					(pts
-						(xy 12.7 1.27) (xy 15.24 2.54)
+						(xy -0.508 -1.27) (xy -0.762 -2.032) (xy -0.762 -2.032)
 					)
 					(stroke
-						(width 0.127)
+						(width 0.2032)
 						(type default)
 					)
 					(fill
@@ -562,115 +473,70 @@
 				)
 				(polyline
 					(pts
-						(xy 12.7 0) (xy 7.62 0)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 12.7 -1.27) (xy 15.24 -2.54)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 13.97 0)
-					(radius 3.81)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 13.97 -1.905) (xy 14.9225 -2.6988)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 13.97 -1.905) (xy 15.24 -2.2225)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 15.24 5.08) (xy 15.24 2.54)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 15.24 -2.2225) (xy 14.9225 -2.6988)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 15.24 -2.2225) (xy 14.9225 -2.6988) (xy 13.97 -1.905)
+						(xy 0 -1.27) (xy 0 0)
 					)
 					(stroke
 						(width 0)
 						(type default)
 					)
 					(fill
-						(type outline)
+						(type none)
 					)
 				)
 				(polyline
 					(pts
-						(xy 15.24 -5.08) (xy 15.24 -2.54)
+						(xy 0 -1.27) (xy -0.254 -2.032) (xy -0.254 -2.032)
 					)
 					(stroke
-						(width 0.127)
+						(width 0.2032)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-				(pin unspecified line
-					(at 0 0 0)
-					(length 7.62)
-					(name "B"
+				(polyline
+					(pts
+						(xy 0.508 -1.27) (xy 0.254 -2.032) (xy 0.254 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27) (xy -1.016 -1.27) (xy -1.016 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27) (xy 0.762 -2.032) (xy 0.762 -2.032) (xy 0.762 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "LGNDPWR_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -678,42 +544,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 22.86 -5.08 180)
-					(length 7.62)
-					(name "E"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 22.86 5.08 180)
-					(length 7.62)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -26469,8 +26299,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Oro:OP_0006T"
-			(body_styles demorgan)
+		(symbol "Oro:OP_0006U"
 			(pin_names
 				(offset 0.254)
 			)
@@ -26489,7 +26318,7 @@
 					)
 				)
 			)
-			(property "Value" "C4532X7R3D222K130KA"
+			(property "Value" "8853522130151"
 				(at 3.81 -3.81 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -26499,7 +26328,7 @@
 					)
 				)
 			)
-			(property "Footprint" "Oro:OP_0006T"
+			(property "Footprint" "Oro:OP_0006U"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -26511,7 +26340,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://product.tdk.com/en/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_highvoltage_en.pdf"
+			(property "Datasheet" "https://www.we-online.com/components/products/datasheet/8853522130151.pdf"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -26523,18 +26352,7 @@
 					)
 				)
 			)
-			(property "Description" "2200 pF ±10% 2000V (2kV) Ceramic Capacitor X7R 1812 (4532 Metric)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Oro ID" "OP:0006T"
+			(property "Description" "2200 pF ±10% 250V Ceramic Capacitor X7R 2211 (5728 Metric)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -26546,7 +26364,7 @@
 					)
 				)
 			)
-			(property "Manufacturer" "TDK"
+			(property "Oro ID" "OP:0006U"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -26558,7 +26376,7 @@
 					)
 				)
 			)
-			(property "Arrow P/N" "C4532X7R3D222K130KA"
+			(property "Manufacturer" "Würth Elektronik"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -26570,7 +26388,7 @@
 					)
 				)
 			)
-			(property "Digi-Key P/N" "445-2389-1-ND, 445-2389-2-ND, 445-2389-6-ND"
+			(property "Digi-Key P/N" "732-8853522130151CT-ND, 732-8853522130151DKR-ND, 732-8853522130151TR-ND"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -26582,7 +26400,7 @@
 					)
 				)
 			)
-			(property "Farnell P/N" "C4532X7R3D222K130KA"
+			(property "Farnell P/N" "8853522130151"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -26594,7 +26412,7 @@
 					)
 				)
 			)
-			(property "Mouser P/N" "810-C4532X7R3D222K"
+			(property "Mouser P/N" "710-8853522130151"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -26606,7 +26424,17 @@
 					)
 				)
 			)
-			(property "ki_keywords" "C4532X7R3D222K130KA"
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "8853522130151"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -26617,7 +26445,18 @@
 					)
 				)
 			)
-			(symbol "OP_0006T_1_1"
+			(property "ki_fp_filters" "CAP_522130151_WRE CAP_522130151_WRE-M CAP_522130151_WRE-L"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "OP_0006U_0_1"
 				(polyline
 					(pts
 						(xy 2.54 0) (xy 3.4798 0)
@@ -26703,7 +26542,252 @@
 					)
 				)
 			)
-			(symbol "OP_0006T_1_2"
+			(embedded_fonts no)
+		)
+		(symbol "Oro:OP_0006V"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 3.81 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "8853522130111"
+				(at 3.81 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "Oro:OP_0006V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.we-online.com/components/products/datasheet/8853522130111.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "1000 pF ±10% 250V Ceramic Capacitor X7R 2211 (5728 Metric)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Oro ID" "OP:0006V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Manufacturer" "Würth Elektronik"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Digi-Key P/N" "732-8853522130111CT-ND, 732-8853522130111DKR-ND, 732-8853522130111TR-ND"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Farnell P/N" "8853522130111"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Mouser P/N" "710-8853522130111"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "8853522130111"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CAP_8853522130_WRE CAP_8853522130_WRE-M CAP_8853522130_WRE-L"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "OP_0006V_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.4798 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.4798 -1.905) (xy 3.4798 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.1148 -1.905) (xy 4.1148 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "OP_0006V_1_2"
 				(polyline
 					(pts
 						(xy -1.905 -3.4798) (xy 1.905 -3.4798)
@@ -26791,64 +26875,154 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:GNDPWR"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
+		(symbol "Oro:OP_0006W"
 			(pin_names
-				(offset 0)
-				(hide yes)
+				(offset 0.254)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR"
-				(at 0 -5.08 0)
+			(property "Reference" "R"
+				(at 5.715 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "CHV2512-JW-105ELF"
+				(at 6.35 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "Oro:OP_0006W"
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
+						(italic yes)
 					)
 				)
 			)
-			(property "Value" "GNDPWR"
-				(at 0 -3.302 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 -1.27 0)
+			(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/chv.pdf"
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
+						(italic yes)
 					)
 				)
 			)
-			(property "Datasheet" ""
-				(at 0 -1.27 0)
+			(property "Description" "1 MOhms ±5% 1W Chip Resistor 2512 (6332 Metric) High Voltage Thick Film"
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
+						(italic yes)
 					)
 				)
 			)
-			(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(property "Oro ID" "OP:0006W"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Manufacturer" "Bourns Inc."
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Arrow P/N" "CHV2512-JW-105ELF"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Digi-Key P/N" "118-CHV2512-JW-105ELFCT-ND, 118-CHV2512-JW-105ELFDKR-ND, 118-CHV2512-JW-105ELFTR-ND"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Farnell P/N" "CHV2512-JW-105ELF"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Mouser P/N" "652-CHV2512JW105ELF"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "CHV2512-JW-105ELF"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -26859,7 +27033,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "global ground"
+			(property "ki_fp_filters" "RES_CHV2512_BRN RES_CHV2512_BRN-M RES_CHV2512_BRN-L"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -26870,10 +27044,10 @@
 					)
 				)
 			)
-			(symbol "GNDPWR_0_1"
+			(symbol "OP_0006W_1_1"
 				(polyline
 					(pts
-						(xy -1.016 -1.27) (xy -1.27 -2.032) (xy -1.27 -2.032)
+						(xy 2.54 0) (xy 3.175 1.27)
 					)
 					(stroke
 						(width 0.2032)
@@ -26885,7 +27059,7 @@
 				)
 				(polyline
 					(pts
-						(xy -0.508 -1.27) (xy -0.762 -2.032) (xy -0.762 -2.032)
+						(xy 3.175 1.27) (xy 4.445 -1.27)
 					)
 					(stroke
 						(width 0.2032)
@@ -26897,19 +27071,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -1.27) (xy 0 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.27) (xy -0.254 -2.032) (xy -0.254 -2.032)
+						(xy 4.445 -1.27) (xy 5.715 1.27)
 					)
 					(stroke
 						(width 0.2032)
@@ -26921,7 +27083,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0.508 -1.27) (xy 0.254 -2.032) (xy 0.254 -2.032)
+						(xy 5.715 1.27) (xy 6.985 -1.27)
 					)
 					(stroke
 						(width 0.2032)
@@ -26933,7 +27095,7 @@
 				)
 				(polyline
 					(pts
-						(xy 1.016 -1.27) (xy -1.016 -1.27) (xy -1.016 -1.27)
+						(xy 6.985 -1.27) (xy 8.255 1.27)
 					)
 					(stroke
 						(width 0.2032)
@@ -26945,7 +27107,7 @@
 				)
 				(polyline
 					(pts
-						(xy 1.016 -1.27) (xy 0.762 -2.032) (xy 0.762 -2.032) (xy 0.762 -2.032)
+						(xy 8.255 1.27) (xy 9.525 -1.27)
 					)
 					(stroke
 						(width 0.2032)
@@ -26955,11 +27117,21 @@
 						(type none)
 					)
 				)
-			)
-			(symbol "GNDPWR_1_1"
-				(pin power_in line
-					(at 0 0 270)
-					(length 0)
+				(polyline
+					(pts
+						(xy 9.525 -1.27) (xy 10.16 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
 					(name ""
 						(effects
 							(font
@@ -26968,6 +27140,146 @@
 						)
 					)
 					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 12.7 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "OP_0006W_1_2"
+				(polyline
+					(pts
+						(xy -1.27 8.255) (xy 1.27 9.525)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 5.715) (xy 1.27 6.985)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 3.175) (xy 1.27 4.445)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy -1.27 3.175)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 9.525) (xy 0 10.16)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 6.985) (xy -1.27 8.255)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 4.445) (xy -1.27 5.715)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 12.7 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -26996,6 +27308,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "07dba378-642c-45e6-8b0b-8f764c2b60ff")
+	)
+	(junction
+		(at 472.44 327.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0905fa70-e818-4ef2-b848-3970b79cdb58")
 	)
 	(junction
 		(at 515.62 53.34)
@@ -27232,12 +27550,6 @@
 		(uuid "541a2b4f-1179-44c7-93b2-74d0dcb349ea")
 	)
 	(junction
-		(at 415.29 143.51)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5591f85b-e696-4eee-8a9c-ae7a40f32deb")
-	)
-	(junction
 		(at 392.43 229.87)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -27296,6 +27608,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6050a397-78e3-4041-becc-786a41de48f4")
+	)
+	(junction
+		(at 222.25 373.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6187dfe0-10a8-4e89-915b-66c15936c963")
 	)
 	(junction
 		(at 326.39 142.24)
@@ -27382,6 +27700,18 @@
 		(uuid "7bcc897a-9138-43eb-ac90-42b2f21868f8")
 	)
 	(junction
+		(at 392.43 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "83400df1-afb3-4699-8ff2-261d6eb6c297")
+	)
+	(junction
+		(at 415.29 143.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8481d493-f174-48a5-a93a-ced0b4ee0834")
+	)
+	(junction
 		(at 458.47 143.51)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -27392,12 +27722,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8818660b-d746-4db6-81a3-5bee86726e3f")
-	)
-	(junction
-		(at 222.25 373.38)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "89c7db96-01e9-48c0-8c5a-0b9304070ba3")
 	)
 	(junction
 		(at 392.43 212.09)
@@ -27484,12 +27808,6 @@
 		(uuid "b119dff9-e787-438c-8180-a535c58e9e8f")
 	)
 	(junction
-		(at 392.43 138.43)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b323296d-31ee-4f2b-b400-18c89feaad30")
-	)
-	(junction
 		(at 381 189.23)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -27518,6 +27836,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ba15a290-9a87-47bc-a760-1a6ba966c2d6")
+	)
+	(junction
+		(at 492.76 327.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bb5320ed-b7c8-4d1c-b145-dfaa18b44f16")
 	)
 	(junction
 		(at 410.21 241.3)
@@ -27704,6 +28028,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f4459e45-845c-4437-8ade-c250a7f5baa2")
+	)
+	(junction
+		(at 497.84 327.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f81999d5-ccec-4951-93e8-44e08372703b")
 	)
 	(junction
 		(at 515.62 86.36)
@@ -28218,6 +28548,16 @@
 			(type default)
 		)
 		(uuid "19ec5ffb-f27f-4607-92fd-5c8adb54f63b")
+	)
+	(wire
+		(pts
+			(xy 492.76 327.66) (xy 497.84 327.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a3fbc42-3e7f-4240-b7e7-221f98e40de7")
 	)
 	(wire
 		(pts
@@ -28741,6 +29081,16 @@
 	)
 	(wire
 		(pts
+			(xy 472.44 317.5) (xy 472.44 327.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35813a6c-01e2-477e-ac25-6519178b45ba")
+	)
+	(wire
+		(pts
 			(xy 267.97 109.22) (xy 267.97 107.95)
 		)
 		(stroke
@@ -28788,6 +29138,16 @@
 			(type default)
 		)
 		(uuid "3ad1e4ab-8539-4633-a017-b8dcd8f746f9")
+	)
+	(wire
+		(pts
+			(xy 468.63 330.2) (xy 468.63 327.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b8c54f0-5b23-4139-a6b1-b5c121e056ce")
 	)
 	(wire
 		(pts
@@ -29201,6 +29561,16 @@
 	)
 	(wire
 		(pts
+			(xy 497.84 323.85) (xy 497.84 327.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4be2402c-c1b4-47ba-9d7f-0014b1b65509")
+	)
+	(wire
+		(pts
 			(xy 293.37 334.01) (xy 293.37 344.17)
 		)
 		(stroke
@@ -29298,6 +29668,16 @@
 			(type default)
 		)
 		(uuid "51baeb7d-ffde-4282-aaf4-a9b7e5cf84aa")
+	)
+	(wire
+		(pts
+			(xy 468.63 327.66) (xy 472.44 327.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51f793b3-97e4-426e-bcd8-32515407e6e1")
 	)
 	(wire
 		(pts
@@ -30041,6 +30421,16 @@
 	)
 	(wire
 		(pts
+			(xy 472.44 327.66) (xy 476.25 327.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "832d920c-902e-469f-9c9a-ed9178f99f30")
+	)
+	(wire
+		(pts
 			(xy 342.9 68.58) (xy 340.36 68.58)
 		)
 		(stroke
@@ -30351,7 +30741,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 392.43) (xy 222.25 389.89)
+			(xy 222.25 392.43) (xy 222.25 387.35)
 		)
 		(stroke
 			(width 0)
@@ -30488,6 +30878,16 @@
 			(type default)
 		)
 		(uuid "a2dc2349-48cd-451b-b3b5-68c9fd6820a1")
+	)
+	(wire
+		(pts
+			(xy 492.76 317.5) (xy 486.41 317.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2e77bc0-930a-41f4-a8ff-1608f2836600")
 	)
 	(wire
 		(pts
@@ -31131,6 +31531,16 @@
 	)
 	(wire
 		(pts
+			(xy 478.79 317.5) (xy 472.44 317.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca2b7f09-3a23-43a0-a5a7-b0e3cfdc50ed")
+	)
+	(wire
+		(pts
 			(xy 330.2 158.75) (xy 326.39 158.75)
 		)
 		(stroke
@@ -31138,6 +31548,16 @@
 			(type default)
 		)
 		(uuid "ca561e02-e7bd-416d-9cc3-99368b41fe5c")
+	)
+	(wire
+		(pts
+			(xy 492.76 327.66) (xy 492.76 317.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb173c09-36c4-4ed9-bf95-de840cd7c79c")
 	)
 	(wire
 		(pts
@@ -31241,16 +31661,6 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 373.38) (xy 222.25 377.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d1b1e58b-ed81-4472-a2ff-dfe1fb4437e6")
-	)
-	(wire
-		(pts
 			(xy 273.05 351.79) (xy 273.05 361.95)
 		)
 		(stroke
@@ -31351,6 +31761,16 @@
 	)
 	(wire
 		(pts
+			(xy 497.84 327.66) (xy 501.65 327.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7d24a75-02a4-4f17-a99a-5e952fd4b1a5")
+	)
+	(wire
+		(pts
 			(xy 100.33 88.9) (xy 100.33 116.84)
 		)
 		(stroke
@@ -31368,6 +31788,16 @@
 			(type default)
 		)
 		(uuid "d8436e52-6e20-4b25-880e-33dbe17de119")
+	)
+	(wire
+		(pts
+			(xy 222.25 373.38) (xy 222.25 379.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da5e6a5f-5496-427a-aa02-2e7e869f79bd")
 	)
 	(wire
 		(pts
@@ -31761,6 +32191,16 @@
 	)
 	(wire
 		(pts
+			(xy 497.84 327.66) (xy 497.84 330.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0d7b576-4e11-4c8a-ac7e-f569ceffef18")
+	)
+	(wire
+		(pts
 			(xy 218.44 370.84) (xy 218.44 373.38)
 		)
 		(stroke
@@ -31888,6 +32328,16 @@
 			(type default)
 		)
 		(uuid "f8fcb8da-a729-465a-af51-ca45204bd0b3")
+	)
+	(wire
+		(pts
+			(xy 488.95 327.66) (xy 492.76 327.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa8b1edf-86ee-4955-b1fd-d192f431b97b")
 	)
 	(wire
 		(pts
@@ -32128,6 +32578,17 @@
 			(justify left)
 		)
 		(uuid "a4e102dc-20eb-457c-8a9a-bc5a0bc5b6b4")
+	)
+	(hierarchical_label "CHASSIS"
+		(shape output)
+		(at 501.65 327.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a639dfd6-2215-4bf3-96fe-ce3fd21c3323")
 	)
 	(hierarchical_label "+5V_4.5A"
 		(shape output)
@@ -32456,6 +32917,161 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
 					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0006W")
+		(at 476.25 327.66 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "06acf4cc-a99c-49e7-9414-170675cfb0f7")
+		(property "Reference" "R10"
+			(at 482.6 321.658 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1-2.2M 2kV"
+			(at 482.6 324.4909 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "Oro:OP_0006W"
+			(at 476.25 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/chv.pdf"
+			(at 476.25 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" "1 MOhms ±5% 1W Chip Resistor 2512 (6332 Metric) High Voltage Thick Film"
+			(at 476.25 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0006W"
+			(at 476.25 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Manufacturer" "Bourns Inc."
+			(at 476.25 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Arrow P/N" "CHV2512-JW-105ELF"
+			(at 476.25 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Digi-Key P/N" "118-CHV2512-JW-105ELFCT-ND, 118-CHV2512-JW-105ELFDKR-ND, 118-CHV2512-JW-105ELFTR-ND"
+			(at 476.25 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Farnell P/N" "CHV2512-JW-105ELF"
+			(at 476.25 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mouser P/N" "652-CHV2512JW105ELF"
+			(at 476.25 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "98c7fe76-8b2b-4350-b4d9-e551281493bb")
+		)
+		(pin "2"
+			(uuid "7245f74e-eb25-434e-9319-94ad9a6c234f")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -34114,6 +34730,103 @@
 		)
 	)
 	(symbol
+		(lib_id "Oro:OP_0005Z")
+		(at 392.43 138.43 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "171a7d33-8a9e-414f-b8dc-bbc1a426fbb8")
+		(property "Reference" "U8"
+			(at 420.37 136.8671 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "MMBT3906LT1G"
+			(at 420.37 139.7 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "Oro:OP_0005Z"
+			(at 392.43 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "MMBT3906LT1G"
+			(at 392.43 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 392.43 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0005Z"
+			(at 392.43 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2343f530-da3e-4023-9f45-e81f1d5b5649")
+		)
+		(pin "2"
+			(uuid "c56867ce-c8fc-4241-bdcf-5104d0c0d5ae")
+		)
+		(pin "3"
+			(uuid "b5835bc6-1b36-476d-9771-f86fc7adee78")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "U8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Oro:OP_0003D")
 		(at 157.48 214.63 90)
 		(unit 1)
@@ -34204,6 +34917,149 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
 					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0006U")
+		(at 353.06 35.56 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "18bbcd77-3fa2-4b0f-b97b-49701c026ee3")
+		(property "Reference" "C66"
+			(at 356.87 28.923 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "2200pF Y2"
+			(at 356.87 31.7559 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "Oro:OP_0006U"
+			(at 353.06 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/8853522130151.pdf"
+			(at 353.06 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" "2200 pF ±10% 250V Ceramic Capacitor X7R 2211 (5728 Metric)"
+			(at 353.06 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0006U"
+			(at 353.06 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Manufacturer" "Würth Elektronik"
+			(at 353.06 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Digi-Key P/N" "732-8853522130151CT-ND, 732-8853522130151DKR-ND, 732-8853522130151TR-ND"
+			(at 353.06 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Farnell P/N" "8853522130151"
+			(at 353.06 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mouser P/N" "710-8853522130151"
+			(at 353.06 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "354ab70c-5094-453d-900e-86b36213bca0")
+		)
+		(pin "1"
+			(uuid "1eb98ea9-de25-4fba-8b7e-c4729cb21f91")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "C66")
 					(unit 1)
 				)
 			)
@@ -36413,160 +37269,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Oro:OP_0006T")
-		(at 353.06 35.56 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "35634ef9-1a7b-4b31-9f53-c98912ab99dc")
-		(property "Reference" "C66"
-			(at 356.87 28.923 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "2200pF 2kV"
-			(at 356.87 31.7559 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "Oro:OP_0006T"
-			(at 353.06 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://product.tdk.com/en/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_highvoltage_en.pdf"
-			(at 353.06 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" "2200 pF ±10% 2000V (2kV) Ceramic Capacitor X7R 1812 (4532 Metric)"
-			(at 353.06 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Oro ID" "OP:0006T"
-			(at 353.06 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Manufacturer" "TDK"
-			(at 353.06 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Arrow P/N" "C4532X7R3D222K130KA"
-			(at 353.06 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Digi-Key P/N" "445-2389-1-ND, 445-2389-2-ND, 445-2389-6-ND"
-			(at 353.06 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Farnell P/N" "C4532X7R3D222K130KA"
-			(at 353.06 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Mouser P/N" "810-C4532X7R3D222K"
-			(at 353.06 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a59cc891-815a-4ef1-9d87-2bcc337b8e5a")
-		)
-		(pin "2"
-			(uuid "4e2f039b-79f0-4631-bb93-72924bc04d90")
-		)
-		(instances
-			(project "main-board"
-				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
-					(reference "C66")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Oro:OP_0006F")
 		(at 462.28 53.34 0)
 		(unit 1)
@@ -36820,7 +37522,7 @@
 		(dnp no)
 		(uuid "3c7a3b2e-e00c-462e-86de-209db4b64cb4")
 		(property "Reference" "U5"
-			(at 281.94 161.5829 0)
+			(at 283.21 157.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -36830,7 +37532,7 @@
 			)
 		)
 		(property "Value" "MMBT3906LT1G"
-			(at 281.94 158.75 0)
+			(at 283.21 160.3129 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -37586,6 +38288,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 497.84 323.85 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4e57ca38-3ac5-4234-9280-ca8a71dfd3a1")
+		(property "Reference" "TP18"
+			(at 499.11 323.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "POE_CHASSIS"
+			(at 505.46 323.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 502.92 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 502.92 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 497.84 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "adbfb4e6-c994-4586-b53b-4107be73352f")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "TP18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Oro:OP_00067")
 		(at 252.73 142.24 0)
 		(unit 1)
@@ -38245,164 +39026,6 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
 					(reference "#PWR012")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "OP_0005Z_1")
-		(lib_id "Oro:OP_0005Z")
-		(at 392.43 138.43 0)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5b1c8213-e472-4b77-8bf0-3edc1c981852")
-		(property "Reference" "U8"
-			(at 420.37 134.3271 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "MMBT3906LT1G"
-			(at 420.37 137.16 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "Oro:OP_0005Z"
-			(at 392.43 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mmbt3906lt1-d.pdf"
-			(at 392.43 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" "Bipolar (BJT) Transistor PNP 40 V 200 mA 250MHz 300 mW Surface Mount SOT-23-3 (TO-236)"
-			(at 392.43 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Oro ID" "OP:0005Z"
-			(at 392.43 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Manufacturer" "onsemi"
-			(at 392.43 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Arrow P/N" "MMBT3906LT1G"
-			(at 392.43 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Digi-Key P/N" "MMBT3906LT1GOSCT-ND, MMBT3906LT1GOSDKR-ND, MMBT3906LT1GOSTR-ND"
-			(at 392.43 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Farnell P/N" "MMBT3906LT1G"
-			(at 392.43 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Mouser P/N" "863-MMBT3906LT1G"
-			(at 392.43 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "39dd9da5-0e47-4893-b7c0-727c26dcd22c")
-		)
-		(pin "1"
-			(uuid "e2864e4d-7bcd-4fae-bcb8-0109ee28aa9b")
-		)
-		(pin "2"
-			(uuid "d4017323-8334-450c-9db2-aab6e8ea36c0")
-		)
-		(instances
-			(project "main-board"
-				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
-					(reference "U8")
 					(unit 1)
 				)
 			)
@@ -39339,85 +39962,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GNDPWR")
-		(at 160.02 287.02 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "662557bf-2836-4478-bec4-21fb451084dd")
-		(property "Reference" "#PWR03"
-			(at 160.02 292.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "CHASSIS"
-			(at 160.147 290.7467 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 160.02 288.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 160.02 288.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 160.02 287.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c7963db2-580e-4fb4-87b9-7ce00bf9c186")
-		)
-		(instances
-			(project "main-board"
-				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
-					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:TestPoint_Small")
 		(at 248.92 91.44 0)
 		(mirror x)
@@ -39491,85 +40035,6 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
 					(reference "TP13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GNDPWR")
-		(at 222.25 392.43 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6aa231ae-6f52-48fb-9c88-3814aa63e1d9")
-		(property "Reference" "#PWR02"
-			(at 222.25 397.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "CHASSIS"
-			(at 222.377 396.1567 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 222.25 393.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 222.25 393.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 222.25 392.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0155c2d2-cd73-4b15-aa25-dfd03dd88a0c")
-		)
-		(instances
-			(project "main-board"
-				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
-					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -40977,6 +41442,149 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
 					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0006V")
+		(at 486.41 317.5 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8b20f366-b545-494b-947b-2879b7578b64")
+		(property "Reference" "C41"
+			(at 482.6 310.863 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1000pF Y2"
+			(at 482.6 313.6959 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "Oro:OP_0006V"
+			(at 486.41 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/8853522130111.pdf"
+			(at 486.41 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" "1000 pF ±10% 250V Ceramic Capacitor X7R 2211 (5728 Metric)"
+			(at 486.41 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0006V"
+			(at 486.41 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Manufacturer" "Würth Elektronik"
+			(at 486.41 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Digi-Key P/N" "732-8853522130111CT-ND, 732-8853522130111DKR-ND, 732-8853522130111TR-ND"
+			(at 486.41 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Farnell P/N" "8853522130111"
+			(at 486.41 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mouser P/N" "710-8853522130111"
+			(at 486.41 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "736d291d-ef24-4d71-b4cc-208f89e148ee")
+		)
+		(pin "2"
+			(uuid "5603bfc1-1aa1-468f-b1fe-e9e3a0976406")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "C41")
 					(unit 1)
 				)
 			)
@@ -42469,6 +43077,84 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
 					(reference "TP16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LocalPower:LGNDPWR")
+		(at 160.02 287.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a1aa0972-96d5-4ee3-b4e3-a7300bd9b214")
+		(property "Reference" "#PWR017"
+			(at 160.02 293.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CHASSIS"
+			(at 159.893 290.7467 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.02 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 160.02 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1850ba72-4713-441e-b467-99efa9bbab76")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -44388,6 +45074,84 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
 					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LocalPower:LGND")
+		(at 468.63 330.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cce7fc2d-c86e-406c-9acf-904680aa164e")
+		(property "Reference" "#PWR047"
+			(at 468.63 336.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 467.36 334.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 468.63 330.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 468.63 330.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 468.63 330.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "08848b72-97eb-4e88-920b-78ce867237fc")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -48283,8 +49047,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Oro:OP_0000R")
-		(at 222.25 389.89 270)
+		(lib_id "Oro:OP_0006V")
+		(at 222.25 387.35 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -48296,156 +49060,121 @@
 		(fields_autoplaced yes)
 		(uuid "f78b4649-65de-4553-b989-3d49e0261214")
 		(property "Reference" "C40"
-			(at 218.948 382.3278 90)
+			(at 224.8916 382.1235 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Value" "1000pF >=2kV"
-			(at 218.948 384.7521 90)
+		(property "Value" "1000pF Y2"
+			(at 224.8916 384.9564 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1.524 1.524)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Oro:OP_0000R"
-			(at 126.06 381 0)
+		(property "Footprint" "Oro:OP_0006V"
+			(at 222.25 387.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
-				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://katalog.we-online.com/pbs/datasheet/885342210004.pdf"
-			(at 26.06 381 0)
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/8853522130111.pdf"
+			(at 222.25 387.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
-				(justify left top)
 			)
 		)
-		(property "Description" "Multilayer Ceramic Chip Capacitor WCAP-CSMH Series 1808 1000pF X7R1808102KC00DFCT10000"
-			(at 222.25 389.89 0)
+		(property "Description" "1000 pF ±10% 250V Ceramic Capacitor X7R 2211 (5728 Metric)"
+			(at 222.25 387.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
 			)
 		)
-		(property "Height" "2.2"
-			(at -173.94 381 0)
+		(property "Oro ID" "OP:0006V"
+			(at 222.25 387.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
-				(justify left top)
 			)
 		)
-		(property "Manufacturer_Name" "Wurth Elektronik"
-			(at -273.94 381 0)
+		(property "Manufacturer" "Würth Elektronik"
+			(at 222.25 387.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
-				(justify left top)
 			)
 		)
-		(property "Manufacturer_Part_Number" "885342210004"
-			(at -373.94 381 0)
+		(property "Digi-Key P/N" "732-8853522130111CT-ND, 732-8853522130111DKR-ND, 732-8853522130111TR-ND"
+			(at 222.25 387.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
-				(justify left top)
 			)
 		)
-		(property "Mouser Part Number" "710-885342210004"
-			(at -473.94 381 0)
+		(property "Farnell P/N" "8853522130111"
+			(at 222.25 387.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
-				(justify left top)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/885342210004?qs=MLItCLRbWsya%2F3qdX09FHQ%3D%3D"
-			(at -573.94 381 0)
+		(property "Mouser P/N" "710-8853522130111"
+			(at 222.25 387.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(italic yes)
 				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at -673.94 381 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at -773.94 381 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Oro ID" "OP:0000R"
-			(at 126.06 381 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
 			)
 		)
 		(pin "1"
@@ -48799,6 +49528,162 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
 					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LocalPower:LGNDPWR")
+		(at 222.25 392.43 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fd3af43b-9438-4fb8-9426-48859a31e211")
+		(property "Reference" "#PWR016"
+			(at 222.25 398.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CHASSIS"
+			(at 222.123 396.1567 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 222.25 392.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 222.25 392.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 222.25 392.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "21316775-af21-4fcb-befc-28c6450388a0")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LocalPower:LGNDPWR")
+		(at 497.84 330.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe71c6b2-bdaa-4031-b335-25c39a5bafe5")
+		(property "Reference" "#PWR015"
+			(at 497.84 336.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CHASSIS"
+			(at 497.713 333.9267 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 497.84 330.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 497.84 330.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 497.84 330.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9ce83ba4-bbca-4185-ab86-fe689e4e4d95")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
