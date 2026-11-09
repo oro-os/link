@@ -591,7 +591,62 @@
       "sort_asc": true,
       "sort_field": "Reference"
     },
-    "bus_aliases": {},
+    "bus_aliases": {
+      "ETH": [
+        "RX+",
+        "RX-",
+        "TX+",
+        "TX-"
+      ],
+      "I2C": [
+        "SCL",
+        "SDA"
+      ],
+      "LCD": [
+        "D0",
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "NOE",
+        "NE1",
+        "NWE",
+        "An"
+      ],
+      "SPI": [
+        "CLK",
+        "MOSI",
+        "MISO",
+        "NSS"
+      ],
+      "SPIn": [
+        "CLK",
+        "MOSI",
+        "MISO"
+      ],
+      "SPItx": [
+        "CLK",
+        "MOSI",
+        "NSS"
+      ],
+      "UART": [
+        "TX",
+        "RX"
+      ],
+      "USART": [
+        "TX",
+        "RX",
+        "CTX",
+        "RTS"
+      ],
+      "USB_FS": [
+        "D+",
+        "D-"
+      ]
+    },
     "connection_grid_size": 50.0,
     "drawing": {
       "dashed_lines_dash_length_ratio": 12.0,
