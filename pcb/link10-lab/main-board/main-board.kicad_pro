@@ -596,7 +596,9 @@
         "RX+",
         "RX-",
         "TX+",
-        "TX-"
+        "TX-",
+        "TXCT",
+        "RXCT"
       ],
       "I2C": [
         "SCL",
@@ -615,6 +617,14 @@
         "NE1",
         "NWE",
         "An"
+      ],
+      "QPI": [
+        "D0",
+        "D1",
+        "D2",
+        "D3",
+        "CLK",
+        "CS"
       ],
       "SPI": [
         "CLK",
@@ -692,7 +702,7 @@
         "uuid": "a70f06c5-be00-4bc8-bd65-e567781cea44"
       }
     ],
-    "used_designators": "",
+    "used_designators": "#PWR1-3,#PWR19-23,#PWR41-42,#PWR54-68,C67-72,R36-45,Y2",
     "variants": []
   },
   "sheets": [
