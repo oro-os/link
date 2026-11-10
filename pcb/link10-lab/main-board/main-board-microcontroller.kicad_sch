@@ -14191,7 +14191,7 @@
 		(uuid "45e43653-fe6d-4549-b9f7-34e97cda8690")
 	)
 	(hierarchical_label "+3V3"
-		(shape passive)
+		(shape input)
 		(at 121.92 337.82 0)
 		(effects
 			(font
@@ -14202,7 +14202,7 @@
 		(uuid "4efcc5b8-9161-4712-a7da-27807182cf4a")
 	)
 	(hierarchical_label "GND"
-		(shape passive)
+		(shape output)
 		(at 41.91 388.62 180)
 		(effects
 			(font
@@ -14213,7 +14213,7 @@
 		(uuid "613a80d4-76bd-4a2a-bd8d-12bdd0f0a981")
 	)
 	(hierarchical_label "BOOT0"
-		(shape bidirectional)
+		(shape input)
 		(at 420.37 156.21 0)
 		(effects
 			(font
@@ -14257,7 +14257,7 @@
 		(uuid "a1fcaacd-51cb-4f1d-8acf-44092251291c")
 	)
 	(hierarchical_label "BOOT1"
-		(shape bidirectional)
+		(shape input)
 		(at 195.58 172.72 180)
 		(effects
 			(font
@@ -14268,7 +14268,7 @@
 		(uuid "a7c259d3-3901-49c2-b6fb-5048cc60e52e")
 	)
 	(hierarchical_label "RST_ON_HIGH"
-		(shape bidirectional)
+		(shape input)
 		(at 466.09 171.45 0)
 		(effects
 			(font

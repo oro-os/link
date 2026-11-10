@@ -32815,7 +32815,7 @@
 		(uuid "f02cb7f2-c5c0-456b-b089-cab9894852bd")
 	)
 	(hierarchical_label "GND"
-		(shape output)
+		(shape input)
 		(at 511.81 91.44 0)
 		(effects
 			(font
@@ -32826,7 +32826,7 @@
 		(uuid "22d5e50e-b32e-4019-b447-f73e70adf541")
 	)
 	(hierarchical_label "LED_G+"
-		(shape bidirectional)
+		(shape input)
 		(at 147.32 275.59 180)
 		(effects
 			(font
@@ -32837,7 +32837,7 @@
 		(uuid "4ac20a99-9eea-444a-97b0-def58787be69")
 	)
 	(hierarchical_label "ETH{ETH}"
-		(shape passive)
+		(shape bidirectional)
 		(at 275.59 293.37 0)
 		(effects
 			(font
@@ -32848,7 +32848,7 @@
 		(uuid "4f175abb-e365-490f-a4d2-f57acda10fbd")
 	)
 	(hierarchical_label "LED_Y-"
-		(shape bidirectional)
+		(shape output)
 		(at 147.32 280.67 180)
 		(effects
 			(font
@@ -32859,7 +32859,7 @@
 		(uuid "7522e0b1-f14f-437e-96d8-c50023a1053e")
 	)
 	(hierarchical_label "LED_G-"
-		(shape bidirectional)
+		(shape output)
 		(at 147.32 273.05 180)
 		(effects
 			(font
@@ -32870,7 +32870,7 @@
 		(uuid "a2723563-c3ad-4f84-b69e-4ff0db03be1d")
 	)
 	(hierarchical_label "LED_Y+"
-		(shape bidirectional)
+		(shape input)
 		(at 147.32 283.21 180)
 		(effects
 			(font
@@ -32892,7 +32892,7 @@
 		(uuid "a639dfd6-2215-4bf3-96fe-ce3fd21c3323")
 	)
 	(hierarchical_label "+5V_4.5A"
-		(shape output)
+		(shape input)
 		(at 511.81 58.42 0)
 		(effects
 			(font
