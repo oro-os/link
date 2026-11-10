@@ -6620,7 +6620,7 @@
 		(uuid "0bf8081c-4a71-48d8-85ad-fd3b0134bea7")
 	)
 	(junction
-		(at 318.77 259.08)
+		(at 321.31 259.08)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0d82c8a7-2dc1-4b3b-8c39-29b971a6ce27")
@@ -6674,7 +6674,7 @@
 		(uuid "3125f7b4-788a-4671-a7df-88c03847202b")
 	)
 	(junction
-		(at 323.85 259.08)
+		(at 326.39 259.08)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3b1d5a55-2c5f-4937-94f1-7351d4f4f313")
@@ -6750,6 +6750,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "89c3b32f-98e1-4b47-be1a-f4e594183f33")
+	)
+	(junction
+		(at 355.6 259.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8f85204f-f493-474e-adf2-dbe6124888d3")
 	)
 	(junction
 		(at 224.79 158.75)
@@ -6882,6 +6888,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f2689b73-d0c4-4733-9cf8-06d45dacdfdb")
+	)
+	(junction
+		(at 364.49 259.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fb871c5d-7903-4e10-a9ca-09bbd6ef3083")
 	)
 	(junction
 		(at 238.76 280.67)
@@ -7153,7 +7165,7 @@
 	)
 	(wire
 		(pts
-			(xy 318.77 259.08) (xy 316.23 259.08)
+			(xy 321.31 259.08) (xy 316.23 259.08)
 		)
 		(stroke
 			(width 0)
@@ -7333,7 +7345,7 @@
 	)
 	(wire
 		(pts
-			(xy 318.77 259.08) (xy 323.85 259.08)
+			(xy 321.31 259.08) (xy 326.39 259.08)
 		)
 		(stroke
 			(width 0)
@@ -7393,7 +7405,7 @@
 	)
 	(wire
 		(pts
-			(xy 323.85 259.08) (xy 335.28 259.08)
+			(xy 326.39 259.08) (xy 335.28 259.08)
 		)
 		(stroke
 			(width 0)
@@ -7623,7 +7635,7 @@
 	)
 	(wire
 		(pts
-			(xy 323.85 257.81) (xy 323.85 259.08)
+			(xy 326.39 257.81) (xy 326.39 259.08)
 		)
 		(stroke
 			(width 0)
@@ -7773,7 +7785,7 @@
 	)
 	(wire
 		(pts
-			(xy 318.77 259.08) (xy 318.77 261.62)
+			(xy 321.31 259.08) (xy 321.31 261.62)
 		)
 		(stroke
 			(width 0)
@@ -8030,6 +8042,16 @@
 			(type default)
 		)
 		(uuid "8451e762-c195-48c2-ab97-580e0cecb296")
+	)
+	(wire
+		(pts
+			(xy 284.48 306.07) (xy 290.83 306.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85cd570c-3bbc-4a8d-a16c-a7c3ac50c308")
 	)
 	(wire
 		(pts
@@ -8573,6 +8595,16 @@
 	)
 	(wire
 		(pts
+			(xy 284.48 293.37) (xy 290.83 293.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d37217b7-3375-42ea-ae1d-60cd6df04a6c")
+	)
+	(wire
+		(pts
 			(xy 299.72 176.53) (xy 290.83 176.53)
 		)
 		(stroke
@@ -8583,7 +8615,17 @@
 	)
 	(wire
 		(pts
-			(xy 318.77 271.78) (xy 318.77 269.24)
+			(xy 355.6 259.08) (xy 364.49 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d49a5f37-7d33-48f4-b7d9-784d02066043")
+	)
+	(wire
+		(pts
+			(xy 321.31 271.78) (xy 321.31 269.24)
 		)
 		(stroke
 			(width 0)
@@ -8773,7 +8815,7 @@
 	)
 	(wire
 		(pts
-			(xy 323.85 257.81) (xy 328.93 257.81)
+			(xy 326.39 257.81) (xy 331.47 257.81)
 		)
 		(stroke
 			(width 0)
@@ -9072,7 +9114,7 @@
 		(uuid "aba94b64-c277-42b6-8a7b-8d0ab1743cf9")
 	)
 	(label "1V2O"
-		(at 328.93 257.81 180)
+		(at 331.47 257.81 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9143,6 +9185,17 @@
 		)
 		(uuid "45c00b4b-e4b5-4ce4-891a-c587fba7d495")
 	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 284.48 306.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "74dc3631-a964-487e-b558-8adbf7ff5dd1")
+	)
 	(hierarchical_label "~{INT}"
 		(shape input)
 		(at 278.13 115.57 180)
@@ -9175,6 +9228,17 @@
 			(justify left)
 		)
 		(uuid "88fb0494-0b10-4616-b96b-2513c514d843")
+	)
+	(hierarchical_label "3V3"
+		(shape passive)
+		(at 284.48 293.37 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b0ba0576-6a51-4fa3-b671-99b8453884ab")
 	)
 	(hierarchical_label "~{RST}"
 		(shape input)
@@ -10586,7 +10650,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_0001R")
-		(at 318.77 269.24 90)
+		(at 321.31 269.24 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10596,7 +10660,7 @@
 		(dnp no)
 		(uuid "364c1763-a273-4e2b-ad69-772deff02085")
 		(property "Reference" "C83"
-			(at 320.04 262.89 90)
+			(at 322.58 262.89 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10607,7 +10671,7 @@
 			)
 		)
 		(property "Value" "1u"
-			(at 320.04 267.97 90)
+			(at 322.58 267.97 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10618,7 +10682,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_0001R"
-			(at 318.77 269.24 0)
+			(at 321.31 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10630,7 +10694,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/taiyo_yuden_12132018_mlcc11_hq_e-1510082.pdf"
-			(at 318.77 269.24 0)
+			(at 321.31 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10642,7 +10706,7 @@
 			)
 		)
 		(property "Description" "Capacitor, ceramic, 0402, 6.3V, x5R, 1 F, ±10% Rohs Compliant: Yes |Taiyo Yuden JMK105BJ105KVHF"
-			(at 318.77 269.24 0)
+			(at 321.31 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10653,7 +10717,7 @@
 			)
 		)
 		(property "DigiKey ID" "587-3766-1-ND"
-			(at 321.77 269.24 0)
+			(at 324.31 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10665,7 +10729,7 @@
 			)
 		)
 		(property "Arrow ID" "JMK105BJ105KVHF"
-			(at 321.77 269.24 0)
+			(at 324.31 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10677,7 +10741,7 @@
 			)
 		)
 		(property "Mfr. Name" "Taiyo Yuden"
-			(at 321.77 269.24 0)
+			(at 324.31 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10689,7 +10753,7 @@
 			)
 		)
 		(property "Description_1" "Capacitor, ceramic, 0402, 6.3V, x5R, 1 F, ±10% Rohs Compliant: Yes |Taiyo Yuden JMK105BJ105KVHF"
-			(at 321.77 269.24 0)
+			(at 324.31 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10701,7 +10765,7 @@
 			)
 		)
 		(property "Mouser ID" "963-JMK105BJ105KVHF"
-			(at 321.77 269.24 0)
+			(at 324.31 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10713,7 +10777,7 @@
 			)
 		)
 		(property "Mfr. Number" "JMK105BJ105KVHF"
-			(at 321.77 269.24 0)
+			(at 324.31 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10725,7 +10789,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/JMK105BJ105KVHF?qs=qPaGMJUC%252BSupRtwk0yj9HQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=963-JMK105BJ105KVHF&utm_content=TAIYO%20YUDEN"
-			(at 321.77 269.24 0)
+			(at 324.31 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10737,7 +10801,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0001R"
-			(at 318.77 269.24 0)
+			(at 321.31 269.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16904,7 +16968,7 @@
 	)
 	(symbol
 		(lib_id "LocalPower:LGND")
-		(at 318.77 271.78 0)
+		(at 321.31 271.78 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim yes)
@@ -16914,7 +16978,7 @@
 		(dnp no)
 		(uuid "cb6d82a9-31fd-4c7a-8cf2-b478faf70c49")
 		(property "Reference" "#PWR077"
-			(at 318.77 278.13 0)
+			(at 321.31 278.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16925,7 +16989,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 317.5 275.59 0)
+			(at 320.04 275.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16936,7 +17000,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 318.77 271.78 0)
+			(at 321.31 271.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16947,7 +17011,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 318.77 271.78 0)
+			(at 321.31 271.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16958,7 +17022,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 318.77 271.78 0)
+			(at 321.31 271.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
