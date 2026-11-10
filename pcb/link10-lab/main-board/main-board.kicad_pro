@@ -632,6 +632,14 @@
         "UART_TX",
         "UART_RX"
       ],
+      "SDMMC": [
+        "CLK",
+        "CMD/MOSI",
+        "DAT0/MISO",
+        "DAT1",
+        "DAT2",
+        "DAT3/CS"
+      ],
       "SPI": [
         "CLK",
         "MOSI",
@@ -708,7 +716,7 @@
         "uuid": "a70f06c5-be00-4bc8-bd65-e567781cea44"
       }
     ],
-    "used_designators": "#PWR99,#PWR110-114,#PWR116-118,C125-133,TP19-28",
+    "used_designators": "#PWR99,#PWR110-114,#PWR116-131,C125-140,TP19-35,R49-59,Y3",
     "variants": []
   },
   "sheets": [
