@@ -626,6 +626,12 @@
         "CLK",
         "CS"
       ],
+      "RPSWD": [
+        "SWDIO",
+        "SWCLK",
+        "UART_TX",
+        "UART_RX"
+      ],
       "SPI": [
         "CLK",
         "MOSI",
@@ -702,7 +708,7 @@
         "uuid": "a70f06c5-be00-4bc8-bd65-e567781cea44"
       }
     ],
-    "used_designators": "#PWR111,C125-127",
+    "used_designators": "#PWR99,#PWR110-114,#PWR116-118,C125-133,TP19-28",
     "variants": []
   },
   "sheets": [

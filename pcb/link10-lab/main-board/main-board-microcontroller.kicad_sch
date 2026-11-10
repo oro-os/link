@@ -14,6 +14,129 @@
 		(comment 3 "Joshua Lee Junon")
 	)
 	(lib_symbols
+		(symbol "Connector:TestPoint_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint_Small"
+				(at 0 2.032 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_Small_0_1"
+				(circle
+					(center 0 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_Small_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 0)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "LocalPower:L+3V3"
 			(power local)
 			(pin_numbers
@@ -11358,16 +11481,6 @@
 	)
 	(wire
 		(pts
-			(xy 416.56 156.21) (xy 420.37 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1ca0d4ca-6236-47de-89d8-4b079c103bf7")
-	)
-	(wire
-		(pts
 			(xy 436.88 151.13) (xy 448.31 151.13)
 		)
 		(stroke
@@ -11738,6 +11851,16 @@
 	)
 	(wire
 		(pts
+			(xy 389.89 354.33) (xy 392.43 354.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40a4f78c-7ea2-4db6-862d-b53cef96a99c")
+	)
+	(wire
+		(pts
 			(xy 58.42 353.06) (xy 60.96 353.06)
 		)
 		(stroke
@@ -11948,6 +12071,16 @@
 	)
 	(wire
 		(pts
+			(xy 436.88 147.32) (xy 436.88 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52dac1be-9118-44d6-9277-085ff59d4a6b")
+	)
+	(wire
+		(pts
 			(xy 207.01 351.79) (xy 207.01 356.87)
 		)
 		(stroke
@@ -12135,6 +12268,16 @@
 			(type default)
 		)
 		(uuid "63a069db-514e-4acd-ab3d-4a5d58ca549d")
+	)
+	(wire
+		(pts
+			(xy 389.89 351.79) (xy 392.43 351.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66dcdfbd-6f3a-402a-9f33-74dfc0f8e3f0")
 	)
 	(wire
 		(pts
@@ -13125,6 +13268,16 @@
 			(type default)
 		)
 		(uuid "bd51d368-ad37-444b-8a78-f357f1f2ccf3")
+	)
+	(wire
+		(pts
+			(xy 416.56 156.21) (xy 420.37 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "beba6d3f-4358-4b14-b342-eb377505a10f")
 	)
 	(wire
 		(pts
@@ -14157,6 +14310,17 @@
 		)
 		(uuid "142618d1-4ad1-4828-9bee-3e8f8b86cdda")
 	)
+	(hierarchical_label "BOOT1"
+		(shape input)
+		(at 392.43 354.33 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2ee5ad5a-890f-4857-9d01-e6f42ba62cb2")
+	)
 	(hierarchical_label "USART1{UART}"
 		(shape bidirectional)
 		(at 163.83 118.11 180)
@@ -14233,6 +14397,17 @@
 			(justify left)
 		)
 		(uuid "72636e69-29ba-4870-9135-a5083ee89f61")
+	)
+	(hierarchical_label "BOOT0"
+		(shape input)
+		(at 392.43 351.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8b344167-b5ee-4f36-9b64-f024032c0686")
 	)
 	(hierarchical_label "SWD{SWD}"
 		(shape bidirectional)
@@ -15761,6 +15936,85 @@
 			(project "link"
 				(path "/fa3d690f-10fd-42a5-9bc1-4a64a57036bb/9d13b135-0b81-4bac-8840-95596fc6db1f"
 					(reference "#PWR035")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 389.89 354.33 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "286fc5bb-6336-4211-a656-59d4d451d736")
+		(property "Reference" "TP21"
+			(at 388.62 354.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "STM_BOOT1"
+			(at 382.27 354.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 384.81 354.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 384.81 354.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 389.89 354.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "400ae91f-27db-40c7-9f0e-5c77d4ed4ac8")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/9943a742-9010-4484-baf5-b9968ace2aa4"
+					(reference "TP21")
 					(unit 1)
 				)
 			)
@@ -19331,6 +19585,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 436.88 147.32 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5244cad3-b732-46e4-b6b5-2b9a64e60fe0")
+		(property "Reference" "TP19"
+			(at 438.15 147.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "STM_NRST"
+			(at 444.5 147.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 441.96 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 441.96 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 436.88 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "351b1de4-4f9b-4ce3-a0c9-276707ca8d40")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/9943a742-9010-4484-baf5-b9968ace2aa4"
+					(reference "TP19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Oro:OP_00014")
 		(at 241.3 341.63 0)
 		(unit 1)
@@ -22078,6 +22411,85 @@
 			(project "link"
 				(path "/fa3d690f-10fd-42a5-9bc1-4a64a57036bb/9d13b135-0b81-4bac-8840-95596fc6db1f"
 					(reference "#PWR039")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 389.89 351.79 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "98a1c4f3-bf1d-4b34-a57c-0e5b1f2ba0e5")
+		(property "Reference" "TP20"
+			(at 388.62 351.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "STM_BOOT0"
+			(at 382.27 351.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 384.81 351.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 384.81 351.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 389.89 351.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3d0c343e-0806-4414-af15-903c35ade965")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/9943a742-9010-4484-baf5-b9968ace2aa4"
+					(reference "TP20")
 					(unit 1)
 				)
 			)
