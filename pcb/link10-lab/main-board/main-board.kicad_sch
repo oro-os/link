@@ -1021,6 +1021,17 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "RECOMMENDED DAUGHTER CHIPS:\n- INTERRUPT CONTROLLER: MCP23S17\n- CS DECODER: 74LVC138A (8x) OR CD54HC154 (16x)"
+		(exclude_from_sim no)
+		(at 473.71 356.87 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b3136101-98e6-43b5-b255-a89ce23df716")
+	)
 	(wire
 		(pts
 			(xy 377.19 237.49) (xy 377.19 242.57)
