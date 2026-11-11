@@ -632,6 +632,14 @@
         "UART_TX",
         "UART_RX"
       ],
+      "SDIO": [
+        "CLK",
+        "CMD",
+        "D0",
+        "D1",
+        "D2",
+        "D3"
+      ],
       "SDMMC": [
         "CLK",
         "CMD/MOSI",
@@ -716,7 +724,7 @@
         "uuid": "a70f06c5-be00-4bc8-bd65-e567781cea44"
       }
     ],
-    "used_designators": "#PWR99,#PWR110-114,#PWR116-131,C125-140,TP19-35,R49-59,Y3",
+    "used_designators": "#PWR99,#PWR110-114,#PWR116-137,C125-140,TP19-37,R49-71,Y3",
     "variants": []
   },
   "sheets": [
@@ -734,7 +742,7 @@
     ],
     [
       "15658b1c-35c9-4214-a484-d284052e3d52",
-      "Bridge (RP)"
+      "Bridge (RP) + SD"
     ],
     [
       "0bceadc4-59dc-4502-8b0e-44178a81c8b7",
