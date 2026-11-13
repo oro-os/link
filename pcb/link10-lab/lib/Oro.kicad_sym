@@ -7164,6 +7164,212 @@
 		)
 		(embedded_fonts no)
 	)
+	(symbol "OP_0003P"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "CRGP0402F5K6"
+			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0003P"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-9&DocType=Data%20Sheet&DocLang=English&DocFormat=pdf&PartCntxt=3-2176325-7"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "5.6 kOhms ±1% 0.125W, 1/8W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Pulse Withstanding Thick Film"
+			(at 0.762 5.334 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "CRGP0402F5K6"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:0003P"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "TE Connectivity Passive Product"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "3-2176325-4, CRGP0402F5K6"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "A130364CT-ND, A130364DKR-ND, A130364TR-ND"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "CRGP0402F5K6"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "279-CRGP0402F5K6"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(symbol "OP_0003P_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -1.27) (xy 10.16 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_0003P_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 12.7 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 	(symbol "OP_0004K"
 		(pin_numbers (hide yes))
 		(pin_names (offset 0) (hide yes))

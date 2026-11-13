@@ -1351,9 +1351,22 @@
 		)
 		(uuid "43158833-7a55-4b17-9595-f0db18d612fb")
 	)
+	(hierarchical_label "DGT_PWR_EN"
+		(shape input)
+		(at 443.23 274.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "721597af-a2bc-4dec-a908-790300adc957")
+	)
 	(hierarchical_label "+3V3_BASE"
 		(shape output)
-		(at 445.77 237.49 0)
+		(at 447.04 196.85 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1366,7 +1379,7 @@
 	)
 	(hierarchical_label "+5V_DGT"
 		(shape output)
-		(at 445.77 226.06 0)
+		(at 445.77 176.53 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1377,7 +1390,7 @@
 		)
 		(uuid "aea039a8-de70-40e9-b944-281216c91334")
 	)
-	(hierarchical_label "STM_~{EN}"
+	(hierarchical_label "STM_PWR_EN"
 		(shape input)
 		(at 443.23 271.78 0)
 		(effects
@@ -1405,7 +1418,7 @@
 	)
 	(hierarchical_label "+3V3_STM"
 		(shape output)
-		(at 444.5 210.82 0)
+		(at 444.5 157.48 0)
 		(effects
 			(font
 				(size 1.27 1.27)
