@@ -11382,6 +11382,12 @@
 		(uuid "dd2292e8-e059-43e0-a523-bdb7d5a07401")
 	)
 	(junction
+		(at 163.83 196.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dd958ff3-1fef-4f99-902b-3b93064a6851")
+	)
+	(junction
 		(at 177.8 367.03)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -12123,6 +12129,16 @@
 			(type default)
 		)
 		(uuid "1880d30d-407f-46c1-b655-47856d446b96")
+	)
+	(wire
+		(pts
+			(xy 163.83 196.85) (xy 161.29 196.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18c20275-e28f-42c0-914d-4bf71588f845")
 	)
 	(wire
 		(pts
@@ -13746,7 +13762,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 194.31) (xy 163.83 198.12)
+			(xy 163.83 194.31) (xy 163.83 196.85)
 		)
 		(stroke
 			(width 0)
@@ -13846,6 +13862,16 @@
 	)
 	(wire
 		(pts
+			(xy 163.83 196.85) (xy 163.83 201.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b060738b-96ef-4837-85f7-432692548c87")
+	)
+	(wire
+		(pts
 			(xy 177.8 367.03) (xy 177.8 372.11)
 		)
 		(stroke
@@ -13876,7 +13902,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 212.09) (xy 163.83 210.82)
+			(xy 163.83 215.9) (xy 163.83 214.63)
 		)
 		(stroke
 			(width 0)
@@ -15223,6 +15249,17 @@
 			(justify left)
 		)
 		(uuid "72636e69-29ba-4870-9135-a5083ee89f61")
+	)
+	(hierarchical_label "BOOT1"
+		(shape input)
+		(at 161.29 196.85 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "85172618-9135-42e8-b67b-40be79378d40")
 	)
 	(hierarchical_label "DGT_SPI_~{CSE}"
 		(shape output)
@@ -16780,7 +16817,7 @@
 	)
 	(symbol
 		(lib_id "LocalPower:LGND")
-		(at 163.83 212.09 0)
+		(at 163.83 215.9 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim yes)
@@ -16790,7 +16827,7 @@
 		(dnp no)
 		(uuid "1c2ce833-493e-4537-b080-3f43a7b01771")
 		(property "Reference" "#PWR014"
-			(at 163.83 218.44 0)
+			(at 163.83 222.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16801,7 +16838,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 163.83 215.9 0)
+			(at 163.83 219.71 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16811,7 +16848,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 163.83 212.09 0)
+			(at 163.83 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16822,7 +16859,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 163.83 212.09 0)
+			(at 163.83 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16833,7 +16870,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 163.83 212.09 0)
+			(at 163.83 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24095,7 +24132,7 @@
 	)
 	(symbol
 		(lib_id "Oro:OP_00021")
-		(at 163.83 210.82 90)
+		(at 163.83 214.63 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -24105,7 +24142,7 @@
 		(dnp no)
 		(uuid "8a9ed4dd-5fa5-4a97-91ae-632f2358acd5")
 		(property "Reference" "R4"
-			(at 161.8234 203.0535 90)
+			(at 161.8234 206.8635 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24116,7 +24153,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 161.8234 205.8864 90)
+			(at 161.8234 209.6964 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24127,7 +24164,7 @@
 			)
 		)
 		(property "Footprint" "Oro:OP_00021"
-			(at 157.734 210.82 0)
+			(at 157.734 214.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24139,7 +24176,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/385/SEI_RMCF_RMCP-3077565.pdf"
-			(at 157.226 211.582 0)
+			(at 157.226 215.392 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24151,7 +24188,7 @@
 			)
 		)
 		(property "Description" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
-			(at 158.496 210.058 0)
+			(at 158.496 213.868 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24162,7 +24199,7 @@
 			)
 		)
 		(property "Description_1" "Res Thick Film 0402 10K Ohm 1% 0.063W ±100ppm/°C Molded SMD Paper T/R"
-			(at 166.83 210.82 0)
+			(at 166.83 214.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24174,7 +24211,7 @@
 			)
 		)
 		(property "Mfr. Name" "Stackpole International"
-			(at 166.83 210.82 0)
+			(at 166.83 214.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24186,7 +24223,7 @@
 			)
 		)
 		(property "DigiKey ID" "RMCF0402FT10K0CT-ND"
-			(at 166.83 210.82 0)
+			(at 166.83 214.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24198,7 +24235,7 @@
 			)
 		)
 		(property "Mouser URL" "https://www.mouser.de/ProductDetail/SEI-Stackpole/RMCF0402FT10K0?qs=FESYatJ8odLDpjm%252BwxiA1Q%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=708-RMCF0402FT10K0&utm_content=SEI%20Stackpole"
-			(at 166.83 210.82 0)
+			(at 166.83 214.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24210,7 +24247,7 @@
 			)
 		)
 		(property "Arrow ID" "RMCF0402FT10K0"
-			(at 166.83 210.82 0)
+			(at 166.83 214.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24222,7 +24259,7 @@
 			)
 		)
 		(property "Mfr. Number" "RMCF0402FT10K0"
-			(at 166.83 210.82 0)
+			(at 166.83 214.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24234,7 +24271,7 @@
 			)
 		)
 		(property "Mouser ID" "708-RMCF0402FT10K0"
-			(at 166.83 210.82 0)
+			(at 166.83 214.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24246,7 +24283,7 @@
 			)
 		)
 		(property "Oro ID" "OP:00021"
-			(at 163.83 210.82 0)
+			(at 163.83 214.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
