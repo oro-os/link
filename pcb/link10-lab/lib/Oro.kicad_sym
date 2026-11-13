@@ -2601,6 +2601,274 @@
 		)
 		(embedded_fonts no)
 	)
+	(symbol "OP_0001O"
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at 30.48 10.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "INA226AIDGSR"
+			(at 30.48 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0001O"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fina226"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "Current Monitor Regulator High/Low-Side 10mA 10-VSSOP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Mouser ID" "595-INA226AIDGSR"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser URL" "null"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "DigiKey ID" "296-29034-1-ND"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description_1" "36V, 16-bit, ultra-precise i2c output current/voltage/power monitor w/alert 10-VSSOP -40 to 125"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Number" "INA226AIDGSR"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow ID" "null"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mfr. Name" "Texas Instruments"
+			(at 0 -3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Oro ID" "OP:0001O"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "INA226AIDGSR"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "296-29034-1-ND, 296-29034-2-ND, 296-29034-6-ND"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "595-INA226AIDGSR"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "INA226AIDGSR"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "DGS10 DGS10-M DGS10-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0001O_0_1"
+			(polyline
+				(pts (xy 7.62 5.08) (xy 7.62 -15.24))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -15.24) (xy 53.34 -15.24))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 53.34 5.08) (xy 7.62 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 53.34 -15.24) (xy 53.34 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 7.62)
+				(name "A1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -2.54 0)
+				(length 7.62)
+				(name "A0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 0 -5.08 0)
+				(length 7.62)
+				(name "ALERT"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -7.62 0)
+				(length 7.62)
+				(name "SDA"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 0 -10.16 0)
+				(length 7.62)
+				(name "SCL"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 60.96 -10.16 180)
+				(length 7.62)
+				(name "VS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 60.96 -7.62 180)
+				(length 7.62)
+				(name "GND"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 60.96 -5.08 180)
+				(length 7.62)
+				(name "VBUS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 60.96 -2.54 180)
+				(length 7.62)
+				(name "VIN-"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 60.96 0 180)
+				(length 7.62)
+				(name "VIN+"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 	(symbol "OP_0001Q"
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6472,6 +6740,212 @@
 		)
 		(embedded_fonts no)
 	)
+	(symbol "OP_00031"
+		(body_styles demorgan)
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 5.715 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "AC0805FR-07470RL"
+			(at 6.35 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_00031"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-AC_51_ROHS_L"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "470 Ohms ±1% 0.125W, 1/8W Chip Resistor 0805 (2012 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film"
+			(at 0.762 5.334 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "AC0805FR-07470RL"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:00031"
+			(at 0 6.096 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "YAGEO"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "AC0805FR-07470RL"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "YAG3733CT-ND, YAG3733DKR-ND, YAG3733TR-ND"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "AC0805FR-07470RL"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "603-AC0805FR-07470RL"
+			(at -0.762 6.604 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(symbol "OP_00031_1_1"
+			(polyline
+				(pts (xy 2.54 0) (xy 3.175 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 3.175 1.27) (xy 4.445 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 4.445 -1.27) (xy 5.715 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.715 1.27) (xy 6.985 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 6.985 -1.27) (xy 8.255 1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 8.255 1.27) (xy 9.525 -1.27))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 9.525 -1.27) (xy 10.16 0))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_00031_1_2"
+			(polyline
+				(pts (xy -1.27 8.255) (xy 1.27 9.525))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 5.715) (xy 1.27 6.985))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -1.27 3.175) (xy 1.27 4.445))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 0 2.54) (xy -1.27 3.175))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 9.525) (xy 0 10.16))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 6.985) (xy -1.27 8.255))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 1.27 4.445) (xy -1.27 5.715))
+				(stroke (width 0.2032) (type default))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 12.7 270)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 0 90)
+				(length 2.54)
+				(name ""
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 	(symbol "OP_0003D"
 		(pin_names (offset 0.254))
 		(exclude_from_sim no)
@@ -6684,6 +7158,401 @@
 					(effects (font (size 1.27 1.27)))
 				)
 				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0004K"
+		(pin_numbers (hide yes))
+		(pin_names (offset 0) (hide yes))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "EXT"
+			(at -2.54 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)) (justify right))
+		)
+		(property "Value" "MSB-G"
+			(at 2.032 1.016 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://app.adam-tech.com/products/download/data_sheet/219145/msb-g-data-sheet.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Description" "2 (1 x 2) Position Shunt Connector Black Open Top 0.100\" (2.54mm) Gold"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Note" "Loose Part"
+			(at 2.032 -1.016 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Oro ID" "OP:0004K"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Manufacturer" "Adam Tech"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Arrow P/N" "MSB-G"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Digi-Key P/N" "2057-MSB-G-ND"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Mouser P/N" "737-MSB-G"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0004K_0_1"
+			(circle
+				(center 0 0)
+				(radius 1.4811)
+				(stroke (width 0) (type default))
+				(fill (type none))
+			)
+		)
+		(symbol "OP_0004K_1_1"
+			(text "EXT\nPART"
+				(at 0 0 0)
+				(effects (font (size 0.635 0.635)))
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "OP_0004S"
+		(pin_names (offset 0.254))
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at 22.86 10.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "LTC4415EMSE-PBF"
+			(at 22.86 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_0004S"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/4415fa.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Description" "OR Controller Source Selector Switch P-Channel 2:2 16-MSOP-EP"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Oro ID" "OP:0004S"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Manufacturer" "Analog Devices Inc."
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Arrow P/N" "LTC4415EMSE#PBF"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Digi-Key P/N" "505-LTC4415EMSE#PBF-ND"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Farnell P/N" "LTC4415EMSE#PBF"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "Mouser P/N" "584-LTC4415EMSE#PBF"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27) (italic yes)))
+		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_keywords" "LTC4415EMSE#PBF"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "ki_fp_filters" "LTC4415EMSE-PBF_ADI LTC4415EMSE-PBF_ADI-M LTC4415EMSE-PBF_ADI-L"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects (font (size 1.27 1.27)))
+		)
+		(symbol "OP_0004S_0_1"
+			(polyline
+				(pts (xy 7.62 5.08) (xy 7.62 -25.4))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -25.4) (xy 38.1 -25.4))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 38.1 5.08) (xy 7.62 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 38.1 -25.4) (xy 38.1 5.08))
+				(stroke (width 0.127) (type default))
+				(fill (type none))
+			)
+			(pin input line
+				(at 0 0 0)
+				(length 7.62)
+				(name "IN1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 0 -2.54 0)
+				(length 7.62)
+				(name "IN1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 0 -5.08 0)
+				(length 7.62)
+				(name "EN1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -7.62 0)
+				(length 7.62)
+				(name "CLIM1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -10.16 0)
+				(length 7.62)
+				(name "CLIM2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 0 -12.7 0)
+				(length 7.62)
+				(name "*EN2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 0 -15.24 0)
+				(length 7.62)
+				(name "IN2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 0 -17.78 0)
+				(length 7.62)
+				(name "IN2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 45.72 -20.32 180)
+				(length 7.62)
+				(name "OUT2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 45.72 -17.78 180)
+				(length 7.62)
+				(name "OUT2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 45.72 -15.24 180)
+				(length 7.62)
+				(name "*STAT2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "11"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 45.72 -12.7 180)
+				(length 7.62)
+				(name "*WARN2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "12"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 45.72 -10.16 180)
+				(length 7.62)
+				(name "*WARN1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "13"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 45.72 -7.62 180)
+				(length 7.62)
+				(name "*STAT1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "14"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 45.72 -5.08 180)
+				(length 7.62)
+				(name "OUT1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "15"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin output line
+				(at 45.72 -2.54 180)
+				(length 7.62)
+				(name "OUT1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "16"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_out line
+				(at 45.72 0 180)
+				(length 7.62)
+				(name "GND"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "EPAD"
 					(effects (font (size 1.27 1.27)))
 				)
 			)
@@ -25670,5 +26539,1401 @@
 			)
 		)
 		(embedded_fonts no)
+	)
+	(symbol "OP_00074"
+		(pin_names (offset 0.254))
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "U"
+			(id 0)
+			(at 20.32 10.16 0)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "M24C02-FMN6TP"
+			(id 1)
+			(at 20.32 7.62 0)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_00074"
+			(id 2)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Datasheet" "https://www.st.com/content/ccc/resource/technical/document/datasheet/b0/d8/50/40/5a/85/49/6f/DM00071904.pdf/files/DM00071904.pdf/jcr:content/translations/en.DM00071904.pdf"
+			(id 3)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "ki_keywords" "M24C02-FMN6TP"
+			(id 4)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27)) hide)
+		)
+		(property "ki_locked" ""
+			(id 5)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27)) hide)
+		)
+		(property "ki_fp_filters" "SO8N_4X5X1P27_STM SO8N_4X5X1P27_STM-M SO8N_4X5X1P27_STM-L"
+			(id 6)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27)) hide)
+		)
+		(property "Oro ID" "OP:00074"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Description" "EEPROM Memory IC 2Kbit I2C 400 kHz 900 ns 8-SOIC"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Manufacturer" "STMicroelectronics"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Arrow P/N" "M24C02-FMN6TP"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Digi-Key P/N" "497-15748-1-ND, 497-15748-2-ND, 497-15748-6-ND"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Farnell P/N" "M24C02-FMN6TP"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Mouser P/N" "511-M24C02-FMN6TP"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(symbol "OP_00074_0_1"
+			(polyline
+				(pts (xy 7.62 5.08) (xy 7.62 -12.7))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -12.7) (xy 33.02 -12.7))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 33.02 -12.7) (xy 33.02 5.08))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 33.02 5.08) (xy 7.62 5.08))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 7.62)
+				(name "E0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -2.54 0)
+				(length 7.62)
+				(name "E1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -5.08 0)
+				(length 7.62)
+				(name "E2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -7.62 0)
+				(length 7.62)
+				(name "VSS"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 40.64 -7.62 180)
+				(length 7.62)
+				(name "SDA"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 40.64 -5.08 180)
+				(length 7.62)
+				(name "SCL"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 40.64 -2.54 180)
+				(length 7.62)
+				(name "*WC"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 40.64 0 180)
+				(length 7.62)
+				(name "VCC"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+	)
+	(symbol "OP_00075"
+		(pin_names (offset 0.254))
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "U"
+			(id 0)
+			(at 0 2.54 0)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "TLV62569DBVR"
+			(id 1)
+			(at 0 0 0)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_00075"
+			(id 2)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Datasheet" "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftlv62569"
+			(id 3)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "ki_keywords" "TLV62569DBVR"
+			(id 4)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27)) hide)
+		)
+		(property "ki_locked" ""
+			(id 5)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27)) hide)
+		)
+		(property "ki_fp_filters" "DBV0005A_N DBV0005A_M DBV0005A_L"
+			(id 6)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27)) hide)
+		)
+		(property "Oro ID" "OP:00075"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Description" "Buck Switching Regulator IC Positive Adjustable 0.6V Output 2A SC-74A, SOT-753"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Arrow P/N" "TLV62569DBVR"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Digi-Key P/N" "296-47360-1-ND, 296-47360-2-ND, 296-47360-6-ND"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Mouser P/N" "595-TLV62569DBVR"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(symbol "OP_00075_0_1"
+			(polyline
+				(pts (xy -15.24 -12.7) (xy 15.24 -12.7))
+				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 15.24 -12.7) (xy 15.24 12.7))
+				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 15.24 12.7) (xy -15.24 12.7))
+				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy -15.24 12.7) (xy -15.24 -12.7))
+				(stroke (width 0.2032) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(pin input line
+				(at -20.32 0 0)
+				(length 5.08)
+				(name "EN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 20.32 -7.62 180)
+				(length 5.08)
+				(name "GND"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 20.32 7.62 180)
+				(length 5.08)
+				(name "SW"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at -20.32 7.62 0)
+				(length 5.08)
+				(name "VIN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin input line
+				(at 20.32 -2.54 180)
+				(length 5.08)
+				(name "FB"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+	)
+	(symbol "OP_00076"
+		(pin_names (offset 0.254))
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "U"
+			(id 0)
+			(at 35.56 10.16 0)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "STM32C031C4T6"
+			(id 1)
+			(at 35.56 7.62 0)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_00076"
+			(id 2)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Datasheet" "https://www.st.com/resource/en/datasheet/stm32c031c4.pdf"
+			(id 3)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "ki_keywords" "STM32C031C4T6"
+			(id 4)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27)) hide)
+		)
+		(property "ki_locked" ""
+			(id 5)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27)) hide)
+		)
+		(property "ki_fp_filters" "LQFP48-7x7mm_STM"
+			(id 6)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27)) hide)
+		)
+		(property "Oro ID" "OP:00076"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Description" "ARM® Cortex®-M0+ STM32C0 Microcontroller IC 32-Bit 48MHz 16KB (16K x 8) FLASH 48-LQFP (7x7)"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Manufacturer" "STMicroelectronics"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Arrow P/N" "STM32C031C4T6"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Digi-Key P/N" "497-STM32C031C4T6-ND"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Farnell P/N" "STM32C031C4T6"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Mouser P/N" "511-STM32C031C4T6"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(symbol "OP_00076_0_1"
+			(polyline
+				(pts (xy 7.62 5.08) (xy 7.62 -91.44))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -91.44) (xy 63.5 -91.44))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 63.5 -91.44) (xy 63.5 5.08))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 63.5 5.08) (xy 7.62 5.08))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(pin bidirectional line
+				(at 71.12 -5.08 180)
+				(length 7.62)
+				(name "PC13"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 71.12 -7.62 180)
+				(length 7.62)
+				(name "PC14-OSCX_IN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 71.12 -10.16 180)
+				(length 7.62)
+				(name "PC15-OSCX_OUT"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "3"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 71.12 -35.56 180)
+				(length 7.62)
+				(name "PF3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "4"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 71.12 -45.72 180)
+				(length 7.62)
+				(name "VREF+"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "5"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 71.12 -40.64 180)
+				(length 7.62)
+				(name "VDD/VDDA"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "6"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin power_in line
+				(at 0 -86.36 0)
+				(length 7.62)
+				(name "VSS/VSSA"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "7"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 71.12 -27.94 180)
+				(length 7.62)
+				(name "PF0-OSC_IN"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "8"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 71.12 -30.48 180)
+				(length 7.62)
+				(name "PF1-OSC_OUT"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "9"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 71.12 -33.02 180)
+				(length 7.62)
+				(name "PF2-NRST"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "10"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 0 0)
+				(length 7.62)
+				(name "PA0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "11"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -2.54 0)
+				(length 7.62)
+				(name "PA1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "12"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -5.08 0)
+				(length 7.62)
+				(name "PA2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "13"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -7.62 0)
+				(length 7.62)
+				(name "PA3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "14"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -10.16 0)
+				(length 7.62)
+				(name "PA4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "15"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -12.7 0)
+				(length 7.62)
+				(name "PA5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "16"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -15.24 0)
+				(length 7.62)
+				(name "PA6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "17"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -17.78 0)
+				(length 7.62)
+				(name "PA7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "18"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -43.18 0)
+				(length 7.62)
+				(name "PB0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "19"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -45.72 0)
+				(length 7.62)
+				(name "PB1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "20"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -48.26 0)
+				(length 7.62)
+				(name "PB2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "21"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -68.58 0)
+				(length 7.62)
+				(name "PB10"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "22"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -71.12 0)
+				(length 7.62)
+				(name "PB11"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "23"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -73.66 0)
+				(length 7.62)
+				(name "PB12"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "24"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -76.2 0)
+				(length 7.62)
+				(name "PB13"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "25"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -78.74 0)
+				(length 7.62)
+				(name "PB14"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "26"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -81.28 0)
+				(length 7.62)
+				(name "PB15"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "27"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -20.32 0)
+				(length 7.62)
+				(name "PA8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "28"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -22.86 0)
+				(length 7.62)
+				(name "PA9"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "29"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 71.12 0 180)
+				(length 7.62)
+				(name "PC6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "30"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 71.12 -2.54 180)
+				(length 7.62)
+				(name "PC7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "31"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -25.4 0)
+				(length 7.62)
+				(name "PA10"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "32"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -27.94 0)
+				(length 7.62)
+				(name "PA11[PA9]"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "33"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -30.48 0)
+				(length 7.62)
+				(name "PA12[PA10]"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "34"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -33.02 0)
+				(length 7.62)
+				(name "PA13"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "35"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -35.56 0)
+				(length 7.62)
+				(name "PA14-BOOT0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "36"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -38.1 0)
+				(length 7.62)
+				(name "PA15"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "37"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 71.12 -15.24 180)
+				(length 7.62)
+				(name "PD0"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "38"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 71.12 -17.78 180)
+				(length 7.62)
+				(name "PD1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "39"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 71.12 -20.32 180)
+				(length 7.62)
+				(name "PD2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "40"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 71.12 -22.86 180)
+				(length 7.62)
+				(name "PD3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "41"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -50.8 0)
+				(length 7.62)
+				(name "PB3"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "42"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -53.34 0)
+				(length 7.62)
+				(name "PB4"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "43"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -55.88 0)
+				(length 7.62)
+				(name "PB5"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "44"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -58.42 0)
+				(length 7.62)
+				(name "PB6"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "45"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -60.96 0)
+				(length 7.62)
+				(name "PB7"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "46"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -63.5 0)
+				(length 7.62)
+				(name "PB8"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "47"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin bidirectional line
+				(at 0 -66.04 0)
+				(length 7.62)
+				(name "PB9"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "48"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+	)
+	(symbol "OP_00077"
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "DS"
+			(at 49.53 7.62 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Value" "HDSM-531W"
+			(at 49.53 5.08 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Footprint" "Oro:OP_00077"
+			(at 49.53 -94.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Datasheet" "https://docs.broadcom.com/docs/AV02-1642EN"
+			(at 49.53 -194.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "ki_description" "LED Displays & Accessories White InGaN Common Anode 7Seg"
+			(at 49.53 -294.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Height" "4.14"
+			(at 49.53 -394.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Manufacturer_Name" "Avago Technologies"
+			(at 49.53 -494.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Manufacturer_Part_Number" "HDSM-531W"
+			(at 49.53 -594.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Mouser Part Number" "630-HDSM-531W"
+			(at 49.53 -694.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Broadcom-Avago/HDSM-531W?qs=QooBsFvUNIDxjUFSh%252BMtuw%3D%3D"
+			(at 49.53 -794.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Arrow Part Number" ""
+			(at 49.53 -894.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 49.53 -994.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Oro ID" "OP:00077"
+			(at 49.53 -94.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Description" "Display Modules - LED Character and Numeric White 7-Segment 1 Character Common Anode 2.95V 5mA 0.669\" H x 0.492\" W x 0.148\" D (17.00mm x 12.50mm x 3.75mm) 10-SMD, No Lead"
+			(at 49.53 -194.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Manufacturer" "Broadcom Limited"
+			(at 49.53 -194.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Digi-Key P/N" "HDSM-531W-ND"
+			(at 49.53 -194.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Mouser P/N" "630-HDSM-531W"
+			(at 49.53 -194.92 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(rectangle
+			(start 5.08 2.54)
+			(end 48.26 -12.7)
+			(stroke (width 0.254) (type default))
+			(fill (type background))
+		)
+		(pin passive line
+			(at 0 0 0)
+			(length 5.08)
+			(name "CATHODE_E"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "1"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 0 -2.54 0)
+			(length 5.08)
+			(name "CATHODE_D"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "2"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 0 -5.08 0)
+			(length 5.08)
+			(name "COMMON_ANODE_1"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "3"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 0 -7.62 0)
+			(length 5.08)
+			(name "CATHODE_C"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "4"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 0 -10.16 0)
+			(length 5.08)
+			(name "CATHODE_DP"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "5"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 53.34 -10.16 180)
+			(length 5.08)
+			(name "CATHODE_B"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "6"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 53.34 -7.62 180)
+			(length 5.08)
+			(name "CATHODE_A"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "7"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 53.34 -5.08 180)
+			(length 5.08)
+			(name "COMMON_ANODE_2"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "8"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 53.34 -2.54 180)
+			(length 5.08)
+			(name "CATHODE_F"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "9"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 53.34 0 180)
+			(length 5.08)
+			(name "CATHODE_G"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "10"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+	)
+	(symbol "OP_00078"
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "LS"
+			(at 11.43 0 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Value" "CPT-1206-3TH-T"
+			(at 11.43 -2.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(property "Footprint" "Oro:OP_00078"
+			(at 11.43 -102.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Datasheet" "https://www.sameskydevices.com/product/resource/cpt-1206-3th-t.pdf"
+			(at 11.43 -202.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "ki_description" "CPT-1206-3TH-T - 12 mm, 3 Vp-p, 78 dB, Through Hole, Piezo Audio Transducer Buzzer"
+			(at 11.43 -302.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Height" "7.3"
+			(at 11.43 -402.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Manufacturer_Name" "Same Sky"
+			(at 11.43 -502.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Manufacturer_Part_Number" "CPT-1206-3TH-T"
+			(at 11.43 -602.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Mouser Part Number" ""
+			(at 11.43 -702.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 11.43 -802.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Arrow Part Number" ""
+			(at 11.43 -902.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 11.43 -1002.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Oro ID" "OP:00078"
+			(at 11.43 -102.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Description" "Buzzers Transducer, Externally Driven Piezo 3 V 5mA 4kHz 78dB @ 3V, 10cm Through Hole PC Pins"
+			(at 11.43 -202.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Manufacturer" "Same Sky (Formerly CUI Devices)"
+			(at 11.43 -202.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Arrow P/N" "CPT-1206-3TH-T"
+			(at 11.43 -202.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Digi-Key P/N" "2223-CPT-1206-3TH-T-ND"
+			(at 11.43 -202.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Farnell P/N" "CPT-1206-3TH-T"
+			(at 11.43 -202.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(property "Mouser P/N" "179-CPT-1206-3TH-T"
+			(at 11.43 -202.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top) hide)
+		)
+		(polyline
+			(pts (xy 5.08 1.27) (xy 7.112 1.27))
+			(stroke (width 0.254) (type default))
+			(fill (type none))
+		)
+		(polyline
+			(pts (xy 9.652 3.81) (xy 7.112 1.27))
+			(stroke (width 0.254) (type default))
+			(fill (type none))
+		)
+		(polyline
+			(pts (xy 9.652 3.81) (xy 9.652 -6.35))
+			(stroke (width 0.254) (type default))
+			(fill (type none))
+		)
+		(polyline
+			(pts (xy 7.112 -3.81) (xy 9.652 -6.35))
+			(stroke (width 0.254) (type default))
+			(fill (type none))
+		)
+		(polyline
+			(pts (xy 7.112 -3.81) (xy 5.08 -3.81))
+			(stroke (width 0.254) (type default))
+			(fill (type none))
+		)
+		(polyline
+			(pts (xy 5.08 1.27) (xy 5.08 -3.81))
+			(stroke (width 0.254) (type default))
+			(fill (type none))
+		)
+		(pin passive line
+			(at 0 0 0)
+			(length 5.08)
+			(name "+"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "1"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+		(pin passive line
+			(at 0 -2.54 0)
+			(length 5.08)
+			(name "-"
+				(effects (font (size 1.27 1.27)))
+			)
+			(number "2"
+				(effects (font (size 1.27 1.27)))
+			)
+		)
+	)
+	(symbol "OP_00079"
+		(pin_names (offset 0.254))
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "J"
+			(id 0)
+			(at 8.89 6.35 0)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Value" "TSW-102-07-T-S"
+			(id 1)
+			(at 0 0 0)
+			(effects (font (size 1.524 1.524)))
+		)
+		(property "Footprint" "Oro:OP_00079"
+			(id 2)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Datasheet" "https://suddendocs.samtec.com/catalog_english/tsw_th.pdf"
+			(id 3)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "ki_keywords" "TSW-102-07-T-S"
+			(id 4)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27)) hide)
+		)
+		(property "ki_locked" ""
+			(id 5)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27)) hide)
+		)
+		(property "ki_fp_filters" "CON2_1X2_TU_TSW"
+			(id 6)
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27)) hide)
+		)
+		(property "Oro ID" "OP:00079"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Description" "Connector Header Through Hole 2 position 0.100\" (2.54mm)"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Manufacturer" "Samtec Inc."
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Arrow P/N" "TSW-102-07-T-S"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Digi-Key P/N" "612-TSW-102-07-T-S-ND"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Farnell P/N" "TSW-102-07-T-S"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(property "Mouser P/N" "200-TSW10207TS"
+			(at 0 0 0)
+			(effects (font (size 1.27 1.27) italic) hide)
+		)
+		(symbol "OP_00079_1_1"
+			(polyline
+				(pts (xy 10.16 0) (xy 5.08 0))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -2.54) (xy 5.08 -2.54))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 0) (xy 8.89 0.846666))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -2.54) (xy 8.89 -1.693334))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 0) (xy 8.89 -0.846666))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 10.16 -2.54) (xy 8.89 -3.386666))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 2.54) (xy 5.08 -5.08))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 -5.08) (xy 12.7 -5.08))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 -5.08) (xy 12.7 2.54))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 2.54) (xy 5.08 2.54))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 5.08)
+				(name "1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -2.54 0)
+				(length 5.08)
+				(name "2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
+		(symbol "OP_00079_1_2"
+			(polyline
+				(pts (xy 7.62 0) (xy 5.08 0))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -2.54) (xy 5.08 -2.54))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 0) (xy 8.89 0.846666))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -2.54) (xy 8.89 -1.693334))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 0) (xy 8.89 -0.846666))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 7.62 -2.54) (xy 8.89 -3.386666))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 2.54) (xy 5.08 -5.08))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 5.08 -5.08) (xy 12.7 -5.08))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 -5.08) (xy 12.7 2.54))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(polyline
+				(pts (xy 12.7 2.54) (xy 5.08 2.54))
+				(stroke (width 0.127) (type default) (color 0 0 0 0))
+				(fill (type none))
+			)
+			(pin unspecified line
+				(at 0 0 0)
+				(length 5.08)
+				(name "1"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "1"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+			(pin unspecified line
+				(at 0 -2.54 0)
+				(length 5.08)
+				(name "2"
+					(effects (font (size 1.27 1.27)))
+				)
+				(number "2"
+					(effects (font (size 1.27 1.27)))
+				)
+			)
+		)
 	)
 )
