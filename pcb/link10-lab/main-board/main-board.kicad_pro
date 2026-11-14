@@ -672,6 +672,10 @@
       ],
       "SWD": [
         "SWDIO",
+        "SWCLK"
+      ],
+      "SWDO": [
+        "SWDIO",
         "SWCLK",
         "SWO"
       ],
@@ -730,7 +734,7 @@
         "uuid": "a70f06c5-be00-4bc8-bd65-e567781cea44"
       }
     ],
-    "used_designators": "#PWR146,J8",
+    "used_designators": "R102,J1,J8-13,LED1-2,H5-6",
     "variants": []
   },
   "sheets": [

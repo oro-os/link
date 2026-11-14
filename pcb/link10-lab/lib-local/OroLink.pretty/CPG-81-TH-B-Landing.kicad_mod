@@ -1,0 +1,180 @@
+(footprint "CPG-81-TH-B-Landing"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "CPG-81-TH-B landing pads")
+	(property "Reference" "REF**"
+		(at 2.6 -3 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "1d65a713-a730-424c-b9df-8d96dcd01f5e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "CPG-81-TH-B-Landing"
+		(at 2.6 5.6 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "fa2caf99-2e26-46db-8078-bc24e911486a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.sameskydevices.com/product/resource/cpg-81-th-b.pdf"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "97a138a6-f634-4676-886b-952d84f4f853")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "CPG-81-TH-B landing pads"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "370769c5-8f64-4799-a0e1-96b8e3799eec")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd exclude_from_bom)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start 6.2 -2)
+		(end 7 -1.2)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "3027f3e8-e6cd-43c3-acaa-14202093ded4")
+	)
+	(fp_rect
+		(start -2 -2)
+		(end 7 4.6)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "aed20aad-64a0-4c10-a443-a6ea6eecc25f")
+	)
+	(fp_rect
+		(start -2 -2)
+		(end 7 4.6)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(fill no)
+		(layer "Margin")
+		(uuid "f0a22193-2b5d-420c-8cfa-c59a4d7d69e5")
+	)
+	(fp_rect
+		(start -2 -2)
+		(end 7 4.6)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "9001cb13-590c-44b9-bc51-106104f188a5")
+	)
+	(fp_rect
+		(start -2 -2)
+		(end 7 4.6)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "c2c138a4-80b4-4fc5-b9ce-7bd87eaa99ff")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 2.6 7.1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "6d77f4e7-65da-4c51-b5fa-d3f7bbb6f895")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd circle
+		(at 5.08 0)
+		(size 1.9 1.9)
+		(property pad_prop_testpoint)
+		(layers "F.Cu" "F.Mask")
+		(uuid "db7106d6-3d28-40e4-a9c5-d60ea6207cc1")
+	)
+	(pad "2" smd circle
+		(at 5.08 2.5)
+		(size 1.9 1.9)
+		(property pad_prop_testpoint)
+		(layers "F.Cu" "F.Mask")
+		(uuid "333b10ef-81b4-48aa-86cb-965f603b7aaa")
+	)
+	(pad "3" smd circle
+		(at 2.54 0)
+		(size 1.9 1.9)
+		(property pad_prop_testpoint)
+		(layers "F.Cu" "F.Mask")
+		(uuid "e77bc84a-3568-4dcd-8552-26bb33b963d6")
+	)
+	(pad "4" smd circle
+		(at 2.54 2.5)
+		(size 1.9 1.9)
+		(property pad_prop_testpoint)
+		(layers "F.Cu" "F.Mask")
+		(uuid "fe18d3c4-5208-4d40-9e3f-d9c6767b9ccf")
+	)
+	(pad "5" smd circle
+		(at 0 0)
+		(size 1.9 1.9)
+		(property pad_prop_testpoint)
+		(layers "F.Cu" "F.Mask")
+		(uuid "b556c423-2c5e-4fd8-9af5-ec1e3241172a")
+	)
+	(pad "6" smd circle
+		(at 0 2.5)
+		(size 1.9 1.9)
+		(property pad_prop_testpoint)
+		(layers "F.Cu" "F.Mask")
+		(uuid "149e1439-e213-4ae0-8606-af7c8b5da67e")
+	)
+	(group ""
+		(uuid "0ce8b722-74c6-459b-a6fd-52c75417b82e")
+		(members "149e1439-e213-4ae0-8606-af7c8b5da67e" "333b10ef-81b4-48aa-86cb-965f603b7aaa"
+			"fe18d3c4-5208-4d40-9e3f-d9c6767b9ccf"
+		)
+	)
+	(group ""
+		(uuid "6201360d-1408-47d9-9897-806d404162ed")
+		(members "b556c423-2c5e-4fd8-9af5-ec1e3241172a" "db7106d6-3d28-40e4-a9c5-d60ea6207cc1"
+			"e77bc84a-3568-4dcd-8552-26bb33b963d6"
+		)
+	)
+	(embedded_fonts no)
+)
