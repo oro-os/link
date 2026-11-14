@@ -3550,6 +3550,12 @@
 		(uuid "4ed7c113-b0af-49c2-84c9-7d79f3769940")
 	)
 	(junction
+		(at 242.57 171.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4fdc3d72-6b94-4ec4-83a2-00c9906956e3")
+	)
+	(junction
 		(at 237.49 234.95)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3730,6 +3736,16 @@
 		)
 		(uuid "00a8b879-934e-4583-b89e-59b99322cc14")
 	)
+	(wire
+		(pts
+			(xy 120.65 234.95) (xy 111.76 234.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0228f69d-e4fc-43eb-b304-2d660b2a283d")
+	)
 	(bus
 		(pts
 			(xy 115.57 311.15) (xy 115.57 318.77)
@@ -3904,6 +3920,16 @@
 	)
 	(wire
 		(pts
+			(xy 242.57 252.73) (xy 120.65 252.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "168df295-aff9-43bd-9e25-d3be241a5694")
+	)
+	(wire
+		(pts
 			(xy 484.505 68.58) (xy 484.505 70.485)
 		)
 		(stroke
@@ -3932,6 +3958,16 @@
 			(type default)
 		)
 		(uuid "1827b9c4-dba2-44b8-a75d-e81e4f2fc811")
+	)
+	(wire
+		(pts
+			(xy 292.1 255.27) (xy 118.11 255.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18cc36c9-0c55-4ee0-90e2-4e8af2f2de95")
 	)
 	(polyline
 		(pts
@@ -4017,6 +4053,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 252.73) (xy 120.65 234.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "258becee-ed14-4ae5-b73b-da9ed228aef7")
+	)
+	(wire
+		(pts
 			(xy 223.52 231.14) (xy 223.52 234.95)
 		)
 		(stroke
@@ -4074,6 +4120,16 @@
 			(type default)
 		)
 		(uuid "2b15c072-685e-4b52-a7b1-6ffac2f1c525")
+	)
+	(wire
+		(pts
+			(xy 118.11 255.27) (xy 118.11 237.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b6668be-ebc2-42b0-85c2-bd55e25de94f")
 	)
 	(bus
 		(pts
@@ -4472,7 +4528,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 171.45) (xy 292.1 171.45)
+			(xy 219.71 171.45) (xy 242.57 171.45)
 		)
 		(stroke
 			(width 0)
@@ -4788,6 +4844,16 @@
 	)
 	(wire
 		(pts
+			(xy 242.57 171.45) (xy 242.57 252.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9313aba6-a554-444a-83f2-3ffb8ef0d7ee")
+	)
+	(wire
+		(pts
 			(xy 60.96 327.66) (xy 113.03 327.66)
 		)
 		(stroke
@@ -4996,6 +5062,16 @@
 			(type default)
 		)
 		(uuid "ab3e274e-0610-44b5-9dda-6eeb29b08fab")
+	)
+	(wire
+		(pts
+			(xy 242.57 171.45) (xy 292.1 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab627c58-c6a9-4ed0-86e5-3dda2d5016ad")
 	)
 	(wire
 		(pts
@@ -5677,6 +5753,16 @@
 			(type default)
 		)
 		(uuid "fe125773-610a-4bae-9ffd-b0d054ee1aa1")
+	)
+	(wire
+		(pts
+			(xy 118.11 237.49) (xy 111.76 237.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "feff9c7e-1aba-43fa-a993-f9dbf661556c")
 	)
 	(label "BB_SWD.SWDIO"
 		(at 113.03 360.68 180)
@@ -10440,7 +10526,7 @@
 	)
 	(sheet
 		(at 72.39 207.01)
-		(size 39.37 27.94)
+		(size 39.37 33.02)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -10466,7 +10552,7 @@
 			)
 		)
 		(property "Sheetfile" "mainboard-eth-port-poe.kicad_sch"
-			(at 72.39 235.5346 0)
+			(at 72.39 240.6146 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10550,6 +10636,26 @@
 		(pin "LED_Y-" output
 			(at 111.76 229.87 0)
 			(uuid "21cf68a6-0c2e-4eb1-bb33-26da60313cb6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "T2P_+3V3" input
+			(at 111.76 234.95 0)
+			(uuid "8e94e7c6-8d81-46c3-80ed-a7cd388a3c3e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "T2P_~{TYPE2}" input
+			(at 111.76 237.49 0)
+			(uuid "b688460a-a7ed-4323-83f6-a9b6b1fd0cf1")
 			(effects
 				(font
 					(size 1.27 1.27)
