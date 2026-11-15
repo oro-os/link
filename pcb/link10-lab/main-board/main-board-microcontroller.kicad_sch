@@ -3176,433 +3176,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Oro:OP_0001C"
-			(body_styles demorgan)
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "R"
-				(at 5.715 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "CRCW04024K70FKEDHP"
-				(at 6.35 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" "Oro:OP_0001C"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Datasheet" "https://www.vishay.com/doc?20043"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Description" "CRCW0402-HP 100 4K7 1% ET7 E3"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Mouser ID" "71-CRCW04024K70FKEDH"
-				(at 0 -3 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Mouser URL" "https://www.mouser.de/ProductDetail/Vishay-Dale/CRCW04024K70FKEDHP?qs=k2%2FDWSARqgH3ASlI4vM3KQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=71-CRCW04024K70FKEDH&utm_content=Vishay"
-				(at 0 -3 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Mfr. Number" "CRCW04024K70FKEDHP"
-				(at 0 -3 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "DigiKey ID" "541-4.70KYCT-ND"
-				(at 0 -3 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Mfr. Name" "Vishay"
-				(at 0 -3 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Description_1" "CRCW0402-HP 100 4K7 1% ET7 E3"
-				(at 0 -3 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Arrow ID" "CRCW04024K70FKEDHP"
-				(at 0 -3 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "CRCW04024K70FKEDHP"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "RES_CRCW_0402_VIS RES_CRCW_0402_VIS-M RES_CRCW_0402_VIS-L"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "OP_0001C_1_1"
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 3.175 1.27)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.175 1.27) (xy 4.445 -1.27)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.445 -1.27) (xy 5.715 1.27)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.715 1.27) (xy 6.985 -1.27)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.985 -1.27) (xy 8.255 1.27)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.255 1.27) (xy 9.525 -1.27)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 9.525 -1.27) (xy 10.16 0)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at 12.7 0 180)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 0 0 0)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "OP_0001C_1_2"
-				(polyline
-					(pts
-						(xy -1.27 8.255) (xy 1.27 9.525)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 5.715) (xy 1.27 6.985)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 3.175) (xy 1.27 4.445)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy -1.27 3.175)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 9.525) (xy 0 10.16)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 6.985) (xy -1.27 8.255)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 4.445) (xy -1.27 5.715)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at 0 12.7 270)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 0 0 90)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Oro:OP_0001E"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -11924,15 +11497,6 @@
 		(uuid "dca628f8-22a3-4294-8a59-b9ebc5d57a09")
 	)
 	(bus_entry
-		(at 170.18 149.86)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "000154f6-21b5-4b06-ae94-0c69c09560a2")
-	)
-	(bus_entry
 		(at 332.74 166.37)
 		(size -2.54 2.54)
 		(stroke
@@ -12048,15 +11612,6 @@
 			(type default)
 		)
 		(uuid "357c049e-8e34-4565-8d4a-a43c78b9925c")
-	)
-	(bus_entry
-		(at 170.18 182.88)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "47210a36-b29d-4e23-aa83-2c20f50f34e4")
 	)
 	(bus_entry
 		(at 299.72 195.58)
@@ -13181,16 +12736,6 @@
 		)
 		(uuid "4db68414-be03-46c2-a44f-83520fe2d8fe")
 	)
-	(bus
-		(pts
-			(xy 167.64 121.92) (xy 163.83 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "50358432-db51-421f-9bc7-9c9eea53ad18")
-	)
 	(wire
 		(pts
 			(xy 190.5 377.19) (xy 190.5 381)
@@ -13831,16 +13376,6 @@
 		)
 		(uuid "8a89e135-251a-417a-afba-f30996c4b0fc")
 	)
-	(bus
-		(pts
-			(xy 167.64 180.34) (xy 167.64 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8ace52b3-6db7-49a0-beff-b5da52bb97fa")
-	)
 	(wire
 		(pts
 			(xy 219.71 361.95) (xy 219.71 356.87)
@@ -13850,16 +13385,6 @@
 			(type default)
 		)
 		(uuid "8ae58c56-b57e-4538-8d9e-bc1ca4c93d3f")
-	)
-	(wire
-		(pts
-			(xy 170.18 149.86) (xy 199.39 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8b5e2904-83b5-4d34-af07-1e08c5d40f1b")
 	)
 	(wire
 		(pts
@@ -14301,16 +13826,6 @@
 		)
 		(uuid "ac8b389b-c609-44cb-b8b1-8dc7bfec37da")
 	)
-	(bus
-		(pts
-			(xy 161.29 118.11) (xy 163.83 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "adde97c2-0204-4ba2-9609-668b0cb15585")
-	)
 	(wire
 		(pts
 			(xy 177.8 341.63) (xy 180.34 341.63)
@@ -14370,16 +13885,6 @@
 			(type default)
 		)
 		(uuid "b0c9b1a9-910e-4d20-a80b-2e8220d73de8")
-	)
-	(wire
-		(pts
-			(xy 170.18 182.88) (xy 199.39 182.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b264c10d-7e40-4138-8d98-75d716ee2358")
 	)
 	(wire
 		(pts
@@ -15561,16 +15066,6 @@
 		)
 		(uuid "98d2e195-d071-4c6c-a8e6-79f056db7ce7")
 	)
-	(label "USART1.TX"
-		(at 170.18 182.88 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a6546cc0-6fe3-4e8b-917b-1895815eedf8")
-	)
 	(label "LCD.D2"
 		(at 299.72 165.1 180)
 		(effects
@@ -15590,16 +15085,6 @@
 			(justify left bottom)
 		)
 		(uuid "aa9b009a-7d91-4911-9a9c-66435f4cdcfe")
-	)
-	(label "USART1.RX"
-		(at 170.18 149.86 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "aba0f45d-92f5-454d-849c-0730f6eadb18")
 	)
 	(label "SWD.SWDIO"
 		(at 149.86 157.48 0)
@@ -15682,17 +15167,6 @@
 			(justify left)
 		)
 		(uuid "2373cebd-f3cb-41c1-970f-25d513caff7e")
-	)
-	(hierarchical_label "USART1{UART}"
-		(shape bidirectional)
-		(at 161.29 118.11 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "31afb56b-3822-4a4d-94e4-1542aec38154")
 	)
 	(hierarchical_label "BRIDGE_~{CS}"
 		(shape output)
@@ -18367,388 +17841,6 @@
 			(project "link"
 				(path "/fa3d690f-10fd-42a5-9bc1-4a64a57036bb/9d13b135-0b81-4bac-8840-95596fc6db1f"
 					(reference "C33")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Oro:OP_0001C")
-		(at 119.38 181.61 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "2c186024-9fbc-47c3-8976-d2ef8c3bcb63")
-		(property "Reference" "R2"
-			(at 121.3866 173.8435 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "4.7K"
-			(at 121.3866 176.6764 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Oro:OP_0001C"
-			(at 119.38 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/doc?20043"
-			(at 119.38 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" "CRCW0402-HP 100 4K7 1% ET7 E3"
-			(at 119.38 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mouser ID" "71-CRCW04024K70FKEDH"
-			(at 122.38 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Vishay-Dale/CRCW04024K70FKEDHP?qs=k2%2FDWSARqgH3ASlI4vM3KQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=71-CRCW04024K70FKEDH&utm_content=Vishay"
-			(at 122.38 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Mfr. Number" "CRCW04024K70FKEDHP"
-			(at 122.38 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "DigiKey ID" "541-4.70KYCT-ND"
-			(at 122.38 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Mfr. Name" "Vishay"
-			(at 122.38 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description_1" "CRCW0402-HP 100 4K7 1% ET7 E3"
-			(at 122.38 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Arrow ID" "CRCW04024K70FKEDHP"
-			(at 122.38 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Oro ID" "OP:0001C"
-			(at 119.38 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "fdabe15b-300f-43ee-a77b-d723621d5295")
-		)
-		(pin "1"
-			(uuid "32818ed6-a734-4d10-82a7-7b7c3833b7ba")
-		)
-		(instances
-			(project "link"
-				(path "/34d48b0d-48f7-4528-9a40-c8abf48b8670/481c9167-8908-4ecc-945f-4fa6d9584752/9d13b135-0b81-4bac-8840-95596fc6db1f"
-					(reference "R9")
-					(unit 1)
-				)
-			)
-			(project "main-board"
-				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/9943a742-9010-4484-baf5-b9968ace2aa4"
-					(reference "R2")
-					(unit 1)
-				)
-			)
-			(project "link"
-				(path "/fa3d690f-10fd-42a5-9bc1-4a64a57036bb/9d13b135-0b81-4bac-8840-95596fc6db1f"
-					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Oro:OP_0001C")
-		(at 115.57 181.61 270)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2dc15daf-a1ce-41cf-a262-c66675df3e53")
-		(property "Reference" "R1"
-			(at 113.5634 173.8435 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "4.7K"
-			(at 113.5634 176.6764 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Oro:OP_0001C"
-			(at 115.57 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/doc?20043"
-			(at 115.57 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" "CRCW0402-HP 100 4K7 1% ET7 E3"
-			(at 115.57 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mouser ID" "71-CRCW04024K70FKEDH"
-			(at 112.57 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Mouser URL" "https://www.mouser.de/ProductDetail/Vishay-Dale/CRCW04024K70FKEDHP?qs=k2%2FDWSARqgH3ASlI4vM3KQ%3D%3D&utm_source=octopart&utm_medium=aggregator&utm_campaign=71-CRCW04024K70FKEDH&utm_content=Vishay"
-			(at 112.57 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Mfr. Number" "CRCW04024K70FKEDHP"
-			(at 112.57 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "DigiKey ID" "541-4.70KYCT-ND"
-			(at 112.57 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Mfr. Name" "Vishay"
-			(at 112.57 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description_1" "CRCW0402-HP 100 4K7 1% ET7 E3"
-			(at 112.57 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Arrow ID" "CRCW04024K70FKEDHP"
-			(at 112.57 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Oro ID" "OP:0001C"
-			(at 115.57 181.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "73c0e153-0185-4754-8298-694eb5c09ca7")
-		)
-		(pin "1"
-			(uuid "4060c80e-13d1-4786-97f8-9c3354ba61df")
-		)
-		(instances
-			(project "link"
-				(path "/34d48b0d-48f7-4528-9a40-c8abf48b8670/481c9167-8908-4ecc-945f-4fa6d9584752/9d13b135-0b81-4bac-8840-95596fc6db1f"
-					(reference "R8")
-					(unit 1)
-				)
-			)
-			(project "main-board"
-				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/9943a742-9010-4484-baf5-b9968ace2aa4"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-			(project "link"
-				(path "/fa3d690f-10fd-42a5-9bc1-4a64a57036bb/9d13b135-0b81-4bac-8840-95596fc6db1f"
-					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -23569,6 +22661,150 @@
 			(project "link"
 				(path "/fa3d690f-10fd-42a5-9bc1-4a64a57036bb/9d13b135-0b81-4bac-8840-95596fc6db1f"
 					(reference "C26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0002S")
+		(at 115.57 181.61 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "71f67ad3-1f0f-446c-a037-f89e78540b6c")
+		(property "Reference" "R82"
+			(at 113.5634 173.8435 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "2.2K"
+			(at 113.5634 176.6764 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Oro:OP_0002S"
+			(at 121.666 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDO0000/AOA0000C331.pdf"
+			(at 122.174 182.372 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" "2.32 kOhms ±1% 0.5W, 1/2W Chip Resistor 0805 (2012 Metric) Automotive AEC-Q200, Pulse Withstanding Thick Film"
+			(at 120.904 180.848 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0002S"
+			(at 121.666 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Manufacturer" "Panasonic Industry"
+			(at 122.174 182.372 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Digi-Key P/N" "ERJ-P06F2321V-ND"
+			(at 122.174 182.372 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Farnell P/N" "ERJP06F2321V"
+			(at 122.174 182.372 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mouser P/N" "667-ERJ-P06F2321V"
+			(at 122.174 182.372 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "88793cf9-6af5-4d87-8aab-152d64b9cc12")
+		)
+		(pin "1"
+			(uuid "1339354f-9bf4-4a89-b0b7-0f12c2a5d315")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/9943a742-9010-4484-baf5-b9968ace2aa4"
+					(reference "R82")
 					(unit 1)
 				)
 			)
@@ -28897,6 +28133,149 @@
 			(project "link"
 				(path "/fa3d690f-10fd-42a5-9bc1-4a64a57036bb/9d13b135-0b81-4bac-8840-95596fc6db1f"
 					(reference "#PWR0115")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0002S")
+		(at 119.38 181.61 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f5f2c014-4a42-49af-883d-643cce016127")
+		(property "Reference" "R109"
+			(at 121.3866 173.8435 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "2.2K"
+			(at 121.3866 176.6764 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Oro:OP_0002S"
+			(at 113.284 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDO0000/AOA0000C331.pdf"
+			(at 112.776 182.372 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" "2.32 kOhms ±1% 0.5W, 1/2W Chip Resistor 0805 (2012 Metric) Automotive AEC-Q200, Pulse Withstanding Thick Film"
+			(at 114.046 180.848 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0002S"
+			(at 113.284 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Manufacturer" "Panasonic Industry"
+			(at 112.776 182.372 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Digi-Key P/N" "ERJ-P06F2321V-ND"
+			(at 112.776 182.372 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Farnell P/N" "ERJP06F2321V"
+			(at 112.776 182.372 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mouser P/N" "667-ERJ-P06F2321V"
+			(at 112.776 182.372 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "9ebc6fb1-c19c-4de8-b905-6a883b66a3bd")
+		)
+		(pin "1"
+			(uuid "f7a955ab-9a66-40d3-8a4a-a2a9bacc41b3")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/9943a742-9010-4484-baf5-b9968ace2aa4"
+					(reference "R109")
 					(unit 1)
 				)
 			)
