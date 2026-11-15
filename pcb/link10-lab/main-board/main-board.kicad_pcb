@@ -148777,8 +148777,8 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6209/eht-1xx-01-xx-d-xx-xx-xx-x-xx-mkt.pdf"
-			(at 0 0 90)
+		(property "Datasheet" ""
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "07f55f98-c123-49fb-acc2-95eabd7cb288")
@@ -148788,8 +148788,8 @@
 				)
 			)
 		)
-		(property "Description" "Connector Header Surface Mount 50 position 0.079\" (2.00mm)"
-			(at 0 0 90)
+		(property "Description" ""
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "08ec4e82-f115-46cd-ab86-9eaf9dda3e23")
@@ -148800,7 +148800,7 @@
 			)
 		)
 		(property "Oro ID" "OP:0007I"
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6d66bab3-8b83-4739-bb5f-f87990f20253")
@@ -148810,85 +148810,10 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samtec Inc."
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "82d053a8-a2dc-4fd0-9217-5928631036f7")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Arrow P/N" "EHT-125-01-L-D-SM"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "7c453d3b-dd85-4b32-ad3f-102a98326721")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Digi-Key P/N" "EHT-125-01-L-D-SM-ND"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "754aabc4-7d64-4cfe-976c-9c58d5405e4c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Farnell P/N" "EHT-125-01-L-D-SM"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "2767f52d-c680-4519-bf6b-e1450fa3d2b4")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Mouser P/N" "200-EHT12501LDSM"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "e136709f-f4cf-47d9-9fdc-db3c8779c8c7")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "CONN50_25-01-F-D-SM_SAI")
 		(path "/53ca2ebc-24ec-401e-a1fc-94a378d7e68c")
 		(sheetname "/")
 		(sheetfile "main-board.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15"
-					"16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29"
-					"30" "31" "32" "33" "34" "35" "36" "37" "38" "39" "40" "41" "42" "43"
-					"44" "45" "46" "47" "48" "49" "50"
-				)
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -149453,28 +149378,6 @@
 			(layer "B.SilkS")
 			(uuid "6341982e-0521-4273-9217-77de92d8a908")
 		)
-		(fp_circle
-			(center -4.459937 -0.314896)
-			(end -3.863037 -0.314896)
-			(stroke
-				(width 0.12)
-				(type default)
-			)
-			(fill no)
-			(layer "Edge.Cuts")
-			(uuid "890be278-a375-42f6-a65b-562c10967003")
-		)
-		(fp_circle
-			(center 52.45999 -4.994998)
-			(end 53.05689 -4.994998)
-			(stroke
-				(width 0.12)
-				(type default)
-			)
-			(fill no)
-			(layer "Edge.Cuts")
-			(uuid "3378f99c-9650-4222-a751-3273b7de681f")
-		)
 		(fp_line
 			(start -8.1437 2.425703)
 			(end 56.1437 2.425703)
@@ -149577,6 +149480,20 @@
 					(thickness 0.15)
 				)
 			)
+		)
+		(pad "" np_thru_hole circle
+			(at -4.459937 -0.314896 270)
+			(size 1.19 1.19)
+			(drill 1.19)
+			(layers "*.Cu" "*.Mask")
+			(uuid "2c247c76-3bab-4dc6-8976-4fe158cbd4b5")
+		)
+		(pad "" np_thru_hole circle
+			(at 52.45999 -4.994998 270)
+			(size 1.19 1.19)
+			(drill 1.19)
+			(layers "*.Cu" "*.Mask")
+			(uuid "a4aebcd1-bf46-45fa-8ecd-78919e2d36eb")
 		)
 		(pad "1" smd rect
 			(at 0 0 270)

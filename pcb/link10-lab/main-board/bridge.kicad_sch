@@ -7149,6 +7149,388 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Oro:OP_0005Y"
+			(body_styles demorgan)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 5.715 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "CR0603-FX-43R2ELF"
+				(at 6.35 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "Oro:OP_0005Y"
+				(at 0 6.096 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" "https://bourns.com/docs/product-datasheets/cr.pdf?sfvrsn=574d41f6_14"
+				(at -0.762 6.604 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "43.2 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film"
+				(at 0.762 5.334 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Oro ID" "OP:0005Y"
+				(at 0 6.096 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Manufacturer" "Bourns Inc."
+				(at -0.762 6.604 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Arrow P/N" "CR0603-FX-43R2ELF"
+				(at -0.762 6.604 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Digi-Key P/N" "CR0603-FX-43R2ELFCT-ND, CR0603-FX-43R2ELFDKR-ND, CR0603-FX-43R2ELFTR-ND"
+				(at -0.762 6.604 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Mouser P/N" "652-CR0603FX-43R2ELF"
+				(at -0.762 6.604 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "ki_keywords" "CR0603-FX-43R2ELF"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "OP_0005Y_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.175 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 1.27) (xy 4.445 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 -1.27) (xy 5.715 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 1.27) (xy 6.985 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.985 -1.27) (xy 8.255 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.255 1.27) (xy 9.525 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 9.525 -1.27) (xy 10.16 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 12.7 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "OP_0005Y_1_2"
+				(polyline
+					(pts
+						(xy -1.27 8.255) (xy 1.27 9.525)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 5.715) (xy 1.27 6.985)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 3.175) (xy 1.27 4.445)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy -1.27 3.175)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 9.525) (xy 0 10.16)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 6.985) (xy -1.27 8.255)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 4.445) (xy -1.27 5.715)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 12.7 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Oro:OP_00073"
 			(pin_names
 				(offset 0)
@@ -9044,8 +9426,8 @@
 		(uuid "56e875bf-e453-40df-ae4e-28aa85c9393d")
 	)
 	(bus_entry
-		(at 166.37 255.27)
-		(size -2.54 2.54)
+		(at 203.2 233.68)
+		(size 2.54 2.54)
 		(stroke
 			(width 0)
 			(type default)
@@ -9206,8 +9588,8 @@
 		(uuid "a14b0b0a-1e2a-4789-b4a6-7045535798c0")
 	)
 	(bus_entry
-		(at 166.37 252.73)
-		(size -2.54 2.54)
+		(at 203.2 231.14)
+		(size 2.54 2.54)
 		(stroke
 			(width 0)
 			(type default)
@@ -9514,7 +9896,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 243.84) (xy 156.21 243.84)
+			(xy 148.59 243.84) (xy 151.13 243.84)
 		)
 		(stroke
 			(width 0)
@@ -9674,6 +10056,16 @@
 	)
 	(wire
 		(pts
+			(xy 163.83 273.05) (xy 163.83 214.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11db08dd-d05a-4587-ac9d-c28d0889af2f")
+	)
+	(wire
+		(pts
 			(xy 114.3 125.73) (xy 125.73 125.73)
 		)
 		(stroke
@@ -9711,16 +10103,6 @@
 			(type default)
 		)
 		(uuid "13935460-c20a-428c-93ca-7f401f7ff0a4")
-	)
-	(wire
-		(pts
-			(xy 181.61 214.63) (xy 181.61 255.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "13f3f39c-68c4-4ea4-bae3-0fe9e08d4a9e")
 	)
 	(wire
 		(pts
@@ -10084,6 +10466,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 273.05) (xy 116.84 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2500f28a-33d3-44c4-b05e-687a37df66ab")
+	)
+	(wire
+		(pts
 			(xy 461.01 304.8) (xy 458.47 304.8)
 		)
 		(stroke
@@ -10224,7 +10616,7 @@
 	)
 	(bus
 		(pts
-			(xy 157.48 262.89) (xy 161.29 262.89)
+			(xy 212.09 241.3) (xy 208.28 241.3)
 		)
 		(stroke
 			(width 0)
@@ -10324,6 +10716,16 @@
 	)
 	(wire
 		(pts
+			(xy 179.07 231.14) (xy 179.07 214.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f238dbf-c92e-4615-b1cf-2efddac31297")
+	)
+	(wire
+		(pts
 			(xy 448.31 287.02) (xy 448.31 289.56)
 		)
 		(stroke
@@ -10381,6 +10783,16 @@
 			(type default)
 		)
 		(uuid "33e58feb-c699-4351-872d-0833e5e8dbfe")
+	)
+	(wire
+		(pts
+			(xy 111.76 267.97) (xy 144.78 267.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "346d485d-63a1-4b72-ad3e-257b248a3386")
 	)
 	(wire
 		(pts
@@ -10564,7 +10976,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 214.63) (xy 156.21 227.33)
+			(xy 149.86 226.06) (xy 149.86 227.33)
 		)
 		(stroke
 			(width 0)
@@ -10701,6 +11113,16 @@
 			(type default)
 		)
 		(uuid "45176512-f6a0-4fa4-ab72-c1fce965d904")
+	)
+	(wire
+		(pts
+			(xy 181.61 233.68) (xy 181.61 214.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "454f33a4-5cbe-43b2-97e7-9b37f3cb96b4")
 	)
 	(wire
 		(pts
@@ -11002,6 +11424,16 @@
 		)
 		(uuid "54d370ec-17da-4310-be27-500a4b9c72f0")
 	)
+	(wire
+		(pts
+			(xy 129.54 273.05) (xy 163.83 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55126dba-d642-461d-be36-65465a3e7d1c")
+	)
 	(bus
 		(pts
 			(xy 111.76 110.49) (xy 109.22 107.95)
@@ -11021,6 +11453,16 @@
 			(type default)
 		)
 		(uuid "558cc82a-74c8-4b8a-a231-82021db972ca")
+	)
+	(wire
+		(pts
+			(xy 157.48 267.97) (xy 158.75 267.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56e24212-615d-4d7d-b9fa-12887abf6f8f")
 	)
 	(wire
 		(pts
@@ -11054,7 +11496,7 @@
 	)
 	(bus
 		(pts
-			(xy 163.83 255.27) (xy 163.83 260.35)
+			(xy 205.74 233.68) (xy 205.74 238.76)
 		)
 		(stroke
 			(width 0)
@@ -11404,16 +11846,6 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 214.63) (xy 179.07 252.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "68137e96-eaa3-4cf1-8bc5-f0a9cae5c0b9")
-	)
-	(wire
-		(pts
 			(xy 114.3 118.11) (xy 133.35 118.11)
 		)
 		(stroke
@@ -11511,6 +11943,16 @@
 			(type default)
 		)
 		(uuid "6c5498e0-0808-48f0-9a3b-526d3e6465ee")
+	)
+	(wire
+		(pts
+			(xy 143.51 270.51) (xy 161.29 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d128c41-f248-4980-8448-33fb426a8b06")
 	)
 	(wire
 		(pts
@@ -12004,6 +12446,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 270.51) (xy 130.81 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83822b54-6b6b-438f-b2b4-dfceb6c70b5c")
+	)
+	(wire
+		(pts
 			(xy 488.95 265.43) (xy 488.95 262.89)
 		)
 		(stroke
@@ -12084,6 +12536,16 @@
 	)
 	(wire
 		(pts
+			(xy 161.29 270.51) (xy 161.29 214.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8de2ce58-f128-42c2-bf93-4641e6c7ae1a")
+	)
+	(wire
+		(pts
 			(xy 114.3 196.85) (xy 138.43 196.85)
 		)
 		(stroke
@@ -12111,6 +12573,16 @@
 			(type default)
 		)
 		(uuid "8e3f4156-6fc8-4004-a690-4001adc8c3e9")
+	)
+	(wire
+		(pts
+			(xy 179.07 231.14) (xy 203.2 231.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ea9e7dd-6905-4213-8220-fa20e97365a0")
 	)
 	(wire
 		(pts
@@ -12634,16 +13106,6 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 252.73) (xy 179.07 252.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a78390aa-cd92-4715-b68d-15f898a9eaf1")
-	)
-	(wire
-		(pts
 			(xy 461.01 304.8) (xy 461.01 299.72)
 		)
 		(stroke
@@ -12751,6 +13213,16 @@
 			(type default)
 		)
 		(uuid "aa999e8c-6b6a-45d6-b7a9-ad636962ef1d")
+	)
+	(wire
+		(pts
+			(xy 158.75 267.97) (xy 158.75 214.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aaec07c5-f1ad-4719-a9ea-90c790d8ee39")
 	)
 	(wire
 		(pts
@@ -13004,7 +13476,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 243.84) (xy 156.21 245.11)
+			(xy 151.13 243.84) (xy 151.13 245.11)
 		)
 		(stroke
 			(width 0)
@@ -13184,6 +13656,16 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 226.06) (xy 156.21 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1c77911-ac81-4b36-ad8b-90766cb93891")
+	)
+	(wire
+		(pts
 			(xy 416.56 325.12) (xy 416.56 330.2)
 		)
 		(stroke
@@ -13314,6 +13796,16 @@
 	)
 	(wire
 		(pts
+			(xy 156.21 226.06) (xy 156.21 214.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8e8323a-05e0-4cdd-a77c-13ebcd0ee72c")
+	)
+	(wire
+		(pts
 			(xy 133.35 146.05) (xy 133.35 118.11)
 		)
 		(stroke
@@ -13324,7 +13816,7 @@
 	)
 	(bus
 		(pts
-			(xy 163.83 260.35) (xy 161.29 262.89)
+			(xy 205.74 238.76) (xy 208.28 241.3)
 		)
 		(stroke
 			(width 0)
@@ -13404,16 +13896,6 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 255.27) (xy 181.61 255.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cc9bb390-d933-41e7-80e1-6f44025091f3")
-	)
-	(wire
-		(pts
 			(xy 461.01 325.12) (xy 461.01 330.2)
 		)
 		(stroke
@@ -13451,6 +13933,16 @@
 			(type default)
 		)
 		(uuid "d0a81c5d-8579-43d3-9f3a-9013fa560598")
+	)
+	(wire
+		(pts
+			(xy 181.61 233.68) (xy 203.2 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1907f90-c7a6-4687-ac31-049dc2914f74")
 	)
 	(wire
 		(pts
@@ -14393,12 +14885,12 @@
 		(uuid "2c663b38-080f-4b24-9341-ed5b8e4a05e3")
 	)
 	(label "SWD.SWDIO"
-		(at 166.37 255.27 0)
+		(at 203.2 233.68 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "33ba86e0-3bb2-4ab6-ab19-8ca60fa6c33c")
 	)
@@ -14503,12 +14995,12 @@
 		(uuid "68bc3923-64c0-4c89-85d6-72b7f9c70c36")
 	)
 	(label "SWD.SWCLK"
-		(at 166.37 252.73 0)
+		(at 203.2 231.14 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "6a050693-28eb-4b9d-a5a6-6c88ec176005")
 	)
@@ -14774,14 +15266,25 @@
 	)
 	(hierarchical_label "SWD{RPSWD}"
 		(shape bidirectional)
-		(at 157.48 262.89 180)
+		(at 212.09 241.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "015b6bab-4aaf-4abb-b8ad-f44aa7feb126")
+	)
+	(hierarchical_label "DGT_SWDIO1"
+		(shape bidirectional)
+		(at 111.76 273.05 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "015b6bab-4aaf-4abb-b8ad-f44aa7feb126")
+		(uuid "1aa3d1e0-19b3-4f4c-b82d-d969cb0acd98")
 	)
 	(hierarchical_label "DGT_SDIO{SDIO}"
 		(shape bidirectional)
@@ -14793,6 +15296,17 @@
 			(justify left)
 		)
 		(uuid "1b9b781c-f187-4dbc-b9f0-418239deaf27")
+	)
+	(hierarchical_label "DGT_SWCLK"
+		(shape output)
+		(at 111.76 267.97 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "25f2b515-fbfa-4859-9094-7561b18fa523")
 	)
 	(hierarchical_label "RST_ON_HIGH"
 		(shape input)
@@ -14837,6 +15351,17 @@
 			(justify right)
 		)
 		(uuid "61b98afe-59c8-4582-b24d-acc547250a33")
+	)
+	(hierarchical_label "DGT_SWDIO0"
+		(shape bidirectional)
+		(at 111.76 270.51 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6bc6e52b-9f49-4a40-a452-284feff4024d")
 	)
 	(hierarchical_label "ETH_~{INT}"
 		(shape input)
@@ -18239,8 +18764,149 @@
 		)
 	)
 	(symbol
+		(lib_id "Oro:OP_0005Y")
+		(at 116.84 273.05 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2cc98164-b828-44e0-9467-a04733ac4918")
+		(property "Reference" "R110"
+			(at 123.19 276.5671 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "33R-47R"
+			(at 123.19 279.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "Oro:OP_0005Y"
+			(at 116.84 266.954 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://bourns.com/docs/product-datasheets/cr.pdf?sfvrsn=574d41f6_14"
+			(at 116.078 266.446 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" "43.2 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film"
+			(at 117.602 267.716 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0005Y"
+			(at 116.84 266.954 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Manufacturer" "Bourns Inc."
+			(at 116.078 266.446 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Arrow P/N" "CR0603-FX-43R2ELF"
+			(at 116.078 266.446 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Digi-Key P/N" "CR0603-FX-43R2ELFCT-ND, CR0603-FX-43R2ELFDKR-ND, CR0603-FX-43R2ELFTR-ND"
+			(at 116.078 266.446 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mouser P/N" "652-CR0603FX-43R2ELF"
+			(at 116.078 266.446 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "7e4d941b-a640-4615-8775-0f8bb94c0180")
+		)
+		(pin "1"
+			(uuid "e7b43618-f59f-49a0-8782-3d256193e303")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/15658b1c-35c9-4214-a484-d284052e3d52"
+					(reference "R110")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "LocalPower:L+3V3")
-		(at 156.21 227.33 0)
+		(at 149.86 227.33 0)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -18251,7 +18917,7 @@
 		(dnp no)
 		(uuid "30211563-8c18-4b7d-b48d-7adcbf1ff343")
 		(property "Reference" "#PWR077"
-			(at 156.21 223.52 0)
+			(at 149.86 223.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18262,7 +18928,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 156.21 231.14 0)
+			(at 149.86 231.14 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18272,7 +18938,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 156.21 227.33 0)
+			(at 149.86 227.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18283,7 +18949,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 156.21 227.33 0)
+			(at 149.86 227.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18294,7 +18960,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 156.21 227.33 0)
+			(at 149.86 227.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19692,7 +20358,7 @@
 	)
 	(symbol
 		(lib_id "LocalPower:LGND")
-		(at 156.21 245.11 0)
+		(at 151.13 245.11 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -19703,7 +20369,7 @@
 		(dnp no)
 		(uuid "3a890568-b975-402b-b345-3bf637104bd9")
 		(property "Reference" "#PWR078"
-			(at 156.21 251.46 0)
+			(at 151.13 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19714,7 +20380,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 156.21 248.92 0)
+			(at 151.13 248.92 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19724,7 +20390,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 156.21 245.11 0)
+			(at 151.13 245.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19735,7 +20401,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 156.21 245.11 0)
+			(at 151.13 245.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19746,7 +20412,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 156.21 245.11 0)
+			(at 151.13 245.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19763,6 +20429,147 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/15658b1c-35c9-4214-a484-d284052e3d52"
 					(reference "#PWR078")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0005Y")
+		(at 130.81 270.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3ddc77a7-e086-4b06-800b-814956e353ce")
+		(property "Reference" "R109"
+			(at 137.16 276.5671 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "33R-47R"
+			(at 137.16 279.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "Oro:OP_0005Y"
+			(at 130.81 264.414 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://bourns.com/docs/product-datasheets/cr.pdf?sfvrsn=574d41f6_14"
+			(at 130.048 263.906 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" "43.2 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film"
+			(at 131.572 265.176 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0005Y"
+			(at 130.81 264.414 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Manufacturer" "Bourns Inc."
+			(at 130.048 263.906 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Arrow P/N" "CR0603-FX-43R2ELF"
+			(at 130.048 263.906 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Digi-Key P/N" "CR0603-FX-43R2ELFCT-ND, CR0603-FX-43R2ELFDKR-ND, CR0603-FX-43R2ELFTR-ND"
+			(at 130.048 263.906 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mouser P/N" "652-CR0603FX-43R2ELF"
+			(at 130.048 263.906 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "4a2ac0c7-f375-47b9-901f-598f0ece5dc2")
+		)
+		(pin "1"
+			(uuid "7606d31e-1cc8-46d4-adb9-f077fe2d7970")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/15658b1c-35c9-4214-a484-d284052e3d52"
+					(reference "R109")
 					(unit 1)
 				)
 			)
@@ -34697,6 +35504,147 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/15658b1c-35c9-4214-a484-d284052e3d52"
 					(reference "TP29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0005Y")
+		(at 144.78 267.97 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f200b632-816d-4e66-8367-5ae8ab961468")
+		(property "Reference" "R108"
+			(at 151.13 276.5671 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "33R-47R"
+			(at 151.13 279.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "Oro:OP_0005Y"
+			(at 144.78 261.874 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://bourns.com/docs/product-datasheets/cr.pdf?sfvrsn=574d41f6_14"
+			(at 144.018 261.366 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" "43.2 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film"
+			(at 145.542 262.636 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0005Y"
+			(at 144.78 261.874 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Manufacturer" "Bourns Inc."
+			(at 144.018 261.366 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Arrow P/N" "CR0603-FX-43R2ELF"
+			(at 144.018 261.366 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Digi-Key P/N" "CR0603-FX-43R2ELFCT-ND, CR0603-FX-43R2ELFDKR-ND, CR0603-FX-43R2ELFTR-ND"
+			(at 144.018 261.366 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mouser P/N" "652-CR0603FX-43R2ELF"
+			(at 144.018 261.366 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "7db4179e-f8d3-4903-8419-3173c45b9947")
+		)
+		(pin "1"
+			(uuid "6b91ed97-770b-4d00-80b2-b91c96736b44")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/15658b1c-35c9-4214-a484-d284052e3d52"
+					(reference "R108")
 					(unit 1)
 				)
 			)
