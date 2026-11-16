@@ -6626,12 +6626,6 @@
 		(uuid "0d82c8a7-2dc1-4b3b-8c39-29b971a6ce27")
 	)
 	(junction
-		(at 373.38 271.78)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1002ced6-cb22-4315-82cf-d75081d0f0a5")
-	)
-	(junction
 		(at 351.79 306.07)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6680,6 +6674,12 @@
 		(uuid "3b1d5a55-2c5f-4937-94f1-7351d4f4f313")
 	)
 	(junction
+		(at 332.74 259.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3f1df993-808c-49ed-86ad-1681e68e2d24")
+	)
+	(junction
 		(at 308.61 293.37)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6692,6 +6692,12 @@
 		(uuid "436e44ae-64e6-4866-a310-3f34bb0ea2ad")
 	)
 	(junction
+		(at 290.83 259.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4871d6b1-5dd7-4e1b-a08c-c0c3651ceb54")
+	)
+	(junction
 		(at 238.76 259.08)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6702,6 +6708,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5acef491-7243-41ca-89e5-de6446a93ece")
+	)
+	(junction
+		(at 321.31 270.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5b03f373-e475-4d0a-ac06-3be38f847cce")
 	)
 	(junction
 		(at 203.2 259.08)
@@ -6740,16 +6752,10 @@
 		(uuid "7dfc6129-3547-4744-87fe-15ea322914d5")
 	)
 	(junction
-		(at 382.27 271.78)
+		(at 285.75 270.51)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8589a7e2-c424-4470-af59-5283f5b25715")
-	)
-	(junction
-		(at 290.83 259.08)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "89c3b32f-98e1-4b47-be1a-f4e594183f33")
+		(uuid "8537b177-767b-4cc0-a4c4-35211e31f731")
 	)
 	(junction
 		(at 355.6 259.08)
@@ -6764,12 +6770,6 @@
 		(uuid "924daa2d-3f98-4b7d-9ad0-b83c15728281")
 	)
 	(junction
-		(at 364.49 271.78)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9386840c-0fe8-4cfc-9825-9fbb73be9b22")
-	)
-	(junction
 		(at 284.48 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6780,6 +6780,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "95676b92-1be3-44e9-b97e-3598c608c523")
+	)
+	(junction
+		(at 373.38 270.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9b6b1e6a-409b-4223-8142-505bbc0c0105")
 	)
 	(junction
 		(at 369.57 293.37)
@@ -6794,6 +6800,12 @@
 		(uuid "a3bbb9f6-dd32-4b2f-9562-f3038594b090")
 	)
 	(junction
+		(at 364.49 270.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aeb6398b-1a45-4d4c-a645-c0af0efc3beb")
+	)
+	(junction
 		(at 220.98 182.88)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6804,6 +6816,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "afab1db5-9e49-4033-ab3b-ae368bffbba5")
+	)
+	(junction
+		(at 382.27 270.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b1a658f1-30c3-427c-96fd-8458c459abc5")
 	)
 	(junction
 		(at 386.08 306.07)
@@ -6864,6 +6882,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e51f56e0-3c70-46dc-abd6-cafd21e273ad")
+	)
+	(junction
+		(at 285.75 259.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e6fd536a-1e02-4f03-b2ba-b52f47e07164")
 	)
 	(junction
 		(at 317.5 207.01)
@@ -7085,7 +7109,7 @@
 	)
 	(wire
 		(pts
-			(xy 355.6 269.24) (xy 355.6 271.78)
+			(xy 355.6 269.24) (xy 355.6 270.51)
 		)
 		(stroke
 			(width 0)
@@ -7165,6 +7189,26 @@
 	)
 	(wire
 		(pts
+			(xy 332.74 259.08) (xy 335.28 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11167895-4bf8-44b7-af04-283818551c9b")
+	)
+	(wire
+		(pts
+			(xy 285.75 269.24) (xy 285.75 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11773967-1417-4cbc-9e2d-8e5fb825279d")
+	)
+	(wire
+		(pts
 			(xy 321.31 259.08) (xy 316.23 259.08)
 		)
 		(stroke
@@ -7222,6 +7266,16 @@
 			(type default)
 		)
 		(uuid "18db3a2c-65be-49f7-9af4-6d95465ece4a")
+	)
+	(wire
+		(pts
+			(xy 321.31 270.51) (xy 332.74 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a5dd971-5b41-44cc-b734-13b4cb8c0d44")
 	)
 	(wire
 		(pts
@@ -7405,7 +7459,7 @@
 	)
 	(wire
 		(pts
-			(xy 326.39 259.08) (xy 335.28 259.08)
+			(xy 326.39 259.08) (xy 332.74 259.08)
 		)
 		(stroke
 			(width 0)
@@ -7425,6 +7479,16 @@
 	)
 	(wire
 		(pts
+			(xy 285.75 259.08) (xy 290.83 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34d86cd5-1cb4-4510-9aae-d9709df5795b")
+	)
+	(wire
+		(pts
 			(xy 350.52 212.09) (xy 350.52 220.98)
 		)
 		(stroke
@@ -7432,6 +7496,16 @@
 			(type default)
 		)
 		(uuid "36b23d24-846b-492b-8804-5d5baa8d66f6")
+	)
+	(wire
+		(pts
+			(xy 332.74 259.08) (xy 332.74 261.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "373ee328-b078-40ec-90e1-5ba3d7afa01c")
 	)
 	(wire
 		(pts
@@ -7452,16 +7526,6 @@
 			(type default)
 		)
 		(uuid "39c51d2f-2179-4372-a782-93df604a2992")
-	)
-	(wire
-		(pts
-			(xy 382.27 271.78) (xy 382.27 269.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3b95d5f7-46c2-400c-8fb6-4e1517ac60ef")
 	)
 	(wire
 		(pts
@@ -7535,7 +7599,7 @@
 	)
 	(wire
 		(pts
-			(xy 290.83 271.78) (xy 290.83 269.24)
+			(xy 285.75 271.78) (xy 285.75 270.51)
 		)
 		(stroke
 			(width 0)
@@ -7612,6 +7676,16 @@
 			(type default)
 		)
 		(uuid "4cd63f61-0c53-4dcb-8984-b47a1a007a28")
+	)
+	(wire
+		(pts
+			(xy 373.38 270.51) (xy 382.27 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d45e84a-3543-4a38-a8a8-da156e5d2802")
 	)
 	(wire
 		(pts
@@ -7965,6 +8039,16 @@
 	)
 	(wire
 		(pts
+			(xy 382.27 270.51) (xy 382.27 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ba9d1bd-72f9-4482-9824-78efc0200110")
+	)
+	(wire
+		(pts
 			(xy 299.72 173.99) (xy 276.86 173.99)
 		)
 		(stroke
@@ -8065,16 +8149,6 @@
 	)
 	(wire
 		(pts
-			(xy 373.38 269.24) (xy 373.38 271.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8a72d9dc-cc0c-4422-8634-76051995bc33")
-	)
-	(wire
-		(pts
 			(xy 299.72 293.37) (xy 290.83 293.37)
 		)
 		(stroke
@@ -8132,6 +8206,16 @@
 			(type default)
 		)
 		(uuid "94f51a89-b0a5-4c54-a0fd-3db66d7ba8e8")
+	)
+	(wire
+		(pts
+			(xy 332.74 269.24) (xy 332.74 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9511b875-c264-486b-a347-82f65787c863")
 	)
 	(wire
 		(pts
@@ -8253,6 +8337,16 @@
 		)
 		(uuid "a1ced10b-adaf-465b-9f39-25c9ffedd34b")
 	)
+	(wire
+		(pts
+			(xy 364.49 270.51) (xy 373.38 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a23841d2-366b-4e94-867a-e7dd1d4e9331")
+	)
 	(bus
 		(pts
 			(xy 375.92 148.59) (xy 378.46 146.05)
@@ -8275,6 +8369,16 @@
 	)
 	(wire
 		(pts
+			(xy 285.75 270.51) (xy 290.83 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5316297-5aa0-4175-887e-677a5824873f")
+	)
+	(wire
+		(pts
 			(xy 317.5 133.35) (xy 317.5 115.57)
 		)
 		(stroke
@@ -8282,6 +8386,16 @@
 			(type default)
 		)
 		(uuid "a55944e1-42a6-414f-8f84-acab0c20c648")
+	)
+	(wire
+		(pts
+			(xy 285.75 259.08) (xy 285.75 261.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a698c3dd-7aa7-4e8a-bfc6-d4b8d6674c67")
 	)
 	(wire
 		(pts
@@ -8332,6 +8446,16 @@
 			(type default)
 		)
 		(uuid "b0306fa2-7a38-44f2-b9ab-5566c0dbf29f")
+	)
+	(wire
+		(pts
+			(xy 290.83 270.51) (xy 290.83 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b087f928-e4b4-473d-999a-dac37de2b9d0")
 	)
 	(wire
 		(pts
@@ -8405,7 +8529,17 @@
 	)
 	(wire
 		(pts
-			(xy 355.6 271.78) (xy 382.27 271.78)
+			(xy 321.31 270.51) (xy 321.31 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bad6fbc0-79f8-4c81-b193-f755f11a2015")
+	)
+	(wire
+		(pts
+			(xy 355.6 270.51) (xy 364.49 270.51)
 		)
 		(stroke
 			(width 0)
@@ -8422,16 +8556,6 @@
 			(type default)
 		)
 		(uuid "bb3daa74-62a9-4e34-843e-1aacc2a5cb56")
-	)
-	(wire
-		(pts
-			(xy 364.49 269.24) (xy 364.49 271.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bbae5633-665a-4a6d-87da-5b6c54f0f2ee")
 	)
 	(wire
 		(pts
@@ -8522,6 +8646,16 @@
 			(type default)
 		)
 		(uuid "c392bc20-10d2-4fca-935a-c9772dbd4bd3")
+	)
+	(wire
+		(pts
+			(xy 382.27 270.51) (xy 382.27 271.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5407368-a707-4ba6-88a7-7acdb732ef6a")
 	)
 	(wire
 		(pts
@@ -8625,7 +8759,7 @@
 	)
 	(wire
 		(pts
-			(xy 321.31 271.78) (xy 321.31 269.24)
+			(xy 321.31 271.78) (xy 321.31 270.51)
 		)
 		(stroke
 			(width 0)
@@ -8662,6 +8796,16 @@
 			(type default)
 		)
 		(uuid "d8c3c982-56e7-40cc-bd65-748981eb5b29")
+	)
+	(wire
+		(pts
+			(xy 364.49 269.24) (xy 364.49 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da2b4ce9-8842-4fe1-a7ba-a387579f531b")
 	)
 	(wire
 		(pts
@@ -8782,6 +8926,16 @@
 			(type default)
 		)
 		(uuid "e9126e18-d212-4df7-a33b-d8b07dbd767f")
+	)
+	(wire
+		(pts
+			(xy 373.38 269.24) (xy 373.38 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e938b7a4-9833-4e5c-85b3-3a9adbbae768")
 	)
 	(wire
 		(pts
@@ -10735,9 +10889,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "364c1763-a273-4e2b-ad69-772deff02085")
 		(property "Reference" "C138"
-			(at 322.58 262.89 90)
+			(at 323.9516 264.0135 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10748,7 +10903,7 @@
 			)
 		)
 		(property "Value" "1u"
-			(at 322.58 267.97 90)
+			(at 323.9516 266.8464 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11518,7 +11673,7 @@
 	)
 	(symbol
 		(lib_id "LocalPower:LGND")
-		(at 290.83 271.78 0)
+		(at 285.75 271.78 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim yes)
@@ -11528,7 +11683,7 @@
 		(dnp no)
 		(uuid "404b9dff-1426-48b8-bb0c-59f63f4ce8c7")
 		(property "Reference" "#PWR0143"
-			(at 290.83 278.13 0)
+			(at 285.75 278.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11539,7 +11694,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 289.56 275.59 0)
+			(at 284.48 275.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11550,7 +11705,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 290.83 271.78 0)
+			(at 285.75 271.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11561,7 +11716,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 290.83 271.78 0)
+			(at 285.75 271.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11572,7 +11727,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 290.83 271.78 0)
+			(at 285.75 271.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14825,7 +14980,7 @@
 	)
 	(symbol
 		(lib_id "LocalPower:L+1V2A")
-		(at 290.83 259.08 0)
+		(at 285.75 259.08 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim yes)
@@ -14835,7 +14990,7 @@
 		(dnp no)
 		(uuid "7dc68ba9-9cad-447a-a2e3-590c0fd67e0b")
 		(property "Reference" "#PWR0142"
-			(at 290.83 262.89 0)
+			(at 285.75 262.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14846,7 +15001,7 @@
 			)
 		)
 		(property "Value" "+1V2A"
-			(at 290.83 255.27 0)
+			(at 285.75 255.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14856,7 +15011,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 290.83 259.08 0)
+			(at 285.75 259.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14867,7 +15022,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 290.83 259.08 0)
+			(at 285.75 259.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14878,7 +15033,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+1V2\""
-			(at 290.83 259.08 0)
+			(at 285.75 259.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15635,6 +15790,186 @@
 		)
 	)
 	(symbol
+		(lib_id "Oro:OP_0001Y")
+		(at 285.75 269.24 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9b809e5b-a992-4d45-b2a6-d2a97f009d0a")
+		(property "Reference" "C162"
+			(at 283.1084 264.0135 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 283.1084 266.8464 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Oro:OP_0001Y"
+			(at 285.75 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/Tayio_Yuden_1102023_MS_mlcc_all_e-3081579.pdf"
+			(at 285.75 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
+			(at 285.75 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mfr. Name" "Taiyo Yuden"
+			(at 282.75 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mfr. Number" "MSAST1L3YB5104KFNA01"
+			(at 282.75 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/MSAST1L3YB5104KFNA01?qs=tlsG%2FOw5FFhBwK%252BMwEZpCA%3D%3D"
+			(at 282.75 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description_1" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
+			(at 282.75 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Arrow ID" "MSAST1L3YB5104KFNA01"
+			(at 282.75 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "DigiKey ID" "587-MSAST1L3YB5104KFNA01CT-ND"
+			(at 282.75 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mouser ID" "963-MSAST1L3YB5104KF"
+			(at 282.75 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001Y"
+			(at 285.75 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7685aa8b-3418-432e-b371-10980d0be318")
+		)
+		(pin "2"
+			(uuid "f6cf04a6-c25b-4303-8417-b119db383cd7")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/0bceadc4-59dc-4502-8b0e-44178a81c8b7"
+					(reference "C162")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "LocalPower:LGND")
 		(at 298.45 133.35 0)
 		(unit 1)
@@ -15784,6 +16119,185 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/0bceadc4-59dc-4502-8b0e-44178a81c8b7"
 					(reference "#PWR0159")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oro:OP_0001Y")
+		(at 332.74 269.24 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a02b7004-f374-4623-897e-b2da7a26ba40")
+		(property "Reference" "C163"
+			(at 335.3816 264.0135 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 335.3816 266.8464 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Oro:OP_0001Y"
+			(at 332.74 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.de/datasheet/2/396/Tayio_Yuden_1102023_MS_mlcc_all_e-3081579.pdf"
+			(at 332.74 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
+			(at 332.74 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mfr. Name" "Taiyo Yuden"
+			(at 335.74 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mfr. Number" "MSAST1L3YB5104KFNA01"
+			(at 335.74 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mouser URL" "https://www.mouser.de/ProductDetail/TAIYO-YUDEN/MSAST1L3YB5104KFNA01?qs=tlsG%2FOw5FFhBwK%252BMwEZpCA%3D%3D"
+			(at 335.74 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description_1" "Multilayer Ceramic Capacitor, 0.1 uF, 25 V, ± 10%, X5R, 0402 [1005 Metric] - T&R"
+			(at 335.74 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Arrow ID" "MSAST1L3YB5104KFNA01"
+			(at 335.74 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "DigiKey ID" "587-MSAST1L3YB5104KFNA01CT-ND"
+			(at 335.74 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Mouser ID" "963-MSAST1L3YB5104KF"
+			(at 335.74 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Oro ID" "OP:0001Y"
+			(at 332.74 269.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4a668b0f-c3da-427c-a859-61c7fd7b952a")
+		)
+		(pin "2"
+			(uuid "2500b1dc-86a9-4f5e-9039-042168ea33a5")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/0bceadc4-59dc-4502-8b0e-44178a81c8b7"
+					(reference "C163")
 					(unit 1)
 				)
 			)
@@ -16387,9 +16901,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "be5247af-0301-4dd6-a87c-3530164d3c8f")
 		(property "Reference" "C134"
-			(at 292.1 262.89 90)
+			(at 293.4716 264.0135 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16400,7 +16915,7 @@
 			)
 		)
 		(property "Value" "0.1u"
-			(at 292.1 267.97 90)
+			(at 293.4716 266.8464 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
