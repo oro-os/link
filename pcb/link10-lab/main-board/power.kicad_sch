@@ -7115,6 +7115,12 @@
 		(uuid "4218abd4-c5ae-4926-8a7d-b66d59d12664")
 	)
 	(junction
+		(at 419.1 270.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "446c70e8-866b-4d65-8e10-ac20686998c2")
+	)
+	(junction
 		(at 334.01 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7346,6 +7352,16 @@
 	)
 	(wire
 		(pts
+			(xy 339.09 182.88) (xy 339.09 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "004b8614-10bf-4791-9844-54c16da00e5b")
+	)
+	(wire
+		(pts
 			(xy 396.24 135.89) (xy 410.21 135.89)
 		)
 		(stroke
@@ -7453,16 +7469,6 @@
 			(type default)
 		)
 		(uuid "0de7da2e-f64b-4c4a-a831-41c4b00764d0")
-	)
-	(wire
-		(pts
-			(xy 339.09 185.42) (xy 339.09 186.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f4e5139-5989-4574-b851-87eec7a2e3ff")
 	)
 	(wire
 		(pts
@@ -7673,6 +7679,16 @@
 			(type default)
 		)
 		(uuid "2962a89a-7db2-4edd-9ccc-1740d51809ff")
+	)
+	(wire
+		(pts
+			(xy 419.1 266.7) (xy 419.1 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "299308c4-5b6a-4bdd-aa6e-baaa4bc9596a")
 	)
 	(wire
 		(pts
@@ -8343,16 +8359,6 @@
 			(type default)
 		)
 		(uuid "6e3c8a52-140c-4040-b8ee-f7d9055852d9")
-	)
-	(wire
-		(pts
-			(xy 420.37 270.51) (xy 410.21 270.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6e3d66e0-dca8-4224-be15-f9622494cd8e")
 	)
 	(wire
 		(pts
@@ -9226,6 +9232,16 @@
 	)
 	(wire
 		(pts
+			(xy 419.1 270.51) (xy 420.37 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dee19114-ebee-4440-bc06-5d8f3187da0b")
+	)
+	(wire
+		(pts
 			(xy 529.59 193.04) (xy 534.67 193.04)
 		)
 		(stroke
@@ -9346,7 +9362,7 @@
 	)
 	(wire
 		(pts
-			(xy 320.04 185.42) (xy 339.09 185.42)
+			(xy 320.04 186.69) (xy 339.09 186.69)
 		)
 		(stroke
 			(width 0)
@@ -9383,6 +9399,16 @@
 			(type default)
 		)
 		(uuid "f2e804c0-b4c1-4a4d-aca8-8f41ad0c6d53")
+	)
+	(wire
+		(pts
+			(xy 419.1 270.51) (xy 410.21 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f360b322-2807-43df-b556-fee04ce78038")
 	)
 	(wire
 		(pts
@@ -9655,7 +9681,7 @@
 		(uuid "7469eb74-ef6a-43b9-9467-99141f2dae74")
 	)
 	(label "+5V_STM"
-		(at 320.04 185.42 0)
+		(at 320.04 186.69 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12122,6 +12148,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 419.1 266.7 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3bb788a0-588a-471f-a5ee-5a9666469073")
+		(property "Reference" "TP76"
+			(at 417.83 266.7 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DGT_SW"
+			(at 411.48 266.7 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 414.02 266.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 414.02 266.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 419.1 266.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "921375bb-be30-4ad4-ab9c-95f1d007ad6b")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/ec318cae-7585-4be5-9ff5-f383faff74f5"
+					(reference "TP76")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "LocalPower:LGND")
 		(at 196.85 223.52 0)
 		(unit 1)
@@ -14121,6 +14226,85 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/ec318cae-7585-4be5-9ff5-f383faff74f5"
 					(reference "R55")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 339.09 182.88 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "775fcda9-7c6f-4779-b508-9c937fea7cb5")
+		(property "Reference" "TP77"
+			(at 337.82 182.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "STM_5V"
+			(at 331.47 182.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 334.01 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 334.01 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 339.09 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ecf57d7e-ad04-4536-85f0-54be407c999d")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/ec318cae-7585-4be5-9ff5-f383faff74f5"
+					(reference "TP77")
 					(unit 1)
 				)
 			)

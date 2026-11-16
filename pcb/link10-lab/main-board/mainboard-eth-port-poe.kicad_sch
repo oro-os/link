@@ -28365,6 +28365,12 @@
 		(uuid "72e32e7f-8b5c-4b5e-9bd6-436af8e71684")
 	)
 	(junction
+		(at 392.43 295.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7305fe66-ae8c-419a-8a49-7da222220881")
+	)
+	(junction
 		(at 391.16 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -30972,6 +30978,16 @@
 		)
 		(uuid "6c4ba45a-0949-4097-8782-a903973b05c2")
 	)
+	(wire
+		(pts
+			(xy 393.7 298.45) (xy 392.43 298.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c967862-3f7a-409d-aaef-052e569122d9")
+	)
 	(polyline
 		(pts
 			(xy 334.01 22.86) (xy 349.25 22.86)
@@ -31678,6 +31694,16 @@
 	)
 	(wire
 		(pts
+			(xy 392.43 298.45) (xy 392.43 295.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99da7b17-d7ff-458b-86ec-e5eab5e90d7c")
+	)
+	(wire
+		(pts
 			(xy 384.81 257.81) (xy 384.81 260.35)
 		)
 		(stroke
@@ -31798,7 +31824,7 @@
 	)
 	(wire
 		(pts
-			(xy 369.57 295.91) (xy 373.38 295.91)
+			(xy 369.57 295.91) (xy 392.43 295.91)
 		)
 		(stroke
 			(width 0)
@@ -31845,6 +31871,16 @@
 			(type default)
 		)
 		(uuid "a258c872-fee7-479e-ac43-9ee900cd4598")
+	)
+	(wire
+		(pts
+			(xy 392.43 295.91) (xy 394.97 295.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a26fe3e5-6d1a-4654-9d96-a5d56060ac16")
 	)
 	(wire
 		(pts
@@ -33689,7 +33725,7 @@
 	)
 	(hierarchical_label "T2P_~{TYPE2}"
 		(shape input)
-		(at 373.38 295.91 0)
+		(at 394.97 295.91 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -45750,6 +45786,85 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
 					(reference "R35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 393.7 298.45 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c97a9618-ce23-463b-aa0f-27c93bb2ff1d")
+		(property "Reference" "TP75"
+			(at 394.97 298.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ETH_TYPE2"
+			(at 401.32 298.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
+			(at 398.78 298.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 398.78 298.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 393.7 298.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9b228140-a3d9-4c55-8fb5-c924118a854c")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44/5fd21dd6-1ba7-4ca4-bad7-34447a37c333"
+					(reference "TP75")
 					(unit 1)
 				)
 			)

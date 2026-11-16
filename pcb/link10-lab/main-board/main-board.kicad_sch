@@ -8612,12 +8612,6 @@
 		(uuid "52ae8a19-cf05-48c7-8049-7967fb69672f")
 	)
 	(junction
-		(at 135.89 90.17)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5b1a39f8-dbbf-4280-99b9-b5a99343c089")
-	)
-	(junction
 		(at 121.92 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8736,6 +8730,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9ffb1dad-d103-4cd3-989c-4bde626863db")
+	)
+	(junction
+		(at 135.89 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a2438d09-c1a9-401d-bf3a-c66ed4408a5f")
 	)
 	(junction
 		(at 469.9 241.3)
@@ -9288,6 +9288,16 @@
 			(type default)
 		)
 		(uuid "fbfa72c9-4bae-47d9-b3be-0bd0237b11a9")
+	)
+	(wire
+		(pts
+			(xy 67.31 389.89) (xy 113.03 389.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0077c05f-28b7-4d2a-a98b-7fb7292fd3df")
 	)
 	(bus
 		(pts
@@ -10101,6 +10111,16 @@
 			(type default)
 		)
 		(uuid "29ecf8d8-e37d-4135-9f33-a7f9385c2e29")
+	)
+	(wire
+		(pts
+			(xy 54.61 396.24) (xy 113.03 396.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2aa94da8-acb6-4250-ad30-0f2b5c4f8a43")
 	)
 	(wire
 		(pts
@@ -12215,6 +12235,16 @@
 	)
 	(wire
 		(pts
+			(xy 60.96 383.54) (xy 60.96 382.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af189780-15cb-40b0-81d4-db06e5739ed4")
+	)
+	(wire
+		(pts
 			(xy 135.89 222.25) (xy 111.76 222.25)
 		)
 		(stroke
@@ -12566,6 +12596,16 @@
 	)
 	(wire
 		(pts
+			(xy 67.31 387.35) (xy 113.03 387.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5ffb30d-a0f8-4124-a584-9850be04a581")
+	)
+	(wire
+		(pts
 			(xy 375.92 283.21) (xy 361.95 283.21)
 		)
 		(stroke
@@ -12745,6 +12785,16 @@
 			(type default)
 		)
 		(uuid "d22dcdfb-31fa-4249-a1e2-89c9db141f3e")
+	)
+	(wire
+		(pts
+			(xy 54.61 389.89) (xy 54.61 396.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d29247fd-7928-4df8-9e00-a2b4abdf04e1")
 	)
 	(bus
 		(pts
@@ -13028,6 +13078,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 387.35) (xy 54.61 379.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e0a9d493-ca2c-4e52-a5fc-f63c92ea2705")
+	)
+	(wire
+		(pts
 			(xy 116.84 69.85) (xy 124.46 69.85)
 		)
 		(stroke
@@ -13278,6 +13338,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 379.73) (xy 113.03 379.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efe9fc52-76f8-4827-97d8-c0e2b5621b18")
+	)
+	(wire
+		(pts
 			(xy 67.31 346.71) (xy 111.76 346.71)
 		)
 		(stroke
@@ -13325,6 +13395,16 @@
 			(type default)
 		)
 		(uuid "f32e93d5-ba0d-4ace-9c8e-70fa4af6e08e")
+	)
+	(wire
+		(pts
+			(xy 60.96 382.27) (xy 113.03 382.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f452611a-2ff1-4774-8a42-0486a51dc2af")
 	)
 	(wire
 		(pts
@@ -13475,6 +13555,16 @@
 			(type default)
 		)
 		(uuid "fba5ccb8-9bf5-4c5d-a90a-e3bd37e95d7b")
+	)
+	(wire
+		(pts
+			(xy 60.96 393.7) (xy 113.03 393.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fccad428-f012-4f05-968f-eb2d9ef9413a")
 	)
 	(wire
 		(pts
@@ -13647,6 +13737,16 @@
 		)
 		(uuid "10c7d98f-a20b-45f3-a8ae-bdf2ebfb59f8")
 	)
+	(label "DGT_SDIO_INT"
+		(at 113.03 387.35 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "11373e95-dc95-4a55-9170-879d688c976c")
+	)
 	(label "MASTER_SWD.SWO"
 		(at 113.03 321.31 180)
 		(effects
@@ -13687,6 +13787,26 @@
 		)
 		(uuid "14831021-295d-4b0c-a3d2-d5963a5259dc")
 	)
+	(label "OLED_SENSE"
+		(at 194.4738 69.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "178cc441-9be2-4c0c-aad4-3b13bd16f779")
+	)
+	(label "DGT_INT"
+		(at 113.03 382.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "19450e05-5175-487d-933b-0884d7922489")
+	)
 	(label "LCD.An"
 		(at 144.78 74.93 180)
 		(effects
@@ -13696,6 +13816,16 @@
 			(justify right bottom)
 		)
 		(uuid "19756acd-e08a-4932-a003-f08ee91df738")
+	)
+	(label "OLED_RST"
+		(at 113.03 389.89 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1bc4ee59-3006-4aa3-9b71-cbb81da0ff60")
 	)
 	(label "MASTER_DIRECT_RST"
 		(at 265.43 350.52 0)
@@ -13726,6 +13856,16 @@
 			(justify right bottom)
 		)
 		(uuid "20c11efe-c498-4bbd-8217-24d9a075dd32")
+	)
+	(label "OLED_RST"
+		(at 194.31 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "24cb91b8-de18-4b68-a637-501b0a0fb27e")
 	)
 	(label "MASTER_BOOT0"
 		(at 113.03 327.66 180)
@@ -13856,6 +13996,16 @@
 			(justify right bottom)
 		)
 		(uuid "5cb61425-0b04-46fc-8551-3e096a1668d4")
+	)
+	(label "DGT_READY"
+		(at 386.08 111.76 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5f6d4e65-3e68-4cd6-a721-573057991752")
 	)
 	(label "BB_SWD.SWCLK"
 		(at 113.03 358.14 180)
@@ -14087,6 +14237,16 @@
 		)
 		(uuid "afa880cd-415c-4770-b094-9b7bf30a8de9")
 	)
+	(label "DGT_READY"
+		(at 113.03 379.73 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b0164f95-8b5f-40e7-867d-7de1d84fc495")
+	)
 	(label "USART3.CTS"
 		(at 450.85 218.44 0)
 		(effects
@@ -14177,6 +14337,16 @@
 		)
 		(uuid "c84791d7-713f-4937-b88e-7bd180223b6b")
 	)
+	(label "DGT_SDIO_INT"
+		(at 389.89 337.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c956f01f-18bc-4e4a-8631-971d3d90c9be")
+	)
 	(label "BRIDGE_INT"
 		(at 113.03 353.06 180)
 		(effects
@@ -14237,6 +14407,26 @@
 		)
 		(uuid "e03b7b90-c6f4-425f-a31e-7b821785f108")
 	)
+	(label "OLED_SENSE"
+		(at 113.03 396.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e2038cc4-281e-4d84-9b84-ba49e72f04c0")
+	)
+	(label "DGT_INT"
+		(at 386.08 114.3 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e675ee43-862b-47f0-adbf-7a00d411d66c")
+	)
 	(label "BB_I2C1.SDA"
 		(at 260.35 236.22 0)
 		(effects
@@ -14256,6 +14446,16 @@
 			(justify right bottom)
 		)
 		(uuid "e78c7b63-bfe4-40d5-85c2-26e9c4e01b35")
+	)
+	(label "DGT_SPI_CSE"
+		(at 113.03 393.7 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "eb8d38f6-585c-4e00-bfca-b861fbe97557")
 	)
 	(label "BRIDGE_SWD.SWDIO"
 		(at 111.76 339.09 180)
@@ -14296,6 +14496,16 @@
 			(justify right bottom)
 		)
 		(uuid "f092c357-46f3-49f9-b901-e20a15f28141")
+	)
+	(label "DGT_SPI_CSE"
+		(at 386.08 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f12d7122-d881-4a16-8065-c0f966d5f505")
 	)
 	(label "DGT_SENSE"
 		(at 113.03 372.11 180)
@@ -16965,6 +17175,100 @@
 			(project "main-board"
 				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
 					(reference "LED1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OroLink:CPG-81-TH-B-Pads")
+		(at 54.61 387.35 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "92365729-0f74-4982-bf03-c28371c26a24")
+		(property "Reference" "J21"
+			(at 62.865 384.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CPG-81-TH-B-Pads"
+			(at 64.77 382.905 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "OroLink:CPG-81-TH-B-Landing"
+			(at 54.61 387.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.sameskydevices.com/product/resource/cpg-81-th-b.pdf"
+			(at 54.61 387.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Landing pad for the CPG-81-TH-B"
+			(at 54.61 387.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8ac838d5-08bd-4270-902f-f46205682e24")
+		)
+		(pin "3"
+			(uuid "3ba5ac7d-e9d0-43b4-9bc3-f9927841a314")
+		)
+		(pin "4"
+			(uuid "628ec661-5567-4e79-ba70-2fb4d0be2283")
+		)
+		(pin "6"
+			(uuid "b6e0139e-d044-41fb-9d04-1fb730c12282")
+		)
+		(pin "2"
+			(uuid "6625fafb-a9b8-4dbb-a85f-9b7462db7988")
+		)
+		(pin "5"
+			(uuid "8bb9e32d-40fa-44f8-b3e6-941509fe736f")
+		)
+		(instances
+			(project "main-board"
+				(path "/a70f06c5-be00-4bc8-bd65-e567781cea44"
+					(reference "J21")
 					(unit 1)
 				)
 			)
@@ -19897,7 +20201,7 @@
 				(justify left)
 			)
 		)
-		(pin "SPI1{SPIn}" bidirectional
+		(pin "SPI1{SPIn}" input
 			(at 340.36 160.02 90)
 			(uuid "ad44b6f3-083a-4faa-a028-54a5ca61b2a0")
 			(effects
